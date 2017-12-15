@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import '../../rem';
+
+$designWidth: 375;
+
+.brandActivity {
+  padding: rem(15); background: rgb(27,21,107) url("../../../images/activity/brand/back.jpg") top center no-repeat; bacckground-size: 100% auto;
+}
+.brandElem {
+  width: 33.3%; float: left;
+}
+.brandElem p {
+  width: 90%; display: inline-block;
+}
+.brandRuled {
+  background: rgb(20,15,101); padding: rem(15);
+}
+.brandRule {
+  font-size: rem(12); color: #fff; line-height: rem(26);
+}
+.brandRule aside {
+  font-size: rem(16); text-align: center; margin-bottom: rem(15);
+}
+.brandRule section p {
+  padding-left: rem(15); background: url("../../../images/activity/brand/icon03.png") left rem(8) no-repeat; bacckground-size: rem(30) auto;
+}
