@@ -1,0 +1,2094 @@
+@charset "utf-8";
+@import 'rem';
+$designWidth:375;
+
+.content {
+   width: 100%; height: 100%; background: rgba(0,0,0,0.7); position: absolute; top: 0; left: 0;  z-index: 2;
+   //filter:blur(1rem); -webkit-filter: blur(1rem);
+}
+
+// .content {
+// 	width: 100%; height: 667px; position: absolute; background: #333;/*背景颜色*/ overflow: hidden;
+// }
+.conter {
+	width: rem(355);
+	height: rem(231);
+    background-image: url('../images/Rectangle.png');
+    background-size: 100% 100%;
+    position: absolute;
+    overflow: visible;
+	margin: auto;
+	margin-left: rem(-177.5);
+	left: 50%;
+	top: 50%;
+	transition: 0.6s;
+}
+.conter_t {
+	top: 30%;
+}
+.conter_1 {
+	top: 4%;
+	left: 80%;
+	transform: scale(0.2);
+	opacity: 0;
+	transition: 1.2s;
+}
+
+.close {
+	width: rem(18);
+	height: rem(18);
+    background-image: url('../images/close.png');
+	background-size: cover;
+	position: absolute;
+	top: rem(10);
+	right: rem(10);
+	cursor: pointer;
+}
+.icon {
+	width: rem(98);
+	height: rem(94);
+	background-image: url('../images/icon.png');
+	background-size: cover;
+	position: relative;
+	margin-left: rem(-52);
+	left: 50%;
+	top: -12%;
+}
+.icon_bg {
+	width: rem(114);
+	height: rem(78);
+	background-image: url('../images/Group.png');
+	background-size: cover;
+	animation: big 1.2s ease infinite;
+}
+@keyframes big {
+ 0% {
+transform: scale(1);
+opacity: 1;
+}
+ 100% {
+transform: scale(1.2);
+opacity: 0;
+}
+}
+.Period {
+	color: #d8ae59;
+	margin-top: rem(-10);
+	text-align: center;
+	transition: .8s;
+	font-size: 2.2vh;/*字体的大小*/
+}
+.basin {
+	position: absolute;
+	top: rem(130);
+	left: rem(30);
+	width: rem(160);
+	height: rem(76);
+	background-image: url('../images/western/basin.png');
+    background-size: cover;
+    overflow: visible;
+}
+.bean {
+	position: absolute;
+	width: rem(16);
+	height: rem(18);
+	background-image: url('../images/western/bean.png');
+    background-size: cover;
+    z-index: 5;
+}
+.t_box {
+	transform: scale(1, -1) rotateZ(-45deg);  overflow: visible;
+}
+.box {
+	transition: 0.5s all linear;
+}
+.box_1 {
+	transform: translateX(130px); overflow: visible;
+}
+/*豆子的位置*/
+
+.bean_1 {
+	transform: rotate(-152deg);
+	top: rem(-60);
+	left: rem(50);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_2 {
+	transform: rotate(-532deg);
+	top: rem(-35);
+	left: rem(65);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_3 {
+	transform: rotate(-76deg);
+	top: rem(-50);
+	left: rem(80);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_4 {
+	transform: rotate(-213deg);
+	top: rem(-45);
+	left: rem(95);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_5 {
+	transform: rotate(-344deg);
+	top: rem(-60);
+	left: rem(60);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_6 {
+	transform: rotate(-465deg);
+	top: rem(-35);
+	left: rem(75);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_7 {
+	transform: rotate(-217deg);
+	top: rem(-30);
+	left: rem(90);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_8 {
+	transform: rotate(-315deg);
+	top: rem(5);
+	left: rem(105);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_9 {
+	transform: rotate(-90deg);
+	top: rem(-50);
+	left: rem(70);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_10 {
+	transform: rotate(-60deg);
+	top: rem(-45);
+	left: rem(85);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_11 {
+	transform: rotate(-45deg);
+	top: rem(-10);
+	left: rem(100);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_12 {
+	transform: rotate(-30deg);
+	top: rem(-5);
+	left: rem(115);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_13 {
+	transform: rotate(-10deg);
+	top: rem(-25);
+	left: rem(80);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_14 {
+	transform: rotate(-15deg);
+	top: rem(-50);
+	left: rem(70);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_15 {
+	transform: rotate(-120deg);
+	top: rem(-30);
+	left: rem(100);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_16 {
+	transform: rotate(-55deg);
+	top: rem(-10);
+	left: rem(120);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+/*动画部分*/
+.bean1 {
+	transform: translate(rem(50), rem(120));
+}
+.bean2 {
+	transform: translate(rem(50), rem(110));
+}
+.bean3 {
+	transform: translate(rem(50), rem(140));
+}
+.bean4 {
+	transform: translate(rem(50), rem(150));
+}
+.bean5 {
+	transform: translate(rem(50), rem(110));
+}
+.bean6 {
+	transform: translate(rem(50), rem(100));
+}
+.bean7 {
+	transform: translate(rem(50), rem(110));
+}
+.bean8 {
+	transform: translate(rem(50), rem(90));
+}
+.bean9 {
+	transform: translate(rem(50), rem(90));
+}
+.bean10 {
+	transform: translate(rem(50), rem(100));
+}
+.bean11 {
+	transform: translate(rem(50), rem(80));
+}
+.bean12 {
+	transform: translate(rem(50), rem(90));
+}
+.clear {
+	opacity: 0;
+}
+
+
+/*加拿大幸运28*/
+.drawAlottery {
+   width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.7);
+}
+.ves {
+   width: 100%; height: 100%; 
+}
+.indexJust button {
+    width: rem(160); height: rem(45); font-size: rem(14);
+}
+
+/*俄罗斯大转盘*/
+.contentemplate {
+    width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 10;
+}
+.top_tontentEm {
+    width: 100%; height: 100%; background: url('../images/turnTable/img/bodyBack.png') left center no-repeat; background-size: 100% auto;
+}
+.top_1{
+    transform: translateY(rem(-1334)); -webkit-transform: translateY(rem(-1334));  transition:All 3s ease-out;
+}
+.mask {
+width: 100%;
+height: rem(124);
+// background-image: url(img/顶部阴影.png);
+}
+.turntable_bg {
+width: 48vh;
+height: 48vh;
+background: url('../images/turnTable/img/back01.png');
+background-size: contain;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+margin: auto;
+}
+.turntable_figure {
+width: 34vh;
+height: 34vh;
+background: url('../images/turnTable/img/back02.png');
+background-size: contain;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+margin: auto;
+transition: All 6s ease;
+        -webkit-transition: All 6s ease;
+        -moz-transition: All 6s ease;
+        -o-transition: All 6s ease;
+/*	transition: All 6s ease-in-out;*/
+/*            -webkit-transition: All 6s ease-in-out;*/
+/*            -moz-transition: All 6s ease-in-out;*/
+/*            -o-transition: All 6s ease-in-out;*/
+}
+.turntable_figure_1{
+    transform: rotate(720deg) ;
+}
+.turntable_pointer {
+width: 22vh;
+height: 22vh;
+background: url('../images/turnTable/img/back03.png');
+background-size: contain;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+margin: auto;
+}
+.number_bg {
+width: rem(54);
+height: rem(24);
+background: url('../images/turnTable/img/back04.png');
+background-size: contain;
+position: absolute;
+top: rem(108);
+left: 50%;
+margin-left: rem(-27);
+text-align: center;
+color: #ff9c18;
+font-size: 2.4vh;
+font-family: Gotham, Helvetica Neue, Helvetica, Arial," sans-serif";
+line-height: rem(24);
+}
+
+.ball{
+width: rem(30);
+height: rem(30);
+background: url('../images/turnTable/img/back05.png');
+background-size: contain;
+position: absolute;
+
+left:rem(160);
+top:rem(160);
+transform-origin: rem(28) rem(174);
+transition:All 6.2s 0s ease-out;
+        -webkit-transition: All 6.2s 0s ease-out;
+        -moz-transition: All 6.2s 0s ease-out;
+        -o-transition: All 6.2s 0s ease-out;
+/*	transition:All 6s 0.2s ease-in-out;*/
+/*			-webkit-transition: All 6s 0.2s ease-in-out;*/
+/*            -moz-transition: All 6s 0.2s ease-in-out;*/
+/*            -o-transition: All 6s 0.2s ease-in-out;*/
+}
+.ball_1{
+    transform:rotate(720deg);/*scale(0.6)*/
+    left:rem(166);
+    top:rem(234);
+    transform-origin: rem(18) rem(96);	
+}
+
+.bottom_TrunTable {
+width: 100%;
+height: rem(112);
+background: url('../images/turnTable/img/back06.png');
+background-size: contain;
+position: absolute;
+left: 0;
+bottom: 0;
+	-webkit-transition:All 0.8s ease-out;
+	-moz-transition:All 0.8s ease-out;
+	-o-transition:All 0.8s ease-out;
+	transition:All 0.8s ease-out;
+}
+.bottom_1{
+    transform: translateY(rem(120));
+	-o-transform:translateY(rem(120));
+	-webkit-transform: translateY(rem(120));
+	-moz-transform: translateY(rem(120));
+	-ms-transform: translateY(rem(120));
+}
+
+
+/*pc蛋蛋*/
+.contentPcdd {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0; left: 0;
+	// background: url(img/egg_bg.png);
+	overflow: hidden;
+	// background-size: 100% 100%;
+	background: rgba(0,0,0,0.1);
+	z-index: 15;
+
+}
+
+.contentPcdd  div {
+	overflow: visible;
+}
+.contentPcdd  div.inhao {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	//.egg_number {
+	//	z-index: 999;
+	//}
+}
+.first {
+	position: absolute;
+	top: rem(160);
+	left: rem(40);
+	width: rem(140);
+	height: rem(190);
+	transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-webkit-transform:scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform:scale(0.9);
+}
+
+.second {
+	position: absolute;
+	top: rem(160);
+	left: rem(200);
+	width: rem(140);
+	height: rem(190);
+	transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-webkit-transform:scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform:scale(0.9);
+}
+
+.third {
+	position: absolute;
+	top: rem(300);
+	left: rem(116);
+	width: rem(140);
+	height: rem(190);
+	transform: scale(0.9);
+	-o-transform: scale(0.9);
+	-webkit-transform:scale(0.9);
+	-moz-transform: scale(0.9);
+	-ms-transform:scale(0.9);
+}
+
+.egg {
+	position: absolute;
+	width: rem(140);
+	height: rem(150);
+}
+
+.egg_normal {
+	position: absolute;
+	bottom: 0;
+	width: rem(140);
+	height: rem(150);
+	background-image: url(../images/pcdd/drawAlottery/egg_normal.png);
+	background-size: cover;
+	z-index: 10;
+	transition:0.1s;
+	-o-transition: 0.1s;
+	-moz-transition: 0.1s;
+	-webkit-transition: 0.1s;
+}
+
+.egg_normal_clear {
+	opacity: 0;
+}
+
+.egg_bottom {
+	position: absolute;
+	bottom: 0;
+	background-image: url(../images/pcdd/drawAlottery/egg_bottom.png);
+	background-size: cover;
+	width: rem(140);
+	height: rem(140);
+	z-index: 5;
+	transition: 0.5s;
+	-o-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+
+.egg_bottom_bg {
+	position: absolute;
+	bottom: 0;
+	background-image: url(../images/pcdd/drawAlottery/egg_bottom_bg.png);
+	background-size: cover;
+	width: rem(140);
+	height: rem(140);
+	z-index: 1;
+	transition: 0.5s;
+	-o-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+
+.egg_top {
+	position: absolute;
+	top: 0;
+	left: rem(5);
+	width: rem(140);
+	height: rem(140);
+	background-image: url(../images/pcdd/drawAlottery/egg_top.png);
+	background-size: cover;
+	z-index: 4;
+	transform:  rotate(-138deg);
+	-ms-transform:  rotate(-138deg);
+	-moz-transform:  rotate(-138deg);
+	-webkit-transform: rotate(-138deg);
+	-o-transform: rotate(-138deg);
+	transition: 0.8s;
+	-o-transition: 0.8s;
+	-moz-transition: 0.8s;
+	-webkit-transition: 0.8s;
+}
+
+.egg_top_clear {
+	top: rem(-40);
+	left: rem(80);
+	opacity: 0;
+	transform: rotate(0);
+	-o-transform: rotate(0);
+	-webkit-transform: rotate(0);
+	-moz-transform: rotate(0);
+	-ms-transform: rotate(0);
+}
+
+.egg_number {
+	position: absolute;
+	top: rem(26);
+	left: rem(26);
+	width: rem(90);
+	height: rem(90);
+	background-image: url(../images/pcdd/drawAlottery/egg_n1.png);
+	background-size: cover;
+	z-index: 2;
+	transition: 0.8s;
+	-o-transition: 0.8s;
+	-moz-transition: 0.8s;
+	-webkit-transition: 0.8s;
+}
+
+.egg_box {
+	position: absolute;
+	bottom: rem(7);
+	width: rem(140);
+	height: rem(100);
+	background: url(../images/pcdd/drawAlottery/egg_box.png);
+	background-size: cover;
+	transition: 0.5s;
+	-o-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+
+.first_egg_number {
+	transform: scale(0.4);
+	-o-transform: scale(0.4);
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	-ms-transform: scale(0.4);
+	top: rem(-140);
+	left: rem(160);
+}
+
+.second_egg_number {
+	transform: scale(0.4);
+	-o-transform: scale(0.4);
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	-ms-transform: scale(0.4);
+	top: rem(-140);
+	left: rem(30);
+}
+
+.third_egg_number {
+	transform: scale(0.4);
+	-ms-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	-webkit-transform: scale(0.4);
+	-o-transform: scale(0.4);
+	top: rem(-296);
+	left: rem(175);
+}
+
+.clear {
+	opacity: 0;
+}
+
+.icon_bg {
+	position: absolute;
+	top: rem(220);
+	left:rem(150);
+	width: rem(375);
+	height: rem(256);
+	background-image: url(../images/pcdd/drawAlottery/Group.png);
+	background-size: cover;
+	animation: big 1.2s ease infinite;
+}
+
+@keyframes big {
+	0% {
+		transform: scale(0.8);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+
+/*动画*/
+.rebber {
+	animation: rubberBand 1s;
+}
+
+@keyframes rubberBand {
+	0% {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+	30% {
+		-webkit-transform: scale3d(1.1, .8, 1);
+		transform: scale3d(1.1, .8, 1)
+	}
+	40% {
+		-webkit-transform: scale3d(.8, 1.1, 1);
+		transform: scale3d(.8, 1.1, 1)
+	}
+	50% {
+		-webkit-transform: scale3d(1.1, .8, 1);
+		transform: scale3d(1.1, .8, 1)
+	}
+	65% {
+		-webkit-transform: scale3d(.95, 1.05, 1);
+		transform: scale3d(.95, 1.05, 1)
+	}
+	75% {
+		-webkit-transform: scale3d(1.05, .95, 1);
+		transform: scale3d(1.05, .95, 1)
+	}
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+}
+
+.tada {
+	animation: tada 1s;
+}
+
+@keyframes tada {
+	0% {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+	10%, 20% {
+		-webkit-transform: scale3d(.9, .9, .9) rotate(-3deg);
+		transform: scale3d(.9, .9, .9) rotate(-3deg)
+	}
+	30%, 50%, 70%, 90% {
+		-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+		transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+	}
+	40%, 60%, 80% {
+		-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+		transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+	}
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+}
+
+/*快乐六合彩*/
+.contentDice {
+	width: 100%; height: 100%; background: rgba(0,0,0,0.7); position: fixed; top: 0; left: 0; z-index: 3;
+}
+.conter {
+	width: rem(355);
+	height: rem(273);
+	background-image: url('../images/pcdd/dice/Rectangle.png');
+	position: absolute;
+	margin: auto;
+	margin-left: -47%;
+	left: 50%;
+	top: 110%;
+	transition: 0.6s;
+}
+.conter_t {
+	top: 30%;
+}
+.conter_1 {
+	top: 4%;
+	left: 80%;
+	transform: scale(0.2);
+	opacity: 0;
+	transition: 1.2s;
+}
+.close {
+	width: 18;
+	height: 18;
+ 	background-image: url('../images/pcdd/dice/del.png');
+	background-size: cover;
+	position: absolute;
+	top: rem(10);
+	right: rem(10);
+	cursor: pointer;
+}
+.icon {
+	width: rem(98);
+	height: rem(94);
+	background-image: url('../images/pcdd/dice/icon.png');
+	background-size: cover;
+	position: relative;
+	margin-left: rem(-52);
+	left: 50%;
+	top: -12%;
+}
+.icon_bg {
+	width: rem(114);
+	height: rem(78);
+	background-image: url('../images/pcdd/dice/Group.png');
+	background-size: cover;
+	animation: big 1.2s ease infinite;
+}
+@keyframes big {
+ 0% {
+transform: scale(1);
+opacity: 1;
+}
+ 100% {
+transform: scale(1.2);
+opacity: 0;
+}
+}
+.Period {
+	color: #d8ae59;
+	margin-top: rem(-20);
+	text-align: center;
+	transition: .8s;
+	font-size: 2.4vh;/*字体的大小*/
+}
+.game {
+	width: rem(150);
+	height: rem(140);
+	background-image: url('../images/pcdd/dice/cup.png');
+	background-size: cover;
+	margin-top: rem(15);
+	margin-left: rem(-75);
+	position: relative;
+	left: 50%;
+	animation: play 1s 4 ease;
+	overflow: visible;
+}
+.game.isplays {
+	width: rem(150);
+	height: rem(140);
+	background-image: url('../images/pcdd/dice/cup.png');
+	background-size: cover;
+	margin-top: rem(15);
+	margin-left: rem(-75);
+	position: relative;
+	left: 50%;
+	animation: plays 1s 4 ease;
+	overflow: visible;
+}
+.game div {
+	overflow: visible;
+}
+@keyframes play {
+ 0%, 100%, 20%, 50%, 80% {
+ transition-timing-function: cubic-bezier(0.215, .61, .355, 1); /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+ transform: translate3d(0, 0, 0); /*设置只在Z轴上移动*/
+}
+ 40%, 43% {
+ transition-timing-function: cubic-bezier(0.755, 0.50, 0.855, 0.060);
+ transform: translate3d(rem(2), rem(-10), 0);
+}
+ 70% {
+ transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+ transform: translate3d(rem(-2), rem(-10), 0);
+}
+ 90% {
+ transform: translate3d(0, rem(-10), 0);
+}
+}
+@keyframes plays {
+	0%, 100%, 20%, 50%, 80% {
+	transition-timing-function: cubic-bezier(0.215, .61, .355, 1); /*贝塞尔曲线 ： X1 Y1 X2 Y2*/
+	transform: translate3d(0, 0, 0); /*设置只在Z轴上移动*/
+   }
+	40%, 43% {
+	transition-timing-function: cubic-bezier(0.755, 0.50, 0.855, 0.060);
+	transform: translate3d(rem(2), rem(-10), 0);
+   }
+	70% {
+	transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	transform: translate3d(rem(-2), rem(-10), 0);
+   }
+	90% {
+	transform: translate3d(0, rem(-10), 0);
+   }
+   }
+/*动画部分*/
+.wrap {
+	perspective: rem(800);
+	perspective-origin: 50% rem(8);
+}
+.cube {
+	position: relative;
+	width: rem(16);
+	transform-style: preserve-3d;
+	transform-origin: 50% 50% 50%;
+	transform: rotateX(300deg) rotateY(135deg) rotateZ(0deg);/*立体空间角度变换*/
+	animation: roll 1.6s 2 linear;
+	animation: spin-duplicate 2s 2 linear;
+	transition: 0.3s;
+	
+}
+.cube_1 {
+	top: rem(56);
+	left: rem(42);
+}
+.cube_2 {
+	animation-delay: 0.2s;
+	top: rem(56);
+	left: rem(72);
+}
+.cube_3 {
+	animation-delay: 0.4s;
+	top: rem(56);
+	left: rem(100);
+}
+.cube div {
+	background-size: cover;
+	position: absolute;
+	width: rem(16);
+	height: rem(16);
+	overflow: visible;
+}
+.back {
+ background-image: url('../images/pcdd/dice/dice01.png');
+	transform: rotateX(180deg) translateZ(rem(8));
+}
+.right {
+ background-image: url('../images/pcdd/dice/dice02.png');
+	transform: rotateY(90deg) translateZ(rem(8));
+}
+.left {
+ background-image: url('../images/pcdd/dice/dice03.png');
+	transform: rotateY(-90deg) translateZ(rem(8));
+}
+.top {
+ background-image: url('../images/pcdd/dice/dice04.png');
+	transform: rotateX(90deg) translateZ(rem(8));
+}
+.bottom {
+ background-image: url('../images/pcdd/dice/dice05.png');
+	//transform: rotateX(90deg) translateZ(rem(8));
+	transform:rotateX(300deg) rotateY(135deg) rotateZ(0deg);
+}
+.front {
+ background-image: url('../images/pcdd/dice/dice06.png');
+	transform: rotateY(0deg) translateZ(rem(8));
+}
+/*骰子摇动的动画*/
+@keyframes spin-duplicate {
+	0% {
+		transform: translateZ(rem(-10)) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+	16% {
+		transform: translateZ(rem(-10)) rotateX(180deg) rotateY(180deg) rotateZ(0deg);
+	}
+	33% {
+		transform: translateZ(rem(-10)) rotateX(360deg) rotateY(90deg) rotateZ(180deg);
+	}
+	50% {
+		transform: translateZ(rem(-10)) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+	}
+	66% {
+		transform: translateZ(rem(-10)) rotateX(180deg) rotateY(360deg) rotateZ(270deg);
+	}
+	83% {
+		transform: translateZ(rem(-10)) rotateX(270deg) rotateY(360deg) rotateZ(360deg);
+	}
+	100% {
+		transform: translateZ(rem(-10)) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+	}
+}
+@keyframes roll {
+	0% {
+		transform: translate3d(rem(-20), rem(-5), rem(-40))
+	}
+	12% {
+		transform: translate3d(0, 0, rem(-10))
+	}
+	25% {
+		transform: translate3d(rem(20), rem(-5), rem(-40))
+	}
+	37% {
+		transform: translate3d(0, rem(-10), rem(-80))
+	}
+	50% {
+		transform: translate3d(rem(-20), rem(-5), rem(-40))
+	}
+	62% {
+		transform: translate3d(0, 0, rem(-10))
+	}
+	75% {
+		transform: translate3d(rem(20), rem(-5), rem(-40))
+	}
+	87% {
+		transform: translate3d(0, rem(-10), rem(-80))
+	}
+	100% {
+		transform: translate3d(rem(-20), rem(-5), rem(-40))
+	}
+}
+/*1-6号码对应的角度*/
+.one {
+	transform: rotateX(210deg) rotateY(0deg) rotateZ(135deg);
+}
+.two {
+	transform: rotateX(100deg) rotateY(-45deg) rotateZ(90deg);
+}
+.three {
+	transform: rotateX(-83deg) rotateY(-316deg) rotateZ(-265deg);
+}
+.four {
+	transform: rotateX(280deg) rotateY(135deg) rotateZ(0deg);
+}
+.five {
+	top: rem(64);
+	transform: rotateX(90deg) rotateY(45deg)
+	// transform: rotateX(125deg) rotateY(45deg) rotateZ(0deg);
+}
+.six {
+	transform: rotateX(20deg) rotateY(0deg) rotateZ(45deg);
+}
+
+
+/*快乐六合彩*/
+.contentMark {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: rgba(0,0,0,0.7);/*背景颜色*/
+	overflow: hidden;
+	top: 0; 
+	left: 0;
+	z-index: 10;
+}
+.contentMark div {
+	overflow: visible;
+}
+.skip {
+	position: absolute;
+	top: rem(30);
+	right: rem(14);
+	width: rem(60);
+	height: rem(46);
+	background-image: url('../images/pcdd/drawMark/skip.png');
+	background-size: cover;
+	z-index: 10;
+}
+.left_box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background-image: url('../images/pcdd/drawMark/door_l.png');
+	background-size: cover;
+	transition: 0.8s ease-in-out;
+}
+.roulette {
+	position: absolute;
+	top: 25%;
+	width: 55vw;
+	height: 55vw;
+	background-size: cover;
+	z-index: 10;
+}
+.roulette > div {
+	transition: 0.5s;
+}
+.roulette_l {
+    left: 45%;
+	background-image: url('../images/pcdd/drawMark/roulette_l.png');
+}
+.roulette_r {
+	right: 45%;
+	background-image: url('../images/pcdd/drawMark/roulette_r.png');
+}
+.animal_1 {
+	opacity: 0.3;
+	position: absolute;
+	top: -5vw;
+	left: 15vw;
+	transform: rotate(-15deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_1@2x.png');
+	background-size: cover;
+}
+.animal_2 {
+	opacity: 0.3;
+	position: absolute;
+	top: 2vw;
+	left: 2.5vw;
+	transform: rotate(-45deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_2@2x.png');
+	background-size: cover;
+}
+.animal_3 {
+	opacity: 0.3;
+	position: absolute;
+	top: 16.25vw;
+	left: -5vw;
+	transform: rotate(-75deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_3@2x.png');
+	background-size: cover;
+}
+.animal_4 {
+	opacity: 0.3;
+	position: absolute;
+	top: 30vw;
+	left: -4.5vw;
+	transform: rotate(-105deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_4@2x.png');
+	background-size: cover;
+}
+.animal_5 {
+	opacity: 0.3;
+	position: absolute;
+	top: 42.5vw;
+	left: 2.5vw;
+	transform: rotate(-135deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_5@2x.png');
+	background-size: cover;
+}
+.animal_6 {
+	opacity: 0.3;
+	position: absolute;
+	top: 50vw;
+	left: 15vw;
+	transform: rotate(-165deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_6@2x.png');
+	background-size: cover;
+}
+.animal_7 {
+	opacity: 0.3;
+	position: absolute;
+	top: 48.75vw;
+	right: 13.75vw;
+	transform: rotate(165deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_7@2x.png');
+	background-size: cover;
+}
+.animal_8 {
+	opacity: 0.3;
+	position: absolute;
+	top: 41.25vw;
+	right: 1.25vw;
+	transform: rotate(135deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_8@2x.png');
+	background-size: cover;
+}
+.animal_9 {
+	opacity: 0.3;
+	position: absolute;
+	top: 30vw;
+	right: -4.5vw;
+	transform: rotate(105deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_9@2x.png');
+	background-size: cover;
+}
+.animal_10 {
+	opacity: 0.3;
+	position: absolute;
+	top: 15vw;
+	right: -5vw;
+	transform: rotate(75deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_10@2x.png');
+	background-size: cover;
+}
+.animal_11 {
+	opacity: 0.3;
+	position: absolute;
+	top: 2.5vw;
+	right: 2vw;
+	transform: rotate(45deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_11@2x.png');
+	background-size: cover;
+}
+.animal_12 {
+	opacity: 0.3;
+	position: absolute;
+	top: -5vw;
+	right: 15vw;
+	transform: rotate(15deg);
+	width: rem(50);
+	height: rem(50);
+	background-image: url('../images/pcdd/drawMark/animal_12@2x.png');
+	background-size: cover;
+}
+.animal {
+	opacity: 1;
+}
+.right_box {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background-image: url('../images/pcdd/drawMark/door_r.png');
+	background-size: cover;
+	transition: 0.8s ease-in-out;
+}
+.right_box_1 {
+	right: -50%;
+}
+.left_box_1 {
+	left: -50%;
+}
+/*生肖改变动画*/
+.zodiacDrawed {
+	position: absolute;
+	top: 37.5%;
+	left: 87%;
+	width: rem(50);
+	height: rem(50);
+	border-radius: 50%;
+	background-image: url('../images/pcdd/drawMark/zodiac.png');
+	background-size: cover;
+	transition: 2s ease-in-out;
+	z-index: 12;
+}
+.zodiac_1 {
+	background-position: rem(-150) 0;
+}
+.light {
+	position: absolute;
+	top: 32%;
+	left: 50%;
+	margin-left: rem(-80);
+	width: rem(160);
+	height: rem(160);
+	background-image: url('../images/pcdd/drawMark/light.png');
+	background-size: cover;
+	opacity: 0.5;
+	animation: light 1.2s ease infinite;
+}
+ @keyframes light {
+ 0% {
+opacity: 0.4;
+transform: scale(0.95)
+}
+ 50% {
+opacity: 0.6;
+transform: scale(1)
+}
+ 100% {
+opacity: 0.4;
+transform: scale(0.95)
+}
+}
+.color.blue {
+	position: absolute;
+	top: 37%;
+	left: 50%;
+	margin-left: rem(-40);
+	width: rem(80);
+	height: rem(80);
+	background-image: url('../images/pcdd/drawMark/blue.png');
+	background-size: cover;
+	font-size: rem(46);
+	text-align: center;
+	line-height: rem(80);
+	color: #fff;
+	transition: 0.8s cubic-bezier(0, 1, 0.5, 1.5);
+	animation: light_1 1.2s ease infinite;
+}
+.color.green {
+	position: absolute;
+	top: 37%;
+	left: 50%;
+	margin-left: rem(-40);
+	width: rem(80);
+	height: rem(80);
+	background-image: url('../images/pcdd/drawMark/green.png');
+	background-size: cover;
+	font-size: rem(46);
+	text-align: center;
+	line-height: rem(80);
+	color: #fff;
+	transition: 0.8s cubic-bezier(0, 1, 0.5, 1.5);
+	animation: light_1 1.2s ease infinite;
+}
+.color.red {
+	position: absolute;
+	top: 37%;
+	left: 50%;
+	margin-left: rem(-40);
+	width: rem(80);
+	height: rem(80);
+	background-image: url('../images/pcdd/drawMark/red.png');
+	background-size: cover;
+	font-size: rem(46);
+	text-align: center;
+	line-height: rem(80);
+	color: #fff;
+	transition: 0.8s cubic-bezier(0, 1, 0.5, 1.5);
+	animation: light_1 1.2s ease infinite;
+}
+ @keyframes light_1 {
+ 0% {
+transform: scale(0.95)
+}
+ 50% {
+transform: scale(1)
+}
+ 100% {
+transform: scale(0.95)
+}
+}
+
+
+/*马尼拉梭哈 pk牛牛 云顶砸金花*/
+.contentStud {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: rgba(0,0,0,0.7);/*背景颜色*/
+	overflow: hidden;
+	top: 0; 
+	left: 0;
+	z-index: 3;
+}
+.region {
+	width: rem(360);
+	height: rem(240);
+	margin: 0 auto;
+	background-color:rgba(0,0,0,0.5);
+	box-sizing: border-box;
+	border:2px solid #f0c96c;
+	border-radius: rem(10);
+	position: relative;
+	-webkit-perspective: rem(600);
+	-moz-perspective: rem(600);
+	top: 100%;
+	left: 0;
+	transition: 0.6s;
+	overflow: visible;
+}
+.region_t {
+	 top: 35%;
+}
+.poker_cloudTop {
+	margin-left: rem(160);
+	left: 0;
+	top: rem(430);
+	transition: .3s;
+	transition-timing-function: ease-out;
+	position: absolute;
+	transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	box-shadow: 0 0 rem(10) #666;
+}
+
+.poker_showHand {
+	// margin-left: rem(5);
+	top: rem(130);
+	transition: .8s;
+	transition-timing-function: linear;
+	position: absolute;
+	transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	box-shadow: 0 0 rem(10) #666;
+}
+
+.poker {
+	float: left;
+	margin-left: rem(10);
+	margin-top: rem(20);
+	transition: 0.5s;
+	transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	box-shadow: 0 0 rem(10) #666;
+}
+
+.poker_bg {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	position: absolute;
+	transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	width: rem(60);
+	height: rem(84);
+	background-image: url('../images/showHand/sola/poker_bg.png');
+	background-size: cover;
+}
+.poker_bg.isgun {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+.poker_number {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	width: rem(60);
+	height: rem(84);
+	background-size: cover;
+}
+.hover {
+	transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	transition-timing-function: ease-in-out;
+}
+
+.poker_five {
+	transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+}
+.poker_five.hover {
+	transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+}
+.poker_one_l {
+	top: rem(130);
+	left: rem(-80);
+}
+.poker_two_l {
+	top: rem(130);
+	left: rem(-6);
+}
+.poker_three_l {
+	top: rem(130);
+	left: rem(70);
+}
+
+.poker_four_l {
+	top: rem(130);
+	left: rem(140);
+}
+.poker_five_l {
+	top: rem(130);
+	left: rem(210);
+}
+
+.poker_one_sh_l {
+	left: rem(11);
+}
+.poker_two_sh_l {
+	left: rem(79);
+}
+.poker_three_sh_l {
+	left: rem(148);
+}
+.poker_four_sh_l {
+	left: rem(217);
+}
+.poker_five_sh_l {
+	left: rem(286);
+}
+
+.Period {
+	color: #d8ae59;
+	text-align:center;
+	margin-top: rem(86);
+	transition: .8s;
+	font-size: 2.4vh;/*字体大小*/
+}
+.icon {
+	width: rem(100);
+	height: rem(100);
+	background-size: cover;
+	background-image: url('../images/showHand/sola/icon.png');
+	position: absolute;
+	top: rem(-200);
+	left: rem(6);
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	margin: auto;
+}
+.yuan1 {
+	position: absolute;
+	opacity: 0.2;
+	left: rem(3);
+	top: rem(-2);
+	width: rem(100);
+	height: rem(100);
+	outline-offset: rem(10);
+	border-radius: 50%;
+	box-shadow: 0 0 0 rem(2) #ffac3b;
+	animation: scaleout 1.3s infinite ease-in-out;
+}
+.yuan2 {
+	position: absolute;
+	opacity: 0.4;
+	left: rem(13);
+	top: rem(8);
+	width: rem(80);
+	height: rem(80);
+	outline-offset: 10;
+	border-radius: 50%;
+	box-shadow: 0 0 0 rem(4) #ffac3b;
+	animation: scaleout 1.3s infinite ease-in-out;
+}
+.yuan3 {
+	position: absolute;
+	left: rem(3);
+	top: rem(-2);
+	width: rem(100);
+	height: rem(100);
+	outline-offset: rem(10);
+	border-radius: 50%;
+	box-shadow: 0 0 0 rem(2) #ffac3b;
+	opacity: 0.1;
+}
+@keyframes scaleout {
+	0% {
+		transform: scale(1.0);
+	}
+	100% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+}
+.region_1 {/*点击关闭按钮后，整个的效果*/
+	top: 6%;
+	left: 30%;
+	transform: scale(0.2);
+	opacity: 0;
+	transition: 1.2s;
+}
+.close {
+	width: rem(24);
+	height: rem(24);
+	background-image: url('../images/showHand/sola/close.png');
+	background-size: cover;
+	position: absolute;
+	top: rem(6);
+	right: rem(6);
+}
+
+/*重庆时时彩*/
+.content {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #333;/*背景颜色*/
+	overflow: hidden;
+}
+.conter {
+	width: 88.75vw;
+	height: 68.25vw;
+	background-image: url('../images/pcdd/bomb/Rectangle.png');
+	background-size: cover;
+	position: absolute;
+	margin: auto;
+	margin-left: -45%;
+	left: 50%;
+	top: -40%;
+	transition: 0.3s;
+}
+.skip {/*跳过按钮的位置属性等*/
+	position: absolute;
+	bottom: 20vw;
+	right: 10vw;
+	width: 20vw;
+	height: 10vw;
+	color: #deba88;
+	text-align:center;
+	line-height:10vw;
+	border-radius:1vw;
+	border: 1px solids #000;
+	background-color: #333;
+	background-size: cover;
+	opacity:.8;
+}
+.conter_t {
+	top: 30%;
+}
+.conter_1 {
+	top: 4%;
+	left: 80%;
+	transform: scale(0.2);
+	opacity: 0;
+	transition: 1.2s;
+}
+.close {
+	width: 4.5vw;
+	height: 4.5vw;
+	background-image: url('../images/pcdd/bomb/close.png');
+	background-size: cover;
+	position: absolute;
+	top: 2.5vw;
+	right: 2.5vw;
+	cursor: pointer;
+}
+.icon {
+	width: 24.5vw;
+	height: 23.5vw;
+	background-image: url('../images/pcdd/bomb/icon.png');
+	background-size: cover;
+	position: relative;
+	margin-left: -13vw;
+	left: 50%;
+	top: -12%;
+}
+.icon_bg {
+	width: 28.5vw;
+	height: 19.5vw;
+	background-image: url('../images/pcdd/bomb/Group.png');
+	background-size: cover;
+	-webkit-animation: big 1.2s ease infinite;
+	animation: big 1.2s ease infinite;
+}
+@keyframes big {
+ 0% {
+transform: scale(1);
+opacity: 1;
+}
+ 100% {
+transform: scale(1.2);
+opacity: 0;
+}
+}
+.Period {
+	color: #d8ae59;
+	margin-top: -5vw;
+	text-align: center;
+	transition: .8s;
+	font-size: 2.4vh;/*字体的大小*/
+}
+.No {
+	position: absolute;
+	transform: scale(0.2);
+	top: 40vw;
+	opacity: 0;
+	width: 12vw;
+	height: 12vw;
+	background-size: cover;
+	transition: 0.8s cubic-bezier(0, 1, 0.72, 1.16);
+	
+	perspective: 200vw;
+}
+.shangxia{
+		-webkit-animation: shangxia 1.4s infinite ease;
+		animation: shangxia 1.4s infinite ease;
+	}
+ @keyframes shangxia {
+ 0% {
+	 opacity: 1;
+transform: translateY(0px)
+}
+ 50% {
+	 opacity: 1;
+transform: translateY(1vw)
+}
+ 100% {
+	 opacity: 1;
+transform: translateY(0px)
+}
+}
+.No_1 {
+	left: 10vw;
+}
+.No_1 span{
+	display: block;
+	transition:.8s ease-in-out;
+	transform-origin:center center;
+	width:100%;
+	height:100%;
+	background-image: url('../images/pcdd/bomb/egg_n1.png');
+}
+.img_1{ transform:rotate(-15deg)}
+.No_2 {
+	left: 25vw;
+}
+.No_2 span{
+	display: block;
+	transition:.8s ease-in-out;
+	transform-origin:bottom center;
+	width:100%;
+	height:100%;
+	background-image: url('../images/pcdd/bomb/egg_n1.png');
+}
+.img_2{ transform:rotate(10deg)}
+.No_3 {
+	left: 40vw;
+}
+.No_3 span{
+	display: block;
+	transition:.8s ease-in-out;
+	transform-origin:bottom center;
+	width:100%;
+	height:100%;
+	background-image: url('../images/pcdd/bomb/egg_n1.png');
+}
+.img_3{ transform:rotate(20deg)}
+.No_4 {
+	left: 55vw;
+}
+.No_4 span{
+	display: block;
+	transition:.8s ease-in-out;
+	transform-origin:bottom center;
+	width:100%;
+	height:100%;
+	background-image: url('../images/pcdd/bomb/egg_n1.png');
+}
+.img_4{ transform:rotate(-3deg)}
+.No_5 {
+	left: 70vw;
+}
+.No_5 span{
+	display: block;
+	transition:.8s ease-in-out;
+	transform-origin:bottom center;
+	width:100%;
+	height:100%;
+	background-image: url('../images/pcdd/bomb/egg_n1.png');
+}
+.img_5{ transform:rotate(10deg)}
+.No_x {
+	-webkit-animation: yidong .8s ease 1;
+	animation: yidong .8s ease 1;
+}
+@keyframes yidong {
+0%, 60%, 75%, 90%, to {
+-webkit-animation-timing-function:cubic-bezier(.215, .61, .355, 1);
+animation-timing-function:cubic-bezier(.215, .61, .355, 1)
+}
+0% {
+opacity:0;
+transform:translate3d(0, 0px, 0) scale(0.2)
+}
+30% {
+ transform:translate3d(0, -20vw, 0) scale(0.5)
+}
+60% {
+opacity:1;
+-webkit-transform:translate3d(0, 2.5vw, 0);
+transform:translate3d(0, 2.5vw, 0)
+}
+75% {
+	opacity:1;
+-webkit-transform:translate3d(0, -1vw, 0);
+transform:translate3d(0, -1vw, 0)
+}
+90% {
+	opacity:1;
+-webkit-transform:translate3d(0, 0px, 0);
+transform:translate3d(0, 0px, 0)
+}
+to {
+	opacity:1;
+-webkit-transform:none;
+transform:none
+}
+}
+.boo {
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(50% 96%, #D10101 47%, #940000 64%, #660000 96%);
+}
+.bomb {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vw;
+	background-image: url('../images/pcdd/bomb/bomb.png');
+	background-size: cover;
+	transition: 0.5s;
+}
+.shuzi {
+	position: absolute;
+	top: 33vw;
+	left: 44vw;
+	width: 17.5vw;
+	height: 17.5vw;
+	transition: 0.5s;
+	background-image: url('../images/pcdd/bomb/03.png');
+	background-size: cover;
+}
+/*倒计时动画*/
+/*.loadEffect {
+	width: 27.5vw;
+	height: 27.5vw;
+	position: relative;
+	top: 26.5vw;
+	left: 38vw;
+}
+.loadEffect span {
+	display: inline-block;
+	transform-origin: center center;
+	width: 3vw;
+	height: 5vw;
+	border-radius: 50%;
+	background-image: url('../images/pcdd/bomb/scale.png');
+	background-size: cover;
+	position: absolute;
+	-webkit-animation: load .9s ease infinite;
+}
+ @-webkit-keyframes load {
+ 0% {
+ opacity: 1;
+}
+ 100% {
+ opacity: 0.2;
+}
+}
+.loadEffect span:nth-child(1) {
+	transform: rotate(0deg);
+	left: 13vw;
+	top: 0;
+	-webkit-animation-delay: 0.05s;
+}
+.loadEffect span:nth-child(2) {
+	transform: rotate(20deg);
+	top: .75vw;
+	left: 17.5vw;
+	-webkit-animation-delay: 0.1s;
+}
+.loadEffect span:nth-child(3) {
+	transform: rotate(40deg);
+	top: 3vw;
+	left: 21.26vw;
+	-webkit-animation-delay: 0.15s;
+}
+.loadEffect span:nth-child(4) {
+	transform: rotate(60deg);
+	top: 6.5vw;
+	left: 24.25vw;
+	-webkit-animation-delay: 0.2s;
+}
+.loadEffect span:nth-child(5) {
+	transform: rotate(80deg);
+	top: 10.75vw;
+	left: 25.75vw;
+	-webkit-animation-delay: 0.25s;
+}
+.loadEffect span:nth-child(6) {
+	transform: rotate(100deg);
+	top: 15.25vw;
+	left: 25.75vw;
+	-webkit-animation-delay: 0.3s;
+}
+.loadEffect span:nth-child(7) {
+	transform: rotate(120deg);
+	top: 19.5vw;
+	left: 24.25vw;
+	-webkit-animation-delay: 0.35s;
+}
+.loadEffect span:nth-child(8) {
+	transform: rotate(140deg);
+	top: 23vw;
+	left: 21.25vw;
+	-webkit-animation-delay: 0.4s;
+}
+.loadEffect span:nth-child(9) {
+	transform: rotate(160deg);
+	top: 25.25vw;
+	left: 17.5vw;
+	-webkit-animation-delay: 0.45s;
+}
+.loadEffect span:nth-child(10) {
+	transform: rotate(180deg);
+	top: 26vw;
+	left: 13vw;
+	-webkit-animation-delay: 0.5s;
+}
+.loadEffect span:nth-child(11) {
+	transform: rotate(200deg);
+	top: 25.25vw;
+	left: 8.5vw;
+	-webkit-animation-delay: 0.55s;
+}
+.loadEffect span:nth-child(12) {
+	transform: rotate(220deg);
+	top: 23vw;
+	left: 4.5vw;
+	-webkit-animation-delay: 0.6s;
+}
+.loadEffect span:nth-child(13) {
+	transform: rotate(240deg);
+	top: 19.5vw;
+	left: 1.75vw;
+	-webkit-animation-delay: 0.65s;
+}
+.loadEffect span:nth-child(14) {
+	transform: rotate(260deg);
+	top: 15.25vw;
+	left: .25vw;
+	-webkit-animation-delay: 0.7s;
+}
+.loadEffect span:nth-child(15) {
+	transform: rotate(280deg);
+	top: 10.75vw;
+	left: .25vw;
+	-webkit-animation-delay: 0.75s;
+}
+.loadEffect span:nth-child(16) {
+	transform: rotate(300deg);
+	top: 6.5vw;
+	left: 1.75vw;
+	-webkit-animation-delay: 0.8s;
+}
+.loadEffect span:nth-child(17) {
+	transform: rotate(320deg);
+	top: 3vw;
+	left: 4.75vw;
+	-webkit-animation-delay: 0.85s;
+}
+.loadEffect span:nth-child(18) {
+	transform: rotate(340deg);
+	top: .75vw;
+	left: 8.5vw;
+	-webkit-animation-delay: 0.9s;
+}*/
+.fireworks {
+	position: absolute;
+	left: 13.5vw;
+	bottom: 64vw;
+	width: 50vw;
+	height: 50vw;
+	background-image: url('../images/pcdd/bomb/artboard_bg.png');
+	background-size: cover;
+	opacity: 0;/*		animation: play 1s ease;*/
+}
+.bg_1 {
+	position: absolute;
+	width: 45vw;
+	height: 45vw;
+	background-image: url('../images/pcdd/bomb/artboard.png');
+	background-size: cover;
+}
+.bg_2 {
+	position: absolute;
+	top: 12.5vw;
+	left: 12.5vw;
+	width: 20vw;
+	height: 20vw;
+	background-image: url('../images/pcdd/bomb/fireworks_bg.png');
+	background-size: cover;
+}
+.bg_3 {
+	position: absolute;
+	top: 12.5vw;
+	left: 12.5vw;
+	width: 20vw;
+	height: 20vw;
+	background-image: url('../images/pcdd/bomb/fireworks.png');
+	background-size: cover;
+}
+.play {
+	-webkit-animation: play .9s ease-in-out;
+	animation: play 1s ease-in-out;
+}
+ @keyframes play {
+ 0% {
+transform: scale(1.2) translateX(.5vw) translateY(.5vw);
+opacity: 1;
+}
+ 10% {
+transform: scale(1) translateX(1vw) translateY(1vw);
+opacity: .8;
+}
+ 20% {
+transform: scale(1.2) translateX(1.5vw) translateY(1.5vw);
+opacity: 1;
+}
+ 30% {
+transform: scale(1) translateX(5vw) translateY(5vw);
+opacity: .8;
+}
+ 40% {
+transform: scale(1.2) translateX(2.5vw) translateY(2.5vw);
+opacity: 1;
+}
+ 50% {
+transform: scale(1) translateX(2.5vw) translateY(2.5vw);
+opacity: .8;
+}
+ 60% {
+transform: scale(1.2) translateX(2.5vw) translateY(2.5vw);
+opacity: 1;
+}
+ 70% {
+transform: scale(1) translateX(2.5vw) translateY(2.5vw);
+opacity: .8;
+}
+ 90% {
+transform: scale(1.2) translateX(2.5vw) translateY(2.5vw);
+opacity: 1;
+}
+
+ 100% {
+transform: scale(6) translateX(5vw) translateY(5vw);
+opacity: .8;
+}
+}
+.shake {
+	-webkit-animation-name: shake;
+	animation-name: shake;
+	animation-duration: 1s;
+}
+ @keyframes shake {
+2% {
+transform:translate(-.125vw, .125vw) rotate(-.5deg)
+}
+4% {
+transform:translate(.625vw, .125vw) rotate(-.5deg)
+}
+6% {
+transform:translate(-.125vw, .375vw) rotate(1.5deg)
+}
+8% {
+transform:translate(.125vw, .125vw) rotate(-.5deg)
+}
+10% {
+transform:translate(-.125vw, -.375vw) rotate(-.5deg)
+}
+12% {
+transform:translate(.125vw, -.125vw) rotate(1.5deg)
+}
+14% {
+transform:translate(.375vw, .625vw) rotate(-.5deg)
+}
+16% {
+transform:translate(-.125vw, -.125vw) rotate(.5deg)
+}
+18% {
+transform:translate(.625vw, .125vw) rotate(.5deg)
+}
+20% {
+transform:translate(.125vw, -.375vw) rotate(-.5deg)
+}
+22% {
+transform:translate(.625vw, .625vw) rotate(-.5deg)
+}
+24% {
+transform:translate(2.5px, 1.5px) rotate(1.5deg)
+}
+26% {
+transform:translate(.125vw, .375vw) rotate(-.5deg)
+}
+28% {
+transform:translate(.375vw, .125vw) rotate(.5deg)
+}
+30% {
+transform:translate(-.375vw, .625vw) rotate(1.5deg)
+}
+32% {
+transform:translate(.125vw, .125vw) rotate(.5deg)
+}
+34% {
+transform:translate(.125vw, .375vw) rotate(1.5deg)
+}
+36% {
+transform:translate(.625vw, -.125vw) rotate(1.5deg)
+}
+38% {
+transform:translate(.125vw, .375vw) rotate(1.5deg)
+}
+40% {
+transform:translate(.625vw, .375vw) rotate(1.5deg)
+}
+42% {
+transform:translate(.625vw, -.375vw) rotate(.5deg)
+}
+44% {
+transform:translate(.125vw, -.125vw) rotate(.5deg)
+}
+46% {
+transform:translate(.375vw, -.375vw) rotate(.5deg)
+}
+48% {
+transform:translate(-375vw, -.125vw) rotate(.5deg)
+}
+50% {
+transform:translate(.625vw, -.375vw) rotate(1.5deg)
+}
+52% {
+transform:translate(.125vw, .375vw) rotate(.5deg)
+}
+54% {
+transform:translate(.625vw, -.125vw) rotate(.5deg)
+}
+56% {
+transform:translate(.625vw, .625vw) rotate(.5deg)
+}
+58% {
+transform:translate(.625vw, .375vw) rotate(-.5deg)
+}
+60% {
+transform:translate(.375vw, .375vw) rotate(-.5deg)
+}
+62% {
+transform:translate(-.125vw, .125vw) rotate(-.5deg)
+}
+64% {
+transform:translate(.625vw, .375vw) rotate(-.5deg)
+}
+66% {
+transform:translate(-.675vw, .125vw) rotate(1.5deg)
+}
+68% {
+transform:translate(.375vw, -.375vw) rotate(.5deg)
+}
+70% {
+transform:translate(.125vw, .125vw) rotate(-.5deg)
+}
+72% {
+transform:translate(-.125vw, .375vw) rotate(1.5deg)
+}
+74% {
+transform:translate(-.375vw, .375vw) rotate(1.5deg)
+}
+76% {
+transform:translate(.625vw, -.125vw) rotate(.5deg)
+}
+78% {
+transform:translate(.625vw, .625vw) rotate(.5deg)
+}
+80% {
+transform:translate(-.375vw, .625vw) rotate(.5deg)
+}
+82% {
+transform:translate(-.375vw, -.125vw) rotate(.5deg)
+}
+84% {
+transform:translate(.125vw, .375vw) rotate(-.5deg)
+}
+86% {
+transform:translate(-.125vw, .625vw) rotate(.5deg)
+}
+88% {
+transform:translate(.625vw, .625vw) rotate(1.5deg)
+}
+90% {
+transform:translate(-.125vw, -.375vw) rotate(-.5deg)
+}
+92% {
+transform:translate(.375vw, .125vw) rotate(.5deg)
+}
+94% {
+transform:translate(-.125vw, -.125vw) rotate(.5deg)
+}
+96% {
+transform:translate(.375vw, .125vw) rotate(1.5deg)
+}
+98% {
+transform:translate(.125vw, -.125vw) rotate(1.5deg)
+}
+0%, 100% {
+transform:translate(0, 0) rotate(0)
+}
+ }

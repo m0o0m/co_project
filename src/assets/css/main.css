@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body {
+  background-color: #f6f6f6; }
+
+div {
+  height: auto;
+  overflow: hidden; }
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}

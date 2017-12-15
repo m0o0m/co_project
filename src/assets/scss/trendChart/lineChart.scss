@@ -1,0 +1,237 @@
+@charset "utf-8";
+@import '../rem';
+$designWidth: 375;
+body,html {
+  height:100%;
+  overflow: hidden;
+}
+#app {
+  height:100%;
+  overflow: hidden;
+
+}
+/**/
+.chartFix {
+  display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row;
+}
+/**/
+.chartMun {
+  width: 100%; height: rem(95); position: fixed; top: 0; left: 0; z-index: 2;
+}
+.lineChart {
+  height:100%;
+  overflow: hidden;
+}
+.lineChart_title {
+  width: 100%; height: rem(55); line-height: rem(55); background: url('../../images/trendChart/topBack.png') top left no-repeat; background-size: 100% auto; font-size: rem(16); color: #fff; text-align: center; position: relative;
+}
+.lineChart_title img {
+  width: rem(25); position: absolute; left: rem(10); top: rem(15);
+}
+.chartNav {
+  background: #FDBB51; /*box-shadow: inset 0 0 rem(2) 0 rgba(0,0,0,0.10);*/ height: rem(40);
+}
+.chartNav li {
+  flex: 1; text-align: center; font-size: rem(14); color: #333333;
+}
+.chartNav li p {
+  display: inline-block; height: rem(30); line-height: rem(30); padding: 0 rem(10); border-radius: rem(1); margin-top: rem(5);
+}
+.chartNav li.on p {
+  background: #272324; color: #fff;
+}
+.chartNav li.on p span {
+  position: relative; z-index: 3;
+}
+#chartForm {
+  background: rgb(39,35,36); border: 1px solid #464646; border-top: none; border-right: none; height: 100%; position: relative; overflow-y: auto;
+}
+.chartArticle {
+  font-size: rem(12); color: #fff; height: rem(30); line-height: rem(30); border-bottom: 1px solid #464646;
+}
+.chartArticle section:first-child {
+  min-width: rem(90); text-align: center; border-right: 1px solid #464646;
+}
+.chartArticle section:nth-child(2) {
+  flex: 1;
+}
+.chartCombination {
+  height: rem(40); line-height: rem(40);
+}
+.chartArticle section.combination p {
+  flex: 1; border-right: 1px solid #464646; text-align: center;
+}
+.chartArt p {
+  flex: 1; text-align: center; border-right: 1px solid #464646;
+}
+.chartArt p.on span {
+  width: rem(26); height: rem(26); line-height: rem(26); background: #FDBB51; color: #333; border-radius: 50%; display: inline-block;
+}
+#myCanvas {
+  position: absolute; top: 0; left: 0; z-index: 1;
+}
+.myCanvas {
+  position: absolute; top: rem(85); left: 0; z-index: 1;
+}
+.chartNoNav {
+  font-size: rem(12); height: rem(30); line-height: rem(30); color: #fff; background: #191919; border: 1px solid #464646; border-bottom: none; border-right: none;
+}
+.chartNoNav li.two {
+  flex: 1; text-align: center; border-right: 1px solid #464646;
+}
+.chartNoNav li.one {
+  width: rem(90); display: inline-block; text-align: center; border-right: 1px solid #464646;
+}
+.chartColor {
+  height:80%;
+  overflow: auto;
+}
+.chartColor.chartColors {
+  height:auto;
+  overflow: hidden;
+}
+.chartDouble.chartDouble_yd p.two {
+  flex: 1; text-align: center; border-right: 1px solid #464646; font-size: rem(12); color: #fff; height: rem(50); line-height: rem(50); border-bottom: 1px solid #464646;
+}
+.chartDouble p.two {
+  flex: 1; text-align: center; border-right: 1px solid #464646; font-size: rem(12); color: #fff; height: rem(30); line-height: rem(30); border-bottom: 1px solid #464646;
+}
+.chartDouble p.two.greenBG span  {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(73,184,100),rgb(32,110,49));  background: -webkit-linear-gradient(top,rgb(73,184,100),rgb(32,110,49)); border:1px solid #464646;
+}
+.chartDouble p.two.blackBG span  {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block;  background:#000; border:1px solid #464646;
+}
+.chartDouble p.two.redBG span  {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(236,49,49),rgb(204,10,10));  background: -webkit-linear-gradient(top,rgb(236,49,49),rgb(204,10,10)); border:1px solid #464646;
+}
+.chartDouble p.one {
+  width: rem(90); text-align: center; border-right: 1px solid #464646; font-size: rem(12); color: #fff; height: rem(30); line-height: rem(30); border-bottom: 1px solid #464646;
+}
+.chartDouble.chartDouble_yd p.one {
+  width: rem(90); text-align: center; border-right: 1px solid #464646; font-size: rem(12); color: #fff; height: rem(50); line-height: rem(50); border-bottom: 1px solid #464646;
+}
+.chartDouble p.red span {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(236,49,49),rgb(204,10,10));  background: -webkit-linear-gradient(top,rgb(236,49,49),rgb(204,10,10)); border-radius: 50%;
+}
+.chartDouble p.green span {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(73,184,100),rgb(32,110,49));  background: -webkit-linear-gradient(top,rgb(73,184,100),rgb(32,110,49)); border-radius: 50%;
+}
+.chartDouble p.blue span {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(1,144,222),rgb(14,110,49));  background: -webkit-linear-gradient(top,rgb(1,144,222),rgb(14,21,131)); border-radius: 50%;
+}
+.chartDouble p.gray span {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(69,71,72),rgb(51,51,51));  background: -webkit-linear-gradient(top,rgb(69,71,72),rgb(51,51,51)); border-radius: 50%;
+}
+
+.chartArticle section.combination p.red span:first-of-type {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(236,49,49),rgb(204,10,10));  background: -webkit-linear-gradient(top,rgb(236,49,49),rgb(204,10,10)); border-radius: 50%; margin-right: rem(2);
+}
+.chartArticle section.combination p.green span:first-of-type {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(73,184,100),rgb(32,110,49));  background: -webkit-linear-gradient(top,rgb(73,184,100),rgb(32,110,49)); border-radius: 50%; margin-right: rem(2);
+}
+.chartArticle section.combination p.blue span:first-of-type {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(1,144,222),rgb(14,110,49));  background: -webkit-linear-gradient(top,rgb(1,144,222),rgb(14,21,131)); border-radius: 50%; margin-right: rem(2);
+}
+.chartArticle section.combination p.gray span:first-of-type {
+  width: rem(20); height: rem(20); line-height: rem(20); display: inline-block; background: linear-gradient(top,rgb(69,71,72),rgb(51,51,51));  background: -webkit-linear-gradient(top,rgb(69,71,72),rgb(51,51,51)); border-radius: 50%; margin-right: rem(2);
+}
+.chartDragonLeft {
+  width: rem(60); font-size: rem(12); color: #fff; text-align: center; border-right: 1px solid #464646; height: auto; overflow: hidden;
+}
+.chartDragonLefts {
+  width: rem(100); font-size: rem(12); color: #fff; text-align: center; border-right: 1px solid #464646; height: auto; overflow: hidden;
+}
+.chartDragonLefts .chartDrgTop {
+  height: rem(30); line-height: rem(30); background: #191919;
+}
+.chartDragonLefts .chartDrgNum {
+  background: rgb(39,35,36); line-height: rem(36);
+}
+.chartDragonLefts .chartDrgNum p {
+  border-bottom: 1px solid #464646; box-sizing: border-box; -webkit-box-sizing: border-box;
+ }
+.chartDragonRights {
+ background: #191919; width: 100%;position: relative;
+}
+.chartDrgArticle.chartDrgArticles {
+  position: absolute; overflo-x: srcoll;
+}
+.chartDrgNavs {
+  min-height: rem(30.5);line-height: rem(30.5);
+}
+.chartDrgNavs p {
+  width: rem(105); float: left; font-size: rem(12); color: #fff; text-align: center; border-right: 1px solid #464646;
+}
+.chartDrgNavs.chartDrgNav_mn p {
+  width: rem(35); float: left; font-size: rem(12); color: #fff; text-align: center; border-right: 1px solid #464646;
+}
+.chartDrgCls.chartDrgClss {
+  border-bottom: 1px solid #464646; background: #272324;
+}
+.chartDrgContents p {
+  width: rem(105); float: left; font-size: rem(12); color: #F6CA5B; text-align: center; border-right: 1px solid #464646; line-height: rem(36);
+}
+.chartDrgContents .chartDrgClss_mn p {
+  width: rem(35); float: left; font-size: rem(12); color: #F6CA5B; text-align: center; border-right: 1px solid #464646; line-height: rem(36);
+}
+.chartDrgContents p.red {
+  color: #F3112C;
+}
+.chartDragonLeft .chartDrgTop {
+  height: rem(30); line-height: rem(30); background: #191919;
+}
+.chartDragonLeft .chartDrgNum {
+  background: rgb(39,35,36); line-height: rem(36);
+}
+.chartDragonLeft .chartDrgNum p {
+  border-bottom: 1px solid #464646;
+}
+.chartDragonRight {
+  height: rem(30); line-height: rem(30); background: #191919; width: 100%; position: relative;
+}
+.chartDrgArticle {
+  position: absolute; overflo-x: srcoll;
+}
+.chartDrgNav p {
+    width: rem(30); float: left; font-size: rem(12); color: #fff; text-align: center; border-right: 1px solid #464646;
+  }
+.chartDrgCls {
+  border-bottom: 1px solid #464646; background: #272324;
+}
+.chartDrgContent p {
+  width: rem(30); float: left; font-size: rem(12); color: #F6CA5B; text-align: center; border-right: 1px solid #464646; line-height: rem(36);
+}
+.chartDrgContent p.red {
+  color: #F3112C;
+}
+.pai {
+  display: inline-block;
+  width:rem(25);
+  height:rem(40);
+  padding-top:rem(7) ;
+  box-sizing: border-box;
+  img {
+    width: 100%;
+  }
+}
+
+
+.lineChart_titleIos {
+  width: 100%; height: rem(72);
+}
+.lineChart_titleIos3 {
+  width: 100%; height: rem(40);
+}
+.lineChart_titleIos1 {
+  width: 100%; height: rem(30);
+}
+.lineChart_titleIos4 {
+  width: 100%; height: rem(70);
+}
+.lineChart_titleIos5 {
+  width: 100%; height: rem(40);
+}
+.lineChart_titleIos6 {
+  width: 100%; height: rem(13);
+}

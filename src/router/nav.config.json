@@ -1,0 +1,402 @@
+[
+  {
+    "title": "",
+    "icon": "el-icon-message",
+    "list": [
+      {
+        "title": "登录",
+        "name": "quickPage",
+        "path": "/quickPage",
+        "filePath": "/quickPage",
+        "icon": ""
+      },
+      {
+        "title": "登录",
+        "name": "login",
+        "path": "/lottery/login",
+        "filePath": "/login/index",
+        "icon": ""
+      },
+      {
+        "title": "首页",
+        "name": "home",
+        "path": "/home",
+        "filePath": "/homeNew.vue",
+        "icon": ""
+      },
+      {
+        "title": "注册",
+        "name": "register",
+        "path": "/lottery/login/register",
+        "filePath":"/login/register",
+        "icon": ""
+      },
+      {
+        "title": "忘记密码",
+        "name": "back-pass",
+        "path": "/lottery/login/back-pass",
+        "filePath": "/login/back-pass",
+        "icon": ""
+      },
+      {
+        "title": "开奖信息",
+        "name": "theLottery",
+        "path": "/lottery/theLottery/index",
+        "filePath": "/home/theLottery/index",
+        "icon": ""
+      },
+      {
+        "title": "开奖信息详情",
+        "name": "theLotteryDetails",
+        "path": "/lottery/theLottery/theLotteryDetails",
+        "filePath": "/home/theLottery/theLotteryDetails",
+        "icon": ""
+      },
+      {
+        "title": "投注记录",
+        "name": "betting",
+        "path": "/lottery/betting/index",
+        "filePath": "/home/betting/index",
+        "icon": ""
+      },
+      {
+        "title": "pc蛋蛋",
+        "name": "pcdd",
+        "path": "/lottery/pcdd/index",
+        "filePath": "/color/pcdd/index",
+        "icon": ""
+      },
+      {
+        "title": "西部番摊",
+        "name": "western",
+        "path": "/lottery/western/index",
+        "filePath": "/color/western/index",
+        "icon": ""
+      },
+      {
+        "title": "华夏牌九",
+        "name": "paiGow",
+        "path": "/lottery/paiGow/index",
+        "filePath": "/color/paiGow/index",
+        "icon": ""
+      },
+      {
+        "title": "皇家二八杠",
+        "name": "Royal",
+        "path": "/lottery/Royal/index",
+        "filePath": "/color/Royal/index",
+        "icon": ""
+      },
+      {
+        "title": "俄罗斯大转盘",
+        "name": "turnTable",
+        "path": "/lottery/turnTable/index",
+        "filePath": "/color/turnTable/index",
+        "icon": ""
+      },
+      {
+        "title": "马尼拉梭哈",
+        "name": "showHand",
+        "path": "/lottery/showHand/index",
+        "filePath": "/color/showHand/index",
+        "icon": ""
+      },
+      {
+        "title": "pk牛牛",
+        "name": "pknn",
+        "path": "/lottery/pknn/index",
+        "filePath": "/color/pknn/index",
+        "icon": ""
+      },
+      {
+        "title": "云顶炸金花",
+        "name": "cloudTop",
+        "path": "/lottery/cloudTop/index",
+        "filePath": "/color/cloudTop/index",
+        "icon": ""
+      },
+      {
+        "title": "泳神争霸",
+        "name": "swim",
+        "path": "/lottery/swim/index",
+        "filePath": "/color/swim/index",
+        "icon": ""
+      },
+      {
+        "title": "济州岛赛马",
+        "name": "racing",
+        "path": "/lottery/racing/index",
+        "filePath": "/color/racing/index",
+        "icon": ""
+      },
+      {
+        "title": "苏格兰农场",
+        "name": "farm",
+        "path": "/lottery/farm/index",
+        "filePath": "/color/farm/index",
+        "icon": ""
+      },
+      {
+        "title": "投注记录",
+        "name": "betRecord",
+        "path": "/lottery/betting/record",
+        "filePath": "/home/betting/record",
+        "icon": ""
+      },
+      {
+        "title": "投注记录详情",
+        "name": "betRecordDetail",
+        "path": "/lottery/betting/details",
+        "filePath": "/home/betting/details",
+        "icon": ""
+      },
+
+      {
+        "title": "规则",
+        "name": "rule",
+        "path": "/lottery/rule",
+        "filePath": "/rule/index",
+        "icon": ""
+      },
+
+      {
+        "title": "个人中心",
+        "name": "personal",
+        "path": "/lottery/personal/index",
+        "filePath": "/personal/index",
+        "icon": ""
+      },
+      {
+        "title": "手机号管理",
+        "name": "phoneManagement",
+        "path": "/lottery/personal/management",
+        "filePath": "/personal/management",
+        "icon": ""
+      },
+      {
+        "title": "登陆密码管理",
+        "name": "loginPass",
+        "path": "/lottery/personal/loginPass",
+        "filePath": "/personal/login-pass",
+        "icon": ""
+      },
+      {
+        "title": "提现密码管理",
+        "name": "withdrawals",
+        "path": "/lottery/personal/withdrawals",
+        "filePath": "/personal/withdrawals",
+        "icon": ""
+      },
+      {
+        "title": "银行卡管理",
+        "name": "bankCard",
+        "path": "/lottery/personal/bankCard",
+        "filePath": "/personal/bank-card",
+        "icon": ""
+      },
+      {
+        "title": "添加银行卡",
+        "name": "addCard",
+        "path": "/lottery/personal/addCard",
+        "filePath": "/personal/add-card",
+        "icon": ""
+      },
+      {
+        "title": "开户返佣",
+        "name": "rebate",
+        "path": "/lottery/personal/rebate",
+        "filePath": "/personal/rebate",
+        "icon": ""
+      },
+      {
+        "title": "提现",
+        "name": "cash",
+        "path": "/lottery/personal/money",
+        "filePath": "/personal/money",
+        "icon": ""
+      },
+      {
+        "title": "提现记录",
+        "name": "moneyHistory",
+        "path": "/lottery/personal/moneyHistory",
+        "filePath": "/personal/moneyHistory",
+        "icon": ""
+      },
+      {
+        "title": "资金明细",
+        "name": "assetsDetail",
+        "path": "/lottery/personal/assetsDetail",
+        "filePath": "/personal/assetsDetail",
+        "icon": ""
+      },
+      {
+        "title": "公告列表",
+        "name": "announcement",
+        "path": "/lottery/personal/announcement",
+        "filePath": "/color/personal/announcement",
+        "icon": ""
+      },
+      {
+        "title": "公告详情",
+        "name": "announcementDa",
+        "path": "/lottery/personal/announcement-da",
+        "filePath": "/color/personal/announcement-da",
+        "icon": ""
+      },
+      {
+        "title": "个人充值",
+        "name": "addMoney",
+        "path": "/lottery/personal/add-money",
+        "filePath": "/personal/add-money",
+        "icon": ""
+      },
+      {
+        "title": "充值记录",
+        "name": "moneyHis",
+        "path": "/lottery/personal/money-his",
+        "filePath": "/personal/money-his",
+        "icon": ""
+      },
+      {
+        "title": "微信充值",
+        "name": "weixinRech",
+        "path": "/lottery/personal/weixin-rech",
+        "filePath": "/personal/weixin-rech",
+        "icon": ""
+      },
+      {
+        "title": "线上充值",
+        "name": "onlineRech",
+        "path": "/lottery/personal/online-rech",
+        "filePath": "/personal/online-rech",
+        "icon": ""
+      },
+      {
+        "title": "在线充值(姓名等)",
+        "name": "onlineRechName",
+        "path": "/lottery/personal/onlinep",
+        "filePath": "/personal/onlinep",
+        "icon": ""
+      },
+      {
+        "title": "宝贵意见",
+        "name": "feedBack",
+        "path": "/lottery/personal/feedBack",
+        "filePath": "/personal/feedBack",
+        "icon": ""
+      },
+      {
+        "title": "公告列表",
+        "name": "annList",
+        "path": "/lottery/personal/annList",
+        "filePath": "/personal/annList",
+        "icon": ""
+      },
+      {
+        "title": "公告详情",
+        "name": "annDetail",
+        "path": "/lottery/personal/annDetail",
+        "filePath": "/personal/annDetail.vue",
+        "icon": ""
+      },
+      {
+        "title": "关于我们",
+        "name": "aboutUs",
+        "path": "/lottery/personal/aboutUs",
+        "filePath": "/personal/aboutUs.vue",
+        "icon": ""
+      },
+      {
+        "title": "东京1.5分彩",
+        "name": "theColor",
+        "path": "/lottery/theColor/index",
+        "filePath": "/color/theColor/index",
+        "icon": ""
+      },
+      {
+        "title": "广东11选5",
+        "name": "theColorGD",
+        "path": "/lottery/theColorGD/index",
+        "filePath": "/color/theColorGD/index",
+        "icon": ""
+      },
+      {
+        "title": "香港六合彩",
+        "name": "XGlottery",
+        "path": "/lottery/XGlottery/index",
+        "filePath": "/color/XGlottery/index",
+        "icon": ""
+      },
+      {
+        "title": "香港六合彩",
+        "name": "XGNewslottery",
+        "path": "/lottery/XGNewslottery/index",
+        "filePath": "/color/XGNewslottery/index",
+        "icon": ""
+      },
+      {
+        "title": "动画首页",
+        "name": "lotteryIndex",
+        "path": "/lottery",
+        "filePath": "/lottery",
+        "icon": ""
+      },
+      {
+        "title": "下载首页(初版)",
+        "name": "lotteryInvite1.0",
+        "path": "/lottery/invite1.0",
+        "filePath": "/personal/download",
+        "icon": ""
+      },
+      {
+        "title": "下载首页",
+        "name": "lotteryInvite",
+        "path": "/lottery/invite",
+        "filePath": "/download/h5Download/index",
+        "icon": ""
+      },
+      {
+        "title": "ios-h5-下载首页",
+        "name": "iosH5Download",
+        "path": "/lottery/iosH5Download",
+        "filePath": "/iosH5Download/index",
+        "icon": ""
+      },
+      {
+        "title": "ios-下载首页",
+        "name": "iosDownload",
+        "path": "/lottery/iosDownload",
+        "filePath": "/iosDownload/index",
+        "icon": ""
+      },
+      {
+        "title": "师徒关系",
+        "name": "master",
+        "path": "/lottery/personal/master",
+        "filePath": "/personal/master",
+        "icon": ""
+      },
+      {
+        "title": "活动详情",
+        "name": "activityList",
+        "path": "/home/activityList",
+        "filePath": "/home/activityList",
+        "icon": ""
+      },
+      {
+        "title": "宝贵意见详情",
+        "name": "feedBackMessageList",
+        "path": "/lottery/personal/feedBack/feedBackMessageList",
+        "filePath": "/personal/feedBackMessageList",
+        "icon": ""
+      },
+      {
+        "title": "折线走势图",
+        "name": "lineChart",
+        "path": "/lottery/trendChart/lineChart",
+        "filePath": "/trendChart/lineChart",
+        "icon": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,160 @@
+{
+  "list": {
+    "chess_play" : [
+      {
+        "lottery_group_id" : 10,
+        "id" : 13,
+        "periods" : 0,
+        "name" : "俄罗斯轮盘",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 11,
+        "id" : 14,
+        "periods" : 0,
+        "name" : "济州岛赛马",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 12,
+        "id" : 15,
+        "periods" : 0,
+        "name" : "马尼拉梭哈",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 13,
+        "id" : 16,
+        "periods" : 0,
+        "name" : "云顶炸金花",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 14,
+        "id" : 17,
+        "periods" : 0,
+        "name" : "苏格兰农场",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 15,
+        "id" : 18,
+        "periods" : 0,
+        "name" : "PK牛牛",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 16,
+        "id" : 19,
+        "periods" : 0,
+        "name" : "华夏牌九",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 17,
+        "id" : 20,
+        "periods" : 0,
+        "name" : "皇家二八杠",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 18,
+        "id" : 21,
+        "periods" : 0,
+        "name" : "西部番摊",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 19,
+        "id" : 22,
+        "periods" : 0,
+        "name" : "泳神争霸",
+        "intro" : "",
+        "is_official" : 0
+      }
+    ],
+    "lottery_play": [
+      {
+        "lottery_group_id" : 1,
+        "id" : 1,
+        "periods" : 179,
+        "name" : "PC蛋蛋",
+        "intro" : "人气最高 各类玩法应有尽有",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 2,
+        "id" : 2,
+        "periods" : 300,
+        "name" : "加拿大幸运28",
+        "intro" : "开奖节奏快 中奖率高 玩法多样简单",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 3,
+        "id" : 3,
+        "periods" : 179,
+        "name" : "香港新六合彩",
+        "intro" : "中奖率高 简单刺激 玩法多样",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 4,
+        "id" : 4,
+        "periods" : 82,
+        "name" : "江苏快3",
+        "intro" : "骰子型玩法 更易组合分析",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 5,
+        "id" : 5,
+        "periods" : 179,
+        "name" : "北京PK10",
+        "intro" : "开奖快速  趣味性强  返奖率高",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 6,
+        "id" : 6,
+        "periods" : 120,
+        "name" : "重庆时时彩",
+        "intro" : "每注两元 奖池高达500万",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 9,
+        "id" : 12,
+        "periods" : 0,
+        "name" : "香港六合彩",
+        "intro" : "简单刺激",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 7,
+        "id" : 23,
+        "periods" : 84,
+        "name" : "广东11选5",
+        "intro" : "",
+        "is_official" : 0
+      },
+      {
+        "lottery_group_id" : 20,
+        "id" : 24,
+        "periods" : 0,
+        "name" : "东京1.5分彩",
+        "intro" : "",
+        "is_official" : 0
+      }
+    ]
+  }
+}

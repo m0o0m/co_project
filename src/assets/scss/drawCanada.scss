@@ -1,0 +1,256 @@
+@charset "utf-8";
+@import 'rem';
+$designWidth:375;
+
+.content {
+   width: 100%; height: 100%; background: rgba(0,0,0,0.7); position: absolute; top: 0; left: 0;  z-index: 2;
+   //filter:blur(1rem); -webkit-filter: blur(1rem);
+}
+
+// .content {
+// 	width: 100%; height: 667px; position: absolute; background: #333;/*背景颜色*/ overflow: hidden;
+// }
+.conter {
+	width: rem(355);
+	height: rem(231);
+    background-image: url('../images/Rectangle.png');
+    background-size: 100% 100%;
+    position: absolute;
+    overflow: visible;
+	margin: auto;
+	margin-left: rem(-177.5);
+	left: 50%;
+	top: 50%;
+	transition: 0.6s;
+}
+.conter_t {
+	top: 30%;
+}
+.conter_1 {
+	top: 4%;
+	left: 80%;
+	transform: scale(0.2);
+	opacity: 0;
+	transition: 1.2s;
+}
+.close {
+	width: rem(18);
+	height: rem(18);
+    background-image: url('../images/close.png');
+	background-size: cover;
+	position: absolute;
+	top: rem(10);
+	right: rem(10);
+	cursor: pointer;
+}
+.icon {
+	width: rem(98);
+	height: rem(94);
+	background-image: url('../images/icon.png');
+	background-size: cover;
+	position: relative;
+	margin-left: rem(-52);
+	left: 50%;
+	top: -12%;
+}
+.icon_bg {
+	width: rem(114);
+	height: rem(78);
+	background-image: url('../images/Group.png');
+	background-size: cover;
+	animation: big 1.2s ease infinite;
+}
+@keyframes big {
+ 0% {
+transform: scale(1);
+opacity: 1;
+}
+ 100% {
+transform: scale(1.2);
+opacity: 0;
+}
+}
+.Period {
+	color: #d8ae59;
+	margin-top: rem(-10);
+	text-align: center;
+	transition: .8s;
+	font-size: 2.2vh;/*字体的大小*/
+}
+.basin {
+	position: absolute;
+	top: rem(130);
+	left: rem(30);
+	width: rem(160);
+	height: rem(76);
+	background-image: url('../images/western/basin.png');
+    background-size: cover;
+    overflow: visible;
+}
+.bean {
+	position: absolute;
+	width: rem(16);
+	height: rem(18);
+	background-image: url('../images/western/bean.png');
+    background-size: cover;
+    z-index: 5;
+}
+.t_box {
+	transform: scale(1, -1) rotateZ(-45deg);  overflow: visible;
+}
+.box {
+	transition: 0.5s all linear;
+}
+.box_1 {
+	transform: translateX(130px); overflow: visible;
+}
+/*豆子的位置*/
+
+.bean_1 {
+	transform: rotate(-152deg);
+	top: rem(-60);
+	left: rem(50);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_2 {
+	transform: rotate(-532deg);
+	top: rem(-35);
+	left: rem(65);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_3 {
+	transform: rotate(-76deg);
+	top: rem(-50);
+	left: rem(80);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_4 {
+	transform: rotate(-213deg);
+	top: rem(-45);
+	left: rem(95);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_5 {
+	transform: rotate(-344deg);
+	top: rem(-60);
+	left: rem(60);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_6 {
+	transform: rotate(-465deg);
+	top: rem(-35);
+	left: rem(75);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_7 {
+	transform: rotate(-217deg);
+	top: rem(-30);
+	left: rem(90);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_8 {
+	transform: rotate(-315deg);
+	top: rem(5);
+	left: rem(105);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_9 {
+	transform: rotate(-90deg);
+	top: rem(-50);
+	left: rem(70);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_10 {
+	transform: rotate(-60deg);
+	top: rem(-45);
+	left: rem(85);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_11 {
+	transform: rotate(-45deg);
+	top: rem(-10);
+	left: rem(100);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_12 {
+	transform: rotate(-30deg);
+	top: rem(-5);
+	left: rem(115);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_13 {
+	transform: rotate(-10deg);
+	top: rem(-25);
+	left: rem(80);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_14 {
+	transform: rotate(-15deg);
+	top: rem(-50);
+	left: rem(70);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_15 {
+	transform: rotate(-120deg);
+	top: rem(-30);
+	left: rem(100);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+.bean_16 {
+	transform: rotate(-55deg);
+	top: rem(-10);
+	left: rem(120);
+	transition: 0.5s all cubic-bezier(0, 1, 0.5, 1.5);
+}
+/*动画部分*/
+.bean1 {
+	transform: translate(rem(50), rem(120));
+}
+.bean2 {
+	transform: translate(rem(50), rem(110));
+}
+.bean3 {
+	transform: translate(rem(50), rem(140));
+}
+.bean4 {
+	transform: translate(rem(50), rem(150));
+}
+.bean5 {
+	transform: translate(rem(50), rem(110));
+}
+.bean6 {
+	transform: translate(rem(50), rem(100));
+}
+.bean7 {
+	transform: translate(rem(50), rem(110));
+}
+.bean8 {
+	transform: translate(rem(50), rem(90));
+}
+.bean9 {
+	transform: translate(rem(50), rem(90));
+}
+.bean10 {
+	transform: translate(rem(50), rem(100));
+}
+.bean11 {
+	transform: translate(rem(50), rem(80));
+}
+.bean12 {
+	transform: translate(rem(50), rem(90));
+}
+.clear {
+	opacity: 0;
+}
+
+
+/*加拿大幸运28*/
+.drawAlottery {
+   width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.7);
+}
+.ves {
+   width: 100%; height: 100%; 
+}
+.indexJust button {
+    width: rem(160); height: rem(45); font-size: rem(14);
+}

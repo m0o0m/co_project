@@ -1,0 +1,594 @@
+@charset "utf-8";
+@import 'rem';
+$designWidth:375;
+body,html {
+    height: 100%;
+  }
+#app {
+    background: url('../images/index/bg_qipai.png') center center no-repeat; background-size: cover; height: 100%;
+}
+.indexlottery {
+    height: rem(34); position: relative; background: linear-gradient(top,#172238,#20142D); background: -webkit-linear-gradient(top,#172238,#20142D); padding: 0 rem(10); font-size: rem(12); color: #FFDC99;
+    ul {
+        li {
+            line-height: rem(34); background: url('../images/index/tiIcon.png') left rem(6) no-repeat; background-size: rem(40) auto; padding-left: rem(45);
+            span {
+                font-family: arial;
+            }
+        }
+    }
+}
+.NavColorMn {
+    height: rem(32); background: transparent url('../images/index/colorLine.png') top center repeat-x; background-size: rem(60) auto; text-align: center;
+    ul {
+        display: inline-block;
+        li {
+            width: rem(115); height: rem(32); background: url('../images/index/leftNav.png') top left no-repeat; background-size: 100% auto; float: left;
+        }
+        li.on {
+            background: url('../images/index/leftNavColor.png') top left no-repeat; background-size: 100% auto; float: left;
+        }
+        li:nth-child(2) {
+            background: url('../images/index/rightNav.png') top left no-repeat; background-size: 100% auto;
+        }
+        li:nth-child(2).on {
+            background: url('../images/index/rightNavColor.png') top left no-repeat; background-size: 100% auto; float: left;
+        }
+    }
+}
+.colorList {
+    padding: rem(20); padding-bottom: rem(80);
+}
+.colorListMian {
+    height: rem(335); overflow-y: scroll;
+    ul {
+        height: auto; overflow: hidden;
+        li {
+            width: 33%; float: left; padding: rem(15) 0; background: rgba(0,0,0,0.3); box-sizing: border-box; -webkit-box-sizing: border-box; border: rem(1) solid rgba(0,0,0,0.1);
+            section {
+                text-align: center; font-size: rem(12); color: #FFDC99;
+                figure {
+                    width: rem(60); height: rem(60); display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+.FooterCls {
+    background: url('../images/index/foterBack.png') left top no-repeat; background-size: 100% 100%; width: 100%; position: fixed; left: 0; bottom: 0; overflow: visible;
+    nav {
+        display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row; padding-bottom: rem(5); position: relative;  overflow: visible;
+        li {
+           width: 20%; text-align: center;
+           a {
+            color: #3A86E5; font-size: rem(10);
+            section {
+                p:first-of-type {
+                    width: rem(26); height: rem(26); background: url('../images/index/footerColor.png') center center no-repeat; background-size: rem(35) auto; display: inline-block; margin-bottom: rem(10);
+                }
+            }
+           }
+        }
+        li.on {
+            a {
+                color: #FFDC99;
+            }
+            section {
+                p:first-of-type {
+                    background: url('../images/index/footer.png') center center no-repeat; background-size: rem(35) auto;
+                }
+            }
+        }
+        li:nth-child(2) {
+            width: 20%; margin-right: 10%; 
+            section {
+                p:first-of-type {
+                    background: url('../images/index/footerColor01.png') center center no-repeat; background-size: rem(35) auto;
+                }
+            }
+        }
+        li:nth-child(3) {
+            width: 20%; margin-left: 10%;
+            section {
+                p:first-of-type {
+                    background: url('../images/index/footerColor02.png') center center no-repeat; background-size: rem(35) auto;
+                }
+            }
+        }
+
+        li:nth-child(4) {
+            section {
+                p:first-of-type {
+                    background: url('../images/index/footerColor03.png') center center no-repeat; background-size: rem(35) auto;
+                }
+            }
+        }
+        li:nth-child(2).on {
+            width: 20%; margin-right: 10%; 
+            section {
+                p:first-of-type {
+                    background: url('../images/index/footer01.png') center center no-repeat; background-size: rem(35) auto;
+                }
+            }
+        }
+        li:nth-child(3).on {
+            width: 20%; margin-left: 10%;
+            section {
+                p:first-of-type {
+                    background: url('../images/index/footer02.png') center center no-repeat; background-size: rem(35) auto;
+                }
+            }
+        }
+
+        li:nth-child(4).on {
+            section {
+                p:first-of-type {
+                    background: url('../images/index/footer03.png') center center no-repeat; background-size: rem(35) auto;
+                }
+            }
+        }
+        li:last-child {
+            width: rem(79); position: absolute; top: rem(-20); left: 50%; margin-left: rem(-38.5);
+        }
+        
+    }
+}
+
+/*开奖大厅*/
+.lotteryMun {
+    width: 100%; height: rem(130); text-align: center;
+    p {
+        font-size: rem(20); color: #FFDC99;
+        span {
+            font-size: rem(35); font-family: arial;
+        }
+    }
+}
+.lotteryDate {
+    padding: rem(15); max-height: rem(400); overflow-y: scroll;
+    ul {
+        li {
+            background: rgba(0,0,0,0.3); padding: rem(10); margin-bottom: rem(10); border-radius: rem(2);
+           a {
+            font-size: rem(14); color: #FFDC99; display: block;
+            span {
+                font-family: arial;
+            }
+           }
+           .lottery_title {
+               display:  flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row;
+               p:first-of-type {
+                   flex: 1;
+               }
+               p:last-of-type {
+                   font-size: rem(10);
+               }
+           }
+        }
+    }
+}
+.lotteryDate.lotteryDateed {
+    max-height: rem(530);
+    a {
+        .lottery_title {
+            span {
+                font-family: arial;
+            }
+        }
+    }
+}
+.lotteryDate ul li a .lottery_color {
+    margin-top: rem(10);
+    .lootery_section.nameArt {
+        p {
+            width: rem(24); height: rem(24); background:#2C55CA; border: rem(1) solid #ffffff; border-radius: 50%; float: left; line-height: rem(24); text-align: center; margin-right: rem(10);
+        }
+        p:nth-of-type(2) {
+            background:#E83828;
+        }
+    }
+    .lootery_section.nameArt01 {
+        padding-bottom: rem(3);
+        p {
+            width: rem(40); height: rem(24); line-height: rem(22); box-sizing: border-box; -webkit-box-sizeing: border-box; border: rem(1) solid transparent; background-clip: padding-box,border-box; background-origin: padding-box,border-box; background-image: linear-gradient(top,#881111,#ED4132),linear-gradient(top,#FFFBAD,#FFA531); background-image: -webkit-linear-gradient(top,#881111,#ED4132),-webkit-linear-gradient(top,#FFFBAD,#FFA531);
+            display: inline-block; border-radius: rem(3); text-align: center; box-shadow: inset rem(1) rem(-1) rem(8) rgba(0,0,0,0.5);
+        }
+    }
+    .lootery_section.nameArt02 {
+        p {
+            width: rem(40); height: rem(24); line-height: rem(22); box-sizing: border-box; -webkit-box-sizeing: border-box; border: rem(1) solid transparent; background-clip: padding-box,border-box; background-origin: padding-box,border-box; background-image: linear-gradient(top,#50C36D,#27853B),linear-gradient(top,#FFFBAD,#FFA531); background-image: -webkit-linear-gradient(top,#50C36D,#27853B),-webkit-linear-gradient(top,#FFFBAD,#FFA531);
+            display: inline-block; border-radius: rem(3); text-align: center; box-shadow: inset rem(1) rem(-1) rem(8) rgba(0,0,0,0.5);
+        }
+    }
+    .lootery_section.nameArt03 {
+        border: rem(1) solid #F0DDAE; display: inline-block; padding: rem(2);
+        p {
+          min-width: rem(14); height: rem(21); line-height: rem(21);  background-image: linear-gradient(top, #F0DDAE 0%, #DCB976 100%); background-image: -webkit-linear-gradient(top, #F0DDAE 0%, #DCB976 100%); border-radius: rem(1); float: left; margin-right: rem(1); text-align: center; font-family: arial; color: #000000; font-size: rem(12);
+        }
+        p:last-of-type {
+            margin-right: 0;
+        }
+    }
+    .lootery_section.nameArt04 {
+        p {
+            width: rem(24); height: rem(24); background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976); border-radius: 50%; float: left; line-height: rem(24); text-align: center; margin-right: rem(20); color:  #63000C; position: relative; 
+        }
+        p:after {
+            content: '+'; font-size: rem(14); color: #FFDC99; position: absolute; right: rem(-15); top: 0; 
+        }
+        p:nth-of-type(3):after {
+            content: '=';
+        }
+        p:last-of-type {
+            background: #E83828; border: rem(1) solid #FFDC99; color:#ffffff;
+        }
+        p:last-of-type:after {
+            content: '';
+        }  
+    }
+    .lootery_section.nameArt05 {
+        p:first-of-type {
+            width: rem(24); height: rem(24); background: #E83828; border-radius: 50%; float: left; line-height: rem(24); text-align: center; margin-right: rem(5); color:  #63000C; position: relative; border: rem(1) solid #FFDC99; color:#ffffff; 
+        }
+        img {
+            width: rem(26);
+        }
+    }
+    .lootery_section.nameArt06 {
+        p {
+            float: left; margin-right: rem(10);
+        }
+        img {
+            width: rem(26);
+        }
+    }
+    .lootery_section.nameArt07 {
+        p {
+            float: left; margin-right: rem(1); width: rem(20); height: rem(30); background: url('../images/hbeu.png') no-repeat; background-size: rem(20) auto; text-align: center; line-height: rem(27); color: #000000; font-size: rem(12);
+        }
+    }
+    .lootery_section.nameArt08 {
+        p {
+            width: rem(24); height: rem(24); background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976); border-radius: 50%; float: left; line-height: rem(24); text-align: center; margin-right: rem(10); color:  #63000B; position: relative; 
+        }
+    }
+    .lootery_section p.mnshImgCls {
+        width: rem(21); height: rem(31); display: inline-block; margin-right: rem(2);
+    }
+    .lootery_section p.sglncCls {
+        span {
+            float: left; line-height: rem(28);
+            img {
+                width: rem(28);
+            }
+        }
+        span:last-child {
+            margin-left: rem(10);
+        }
+    }
+    .lootery_section p.hxpjCls {
+        em {
+            width: 100%; height: auto; overflow: hidden; display: block; font-size: rem(12); font-style: normal;
+            span {
+                float: left; margin-right: rem(5);
+            }
+            span:nth-child(2n) {
+                margin-right: rem(10);
+            }
+            img {
+                width: rem(16);
+            }
+        }
+        em:nth-child(2) {
+            span {
+                width: rem(39); text-align: center; line-height: rem(24);
+            }
+        }
+    }
+    .lootery_section p.hjrbgCls {
+        em {
+            width: 100%; height: auto; overflow: hidden; display: block; font-size: rem(12); font-style: normal;
+            span {
+                float: left; margin-right: rem(5);
+            }
+            span:nth-child(2n) {
+                margin-right: rem(10);
+            }
+            img {
+                width: rem(16);
+            }
+        }
+        em:nth-child(2) {
+            span {
+                width: rem(39); text-align: center; line-height: rem(24);
+            }
+        } 
+    }
+}
+
+/*登录*/
+.login {
+    padding: 0 rem(15);
+}
+.login_article {
+    width: rem(300); margin: 0 auto; margin-top: 80%;
+    section.loginFlex  {
+        display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row; margin-bottom: rem(10);
+        p {
+            font-size: rem(14); color: #FFFFFF; line-height: rem(42);
+        }
+        p:first-of-type {
+            width: rem(50); text-align: right; margin-right: rem(5);
+        }
+        p:last-of-type {
+            flex :1;
+            input {
+                width: 100%; height: rem(42); line-height: rem(42); background: url('../images/Rectangle2x.png') top center no-repeat; background-size: 100% 100%;border-radius: rem(2); font-size: rem(14); color: #FFFFFF; text-indent: rem(15);
+            }
+        }
+    }
+    section:nth-child(3) {
+        text-align: right; 
+    }
+}
+
+/*开奖信息详情*/
+.theDetails_title {
+   width: 100%; height: rem(50); line-height: rem(50); text-align: center; color: #FFFFFF; font-size: rem(16); position: relative; 
+   img {
+       width: rem(35); position: absolute; left: 0; top: rem(5);  
+   }
+}
+
+/*投注记录*/
+.bettingRecord {
+	padding-top: rem(65);
+}
+.betRecord_top {
+    padding: 0 rem(12);
+    ul {
+        display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row; border-bottom: rem(1) solid #DCB976;
+        li {
+            flex:1; text-align: center;
+            a {
+                font-size: rem(12); color: #FFDC99; width: rem(59); height: rem(29); line-height: rem(29); display: inline-block; 
+            }
+        }
+        li.on {
+            a {
+                color: #180B0B;  background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976); background: -moz-linear-gradient(top,#F0DDAE,#DCB976); background: -ms-linear-gradient(top,#F0DDAE,#DCB976); border-top-left-radius: rem(5); border-top-right-radius: rem(5);
+            }
+        }
+    }
+}
+.betRecord_bd {
+    margin: 0 rem(12); height: rem(450); overflow-y: scroll;
+    ul {
+        li {
+            background:rgba(0,0,0,0.3); height: auto; overflow: hidden;
+            a {
+                display: block; padding: rem(10); 
+                span {
+                    font-family: arial;
+                }
+            }
+        }
+    }
+    section:first-child {
+        p {
+            float: left; font-size: rem(14); color: #FFDC99; line-height: rem(24);
+            .spanMarry {
+                float: right; font-size: rem(18);
+                color: #FFDC99; font-family: arial;
+            }
+        }
+        p:nth-of-type(2) {
+            font-size: rem(10); color: #FFDC99; line-height: rem(28); margin-left: rem(10);
+        }
+        p:nth-of-type(3) {
+            float: right;
+        }
+    }
+    section:last-child {
+        display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row; font-size: rem(10);
+        color: #FFDC99;
+        p:first-of-type {
+            flex: 1;
+        }
+        p:nth-of-type(2) {
+            color: #ffffff;
+        }
+        p.winCls {
+            
+            strong {
+                width: rem(20); height: rem(20); color: #000000; background: #FFDC99; padding: rem(1); font-size: rem(10); margin-right: rem(2); border-radius: rem(2);
+            }
+        }
+    }
+}
+
+/*投注详情*/
+.bgimg_title {
+    height: rem(50); line-height: rem(50); font-size: rem(16); color: #FFFFFF; text-align: center;
+}
+.beimg_cls {
+    padding: rem(15); height: rem(520); overflow-y: scroll;
+}
+.beimg_article {
+    display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row; background: rgba(0,0,0,0.3); font-size: rem(14); padding: rem(10);
+    color: #FFDC99;
+    section:first-child {
+        width: rem(58); height: rem(58); display: inline-block; margin-right: rem(10);
+    }
+    section:last-child {
+        flex: 1; line-height: rem(24);
+        p:first-of-type {
+            padding-top: rem(5);
+            span {
+                float: right; font-size: rem(10); color: #FFDC99; position: relative;
+            }
+        }
+        p:nth-of-type(2) {
+            font-size: rem(18); color: #FFDC99;
+        }
+    }
+}
+.beimg_list {
+    background: rgba(0,0,0,0.3); padding: rem(10); margin: rem(10) 0;
+    .beimg_list_title {
+        font-size: rem(12); color: #FFDC99; line-height: rem(24);
+    }
+    .beimg_list_content {
+        section {
+            display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row; line-height: rem(24); padding: rem(5) 0;
+            p:first-of-type {
+                font-size: rem(12); color: #FFFFFF; width: rem(60); text-align: right; margin-right: rem(10);
+            }
+            p:nth-of-type(2) {
+                font-size: rem(12); color: #FFDC99; font-family: arial; flex: 1;
+            }
+        }
+    }
+}
+.beimg_result {
+    margin-top: rem(10); background: rgba(0,0,0,0.3); padding: rem(10);
+}
+.beimg_result_title {
+    font-size: rem(12); color: #FFDC99; line-height: rem(24); margin-bottom: rem(10);
+}
+.beimg_section {
+    section {
+        display: inline-block; border: rem(1) solid #F0DDAE; border-radius: rem(4); padding: rem(2);
+        p {
+            width: rem(33); height: rem(41); text-align: center; line-height: rem(41); background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976); background: -moz-linear-gradient(top,#F0DDAE,#DCB976); float: left; margin: rem(1); font-size: rem(26); color: #000000; font-family: arial;
+        }
+    }
+}
+/*pc蛋蛋*/
+.beimg_section.pcddBeimg {
+    section {
+        border: none;
+        p {
+            width: rem(40); height: rem(40); background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976); border-radius: 50%; line-height: rem(40); text-align: center; color: #63000C; font-size: rem(20); font-family: arial; margin-right: rem(25); position: relative;
+        }
+        p:after {
+            content: "+"; font-size: rem(20); color: #F0DDAE; position: absolute; right: rem(-20);
+        }
+        p:nth-of-type(3):after {
+            content: "=";
+        }
+        p:last-of-type:after {
+            content: "";
+        }
+        p.red {
+            background: #E83828; color: #ffffff;
+        }
+        p.green {
+            background: #50C36D; color: #ffffff;
+        }
+        p.blue {
+            background: #004B98; color: #ffffff;
+        }
+        p.gray {
+            background: #dcdcdc; color: #666666;
+        }
+    }
+}
+/*香港六合彩*/
+.beimg_section.xjlhcBeimg {
+    section {
+        p {
+            margin-right: rem(10);
+        }
+        p:after {
+            content: ''; 
+        }
+    }
+}
+/*江苏快三*/
+.beimg_section.jsk3Beimg {
+    section {
+        p {
+            background: transparent; margin-right: rem(10);
+        }
+    }
+}
+/*济州岛赛马*/
+.beimg_section.beimgArticle {
+    p {
+        width: rem(40); height: rem(40); background:#2C55CA; border: rem(1) solid #ffffff; border-radius: 50%; float: left; line-height: rem(40); text-align: center; margin-right: rem(10); font-size: rem(24); color: #ffffff;
+    }
+    p:nth-of-type(2) {
+        background:#E83828;
+    }
+}
+.beimg_articleed {
+    border: rem(1) solid #ffffff; box-sizing: border-box; -webkit-box-sizing: border-box; margin-top: rem(15);
+    section {
+        text-align: center; font-size: rem(12); color: #FFFFFF; height: rem(30); line-height: rem(30);
+        p {
+            width: 30%; float: left;
+        }
+        p:first-of-type {
+            width: 70%; position: relative;
+        }
+        p:first-of-type:after {
+            content: ''; width: rem(1); height: 100%; background: #ffffff; position: absolute; right: 0; top: 0;
+        }
+    }
+    section:first-child {
+        border-bottom: rem(1) solid #ffffff;
+    }
+    section:nth-child(2) {
+        p:first-of-type {
+            span {
+                width: 33.3%; float: left; position: relative;
+            }
+            span:after {
+                content: ""; width: rem(1); height: 100%; background: #ffffff; position: absolute; right: 0; top: 0;
+            }
+            span:last-of-type:after {
+                content: ""; width: 0;
+            }
+        }
+        p.beimgSec {
+            span {
+                width: 25%; float: left; position: relative;
+            } 
+        }
+    }
+}
+.beimg_articleed.beimg_articleed_xlhc {
+    section {
+        p {
+            width: 16.6%; position: relative;
+        }
+        p:after {
+            content: ""; width: rem(1); height: 100%; background: #ffffff; position: absolute; right: 0; top: 0;
+        }
+        p:last-of-type:after {
+            content: ""; width: 0;
+        }
+    }
+}
+.beimg_articleed.beimg_articleed_jsk3 {
+    section {
+        p {
+            width: 33.3%; position: relative;
+        }
+        p:after {
+            content: ""; width: rem(1); height: 100%; background: #ffffff; position: absolute; right: 0; top: 0;
+        }
+        p:last-of-type:after {
+            content: ""; width: 0;
+        }
+    }
+    section.beimgSpan {
+        p:first-of-type {
+            span:after {
+                content: ""; width: 0;
+            }
+        }
+    }
+}

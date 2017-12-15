@@ -1,0 +1,84 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+/* 去除iPhone中默认的input样式 */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input {
+  -webkit-appearance: none;
+  resize: none;
+  outline: none;
+}
+
+select,input {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+b {font-weight: normal; font-family: Microsoft YaHei;}
+/* 取消链接高亮  */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,aside,details,figcaption,figure,footer,header,menu,nav,section {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+/* 设置HTML5元素为块 */
+article,aside,details,figcaption,figure,footer,header,menu,nav,section {display: block; height:auto; overflow: hidden;}
+/* 图片自适应 */
+img {width: 100%;height: auto;width: auto\9;
+  /* ie8 */display: block; -ms-interpolation-mode: bicubic;
+  /*为了照顾ie图片缩放失真*/border: none;
+    }
+input,input:focus,input:active{user-select: text;}
+/* 初始化 */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,aside,details,figcaption,figure,footer,header,menu,nav,section {margin: 0; padding: 0; border: none; height: auto;}
+/*strong {font-weight: normal;}*/
+.clearfloat:after {display: block; clear: both; content: "";}
+.clear {clear: both;}
+a {text-decoration: none; color: #969696; font-family: 'Microsoft YaHei';}
+a:hover {color: #FED503; text-decoration: none;}
+ul,ol {list-style: none;}
+h1,h2,h3,h4,h5,h6 {font-size: 100%; font-family: Microsoft YaHei;}
+menu,li {list-style:none;}
+
+img {width:100%; height: auto;}
+body {background: #fcfcfc; }
+.indexDisplay {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -o-box;
+	display: box;
+	}
+.indexFiex {
+	-webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+	}
+	
+.indexJust {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	box-pack: center;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	box-align: center;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+}
+
+body{
+	-webkit-overflow-scrolling: touch;
+}
+

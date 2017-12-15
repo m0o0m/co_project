@@ -1,0 +1,25 @@
+{
+  "imgList": [
+    {"key": "西瓜", "picName": "1"},
+    {"key": "椰子", "picName": "2"},
+    {"key": "榴莲", "picName": "3"},
+    {"key": "柚子", "picName": "4"},
+    {"key": "菠萝", "picName": "5"},
+    {"key": "葡萄", "picName": "6"},
+    {"key": "荔枝", "picName": "7"},
+    {"key": "樱桃", "picName": "8"},
+    {"key": "草莓", "picName": "9"},
+    {"key": "番茄", "picName": "10"},
+    {"key": "梨子", "picName": "11"},
+    {"key": "苹果", "picName": "12"},
+    {"key": "桃子", "picName": "13"},
+    {"key": "柑橘", "picName": "14"},
+    {"key": "冬瓜", "picName": "15"},
+    {"key": "萝卜", "picName": "16"},
+    {"key": "南瓜", "picName": "17"},
+    {"key": "茄子", "picName": "18"},
+    {"key": "家犬", "picName": "19"},
+    {"key": "奶牛", "picName": "20"}
+
+  ]
+}

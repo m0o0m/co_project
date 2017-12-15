@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import 'rem';
+$designWidth:375;
+//body,html {
+//  height: 100%;
+//}
+#app{ background: url('../images/numberimg/gup.png') center no-repeat;
+  background-size:cover;height:100%}
+.per_leftd{position:absolute;top: 0px; left: 0px; width: 100%; padding-bottom: rem(10); text-align: center;}
+.per_leftd li:nth-child(1){width:rem(35);height:rem(35);background: url('../images/numberimg/fan.png') center no-repeat;
+  background-size:cover; position: absolute; left:0px;top: rem(10)}
+
+.per_leftd li:nth-child(2) p{ color:#fff;line-height:rem(40);font-size:rem(22);text-align: center;margin-top: rem(5);height: rem(50)}
+
+
+
+
+.Congratulations{ width: 90%;background: rgba(0,0,0,0.35);margin: 0 auto;margin-top: rem(60);padding-bottom: rem(30)}
+.Congratulations p:nth-child(1){ font-size:rem(18);  color: #FFDC99;width: 80%;margin: 0 auto;margin-top: rem(20);line-height: rem(25)}
+.Congratulations p:nth-child(2){ font-size:rem(12);color: #FFDC99;width: 80%;line-height: rem(25);margin: 0 auto}
+.app_details{width: 80%;margin: 0 auto }
+
+.app_details li{list-style:decimal;font-size:rem(14); color: #FFDC99;line-height: rem(25);margin: rem(20)}
+
+
+
+
+

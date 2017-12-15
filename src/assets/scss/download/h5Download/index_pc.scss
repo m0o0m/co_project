@@ -1,0 +1,299 @@
+@charset "utf-8";
+@import '../../rem';
+
+$designWidth: 375;
+.logo {
+  //min-width: 100px;
+  width: 7.9%;
+  top: 45px;
+}
+.dynamicImg {
+  //min-width: 420px;
+  width: 26%;
+  height: auto;
+}
+
+.dynamicText {
+  //min-width: 403px;
+  width: 20%;
+  top: -20px;
+}
+
+.WeChat {
+  width: 403px;
+  margin-bottom: 1%;
+}
+
+.WeChat .weChat_rights div {
+  height: 53px;
+}
+
+.WeChat .weChat_rights div.weChat_rights_step4 {
+  margin: 15px 0;
+}
+
+.WeChat .weChat_right p {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50px;
+  background: #181718;
+  border: 1px solid #FFFFFF;
+}
+
+.WeChat .weChat_right p i {
+  display: inline-block;
+  width: 30px;
+  height: 28px;
+  margin-left: 45px;
+  margin-right: 5px;
+}
+
+.WeChat .weChat_right p a {
+  display: inline-block;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+}
+
+.WeChat .weChat_right p:nth-child(2) a {
+  color: #181718;
+}
+
+.WeChat .weChat_right p:nth-child(3) a {
+  color: #DEBC7B;;
+}
+
+.WeChat .weChat_right p:nth-child(2) {
+  margin: 8px 0;
+  background-image: linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+  background-image: -webkit-linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+  border: none;
+}
+
+.dynamicIp {
+  //min-width: 900px;
+  width: 50%;
+}
+.dynamicIp .dynamicIp2 {
+  width: 50%;
+  left: 25%;
+}
+
+.dynamicIp3 {
+  width: 100%;
+  left: 0;
+
+}
+
+.dynamicIp3 p {
+  font-size: 18px;
+}
+
+.dynamicIp3 p:nth-child(1) {
+  margin-right: 15px;
+}
+
+.dynamicIp3 p i {
+  width: 40px;
+  height: 49px;
+  margin-right: 10px;
+}
+
+.dynamicIp3 p:nth-child(2) i {
+  width: 53px;
+  height: 43px;
+  margin-right: 10px;
+}
+
+.chessBack_title {
+  font-size: 20px;
+  line-height: 50px;
+  margin: 15px 0;
+  margin-top: 35px;
+}
+
+.chessBack_img {
+  //min-width: 750px;
+  width: 40%;
+}
+
+.chessBack_text {
+  //min-width: 150px;
+  width: 20%;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-top: 30px;
+}
+
+/*棋牌简介*/
+.introductionTextMi {
+  width: 750px;
+  padding: 30px 0;
+}
+
+.introductionTextMi aside {
+  font-size: 20px;
+  line-height: 50px;
+  margin: 15px 0;
+}
+
+.introductionTextMi section {
+  padding: 0 rem(26);
+}
+.introductionTextMi section p {
+  font-size: 14px;
+  line-height: 30px;
+}
+/*底部样式*/
+.introductionFooter {
+  background: #030517;
+  display: block;
+}
+
+.introductionFooterMi {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.introductionFooter_logo {
+  width: 148px;
+  float: left;
+}
+
+.introductionFooter_enter {
+  width: 240px;
+  float: left;
+  font-size: 14px;
+  color: rgb(81, 81, 85);
+  padding: 12px 0;
+  margin-left: 200px;
+}
+
+.introductionFooter_enter section p {
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.introductionFooter_enter section p:first-of-type {
+  font-size: 16px;
+}
+
+.introductionFooter_enter section p:nth-of-type(3) {
+  background: url('../../../images/download/h5Download/qq2x.png') left center no-repeat;
+  background-size: 25px auto;
+  padding-left: 30px;
+  margin: 5px 0;
+}
+
+.introductionFooter_enter section p:nth-of-type(4) {
+  background: url('../../../images/download/h5Download/wx2x.png') left center no-repeat;
+  background-size: 25px auto;
+  padding-left: 30px;
+}
+
+.introductionFooter_float {
+  //min-width: 200px;
+  float: right;
+  font-size: 14px;
+  color: rgb(81, 81, 85);
+  padding: 12px 0;
+  margin-right: 15px;
+}
+
+.introductionFooter_float section p {
+  font-size: 14px;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+
+.introductionFooter_float section p:first-of-type {
+  font-size: 16px;
+}
+
+.introductionFooter_float section p:nth-of-type(2), .introductionFooter_float section p:nth-of-type(3) {
+  line-height: 20px;
+}
+
+.InstallationSteps {
+  width: 60%;
+  min-width: 800px;
+  max-width: 1000px;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(40, 37, 38, 0.95);
+  box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.50);
+  border-radius: 6px;
+  display: none;
+}
+
+.InstallationArticle {
+  padding: 25px;
+  position: relative;
+}
+
+.InstallationArticle a {
+  width: 40px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.InstallationArticle aside {
+  font-size: 24px;
+  color: #FFFFFF;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.InstallationSection figure {
+  width: 19%;
+  float: left;
+  margin: 0 0.5%;
+}
+
+.InstallationSection figure img {
+  width: 100%;
+  float: left;
+}
+
+.InstallationSection figure figcaption {
+  width: 100%;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 15px;
+  float: left;
+}
+
+.introductionFooterIp {
+  display: none;
+}
+
+.indexLine {
+  width: 100%;
+  height: 0.1rem;
+  background: linear-gradient(left, rgba(224, 211, 140, 0.3), rgba(224, 211, 140, 1), rgba(224, 211, 140, 0.3));
+  background: -webkit-linear-gradient(left, rgba(224, 211, 140, 0.1), rgba(224, 211, 140, 1), rgba(224, 211, 140, 0.1));
+}
+
+.InstallationStepsApp {
+  display: none;
+}
+
+#cnzz_stat_icon_1271231563 img {
+  width: 20px;
+  height: 20px;
+}
+
+#cnzz_stat_icon_1271258064 img {
+  width: 20px;
+  height: 20px;
+}

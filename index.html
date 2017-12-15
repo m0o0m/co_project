@@ -1,0 +1,91 @@
+<!--<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN">-->
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<noscript><style type="text/css">body{display:none;}</style></noscript>-->
+	<!--<script type="text/javascript" src="https://cn02.dwcheck.cn/Js/lockview.js?uid=LK0288662"></script>-->
+
+	<meta charset="utf-8">
+	<title></title>
+	<!-- <meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
+	/> -->
+
+	<!--<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />-->
+
+	<meta name="viewport"
+	      content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<!--<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<!-- 删除苹果默认的工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<!-- 设置苹果工具栏颜色 -->
+	<meta name="format-detection" content="telphone=no, email=no"/>
+	<!--<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>-->
+	<!--<script src="https://kefu.easemob.com/webim/im.html?configId=0833236b-c04b-4b6c-946c-345cd2903587"></script>-->
+	<!--<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>-->
+	<script type="text/javascript">
+		var cnima = GetQueryString('cnima');
+		var localHost = window.location.host;
+		window.onerror = function (message, errUrl, lineNo, colNo, error) {
+			var userAgent = navigator.userAgent;
+			var content = '【errMessage】' + message
+				+ '【errUrl】' + (errUrl || '')
+				+ '【lineNo】' + (lineNo || '')
+				+ '【colNo】' + (colNo || '')
+				+ '【errStack】' + (error && error.stack ? error.stack.toString() : '');
+			//alert(message);
+			if (localHost.indexOf('git.qpcp4.com') !== -1) {
+				alert(message + '【error】' + content.toString());
+			}
+		};
+
+		var localHost = window.location.host;
+
+		var system = {
+			win: false,
+			mac: false,
+			xll: false,
+			ipad: false
+		};
+		var p = navigator.platform;
+		system.win = p.indexOf("Win") == 0;
+		system.mac = p.indexOf("Mac") == 0;
+		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+		system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
+		if (system.win || system.mac || system.xll || system.ipad) {
+			if (localHost.indexOf('localhost') === -1 && localHost.indexOf('192') === -1 && localHost.indexOf('git.') === -1 && cnima != 'cnima') {
+				window.location = 'http://qpcp9.com';
+			}
+		} else {
+//          window.location = 'https://web.yfunion.com';
+		}
+
+		function GetQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) return unescape(r[2]);
+			return null;
+		}
+	</script>
+</head>
+<body>
+<div id="app"></div>
+
+<script type="text/javascript" src=/static/js/vendor.dll.js></script>
+<script>
+	if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+		var version = parseFloat(RegExp.$1);
+		if (version > 2.3) {
+			var phoneScale = parseInt(window.screen.width) / 720;
+			document.write('<meta name="viewport" content="width=720, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', user-scalable=no, target-densitydpi=device-dpi">');
+		} else {
+			document.write('<meta name="viewport" content="width=720, target-densitydpi=device-dpi">');
+		}
+	} else {
+		document.write('<meta name="viewport" content="width=720, user-scalable=no, target-densitydpi=device-dpi">');
+	}
+</script>
+</body>
+</html>

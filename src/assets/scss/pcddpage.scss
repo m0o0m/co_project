@@ -1,0 +1,2553 @@
+@charset "utf-8";
+@import './rem';
+
+$designWidth: 375;
+$divBack: #ffffff; //div背景色
+$textColor: #4A4A4A; //正文字体颜色
+$oddColor: #E73928; //赔率颜色
+$borderColor: #eeeeee; //边框颜色
+$fontSize: rem(14);
+body {
+  background: rgb(14, 13, 21);
+}
+
+#app {
+  //height: 100%;
+  //  background: #666666;
+  // background: url('../images/bodyBack.jpg') center center no-repeat; background-size: cover;
+}
+
+.headered {
+  width: 100%; height: rem(123);
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: url('../images/westernTop_bg.png') top center no-repeat;
+  background-size: 100% auto;
+}
+.headerTop {
+  // display: flex; display: -webkit-flex; flex-direction: column;
+  span {
+    font-family: arial;
+  }
+  section {
+    height: rem(50); line-height: rem(50); text-align: center; font-size: rem(18); color: #ffffff; letter-spacing: rem(1); position: relative; font-weight: bold;
+  }
+  section:first-child {
+    width: rem(50); height: rem(50); position: absolute; top: 0; left: 0; z-index: 5; background: url('../images/back.png') center center no-repeat; background-size: rem(20) auto;
+  }
+  section:nth-child(2) {
+    p {
+      display: inline-block; background: url('../images/bTArrow.png') right center no-repeat; background-size: rem(25) auto; padding-right: rem(30);
+    }
+    p.backTransparent {
+      background: transparent;
+    }
+  }
+  section:nth-child(3) {
+    display: inline-block; position: absolute; top: 0; right: 0;
+    a {
+      line-height: rem(50); padding: 0 rem(15); font-size: rem(14); color: #ffffff;
+    }
+  }
+}
+.headerTopWei {
+  // display: flex; display: -webkit-flex; flex-direction: column;
+  background: url('../images/headerTopImg.png') top center no-repeat; background-size: 100% auto;
+  span {
+    font-family: arial;
+  }
+  section {
+    height: rem(40);
+    line-height: rem(40);
+    text-align: center;
+    font-size: rem(18);
+    color: #ffffff;
+    letter-spacing: rem(1);
+    position: relative;
+    font-weight: bold;
+  }
+  section:first-child {
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: url('../images/back.png') center center no-repeat;
+    background-size: rem(20) auto;
+  }
+  section:nth-child(2) {
+    p {
+      display: inline-block;
+      background: url('../images/bTArrow.png') right center no-repeat;
+      background-size: rem(25) auto;
+      padding-right: rem(30);
+
+    }
+    p.backTransparent {
+      background: none;
+      padding-right: 0; font-size: rem(16);
+    }
+  }
+  section:nth-child(3) {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    a {
+      line-height: rem(40);
+      padding: 0 rem(15);
+      font-size: rem(14);
+      color: #ffffff;
+    }
+    .increaseEd {
+      font-size: rem(30);
+    }
+  }
+}
+
+.DeliveryAmout {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  padding: rem(10);
+  padding-top: rem(5); padding-bottom: 0;
+  position: relative;
+  .DeliveryHeaderAmouted {
+    min-width: rem(148);
+    height: rem(40);
+    border-radius: rem(40);
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: rem(1) solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(top, #F03636, #C90606), linear-gradient(top, #FFFBAD, #FFA531);
+    background-image: -webkit-linear-gradient(top, #F03636, #C90606), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    box-shadow: inset rem(1) rem(-1) rem(10) rgba(0, 0, 0, 0.5);
+    font-size: rem(14);
+    line-height: rem(38);
+    color: #FFFF5E;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.30);
+    padding-left: rem(45);
+    padding-right: rem(15);
+    //text-align: center;
+    section {
+      line-height: rem(12);
+    }
+    section:first-child {
+      padding-top: rem(6);
+    }
+    section:nth-child(2) {
+      color: #fff;
+      p {
+        font-size: rem(10);
+        span {
+          font-size: rem(10);
+        }
+      }
+    }
+    section:nth-child(1) {
+      p {
+        font-size: rem(10);
+        span {
+          font-size: rem(14);
+        }
+      }
+    }
+    p {
+      display: inline-block;
+    }
+    span {
+      font-size: rem(18);
+      display: inline-block;
+      font-family: arial;
+    }
+  }
+  .DeliveryHeaderAmouted.DeliveryClas {
+    background-image: linear-gradient(top, #40817B, #204D4C), linear-gradient(top, #FFFBAD, #FFA531);
+    background-image: -webkit-linear-gradient(top, #40817B, #204D4C), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+  }
+  .DeliveryClas.DeliveryMian .DeliveryAmouted {
+    min-width: rem(0);
+    background-image: none;
+    box-shadow: none;
+    padding-left: rem(5);
+    height: rem(40);
+    border-radius: rem(40);
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: rem(1) solid transparent;
+  }
+  //北京pk10
+  .DeliveryHeaderAmouted.DeliveryAmoutedBjPk10 {
+    min-width: rem(108);
+    margin-left: rem(46);
+    background: url('../images/head_pk10_bg.png') left center no-repeat;
+    background-size: 100% 100%;
+    padding: 0 rem(10);
+    //text-align: center;
+  }
+  .Deliverycircular {
+    width: rem(43);
+    height: rem(43);
+    border-radius: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: rem(1) solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box; /*background-image: linear-gradient(top,#2D2721,#2D2721),linear-gradient()(top,#FFFBAD,#FFA531); background-image: -webkit-linear-gradient(top,#2D2721,#2D2721),-webkit-linear-gradient(top,#FFFBAD,#FFA531);*/
+    position: absolute;
+    top: rem(3);
+    left: rem(10);
+    box-shadow: rem(1) rem(0) rem(5) rgba(0, 0, 0, 0.5);
+    overflow: visible;
+    img {
+      width: rem(46);
+      position: relative;
+      top: rem(2);
+    }
+  }
+  .Deliverycircular.DeliveryClaslared {
+    img {
+      width: rem(60);
+      position: relative;
+      top: rem(-3);
+      left: rem(-1);
+    }
+  }
+  .DeliveryMian.DeliveryClas {
+    min-width: rem(148);
+    height: rem(40);
+    border-radius: rem(40);
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: rem(1) solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(top, #40817B, #204D4C), linear-gradient(top, #FFFBAD, #FFA531);
+    background-image: -webkit-linear-gradient(top, #40817B, #204D4C), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    box-shadow: inset rem(1) rem(-1) rem(10) rgba(0, 0, 0, 0.5);
+    font-size: rem(14);
+    line-height: rem(38);
+    color: #FFFF5E;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.30);
+    padding-left: rem(45);
+    padding-right: rem(5);
+
+  }
+}
+
+.DeliveryMun {
+  text-align: right;
+  flex: 1;
+  margin-top: rem(-12);
+  section {
+    font-size: rem(12);
+    color: #ffffff;
+    span {
+      font-family: arial;
+    }
+  }
+  section:first-child {
+    line-height: rem(26);
+  }
+  section.pcddlottery {
+    p {
+      width: rem(54);
+      height: rem(24);
+      line-height: rem(22);
+      box-sizing: border-box;
+      -webkit-box-sizeing: border-box;
+      border: rem(1) solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(top, #50C36D, #27853B), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #50C36D, #27853B), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+      display: inline-block;
+      border-radius: rem(3);
+      text-align: center;
+      box-shadow: inset rem(1) rem(-1) rem(8) rgba(0, 0, 0, 0.5);
+      span {
+        font-size: rem(16);
+        color: #FFFF5E;
+      }
+    }
+  }
+  section.pcddHeaderlottery {
+    p {
+      box-sizing: border-box;
+      -webkit-box-sizeing: border-box;
+      border: rem(1) solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(top, #F03636, #C90606), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #F03636, #C90606), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+      display: inline-block;
+      border-radius: rem(3);
+      text-align: center;
+      box-shadow: inset rem(1) rem(-1) rem(8) rgba(0, 0, 0, 0.5);
+      width: rem(28);
+      height: rem(28);
+      line-height: rem(26);
+      border-radius: 50%;
+      position: relative;
+      font-family: arial;
+      font-size: rem(16);
+      margin-left: rem(15);
+    }
+    p:after {
+      content: "+";
+      position: absolute;
+      right: rem(-43);
+      left: 0;
+    }
+    p:nth-of-type(3):after {
+      content: "=";
+    }
+    p.red {
+      background-image: linear-gradient(top, #F03636, #C90606), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #F03636, #C90606), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    }
+    p.blue {
+      background-image: linear-gradient(top, #2C55CA, #2C55CA), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #2C55CA, #2C55CA), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    }
+    p.green {
+      background-image: linear-gradient(top, #50C36D, #27853B), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #50C36D, #27853B), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    }
+    p.gray {
+      background-image: linear-gradient(top, #cccccc, #cccccc), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #cccccc, #cccccc), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+      color: #333333;
+    }
+  }
+  section.pcddlottery.happlyLottery {
+    p {
+      float: right;
+      margin-left: rem(5);
+    }
+    p:after {
+      content: '';
+    }
+    p:first-of-type {
+      background: transparent;
+      width: rem(32);
+    }
+  }
+
+  section.pcddlottery.cqsscLottery {
+    border: rem(1) solid #F0DDAE;
+    border-radius: rem(3);
+    display: inline-block;
+    padding: rem(2);
+    padding-left: rem(0);
+    p {
+      float: left;
+      margin-left: rem(2);
+      width: rem(14);
+      height: rem(21);
+      background: linear-gradient(top, #F0DDAE, #DCB976);
+      background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+      border-radius: rem(1);
+      line-height: rem(21);
+      font-size: rem(12);
+      color: #000000;
+    }
+    p:after {
+      content: '';
+    }
+  }
+
+  section.pcddlottery.DeliveryMunBjpk10 {
+    p {
+      width: rem(22);
+      height: rem(26);
+      background: url('../images/head_pk10_back.png') top center no-repeat;
+      background-size: rem(22) rem(26);
+      margin-left: rem(1);
+      font-size: rem(12);
+    }
+    p img {
+      width: rem(22);
+      height: rem(26);
+    }
+    p:after {
+      content: "";
+    }
+  }
+  section.pcddlottery.jsk3Lottery {
+    p {
+      background: none;
+      border: none;
+      margin-left: rem(5);
+      width: auto;
+      img {
+        width: rem(25);
+        height: rem(25);
+      }
+    }
+  }
+}
+
+.DeliveryTime {
+  height: rem(26);
+  line-height: rem(26);
+  text-align: center;
+  color: #100C08;
+  font-size: rem(12);
+  background: linear-gradient(top, #FDDA4B, #FFB238);
+  background: -webkit-linear-gradient(top, #FDDA4B, #FFB238);
+  box-shadow: inset 0 0 rem(4) #DE8100;
+  span, time {
+    font-family: arial;
+  }
+}
+
+/*pcdd页面*/
+.pcdd_Mian {
+  background: #f9e7a8; /*padding: rem(10);*/
+  //padding-bottom: rem(110);
+  .pcdd_mian_line {
+    //margin: rem(10); border-radius: rem(5);
+    border: rem(4) solid #df1b24;
+    //min-height: rem(350);
+    padding: rem(10);
+    padding-top: rem(5);
+    background: #ffffff;
+  }
+  .pcdd_mun {
+    margin-bottom: rem(10);
+  }
+  .pcdd_mun:last-child {
+    margin-bottom: rem(20);
+  }
+}
+
+.headered_mianed.headered_mianed_bjpx10 {
+  background: url('../images/head_pk10_bgTop.png') center center no-repeat;
+  background-size: 100% auto;
+}
+
+.Popup_up {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.popup_upMian {
+  width: 70%;
+  border: rem(1) solid #F0DDAE;
+  padding: rem(15);
+  background: rgba(40, 37, 38, 0.80);
+  box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0, 0, 0, 0.50);
+  border-radius: rem(6);
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  ul li {
+    width: 48%;
+    height: rem(46);
+    line-height: rem(46);
+    border: rem(1) solid #F0DDAE;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: rem(14);
+    color: #E9D29B;
+    margin-bottom: rem(10);
+  }
+  ul li:nth-child(odd) {
+    margin-right:4%;
+  }
+  ul li.on {
+    background-image: linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+    background-image: -webkit-linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+    color: #2F2122;
+  }
+}
+
+.popup_ulTitle {
+  font-size: rem(16);
+  color: #FFFFFF;
+  text-align: left;
+  padding-bottom: rem(15);
+}
+
+.delPopup {
+  width: rem(20);
+  position: absolute;
+  right: rem(12);
+  top: rem(12);
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+//.pcdd {
+//  margin-top: rem(132);
+//}
+
+.pcdd_Mian {
+  .pcdd_mun_title {
+    font-size: rem(14);
+    color: #4A4A4A;
+    text-align: center;
+    padding-bottom: 0;
+    padding-top: rem(10);
+  }
+  .pcdd_mun_list {
+    padding: rem(5) 0;
+    padding-bottom: rem(10);
+    ul {
+      height: auto;
+      overflow: hidden;
+      //padding-bottom: rem(2);
+      li {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        width: 25%;
+        float: left;
+        text-align: center;
+        padding-bottom: rem(8);
+        position: relative;
+      }
+      li.on {
+        overflow: visible;
+        /*      // .play_article {
+              //   background: #C90606; color: #ffffff; overflow: visible;
+              //   section:first-child {
+              //     p {
+              //       color: #ffffff;
+              //     }
+              //     p:first-of-type {
+              //       min-width: rem(19); height: rem(19); background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976);  line-height: rem(19); font-size: rem(12); font-family: arial; color: #DF1B24;
+              //     }
+              //     p.clsName {
+              //       background: transparent; color: #ffffff;
+              //     }
+              //   }
+              //   section:nth-child(2) {
+              //     font-size: rem(10); color: #ffffff;
+              //   }
+              // }*/
+      }
+    }
+  }
+
+  /*  // .play_article {
+    //   width: rem(75); border: rem(1) solid #C90606; display: inline-block;  background: #fff; border-radius: rem(2); box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; position: relative;
+    //   section:first-child {
+    //     p {
+    //       font-size: rem(12); font-size: rem(10); color: #4A4A4A; font-family: arial;
+    //     }
+    //     p:first-of-type {
+    //       min-width: rem(19); height: rem(19); background: #DF1A24;  line-height: rem(19); font-size: rem(12); color: #ffffff; font-family: arial;
+    //     }
+    //     p.clsName {
+    //       background: #ffffff; color: #4A4A4A;
+    //     }
+    //     p:last-of-type {
+    //       width: rem(55); text-align: left; padding-left:rem(5); line-height: rem(22);
+    //     }
+    //   }
+    //   section:nth-child(2) {
+    //     height: rem(19); line-height: rem(19); font-size: rem(10); color: #999; text-align: left; font-family: arial;
+    //   }
+    //   section.playMarryImg {
+    //     width: rem(20); min-height: rem(20); position: absolute; top: rem(-5); right: rem(-5);
+    //   }
+    // }*/
+}
+
+.pcdd_Mian.jndCls {
+  background: rgb(219, 6, 27);
+  .pcdd_mian_line.jndCls_Line {
+    border: rem(4) solid rgb(227, 199, 46);
+    margin: rem(5);
+  }
+}
+
+//香港六合彩
+.pcdd_Mian.happlyCls {
+  background: linear-gradient(top, #331F12, #221709);
+  background: -webkit-linear-gradient(top, #331F12, #221709);
+  background: -moz-linear-gradient(top, #331F12, #221709);
+  background: -ms-linear-gradient(top, #331F12, #221709);
+  background: -o-linear-gradient(top, #331F12, #221709);
+  .pcdd_mian_line {
+    border: none;
+    height: rem(380);
+    background: url('../images/xglhc_Back.png') top center no-repeat;
+    background-size: 100% 100%;
+    padding: rem(20);
+    .pcdd_mian_lineHeight {
+      //height: rem(350);  overflow-y: scroll;
+    }
+  }
+  .pcdd_mun_title {
+    color: #2B1B0E;
+  }
+  .play_article {
+    background: transparent;
+    border: rem(1) solid #774D34;
+    border-radius: 0;
+    position: relative;
+    section:first-child {
+      img {
+        width: rem(18);
+        margin-left: rem(5);
+      }
+      p:first-of-type {
+        background: transparent;
+        color: #774D34;
+        min-width: rem(5);
+        text-indent: rem(5);
+      }
+      p:last-of-type {
+        color: #E0262B;
+      }
+    }
+    section:last-child {
+      color: #774D34;
+      text-indent: rem(5);
+    }
+  }
+  .play_article:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: rem(10);
+    height: 100%;
+    background: url('../images/btn_click.png') top left no-repeat;
+    background-size: rem(10) 100%;
+  }
+  .play_article:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: rem(10);
+    height: 100%;
+    background: url('../images/btn_click.png') top left no-repeat;
+    background-size: rem(10) 100%;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+  .pcdd_mun_list {
+    ul {
+      li.on {
+        overflow: visible;
+        .play_article {
+          background: rgba(0, 0, 0, 0.07);
+          overflow: visible;
+          section:first-child {
+            p {
+              text-indent: rem(5);
+            }
+            p:first-of-type {
+              min-width: rem(5);
+              height: rem(19);
+              background: transparent;
+              line-height: rem(19);
+              font-size: rem(12);
+              font-family: arial;
+              color: #774D34;
+            }
+            p:last-of-type {
+              color: #E0262B;
+            }
+          }
+          section:nth-child(2) {
+            font-size: rem(10);
+            color: #774D34;
+            text-indent: rem(5);
+          }
+        }
+      }
+    }
+  }
+}
+
+//重庆时时彩
+.pcdd_Mian.cqsscCls {
+  background: linear-gradient(top, #1e1c28, #1e1c28);
+  background: -webkit-linear-gradient(top, #1e1c28, #1e1c28);
+  background: -moz-linear-gradient(top, #1e1c28, #1e1c28);
+  background: -ms-linear-gradient(top, #1e1c28, #1e1c28);
+  background: -o-linear-gradient(top, #1e1c28, #1e1c28);
+  .pcdd_mian_line {
+    border: none;
+    border-radius: rem(10);
+    padding-top: rem(10);
+    margin: rem(5);
+    border: rem(7) solid #4e0000;
+    background: url('../images/cqssc_back.png') top center no-repeat;
+    background-size: 100% 100%;
+    .pcdd_mian_lineHeight {
+      //height: rem(420);  overflow-y: scroll; padding-bottom: rem(50);
+    }
+  }
+
+  .pcdd_num_cqssc {
+    border: rem(1) solid #BEB284;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    width: 99.5%;
+    border-radius: rem(5);
+  }
+
+  .pcdd_mun_title {
+    color: #FFDC99;
+    font-size: rem(12);
+  }
+
+  /* // ul {
+   //   padding: 0 rem(5);
+   // }
+   // .play_article {
+   //   background: transparent; border: rem(0.5) solid #FFDC99; border-radius: 0; position: relative; width: rem(75); display: inline-block; height: rem(38);
+
+   //   section:first-child {
+   //     p {
+   //       text-indent: rem(5);
+   //       font-size: rem(14);
+   //       color: #FFDC99 !important;
+   //     }
+   //     p:first-of-type {
+   //       background: transparent; color: #774D34; min-width: rem(5);
+   //     }
+   //     p:last-of-type {
+   //       color: #E0262B;
+   //     }
+
+   //     .indexFiex {
+   //       font-size: rem(10);
+   //     }
+   //   }
+   //   section:last-child {
+   //     color: #FFFFFF; text-indent: rem(5);
+   //     font-size: rem(10);
+   //   }
+   // }
+
+   // .pcdd_mun_list {
+   //   ul {
+   //     li.on {
+   //       overflow: visible;
+   //       .play_article {
+   //         background: rgba(0,0,0,0.07); overflow: visible;
+   //         section:first-child {
+   //           p {
+   //             text-indent: rem(5);
+   //           }
+   //           p:first-of-type {
+   //             min-width: rem(5); height: rem(19); background: transparent;  line-height: rem(19); font-size: rem(14); font-family: arial;
+   //           }
+   //           p:last-of-type {
+   //             color: #E0262B;
+   //           }
+   //         }
+   //         section:nth-child(2) {
+   //           font-size: rem(10); text-indent: rem(5);
+   //         }
+   //       }
+   //     }
+   //   }
+   // }*/
+}
+
+//大小骰宝
+.pcdd_Mian.shaiCls {
+  background: linear-gradient(#2c2839, #231f2e);
+  background: -webkit-linear-gradient(top, #2c2839, #231f2e);
+  background: -moz-linear-gradient(top, #2c2839, #231f2e);
+  background: -ms-linear-gradient(top, #2c2839, #231f2e);
+  background: -o-linear-gradient(top, #2c2839, #231f2e);
+  //padding-bottom:rem(60);
+  .pcdd_mian_line {
+    border: none;
+    //height: rem(380);
+    background: url('../images/jsks_back.png') top center no-repeat;
+    background-size: 100% 100%;
+    padding: rem(20);
+    padding-top: rem(25);
+    margin-top: 0;
+    //padding-bottom: rem(10);
+    .pcdd_mian_lineHeight {
+      //height: rem(350);
+      overflow-y: scroll;
+      //border: rem(1) solid #BEB284;
+      //border-radius: rem(5);
+      .pcdd_mun_dx {
+        border: rem(1) solid #BEB284;
+        border-radius: rem(5);
+      }
+    }
+  }
+  .pcdd_mun_title {
+    color: #2B1B0E;
+  }
+
+  // .pcdd_mun_list {
+  //   padding: rem(0) 0; padding-top: rem(0); margin-top: rem(0);
+  // }
+  .play_article {
+    background: transparent;
+    border: rem(1) solid #774D34;
+    border-radius: 0;
+    position: relative;
+    section:first-child {
+      img {
+        width: rem(18);
+        margin-left: rem(5);
+      }
+      p:first-of-type {
+        background: transparent;
+        color: #774D34;
+        min-width: rem(5);
+        text-indent: rem(5);
+      }
+      p:last-of-type {
+        color: #E0262B;
+      }
+    }
+    section:last-child {
+      color: #774D34;
+      text-indent: rem(5);
+    }
+  }
+
+  .play_article_border {
+    border: 0px solid red;
+
+  }
+
+  .pcdd_mun_list {
+    border: rem(1) solid #BEB284;
+    border-radius: rem(5);
+    padding: 0;
+    margin-top: rem(10);
+    margin-bottom: rem(10);
+    ul {
+      .jcks_other_li {
+        width: 50%;
+        border-right: rem(1) solid #BEB284;
+        border-bottom: rem(0.5) solid #BEB284;
+        margin-bottom: rem(-1);
+        margin-right: rem(-1);
+
+      }
+      li {
+
+      }
+      li#cdpstyle:last-child {
+        //margin-bottom: rem(-3);
+      }
+      li.on {
+        .play_article {
+          //background: rgba(0,0,0,0.07);
+          background: transparent;
+          section:first-child {
+            p {
+              text-indent: rem(5);
+            }
+            p:first-of-type {
+              min-width: rem(5);
+              height: rem(19);
+              background: transparent;
+              line-height: rem(19);
+              font-size: rem(12);
+              font-family: arial;
+              color: #774D34;
+            }
+            p:last-of-type {
+              color: #E0262B;
+            }
+          }
+          section:nth-child(2) {
+            font-size: rem(10);
+            color: #774D34;
+            text-indent: rem(5);
+          }
+        }
+      }
+    }
+  }
+
+  .pcdd_mun_list_other {
+    border: rem(1) solid #BEB284;
+    border-radius: rem(5);
+    //padding: rem(0); margin-top: rem(0);
+    ul {
+      .jcks_other_li {
+        width: 50%;
+        border-right: rem(1) solid #BEB284;
+        border-bottom: rem(0.5) solid #BEB284;
+
+      }
+
+      li.on {
+        .play_article {
+          //background: rgba(0,0,0,0.07);
+          background: transparent;
+          section:first-child {
+            p {
+              text-indent: rem(5);
+            }
+            p:first-of-type {
+              min-width: rem(5);
+              height: rem(19);
+              background: transparent;
+              line-height: rem(19);
+              font-size: rem(12);
+              font-family: arial;
+              color: #774D34;
+            }
+            p:last-of-type {
+              color: #E0262B;
+            }
+          }
+          section:nth-child(2) {
+            font-size: rem(10);
+            color: #774D34;
+            text-indent: rem(5);
+          }
+        }
+      }
+    }
+  }
+}
+
+.westernFooter {
+  height: rem(120);
+  background: url('../images/westernBottom.png') top center no-repeat;
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  overflow: visible;
+}
+
+.westernFooter.westernBack_01 {
+  background: transparent;
+}
+
+.westernFooter.westernBack_01.westernBacks_01 {
+  position: fixed;
+}
+
+.westernFooter_mian {
+  padding: rem(15);
+}
+
+.westernFooter_top ul {
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  li:first-child, li:last-child {
+    width: rem(35);
+    height: rem(35);
+    line-height: rem(35);
+    border: rem(1) solid #ffffff;
+    border-radius: rem(5);
+    text-align: center;
+    font-size: rem(20);
+    color: #ffffff;
+  }
+  li:nth-child(2) {
+    flex: 1;
+    position: relative;
+  }
+}
+
+.westernCir.dragMan_maxline {
+  width: rem(170);
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  p {
+    width: rem(170);
+    height: rem(8);
+    background: #ffffff;
+    position: relative;
+    border-radius: rem(8);
+  }
+  //p:after {
+  //  content:""; width: rem(15); height: rem(15); background: #ffffff; border-radius: 50%; position: absolute; top:rem(-4); left: rem(-1);
+  //}
+  //p:before {
+  //  content:""; width: rem(15); height: rem(15); background: #ffffff; border-radius: 50%; position: absolute; top:rem(-4); right: rem(-2);
+  //}
+  p.westernYellow {
+    width: 0;
+    height: rem(8);
+    background: linear-gradient(left, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+    top: rem(-8);
+  }
+  //p.westernYellow:after {
+  //  content:""; width: rem(15); height: rem(15); background: #FCD218; border-radius: 50%; position: absolute; top:rem(-4); left: rem(-1);
+  //}
+  //p.westernYellow:before {
+  //  content:""; width: rem(0); height: rem(15); background: #ffffff; border-radius: 50%; position: absolute; top:rem(-4); right: rem(-1);
+  //}
+  .westernYeQiu {
+    width: rem(15);
+    height: rem(15);
+    background: linear-gradient(left, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+    position: absolute;
+    top: rem(-4);
+    left: rem(0);
+    right: rem(5);
+    border-radius: 50%;
+  }
+}
+.westernFooter_top>ul{
+  margin-left:rem(10);
+}
+.westernCirText {
+  display: flex;
+  -webkit-display: flex;
+  font-size: rem(12);
+  color: #ffffff;
+  //width: rem(225);
+  margin: 0 auto;
+  margin-bottom: rem(8);
+  p:nth-of-type(2) {
+    flex: 1;
+    text-align: center;
+  }
+  span {
+    font-family: arial;
+  }
+}
+
+.westernFooter_bottom {
+  display: flex;
+  -webkit-display: flex; margin-top: rem(-5);
+  section:first-child {
+    width: rem(45);
+    height: rem(37);
+    padding: 0 rem(10);
+    margin-top: rem(10);
+    line-height: rem(37);
+    background-color: #cecece;
+    border-radius: rem(3);
+    a {
+      font-size: rem(14);
+      display: block; color: #333333;
+      text-align: center;
+    }
+  }
+  //section:nth-child(2) {
+  //  flex: 1;
+  //  text-align: center;
+  //  p {
+  //    display: inline-block;
+  //    margin: 0 rem(3);
+  //    position: relative;
+  //    top: rem(-5);
+  //    position: relative;
+  //    img {
+  //      width: rem(40);
+  //      position: relative;
+  //      z-index: 2;
+  //    }
+  //    img.maryCls {
+  //      width: rem(20);
+  //      position: fixed;
+  //      top: rem(10);
+  //      left: rem(10);
+  //      z-index: 0;
+  //    }
+  //  }
+  //  p.on {
+  //    position: relative;
+  //    top: rem(2);
+  //    img {
+  //      width: rem(55);
+  //    }
+  //    img.maryCls {
+  //      width: rem(20);
+  //      position: absolute;
+  //      top: rem(17);
+  //      left: rem(17);
+  //      z-index: 0;
+  //    }
+  //  }
+  //}
+  section:last-child {
+    flex: 1; text-align: right;
+    a {
+      width: rem(90);
+      height: rem(37);
+      padding: 0 rem(5);
+      margin-top: rem(10);
+      line-height: rem(37);
+      background-color: #FFD148;
+      border-radius: rem(3);
+      font-size: rem(14);
+      color: #333333;
+      text-align: center;
+      display: inline-block;
+    }
+  }
+}
+
+//提交订单
+.confirmPage {
+  width: 100%;
+  background: url('../images/bodyBack.png') top center no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 6;
+}
+
+.confirmCls {
+  //  height: 100%; background: url('../images/green_back.png') top center no-repeat; background-size: 100% 100%;
+  height: 100%;
+  background: linear-gradient(top, #F03636, #C90606);
+  background: -webkit-linear-gradient(top, #F03636, #C90606);
+
+}
+
+/*江苏快三确认投注背景*/
+.bg_jsks_confirmCls {
+  background: linear-gradient(top, #346760, #27534E);
+  background: -webkit-linear-gradient(top, #346760, #27534E);
+}
+
+.confirmCls.confirmEls {
+  height: 100%;
+  background: linear-gradient(top, #143b23, #164227);
+  background: -webkit-linear-gradient(top, #143b23, #164227);
+}
+
+.confirmCls.confirmJzd {
+  height: 100%;
+  background: linear-gradient(top, #0d3772, #0d3772);
+  background: -webkit-linear-gradient(top, #0d3772, #0d3772);
+}
+
+.confirmCls.confirmMnh {
+  height: 100%;
+  background: linear-gradient(top, #37646e, #2d5c62);
+  background: -webkit-linear-gradient(top, #37646e, #2d5c62);
+}
+
+/*北京pk10确认投注背景*/
+.confirmCls_bjpk10 {
+  color: #fff;
+  background: linear-gradient(top, #000, #000);
+  background: -webkit-linear-gradient(top, #000, #000);
+  .confirmCls_mian {
+    padding: rem(6) rem(6) 0;
+    .bjpk10_confirmCls_bg {
+      background: url("../../assets/images/pk10/confirm_bets/bg_confirm_bets.png") left top no-repeat;
+      background-size: 100% 100%;
+      height: rem(530);
+      overflow: hidden;
+      padding: rem(22) 0 0 rem(10);
+      .confirmClsTop {
+        height: 0;
+      }
+      .confirmbreak {
+        width: 97%;
+        background-color: transparent;
+        margin: 0 rem(3);
+        .confirmTitle {
+          background: url("../../assets/images/pk10/confirm_bets/bg_title.png") left top no-repeat rgba(255, 255, 255, 0.10);
+          background-size: 100% 100%;
+          border-radius: 0;
+          color: #fff;
+          height: rem(38);
+          margin: rem(0) 0;
+          p {
+            line-height: rem(38);
+          }
+        }
+        .confirmListed {
+          padding: 0;
+          height: rem(530);
+          li {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.10);
+            border-bottom: rem(1) solid rgba(127, 222, 253, 0.30);
+            p:last-of-type {
+              color: #FCD145;
+            }
+            a {
+              img {
+                background: url("../../assets/images/pk10/confirm_bets/close.png") left top no-repeat;
+                background-size: 100% 100%;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+/*北京pk10玩法下拉框背景*/
+.popup_upMian.popup_upMian_bjpk10 {
+  border: none;
+  background: url("../../assets/images/pk10/confirm_bets/bg_change.png") left top no-repeat;
+  background-size: 100% 100%;
+  width: rem(264);
+  height: rem(180);
+  .popup_bjpk10_box {
+    margin:rem(20) rem(15);
+    ul{
+      li{
+        color: #02A6DF;
+        background: url("../../assets/images/pk10/confirm_bets/bg_list.png") left top no-repeat;
+        background-size: 100% 100%;
+        border: none;
+
+      }
+      li.on{
+        background: url("../../assets/images/pk10/confirm_bets/bg_list_select.png") left top no-repeat;
+        background-size: 100% 100%;
+        color: #F8C308;
+      }
+    }
+    .delPopup{
+      top:rem(40);
+    }
+  }
+}
+
+.confirmCls_cqssc {
+  height: 100%;
+  background: url('../images/cqssc_back.png') top center no-repeat;
+  background-size: 100% 100%;
+  //height: 100%; background: linear-gradient(top,#F03636,#C90606); background: -webkit-linear-gradient(top,#F03636,#C90606);
+}
+
+.confirmClsTop {
+  height: rem(10);
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: rem(10);
+}
+
+.confirmbreak {
+  width: 96%;
+  background: #ffffff;
+  margin: 0px auto;
+  margin-top: rem(-5);
+}
+
+.confirmbreak.confirmbreakxG {
+  background: url('../images/xglhc_Back01.png') top center no-repeat;
+  background-size: 100% auto;
+}
+
+.confirmTitle {
+  margin: rem(10);
+  background: #EEEEEE;
+  height: rem(26);
+  border-radius: rem(26);
+  font-size: rem(12);
+  color: #4A4A4A;
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  line-height: rem(26);
+  p {
+    text-indent: rem(15);
+    width: 20%;
+  }
+  p:first-of-type {
+    flex: 1;
+  }
+  p:last-of-type {
+    padding-right: rem(30)
+  }
+}
+
+.confirmListed {
+  padding: rem(10);
+  padding-top: 0;
+  height: rem(430);
+  overflow-y: scroll;
+  ul li {
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    font-size: rem(12);
+    color: #4A4A4A;
+    padding: rem(15) 0;
+    position: relative;
+    border-bottom: 1px solid #eeeeee;
+    p {
+      text-indent: rem(15);
+      width: 20%;
+    }
+    p:first-of-type {
+      flex: 1;
+    }
+    p:last-of-type {
+      color: #E73928;
+      padding-right: rem(30)
+    }
+    a {
+      position: absolute;
+      top: rem(14);
+      right: rem(10);
+      width: rem(15);
+    }
+    span {
+      font-family: arial;
+    }
+  }
+  ul {
+    padding-bottom: rem(60);
+  }
+}
+
+.confirmCls_mian {
+  padding: rem(15);
+}
+
+.confirmBettimg {
+  height: rem(45);
+  background: url('../images/westernBottom.png') top center no-repeat;
+  background-size: cover;
+  display: flex;
+  -webkit-display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  section:first-child {
+    width: rem(45);
+    height: rem(37);
+    margin-left: rem(10);
+    padding: 0 rem(5);
+    margin-top: rem(4);
+    line-height: rem(37);
+    background-color: #cecece;
+    border-radius: rem(3);
+  }
+  section:nth-child(2) {
+    flex: 1;
+    text-align: center;
+    font-size: rem(14);
+    color: #ffffff;
+    p {
+      display: inline-block;
+      line-height: rem(45);
+    }
+    p:last-of-type {
+      color: #FCD218;
+    }
+  }
+  section:last-child {
+    width: rem(63);
+    height: rem(37);
+    padding: 0 rem(5);
+    margin-top: rem(4);
+    margin-right: rem(10);
+    line-height: rem(37);
+    background-color: #FFD148;
+    border-radius: rem(3);
+  }
+  section a {
+    display: block;
+    font-size: rem(14);
+    color: #333333;
+    text-align: center;
+  }
+}
+
+.westernFooter_bottom, .westernFooter_bottom section, .westernFooter_bottom section p, .westernFooter_mian, .westernFooter {
+  overflow: visible;
+}
+
+//香港六合彩
+.confirmCls.confirmClsxG {
+  height: 100%;
+  background: linear-gradient(top, #2a1a0d, #201608);
+  background: -webkit-linear-gradient(top, #2a1a0d, #201608);
+  .confirmCls_mian {
+    padding: 0;
+    background: url('../images/xglhc_Back01.png') top center no-repeat;
+    background-size: 100% auto;
+    height: rem(550);
+    .confirmbreak {
+      background: transparent;
+      width: 90%;
+      margin-top: rem(25);
+      .confirmTitle {
+        background: transparent;
+      }
+      .confirmListed {
+        ul {
+          li {
+            border-bottom: rem(1) solid #100C08;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*是否删除投注记录*/
+.emptyBack {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10; /*display: none;*/
+  .emptyMun {
+    width: 100%;
+    height: 100%;
+    .emptyData {
+      width: rem(280);
+      background: rgba(40, 37, 38, 0.80);
+      box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0, 0, 0, 0.80);
+      border-radius: rem(6);
+      border-radius: rem(2);
+      border: rem(1) solid #FDDA4B;
+      section {
+        padding: rem(18) 0;
+        p {
+          padding: 0 rem(20);
+          text-align: center;
+          font-size: rem(14);
+          color: #ffffff;
+          line-height: rem(30);
+        }
+        p:first-of-type {
+          font-size: rem(20);
+        }
+      }
+    }
+  }
+}
+
+.indexcancel {
+  width: rem(120);
+  height: rem(45);
+  line-height: rem(45);
+  background: linear-gradient(left, #F0DDAE, #DCB976);
+  background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+  background: -moz-linear-gradient(left, #F0DDAE, #DCB976);
+  background: -ms-linear-gradient(left, #F0DDAE, #DCB976);
+  background: -o-linear-gradient(left, #F0DDAE, #DCB976);
+  display: inline-block;
+  font-size: rem(14);
+  color: #FDDA4B;
+  text-align: center;
+  margin-left: rem(13);
+  margin-bottom: rem(12);
+  color: #2F2122;
+}
+
+.indexcancel.indexcancel_qx {
+  background: transparent;
+  border: rem(1) solid #F0DDAE;
+  color: #F0DDAE;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+.indexcancel.indexcancel_qd {
+  width: rem(120);
+  height: rem(45);
+  line-height: rem(45);
+  background-image: radial-gradient(#B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+  background-image: -webkit-radial-gradient(#B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+  background: linear-gradient(left, #F0DDAE, #DCB976);
+  background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+  display: inline-block;
+  font-size: rem(14);
+  color: #FDDA4B;
+  text-align: center;
+  margin-left: rem(13);
+  margin-bottom: rem(12);
+  color: #2F2122;
+
+}
+
+/*
+ul {
+        // border-top: rem(1) solid #FDDA4B;
+        li {
+        text-align: center; height: rem(50); line-height: rem(50); font-size: rem(14); color: #FDDA4B;
+          p {
+            width: rem(120);  height: rem(50); line-height: rem(50);  background: linear-gradient(left,#F0DDAE,#DCB976); background: -webkit-linear-gradient(left,#F0DDAE,#DCB976); background: -moz-linear-gradient(left,#F0DDAE,#DCB976); background: -ms-linear-gradient(left,#F0DDAE,#DCB976); background: -o-linear-gradient(left,#F0DDAE,#DCB976);  display: inline-block;
+          }
+        }
+        // li:last-child {
+        //   // background: linear-gradient(left,#F0DDAE,#DCB976); background: -webkit-linear-gradient(left,#F0DDAE,#DCB976); background: -moz-linear-gradient(left,#F0DDAE,#DCB976); background: -ms-linear-gradient(left,#F0DDAE,#DCB976); background: -o-linear-gradient(left,#F0DDAE,#DCB976);
+        // }
+      }
+*/
+
+/*北京pk10*/
+//img {
+//  transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41); /*贝塞尔曲线*/
+//  -webkit-transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41); /*贝塞尔曲线*/
+//}
+
+.westernBack_01 {
+  // max-width: rem(640); margin: 0 auto;
+}
+
+.pcdd_Mian.pcdd_Mian_bjpk10 {
+  background: url('../images/pk10_dabg@2x.png') top center no-repeat;
+  background-size: 100% 100%;
+  padding: 0;
+  padding-top: rem(120);
+
+  .bjpk_mian {
+    background: url('../images/pk10_yy.png') top center no-repeat;
+    background-size: 100% auto;
+    padding-top: rem(5);
+    height: rem(460);
+    .bjpk_mian_padding {
+      height: rem(350);
+      overflow-y: scroll;
+      padding-bottom: rem(50);
+    }
+  }
+}
+
+.bjpk_mun {
+  padding: rem(0) rem(35);
+  padding-top: rem(10);
+  text-align: center;
+  .bjpk_mun_title {
+    min-width: rem(70);
+    height: rem(25);
+    line-height: rem(25);
+    margin: rem(10) auto;
+    font-size: rem(12);
+    color: #FFFFFF;
+    background: url('../images/title_bg3x.png');
+    background-size: 100% auto;
+    display: inline-block;
+  }
+  .bjpk_mun_text {
+    ul {
+      li {
+        width: 33.3%;
+        float: left;
+        font-size: rem(10);
+        color: #ffffff;
+        margin-bottom: rem(3);
+        text-align: center;
+        .playbjpk10_article {
+          position: relative;
+          .playMarryImg {
+            width: rem(20);
+            height: rem(20);
+            position: absolute;
+            top: rem(30);
+            right: rem(10);
+
+          }
+        }
+      }
+      li.on {
+        .playbjpk10_article {
+          width: rem(80);
+          height: rem(40);
+          padding: rem(10);
+          background: url('../images/touzhu_bgColor.png');
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}
+
+.bjpk_mun:last-child {
+  padding-bottom: rem(50);
+}
+
+.playbjpk10_article {
+  width: rem(80);
+  height: rem(40);
+  padding: rem(10);
+  background: url('../images/touzhu_bg.png');
+  background-size: 100% 100%;
+  display: inline-block;
+  section {
+    height: rem(20);
+    line-height: rem(20);
+    text-align: left;
+    span {
+      font-family: arial;
+      line-height: rem(25);
+      color: #fff;
+    }
+  }
+  section:first-child {
+    color: #F8C308;
+    p:first-of-type {
+      font-size: rem(16);
+
+    }
+  }
+}
+
+.bjpk10Footer_mian {
+  height: rem(150);
+  background: url('../images/pk10copy_20.png') top center no-repeat;
+  background-size: 100% 100%;
+  margin-top: rem(-25);
+}
+.footerArticle_bjpk10 section.westernSectionNum {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: rem(30);
+  position: relative;
+  top: rem(10);
+  overflow: visible;
+  z-index: 3;
+  height:rem(46);
+}
+.footerArticle_bjpk10 {
+  text-align: center;
+  overflow: visible;
+  z-index: 3;
+  section {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: rem(10);
+    overflow: visible;
+    z-index: 3;
+    p {
+      width: rem(40);
+      display: inline-block;
+      position: absolute;
+      margin: 0 rem(8);
+      top: rem(10);
+      left: 8%;
+      img {
+        position: relative;
+        z-index: 3;
+      }
+      img.maryCls {
+        width: rem(15);
+        position: absolute;
+        bottom: rem(10);
+        left: rem(10);
+        z-index: 2;
+      }
+    }
+    p:nth-of-type(2) {
+      top: rem(-5);
+      left: 22%;
+    }
+    p:nth-of-type(3) {
+      top: rem(-10);
+      left: 36%;
+    }
+    p:nth-of-type(4) {
+      top: rem(-10);
+      left: 50%;
+    }
+    p:nth-of-type(5) {
+      top: rem(-5);
+      left: 64%;
+    }
+    p:nth-of-type(6) {
+      top: rem(10);
+      left: 78%;
+    }
+    p.on {
+      transition:All 0.4s ease-in-out; -webkit-transition:All 0.4s ease-in-out; -moz-transition:All 0.4s ease-in-out; -o-transition:All 0.4s ease-in-out; transform:scale(1.3); -webkit-transform:scale(1.3); -moz-transform:scale(1.3); -o-transform:scale(1.3); -ms-transform:scale(1.3);
+    }
+  }
+}
+
+.bjpk10Footer_top {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bjpk10Footer_top ul {
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  li:first-child, li:last-child {
+    width: rem(35);
+    height: rem(35);
+    line-height: rem(35);
+    border-radius: rem(5);
+    text-align: center;
+    font-size: rem(20);
+    color: #ffffff;
+  }
+  li:first-child {
+    background: url('../images/prevIcon.png') center center no-repeat;
+    background-size: rem(35) auto;
+  }
+  li:last-child {
+    background: url('../images/nextIcon.png') center center no-repeat;
+    background-size: rem(35) auto;
+  }
+  li:nth-child(2) {
+    flex: 1;
+    position: relative;
+  }
+}
+
+.westernCir_bjpk10 {
+  width: rem(200);
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  p {
+    width: rem(200);
+    height: rem(8);
+    background: #ffffff;
+    position: relative;
+    border-radius: rem(8);
+  }
+  //p:after {
+  //  content:""; width: rem(15); height: rem(8); background: #ffffff; border-radius: 50%; position: absolute; top:rem(0); left: rem(-1);
+  //}
+  //p:before {
+  //  content:""; width: rem(15); height: rem(8); background: #ffffff; border-radius: 50%; position: absolute; top:rem(0); right: rem(-2);
+  //}
+  p.westernYellow {
+    width: 0;
+    height: rem(9);
+    background: linear-gradient(top, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+    top: rem(-8);
+  }
+  P.westernYellowBJPK10 {
+    background: linear-gradient(left, #de2a00, #af2100);
+    background: -webkit-linear-gradient(left, #de2a00, #af2100);
+  }
+  //p.westernYellow:after {
+  //  content:""; width: rem(0); height: rem(8); background: #FCD218; border-radius: 50%; position: absolute; top:rem(0); left: rem(-1);
+  //}
+  //p.westernYellow:before {
+  //  content:""; width: rem(0); height: rem(8); background: #ffffff; border-radius: 50%; position: absolute; top:rem(0); right: rem(-1);
+  //}
+  .westernYeQiu {
+    width: rem(15);
+    height: rem(15);
+    background: linear-gradient(left, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+    position: absolute;
+    top: rem(-4);
+    left: rem(0);
+    right: rem(5);
+    border-radius: 50%;
+  }
+  .westernBJPK10 {
+    background: linear-gradient(left, #de2a00, #af2100);
+    background: -webkit-linear-gradient(left, #de2a00, #af2100);
+  }
+}
+
+.footerBjpk10 {
+  margin-top: rem(26);
+  p {
+    img {
+      width: rem(80);
+      display: inline-block;
+    }
+  }
+  p:first-of-type {
+    width: 45%;
+    float: left;
+    text-align: center;
+  }
+  p:last-of-type {
+    width: 45%;
+    float: right;
+    text-align: center;
+  }
+}
+
+//大小骰宝
+.jsksDivCss1 #dxgbstyle .play_article_ks div {
+  float: left;
+}
+
+.jsksDivCss1 #dxgbstyle .play_article_ks div.tit-t2 {
+  float: left;
+}
+
+.jsksDivCss1 {
+  ul {
+    li#dxgbstyle {
+      .tt-p1 {
+        img {
+          width: 70%;
+          height: 70%;
+        }
+      }
+    }
+  }
+}
+
+#dxgbstyle {
+  width: 33.33%;
+  float: left;
+  padding: rem(10);
+  box-sizing: border-box;
+  border-bottom: 1px solid #BEB284;
+
+  .tit-t {
+    .tt-p1 {
+      img {
+        width: 50%;
+        height: rem(16);
+        margin-right: rem(10);
+      }
+    }
+    .tt-p3 {
+      margin-top: rem(6);
+      font-family: Helvetica;
+      font-size: rem(10);
+      color: #BEB284;
+      letter-spacing: 0;
+      // width:rem(37);
+      height: rem(10);
+      line-height: rem(10);
+    }
+  }
+}
+
+#dxgbstyle:nth-child(3n) {
+  border-right: 1px solid #BEB284;
+  border-left: 1px solid #BEB284;
+}
+
+.jsksDivCss1 #dxgbstyle:nth-child(1),
+.jsksDivCss5 #dxgbstyle:nth-child(1) {
+  width: 100%;
+  .tit-t {
+    color: #BEB284;
+    padding: 0px rem(5);
+    height: rem(50);
+    line-height: rem(50);
+    p {
+      float: left;
+      height: rem(50);
+      line-height: rem(50);
+    }
+    //  .tit-t2 {
+    //   float: left;
+    //   height: rem(50);
+    //   line-height: rem(50);
+    //   margin-left: rem(10);
+    //  }
+    .tt-p3 {
+      float: left;
+      height: rem(50);
+      line-height: rem(50);
+      margin-left: rem(10);
+      margin-top: rem(5);
+    }
+
+  }
+  .tit-t2 {
+    .playfeet {
+      float: left;
+      height: rem(50);
+      line-height: rem(50);
+    }
+
+  }
+}
+
+.pcdd_mian_lineHeight div.pcdd_mun_dx:nth-child(3) {
+  width: 48%;
+  float: left;
+  li#dxgbstyle {
+    padding-top: 0px;
+  }
+}
+
+.pcdd_mian_lineHeight div.pcdd_mun_dx:nth-child(4) {
+  width: 48%;
+  float: right;
+  li#dxgbstyle {
+    padding-top: 0px;
+  }
+}
+
+.jsksDivCss3 #dxgbstyle:nth-child(1),
+.jsksDivCss4 #dxgbstyle:nth-child(1) {
+  width: 100%;
+
+  .tit-t {
+    color: #BEB284;
+    // padding: 0px rem(10);
+    height: rem(30);
+
+    p {
+      float: left;
+    }
+    .tt-p3 {
+      float: left;
+      margin-top: rem(10);
+      margin-left: rem(8);
+    }
+
+  }
+  .tit-t2 {
+    .playfeet {
+      float: left;
+    }
+
+  }
+}
+
+.jsksDivCss2 #dxgbstyle {
+  border-bottom: 1px solid #BEB284;
+  border-right: 1px solid #BEB284;
+  .tit-t {
+    .tt-p1 {
+      float: left;
+      img {
+        width: rem(20);
+        height: rem(20);
+      }
+    }
+    .tt-p3 {
+      margin-top: 0;
+      line-height: rem(20);
+    }
+  }
+}
+
+.jsksDivCss2 #dxgbstyle:nth-child(3n) {
+  border-right: none;
+  border-left: none;
+}
+
+.jsksDivCss2 #dxgbstyle:nth-child(4) {
+  border-bottom: none;
+}
+
+.jsksDivCss2 #dxgbstyle:nth-child(5) {
+  border-bottom: none;
+}
+
+//长短牌点数
+
+#cdpstyle {
+  border-bottom: rem(1) solid #BEB284;
+  width: 50%;
+  margin-bottom: 0rem;
+  text-align: left;
+  padding: rem(10);
+  padding-bottom: rem(5);
+  .tit-t {
+    //margin-bottom: rem(5);
+    p {
+      float: left;
+      img {
+        width: rem(74);
+        height: rem(22);
+        margin-right: rem(5);
+      }
+    }
+    .tt-p2 {
+      margin-right: rem(5);
+    }
+    .tt-p2 {
+      font-family: PingFangSC-Semibold;
+      font-size: rem(16);
+      color: #FFFFFF;
+      letter-spacing: 0;
+      line-height: rem(22);
+      //width: rem(18);
+      height: rem(22);
+      display: inline-block;
+    }
+    .tt-p3 {
+      font-family: PingFangSC-Regular;
+      font-size: rem(10);
+      color: #FFDC99;
+      letter-spacing: 0;
+      line-height: rem(16);
+      width: rem(48);
+      height: rem(16);
+      margin-top: rem(3);
+    }
+
+  }
+}
+
+//#cdpstyle:last-child,
+//#cdpstyle:nth-last-child(2) {
+//  border-bottom:none;
+//  padding-bottom:rem(10);
+//}
+
+#cdpstyle:nth-child(odd) {
+  border-right: rem(1) solid #BEB284;
+}
+
+.tit-t2 {
+  font-family: PingFangSC-Semibold;
+  font-size: rem(16);
+  color: #FFFFFF;
+  letter-spacing: 0;
+  p.playfeet {
+    //margin-left: rem(-3);
+    float: left;
+    font-family: PingFangSC-Semibold;
+    font-size: rem(14);
+    color: #FFFFFF;
+    letter-spacing: 0;
+    width: rem(100);
+    height: rem(22);
+    span {
+      font-family: PingFangSC-Semibold;
+      margin-top: rem(10);
+      font-size: rem(16);
+      color: #FFFFFF;
+      letter-spacing: 0;
+    }
+  }
+  .playMarryImg {
+    float: right;
+    width: rem(20);
+    height: rem(20)
+  }
+}
+
+/*撤单*/
+.beimgPushBtn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  p {
+    width: 100%;
+    height: rem(46);
+    line-height: rem(46);
+    background-image: linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+    background-image: -webkit-linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+    text-align: center;
+    font-size: rem(14);
+    a {
+      color: #2F2122;
+      display: block;
+    }
+  }
+}
+
+/*pc蛋蛋*/
+.pcdd_mun.pcdd_mun_pcdd {
+  .pcdd_mun_list {
+    ul {
+      li {
+        width: 25%;
+        float: left;
+        font-size: rem(12);
+        color: #4A4A4A;
+        text-align: center;
+        padding-top: rem(10);
+        margin-bottom: 0;
+        .play_article {
+          width: rem(76);
+          height: rem(40);
+          background: #FFFFFF;
+          display: inline-block;
+          border: rem(1) solid #DF1B24;
+          border-radius: rem(2);
+          position: relative;
+          overflow: visible;
+          section:first-child {
+            p {
+              font-size: rem(12);
+              font-size: rem(10);
+              color: #4A4A4A;
+              font-family: arial;
+            }
+            p:first-of-type {
+              min-width: rem(19);
+              height: rem(19);
+              background: #DF1A24;
+              line-height: rem(19);
+              font-size: rem(12);
+              color: #ffffff;
+              font-family: arial;
+            }
+            p.clsName {
+              background: #ffffff;
+              color: #4A4A4A;
+            }
+            p:last-of-type {
+              width: rem(55);
+              text-align: left;
+              padding-left: rem(5);
+              line-height: rem(22);
+            }
+          }
+          section:nth-child(2) {
+            height: rem(19);
+            line-height: rem(19);
+            font-size: rem(10);
+            color: #999;
+            text-align: left;
+            font-family: arial;
+          }
+          section.playMarryImg {
+            width: rem(20);
+            min-height: rem(20);
+            position: absolute;
+            top: rem(18);
+            right: rem(2);
+          }
+        }
+      }
+    }
+    /*加拿大幸运28*/
+    ul.pcdd_mun_pcddUl {
+      //li.on {
+      //  .play_article {
+      //    background: #DF1B24;
+      //    section:first-child {
+      //      p {
+      //        color: #ffffff;
+      //      }
+      //      p:first-of-type {
+      //        background: transparent;
+      //      }
+      //    }
+      //    section:nth-child(2) {
+      //      color: #ffffff;
+      //    }
+      //  }
+      //}
+    }
+
+  }
+}
+
+.pcdd_mun.pcdd_mun_pcdd {
+  .pcdd_mun_list {
+    /*香港新六合彩*/
+    .pcdd_mun_xgxlhcUl {
+      li {
+        .play_article {
+          width: rem(75);
+          display: inline-block;
+          background: transparent;
+          border: rem(1) solid #774D34;
+          section:first-child {
+            p {
+              font-size: rem(12);
+              font-size: rem(10);
+              color: #F80808;
+              font-family: arial;
+            }
+            p:first-of-type {
+              position: relative;
+              top: rem(1);
+              font-size: rem(14);
+              background: transparent;
+              color: #2B1B0E;
+            }
+            p:last-of-type {
+              width: rem(55);
+              text-align: left;
+              padding-left: rem(5);
+              line-height: rem(22);
+            }
+          }
+          section:nth-child(2) {
+            height: rem(19);
+            line-height: rem(19);
+            font-size: rem(10);
+            color: #999;
+            text-align: left;
+            font-family: arial;
+          }
+          section.playMarryImg {
+            width: rem(20);
+            height: rem(20);
+            position: absolute;
+            right: rem(2);
+            top: rem(18);
+          }
+        }
+      }
+      li.on {
+        .play_article {
+          position: relative;
+          section:first-child {
+            p:first-of-type {
+              position: relative;
+              top: rem(1);
+              margin-left: rem(3);
+              font-size: rem(14);
+              background: transparent;
+              color: #2B1B0E;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*重庆时时彩*/
+.pcdd_mun.pcdd_num_cqssc_cls {
+  .pcdd_mun_list {
+    ul.pcdd_mun_cqsscUl {
+      padding: 0 rem(5);
+      li {
+        width: 25%;
+        float: left;
+        font-size: rem(12);
+        color: #ffffff;
+        text-align: center;
+        padding-top: rem(10);
+        margin-bottom: 0;
+        .play_article {
+          width: rem(76);
+          height: rem(40);
+          display: inline-block;
+          border: rem(1) solid #FFDC99;
+          border-radius: rem(2);
+          position: relative;
+          overflow: visible;
+          section:first-child {
+
+            p {
+              text-indent: 0rem;
+              font-size: rem(12);
+              font-size: rem(10);
+              color: #FFDC99;
+              font-family: arial;
+            }
+            p.cqsscCls_Display:first-of-type {
+              text-indent: 0rem;
+              padding-left: rem(5);
+              height: rem(19);
+              line-height: rem(19);
+              font-size: rem(10);
+              font-family: arial;
+            }
+            p.clsName {
+              background: #ffffff;
+              color: #4A4A4A;
+              text-indent: 0rem;
+            }
+            p.cqsscClsP_Display {
+              font-size: rem(10);
+              text-indent: 0rem;
+            }
+            p:last-of-type {
+              text-indent: 0rem;
+              width: rem(55);
+              text-align: left;
+              padding-left: rem(5);
+              line-height: rem(22);
+            }
+          }
+          section:nth-child(2) {
+            height: rem(19);
+            line-height: rem(19);
+            font-size: rem(10);
+            color: #ffffff;
+            padding-left: rem(3);
+            text-align: left;
+            font-family: arial;
+          }
+          section.playMarryImg {
+            width: rem(20);
+            min-height: rem(20);
+            position: absolute;
+            bottom: rem(2);
+            right: rem(2);
+          }
+        }
+      }
+    }
+  }
+}
+
+//重庆时时彩 龙虎斗 样式 2017.10.21
+.pcdd_mun.pcdd_num_cqssc_cls.pcdd_bjpk_mun.pcdd_num_cqssc.pcdd_num_istlan {
+  .pcdd_mun_list.pcdd_mun_list_bjpk10 {
+    width: 100%;
+    ul.pcdd_mun_cqsscUl {
+      padding: 0 rem(5);
+      display: flex;
+      li {
+        width: 33.33%;
+        float: left;
+        font-size: rem(12);
+        color: #ffffff;
+        text-align: center;
+        padding-top: rem(10);
+        margin-bottom: 0;
+        .play_article.play_clsWidth {
+          width: rem(90);
+          height: rem(40);
+          display: inline-block;
+          border: rem(1) solid #FFDC99;
+          border-radius: rem(2);
+          position: relative;
+          overflow: visible;
+          section:first-child {
+            p {
+              font-size: rem(12);
+              font-size: rem(10);
+              color: #FFDC99;
+              font-family: arial;
+            }
+            p:first-of-type {
+              padding-left: rem(1);
+              height: rem(19);
+              line-height: rem(19);
+              font-size: rem(14);
+              font-family: arial;
+            }
+            p.clsName {
+              background: #ffffff;
+              color: #4A4A4A;
+            }
+            p:last-of-type {
+              width: rem(55);
+              text-align: left;
+              //padding-left: rem(5);
+              line-height: rem(22);
+            }
+          }
+          section:nth-child(2) {
+            height: rem(19);
+            line-height: rem(19);
+            font-size: rem(12);
+            color: #ffffff;
+            padding-left: rem(8);
+            text-align: left;
+            font-family: arial;
+          }
+          section.playMarryImg {
+            //width: rem(20);
+            //min-height: rem(20);
+            //position: absolute;
+            //top: rem(-5);
+            //right: rem(-5);
+          }
+        }
+      }
+    }
+  }
+}
+
+.dropDowmCls {
+  position: fixed;
+  top: rem(45);
+  right: rem(5);
+  background: rgba(40, 37, 38, 0.99);
+  box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0, 0, 0, 0.50);
+  width: rem(140);
+  padding: rem(10);
+  border: rem(1) solid #FFDC99;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: rem(2);
+  overflow: visible;
+  z-index: 10;
+  ul {
+    li {
+      a {
+        font-size: rem(16);
+        color: #FFDC99;
+        display: block;
+        line-height: rem(35);
+        p {
+          background: url('../images/theColor/rightIcon03.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(2) {
+      a {
+        p {
+          background: url('../images/theColor/rightIcon02.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(3) {
+      a {
+        p {
+          background: url('../images/theColor/rightIcon01.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(4) {
+       a {
+         p {
+           background: url('../images/theColor/rightIcon04.png') left rem(9) no-repeat; background-size: rem(20) auto; padding-left: rem(25);
+         }
+       }
+     }
+  }
+}
+
+.dropDowmCls:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: rem(-10);
+  right: rem(9);
+  border-left: rem(10) solid transparent;
+  border-right: rem(10) solid transparent;
+  border-bottom: rem(10) solid #FFDC99;
+  z-index: 10;
+}
+
+.dropDowmCls:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: rem(-9);
+  right: rem(9);
+  border-left: rem(10) solid transparent;
+  border-right: rem(10) solid transparent;
+  border-bottom: rem(10) solid rgba(40, 37, 38, 0.99);
+  z-index: 11;
+}
+
+.dropDowmClsBack {
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.cloneImg {
+  transition-timing-function: cubic-bezier(0, .68, .38, 2.06);
+  -webkit-transtion-timing-function: cubic-bezier(0, .68, .38, 2.06);
+  -moz-transtion-triming-function: cubic-bezier(0, .68, .38, 2.06);
+}
+
+/*骰子图片大小修改*/
+#cdpstyle .tit-t p img.jsk_point {
+  width: rem(44);
+  height: rem(22);
+}
+
+.paiGow_padding {
+  padding-bottom: rem(90);
+}
+
+//.pcdd_mian_padding {
+//  padding-bottom: rem(120);
+//}
+
+.pcdd_mian_lineHeight_04 {
+  height: rem(320); overflow-y: scroll;
+}
+.pcdd_Mian_Vh {
+  padding-top: rem(123);
+}
+.pcdd_Mian.pcdd_Mian_Vh {
+  padding-top: rem(123);
+}
+
+.swimMun_top_height {
+  overflow-y: scroll;
+}
+.paiGow.paiGow_sHGow {
+  padding-top: rem(128);
+}
+.royal.paiGow_sHGow {
+  padding-top: rem(118);
+}
+
+.play_article_ks  {
+  position: relative;
+  .playMarryImg.jsksImg {
+    position: absolute; bottom: rem(3); right: rem(3);  width: rem(24); height: rem(24);
+  }
+}
+
+//.jsksDivCss1 .playMarryImg.jsksImg img {
+//  position: relative; left: 0; bottom: 0; top: 0; right: 0;
+//}
+
+/*筹码样式调整 time 2017-11-30*/
+.westernFooter_top {
+  text-align: center;
+  overflow: visible;
+  overflow: visible;
+  .westernSectionNum {
+    display: inline-block; padding-top: rem(5);
+    p {
+      width: rem(40); height: rem(40); display: inline-block; margin: 0 rem(9);
+    }
+    p.on {
+      transition:All 0.4s ease-in-out; -webkit-transition:All 0.4s ease-in-out; -moz-transition:All 0.4s ease-in-out; -o-transition:All 0.4s ease-in-out; transform:scale(1.2); -webkit-transform:scale(1.2); -moz-transform:scale(1.2); -o-transform:scale(1.2); -ms-transform:scale(1.2);
+     }
+  }
+}
+
+/*暂停销售*/
+.salesCls {
+  width: 100%; position: fixed; top: 0; left: 0; background: url('../images/salesBack.png') top center no-repeat; background-size: cover; z-index: 5;
+}
+.salesCls p {
+  width: rem(270);
+}

@@ -1,0 +1,169 @@
+@charset "utf-8";
+@import 'rem';
+
+$designWidth: 375;
+
+.download {
+  position: absolute;
+  //width: 100%;
+  //height: 100%;
+  background: url("../../assets/images/download/download_background@2x.png") center center no-repeat;
+  color: #FFDC99;
+  text-align: center;
+  background-size: cover;
+}
+
+.download_content_box {
+  position: absolute;
+  bottom: rem(232);
+  left: 0;
+  width: 100%;
+}
+
+//中间下载内容区
+.download_content {
+  width: rem(328);
+  height: rem(161);
+  margin: 0 auto;
+  font-size: rem(14);
+  border: rem(1) solid #F0DDAE;
+  //border-image: linear-gradient(#F0DDAE, #DCB976) 1 repeat;
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: rem(4);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &:before {
+    content: "";
+    display: inline-block;
+    /*box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.50);*/
+    width: rem(139);
+    height: rem(60);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    background: url(../../assets/images/download/logo_download@2x.png) center no-repeat;
+    background-size: cover;
+  }
+
+  &:after {
+    content: "欢迎访问棋牌彩票网站qpcp.com";
+    display: inline-block;
+    width: rem(236);
+    height: rem(34);
+    border: rem(1) solid #F0DDAE;
+    //border-image: linear-gradient(#F0DDAE, #DCB976) 1 repeat;
+    border-radius: rem(4);
+    text-align: center;
+    line-height: rem(34);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: #1B1628;
+  }
+  .continue,
+  .client_download {
+    border: rem(1) solid #F0DDAE;
+    //border-image: linear-gradient(#F0DDAE, #DCB976) 1 repeat;
+    background-color: #1B1628;
+    border-radius: rem(4);
+  }
+  .continue {
+    width: rem(100);
+    height: rem(90);
+    i {
+      display: block;
+      width: rem(22.5);
+      height: rem(27);
+      margin: 0 auto;
+      margin-bottom: rem(6);
+      background: url(../../assets/images/download/wap@2x.png) center no-repeat;
+    }
+  }
+  .client_download {
+    width: rem(192);
+    height: rem(90);
+    text-align: center;
+    i {
+      display: inline-block;
+      margin-bottom: rem(6);
+      background-position: center;
+      vertical-align: middle;
+      &:first-child {
+        width: rem(24.5);
+        height: rem(27);
+        background: url(../../assets/images/download/iphone@2x.png) center no-repeat;
+      }
+      &:last-child {
+        width: rem(27);
+        height: rem(27);
+        margin-left: rem(6);
+        background: url(../../assets/images/download/android@2x.png) center no-repeat;
+      }
+
+    }
+  }
+
+}
+
+//底部
+.download_footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: rem(12);
+  border: 1px solid transparent;
+  .contact_way {
+    display: flex;
+    justify-content: center;
+    & > div {
+      width: rem(120);
+      height: rem(56);
+      background: #FFEFE0;
+      border: rem(4) solid #FFFFFF;
+      border-radius: rem(4);
+      font-family: 微软雅黑;
+      color: #1B1628;
+      letter-spacing: 0;
+      background: url("../../assets/images/download/hand@2x.png") center no-repeat;
+      background-size: cover;
+      h4 {
+        font-size: rem(16);
+        line-height: rem(16);
+        margin-top: rem(2);
+      }
+      sapn {
+        font-size: rem(10);
+        line-height: rem(12);
+        vertical-align: middle;
+      }
+      &:first-child {
+        margin-right: rem(27);
+        i {
+          display: inline-block;
+          width: rem(17);
+          height: rem(14);
+          background: url("../../assets/images/download/weChat@2x.png") center no-repeat;
+          vertical-align: middle;
+        }
+      }
+      &:last-child {
+        i {
+          display: inline-block;
+          width: rem(13);
+          height: rem(15);
+          background: url("../../assets/images/download/qq-color@2x.png") center no-repeat;
+          vertical-align: middle;
+        }
+      }
+
+    }
+  }
+  p {
+    margin: rem(40) 0 rem(62) 0;
+  }
+}

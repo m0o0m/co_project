@@ -1,0 +1,181 @@
+@charset "utf-8";
+@import '../rem';
+
+$designWidth: 375;
+body, html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* ios5+ */
+}
+
+#app {
+  background-size: cover;
+  position: relative;
+}
+
+.lotteryRules {
+  background-color: #272324;
+  font-size: rem(16);
+  color: #fff;
+  .messageListTitle {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    .title {
+      width: 100%;
+      height: rem(56);
+      background: url("../../../assets/images/feedBackMessage/messagelist_top_bg.png") center bottom no-repeat;
+      background-size: cover;
+      li:first-child {
+        position: absolute;
+        left: rem(8);
+        top: rem(8);
+        width: rem(35);
+        height: rem(35);
+        background: url("../../../assets/images/feedBackMessage/left_arrow.png") center no-repeat;
+        background-size: cover;
+      }
+      li {
+        text-align: center;
+        line-height: rem(56);
+        font-family: Arial;
+        font-size: rem(16);
+        color: #FFFFFF;
+        letter-spacing: 0;
+        font-weight: 400;
+      }
+    }
+  }
+  .lotteryRulesContent {
+    background-color: #272324;
+    padding-top: rem(56);
+    .lottery_rules_content_box {
+      padding: rem(15);
+      height: 100%;
+      background-color: #272324;
+      overflow-y: scroll;
+      .lottery_rules_content {
+        h3 {
+          padding-left: rem(20);
+          line-height: rem(46);
+        }
+        ul {
+          li {
+            padding: rem(16) rem(0) rem(16) rem(20);
+            //background: rgba(0, 0, 0, .3);
+            background: #1A1819;
+            margin-bottom: rem(10);
+            p {
+              line-height: rem(20);
+              font-size: rem(14);
+              padding-right: rem(36);
+              position: relative;
+              padding-left: rem(26);
+              span:nth-child(1) {
+                font-weight: 700;
+              }
+              span {
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+              s {
+                font-size: rem(14);
+              }
+              .arrow {
+                position: absolute;
+                right: rem(10);
+                top: 50%;
+                transition: all .5s linear;
+                transform-origin: center;
+                transform: translateY(-50%) rotate(0deg);
+                width: rem(20);
+                height: rem(15);
+                background: url("../../../assets/images/rules/bTArrow.png") center no-repeat;
+                background-size: cover;
+              }
+              .arrow.upArrow {
+                transform: translateY(-50%) rotate(180deg);
+              }
+
+            }
+            .question {
+              font-size: rem(14) !important;
+            }
+            .answer {
+              margin-top: rem(12);
+              line-height: rem(26);
+              text-align: justify;
+              font-size: rem(14) !important;
+              span:nth-child(1) {
+                color: #D9423B;
+              }
+            }
+            .ruleImgs {
+              overflow: hidden;
+              padding: rem(0) rem(0) rem(16) rem(30);
+              .ruleImgItem {
+                float: left;
+                text-align: center;
+                margin-top: rem(10);
+                img {
+                  width: rem(28);
+                }
+                h4 {
+                  font-size: rem(12);
+                  color: #fff;
+                }
+              }
+            }
+            .paiGowImg {
+              .ruleImgItem {
+                width: 90%;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+            .farmRuleImgs {
+              width: 94%;
+              margin-top: rem(10);
+              font-size: rem(14);
+              border-right: rem(1) solid #fff;
+              border-bottom: rem(1) solid #fff;
+              .farmRuleImgItem {
+                display: flex;
+                .farmImgItem {
+                  text-align: center;
+                  flex: 1;
+                  border-top: rem(1) solid #fff;
+                  border-left: rem(1) solid #fff;
+                }
+                .farmImgItem1:nth-child(1),
+                .farmImgItem1:nth-child(2) {
+                  flex: 2;
+                }
+              }
+            }
+          }
+        }
+        .lotteryRulesFooter {
+          margin-bottom: rem(40);
+          p {
+            padding: rem(15) rem(20);
+            background: #1A1819;
+            font-size: rem(14) !important;
+            line-height: rem(24);
+          }
+        }
+      }
+
+    }
+  }
+  .lotteryRulesContent.showBrowser {
+    padding-top: rem(0);
+  }
+}
+
+.lotteryRules .lotteryRulesContent .lottery_rules_content_box .lottery_rules_content ul li p .arrowRotate {
+  transform: translateY(-50%) rotate(180deg);
+}

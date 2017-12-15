@@ -1,0 +1,231 @@
+@charset "utf-8";
+@import 'rem';
+
+$designWidth: 375;
+body, html {
+  height: 100%;
+}
+
+/*转盘效果*/
+.farmVue {
+  height: 100%;
+  background: linear-gradient(top, #20459E, #0B2668);
+  background: -webkit-linear-gradient(top, #20459E, #0B2668);
+}
+
+.gam-common {
+  position: relative;
+  margin-top: rem(150);
+  padding-bottom: rem(40);
+  .gam-box {
+    position: absolute;
+    left: 0;
+    top: rem(15);
+    width: 100%;
+    height: rem(440);
+    z-index: 3;
+    .gam-img-a {
+      position: absolute;
+      width: rem(300);
+      height: rem(150);
+      left: 50%;
+      margin-left: rem(-150);
+      z-index: 4
+    }
+    .gam-img-b {
+      position: absolute;
+      left: 0;
+      height: rem(280);
+      top: rem(155);
+      width: 100%;
+      z-index: 4;
+    }
+    .gam-box-com {
+      position: absolute;
+      width: rem(300);
+      height: rem(150);
+      left: 50%;
+      margin-left: rem(-150);
+      z-index: 5
+    }
+  }
+}
+
+.slotMachine {
+  width: rem(90);
+  height: rem(130);
+  padding: 0px;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  margin-top: rem(10);
+  margin-left: rem(5);
+}
+
+.slotMachine div {
+  margin: 0 auto;
+  margin-bottom: rem(9);
+  width: rem(36);
+  height: rem(36);
+}
+
+.gam-box-info {
+  width: rem(270);
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: rem(170);
+  margin-left: rem(-135);
+  z-index: 6;
+  ul.gam-box-ul {
+    width: 100%;
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    background: rgba(255, 230, 86, 0.8);
+    border-radius: rem(4);
+    li {
+      font-size: rem(12);
+      color: #990000;
+      letter-spacing: 0;
+      text-align: center;
+      margin: rem(3) rem(3);
+      line-height: rem(20);
+      letter-spacing: 0;
+      padding: 0 rem(3);
+    }
+    li.on {
+      color: #EAC700;
+      background: #990000;
+      border-radius: rem(2);
+    }
+  }
+  .gamCls {
+    margin-top: rem(5);
+    ul {
+      li {
+        width: 50%;
+        float: left;
+        margin: rem(3) 0;
+        .gameArticle {
+          display: flex;
+          -webkit-display: flex;
+          flex-direction: row;
+          -webkit-flex-direction: row;
+          width: rem(120);
+          height: rem(36);
+          background: url('../images/farm/bg/bg_04.png') left center no-repeat;
+          background-size: 100% 100%;
+          padding: rem(5);
+          border-radius: rem(4);
+          margin: 0 auto;
+          position: relative;
+          box-sizing: content-box;
+          section {
+            font-size: rem(14);
+            color: #4B3636;
+            p {
+              display: inline-block;
+            }
+            p:nth-of-type(2) {
+              font-family: arial;
+              font-size: rem(10);
+            }
+            p:last-of-type {
+              font-family: arial;
+              color: #E83828;
+              width: 100%;
+            }
+          }
+          section:last-child {
+            width: 70%;
+            .playMarryImg {
+              width: rem(22); height: rem(22);
+              position: absolute; bottom: rem(3); right: rem(3);
+            }
+          }
+          section.gameArt_section {
+            width: rem(34);
+            height: rem(34);
+            background: #151723;
+            border-radius: rem(4);
+            margin-right: rem(5);
+            img {
+              width: rem(28);
+              height: rem(28);
+              padding: rem(3);
+            }
+          }
+        }
+      }
+      li:last-child{
+        .gameArticle{
+          section{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slotMachineContainer {
+  overflow: visible;
+}
+
+.gam-box-change {
+  position: absolute;
+  left: 50%;
+  bottom: rem(15);
+  width: 100%;
+  z-index: 8;
+  width: rem(300);
+  margin-left: rem(-150);
+  .gam-box-name {
+    font-size: rem(10);
+    color: #843C15;
+    padding-top: rem(5);
+  }
+}
+
+.gambox-fdiv {
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  .gam-progressbar-cut, .gam-progressbar-add {
+    width: rem(30);
+    height: rem(30);
+    background: url('../images/farm/bg/btn-cut.png') center center no-repeat;
+    background-size: 100% auto;
+    margin: 0 rem(10);
+  }
+  .gam-progressbar-add {
+    background: url('../images/farm/bg/btn-add.png') center center no-repeat;
+    background-size: 100% auto;
+  }
+  .gam-progressbar-line {
+    flex: 1;
+    padding-top: rem(15);
+    position: relative;
+    overflow: visible;
+    p {
+      height: rem(4);
+      background: #D30000;
+      .isbackimg {
+        width: rem(20);
+        height: rem(20);
+        text-align: center;
+        line-height: rem(20);
+        background: url('../images/farm/bg/bg_05.png') no-repeat;
+        background-size: 100% 100%;
+        font-size: rem(8);
+        position: absolute;
+        top: rem(-3);
+        left: rem(-10);
+        color: #fff;
+      }
+    }
+  }
+}

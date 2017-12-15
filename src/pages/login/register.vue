@@ -1,0 +1,144 @@
+<template>
+    <div class="login">
+        <a href="javascript:history.back(-1)"><img class="imgs" src="../../assets/images/numberimg/icon_back@2x.png"
+                                                   alt=""></a>
+        <div class="loginMian" v-show="!showXy">
+            <article class="login_article">
+                <section class="loginFlexs">
+                    <p>用户名</p>
+                    <input v-model="user.username" type="text" placeholder="请输入用户名"
+
+                           maxlength="12"/>
+                </section>
+                <section class="loginFlexs">
+                    <p>密码</p>
+                    <p><input v-model="user.password" type="password" placeholder="请输入6～12位数字或字母"
+                              onkeyup="value=value.replace(/[\W]/g,'') "
+                              onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+                              maxlength="12"/></p>
+                </section>
+                <section class="loginFlexs">
+                    <p>确认密码</p>
+                    <p><input v-model="user.password2" type="password" placeholder="请再次输入密码"
+                              onkeyup="value=value.replace(/[\W]/g,'') "
+                              onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+                              maxlength="12"/></p>
+                </section>
+                <section class="loginFlexs">
+                    <p>推荐ID</p>
+                    <p><input v-model="user.proxy_code" type="tel" placeholder="请输入推荐人ID"
+                              onkeyup="value=value.replace(/[\W]/g,'') "
+                              onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+                              maxlength="12"/></p>
+                </section>
+                <p class="xiey"><i class="box" @click="istrue()"><input type="checkbox"/><a class="gou" v-show="istrues"
+                                                                                            style="margin-left: 0;">
+                    ✓ </a></i> 我同意<a href="javascript:void(0)" @click="showXy = true" class="for">《棋牌彩票平台用户协议》</a>所述</p>
+                <div class="loginBtn" @click="immediateRegistration()">立即注册</div>
+                <!-- <p class="ft">还没有账号，<a href="#">立即注册</a></p>  -->
+            </article>
+        </div>
+        <div v-show="showXy" class="agreement" style="height:100%;overflow: auto;">
+            <p class="ag-tit"> 用户协议</p>
+            <div class="ag-body" style="height:100%;overflow: auto;">
+                <p class="body-p1">用户隐私权保护和个人信息利用政策</p>
+                <p class="body-p2">2017-08-08 13:23:15</p>
+                <p class="body-p3">1.使用本公司APP的客户，请留意你所在的国家或居住地的相关法律规定，如有疑问应就相关问题，寻求当地法律意见。</p>
+                <p class="body-p4">
+                    2.若发生遭骇客入侵破坏行为或不可抗拒之灾害导致APP故障或资料损坏、资料丢失等情况，我们将以本公司之后备资料為最后处理依据；为确保各方利益，请各会员投注后列印资料。本平台不会接受没有列印资料的投诉。</p>
+                <p class="body-p5">
+                    3.为避免纠纷，各会员在投注之后，务必进入下注状况检查及列印资料。若发现任何异常，请立即与代理商联系查证，一切投注将以本公司资料库的资料为准，不得异议。如出现特殊网络情况或线路不稳定导致不能下注或下注失败。本公司概不负责。</p>
+                <p class="body-p5">4.单一注单最高派彩上限为一百万。</p>
+                <p class="body-p5">5.开奖结果以官方公布的结果为准。</p>
+                <p class="body-p5">
+                    6.我们将竭力提供准确而可靠的开奖统计等资料，但并不保证资料绝对无误，统计资料只供参考，并非是对客户行为的指引，本平台也不接受关于统计数据产生错误而引起的相关投诉。</p>
+                <p class="body-p5">
+                    7.本平台拥有一切判决及注消任何涉嫌以非正常方式下注之权利，在进行更深入调查期间将停止发放与其有关之任何彩金。客户有责任确保自己的帐户及密码保密，如果客户怀疑自己的资料被盗用，应立即通知本公司，并须更改其个人详细资料。所有被盗用帐号之损失将由客户自行负责。在某种特殊情况下，客人之信用额可能会出现透支。 </p>
+                <p class="body-p5">我了解以及同意下注列明的协定和规则。　</p>
+                <p class="body-p5" style="float:right">棋牌彩票</p>
+                <div class="loginBtn body-p5" @click="showXy = false">确定</div>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+  import '../../assets/scss/register.scss';
+
+  export default {
+    data() {
+      return {
+        user: {
+          username: '',
+          password: '',
+          password2: '',
+          proxy_code: ''
+        },
+        showXy: false,
+        istrues: true,
+	      referrerFlag: JSON.parse(JSON.stringify(sessionStorage.getItem('openAccountCode') || ''))
+      }
+    },
+    mounted() {
+      this.user.proxy_code = !sessionStorage.getItem('openAccountCode') || sessionStorage.getItem('openAccountCode') == 'undefined' ? '' : sessionStorage.getItem('openAccountCode');
+    },
+    methods: {
+      immediateRegistration() {
+        let that = this;
+        let reg = /^[^\u4e00-\u9fa5]{0,}$/;
+        if (that.user.username == "" || that.user.password == "" || that.user.password2 == "") {
+          that._Util.showAlert(that, {content: '账号密码不能为空'});
+          return;
+        }
+
+        if (!reg.test(that.user.username)) {
+          that._Util.showAlert(that, {content: '用户名不能包含中文'});
+          return;
+        }
+
+        if (that.user.password !== that.user.password2) {
+          that._Util.showAlert(that, {content: '两次输入密码不相同'});
+          return;
+        }
+
+        if (that.istrues != true) {
+          that._Util.showAlert(that, {content: '请同意协议内容'});
+          return;
+        }
+
+        let params = {
+          username: that.user.username,
+          password: that._Util.hexMd5(that.user.password),
+          password2: that._Util.hexMd5(that.user.password2)
+        };
+
+//        if (sessionStorage.getItem('openAccountCode')) {
+//          params.proxy_code = sessionStorage.getItem('openAccountCode');
+//        }else {
+//          params.proxy_code = "";
+//        }
+        if(that.user.proxy_code){
+          params.proxy_code = that.user.proxy_code;
+        }
+
+        that._Util.post(that, that._Api.POST_REGISTER, params, (data) => {
+          sessionStorage.setItem('openAccountCode', '');
+          that._Util.setStorage('isLogin', true, true);
+          that.$router.replace({name: 'home'});
+        });
+      },
+      istrue() {
+        let that = this;
+        if (that.istrues == true) {
+          that.istrues = false;
+        } else {
+          that.istrues = true;
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+
+
+</style>
