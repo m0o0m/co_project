@@ -396,13 +396,6 @@
         "path": "/lottery/trendChart/lineChart",
         "filePath": "/trendChart/lineChart",
         "icon": ""
-      },
-      {
-        "title": "扑克style大抽奖",
-        "name":"activityBrand",
-        "path": "/lottery/activity/brand/index",
-        "filePath": "/home/activity/brand/index",
-        "icon": ""
       }
     ]
   }
