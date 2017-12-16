@@ -233,7 +233,8 @@
              console.log('qrcode', $('.qrcode').qrcode(getQrcode));*/
       },
       _qrcode () {
-        var getQrcode = 'http://m.qpcp.me/lottery/invite';
+        let getQrcode="";
+        getQrcode = this.$route.query.code?'http://m.qpcp.me/lottery/invite?code='+this.$route.query.code:'http://m.qpcp.me/lottery/invite';
         $("#qrcode").qrcode({
           text: getQrcode,
           width:$("#qrcode").width(),
