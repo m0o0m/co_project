@@ -6,36 +6,55 @@ $designWidth: 375;
 .introductionFooter, .InstallationSteps {
   display: none;
 }
+
+.windowsBack {
+  background: url("../../../images/download/h5Download/head_bg.png") top center no-repeat;
+  background-size: 100% auto;
+}
+
 .dynamic {
   margin-top: rem(45);
 }
+
 .logo {
   width: rem(72);
   height: rem(72);
   top: 1rem;
 }
+
 .dynamicImg {
   width: rem(252);
   height: rem(167);
 }
+
 .dynamicText {
   width: rem(211);
   height: rem(50);
   margin-top: rem(10);
 }
+
 .WeChat {
   width: rem(211);
   height: rem(100);
   margin-top: rem(20);
   .weChat_left {
     float: left;
+    .qrcode {
+      width: rem(72);
+      height: rem(72);
+      //background-color: #40fff3;
+      //left:rem(10);
+      //top:rem(10);
+    }
   }
 
 }
+
 .weChat_left img {
   height: rem(100);
 }
-.WeChat .weChat_rights{
+
+.WeChat .weChat_rights {
   float: right;
   width: 50%;
   div.weChat_rights_step {
@@ -43,6 +62,7 @@ $designWidth: 375;
     margin: 0 0 rem(10);
   }
 }
+
 /*.WeChat .weChat_right p {
   display: block;
   height: 2rem;
@@ -71,6 +91,7 @@ $designWidth: 375;
   background-size: 100% 100%;
   cursor: pointer;
 }
+
 /*  .WeChat .weChat_rights div.weChat_rights_step4 {
     margin: 0.5rem 0;
   }*/
@@ -78,16 +99,19 @@ $designWidth: 375;
 .dynamicIp3 p:nth-child(1) {
   margin-right: rem(8)
 }
+
 .dynamicIp3 p i {
   width: rem(17);
   height: rem(21);
   margin-right: rem(2);
 }
+
 .dynamicIp3 p:nth-child(2) i {
   width: rem(25);
   height: rem(20);
   margin-right: 0;
 }
+
 .dynamicIp3 {
   width: 100%;
   left: 0%;
@@ -104,9 +128,11 @@ $designWidth: 375;
   line-height: rem(16);
   margin: rem(16) 0;
 }
+
 .chessBack_img {
   width: rem(295);
 }
+
 .chessBack_text {
   padding-bottom: rem(20);
   padding-top: rem(10);
@@ -120,16 +146,19 @@ $designWidth: 375;
   padding: 0;
 
 }
+
 .introductionTextMi aside {
   font-size: rem(16);
   line-height: rem(16);
   margin: rem(16) 0;
 }
+
 .introductionTextMi section {
   padding: 0 rem(26);
 }
+
 .introductionTextMi section p {
-  font-size: rem(12);
+  font-size: rem(12) !important;
   line-height: rem(20);
 }
 
@@ -139,6 +168,7 @@ $designWidth: 375;
   display: block;
   //padding-bottom: 1.5rem;
 }
+
 .introductionFooterIp_logo {
   width: 100%;
 }
@@ -194,4 +224,9 @@ $designWidth: 375;
       margin: 0 rem(10);
     }
   }
+}
+
+#cnzz_stat_icon_1271231563,
+#cnzz_stat_icon_1271258064 {
+  display: none;
 }

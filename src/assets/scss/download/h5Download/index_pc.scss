@@ -2,6 +2,12 @@
 @import '../../rem';
 
 $designWidth: 375;
+
+.windowsBack {
+  background: url("../../../images/download/h5Download/head_bg_pc.png") top center no-repeat;
+  background-size: 100% auto;
+}
+
 .logo {
   //min-width: 100px;
   width: 7.9%;
@@ -22,6 +28,11 @@ $designWidth: 375;
 .WeChat {
   width: 403px;
   margin-bottom: 1%;
+}
+
+.WeChat .weChat_left .qrcode{
+  width:rem(98);
+  height:rem(98);
 }
 
 .WeChat .weChat_rights div {
@@ -288,12 +299,3 @@ $designWidth: 375;
   display: none;
 }
 
-#cnzz_stat_icon_1271231563 img {
-  width: 20px;
-  height: 20px;
-}
-
-#cnzz_stat_icon_1271258064 img {
-  width: 20px;
-  height: 20px;
-}

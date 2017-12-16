@@ -6,7 +6,9 @@
         <div class="dynamicImg"><img src="../../../assets/images/download/h5Download/qpcpImg.png"/></div>
         <div class="dynamicText"><img src="../../../assets/images/download/h5Download/banner_text.png"/></div>
         <div class="WeChat">
-          <div class="weChat_left"><img src="../../../assets/images/download/h5Download/rwm_pc_gw.png"/></div>
+          <div class="weChat_left"><img src="../../../assets/images/download/h5Download/rwm_pc_gw.png"/>
+            <div class="qrcode" id="qrcode"></div>
+          </div>
           <div v-if="!isBrowserShow" class="weChat_rights">
             <!--<p><i></i><a href="javascript:void(0)">领取礼金</a></p>-->
             <!--<p><i></i><a href="https://qpcp9.com?code=22356" target="_blank">立即下载</a></p>-->
@@ -44,7 +46,7 @@
       <div class="chessBack_text"><img src="../../../assets/images/download/h5Download/qpcpTsTest.png"/></div>
     </div>
     <div v-if="isImgRead" class="indexLine"></div>
-    <div v-if="isTextShow" class="introductionText">
+    <div v-show="isImgRead" class="introductionText">
       <div class="introductionTextMi">
         <aside>棋牌彩票简介</aside>
         <section>
@@ -71,30 +73,34 @@
             <p>因为专注所以专业</p>
             <p>棋牌彩票为了您的满意一直努力着！</p>
             <p>北京棋牌彩票网络科技&copy;<span>1997-2017</span></p>
+            <p>沪ICP备17049649号</p>
           </section>
         </div>
       </div>
     </div>
     <div class="introductionFooterIp">
       <div class="introductionFooterIpMi">
+        <div v-if="!isBrowserShow" class="introductionFooterIp_logo"><img
+            src="../../../assets/images/download/h5Download/Group.png"/>
+          <p style="color: rgba(255,255,255,.3); font-size: 0.5rem; text-align: center;line-height: 1rem; ">沪ICP备17049649号</p>
+        </div>
         <div v-if="isBrowserShow" class="introductionFooterIp_logo"><img
             src="../../../assets/images/download/h5Download/footerLogo.png"/></div>
-        <div v-if="!isBrowserShow" class="introductionFooterIp_logo"><img
-            src="../../../assets/images/download/h5Download/Group.png"/></div>
         <div v-if="isImgRead && isBrowserShow" class="introductionFooterIp_enter">
           <section>
-            <p>联系方式</p>
             <p>北京棋牌彩票网络科技有限公司</p>
+            <p>联系方式
             <p class="qq"><span>97966666</span></p>
             <p class="wx"><span>97966666</span></p>
+            </p>
+            <p>棋牌彩票为了您的满意一直努力着！</p>
+            <p>北京棋牌彩票网络科技&copy;<span>1997-2017</span></p>
           </section>
         </div>
         <div v-if="isImgRead && isBrowserShow" class="introductionFooterIp_enter">
           <section>
             <p>更高效 更快捷 更专业</p>
             <p>因为专注所以专业</p>
-            <p>棋牌彩票为了您的满意一直努力着！</p>
-            <p>北京棋牌彩票网络科技&copy;<span>1997-2017</span></p>
           </section>
         </div>
       </div>
@@ -106,7 +112,8 @@
         <aside>点击右上角分享按钮，然后选择在"浏览器中打开"</aside>
         <section>
           <p><img src="../../../assets/images/1.png" class="assetsCls"/>点击右上角···图标</p>
-          <p><img src="../../../assets/images/2.png" class="assetsCls"/>选择<img src="../../../assets/images/s2x.png" class="sxCls"/>在浏览器中打开</p>
+          <p><img src="../../../assets/images/2.png" class="assetsCls"/>选择<img src="../../../assets/images/s2x.png"
+                                                                               class="sxCls"/>在浏览器中打开</p>
           <p><img src="../../../assets/images/3.png" class="assetsCls"/>在打开的页面中下载</p>
         </section>
         <div class="tempB_img"><img src="../../../assets/images/Bitmap2x.png" class="bitmaps"/></div>
@@ -166,9 +173,11 @@
 </template>
 
 <script>
-//  import "../../../assets/scss/download/h5Download/index.scss";
+  //  import "../../../assets/scss/download/h5Download/index.scss";
   //    import "../../../assets/scss/download/h5Download/index_pc.scss";
   import $ from "jquery"
+  //  import "../../../assets/js/qrcode/qrcode";
+  
   export default {
     data() {
       return {
@@ -186,15 +195,23 @@
 //        that.areaSize();
         console.log("sdad:");
         that.init();
+        
       });
       $("img").on("load", () => {
         that.isImgRead = true;
+        that.$nextTick(function () {
+          require ('../../../assets/js/qrcode/jquery.qrcode.min.js');
+          this._qrcode();
+        });
       });
+
+
 //      that.areaSize();
     },
     methods: {
       init() {
         let that = this;
+        
         let browser = that._Util.browser();
         if (browser.versions.mobile) {
           import("../../../assets/scss/download/h5Download/index.scss");
@@ -204,11 +221,24 @@
           that.isBrowserShow = true;
           
         }
-        if(that.isImgRead){
+        if (that.isImgRead) {
           setTimeout(function () {
-            that.isTextShow=true;
-          },500);
+            that.isTextShow = true;
+          }, 500);
         }
+        
+        /*     console.log("qrcode:",$('.qrcode'));
+             var getQrcode = 'https://m.qpcp9.com/lottery/invite';
+             $('.qrcode').qrcode(getQrcode);
+             console.log('qrcode', $('.qrcode').qrcode(getQrcode));*/
+      },
+      _qrcode () {
+        var getQrcode = 'http://m.qpcp.me/lottery/invite';
+        $("#qrcode").qrcode({
+          text: getQrcode,
+          width:$("#qrcode").width(),
+          height:$("#qrcode").height()
+        });
       },
       toHome() {
         let domin = window.location.host;
@@ -296,19 +326,17 @@
       },
       isWeiXin() {
         let ua = window.navigator.userAgent.toLowerCase();
-        //ua.match(/QQ/i) == " qq"
-        if (ua.match(/MicroMessenger/i) == 'micromessenger' || (ua.match(/QQ/i) == "qq" && navigator.userAgent.indexOf('QQBrowser') == -1) ) {
+        if (ua.match(/MicroMessenger/i) == 'micromessenger' || (ua.match(/QQ/i) == "qq" && ((ua.indexOf(' qq') > -1)))) {
           return true;
         } else {
           return false;
         }
       },
     },
-    watch: {
-    
-    },
+    watch: {},
     components: {}
   }
+
 </script>
 
 <style lang="css" rel="styleheet/css">
@@ -325,11 +353,6 @@
   div {
     height: auto;
     overflow: hidden;
-  }
-  
-  .windowsBack {
-    background: url("../../../assets/images/download/h5Download/pc_head_bgs.jpg") top center no-repeat;
-    background-size: 100% auto;
   }
   
   .logo {
@@ -356,8 +379,17 @@
   }
   
   .WeChat .weChat_left {
-    width: 45%;
+    width: 40%;
     margin: 0 auto;
+    position: relative;
+  }
+  
+  .WeChat .weChat_left .qrcode {
+    position: absolute;
+    left: 6.7%;
+    top: 6.7%;
+    /*background: url("../../../assets/images/download/h5Download/rwm_formal.png") no-repeat;*/
+    /*background-size: cover;*/
   }
   
   .WeChat .weChat_rights div {
@@ -454,5 +486,22 @@
   
   .InstallationStepsApp {
     display: none;
+  }
+  
+  #cnzz_stat_icon_1271231563,
+  #cnzz_stat_icon_1271258064{
+    /* position: fixed;
+     bottom: 0;*/
+    float: left;
+  }
+  
+  #cnzz_stat_icon_1271231563 img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  #cnzz_stat_icon_1271258064 img {
+    width: 20px;
+    height: 20px;
   }
 </style>
