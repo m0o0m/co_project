@@ -16,7 +16,12 @@
                                                                alt=""></div>
         <div class="personal_mian topm">
           <div class="personal_news">
-            <section><img src="../../assets/images/numberimg/tou.png" alt=""></section>
+	          <section style="position: relative; border-radius: 50%;">
+		          <input id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
+		                 class="inputFile"
+		                 accept="image/jpeg,image/png,image/bmp,image/gif">
+		          <img :src="headImg + '?imageView2/1/w/150/h/150'" alt="">
+	          </section>
             <section>
               <!--| {{_Util.formatPhone(result.phone || '')}}-->
               <p><span style="font-family: Arial;">{{result.username}}</span></p>
@@ -119,6 +124,7 @@
         busy: false,
         isHasNews:false,
         feedback_time:0,
+	      headImg: require('../../assets/images/numberimg/tou.png')
       }
     },
     
@@ -241,7 +247,49 @@
           console.log(data);
           window.location.href = data.value;
         })
-      }
+      },
+
+	    picChange() {
+		    let that = this;
+		    let oFile = that.$refs.picInpRef.files[0];
+
+		    let frmData = new FormData();
+		    frmData.append('photo', oFile);
+		    frmData.append('bind_account', 1);
+
+		    $.ajax({
+			    url: that._Api.POST_USER_HEAD_IMG,
+			    type: 'post',
+			    data: frmData,
+			    dataType: 'json',
+			    contentType: false,
+			    processData: false,
+			    success: function (data) {
+				    that.headImg = data.data.photo;
+			    },
+			    error: function (XMLHttpRequest) {
+
+			    }
+		    });
+		    return;
+
+//		    that._Util.post(that, that._Api.POST_USER_HEAD_IMG, {photo: oFile}, (data) => {
+//			    console.log(data);
+//		    });
+//		    return;
+		    let oReader = new FileReader();
+		    oReader.readAsDataURL(oFile);
+		    oReader.onload = function (e) {
+			    console.log(e.target);
+			    let frmData = new FormData();
+			    frmData.append('photo', e.target.result);
+			    console.log(frmData);
+//			    that.$http.defaults.headers['Content-Type'] = 'application/octet-stream';
+			    that._Util.post(that, that._Api.POST_USER_HEAD_IMG, frmData, (data) => {
+				    console.log(data);
+			    });
+		    }
+	    }
     },
     
     components: {
@@ -276,5 +324,31 @@
   
   .loadMoreTC {
     margin-bottom: 2.5rem;
+  }
+
+  .inputFile {
+
+	  width: 100%;
+
+	  height: 100%;
+
+	  cursor: pointer;
+
+	  font-size: 30px;
+
+	  outline: medium none;
+
+	  position: absolute;
+
+	  filter:alpha(opacity=0);
+
+	  -moz-opacity:0;
+
+	  opacity:0;
+
+	  left:0px;
+
+	  top: 0px;
+
   }
 </style>
