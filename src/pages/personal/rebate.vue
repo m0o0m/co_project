@@ -54,7 +54,7 @@
                         </span>
                                     <span class="jkl clas3">返佣比例
                             <ul class="uis">
-                                <li v-for="v in result.commision_level_list">{{v.rebate_money}}</li>
+                                <li v-for="v in result.commision_level_list">{{v.rebate_money}}%</li>
                             </ul>
                         </span>
                                 </div>
@@ -106,9 +106,9 @@
       }
     },
     mounted() {
-      $(".managMementCls").css({
-        "min-height": $(window).height()
-      });
+//      $(".managMementCls").css({
+//        "min-height": $(window).height()
+//      });
       this.init();
       window.addEventListener('resize', this.handleResize)
     },
