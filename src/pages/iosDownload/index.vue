@@ -1,6 +1,6 @@
 <template>
     <div class="iosdownload">
-
+        
         <div class="iosdownload_box">
             <div class="iosdownload_content">
                 <div class="logo">
@@ -12,14 +12,8 @@
                         <span></span>
                         <span>下载安装</span>
                     </div>
-                    <div class="add">
-                        <a :href="addDownUrl">下载地址1</a>
-                    </div>
-                    <div class="add">
-                        <a :href="addDownUrl">下载地址2</a>
-                    </div>
-                    <div class="add">
-                        <a :href="addDownUrl">下载地址3</a>
+                    <div class="add" v-for="(value, index) in add_arr" :key="index">
+                        <a :href="addDownUrl" @click="down_add(index)">{{value}}</a>
                     </div>
                 </div>
                 <div class="steps" id="install_step" @click="show_steps">
@@ -62,7 +56,7 @@
             <!--<div class="content"></div>-->
             <div class="close" @click="close_guidance"></div>
         </div>
-
+        
         <!--微信-->
         <div class="tempBack" v-if="isWeiXin()">
             <article class="tempB_mun">
@@ -85,7 +79,7 @@
                 <section style="margin-top:0.8rem;">
                     <p><img src="../../assets/images/1.png" class="assetsCls"/>请复制该链接</p>
                     <p><img src="../../assets/images/2.png" class="assetsCls"/>回到桌面打开手机自带浏览器<img
-                            src="../../assets/images/s2x.png" class="sxCls"/></p>
+                        src="../../assets/images/s2x.png" class="sxCls"/></p>
                     <p><img src="../../assets/images/3.png" class="assetsCls"/>粘贴该网址点击下载</p>
                 </section>
                 <!--<div class="tempB_img"><img src="../../assets/images/Bitmap2x.png" class="bitmaps"/></div>-->
@@ -95,8 +89,8 @@
 </template>
 
 <script>
-
-
+  
+  
   export default {
     data() {
       return {
@@ -107,15 +101,18 @@
           require("../../assets/images/iosH5download/downloadpage5.png"),
           require("../../assets/images/iosH5download/downloadpage6.png"),
           require("../../assets/images/iosH5download/downloadpage7.png")],
-          addDownUrl: "javascript:void(0)"
+        addDownUrl: "javascript:void(0)",
+        add_arr:{add1:"下载地址1",add2:"下载地址2",add3:"下载地址3"}
       }
     },
     mounted() {
       $(".tempBack ,.install_steps").css({
         "height": $(window).height()
-      })
-
-	    this.iosH5Downquest();
+      });
+      $(".iosdownload").css({
+        "height": $(window).height()*0.9
+      });
+      this.iosH5Downquest();
 //      alert(this.isWeiXin());
     },
     methods: {
@@ -138,43 +135,51 @@
           return false;
         }
       },
-        GetRequest() {
-            var url = location.search; //获取url中"?"符后的字串
-            var theRequest = new Object();
-            var strs = "";
-            if (url.indexOf("?") != -1) {
-                var str = url.substr(1);
-                strs = str.split("&");
-                for(var i = 0; i < strs.length; i ++) {
-                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-                }
-            }
-            return theRequest;
-        },
-        iosH5Downquest() {
-          this.addDownUrl = "javascript:void(0)";
-          var codeVal = sessionStorage.getItem('openAccountCode');
-            var codeText = "";
-            if(!codeVal) {
-                false;
-            }else{
-                codeText = codeVal.code;
-            }
-            var that = this,
-                params = {
-                    type: "ios",
-                    code: that.$route.query.code
-
-                };
-            that._Util.post(that, that._Api.POST_APP_CLIENT, params, (data) => {
-                that.addDownUrl = data.url;
+      down_add(index){
+        for (var key in this.add_arr) {
+          if(this.add_arr[key]==="下载中"){
+            return false;
+          }
+        }
+        this.$set(this.add_arr,""+index,"下载中");
+      },
+      GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        var strs = "";
+        if (url.indexOf("?") != -1) {
+          var str = url.substr(1);
+          strs = str.split("&");
+          for(var i = 0; i < strs.length; i ++) {
+            theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+          }
+        }
+        return theRequest;
+      },
+      iosH5Downquest() {
+        this.addDownUrl = "javascript:void(0)";
+        var codeVal = sessionStorage.getItem('openAccountCode');
+        var codeText = "";
+        if(!codeVal) {
+          false;
+        }else{
+          codeText = codeVal.code;
+        }
+        var that = this,
+          params = {
+            type: "ios",
+            code: that.$route.query.code
+            
+          };
+        that._Util.post(that, that._Api.POST_APP_CLIENT, params, (data) => {
+          that.addDownUrl = data.url;
 //                window.location.href=data.url
-            });
-        },
+        });
+      },
       browserThe() {
         var OsObject = navigator.userAgent;
         var ua = window.navigator.userAgent.toLowerCase();
-
+        
         if (OsObject.indexOf("UCBrowser") != -1 || OsObject.toLowerCase().indexOf('baidu') > 0 || navigator.userAgent.indexOf('QQBrowser') !== -1 ) {
           return true;
         } else {
@@ -184,9 +189,9 @@
             return false;
           }
         }
-
-
-
+        
+        
+        
       }
     },
     components: {}
@@ -194,28 +199,28 @@
 </script>
 
 <style lang="scss" rel="styleheet/css">
-
+    
     @function rem($px,$designWidth:375) {
-        @return $px*450/$designWidth/29 + rem;
+    @return $px*450/$designWidth/29 + rem;
     }
-
+    
     .iosdownload_box {
         height: 100%;
     }
-
+    
     * {
         margin: 0;
         padding: 0;
         text-decoration: none;
         /*box-sizing: border-box;*/
     }
-
+    
     .iosdownload {
-        background: url("../../assets/images/iosDownload/bg_ios_download.png") center center no-repeat;
+        background: url("../../assets/images/download/h5Download/head_bg.png") center center no-repeat;
         background-size: cover;
         height: 100%;
     }
-
+    
     /*引导页样式*/
     .guidance_box {
         /*display: none;*/
@@ -225,14 +230,14 @@
         left: 0;
         top: 0;
     }
-
+    
     .guidance_box .top {
         background-color: #000;
         width: 100%;
         height: rem(44);
         overflow: hidden;
     }
-
+    
     .guidance_box .top .back {
         width: rem(30);
         height: rem(30);
@@ -242,7 +247,7 @@
         margin: rem(9) 0 0 0;
         float: left;
     }
-
+    
     .guidance_box .top .more {
         float: right;
         width: rem(30);
@@ -250,7 +255,7 @@
         margin: rem(16) rem(16) 0 0;
         vertical-align: top;
     }
-
+    
     .guidance_box .top .more i {
         display: inline-block;
         width: rem(5);
@@ -259,7 +264,7 @@
         background-color: #fff;
         vertical-align: top;
     }
-
+    
     .guidance_box .top .title {
         overflow: hidden;
         color: #fff;
@@ -267,14 +272,14 @@
         text-align: center;
         line-height: rem(44);
     }
-
+    
     .guidance_box .content {
         width: 100%;
         height: 100%;
         background: url('../../assets/images/iosDownload/page-1.png') center center no-repeat;
         background-size: cover;
     }
-
+    
     .guidance_box .close {
         background: url("../../assets/images/iosH5download/emptyIcon.png") center center no-repeat;
         background-size: cover;
@@ -285,119 +290,119 @@
         top: rem(15);
         z-index: 5;
     }
-
+    
     .iosdownload {
         padding-top: rem(42);
     }
-
+    
     .iosdownload_content {
         width: rem(189);
         margin: 0 auto;
         text-align: center;
-        /*height: 100px;*/
-        /*background-color: #0B2668;*/
-        .logo {
-            width: 100%;
-            img {
-                width: rem(110);
-                height: rem(110);
-                margin: 0 auto;
-            }
-            h3 {
-                font-family: Arial;
-                font-size: rem(18);
-                color: #FFDC99;
-                margin-top: rem(9);
-                margin-bottom: rem(30);
-            }
-        }
-    }
-
-    .iosdownload_content .add_download {
-        border: rem(2) solid #F0DDAE;
-        background-color: #21102C;
-        border-radius: rem(4);
-        padding: rem(10) rem(16) rem(21);
-        .add {
-            margin-top: rem(12);
-            a {
-                display: block;
-                height: rem(34);
-                box-shadow: inset 0 0 rem(3) 0 #FFF6CF;
-                border-radius: rem(4);
-                font-family: Arial;
-                font-size: rem(14);
-                color: #65431D;
-                background-color: #fff;
-                letter-spacing: rem(3);
-                line-height: rem(34);
-                background-image: radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
-                background-image: -webkit-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
-                background-image: -o-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
-                background-image: -mz-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
-            }
-        }
-        .title {
-            span {
-                display: inline-block;
-                font-family: Arial;
-                font-size: rem(14);
-                color: #FFDC99;
-                letter-spacing: rem(3);
-                line-height: rem(14);
-                vertical-align: middle;
-                &:first-child {
-                    width: rem(21);
-                    height: rem(25);
-                    background: url('../../assets/images/iosDownload/iphone@2x.png') center center no-repeat;
-                    background-size: cover;
-                }
-            }
-        }
-    }
-
-    .iosdownload_content .steps {
+    /*height: 100px;*/
+    /*background-color: #0B2668;*/
+    .logo {
         width: 100%;
-        background: #21102C;
-        border-radius: rem(5);
-        text-align: center;
-        border: rem(2) solid #F0DDAE;
-        margin-top: rem(11);
-
-        span {
-            font-family: Arial;
-            font-size: rem(14);
-            color: #FFDC99;
-            display: inline-block;
-            letter-spacing: rem(3);
-
-            vertical-align: middle;
-            &:first-child {
-                background: url('../../assets/images/iosDownload/steps.png') center center no-repeat;
-                background-size: cover;
-                width: rem(32);
-                height: rem(8);
-
-            }
-            &:last-child {
-                height: rem(52);
-                line-height: rem(52);
-            }
-        }
-
+    img {
+        width: rem(110);
+        height: rem(110);
+        margin: 0 auto;
     }
-
+    h3 {
+        font-family: Arial;
+        font-size: rem(18);
+        color: #FFDC99;
+        margin-top: rem(9);
+        margin-bottom: rem(30);
+    }
+    }
+    }
+    
+    .iosdownload_content .add_download {
+        border: rem(1) solid transparent;
+        /*background-color: #21102C;*/
+        border-radius: rem(4);
+        padding: rem(10) rem(0) rem(21);
+    .add {
+        margin-top: rem(12);
+    a {
+        display: block;
+        height: rem(34);
+        box-shadow: inset 0 0 rem(3) 0 #FFF6CF;
+        border-radius: rem(17);
+        font-family: Arial;
+        font-size: rem(14);
+        color: #65431D;
+        background-color: #fff;
+        letter-spacing: rem(3);
+        line-height: rem(34);
+        background-image: radial-gradient(#B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+        background-image: -webkit-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+        background-image: -moz-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+        background-image: -ms-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+        background-image: -o-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+    }
+    }
+    .title {
+    span {
+        display: inline-block;
+        font-family: Arial;
+        font-size: rem(14);
+        color: #FFDC99;
+        letter-spacing: rem(3);
+        line-height: rem(14);
+        vertical-align: middle;
+    &:first-child {
+         width: rem(21);
+         height: rem(25);
+         background: url('../../assets/images/iosDownload/iphone@2x.png') center center no-repeat;
+         background-size: cover;
+     }
+    }
+    }
+    }
+    
+    .iosdownload_content .steps {
+        background: #21102C;
+        border-radius: rem(18);
+        text-align: center;
+        border: rem(1) solid #F0DDAE;
+        margin-top: rem(11);
+    
+    span {
+        font-family: Arial;
+        font-size: rem(14);
+        color: #FFDC99;
+        display: inline-block;
+        letter-spacing: rem(3);
+        
+        vertical-align: middle;
+    &:first-child {
+         background: url('../../assets/images/iosDownload/steps.png') center center no-repeat;
+         background-size: cover;
+         width: rem(32);
+         height: rem(8);
+        
+     }
+    &:last-child {
+         height: rem(36);
+         line-height: rem(36);
+     }
+    }
+    
+    }
+    
     .footer {
         margin-top: rem(37);
         padding-bottom: rem(50);
-        p {
-            font-family: Arial;
-            font-size: rem(12);
-            color: #FFDC99;
-            line-height: rem(20);
-        }
+    p {
+        font-family: Arial;
+        font-size: rem(12);
+        color: #FFDC99;
+        line-height: rem(20);
     }
-
+    }
+    
     .install_steps {
         position: fixed;
         top: 0;
@@ -410,12 +415,12 @@
         overflow: hidden;
         z-index: 4;
     }
-
+    
     .steps {
         overflow: hidden;
         height: 100%;
     }
-
+    
     .install_steps .close {
         width: rem(30);
         height: rem(30);
@@ -425,12 +430,12 @@
         background: url("../../assets/images/iosH5download/emptyIcon.png") center center no-repeat;
         background-size: cover;
     }
-
+    
     .swiper-container {
-        width: 100%;
+        width: 82%;
         height: 100%;
     }
-
+    
     .pagination-bullet {
         width: rem(8);
         height: rem(8);
@@ -440,7 +445,7 @@
         opacity: 0.8;
         background: #fff;
     }
-
+    
     .mint-swipe-indicator {
         width: rem(8);
         height: rem(8);
@@ -449,7 +454,7 @@
         margin: 0 rem(5);
         background: #fff;
     }
-
+    
     .mint-swipe-indicators {
         position: absolute;
         bottom: 10px;
@@ -457,12 +462,12 @@
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
     }
-
+    
     .mint-swipe-indicator.is-active {
         opacity: 1;
         background: #ff0000;
     }
-
+    
     .tempBack {
         position: fixed;
         width: 100%;
@@ -471,56 +476,56 @@
         left: 0;
         z-index: 3;
     }
-
+    
     .tempB_mun {
         width: 80%;
         margin: rem(15) auto;
-        figure {
-            text-align: right;
-            img {
-                width: rem(75);
-                display: inline-block;
-            }
-        }
-        aside {
-            font-size: rem(22);
-            color: #FFC71C;
-            line-height: rem(30);
-        }
-        section {
-            .assetsCls {
-                width: rem(24);
-                height: rem(24);
-                display: inline-block;
-                position: relative;
-                top: rem(6);
-                margin-right: rem(10);
-            }
-            p {
-                font-size: rem(16);
-                color: #FFFFFF;
-                width: 100%;
-                line-height: rem(30);
-                margin: rem(10) 0;
-            }
-            .sxCls {
-                width: rem(31);
-                height: rem(31);
-                display: inline-block;
-                position: relative;
-                top: rem(10);
-                margin: 0 rem(10);
-            }
-        }
+    figure {
+        text-align: right;
+    img {
+        width: rem(75);
+        display: inline-block;
     }
-
+    }
+    aside {
+        font-size: rem(22);
+        color: #FFC71C;
+        line-height: rem(30);
+    }
+    section {
+    .assetsCls {
+        width: rem(24);
+        height: rem(24);
+        display: inline-block;
+        position: relative;
+        top: rem(6);
+        margin-right: rem(10);
+    }
+    p {
+        font-size: rem(16);
+        color: #FFFFFF;
+        width: 100%;
+        line-height: rem(30);
+        margin: rem(10) 0;
+    }
+    .sxCls {
+        width: rem(31);
+        height: rem(31);
+        display: inline-block;
+        position: relative;
+        top: rem(10);
+        margin: 0 rem(10);
+    }
+    }
+    }
+    
     .tempB_img {
         width: 90%;
         margin: 0px auto;
         text-align: right;
         margin-top: rem(30);
-        img {
-            display: inline-block;
-        }
+    img {
+        display: inline-block;
+    }
     }
 </style>
