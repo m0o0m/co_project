@@ -9,7 +9,7 @@ import * as filters from './filter/index'
 import Utils from './assets/js/Utils'
 import LotteryUtils from './assets/js/lotteryUtils'
 import Api from './api'
-import { Popup, Button, Loadmore, Spinner, Swipe, SwipeItem, Range, InfiniteScroll, Lazyload, DatetimePicker,Picker} from 'mint-ui'
+import { Popup, Button, Loadmore, Spinner, Swipe, SwipeItem, Range, InfiniteScroll, Lazyload, DatetimePicker} from 'mint-ui'
 import {Alert, Confirm, Loading} from './components/ui/index'
 import {MyAudio} from './components/audio/index'
 import './assets/js/hotcss.js'
@@ -36,7 +36,6 @@ Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Range.name, Range);
 Vue.component(Spinner.name, Spinner);
 Vue.component(DatetimePicker.name, DatetimePicker);
-Vue.component(Picker.name, Picker);
 // console.log(axios.defaults.headers);
 // axios.defaults.headers.common['Content-Type'] = 'application/json;charset=UTF-8';
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
