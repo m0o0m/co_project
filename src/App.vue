@@ -46,7 +46,7 @@
 //          });
 //
 					$('.moneyTemplateed').css({
-						"min-height": NextHeight
+						"height": NextHeight
 					});
 					$(".confirmListed").css({
 						"height": NextHeight * 0.63

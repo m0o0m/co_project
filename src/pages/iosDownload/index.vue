@@ -13,7 +13,7 @@
                         <span>下载安装</span>
                     </div>
                     <div class="add" v-for="(value, index) in add_arr" :key="index">
-                        <a :href="addDownUrl" @click="down_add(index)">{{value}}</a>
+                        <a :href="addDownUrl" @click="down_add(index,addDownUrl)">{{value}}</a>
                     </div>
                 </div>
                 <div class="steps" id="install_step" @click="show_steps">
@@ -135,13 +135,16 @@
           return false;
         }
       },
-      down_add(index){
+      down_add(index,href){
+        console.log(href);
+//        alert(href);
         for (var key in this.add_arr) {
           if(this.add_arr[key]==="下载中"){
             return false;
           }
         }
-        this.$set(this.add_arr,""+index,"下载中");
+        if(href!="javascript:void(0)") this.$set(this.add_arr,""+index,"下载中");
+        
       },
       GetRequest() {
         var url = location.search; //获取url中"?"符后的字串
@@ -165,15 +168,14 @@
         }else{
           codeText = codeVal.code;
         }
+//        alert(that.$route.query.code);
         var that = this,
           params = {
             type: "ios",
-            code: that.$route.query.code
-            
+            code: that.$route.query.code||1
           };
         that._Util.post(that, that._Api.POST_APP_CLIENT, params, (data) => {
           that.addDownUrl = data.url;
-//                window.location.href=data.url
         });
       },
       browserThe() {

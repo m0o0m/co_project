@@ -75,10 +75,10 @@
                         </a>
                       </router-link>
                     </li>
-                    <li class="islis">
-                      <router-link :to="{name: 'master'}">
+                    <li class="islis" v-if=" showAgent === 1 ">
+                      <router-link :to="{name: 'master'}" >
                         <a href="javascript:void(0)">
-                          <p>师徒关系</p>
+                          <p>代理后台</p>
                         </a>
                       </router-link>
                     </li>
@@ -124,7 +124,8 @@
         busy: false,
         isHasNews:false,
         feedback_time:0,
-	      headImg: require('../../assets/images/numberimg/tou.png')
+	    headImg: require('../../assets/images/numberimg/tou.png'),
+        showAgent:0
       }
     },
     
@@ -156,9 +157,11 @@
           that.busy = false;
           if (data.userInfo) {
 //		    data.userInfo.is_bind_bank_card = 0;
-            that.result = data.userInfo;
+	          that.result = data.userInfo;
             that.isHasNews = data.userInfo.is_show_feedback_icon;
+            that.showAgent = data.userInfo.is_show_agent;
 //			that.result.phone = '';
+            that.headImg = data.userInfo.photo.split("?")[0];
           }
         }, '', true);
       },
@@ -250,9 +253,9 @@
       },
 
 	    picChange() {
+      
 		    let that = this;
 		    let oFile = that.$refs.picInpRef.files[0];
-
 		    let frmData = new FormData();
 		    frmData.append('photo', oFile);
 		    frmData.append('bind_account', 1);
@@ -265,7 +268,7 @@
 			    contentType: false,
 			    processData: false,
 			    success: function (data) {
-				    that.headImg = data.data.photo;
+            that.headImg = data.data.photo;
 			    },
 			    error: function (XMLHttpRequest) {
 
