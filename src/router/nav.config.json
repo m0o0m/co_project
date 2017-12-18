@@ -370,10 +370,17 @@
         "icon": ""
       },
       {
-        "title": "师徒关系",
+        "title": "代理后台",
         "name": "master",
         "path": "/lottery/personal/master",
         "filePath": "/personal/master",
+        "icon": ""
+      },
+      {
+        "title": "代理协议",
+        "name": "agencyContract",
+        "path": "/lottery/personal/agencyContract",
+        "filePath": "/personal/agencyContract",
         "icon": ""
       },
       {
