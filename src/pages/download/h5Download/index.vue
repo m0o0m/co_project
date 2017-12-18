@@ -278,12 +278,13 @@
 //					alert("is android");
           //跳转Android的下载地址
 //          location.href = "https://download.qpcp10.com/android/qpcp.apk";
-          let codeText = "";
-          if (!codeVal) {
-            false;
-          } else {
-            codeText = codeVal.code;
-          }
+//           let codeText = "";
+//           if (!codeVal) {
+//             false;
+//           } else {
+//             codeText = codeVal.code;
+//           }
+	        var codeText = this.$route.query.code ? this.$route.query.code : '';
           var that = this,
             params = {
               type: "android",
