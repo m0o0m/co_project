@@ -159,6 +159,7 @@
             that.result = data.userInfo;
             that.isHasNews = data.userInfo.is_show_feedback_icon;
 //			that.result.phone = '';
+            that.headImg = data.userInfo.photo.split("?")[0];
           }
         }, '', true);
       },
@@ -250,9 +251,9 @@
       },
 
 	    picChange() {
+      
 		    let that = this;
 		    let oFile = that.$refs.picInpRef.files[0];
-
 		    let frmData = new FormData();
 		    frmData.append('photo', oFile);
 		    frmData.append('bind_account', 1);
@@ -265,7 +266,7 @@
 			    contentType: false,
 			    processData: false,
 			    success: function (data) {
-				    that.headImg = data.data.photo;
+            that.headImg = data.data.photo;
 			    },
 			    error: function (XMLHttpRequest) {
 
