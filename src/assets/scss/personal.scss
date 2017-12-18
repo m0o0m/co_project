@@ -3118,4 +3118,103 @@ iframe {
     letter-spacing: 0;
   }
 }
+//代理后台  协议
+.feedBackMessageLists {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.agentContract {
+  width: 100%;
+  height: 90%;
+  overflow: auto;
+  background: #272324;
+  //background: #111111;
+  padding: rem(25);
+  box-sizing: border-box;
+  -webkit-box-sizing:border-box;
+  margin-top:rem(56);
+  p {
+    font-family: PingFangSC-Regular;
+    font-size: rem(12);
+    color: #fff;
+    letter-spacing: 0;
+    line-height:rem(22.65);
+    text-align: justify;
+  }
+  p.pb {
+    line-height: rem(19.5);
+  }
+  p.pb_t {
+    font-size: rem(14);
+    margin-top:rem(25);
+  }
+  p.pbb {
+    color: #F20F2B;
+    margin-bottom:rem(15);
+  }
+  .xx {
+    margin:rem(10) 0;
+    background: #111111 !important;
+    padding: rem(10) 0;
+  }
+  .explain .lines.divs .jkl {
+    border: rem(1) solid rgba(255, 255, 255, 0.5) !important;
+    ul.uls.uis{
+      background: #272324;
+      border: none;
+    }
+  }
+}
+.assetsDeRightImg.assetsDeRight{
+  background: url('../images/numberimg/xiey.png') center no-repeat;
+  background-size: rem(32) auto;
+}
 
+.assetsDeList .agentsTotal {
+  width: 100%;
+  border-bottom: 1px solid #FFDC99;
+  p {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height:rem(44);
+    line-height:rem(44);
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: rem(14);
+    color: #FFDC99;
+    letter-spacing: 0;
+    input {
+      margin-left:rem(10);
+      width:rem(66);
+      height:rem(23);
+      line-height:rem(23);
+      font-family: PingFangSC-Regular;
+      font-size: rem(12);
+      color: #CCCCCC;
+      letter-spacing: 0;
+      border: 1px solid #BEB284;
+      border-radius:rem(2);
+      outline: none;
+      text-indent: 0.2rem;
+      padding-right: 0.2rem;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background: url("../images/bTArrow.png") right no-repeat;
+    }
+  }
+  p:nth-child(1) {
+    border-right:rem(1) solid #8D766B;
+  }
+}
+.examineMian.examineMian_master ul.master_ul li  {
+  margin-bottom:0rem !important;
+}
+.examineMian.examineMian_master ul.master_ul li.list_tit p {
+    width: 20%;
+}
+.examineMian.examineMian_master ul.master_ul li.list_tit p:nth-child(odd) {
+  width: 30%;
+}
