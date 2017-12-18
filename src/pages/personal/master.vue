@@ -14,12 +14,12 @@
                 <p>下级总数：<span></span>名</p>
                 <p>今日新增下级：<span></span>名</p>
             </div>
-            <div class="agentsTotal" v-if="type == 1">
-                <p style="border-right: none !important" @click="opensYear"  size="large">选择年份
+            <div class="agentsTotal" v-if="type == 1" @click="open('picker2')">
+                <p style="border-right: none !important"  size="large">选择年份
                     <input type="text" :value="  value2 ? value2 : 2017" >
                 </p>
-                <p @click = "opensMoon">选择月份
-                    <input type="text" value="全部">
+                <p>选择月份
+                    <input type="text" :value="  value3 ? value3 : '全部'">
                 </p>
             </div>
         </div>
@@ -80,12 +80,12 @@
       </div>
     </div>
 
-      <!--<mt-datetime-picker-->
-              <!--ref="picker2"-->
-              <!--type="date"-->
-              <!--v-model="value2"-->
-              <!--@confirm="handleChange">-->
-      <!--</mt-datetime-picker>-->
+      <mt-datetime-picker
+              ref="picker2"
+              type="date"
+              v-model="values"
+              @confirm="handleChange">
+      </mt-datetime-picker>
   </div>
 </template>
 
@@ -95,7 +95,9 @@
 		data() {
 			return {
 				result: [],
+				values: null,
 				value2: null,
+				value3: null,
 				pickerValue: true,
 				title: "代理后台",
 				resultList: [],
@@ -130,14 +132,6 @@
 		},
 
 		methods: {
-			opensYear () {
-				let that = this ;
-				that.years = true;
-            },
-            opensMoon () {
-                let that = this ;
-                that.years = true;
-            },
 			init() {
 				let that = this;
 				if (!that.busy) {
@@ -184,29 +178,32 @@
 				let that = this ;
 	            that.$router.replace({name: 'agencyContract'});
             },
-//			handleChange(value) {
-//				var that = this;
-//				that.current_page = 0;
-//				that.last_page = 1;
-//				that.busy = false;
-//				console.log("aaa:", value,this._Util.dateFormat(value,"yyyy-MM-dd"));
-//				that.params.page = 1;
-//				that.params.start_date = this._Util.dateFormat(value,"yyyy-MM-dd");
-//                that.params.end_date = this._Util.dateFormat(value,"yyyy-MM-dd");
-//				that.resultList=[];
-//				that.init();
-//			},
-//			changeType(v, index) {
-//				let that = this;
-//				that.numIndex = index;
-//				that.params.page = 1;
-//				that.params.type = v.type;
-//				that.resultList = [];
-//				that.showType = false;
-//                that.params.start_date = "";
-//                that.params.end_data = "";
-//				that.init();
-//			},
+			handleChange(value) {
+				var that = this;
+				that.current_page = 0;
+				that.last_page = 1;
+				that.busy = false;
+				let times = this._Util.dateFormat(value,"yyyy-MM-dd")
+				let isTimes = times.split('-');
+				that.value2 = 	isTimes[0];
+				that.value3 = 	isTimes[1];
+				that.params.page = 1;
+				that.params.start_date = this._Util.dateFormat(value,"yyyy-MM-dd");
+                that.params.end_date = this._Util.dateFormat(value,"yyyy-MM-dd");
+				that.resultList=[];
+				that.init();
+			},
+			changeType(v, index) {
+				let that = this;
+				that.numIndex = index;
+				that.params.page = 1;
+				that.params.type = v.type;
+				that.resultList = [];
+				that.showType = false;
+                that.params.start_date = "";
+                that.params.end_data = "";
+				that.init();
+			},
 
 			loadMore() {
 				let that = this;
@@ -251,8 +248,6 @@
   .picker-item {
     font-size: 0.6rem !important;
       text-align: center !important;
-      height:1.5rem !important;
-      line-height:1.5rem !important;
   }
   .picker-item.picker-selected{
     font-size: 0.7rem !important;
