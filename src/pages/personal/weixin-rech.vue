@@ -123,6 +123,7 @@
     mounted() {
       this.init();
       this._Util.setCss('.managMementCls',{"height": 1},"*");
+      
     },
     updated() {
       if (!this.paytype) {
