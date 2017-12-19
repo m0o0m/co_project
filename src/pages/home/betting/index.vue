@@ -116,13 +116,7 @@
 			if (that.$route.query.homeIndex == 2) {
 				this.initData();
 			}
-//      that._Util.setCss('.betRecord_bd',{"height": 1.4,},"/");
       that._Util.setCss('.betRecord_bd',{"height": (10/14),"padding-bottom": 0.1},"*");
-//			$('.betRecord_bd').css({
-//        "height": $(window).height() / 1.4,
-//        "padding-bottom": $(window).height() * 0.1
-//      });
-
 			that._Util.needClickFc('bettingRecord');
 		},
 

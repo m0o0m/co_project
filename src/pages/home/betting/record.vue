@@ -65,9 +65,7 @@
       that.recordName = that.$route.query.name;
       that.initData();
       that._Util.needClickFc('lottery_Height');
-      $("#bgimg").css({
-        height: $(window).height(),
-      });
+      that._Util.setCss('#bgimg', {"height": 1}, "*");
     },
     
     methods: {

@@ -309,7 +309,7 @@
                 </section>
               </article>
             </div>
-      
+          
           </div>
           <!--按钮-->
         </div>
@@ -322,7 +322,7 @@
   </div>
 </template>
 <script type="text/babel">
-//   import '../../../assets/scss/details.scss';
+  //   import '../../../assets/scss/details.scss';
   import '../../../assets/scss/default.scss';
   
   export default {
