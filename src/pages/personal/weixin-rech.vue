@@ -122,9 +122,7 @@
     
     mounted() {
       this.init();
-      $(".managMementCls").css({
-        "height": $(window).height()
-      })
+      this._Util.setCss('.managMementCls',{"height": 1},"*");
     },
     updated() {
       if (!this.paytype) {

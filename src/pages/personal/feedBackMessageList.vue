@@ -54,10 +54,8 @@
       }
     },
     mounted() {
-      $('.messageListContent').css({
-        "height": $(window).height()
-      });
       let that = this;
+      that._Util.setCss('.messageListContent', {"height": 1}, "*");
       that.init();
     },
     methods: {

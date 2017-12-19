@@ -28,10 +28,8 @@
     },
     
     mounted() {
-      $('.managMementCls').css({
-        "height": $(window).height()
-      });
       let that = this;
+      that._Util.setCss('.managMementCls',{"height": 1},"*");
       that.init();
     },
     

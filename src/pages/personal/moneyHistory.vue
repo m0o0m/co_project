@@ -70,10 +70,7 @@
     mounted() {
       let that = this;
       that.init();
-      $('.moneyHisTemplate').css({
-        "height": $(window).height()
-      })
-      
+      that._Util.setCss('.moneyHisTemplate',{"height": 1},"*");
       that._Util.needClickFc('moneyHisTemplate');
     },
     

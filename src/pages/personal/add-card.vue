@@ -51,9 +51,7 @@
 		mounted() {
 			let that = this;
 			that.init();
-			$(".managMementCls").css({
-				"height": $(window).height()
-			})
+      this._Util.setCss('.managMementCls',{"height": 1},"*");
 			that.$on('pickerCancel', () => {
 				that.show = false;
 			});

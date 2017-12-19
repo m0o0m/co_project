@@ -137,10 +137,7 @@
       if (that.$route.query.homeIndex == 3) {
         that.init();
       }
-//      that._Util.setCss('.window_size',{"height": 1},"*");
-      $(".window_size").css({
-        "height": $(window).height()
-      })
+      that._Util.setCss('.window_size',{"height": 1},"*");
       
       document.getElementsByClassName('personal_listNav')[0].addEventListener('touchstart', function (event) {
         event.target.classList.add('needsclick');

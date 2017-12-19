@@ -25,14 +25,15 @@
                   </section>
                   <section>
                     <article class="assetsArticle">
-                      <p>{{(v.note.split(','))[0].split('：')[1]  ? (v.note.split(','))[0].split('：')[1] : v.note}}
+                      <p>{{(v.note.split(','))[0].split('：')[1] ? (v.note.split(','))[0].split('：')[1] : v.note}}
                         <span class="opts" v-if="(''+v.note.split('，')[1]).split('：')[1]">&nbsp;&nbsp;第{{(''+v.note.split('，')[1]).split('：')[1] ? (''+v.note.split('，')[1]).split('：')[1] : ''}}期</span>
                         <!--<span class="opts">第{{(v.note.split('，'))[1].split('：')[1]}}期</span>-->
                       </p>
                       <p class="totalMarry"><span>{{v.cash}}</span></p>
                     </article>
                     <article class="assetsArticle">
-                      <p class="timer opts"><span v-if="v.note_text" class="assets_article_playname">{{v.note_text}}&nbsp;&nbsp;&nbsp;&nbsp;</span><span>{{v.create_time}}</span></p>
+                      <p class="timer opts"><span v-if="v.note_text" class="assets_article_playname">{{v.note_text}}&nbsp;&nbsp;&nbsp;&nbsp;</span><span>{{v.create_time}}</span>
+                      </p>
                       <p class="balankMarry optss"><span>{{'余￥' + v.amount}}</span></p>
                     </article>
                   </section>
@@ -79,10 +80,10 @@
           {type: 4, name: '中奖'},
           {type: 34, name: '返款'},
           {type: 3, name: '投注'},
-	      {type: 6, name: '佣金'},
-	      {type: 1, name: '充值'},
-	      {type: 2, name: '提现'},
-	      {type: 16, name: '彩金'}
+          {type: 6, name: '佣金'},
+          {type: 1, name: '充值'},
+          {type: 2, name: '提现'},
+          {type: 16, name: '彩金'}
 //          {type: 33, name: '撤单'}
         ],
         delImg: require('../../assets/images/iconbtn2x.png'),
