@@ -4,7 +4,7 @@
 			<div class="rechargeLeft" @click="$router.go(-1);"></div>
 			<div class="assetsDeRight assetsDeRightImg" @click="goContract"><a href="javascript:void(0)"></a></div>
 			<div class="assetsTitle"><p>{{title}}</p></div>
-			<div id="assetsDeList" class="assetsDeList">
+			<div id="assetsDeList" class="assetsDeList" >
 				<div class="" style="">
 					<div id="subnav" style="color:#FFDC99;margin-bottom: 0 !important">
 						<span @click="type = 0" :class="{on: type == 0}">佣金收益</span>
@@ -15,11 +15,17 @@
 						<p>今日新增下级：<span></span>名</p>
 					</div>
 					<div class="agentsTotal" v-if="type == 1">
-						<p style="border-right: none !important" size="large" >选择年份
-							<input type="text" @click="initDates(true)" :value="  value2 ? value2 : 2017">
+						<p style="border-right: none !important" size="large" @click="initDates(true)" >选择年份
+                            <!--<select  @click="initDates(true)">-->
+                                <!--<option :value="value2">{{value2}}</option>-->
+                            <!--</select>-->
+							<input type="text"  :value="  value2 ? value2 : 2017" disabled >
 						</p>
-						<p>选择月份
-							<input type="text" @click="initDates()" :value="  value3 ? value3 : '全部'">
+						<p  @click="initDates()">选择月份
+                            <!--<select  @click="initDates()">-->
+                                <!--<option :value="value3">{{value3}}</option>-->
+                            <!--</select>-->
+							<input type="text" :value="  value3 ? value3 : '全部'" disabled>
 						</p>
 					</div>
 				</div>
@@ -29,7 +35,7 @@
 					     infinite-scroll-disabled="busy"
 					     infinite-scroll-distance="50"
 					     infinite-scroll-immediate-check="false"
-					     style="height: 100%; overflow: auto;">
+					     style="height: 100%; overflow: hidden;">
 						<ul class="master_ul">
 							<li class="list_tit">
 								<p>结算时间段</p>
@@ -38,10 +44,10 @@
 								<p>佣金</p>
 							</li>
 						</ul>
-						<ul class="master_ul" style="margin-bottom: 2rem;">
+						<ul class="master_ul" style="margin-bottom: 2rem;max-height: 85%; overflow: auto;">
 							<li class="list_tit" v-for="(master,index) in resultList">
 								<p><span>{{master.username}}</span></p>
-								<p><span>{{master.reg_time}}</span></p>
+								<p><span>{{master.sum}}</span></p>
 								<p><span>￥{{master.sum}}</span></p>
 								<p><span>￥{{master.sum}}</span></p>
 							</li>
@@ -57,14 +63,14 @@
 					     infinite-scroll-disabled="busy"
 					     infinite-scroll-distance="50"
 					     infinite-scroll-immediate-check="false"
-					     style="height: 100%; overflow: auto;">
+					     style="height: 100%; overflow: hidden;">
 						<ul class="master_ul">
 							<li class="list_tit">
 								<p style="width: 45%;">用户名</p>
 								<p>盈亏额</p>
 							</li>
 						</ul>
-						<ul class="master_ul" style="margin-bottom: 2rem;">
+						<ul class="master_ul"style="max-height: 85%; overflow: auto;margin-bottom: 2rem;">
 							<li class="list_tit" v-for="(master,index) in resultList">
 								<p style="width: 45%;"><span>{{master.username}}</span></p>
 								<p><span>{{master.reg_time}}</span></p>
@@ -93,8 +99,8 @@
 			return {
 				result: [],
 				dateItems: [],
-				value2: null,
-				value3: null,
+				value2: 2017,
+				value3: '全部',
 				pickerValue: true,
 				title: "代理后台",
 				resultList: [],
@@ -177,6 +183,31 @@
 					}
 					that._Util.post(that, that._Api.POST_MASTER_END, that.params, (data) => {
 						that.resultList = that.resultList.concat(data.data || []);
+						that.resultList =[
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
+							{id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"}
+						]
 						that.masterNum = data.total || 0;
 						that.masterNum01 = data.total_real_number || 0;
 						that.masteramout = data.total_amount || 0;
