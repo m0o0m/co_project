@@ -281,20 +281,16 @@
 				    function callback() {
 					    let baseStr = that.compressPic(img, oFile.type);
 
-					    if (oFile.size / 1024 > 2048) {
-						    let text = window.atob(baseStr.split(',')[1]);
-						    let buffer = new Uint8Array(text.length);
+					    let text = window.atob(baseStr.split(',')[1]);
+					    let buffer = new Uint8Array(text.length);
 
-						    for (let i = 0; i < text.length; i++) {
-							    buffer[i] = text.charCodeAt(i);
-						    }
-
-						    let blob = that.getBlob([buffer], oFile.type);
-						    console.log('compress size: ' + blob.size / 1024);
-						    upload(blob);
-					    } else {
-						    upload(oFile);
+					    for (let i = 0; i < text.length; i++) {
+						    buffer[i] = text.charCodeAt(i);
 					    }
+
+					    let blob = that.getBlob([buffer], oFile.type);
+					    console.log('compress size: ' + blob.size / 1024);
+					    upload(blob);
 				    }
 			    };
 		    } else {
