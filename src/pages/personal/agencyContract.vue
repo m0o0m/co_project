@@ -2,12 +2,12 @@
   <div class="feedBackMessageLists">
     <div class="messageListTitle">
       <ul class="title">
-        <li @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
+        <li @click="$router.push({name:'master'});"><a href="javascript: void(0);"></a></li>
         <li><h3>代理协议</h3></li>
       </ul>
     </div>
     <div class="agentContract">
-        <p>棋牌彩票代理协议：</p>
+        <p class="agentContract_tit">棋牌彩票代理协议：</p>
         <p>1、会员可点击开户返佣选择直接开户或分享开户成为棋牌彩票官方代理；</p>
         <p>2、代理享有下级用户消费带来的分红权利；</p>
         <p>3、平台按用户亏损总额的12%-35%用于代理提成；</p>
