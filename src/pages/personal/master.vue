@@ -93,8 +93,6 @@
 			return {
 				result: [],
 				dateItems: [],
-				dateItem: [],
-				values: [],
 				value2: null,
 				value3: null,
 				pickerValue: true,
@@ -232,73 +230,8 @@
 				that.init();
 			}
 		},
-		watch: {
-			'dateItem': {
-				handler: (val, oldVal) => {
-//                        if (val != oldVal) {
-//                            console.log(val)
-//                        }
-					console.log(123);
-					console.log(val);
-					console.log(oldVal);
-				},
-				// 深度观察
-				deep: true
-			}
-		},
 		components: {
 			BankChange
 		}
 	}
 </script>
-<style>
-	/*@component-namespace page {
-		@component datetime {
-			@descendent wrapper {
-				padding:  0 1rem;
-				position: absolute 50% ;
-				width:100%;
-				transform: translateY(-50%);
-				button:not:(last-child) {
-				margin-bottom: 1rem;
-			}
-			}
-		}
-	}*/
-	.picker-items {
-		height: 6rem;
-		background: #fff !important;
-	}
-
-	.picker-slot-wrapper {
-		height: auto !important;
-
-	}
-
-	.picker-toolbar .mint-datetime-action {
-		font-size: 0.7rem !important;
-		line-height: 1.5rem !important;
-	}
-
-	.picker-toolbar {
-		height: 1.5rem !important;
-	}
-
-	.picker-item {
-		font-size: 0.6rem !important;
-		text-align: center !important;
-	}
-
-	.picker-item.picker-selected {
-		font-size: 0.7rem !important;
-		margin: 0.5rem 0;
-	}
-
-	.picker-center-highlight {
-		height: 1.5rem !important;
-		/*line-height: 1.5rem !important;*/
-		margin-top: -0.6rem !important;
-		overflow: visible;
-	}
-
-</style>
