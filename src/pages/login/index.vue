@@ -16,7 +16,10 @@
             <p><input v-model="user.password" type="password" placeholder="请输入6～12位数字或字母" maxlength="12"/></p>
           </section>
 
-          <p><a href="javascript:void(0)" class="for forgotER" @click="foregister()"> 忘记密码？</a></p>
+          <p>
+	          <a href="javascript:void(0)" class="for forgotER" @click="foregister()"> 免费试玩</a>
+	          <a href="javascript:void(0)" class="for forgotER" @click="foregister()"> 忘记密码？</a>
+          </p>
           <a href="javascript:void(0)" class="as">
             <div @click="login()" class="loginBtn">登录</div>
           </a>
@@ -66,6 +69,9 @@
 					username: that.user.username,
 					password: that._Util.hexMd5(that.user.password)
 				}, (data) => {
+//					data.is_test_player = true;
+					that._Util.setStorage('userInfo', data, true);
+
 					that._Util.setLocalStorage('legouUser', {
 						username: that.user.username,
 						password: that._Util.hexMd5(that.user.password)

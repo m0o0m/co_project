@@ -20,7 +20,7 @@
 		          <input id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
 		                 class="inputFile"
 		                 accept="image/jpeg,image/png,image/bmp,image/gif">
-		          <img :src="headImg + '?imageView2/1/w/150/h/150'" alt="">
+		          <img :src="headImg" alt="">
 	          </section>
             <section>
               <!--| {{_Util.formatPhone(result.phone || '')}}-->
@@ -46,37 +46,38 @@
                     ref="loadmore"
                     :top-method="loadTop">
                   <ul>
-                    <li class="islis" @click="toPhoneManager()">
+                    <li v-if="!userInfo.is_test_player" class="islis" @click="toPhoneManager()">
                       <a href="javascript:void(0)">
                         <p>手机号管理</p>
                       </a>
                     </li>
-                    <li class="islis">
+                    <li v-if="!userInfo.is_test_player" class="islis">
                       <router-link :to="{name: 'loginPass'}">
                         <a href="javascript:void(0)">
                           <p>登录密码管理</p>
                         </a>
                       </router-link>
                     </li>
-                    <li class="islis" @click="toCashManager()">
+                    <li v-if="!userInfo.is_test_player" class="islis" @click="toCashManager()">
                       <a href="javascript:void(0)">
                         <p>提现密码管理</p>
                       </a>
                     </li>
-                    <li class="islis" @click="cardManager()">
+                    <li v-if="!userInfo.is_test_player" class="islis" @click="cardManager()">
                       <a href="javascript:void(0)">
                         <p>银行卡管理</p>
                       </a>
                     </li>
-                    <li class="islis">
+                    <li v-if="!userInfo.is_test_player" class="islis">
                       <router-link :to="{name: 'rebate'}">
                         <a href="javascript:void(0)">
                           <p>开户返佣</p>
                         </a>
                       </router-link>
                     </li>
-                    <li class="islis" v-if=" showAgent === 1 ">
-                      <router-link :to="{name: 'master'}" >
+                    <li class="islis" v-if="!userInfo.is_test_player && showAgent === 1">
+                    <!--<li class="islis">-->
+                      <router-link :to="{name: 'master'}">
                         <a href="javascript:void(0)">
                           <p>代理后台</p>
                         </a>
@@ -124,8 +125,9 @@
         busy: false,
         isHasNews:false,
         feedback_time:0,
-	    headImg: require('../../assets/images/numberimg/tou.png'),
-        showAgent:0
+	      headImg: require('../../assets/images/numberimg/tou.png'),
+	      userInfo: this._Util.getStorage('userInfo', true),
+	      showAgent:0
       }
     },
     
@@ -135,6 +137,7 @@
       if (that.$route.query.homeIndex == 3) {
         that.init();
       }
+//      that._Util.setCss('.window_size',{"height": 1},"*");
       $(".window_size").css({
         "height": $(window).height()
       })
@@ -157,11 +160,11 @@
           that.busy = false;
           if (data.userInfo) {
 //		    data.userInfo.is_bind_bank_card = 0;
-	          that.result = data.userInfo;
+            that.result = data.userInfo;
             that.isHasNews = data.userInfo.is_show_feedback_icon;
             that.showAgent = data.userInfo.is_show_agent;
 //			that.result.phone = '';
-            that.headImg = data.userInfo.photo.split("?")[0];
+            that.headImg = data.userInfo.photo;
           }
         }, '', true);
       },
@@ -182,6 +185,11 @@
       
       toCash() {
         let that = this;
+        if (that.userInfo.is_test_player) {
+	        that._Util.showAlert(that, {content: '试玩账号无法使用此功能'});
+        	return;
+        }
+
         if (!that.result.phone) {
           that._Util.showAlert(that, {content: '请绑定手机后设置支付密码'});
           that.$router.push({name: 'phoneManagement', query: {fullPath: that.$route.fullPath, type: 5}});
@@ -253,45 +261,150 @@
       },
 
 	    picChange() {
-      
 		    let that = this;
 		    let oFile = that.$refs.picInpRef.files[0];
-		    let frmData = new FormData();
-		    frmData.append('photo', oFile);
-		    frmData.append('bind_account', 1);
 
-		    $.ajax({
-			    url: that._Api.POST_USER_HEAD_IMG,
-			    type: 'post',
-			    data: frmData,
-			    dataType: 'json',
-			    contentType: false,
-			    processData: false,
-			    success: function (data) {
-            that.headImg = data.data.photo;
-			    },
-			    error: function (XMLHttpRequest) {
+		    console.log('size: ' + oFile.size / 1024);
+		    if (oFile.size / 1024 > 2049) {
+			    let oReader = new FileReader();
+			    oReader.readAsDataURL(oFile);
+			    oReader.onload = function (e) {
+				    let _this = this;
+				    let img = new Image();
+				    img.src = _this.result;
 
-			    }
-		    });
-		    return;
+				    if (img.complete) {
+					    callback();
+				    } else {
+					    img.onload = callback;
+				    }
 
-//		    that._Util.post(that, that._Api.POST_USER_HEAD_IMG, {photo: oFile}, (data) => {
-//			    console.log(data);
-//		    });
-//		    return;
-		    let oReader = new FileReader();
-		    oReader.readAsDataURL(oFile);
-		    oReader.onload = function (e) {
-			    console.log(e.target);
+				    function callback() {
+					    let baseStr = that.compressPic(img, oFile.type);
+
+					    let text = window.atob(baseStr.split(',')[1]);
+					    let buffer = new Uint8Array(text.length);
+
+					    for (let i = 0; i < text.length; i++) {
+						    buffer[i] = text.charCodeAt(i);
+					    }
+
+					    let blob = that.getBlob([buffer], oFile.type);
+					    console.log('compress size: ' + blob.size / 1024);
+					    upload(blob);
+				    }
+			    };
+		    } else {
+			    upload(oFile);
+		    }
+
+
+
+		    function upload(photo) {
 			    let frmData = new FormData();
-			    frmData.append('photo', e.target.result);
-			    console.log(frmData);
-//			    that.$http.defaults.headers['Content-Type'] = 'application/octet-stream';
-			    that._Util.post(that, that._Api.POST_USER_HEAD_IMG, frmData, (data) => {
-				    console.log(data);
+			    frmData.append('photo', photo);
+			    frmData.append('bind_account', 1);
+			    console.log(photo.size / 1024);
+			    that._Util.openLoading(that);
+			    $.ajax({
+				    url: that._Api.POST_USER_HEAD_IMG,
+				    type: 'post',
+				    data: frmData,
+				    dataType: 'json',
+				    contentType: false,
+				    processData: false,
+				    success: function (data) {
+					    that._Util.closeLoading(that);
+					    console.log(data);
+					    if (data.code === 0) {
+						    that.headImg = data.data.photo;
+						    that._Util.showAlert(that, {content: data.msg});
+					    } else {
+						    that._Util.showAlert(that, {content: data.msg});
+					    }
+				    },
+				    error: function (XMLHttpRequest) {
+					    that._Util.closeLoading(that);
+					    console.log(XMLHttpRequest);
+				    }
 			    });
 		    }
+	    },
+
+	    getBlob(buffer, format) {
+		    try {
+			    return new Blob(buffer, {type: format});
+		    } catch (e) {
+			    let bb = new (window.BlobBuilder || window.WebKitBlobBuilder || window.MSBlobBuilder);
+			    buffer.forEach(function(buf) {
+				    bb.append(buf);
+			    });
+			    return bb.getBlob(format);
+		    }
+	    },
+
+	    compressPic(img, fileType) {
+		    let canvas = document.createElement("canvas");
+		    let ctx = canvas.getContext('2d')
+
+		    //    瓦片canvas
+		    let tCanvas = document.createElement("canvas");
+		    let tctx = tCanvas.getContext("2d");
+
+		    let initSize = img.src.length;
+		    let width = img.width;
+		    let height = img.height;
+
+		    //如果图片大于四百万像素，计算压缩比并将大小压至400万以下
+		    let ratio;
+		    if ((ratio = width * height / 5000000)>1) {
+			    ratio = Math.sqrt(ratio);
+			    width /= ratio;
+			    height /= ratio;
+		    }else {
+			    ratio = 1;
+		    }
+
+		    canvas.width = width;
+		    canvas.height = height;
+
+//        铺底色
+		    ctx.fillStyle = "#fff";
+		    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		    //如果图片像素大于100万则使用瓦片绘制
+		    let count;
+		    if ((count = width * height / 1000000) > 1) {
+			    count = ~~(Math.sqrt(count)+1); //计算要分成多少块瓦片
+
+//            计算每块瓦片的宽和高
+			    let nw = ~~(width / count);
+			    let nh = ~~(height / count);
+
+			    tCanvas.width = nw;
+			    tCanvas.height = nh;
+
+			    for (let i = 0; i < count; i++) {
+				    for (let j = 0; j < count; j++) {
+					    tctx.drawImage(img, i * nw * ratio, j * nh * ratio, nw * ratio, nh * ratio, 0, 0, nw, nh);
+
+					    ctx.drawImage(tCanvas, i * nw, j * nh, nw, nh);
+				    }
+			    }
+		    } else {
+			    ctx.drawImage(img, 0, 0, width, height);
+		    }
+
+		    //进行最小压缩
+		    let ndata = canvas.toDataURL('image/jpeg', 0.95);
+
+		    console.log('压缩前：' + initSize / 1024);
+		    console.log('压缩后：' + ndata.length / 1024);
+		    console.log('压缩率：' + ~~(100 * (initSize - ndata.length) / initSize) + "%");
+
+		    tCanvas.width = tCanvas.height = canvas.width = canvas.height = 0;
+
+		    return ndata;
 	    }
     },
     
