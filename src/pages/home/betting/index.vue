@@ -237,6 +237,7 @@
   .betting_record_list .record_list_right{
     float: right;
     font-size: rem(14); color: #FFDC99; line-height: rem(24);
+    text-align: right;
   }
   .betting_record_list p{
     color: #FFDC99;
