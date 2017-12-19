@@ -11,8 +11,8 @@
 						<span @click="type = 1" :class="{on: type == 1}">下级列表</span>
 					</div>
 					<div class="agentsTotal" v-if="type == 0">
-						<p>下级总数：<span>{{value2}}</span>名</p>
-						<p>今日新增下级：<span>{{value3}}</span>名</p>
+						<p>下级总数：<span>{{PeopleAlways}}</span>名</p>
+						<p>今日新增下级：<span>{{newAdd}}</span>名</p>
 					</div>
 					<div class="agentsTotal" v-if="type == 1">
 						<p style="border-right: none !important" size="large" @click="initDates(true)" >选择年份
@@ -71,7 +71,7 @@
                             infinite-scroll-disabled="busy"
                             infinite-scroll-distance="50"
                             infinite-scroll-immediate-check="false">
-							<li class="list_tit" v-for="(master,index) in resultList">
+							<li class="list_tit" v-for="(master,index) in resultLists">
 								<p style="width: 45%;"><span>{{master.username}}</span></p>
 								<p><span>{{master.profit}}</span></p>
 							</li>
@@ -104,6 +104,7 @@
 				pickerValue: true,
 				title: "代理后台",
 				resultList: [],
+				resultLists: [],
 				showType: false,
 				numIndex: 0,
 				showTypeItems: [],
@@ -113,6 +114,9 @@
 					page: 1,
 					year: '',
 					month: ''
+				},
+                paramss: {
+					page: 1,
 				},
 				type: 0,
 				moreMsg: '',
@@ -125,7 +129,9 @@
 				last_page: 1,
 				years: false,
 				month: false,
-				isYear: 2017
+				isYear: 2017,
+				PeopleAlways:0,
+                newAdd:0,
 			}
 		},
 
@@ -147,16 +153,17 @@
 				} else {
 					that.value2 = numS
 				}
-				that.params.start_date= this.value2;
-				that.params.end_date= this.value3;
-                if (that.params.end_date == '全部' ) {
-                    that.params.end_date  = ''
+				that.params.year= this.value2;
+				that.params.month= this.value3;
+				that.params.page= 1;
+				that.paramss.page= 1;
+				that.busy = false;
+                if (that.params.month == '全部' ) {
+                    that.params.month  = ''
                 }
 				that._Util.post(that, that._Api.POST_MASTER_ENDS,that.params, (data) => {
-					alert(158);
-					that.resultList = that.resultList.concat(data.data || []);
-					alert(1212);
-					console.log('that.resultList:',that.resultList)
+					that.resultLists = [];
+                    that.resultLists = data.data || [];
 				})
 				that.years = false;
 				that.month = false;
@@ -187,37 +194,41 @@
 				let that = this;
 				if (!that.busy) {
 					that.busy = true;
-//                    that.params.start_date= this.value2;
-//					that.params.end_date= this.value3;
-//                    if (that.params.end_date == '全部' ) {
-//	                    that.params.end_date  = 'all'
-//                    }
-                  alert(88);
-                    that._Util.post(that, that._Api.POST_MASTER_END, {}, (data) => {
-                        console.log('------------------------------')
-                    });
-//					that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
-//						console.log('----------------')
-//                    that.resultList = that.resultList.concat(data.data || []);
-//                    console.log(that.resultList);
-//                    console.log(that.resultList);
-//                    console.log(that.resultList);
-//                    console.log(that.resultList);
-//                    console.log(that.resultList);
-//                    console.log(that.resultList);
-//                    that.masterNum = data.total || 0;
-////                    that.masterNum01 = data.total_real_number || 0;
-////                    that.masteramout = data.total_amount || 0;
-////                    that.masterMarry = data.total_commission || 0;
-//                    if (data.data.length) {
-//                        that.params.page++;
-//                    } else {
-//                        that._Util.showAlert(that, {content: '已经没有更多数据了'});
-//                    }
-//                    that.current_page = parseInt(data.current_page);
-//                    that.last_page = parseInt(data.last_page);
-//                    that.busy = false;
-//                });
+                    that.params.year= this.value2;
+					that.params.month= this.value3;
+                    if (that.params.month == '全部' ) {
+	                    that.params.month  = ''
+                    }
+                  console.log('begin');
+					that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
+						that.PeopleAlways = data.member_count;
+						that.newA = data.member_daily_count;
+                    that.resultList = that.resultList.concat(data.data || []);
+                    that.masterNum = data.total || 0;
+                    if (that.paramss.page <=  data.last_page) {
+	                    that.busy = false;
+                        that.paramss.page++;
+                    } else {
+                        that._Util.showAlert(that, {content: '已经没有更多数据了'});
+	                    that.busy = true;
+                    }
+                    that.current_page = parseInt(data.current_page);
+                    that.last_page = parseInt(data.last_page);
+
+                });
+					that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
+                    that.resultLists = that.resultLists.concat(data.data || []);
+                    that.masterNum = data.total || 0;
+                    if (that.params.page <=  data.last_page) {
+                        that.params.page++;
+	                    that.busy = false;
+                    } else {
+                        that._Util.showAlert(that, {content: '已经没有更多数据了'});
+	                    that.busy = true;
+                    }
+                    that.current_page = parseInt(data.current_page);
+                    that.last_page = parseInt(data.last_page);
+                });
             }
         },
 			goContract() {
