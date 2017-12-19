@@ -71,6 +71,13 @@
         let that = this;
         that._Util.setStorage('isLogin', !!false, true);
         that._Util.post(that, that._Api.POST_USER_WAVE, {}, (data) => {
+        	console.log(data);
+        	if (data) {
+//		        data.is_test_player = true;
+		        that._Util.setStorage('userInfo', data, true);
+	        } else {
+		        that._Util.setStorage('userInfo', {}, true);
+	        }
           that._Util.setStorage('isLogin', !!data, true);
         }, '', true, true);
       },
@@ -144,7 +151,13 @@
       topUpFooter(){
         let that = this;
         let isLogin = that._Util.getStorage('isLogin', true);
+
         if (isLogin === 'true') {
+	        if (that._Util.getStorage('userInfo').is_test_player, true) {
+		        that._Util.showAlert(that, {content: '试玩账号无法使用此功能'});
+		        return;
+	        }
+
           that.$router.push({name:"addMoney"})
         } else {
           that._Util.showAlert(that, {content: '请登录'}, () => {
