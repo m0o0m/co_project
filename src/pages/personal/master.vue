@@ -199,12 +199,18 @@
                     if (that.params.month == '全部' ) {
 	                    that.params.month  = ''
                     }
-                  console.log('begin');
-					that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
-						that.PeopleAlways = data.member_count;
-						that.newA = data.member_daily_count;
-                    that.resultList = that.resultList.concat(data.data || []);
-                    that.masterNum = data.total || 0;
+                    that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
+                        that.PeopleAlways = data.member_count;
+                        that.newA = data.member_daily_count;
+                        that.resultList = that.resultList.concat(data.data || []);
+                    });
+                    that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
+                        that.resultLists = that.resultLists.concat(data.data || []);
+                    })
+                    if (that.type == 0 ){
+					    that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
+                        that.resultList = that.resultList.concat(data.data || []);
+                        that.masterNum = data.total || 0;
                     if (that.paramss.page <=  data.last_page) {
 	                    that.busy = false;
                         that.paramss.page++;
@@ -216,19 +222,22 @@
                     that.last_page = parseInt(data.last_page);
 
                 });
-					that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
-                    that.resultLists = that.resultLists.concat(data.data || []);
-                    that.masterNum = data.total || 0;
-                    if (that.params.page <=  data.last_page) {
-                        that.params.page++;
-	                    that.busy = false;
-                    } else {
-                        that._Util.showAlert(that, {content: '已经没有更多数据了'});
-	                    that.busy = true;
+                    }
+                    if ( that.type == 1) {
+					    that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
+                        that.resultLists = that.resultLists.concat(data.data || []);
+                        that.masterNum = data.total || 0;
+                        if (that.params.page <=  data.last_page) {
+                            that.params.page++;
+                            that.busy = false;
+                        } else {
+                            that._Util.showAlert(that, {content: '已经没有更多数据了'});
+                            that.busy = true;
                     }
                     that.current_page = parseInt(data.current_page);
                     that.last_page = parseInt(data.last_page);
                 });
+                    }
             }
         },
 			goContract() {
