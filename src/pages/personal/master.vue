@@ -46,10 +46,10 @@
                             infinite-scroll-distance="50"
                             infinite-scroll-immediate-check="false">
 							<li class="list_tit" v-for="(master,index) in resultList">
-								<p><span>{{master.username}}</span></p>
-								<p><span>{{master.sum}}</span></p>
-								<p><span>￥{{master.sum}}</span></p>
-								<p><span>￥{{master.sum}}</span></p>
+								<p><span>{{master.name}}</span></p>
+								<p><span>{{master.total_member_count}}</span></p>
+								<p><span>￥{{master.total_member_profit}}</span></p>
+								<p><span>￥{{master.commission}}</span></p>
 							</li>
 							<!--      <div class="noneDIV" v-if="betIndex === 0">
 											<p><img src="../../assets/images/noneImg.png"/></p>
@@ -73,7 +73,7 @@
                             infinite-scroll-immediate-check="false">
 							<li class="list_tit" v-for="(master,index) in resultList">
 								<p style="width: 45%;"><span>{{master.username}}</span></p>
-								<p><span>{{master.reg_time}}</span></p>
+								<p><span>{{master.profit}}</span></p>
 							</li>
 							<!--      <div class="noneDIV" v-if="betIndex === 0">
 											<p><img src="../../assets/images/noneImg.png"/></p>
@@ -111,8 +111,8 @@
 				busy: false,
 				params: {
 					page: 1,
-					start_date: '',
-					end_date: ''
+					year: '',
+					month: ''
 				},
 				type: 0,
 				moreMsg: '',
@@ -150,10 +150,13 @@
 				that.params.start_date= this.value2;
 				that.params.end_date= this.value3;
                 if (that.params.end_date == '全部' ) {
-                    that.params.end_date  = 'all'
+                    that.params.end_date  = ''
                 }
-				that._Util.post(that, that._Api.POST_MASTER_END,that.params , (data) => {
-					console.log(data);
+				that._Util.post(that, that._Api.POST_MASTER_ENDS,that.params, (data) => {
+					alert(158);
+					that.resultList = that.resultList.concat(data.data || []);
+					alert(1212);
+					console.log('that.resultList:',that.resultList)
 				})
 				that.years = false;
 				that.month = false;
@@ -184,66 +187,37 @@
 				let that = this;
 				if (!that.busy) {
 					that.busy = true;
-//					console.log("ssss:", that.current_page, that.last_page);
-                    that.params.start_date= this.value2;
-					that.params.end_date= this.value3;
-                    if (that.params.end_date == '全部' ) {
-	                    that.params.end_date  = 'all'
-                    }
-					that._Util.post(that, that._Api.POST_MASTER_END, that.params, (data) => {
-                    that.resultList = that.resultList.concat(data.data || []);
-                    that.resultList =[
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"},
-                        {id: 22620, username: "zj555555", reg_time: "2017-12-08 13:51", sum: "0"}
-                    ]
-                    that.masterNum = data.total || 0;
-                    that.masterNum01 = data.total_real_number || 0;
-                    that.masteramout = data.total_amount || 0;
-                    that.masterMarry = data.total_commission || 0;
-    //                        console.log(that.resultList);
-    //						if (that.resultList.length === 0) {
-    //							that.betIndex = 0;
-    //						} else {
-    //							that.betIndex = 1;
-    //						}
-
-                    if (data.data.length) {
-                        that.params.page++;
-                    } else {
-                        that._Util.showAlert(that, {content: '已经没有更多数据了'});
-                    }
-    //						if (parseInt(data.current_page) !== data.last_page) {
-    //							that.moreMsg = '正在加载更多的数据...';
-    //						}
-                    that.current_page = parseInt(data.current_page);
-                    that.last_page = parseInt(data.last_page);
-
-    //						if (parseInt(data.current_page) === data.last_page) {
-    //							that.moreMsg = '';
-    //						}
-                    that.busy = false;
-                });
+//                    that.params.start_date= this.value2;
+//					that.params.end_date= this.value3;
+//                    if (that.params.end_date == '全部' ) {
+//	                    that.params.end_date  = 'all'
+//                    }
+                  alert(88);
+                    that._Util.post(that, that._Api.POST_MASTER_END, {}, (data) => {
+                        console.log('------------------------------')
+                    });
+//					that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
+//						console.log('----------------')
+//                    that.resultList = that.resultList.concat(data.data || []);
+//                    console.log(that.resultList);
+//                    console.log(that.resultList);
+//                    console.log(that.resultList);
+//                    console.log(that.resultList);
+//                    console.log(that.resultList);
+//                    console.log(that.resultList);
+//                    that.masterNum = data.total || 0;
+////                    that.masterNum01 = data.total_real_number || 0;
+////                    that.masteramout = data.total_amount || 0;
+////                    that.masterMarry = data.total_commission || 0;
+//                    if (data.data.length) {
+//                        that.params.page++;
+//                    } else {
+//                        that._Util.showAlert(that, {content: '已经没有更多数据了'});
+//                    }
+//                    that.current_page = parseInt(data.current_page);
+//                    that.last_page = parseInt(data.last_page);
+//                    that.busy = false;
+//                });
             }
         },
 			goContract() {
