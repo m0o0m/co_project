@@ -8,7 +8,7 @@
                         <a href="javascript:history.back(-1)">
                             <li></li>
                         </a>
-                        <li><p style="color:#FFDC99;margin-top:0rem;">开&nbsp;户&nbsp;返&nbsp;佣</p></li>
+                        <li><p style="color:#FFDC99;margin-top:0rem;">开户返佣</p></li>
                         <!-- <p class="subnav" style="color:#FFDC99;margin-top:0rem;"><span>直接开户</span> <span>分享开户</span></p>    -->
                     </ul>
                 </div>
