@@ -14,11 +14,11 @@
                 <p>下级总数：<span></span>名</p>
                 <p>今日新增下级：<span></span>名</p>
             </div>
-            <div class="agentsTotal" v-if="type == 1" @click="open('picker2')">
-                <p style="border-right: none !important"  size="large">选择年份
+            <div class="agentsTotal" v-if="type == 1" >
+                <p style="border-right: none !important"  size="large" @click="years = true">选择年份
                     <input type="text" :value="  value2 ? value2 : 2017" >
                 </p>
-                <p>选择月份
+                <p @click=" moons = true">选择月份
                     <input type="text" :value="  value3 ? value3 : '全部'">
                 </p>
             </div>
@@ -80,22 +80,20 @@
       </div>
     </div>
 
-      <mt-datetime-picker
-              ref="picker2"
-              type="date"
-              v-model="values"
-              @confirm="handleChange">
-      </mt-datetime-picker>
+      <BankChange v-if="values.length " :show=" years || moons " :items="reversedMessage"></BankChange>
   </div>
 </template>
 
 <script>
 	import '../../assets/scss/personal.scss';
+		import BankChange from '../../components/bankChange.vue';
 	export default {
 		data() {
 			return {
 				result: [],
-				values: null,
+				dateItems: [],
+				dateItem: [],
+				values: [],
 				value2: null,
 				value3: null,
 				pickerValue: true,
@@ -121,7 +119,8 @@
               current_page: 0,
               last_page: 1,
 			  years: false,
-              moon:false
+              moons:false,
+              isYear : 2017
 			}
 		},
 
@@ -129,9 +128,40 @@
 			let that = this;
 			that.init();
 			that._Util.needClickFc('assetsDeList');
+			that.initDates();
+			let date =new Date;
+			that.isYear  = date.getFullYear();
+			that.$on('pickerCancel', () => {
+	            that.years = false;
+	            that.moons = false;
+            });
+            that.$on('pickerOk', (data) => {
+            	var numS= parseInt( data.province.name );
+            	if( numS < 12){
+                    that.value3 = numS
+                }else  {
+                    that.value2 = numS
+                }
+	            that.years = false;
+	            that.moons = false;
+            })
 		},
-
+		computed: {
+			reversedMessage: function () {
+							return this.dateItem =  this.years ? this.values : this.dateItems
+			}
+        },
 		methods: {
+			initDates() {
+				let that = this;
+				for (let i = 1; i < 13; i++) {
+					that.dateItems.push({id: i, name: i});
+                }
+                for (let i = that.isYear - 10; i < that.isYear +1; i++) {
+                    that.values.push({id: i, name: i});
+                }
+            },
+
 			init() {
 				let that = this;
 				if (!that.busy) {
@@ -210,10 +240,23 @@
 				that.init();
 			}
 		},
-
-//		components: {
-//			DatetimePicker
-//		}
+			watch:{
+				'dateItem':{
+					handler:(val,oldVal)=>{
+//                        if (val != oldVal) {
+//                            console.log(val)
+//                        }
+											console.log(123);
+											console.log( val );
+						console.log(oldVal);
+					},
+					// 深度观察
+					deep:true
+				}
+			},
+		components: {
+					BankChange
+		}
 	}
 </script>
 <style>
