@@ -140,10 +140,12 @@
             }
           }
           if (this.lotteryOffsColorID == '137') {
+            let that = this;
             this.$nextTick(function () {
               $(".paiGow_munFirst").css({
                 "height": $(window).height() * 0.47
               })
+//              that._Util.setCss('.paiGow_munFirst',{"height": 0.47},"*");
             })
           }
           return this.classAdata.played[this.oneCredId].item;

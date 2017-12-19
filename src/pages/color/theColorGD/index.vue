@@ -86,10 +86,7 @@
 	  this.$on('marryNum', function (data) {
 		this.marryNum = data || 0;
 	  });
-      $(".theColor01").css({
-        "min-height": $(window).height()
-      })
-
+    that._Util.setCss('.theColor01',{"min-height": 1},"*");
       that._Util.visibilityChange(that, 23);
 	},
 	methods: {

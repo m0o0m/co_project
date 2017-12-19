@@ -142,11 +142,7 @@
         that.selectedBalls = [];
         that.computeOdds({odds: 0});
       });
-
-      $(".pknnGow").css({
-        "height": $(window).height()*0.78,
-//        "padding-top": $(window).height()*0.22
-      })
+      that._Util.setCss('.pknnGow',{"height": 0.78},"*");
         that.lotteryOffsColorID = that.$parent.$refs.headerRef.lotteryTypeId;
     },
     methods: {

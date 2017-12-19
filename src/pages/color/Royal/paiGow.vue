@@ -180,11 +180,7 @@
         that.selectedBalls = [];
         that.computeOdds({odds: 0});
       });
-      
-      $(".royal").css({
-        "min-height": $(window).height() * 0.78,
-//        "padding-top": $(window).height() * 0.21
-      });
+      that._Util.setCss('.royal',{"min-height": 0.78},"*");
 //      $('.royal_mun').css({
 //        "height": $(window).height() * 0.5,
 //      });
@@ -305,10 +301,7 @@
         this.selectedBalls = [];
         this.classAdata.played = JSON.parse(JSON.stringify(this.playedListCopy));
         this.lotteryOffsColorID = this.$parent.$refs.headerRef.lotteryTypeId;
-        $('.royal_mun').css({
-          "height": $(window).height() * 0.5,
-        });
-        console.log('$(\'.royal_mun\').height() = ' + $('.royal_mun').height())
+        this._Util.setCss('.royal_mun',{"height": 0.5},"*");
       },
       
       'sliderValue'() {

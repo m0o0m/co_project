@@ -100,10 +100,6 @@
 					$(".paiGow_mian_hxpj").css({
 						"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
 					});
-					//皇家二八杠
-					$(".royal_mun_padder").css({
-						"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.105))
-					});
 					//二八杠
 					$(".pcdd_Mian_Vh_pcdd").css({
 						"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.04))
