@@ -67,10 +67,8 @@
       }
     },
     mounted() {
-      $('.lotteryRulesContent').css({
-        "height": $(window).height()
-      });
       let that = this;
+      that._Util.setCss('.lotteryRulesContent',{"height": 1},"*");
       that.init();
     },
     methods: {
@@ -92,32 +90,12 @@
         let isShow;
         $(".question").next().stop().slideUp(500);
         $(".question").eq(index).next().stop().slideToggle(500);
-//        $(".question").eq(index).next().stop().slideDown(500);
-       /* $(".question").find(".arrow").css({
-          transform: 'translateY(-50%) rotate(0deg)',
-        });*/
         if($(".question").eq(index).find(".arrow").hasClass("upArrow")){
-          /*$(".question").find(".arrow").css({
-            transform: 'translateY(-50%) rotate(0deg)',
-          });*/
           $(".question").find(".arrow").removeClass("upArrow");
         }else{
           $(".question").find(".arrow").removeClass("upArrow");
           $(".question").eq(index).find(".arrow").addClass("upArrow");
         }
-       /* if (!isShow) {
-          $(".question").eq(index).find(".arrow").css({
-            transform: 'translateY(-50%) rotate(180deg)',
-          });
-          isShow = true;
-        } else {
-          $(".question").eq(index).find(".arrow").css({
-            transform: 'translateY(-50%) rotate(0deg)',
-          });
-          isShow = false;
-        }*/
-
-//        that.isShow = isShow;
       },
     },
     components: {}
