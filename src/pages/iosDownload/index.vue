@@ -119,14 +119,9 @@
 			}
 		},
 		mounted() {
-			$(".tempBack ,.install_steps").css({
-				"height": $(window).height()
-			});
-			$(".iosdownload").css({
-				"height": $(window).height() * 0.9
-			});
+      this._Util.setCss('.tempBack ,.install_steps',{"height": 1},"*");
+      this._Util.setCss('.iosdownload',{"height": 0.9},"*");
 			this.iosH5Downquest();
-//      alert(this.isWeiXin());
 		},
 		methods: {
 			close_steps() {
