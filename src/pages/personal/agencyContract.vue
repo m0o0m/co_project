@@ -2,7 +2,7 @@
   <div class="feedBackMessageLists">
     <div class="messageListTitle">
       <ul class="title">
-        <li @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
+        <li @click="$router.push({name:'master'});"><a href="javascript: void(0);"></a></li>
         <li><h3>代理协议</h3></li>
       </ul>
     </div>
