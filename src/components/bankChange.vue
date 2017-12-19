@@ -86,14 +86,17 @@
 			}
 		},
 		mounted() {
-			let that = this;
-
-			that.provinces = that.items;
-			that.beforeCreate();
-			that._onTouchMove = that._onTouchMove.bind(that);
-			that._onTouchEnd = that._onTouchEnd.bind(that);
+			this.init();
 		},
 		methods: {
+			init() {
+				let that = this;
+				that.provinces = that.items;
+				that.beforeCreate();
+				that._onTouchMove = that._onTouchMove.bind(that);
+				that._onTouchEnd = that._onTouchEnd.bind(that);
+			},
+
 			beforeCreate() {
 				this.provinceState.data = this.provinces;
 				this.provinceState.selectedId = 110000; //北京市  省
@@ -202,6 +205,12 @@
 
 					}
 				}
+			}
+		},
+
+		watch: {
+			items() {
+				this.init();
 			}
 		}
 	}
