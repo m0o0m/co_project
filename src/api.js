@@ -105,8 +105,10 @@ export default {
   POST_APP_VERSION: HOST + '/index.php/api/AppVersion',
   //客户端的链接
   POST_APP_CLIENT: HOST + '/api/index/getDownloadUrl',
-  //师徒关系
-  POST_MASTER_END: HOST + '/api/member/subMemberList',
+	//代理后台（收益）
+  POST_MASTER_END: HOST + '/index.php/api/agent/subordinate',
+	//代理后台（下级）
+  POST_MASTER_ENDS: HOST + '/index.php/api/agent/profit',
   //活动详情接口
   POST_DETAILS_ACTIVITIES: HOST + '/index.php/api/Active/info',
   //走势图
