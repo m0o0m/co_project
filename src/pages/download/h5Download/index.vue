@@ -20,7 +20,7 @@
             <a href="javascript:void(0);" @click.stop="toHome()" target="_blank">
               <div class="weChat_rights_step weChat_rights_step3"></div>
             </a>
-            
+
             <!--<div class="weChat_rights_step2"><a href="#"  target="_blank"></a></div>-->
           </div>
         </div>
@@ -36,7 +36,7 @@
             <p><i></i>官方微信：&nbsp;97966666</p>
           </div>
         </div>
-      
+
       </div>
     </div>
     <div v-if="isImgRead" class="indexLine"></div>
@@ -173,110 +173,109 @@
 </template>
 
 <script>
-  //  import "../../../assets/scss/download/h5Download/index.scss";
-  //    import "../../../assets/scss/download/h5Download/index_pc.scss";
-  import $ from "jquery"
-  //  import "../../../assets/js/qrcode/qrcode";
-  
-  export default {
-    data() {
-      return {
-        isBrowserShow: false,
-        isImgRead: false,
-        isTextShow: false,
-      }
-    },
-    created() {
-      this.init();
-    },
-    mounted() {
-      let that = this;
-      $(window).resize(function () {
+	//  import "../../../assets/scss/download/h5Download/index.scss";
+	//    import "../../../assets/scss/download/h5Download/index_pc.scss";
+	import $ from "jquery"
+	//  import "../../../assets/js/qrcode/qrcode";
+
+	export default {
+		data() {
+			return {
+				isBrowserShow: false,
+				isImgRead: false,
+				isTextShow: false,
+			}
+		},
+		created() {
+			this.init();
+		},
+		mounted() {
+			let that = this;
+			$(window).resize(function () {
 //        that.areaSize();
-        console.log("sdad:");
-        that.init();
-        
-      });
-      $("img").on("load", () => {
-        that.isImgRead = true;
-        that.$nextTick(function () {
-          require ('../../../assets/js/qrcode/jquery.qrcode.min.js');
-          this._qrcode();
-        });
-      });
+				console.log("sdad:");
+				that.init();
+
+			});
+			$("img").on("load", () => {
+				that.isImgRead = true;
+				that.$nextTick(function () {
+					require ('../../../assets/js/qrcode/jquery.qrcode.min.js');
+					this._qrcode();
+				});
+			});
 
 
 //      that.areaSize();
-    },
-    methods: {
-      init() {
-        let that = this;
-        
-        let browser = that._Util.browser();
-        if (browser.versions.mobile) {
-          import("../../../assets/scss/download/h5Download/index.scss");
-          that.isBrowserShow = false;
-        } else {
-          import("../../../assets/scss/download/h5Download/index_pc.scss");
-          that.isBrowserShow = true;
-          
-        }
-        if (that.isImgRead) {
-          setTimeout(function () {
-            that.isTextShow = true;
-          }, 500);
-        }
-        
-        /*     console.log("qrcode:",$('.qrcode'));
+		},
+		methods: {
+			init() {
+				let that = this;
+
+				let browser = that._Util.browser();
+				if (browser.versions.mobile) {
+					import("../../../assets/scss/download/h5Download/index.scss");
+					that.isBrowserShow = false;
+				} else {
+					import("../../../assets/scss/download/h5Download/index_pc.scss");
+					that.isBrowserShow = true;
+
+				}
+				if (that.isImgRead) {
+					setTimeout(function () {
+						that.isTextShow = true;
+					}, 500);
+				}
+
+				/*     console.log("qrcode:",$('.qrcode'));
              var getQrcode = 'https://m.qpcp9.com/lottery/invite';
              $('.qrcode').qrcode(getQrcode);
              console.log('qrcode', $('.qrcode').qrcode(getQrcode));*/
-      },
-      _qrcode () {
-        let getQrcode="";
-        getQrcode = this.$route.query.code?'http://m.qpcp.me/lottery/invite?code='+this.$route.query.code:'http://m.qpcp.me/lottery/invite';
-        $("#qrcode").qrcode({
-          text: getQrcode,
-          width:$("#qrcode").width(),
-          height:$("#qrcode").height()
-        });
-      },
-      toHome() {
-        let domin = window.location.host;
-        let code = this.$route.query.code;
-        if (domin.indexOf('qpcp') !== -1 && domin.indexOf('qpcp9') === -1) {
-          let url = 'https://m.qpcp9.com/home';
-          if (code) {
-            url += '?code=' + code;
-          }
-          window.location.href = url;
-        } else {
-          if (domin.indexOf('qpcp68') !== -1
-            && domin.indexOf('192') === -1
-            && domin.indexOf('git') === -1
-            && domin.indexOf('localhost') === -1) {
-            let url = 'https://m.qpcp9.com/home';
-            if (code) {
-              url += '?code=' + code;
-            }
-            window.location.href = url;
-          } else {
-            this.$router.push({name: 'home', query: {code: this.$route.query.code}});
-          }
-        }
-      },
-      download() {
-        //判断是否android端
-        let browser = this._Util.browser();
-        let codeVal = sessionStorage.getItem('openAccountCode');
-        if (browser.versions.android) {
-          if (browser.versions.weixin || browser.versions.qq) {
-            let that = this;
-            that.trues = true;
-            return;
-          }
+			},
+			_qrcode () {
+				let getQrcode = this.$route.query.code?'http://m.qpcp.me/lottery/invite?code='+this.$route.query.code:'http://m.qpcp.me/lottery/invite';
+				$("#qrcode").qrcode({
+					text: getQrcode,
+					width:$("#qrcode").width(),
+					height:$("#qrcode").height()
+				});
+			},
+			toHome() {
+				let domin = window.location.host;
+				let code = this.$route.query.code;
+				if (domin.indexOf('qpcp') !== -1 && domin.indexOf('qpcp9') === -1) {
+					let url = 'https://m.qpcp9.com/home';
+					if (code) {
+						url += '?code=' + code;
+					}
+					window.location.href = url;
+				} else {
+					if (domin.indexOf('qpcp68') !== -1
+						&& domin.indexOf('192') === -1
+						&& domin.indexOf('git') === -1
+						&& domin.indexOf('localhost') === -1) {
+						let url = 'https://m.qpcp9.com/home';
+						if (code) {
+							url += '?code=' + code;
+						}
+						window.location.href = url;
+					} else {
+						this.$router.push({name: 'home', query: {code: this.$route.query.code}});
+					}
+				}
+			},
+			download() {
+				//判断是否android端
+				let browser = this._Util.browser();
+				let codeVal = sessionStorage.getItem('openAccountCode');
+				if (browser.versions.android) {
+					if (browser.versions.weixin || browser.versions.qq) {
+						let that = this;
+						that.trues = true;
+						return;
+					}
 //					alert("is android");
-          //跳转Android的下载地址
+					//跳转Android的下载地址
 //          location.href = "https://download.qpcp10.com/android/qpcp.apk";
 //           let codeText = "";
 //           if (!codeVal) {
@@ -284,60 +283,67 @@
 //           } else {
 //             codeText = codeVal.code;
 //           }
-	        var codeText = this.$route.query.code ? this.$route.query.code : '';
-          var that = this,
-            params = {
-              type: "android",
-              code: codeText
-              
-            };
-          that._Util.post(that, that._Api.POST_APP_CLIENT, params, (data) => {
-            location.href = data.url;
-          });
-          //location.href = "https://res.yfunion.com/android/qpcp_v1.0.0.apk";
+// 	        var codeText = this.$route.query.code ? this.$route.query.code : '';
+					// var that = this,
+					//   params = {
+					//     type: "android",
+					//     code: codeText
+					//
+					//   };
+					// that._Util.post(that, that._Api.POST_APP_CLIENT, params, (data) => {
+					//   location.href = data.url;
+					// });
+					if (!this.$route.query.code) {
+						location.href = 'https://m.qpcp9.com/down';
+//                location.href = 'http://192.168.1.116:8088/lottery/iosDownload';
+					} else {
+//              location.href = 'http://192.168.1.116:8088/lottery/iosDownload?code='+codeVal.code+'';
+						location.href = 'https://m.qpcp9.com/down?code=' + this.$route.query.code + '';
+					}
+					//location.href = "https://res.yfunion.com/android/qpcp_v1.0.0.apk";
 //          location.href = "https://yfunion.com/android/qpcp_v1.0.0.apk";
-        }
-        //判断是否ios端
-        if (browser.versions.ios) {
+				}
+				//判断是否ios端
+				if (browser.versions.ios) {
 //					alert("is ios");
 
 //          this.$router.push({name: 'iosH5Download'});
-          //跳转iOS的下载地址
-          
-          if (browser.versions.weixin || browser.versions.qq) {
-            let that = this;
-            that.trues = true;
-            return;
-          }
+					//跳转iOS的下载地址
+
+					if (browser.versions.weixin || browser.versions.qq) {
+						let that = this;
+						that.trues = true;
+						return;
+					}
 
 //	        if () {
 //		        let that = this;alert(23);
 //		        that.trues = true;
 //		        return;
 //	        }
-          if (!this.$route.query.code) {
-            location.href = 'https://m.qpcp9.com/lottery/iosDownload';
+					if (!this.$route.query.code) {
+						location.href = 'https://m.qpcp9.com/down';
 //                location.href = 'http://192.168.1.116:8088/lottery/iosDownload';
-          } else {
+					} else {
 //              location.href = 'http://192.168.1.116:8088/lottery/iosDownload?code='+codeVal.code+'';
-            location.href = 'https://m.qpcp9.com/lottery/iosDownload?code=' + this.$route.query.code + '';
-          }
-        }
-        //微信
-        
-      },
-      isWeiXin() {
-        let ua = window.navigator.userAgent.toLowerCase();
-        if (ua.match(/MicroMessenger/i) == 'micromessenger' || (ua.match(/QQ/i) == "qq" && ((ua.indexOf(' qq') > -1)))) {
-          return true;
-        } else {
-          return false;
-        }
-      },
-    },
-    watch: {},
-    components: {}
-  }
+						location.href = 'https://m.qpcp9.com/down?code=' + this.$route.query.code + '';
+					}
+				}
+				//微信
+
+			},
+			isWeiXin() {
+				let ua = window.navigator.userAgent.toLowerCase();
+				if (ua.match(/MicroMessenger/i) == 'micromessenger' || (ua.match(/QQ/i) == "qq" && ((ua.indexOf(' qq') > -1)))) {
+					return true;
+				} else {
+					return false;
+				}
+			},
+		},
+		watch: {},
+		components: {}
+	}
 
 </script>
 
@@ -346,46 +352,46 @@
     font-family: Arial;
     background: rgb(9, 8, 51);
   }
-  
+
   img {
     width: 100%;
     height: auto;
   }
-  
+
   div {
     height: auto;
     overflow: hidden;
   }
-  
+
   .logo {
     margin: 0 auto;
     position: relative;
   }
-  
+
   .dynamic > div {
     padding-bottom: 0;
   }
-  
+
   .dynamicImg {
     margin: 0 auto;
   }
-  
+
   .dynamicText {
     margin: 0 auto;
     position: relative;
   }
-  
+
   .WeChat {
     margin: 0 auto;
     margin-bottom: 1%;
   }
-  
+
   .WeChat .weChat_left {
     width: 40%;
     margin: 0 auto;
     position: relative;
   }
-  
+
   .WeChat .weChat_left .qrcode {
     position: absolute;
     left: 6.7%;
@@ -393,115 +399,115 @@
     /*background: url("../../../assets/images/download/h5Download/rwm_formal.png") no-repeat;*/
     /*background-size: cover;*/
   }
-  
+
   .WeChat .weChat_rights div {
     width: 100%;
     background: url("../../../assets/images/download/h5Download/go_down.png") no-repeat;
     background-size: 100% 100%;
     cursor: pointer;
   }
-  
+
   .WeChat .weChat_rights div.weChat_rights_step2 {
     background: url("../../../assets/images/download/h5Download/go_have.png") no-repeat;
     background-size: 100% 100%;
   }
-  
+
   .WeChat .weChat_rights div.weChat_rights_step3 {
     background: url("../../../assets/images/download/h5Download/go_i.png") no-repeat;
     background-size: 100% 100%;
   }
-  
+
   .dynamicIp {
     margin: 0 auto;
     position: relative;
   }
-  
+
   .dynamicIp .dynamicIp2 {
     position: absolute;
     top: 50%;
   }
-  
+
   .dynamicIp3 {
     position: absolute;
     text-align: center;
     top: 66%;
   }
-  
+
   .dynamicIp3 p {
     font-family: Arial;
     color: #FFFFFF;
     display: inline-block;
   }
-  
+
   .dynamicIp3 p i {
     display: inline-block;
     background: url("../../../assets/images/download/h5Download/qqCopy@2x.png") no-repeat;
     background-size: cover;
     vertical-align: middle;
   }
-  
+
   .dynamicIp3 p:nth-child(2) i {
     display: inline-block;
     background: url("../../../assets/images/download/h5Download/weixinCopy@2x.png") no-repeat;
     background-size: cover;
     vertical-align: middle;
   }
-  
+
   .ChessBack {
     width: 100%;
     background: url('../../../assets/images/download/h5Download/pc_2.jpg') bottom center no-repeat;
     background-size: 100% 100%;
   }
-  
+
   .chessBack_title {
     color: #FFFFFF;
     text-align: center;
   }
-  
+
   .chessBack_img {
     margin: 0 auto;
   }
-  
+
   .chessBack_text {
     margin: 0 auto;
   }
-  
+
   .introductionText {
     background: #090833 url('../../../assets/images/download/h5Download/05.png') bottom center no-repeat;
     background-size: 25% auto;
     padding-bottom: 6%;
   }
-  
+
   .introductionTextMi {
     margin: 0 auto;
   }
-  
+
   .introductionTextMi aside {
     color: #FFFFFF;
     text-align: center;
   }
-  
+
   .introductionTextMi section {
     color: #FFFFFF;
     text-align: justify;
   }
-  
+
   .InstallationStepsApp {
     display: none;
   }
-  
+
   #cnzz_stat_icon_1271231563,
   #cnzz_stat_icon_1271258064{
     /* position: fixed;
      bottom: 0;*/
     float: left;
   }
-  
+
   #cnzz_stat_icon_1271231563 img {
     width: 20px;
     height: 20px;
   }
-  
+
   #cnzz_stat_icon_1271258064 img {
     width: 20px;
     height: 20px;

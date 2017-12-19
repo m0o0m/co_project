@@ -363,9 +363,9 @@
         "icon": ""
       },
       {
-        "title": "ios-下载首页",
+        "title": "下载首页",
         "name": "iosDownload",
-        "path": "/lottery/iosDownload",
+        "path": "/down",
         "filePath": "/iosDownload/index",
         "icon": ""
       },
