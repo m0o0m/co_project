@@ -1,0 +1,45 @@
+@charset "utf-8";
+@import '../rem';
+$designWidth: 375;
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.per_leftd {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding-bottom: rem(10);
+  text-align: center;
+  z-index: 31;
+}
+
+.per_leftd li:nth-child(1) {
+  width: rem(32);
+  height: rem(32);
+  background: url('../../images/numberimg/fan.png') center no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0px;
+  top: rem(10)
+}
+
+.per_leftd li:nth-child(2) {
+  margin-top: rem(15);
+  background: url('../../images/numberimg/toupe.png') center no-repeat;
+  background-size: rem(200);
+
+}
+
+.per_leftd li:nth-child(2) p {
+  color: rgb(255, 220, 153);
+  line-height: rem(40);
+  font-size: rem(22);
+  text-align: center;
+  margin-top: rem(5);
+  height: rem(50)
+}

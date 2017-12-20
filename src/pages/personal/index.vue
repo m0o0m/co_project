@@ -1,10 +1,5 @@
-<style>
-  /*.mint-loadmore-top {*/
-  /*margin-top: -10px;*/
-  /*}*/
-</style>
 <template>
-  <div class="window_size">
+  <div class="personal window_size">
     <div class="personalTemp">
       <div class="personalMians bgimgs">
         <div class="personalAgs istttop">
