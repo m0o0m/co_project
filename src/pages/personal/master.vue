@@ -196,6 +196,7 @@
 	                    that.params.month  = ''
                     }
                     if (that.type == 0 ){
+                    	alert(3);
 					    that._Util.post(that,that._Api.POST_MASTER_END,that.params,(data) => {
                         that.resultList = that.resultList.concat(data.data || []);
                         that.masterNum = data.total || 0;
@@ -212,6 +213,7 @@
                 });
                     }
                     if ( that.type == 1) {
+                    	alert(2);
 					    that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
                         that.resultLists = that.resultLists.concat(data.data || []);
                         that.masterNum = data.total || 0;
