@@ -68,7 +68,7 @@
 						</ul>
 						<ul class="master_ul"style="max-height: 85%; overflow: auto;"
                             v-infinite-scroll="loadMore"
-                            infinite-scroll-disabled="busy"
+                            infinite-scroll-disabled="busys"
                             infinite-scroll-distance="50"
                             infinite-scroll-immediate-check="false">
 							<li class="list_tit" v-for="(master,index) in resultLists">
@@ -110,6 +110,7 @@
 				showTypeItems: [],
 				delImg: require('../../assets/images/iconbtn2x.png'),
 				busy: false,
+				busys: false,
 				params: {
 					page: 1,
 					year: '',
@@ -137,7 +138,7 @@
 
 		mounted() {
 			let that = this;
-			that.init();
+			that.getDatas();
 			that._Util.needClickFc('assetsDeList');
 			let date = new Date;
 			that.isYear = date.getFullYear();
@@ -157,7 +158,7 @@
 				that.params.month= this.value3;
 				that.params.page= 1;
 				that.paramss.page= 1;
-				that.busy = false;
+				that.busys = false;
                 if (that.params.month == '全部' ) {
                     that.params.month  = ''
                 }
@@ -192,26 +193,18 @@
 			},
 			init() {
 				let that = this;
-				if (!that.busy) {
-					that.busy = true;
+				if (!that.busy || !that.busys) {
+					alert(12);
                     that.params.year= this.value2;
 					that.params.month= this.value3;
                     if (that.params.month == '全部' ) {
 	                    that.params.month  = ''
                     }
-                    that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
-                        that.PeopleAlways = data.member_count;
-                        that.newA = data.member_daily_count;
-                        that.resultList = that.resultList.concat(data.data || []);
-                    });
-                    that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
-                        that.resultLists = that.resultLists.concat(data.data || []);
-                    })
                     if (that.type == 0 ){
-					    that._Util.post(that,that._Api.POST_MASTER_END,{},(data) => {
+					    that._Util.post(that,that._Api.POST_MASTER_END,that.paramss,(data) => {
                         that.resultList = that.resultList.concat(data.data || []);
                         that.masterNum = data.total || 0;
-                    if (that.paramss.page <=  data.last_page) {
+                    if (data.data.length !== 0 ) {
 	                    that.busy = false;
                         that.paramss.page++;
                     } else {
@@ -229,10 +222,11 @@
                         that.masterNum = data.total || 0;
                         if (that.params.page <=  data.last_page) {
                             that.params.page++;
-                            that.busy = false;
+                            that.busys = false;
                         } else {
                             that._Util.showAlert(that, {content: '已经没有更多数据了'});
-                            that.busy = true;
+	                        that.busys = true;
+
                     }
                     that.current_page = parseInt(data.current_page);
                     that.last_page = parseInt(data.last_page);
@@ -258,7 +252,18 @@
 			loadMore() {
 				let that = this;
 				that.init();
-			}
+			},
+            getDatas () {
+				let that = this;
+	            that._Util.post(that,that._Api.POST_MASTER_END,that.paramss,(data) => {
+		            that.PeopleAlways = data.member_count;
+		            that.newA = data.member_daily_count;
+		            that.resultList = that.resultList.concat(data.data || []);
+	            });
+	            that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
+		            that.resultLists = that.resultLists.concat(data.data || []);
+	            })
+            }
 		},
 		components: {
 			BankChange
