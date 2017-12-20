@@ -196,7 +196,7 @@
 	                    that.params.month  = ''
                     }
                     if (that.type == 0 ){
-                    	alert(3);
+	                    that.busy= true;
 					    that._Util.post(that,that._Api.POST_MASTER_END,that.params,(data) => {
                         that.resultList = that.resultList.concat(data.data || []);
                         that.masterNum = data.total || 0;
@@ -210,13 +210,13 @@
                     that.current_page = parseInt(data.current_page);
                     that.last_page = parseInt(data.last_page);
 
-                });
+                        });
                     }
                     if ( that.type == 1) {
-                    	alert(2);
+	                    that.busy= true;
 					    that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
                         that.resultLists = that.resultLists.concat(data.data || []);
-                        that.masterNum = data.total || 0;
+                        that.masterNum = that.resultLists = ata.total || 0;
                         if (that.params.page <=  data.last_page) {
                             that.params.page++;
                             that.busy = false;
@@ -227,7 +227,7 @@
                     }
                     that.current_page = parseInt(data.current_page);
                     that.last_page = parseInt(data.last_page);
-                });
+                       });
                     }
             }
         },
@@ -251,13 +251,13 @@
 				that.init();
 			},
 		},
-			watch: {
+		watch: {
 				type() {
-					alert(1);
 					let that = this;
 					that.params.page = 1;
 					that.busy = false;
-					this.init();
+                    that.resultLists = [];
+                    this.init();
 				}
 			},
 		components: {
