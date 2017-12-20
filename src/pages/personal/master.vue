@@ -19,7 +19,7 @@
                             <!--<select  @click="initDates(true)">-->
                                 <!--<option :value="value2">{{value2}}</option>-->
                             <!--</select>-->
-							<input type="text"  :value="  value2 ? value2 : 2017" disabled >
+							<input type="text"  :value="  value2 ? value2 : this.isYear" disabled >
 						</p>
 						<p  @click="initDates()">选择月份
                             <!--<select  @click="initDates()">-->
@@ -68,7 +68,7 @@
 						</ul>
 						<ul class="master_ul"style="max-height: 85%; overflow: auto;"
                             v-infinite-scroll="loadMore"
-                            infinite-scroll-disabled="busys"
+                            infinite-scroll-disabled="busy"
                             infinite-scroll-distance="50"
                             infinite-scroll-immediate-check="false">
 							<li class="list_tit" v-for="(master,index) in resultLists">
@@ -116,9 +116,6 @@
 					year: '',
 					month: ''
 				},
-                paramss: {
-					page: 1,
-				},
 				type: 0,
 				moreMsg: '',
 				betIndex: '',
@@ -157,8 +154,7 @@
 				that.params.year= this.value2;
 				that.params.month= this.value3;
 				that.params.page= 1;
-				that.paramss.page= 1;
-				that.busys = false;
+				that.busy = false;
                 if (that.params.month == '全部' ) {
                     that.params.month  = ''
                 }
@@ -193,20 +189,19 @@
 			},
 			init() {
 				let that = this;
-				if (!that.busy || !that.busys) {
-					alert(12);
+				if (!that.busy) {
                     that.params.year= this.value2;
 					that.params.month= this.value3;
                     if (that.params.month == '全部' ) {
 	                    that.params.month  = ''
                     }
                     if (that.type == 0 ){
-					    that._Util.post(that,that._Api.POST_MASTER_END,that.paramss,(data) => {
+					    that._Util.post(that,that._Api.POST_MASTER_END,that.params,(data) => {
                         that.resultList = that.resultList.concat(data.data || []);
                         that.masterNum = data.total || 0;
                     if (data.data.length !== 0 ) {
 	                    that.busy = false;
-                        that.paramss.page++;
+                        that.params.page++;
                     } else {
                         that._Util.showAlert(that, {content: '已经没有更多数据了'});
 	                    that.busy = true;
@@ -222,10 +217,10 @@
                         that.masterNum = data.total || 0;
                         if (that.params.page <=  data.last_page) {
                             that.params.page++;
-                            that.busys = false;
+                            that.busy = false;
                         } else {
                             that._Util.showAlert(that, {content: '已经没有更多数据了'});
-	                        that.busys = true;
+	                        that.busy = true;
 
                     }
                     that.current_page = parseInt(data.current_page);
@@ -255,18 +250,25 @@
 			},
             getDatas () {
 				let that = this;
-	            that._Util.post(that,that._Api.POST_MASTER_END,that.paramss,(data) => {
+	            that._Util.post(that,that._Api.POST_MASTER_END,that.params,(data) => {
 		            that.PeopleAlways = data.member_count;
 		            that.newA = data.member_daily_count;
 		            that.resultList = that.resultList.concat(data.data || []);
 	            });
-	            that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
-		            that.resultLists = that.resultLists.concat(data.data || []);
-	            })
             }
 		},
+			watch: {
+				type() {
+					alert(1);
+					let that = this;
+					that.params.page = 1;
+					that.busy = false;
+					this.init();
+				}
+			},
 		components: {
 			BankChange
 		}
+
 	}
 </script>
