@@ -13,8 +13,13 @@
 	import './assets/css/Popup.css'
 	// import './assets/font/iconfont.css';
 
-//	import './assets/scss/login/login.scss'
-	import './assets/scss/index.scss'
+	import './assets/scss/home/index.scss'
+	import './assets/scss/hall/index.scss'
+	import './assets/scss/rechargeCenter/index.scss'
+	import './assets/scss/betting/index.scss'
+	import './assets/scss/personal/index.scss'
+  import './assets/scss/login/login.scss'
+//	import './assets/scss/index.scss'
 
 	require('./assets/js/jquery.fly.min');
 
