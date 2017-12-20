@@ -197,7 +197,9 @@
                     if (that.type == 0 ){
 	                    that.busy= true;
 					    that._Util.post(that,that._Api.POST_MASTER_END,that.params,(data) => {
-                        that.resultList = that.resultList.concat(data.data || []);
+					    	that.PeopleAlways = data.member_count;
+					    	that.newAdd = data.member_daily_count;
+							that.resultList = that.resultList.concat(data.data || []);
                         that.masterNum = data.total || 0;
                     if (data.data.length !== 0 ) {
 	                    that.busy = false;
