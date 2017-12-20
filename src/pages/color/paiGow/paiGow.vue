@@ -142,10 +142,7 @@
           if (this.lotteryOffsColorID == '137') {
             let that = this;
             this.$nextTick(function () {
-              $(".paiGow_munFirst").css({
-                "height": $(window).height() * 0.47
-              })
-//              that._Util.setCss('.paiGow_munFirst',{"height": 0.47},"*");
+              that._Util.setCss('.paiGow_munFirst',{"height": 0.47},"*");
             })
           }
           return this.classAdata.played[this.oneCredId].item;
@@ -153,18 +150,13 @@
       }
     },
     mounted() {
-      var heighr = ($(window).height());
-      var heighrs = heighr * 0.88;
+      let heighr = ($(window).height());
+      let heighrs = heighr * 0.88;
       this.lotteryOffsColorID = this.$parent.$refs.headerRef.lotteryTypeId;
       console.log("this.lotteryOffsColorID:",this.lotteryOffsColorID);
-      $('.hxpjGow_paiGow').css({
-        "min-height": $(window).height() * 0.78,
-//      "padding-top": $(window).height()*0.22
-      });
-      $(".pknn_mun_LHeight").css({
-        "height": $(window).height() * 0.49,
-      });
       let that = this;
+      that._Util.setCss('.hxpjGow_paiGow',{"min-height": 0.78},"*");
+      that._Util.setCss('.pknn_mun_LHeight',{"height": 0.49},"*");
       that.Colorfulplay();
       
       that.$parent.$on('resetChildData', function () {
@@ -175,9 +167,7 @@
       });
     },
     updated(){
-      $(".pknn_mun_LHeight").css({
-        "height": $(window).height() * 0.50,
-      });
+      this._Util.setCss('.pknn_mun_LHeight',{"height": 0.50},"*");
     },
     methods: {
       //清空数据
@@ -338,10 +328,9 @@
         this.classAdata.played = JSON.parse(JSON.stringify(this.playedListCopy));
         this.lotteryOffsColorID = this.$parent.$refs.headerRef.lotteryTypeId;
         if (this.lotteryOffsColorID == '137') {
+          let that = this;
           this.$nextTick(function () {
-            $(".paiGow_munFirst").css({
-              "height": $(window).height() * 0.47
-            })
+            that._Util.setCss('.paiGow_munFirst',{"height": 0.47},"*");
           })
         }
         

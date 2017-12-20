@@ -319,11 +319,11 @@
         that.computeOdds({odds: 0});
       });
       
-      $(".pcdd_Mian").css({
-        "min-height": $(window).height() * 0.78,
-//        "padding-top": $(window).height() * 0.212,
-        "padding-bottom": $(window).height() * 0.16,
-      })
+//      $(".pcdd_Mian").css({
+//        "min-height": $(window).height() * 0.78,
+//        "padding-bottom": $(window).height() * 0.16,
+//      })
+      that._Util.setCss('.pcdd_Mian',{"min-height": 0.78,"padding-bottom":0.16},"*");
     },
     methods: {
       //清空数据

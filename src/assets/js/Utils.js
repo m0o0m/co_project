@@ -677,16 +677,15 @@ export default {
    * @param selecter 元素选择器
    * @param option 属性对象 如{height:0.6}==>设置元素0.6倍的屏幕高度
    * @param operator 运算字符 + - * /
-   * @param brotherSelecter 上面元素需要加上或减去高度的元素
-   * @param bro_value  元素高度的倍数
+   * @param brotherSelecterValue 上面元素需要加上或减去高度
    * @param bro_operator  运算字符
    */
-  setCss(selecter, option, operator, brotherSelecter, bro_value, bro_operator) {
-    let brother_height = $(brotherSelecter).height()*bro_value || 0;
+  setCss(selecter, option, operator, brotherSelecterValue, bro_operator) {
+    let brother_height = brotherSelecterValue || 0;
     let win_height = $(window).height()||0;
     for (var key in option) {
       option[key] = this.operation(option[key],win_height,operator);
-      option[key] = this.operation(option[key],brother_height,bro_operator);
+      if(brother_height) option[key] = this.operation(option[key],brother_height,bro_operator);
     }
     console.log("option:",option);
     $(selecter).css(option);

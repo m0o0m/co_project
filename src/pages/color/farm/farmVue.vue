@@ -423,7 +423,6 @@
 
 
 			onComplete: function (first, two, three) {
-				console.log($("#machine1 div"));
 				$("#machine1 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine2 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine3 div").eq(1).css({'margin-bottom': "0"});

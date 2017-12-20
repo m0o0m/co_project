@@ -100,47 +100,56 @@
 					$(".paiGow_mian_hxpj").css({
 						"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
 					});
+          //皇家二八杠
+          $(".royal_mun_padder").css({
+            "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.105))
+          });
 					//二八杠
 					$(".pcdd_Mian_Vh_pcdd").css({
 						"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.04))
 					});
 					$(window).resize(function () {
-						NextHeight = $(window).height();
-						$(".swimMun_top_height").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.06))
-						});
-						//马尼哈所
-						$(".paiGow_mun_LHeight").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.13))
-						});
-						$(".paiGow_mun_RHeight").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.2))
-						});
-						//雲頂
-						$(".cloudTop_mun_LHeight").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
-						});
-						$(".cloudTop_mun_RHeight").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.3))
-						});
-						//pk牛牛
-						$(".pknn_mun_LHeight").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
-						});
-						$(".pknn_mun_RHeight").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.3))
-						});
-						//华夏牌九
-						$(".paiGow_mian_hxpj").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
-						});
-						//皇家二八杠
-						$(".royal_mun_padder").css({
-							"height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.105))
-						});
+						that.lotteryInit(headerHeight,footerHeight);
 					})
 				})
 			})
+		},
+		methods:{
+		  lotteryInit(headerHeight,footerHeight){
+        NextHeight = $(window).height();
+        $(".swimMun_top_height").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.06))
+        });
+        //马尼哈所
+        $(".paiGow_mun_LHeight").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.13))
+        });
+        $(".paiGow_mun_RHeight").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.2))
+        });
+        //雲頂
+        $(".cloudTop_mun_LHeight").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
+        });
+        $(".cloudTop_mun_RHeight").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.3))
+        });
+        //pk牛牛
+        $(".pknn_mun_LHeight").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
+        });
+        $(".pknn_mun_RHeight").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.3))
+        });
+        //华夏牌九
+        $(".paiGow_mian_hxpj").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.15))
+        });
+        //皇家二八杠
+        $(".royal_mun_padder").css({
+          "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.105))
+        });
+			}
 		}
 	}
 </script>
