@@ -116,7 +116,7 @@
 		},
 		methods:{
 		  lotteryInit(headerHeight,footerHeight){
-        NextHeight = $(window).height();
+        let NextHeight = $(window).height();
         $(".swimMun_top_height").css({
           "height": NextHeight - (headerHeight + footerHeight + (NextHeight * 0.06))
         });
