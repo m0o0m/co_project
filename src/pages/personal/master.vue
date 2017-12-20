@@ -16,15 +16,9 @@
 					</div>
 					<div class="agentsTotal" v-if="type == 1">
 						<p style="border-right: none !important" size="large" @click="initDates(true)" >选择年份
-                            <!--<select  @click="initDates(true)">-->
-                                <!--<option :value="value2">{{value2}}</option>-->
-                            <!--</select>-->
 							<input type="text"  :value="  value2 ? value2 : this.isYear" disabled >
 						</p>
 						<p  @click="initDates()">选择月份
-                            <!--<select  @click="initDates()">-->
-                                <!--<option :value="value3">{{value3}}</option>-->
-                            <!--</select>-->
 							<input type="text" :value="  value3 ? value3 : '全部'" disabled>
 						</p>
 					</div>
@@ -51,12 +45,7 @@
 								<p><span>￥{{master.total_member_profit}}</span></p>
 								<p><span>￥{{master.commission}}</span></p>
 							</li>
-							<!--      <div class="noneDIV" v-if="betIndex === 0">
-											<p><img src="../../assets/images/noneImg.png"/></p>
-											<p>暂无记录哦～</p>
-										</div>-->
 						</ul>
-						<!--<span style="font-size: 0.5rem;color: #fff; padding-bottom: 0.5rem;" v-html="moreMsg"></span>-->
 					</div>
 					<div v-if="type == 1" class="examineMian examineMian_master"
 					     style="height: 100%; overflow: hidden;">
@@ -75,12 +64,7 @@
 								<p style="width: 45%;"><span>{{master.username}}</span></p>
 								<p><span>{{master.profit}}</span></p>
 							</li>
-							<!--      <div class="noneDIV" v-if="betIndex === 0">
-											<p><img src="../../assets/images/noneImg.png"/></p>
-											<p>暂无记录哦～</p>
-										</div>-->
 						</ul>
-						<!--<span style="font-size: 0.5rem;color: #fff; padding-bottom: 0.5rem;" v-html="moreMsg">{{moreMsg}}</span>-->
 					</div>
 				</div>
 			</div>
@@ -93,7 +77,6 @@
 <script>
 	import '../../assets/scss/personal.scss';
 	import BankChange from '../../components/bankChange.vue';
-
 	export default {
 		data() {
 			return {
@@ -132,7 +115,6 @@
                 newAdd:0,
 			}
 		},
-
 		mounted() {
 			let that = this;
 			that.init();
@@ -194,26 +176,25 @@
                     if (that.params.month == '全部' ) {
 	                    that.params.month  = ''
                     }
-                    if (that.type == 0 ){
+                    if ( that.type == 0 ){
 	                    that.busy= true;
 					    that._Util.post(that,that._Api.POST_MASTER_END,that.params,(data) => {
 					    	that.PeopleAlways = data.member_count;
 					    	that.newAdd = data.member_daily_count;
 							that.resultList = that.resultList.concat(data.data || []);
-                        that.masterNum = data.total || 0;
-                    if (data.data.length !== 0 ) {
-	                    that.busy = false;
-                        that.params.page++;
-                    } else {
-                        that._Util.showAlert(that, {content: '已经没有更多数据了'});
-	                    that.busy = true;
-                    }
-                    that.current_page = parseInt(data.current_page);
-                    that.last_page = parseInt(data.last_page);
-
+                            that.masterNum = data.total || 0;
+                            if (data.data.length !== 0 ) {
+                                that.busy = false;
+                                that.params.page++;
+                            } else {
+                                that._Util.showAlert(that, {content: '已经没有更多数据了'});
+                                that.busy = true;
+                            }
+                            that.current_page = parseInt(data.current_page);
+                            that.last_page = parseInt(data.last_page);
                         });
                     }
-                    if ( that.type == 1) {
+                    if ( that.type == 1 ) {
 	                    that.busy= true;
 					    that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
                         that.resultLists = that.resultLists.concat(data.data || []);
@@ -224,14 +205,13 @@
                         } else {
                             that._Util.showAlert(that, {content: '已经没有更多数据了'});
 	                        that.busy = true;
-
-                    }
-                    that.current_page = parseInt(data.current_page);
-                    that.last_page = parseInt(data.last_page);
+                        }
+                        that.current_page = parseInt(data.current_page);
+                        that.last_page = parseInt(data.last_page);
                        });
                     }
-            }
-        },
+                }
+            },
 			goContract() {
 				let that = this;
 				that.$router.replace({name: 'agencyContract'});
