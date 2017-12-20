@@ -226,13 +226,13 @@ input::-webkit-input-placeholder {
 }
 
 .agreementTitle {
-  height: rem(65);
-  line-height: rem(65);
+  height: rem(50);
+  line-height: rem(50);
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background: rgb(99, 54, 133);
+  background: #3E225D;
   font-size: rem(16);
   font-weight: bold;
   text-align: center;
@@ -240,16 +240,33 @@ input::-webkit-input-placeholder {
 }
 
 .agreementContent {
-  width: 85%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
   background: rgba(0, 0, 0, .5);
-  margin: 0 auto;
-  margin-top: 15%;
 }
 .agreementLogin {
   font-size: rem(14);
-  color: #fff;
+  color: #FFDC99;
   line-height: rem(24);
   padding: rem(15);
+  padding-top: rem(65);
+}
+.agreementLogin p {
+  padding-bottom: rem(10);
+}
+.agrTitle {
+  font-size: rem(18);
+}
+.agrtime {
+  font-size: rem(12);
+  font-family: Arial;
+}
+.agrArrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url('../../images/login/arrow.png') center center no-repeat;
+  background-size: rem(25) auto;
+  z-index: 5;
 }
