@@ -1,45 +1,31 @@
 <template>
-  <div class="login_box">
-    <div class="login ispad ">
-      <a href="javascript: void(0);" @click="back()"><img class="imgs"
-                                                          src="../../assets/images/numberimg/icon_back@2x.png"
-                                                          alt=""></a>
-      <a href="javascript: void(0)" class="void_img" @click="loginService"><img
-          src="../../assets/images/numberimg/icon_right.png" alt=""/></a>
-      <div class="loginMian censs">
-        <article class="login_article">
-          <section class="loginFlexs">
+  <div class="loginIndex">
+    <div class="loginPad">
+      <div class="loginTitle"><p><img :src='loginTitle'/></p></div>
+      <div class="loginIcon left" @click="back()"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon right"  @click="loginService"><a href="javascript:void(0)"></a></div>
+      <div class="loginName">
+        <ul>
+          <li class="loginLi displayFlex">
             <p>用户名</p>
-            <input v-model="user.username" type="text" placeholder="请输入用户名" maxlength="12" id="username"/>
-          </section>
-          <section class="loginFlexs">
+            <p><input v-model="user.username" type="text" placeholder="请输入用户名" maxlength="12" id="username"/></p>
+          </li>
+          <li class="loginLi displayFlex">
             <p>密码</p>
-            <p><input v-model="user.password" type="password" placeholder="请输入6～12位数字或字母" maxlength="12"/></p>
-          </section>
-          
-          <p>
-            <a href="javascript:void(0)" class="for forgotER" @click="foregister()"> 免费试玩</a>
-            <a href="javascript:void(0)" class="for forgotER" @click="foregister()"> 忘记密码？</a>
-          </p>
-          <a href="javascript:void(0)" class="as">
-            <div @click="login()" class="loginBtn">登录</div>
-          </a>
-          <p class="ft">还没有账号，</p>
-          <a class="isflA" href="javascript: void(0);" @click="register()">立即注册</a>
-          <!--<div @click="wxLogin()" class="wxLogin">
-              <section class="wxLogin_title"><p>第三方登录</p></section>
-              <section class="wxLogin_section">
-                  <img src="../../assets/images/wechat2x.png"/>
-              </section>
-          </div>-->
-        </article>
+            <p>
+              <input v-model="user.password" type="password" placeholder="请输入6～12位数字或字母" maxlength="12"/>
+            </p>
+          </li>
+        </ul>
       </div>
+      <div class="forgetPaw"><a href="javascript:void(0)" @click="foregister()">忘记密码?</a></div>
+      <div class="loginHostBtn" @click="login()"><a href="javascript:void(0)">登录</a></div>
+      <div class="loginText">还没有账号：<a href="javascript:void(0)" @click="register()">立即注册</a></div>
     </div>
   </div>
-
 </template>
 <script>
-  import '../../assets/scss/login.scss';
+  // import '../../assets/scss/login.scss';
   import MD5 from '../../assets/js/ciphertext'
   import $ from 'jquery'
   
@@ -48,8 +34,9 @@
       return {
         user: {
           username: '',
-          password: '',
+          password: ''
         },
+	      loginTitle: require('../../assets/images/login/logo.png')
       };
     },
     mounted() {

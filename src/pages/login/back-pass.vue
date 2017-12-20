@@ -1,58 +1,59 @@
 <template>
-  <div class="login ispad">
-    <!-- 未完待续 -->
-    <!--<div class="per">-->
-    <!--<ul class="per_pass">-->
-    <!--<a href="javascript:history.back(-1)"><li></li></a>-->
-    <!--<li><p style="color:#FFDC99 ">忘记-->
-    <!--密&nbsp;码</p></li>-->
-    <!--</ul>-->
-    <!--</div> -->
-    <a href="javascript: void(0);" @click="$router.go(-1)"><img class="imgs" style="top: 0.4rem;"
-                                                                src="../../assets/images/numberimg/icon_back@2x.png"
-                                                                alt=""></a>
-    <div class="backPass_title">忘记密码</div>
-    <div class="per_pass2 bggs" id="bgg" v-if=" showXy == '1'">
-      <div class="monum"><p>用户名</p>
-        <p><input v-model="user.username" type="text" placeholder="请输入您的用户名"></p></div>
-      <!-- <div class="monum"><p>手机号码</p><p><input type="text" v-model="user.phone" placeholder="请输入手机号码"></p></div> -->
-      <!-- <div class="monum"><p>&nbsp;&nbsp;&nbsp;验证码</p><p><input id="style"  v-model="user.code"  type="text" placeholder="请输入验证码"><input @click="getyzm()" v-model="newEntityText"  type="button" id="yzmStyle"></p></div> -->
-      <div class="loginBtn" @click="pass11()">下一步</div>
-      <div class="backPassCls"><p>温馨提示：如需帮助，请联系在线客服<a href="javascript:void(0)" @click="inlineCustomer">在线客服</a>
-      </p></div>
-    </div>
-    <div class="per_pass2 bggs" id="bgg" v-if=" showXy == '2'">
-      <!-- <div class="monum"><p>&nbsp;&nbsp;&nbsp;用户名</p> <p><input  v-model="user.username" type="text" placeholder="请输入您的用户名"></p></div> -->
-      <div class="monum isphp"><p>手机号码</p>
-        <p>{{isphone}}</p></div>
-      <div class="monum"><p>&nbsp;&nbsp;&nbsp;验证码</p>
-        <p style="position: relative;"><input id="style" v-model="user.code" type="text" placeholder="请输入验证码"
-                                              style="width: 100%;"/><input @click="getyzm()"
-                                                                           v-model="newEntityText"
-                                                                           type="button"
-                                                                           id="yzmStyle"
-                                                                           style="background: #E4D3AA; color: #333333; width: auto; display: inline-block; padding: 0 0.3rem; position: absolute; right: 0; top: 0;">
-        </p>
+  <div class="loginIndex">
+    <div class="loginPad">
+      <div class="backPassTitle"><p>找回密码</p></div>
+      <div class="loginIcon left" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+      <!--<div class="loginIcon right"  @click="loginService"><a href="javascript:void(0)"></a></div>-->
+      <div class="loginName">
+        <ul>
+          <li class="loginLi displayFlex">
+            <p>用户名</p>
+            <p><input v-model="user.username" type="text" placeholder="请输入用户名" maxlength="12" id="username"/></p>
+          </li>
+        </ul>
       </div>
-      <div class="loginBtn" @click="pass()">下一步</div>
-    </div>
-    <div class="per_pass2 bggs" id="bgg" v-if=" showXy == '3'">
-      <div class="monum"><p>设置密码</p>
-        <p><input type="password" v-model="user.password" placeholder="请输入6～12位数字或字母" maxlength="12"
-                  onkeyup="value=value.replace(/[\W]/g,'') "
-                  onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"></p>
+      <div class="loginHostBtn" @click="pass11()"><a href="javascript:void(0)">下一步</a></div>
+      <div class="loginText">温馨提示：如需帮助，请联系在线客服<a href="javascript:void(0)" @click="inlineCustomer">在线客服</a></div>
+      <!--验证手机号码-->
+      <div class="verificationCall" v-if="showXy == '2'">
+        <div class="loginName">
+          <ul>
+            <li class="loginLi displayFlex">
+              <p>手机号码</p>
+              <p class="Mobile">{{isphone}}</p>
+            </li>
+            <li class="loginLi displayFlex">
+              <p>验证码</p>
+              <p class="relatively">
+                <input v-model="user.code" type="text" placeholder="请输入用户名" maxlength="12"/><input @click="getyzm()" v-model="newEntityText" type="button" id="sendCode"></p>
+            </li>
+          </ul>
+        </div>
+        <div class="loginHostBtn" @click="pass11()"><a href="javascript:void(0)">下一步</a></div>
       </div>
-      <div class="monum"><p>确认密码</p>
-        <p><input type="password" v-model="user.password2" placeholder="请再次输入您的密码"
-                  onkeyup="value=value.replace(/[\W]/g,'') "
-                  onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"></p>
+      <!--设置密码-->
+      <div class="setUpPaw" v-if="showXy == '3'">
+        <div class="loginName">
+          <ul>
+            <li class="loginLi displayFlex">
+              <p>设置密码</p>
+              <p><input v-model="user.password" type="password" placeholder="请输入6～12位数字或字母" maxlength="12" onkeyup="value=value.replace(/[\W]/g,'') "  onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/></p>
+            </li>
+            <li class="loginLi displayFlex">
+              <p>确认密码</p>
+              <p>
+                <input v-model="user.password2" type="password" placeholder="请输入6～12位数字或字母" maxlength="12" onkeyup="value=value.replace(/[\W]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="loginHostBtn" @click="ispass()"><a href="javascript:void(0)">完成</a></div>
       </div>
-      <div class="loginBtn" @click="ispass()">完成</div>
     </div>
   </div>
 </template>
 <script>
-  import '../../assets/scss/personal.scss';
+  // import '../../assets/scss/personal.scss';
   import MD5 from '../../assets/js/ciphertext'
   //  import captcha from '../../components/captcha';
   export default {

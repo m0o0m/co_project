@@ -1,0 +1,255 @@
+@charset "utf-8";
+@import "../rem";
+
+$designWidth: 375;
+body, html, form {
+  height: 100%;
+}
+
+.displayFlex {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+}
+
+input::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 0.8;
+}
+
+.relatively {
+  position: relative;
+}
+.floatRight {
+  float: right;
+}
+
+/*login*/
+#app {
+  height: 100%;
+}
+
+.loginIndex {
+  height: 100%;
+  background: linear-gradient(top, rgb(99, 54, 133), rgb(39, 29, 76));
+  background: -webkit-linear-gradient(top, rgb(99, 54, 133), rgb(39, 29, 76));
+}
+
+.loginTitle {
+  padding: rem(15) 0;
+  background: linear-gradient(top, #3D2460, rgba(0, 0, 0, 0));
+  background: -webkit-linear-gradient(top, #3D2460, rgba(0, 0, 0, 0));
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.loginTitle p {
+  width: rem(109);
+  display: inline-block;
+}
+
+.loginPad {
+  padding: rem(25) rem(40);
+  padding-top: 0;
+}
+
+.loginName {
+  padding-top: rem(80);
+}
+
+.loginLi {
+  margin: rem(10) 0;
+  p {
+    font-size: rem(14);
+    color: #FFFFFF;
+    line-height: rem(42);
+  }
+  p:first-of-type {
+    min-width: rem(60);
+    text-align: right;
+    padding-right: rem(10);
+  }
+  p:nth-of-type(2) {
+    background: rgb(57, 33, 82);
+    border-radius: rem(2);
+    height: rem(42);
+    flex: 1;
+  }
+  input {
+    font-size: rem(14);
+    color: #FFFFFF;
+    text-indent: rem(10);
+    width: 100%;
+    background: transparent;
+    border: none;
+  }
+}
+
+.loginLi:last-child {
+  margin-bottom: rem(5);
+}
+
+.forgetPaw {
+  text-align: right;
+}
+
+.forgetPaw a {
+  line-height: rem(24);
+  font-size: rem(14);
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.loginHostBtn {
+  background-image: radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+  background-image: -webkit-radial-gradient(96% -10%, #B79F71 0%, #E4D3AA 63%, #E4D7B5 100%);
+  border-radius: rem(4);
+  height: rem(44);
+  line-height: rem(44);
+  text-align: center;
+  margin: rem(15) 0;
+}
+
+.loginHostBtn a {
+  font-size: rem(14);
+  color: #65431D;
+}
+
+.loginText {
+  font-size: rem(14);
+  text-align: center;
+  color: #fff;
+  margin-top: rem(25);
+}
+
+.loginText a {
+  display: inline-block;
+  color: #E4D3AA;
+  text-decoration: underline;
+}
+
+/*register*/
+.agreementRegister {
+  font-size: rem(14);
+  color: #FFFFFF;
+  text-align: center;
+  padding: rem(15) 0 rem(10) 0;
+}
+
+.agreementRegister a {
+  display: inline-block;
+  color: #FFDC99;
+}
+
+.agreementRegister i {
+  width: rem(20);
+  height: rem(20);
+  line-height: rem(20);
+  text-align: center;
+  background: rgb(254, 219, 157);
+  display: inline-block;
+  border-radius: rem(2);
+  margin-right: rem(10);
+  color: rgb(254, 219, 157);
+}
+
+.agreementRegister i.on {
+  color: rgb(246, 0, 153);
+}
+
+.loginIcon {
+  width: rem(50);
+  height: rem(50);
+  position: fixed;
+  top: rem(10);
+  z-index: 3;
+}
+
+.loginIcon.left {
+  left: 0;
+  background: url('../../images/login/arrow.png') center center no-repeat;
+  background-size: rem(25) auto;
+}
+
+.loginIcon.right {
+  right: 0;
+  background: url('../../images/login/Customer.png') center center no-repeat;
+  background-size: rem(35) auto;
+}
+
+.backPassTitle {
+  width: 100%;
+  height: rem(65);
+  line-height: rem(65);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #E4D3AA;
+  font-size: rem(16);
+  font-weight: bold;
+}
+
+.loginLi p.Mobile {
+  background: transparent;
+  font-size: rem(24);
+  font-family: Arial;
+}
+
+#sendCode {
+  background: #E4D3AA;
+  color: #333333;
+  width: auto;
+  display: inline-block;
+  padding: 0 0.3rem;
+  padding-right: rem(15);
+  position: absolute;
+  right: 0;
+  top: rem(1);
+  height: rem(40);
+  line-height: rem(40);
+}
+
+.agreement {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(99, 54, 133);
+  z-index: 5;
+}
+
+.agreementTitle {
+  height: rem(65);
+  line-height: rem(65);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(99, 54, 133);
+  font-size: rem(16);
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.agreementContent {
+  width: 85%;
+  height: 90%;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, .5);
+  margin: 0 auto;
+  margin-top: 15%;
+}
+.agreementLogin {
+  font-size: rem(14);
+  color: #fff;
+  line-height: rem(24);
+  padding: rem(15);
+}
