@@ -420,7 +420,7 @@
         let terminal = that._Util.browser();
         if (terminal.versions.android) {
         	console.log('android')
-        } else if (browser.versions.ios) {
+        } else if (terminal.versions.ios) {
         	console.log('ios');
         }
       },
