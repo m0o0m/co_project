@@ -16,7 +16,11 @@
           <section @click="marvellousMarv"></section>
         </div>
       </div>
-      <mt-swipe :auto="4000" style="height: 6.8rem; padding-top: 2.48276rem;">
+      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; padding-top: 2.48276rem;">
+	      <mt-swipe-item v-if="showSwipeDefault">
+		      <!--<a :href="item.hrefUrl"><img :src="item.picUrl"></a>-->
+		      <a href="javascript: void(0);"><img src="../../static/banner/homeBanner.jpg"></a>
+	      </mt-swipe-item>
         <mt-swipe-item v-for="(v, index) in bannerItems" :key="v.id">
           <!--<a :href="item.hrefUrl"><img :src="item.picUrl"></a>-->
           <a href="javascript: void(0);" @click.stop="openFrm(v)"><img :src="v.picUrl"></a>
@@ -114,6 +118,7 @@
 		name: 'indexMian',
 		data() {
 			return {
+				showSwipeDefault: true,
 				lotteryMenu: require('./lotteryMenu.json'),
 				resoutData: '', //初始化数据
 				resoutJson: [],
@@ -474,6 +479,12 @@
 							"margin-top": "0px"
 						}).find("li:first").appendTo(oLi);
 					})
+			},
+
+			swipeChange(index) {
+				if (index === 1) {
+					this.showSwipeDefault = false;
+				}
 			}
 		}
 	}

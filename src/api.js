@@ -36,7 +36,7 @@ export default {
   //绑定手机号
   POST_COMMON_BIND_PHONE: HOST + '/index.php/api/Member/bindPhone',
   //获取用户信息
-  POST_USER_INFO: HOST + '/index.php/api/Member/appProfile',
+  POST_USER_INFO: HOST + '/index.php/api/Member/profile',
   //用户首页信息
   POST_USER_WAVE: HOST + '/index.php/api/Member/profile',
   //修改登录密码
