@@ -13,6 +13,7 @@
 	import './assets/css/Popup.css'
 	// import './assets/font/iconfont.css';
 
+	import './assets/scss/common/default/index.scss'
 	import './assets/scss/home/index.scss'
 	import './assets/scss/hall/index.scss'
 	import './assets/scss/rechargeCenter/index.scss'
