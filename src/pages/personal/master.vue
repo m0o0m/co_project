@@ -215,7 +215,7 @@
 	                    that.busy= true;
 					    that._Util.post(that,that._Api.POST_MASTER_ENDS,that.params,(data) => {
                         that.resultLists = that.resultLists.concat(data.data || []);
-                        that.masterNum = that.resultLists = ata.total || 0;
+                        that.masterNum = that.resultLists = data.total || 0;
                         if (that.params.page <=  data.last_page) {
                             that.params.page++;
                             that.busy = false;
