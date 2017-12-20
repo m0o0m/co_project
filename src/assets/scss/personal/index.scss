@@ -21,7 +21,7 @@ $designWidth: 375;
 .per_leftd li:nth-child(1) {
   width: rem(32);
   height: rem(32);
-  background: url('../../images/numberimg/fan.png') center no-repeat;
+  background: url('/src/assets/images/numberimg/fan.png') center no-repeat;
   background-size: 100% 100%;
   position: absolute;
   left: 0px;
@@ -30,7 +30,7 @@ $designWidth: 375;
 
 .per_leftd li:nth-child(2) {
   margin-top: rem(15);
-  background: url('../../images/numberimg/toupe.png') center no-repeat;
+  background: url('/src/assets/images/numberimg/toupe.png') center no-repeat;
   background-size: rem(200);
 
 }

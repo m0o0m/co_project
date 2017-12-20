@@ -172,13 +172,13 @@ input::-webkit-input-placeholder {
 
 .loginIcon.left {
   left: 0;
-  background: url('../../images/login/arrow.png') center center no-repeat;
+  background: url('/src/assets/images/login/arrow.png') center center no-repeat;
   background-size: rem(25) auto;
 }
 
 .loginIcon.right {
   right: 0;
-  background: url('../../images/login/Customer.png') center center no-repeat;
+  background: url('/src/assets/images/login/Customer.png') center center no-repeat;
   background-size: rem(35) auto;
 }
 
@@ -266,7 +266,7 @@ input::-webkit-input-placeholder {
   position: fixed;
   top: 0;
   left: 0;
-  background: url('../../images/login/arrow.png') center center no-repeat;
+  background: url('/src/assets/images/login/arrow.png') center center no-repeat;
   background-size: rem(25) auto;
   z-index: 5;
 }
