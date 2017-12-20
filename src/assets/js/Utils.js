@@ -680,6 +680,7 @@ export default {
    * @param brotherSelecterValue 上面元素需要加上或减去高度
    * @param bro_operator  运算字符
    */
+  
   setCss(selecter, option, operator, brotherSelecterValue, bro_operator) {
     let brother_height = brotherSelecterValue || 0;
     let win_height = $(window).height()||0;
