@@ -135,7 +135,7 @@
 
 		mounted() {
 			let that = this;
-			that.getDatas();
+			that.init();
 			that._Util.needClickFc('assetsDeList');
 			let date = new Date;
 			that.isYear = date.getFullYear();
@@ -250,14 +250,6 @@
 				let that = this;
 				that.init();
 			},
-            getDatas () {
-				let that = this;
-	            that._Util.post(that,that._Api.POST_MASTER_END,that.params,(data) => {
-		            that.PeopleAlways = data.member_count;
-		            that.newA = data.member_daily_count;
-		            that.resultList = that.resultList.concat(data.data || []);
-	            });
-            }
 		},
 			watch: {
 				type() {
