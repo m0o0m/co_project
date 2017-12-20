@@ -167,7 +167,6 @@
 				that.dateItems = [];
 			})
 		},
-
 		methods: {
 			initDates(type) {
 				let that = this;
