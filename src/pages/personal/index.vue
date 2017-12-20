@@ -17,7 +17,7 @@
         <div class="personal_mian topm">
           <div class="personal_news">
 	          <section style="position: relative; border-radius: 50%;">
-		          <input id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
+		          <input v-if="!userInfo.is_test_player" id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
 		                 class="inputFile"
 		                 accept="image/jpeg,image/png,image/bmp,image/gif">
 		          <img :src="headImg" alt="">
