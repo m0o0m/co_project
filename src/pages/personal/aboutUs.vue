@@ -81,6 +81,12 @@
           e.clearSelection();
         });
         this._Util.showAlert(this, {content: '复制成功'});
+      },
+      loginService() {
+        let that = this;
+        that._Util.post(that, that._Api.POST_CUSTOMER_SERVER, {name: 'kf'}, (data) => {
+          window.location.href = data.value;
+        })
       }
     }
     
