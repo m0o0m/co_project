@@ -147,16 +147,19 @@ img {
   right: 0;
   background: url('../../../images/login/Customer.png') center center no-repeat;
   background-size: rem(35) auto;
+  top: rem(3);
 }
 .loginIcon.right.time {
   right: 0;
   background: url('../../../images/login/time.png') center center no-repeat;
   background-size: rem(35) auto;
+  top: rem(3);
 }
 .loginIcon.right.smallBell {
   right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
   background-size: rem(35) auto;
+  top: rem(3);
 }
 .loginIcon.right.choose {
   right: 0;
@@ -164,7 +167,11 @@ img {
   background-size: rem(25) auto;
   top: rem(3);
 }
-
+.loginIcon.left.individual {
+  right: 0;
+  background: url('../../../images/login/smallBell.png') center center no-repeat;
+  background-size: rem(35) auto;
+}
 .loginIcon.left.flt {
   top: rem(3);
 }
