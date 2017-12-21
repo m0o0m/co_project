@@ -245,75 +245,59 @@ body {
 }
 
 /*开奖大厅*/
-.lotteryMun {
-  width: 100%;
-  height: rem(110);
-  text-align: center;
-  p {
-    font-size: rem(20);
-    color: #FFDC99;
-    line-height: rem(40);
-    span {
-      font-size: rem(35);
-      font-family: arial;
-    }
-  }
-  p:first-of-type {
-    padding-top: rem(10);
-  }
-}
 
-.lotteryDate {
-  padding: rem(10); /*max-height: rem(400); overflow-y: scroll;*/
-  overflow-y: scroll;
-  ul {
-    padding-bottom: rem(90);
-    li {
-      background: rgba(0, 0, 0, 0.3);
-      padding: rem(10);
-      margin-bottom: rem(10);
-      border-radius: rem(2);
-      a {
-        font-size: rem(14);
-        color: #FFDC99;
-        display: block;
-        span {
-          font-family: arial;
-        }
-      }
-      .lottery_title {
-        display: flex;
-        -webkit-display: flex;
-        flex-direction: row;
-        -webkit-flex-direction: row;
-        p:first-of-type {
-          flex: 1;
-        }
-        p:last-of-type {
-          font-size: rem(10);
-          line-height: rem(24);
-        }
-      }
-    }
-  }
-}
 
-.lotteryDate.lotteryDateed {
-  max-height: rem(530);
-  a {
-    .lottery_title {
-      span {
-        font-family: arial;
-      }
-    }
-  }
-}
+//.lotteryDate {
+//  padding: rem(10);
+//  overflow-y: scroll;
+//  ul {
+//    padding-bottom: rem(90);
+//    li {
+//      background: rgba(0, 0, 0, 0.3);
+//      padding: rem(10);
+//      margin-bottom: rem(10);
+//      border-radius: rem(2);
+//      a {
+//        font-size: rem(14);
+//        color: #FFDC99;
+//        display: block;
+//        span {
+//          font-family: arial;
+//        }
+//      }
+//      .lottery_title {
+//        display: flex;
+//        -webkit-display: flex;
+//        flex-direction: row;
+//        -webkit-flex-direction: row;
+//        p:first-of-type {
+//          flex: 1;
+//        }
+//        p:last-of-type {
+//          font-size: rem(10);
+//          line-height: rem(24);
+//        }
+//      }
+//    }
+//  }
+//}
 
-.lotteryDate ul li a.lotterA {
-  background: url('../images/arrow.png') right rem(7) no-repeat;
-  background-size: rem(10) auto;
-  padding-right: rem(12);
-}
+//.lotteryDate.lotteryDateed {
+//  max-height: rem(530);
+//  a {
+//    .lottery_title {
+//      span {
+//        font-family: arial;
+//      }
+//    }
+//  }
+//}
+
+//.lotteryDate ul li a.lotterA {
+//  background: url('../images/arrow.png') right rem(7) no-repeat;
+//  background-size: rem(10) auto;
+//  padding-right: rem(12);
+//}
 
 .lotteryDate ul li a .lottery_color {
   margin-top: rem(0);

@@ -20,6 +20,8 @@
 	import './assets/scss/betting/index.scss'
 	import './assets/scss/personal/index.scss'
   import './assets/scss/login/login.scss'
+  /*开奖大厅*/
+  import './assets/scss/common/theLottery/index.scss'
 //	import './assets/scss/index.scss'
 
 	require('./assets/js/jquery.fly.min');
@@ -80,10 +82,10 @@
 					var headerHeight = $(".headered").outerHeight(true),
 						footerHeight = $(".westernFooter").outerHeight(true);
 					//开奖大厅
-					var lotteryMun = $(".lotteryMun").outerHeight(true);
-					$(".lotteryDate").css({
-						"height": NextHeight - lotteryMun - NextHeight * 0.05
-					});
+					// var lotteryMun = $(".lotteryMun").outerHeight(true);
+					// $(".lotteryDate").css({
+					// 	"height": NextHeight - lotteryMun - NextHeight * 0.05
+					// });
 					$(".lotteryDateed").css({
 						"height": NextHeight - NextHeight * 0.15
 					});

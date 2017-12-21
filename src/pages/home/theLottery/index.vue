@@ -1,6 +1,28 @@
 <template>
   <div class="lotteryMian">
+    <div class="lotteryMun positionFixed indexJust">
+      <section>
+        <p>棋牌彩票已为用户赢得</p>
+        <p>¥<span>{{lotteryMarry}}</span></p>
+      </section>
+    </div>
+    <div class="lotteryDate">
+      <mt-loadmore :top-method="loadTop" @top-status-change="handleTopChange" ref="loadmore">
+        <ul>
+          <li v-for="(lotter,index) in lotteryData" class="theLotteryList">
+            <a href="javascript:void(0)" @click.stop="$router.push({name: 'theLotteryDetails', query: {id: lotter.id, name: lotter.name}})">
+              <section class="theLotteryDate displayFlex">
+                <p>{{lotter.name}}</p>
+                <p class="commonArrowsRight">第<span>{{lotter.number}}</span>期</p>
+              </section>
+              <section class="lottery_color">
 
+              </section>
+            </a>
+          </li>
+        </ul>
+      </mt-loadmore>
+    </div>
   </div>
 </template>
 
@@ -33,7 +55,7 @@
     },
     mounted() {
       this.analysisData();
-      this._Util.setCss('.lotteryMian',{"height": 1},"*");
+      // this._Util.setCss('.lotteryMian',{"height": 1},"*");
       document.getElementsByClassName('lotteryDate')[0].addEventListener('touchstart', function (event) {
         event.target.classList.add('needsclick');
       })

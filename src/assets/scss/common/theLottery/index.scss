@@ -1,3 +1,61 @@
 @charset "utf-8";
 @import "../../rem";
+
 $designWidth: 375;
+/*开奖大厅*/
+.lotteryMian {
+  height: 100%;
+}
+
+.lotteryMun {
+  width: 100%;
+  height: rem(90);
+  text-align: center;
+  background: linear-gradient(top, rgb(33, 21, 48) 80%, rgba(78, 42, 74, 0));
+  background: -webkit-linear-gradient(top, rgb(33, 21, 48) 80%, rgba(78, 42, 74, 0));
+  p {
+    font-size: rem(18);
+    color: #FFDC99;
+    line-height: rem(30);
+    span {
+      font-size: rem(30);
+      font-family: arial;
+    }
+  }
+  p:first-of-type {
+    padding-top: rem(10);
+  }
+}
+
+.lotteryDate {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.mint-loadmore {
+  padding-top: rem(100);
+}
+
+.lotteryDate ul {
+  padding: 0 rem(15);
+}
+
+.theLotteryList {
+  background: rgba(0, 0, 0, 0.3);
+  padding: rem(10);
+  margin-bottom: rem(10);
+  border-radius: rem(2);
+}
+
+.lotteryDate a .theLotteryDate {
+  font-size: rem(14);
+  color: #FFDC99;
+  p:nth-of-type(2) {
+    flex: 1;
+    text-align: right;
+    font-size: rem(12);
+  }
+}
+.theLotteryDate span {
+  font-family: Arial;
+}

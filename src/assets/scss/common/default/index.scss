@@ -1,10 +1,20 @@
+@charset "utf-8";
+@import "../../rem";
+$designWidth: 375;
+
 body, html, form {
   height: 100%;
 }
+
 body {
   background: url('../../../images/personal/personalBack.jpg') center center no-repeat;
   background-size: 100% auto;
 }
+
+.view {
+  height: 100%;
+}
+
 .displayFlex {
   display: flex;
   display: -webkit-flex;
@@ -20,6 +30,19 @@ input::-webkit-input-placeholder {
 .relatively {
   position: relative;
 }
+
 .floatRight {
   float: right;
+}
+
+.positionFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.commonArrowsRight {
+  background: url('../../../images/arrow.png') right center no-repeat;
+  background-size: rem(10) auto;
+  padding-right: rem(12);
 }
