@@ -1,33 +1,6 @@
 @charset "utf-8";
 @import "../rem";
-
 $designWidth: 375;
-body, html, form {
-  height: 100%;
-}
-body {
-  background: url('../../images/personal/personalBack.jpg') center center no-repeat;
-  background-size: 100% auto;
-}
-.displayFlex {
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  -webkit-flex-direction: row;
-}
-
-input::-webkit-input-placeholder {
-  color: #fff;
-  opacity: 0.8;
-}
-
-.relatively {
-  position: relative;
-}
-.floatRight {
-  float: right;
-}
-
 /*login*/
 #app {
   height: 100%;

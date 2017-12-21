@@ -10,7 +10,7 @@
 	import './assets/css/style.css'
 	// import './assets/css/main.css'
 	// import './assets/scss/pcddpage.scss'
-	import './assets/css/Popup.css'
+	// import './assets/css/Popup.css'
 	// import './assets/font/iconfont.css';
 
 	import './assets/scss/common/default/index.scss'
