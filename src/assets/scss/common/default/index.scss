@@ -42,6 +42,11 @@ img {
   background-size: rem(10) auto;
   padding-right: rem(12);
 }
+.commonArrowsBottom {
+  background: url('../../../images/arrowBottom.png') right center no-repeat;
+  background-size: rem(10) auto;
+  padding-right: rem(12);
+}
 
 /*百分比*/
 .percentage {
@@ -173,6 +178,7 @@ img {
   //background: -webkit-linear-gradient(top, rgba(61,36,96,0.8),rgba(45,29,68,0));
   background: -webkit-linear-gradient(top, rgba(26,19,42,0.8),rgba(45,29,68,0));
   //background: #3E225D;
+  z-index: 2;
 }
 
 /*弹框样式*/
