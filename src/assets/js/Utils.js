@@ -5,6 +5,10 @@ export default {
   isLogin() {
     return (this.getStorage('isLogin', true) == 'true');
   },
+
+	getUserInfo() {
+  	return this.getStorage('userInfo', true) || {};
+	},
   
   init() {
     Number.prototype.toFixed = function (d) {

@@ -72,12 +72,7 @@
         that._Util.setStorage('isLogin', !!false, true);
         that._Util.post(that, that._Api.POST_USER_WAVE, {}, (data) => {
         	console.log(data);
-        	if (data) {
-//		        data.is_test_player = true;
-		        that._Util.setStorage('userInfo', data, true);
-	        } else {
-		        that._Util.setStorage('userInfo', {}, true);
-	        }
+	        that._Util.setStorage('userInfo', data || {}, true);
           that._Util.setStorage('isLogin', !!data, true);
         }, '', true, true);
       },
@@ -130,6 +125,7 @@
 		if (localHost.indexOf('localhost') !== -1 || localHost.indexOf('192') !== -1) {
 		  if (index === 2 || index === 3) {
             that._Util.post(that, that._Api.POST_USER_WAVE, {}, () => {
+	            that._Util.setStorage('userInfo', data, true);
               that.$router.push({'name': url});
             }, '', true);
           } else {
@@ -140,6 +136,7 @@
 //		  if (!legouUser && (index === 2 || index === 3)) {
 		  if (index === 2 || index === 3) {
             that._Util.post(that, that._Api.POST_USER_WAVE, {}, () => {
+	            that._Util.setStorage('userInfo', data, true);
               that.$router.push({'name': url});
             }, '', true);
 		  } else {

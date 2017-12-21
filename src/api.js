@@ -112,5 +112,14 @@ export default {
   //活动详情接口
   POST_DETAILS_ACTIVITIES: HOST + '/index.php/api/Active/info',
   //走势图
-  POST_TREND_CHART: HOST + '/api/lotterydata/chart'
+  POST_TREND_CHART: HOST + '/api/lotterydata/chart',
+
+
+	/**
+	 * 试玩
+	 */
+	//登录
+	POST_TEST_PLAY_LOGIN: HOST + '/index.php/api/Testplaymember/login'
+
+
 }
