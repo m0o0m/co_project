@@ -46,3 +46,52 @@ input::-webkit-input-placeholder {
   background-size: rem(10) auto;
   padding-right: rem(12);
 }
+
+/*顶部导航条样式*/
+.commonNavBar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  .loginTitle {
+    padding: rem(15) 0;
+    background: linear-gradient(top, #3D2460, rgba(0, 0, 0, 0));
+    background: -webkit-linear-gradient(top, #3D2460, rgba(0, 0, 0, 0));
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+
+.loginTitle p {
+  width: rem(109);
+  display: inline-block;
+}
+
+.loginIcon {
+  width: rem(50);
+  height: rem(50);
+  position: fixed;
+  top: rem(10);
+  z-index: 3;
+}
+
+.loginIcon.left {
+  left: 0;
+  background: url('../../../images/login/arrow.png') center center no-repeat;
+  background-size: rem(25) auto;
+}
+
+.loginIcon.right {
+  right: 0;
+  background: url('../../../images/login/Customer.png') center center no-repeat;
+  background-size: rem(35) auto;
+}
+
+.loginIcon.left.flt {
+  top: rem(3);
+}
