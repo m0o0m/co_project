@@ -217,4 +217,100 @@ $designWidth: 375;
   }
 }
 
+/*提现记录*/
 
+.noneDIV {
+  width: rem(130);
+  margin: 0 auto;
+  font-size: rem(12);
+  color: #ffffff;
+  text-align: center;
+  line-height: rem(30);
+  padding-top: rem(110);
+}
+
+.warmReminder{
+
+  font-family: Arial;
+  font-size: rem(12);
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height:rem(40);
+  a{
+    color: #FFDC99;
+    letter-spacing: 0;
+  }
+}
+
+.moneyHistoryBody {
+  margin-top: rem(80);
+  padding-bottom: rem(20);
+  width:94%;
+  margin-left:3%;
+  max-height: 76%;
+  overflow-y: scroll;
+  .moneyHistoryLI {
+    //background: linear-gradient(top, rgba(35, 23, 40, 0.5), rgba(18, 14, 21, 0.9));
+    //background: -webkit-linear-gradient(top, rgba(35, 23, 40, 0.2), rgba(18, 14, 21, 0.3));
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.24) 0%,rgba(25,15,36,0.5) 97%);
+    background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.24) 0%, rgba(25,15,36,0.5) 97%);
+    height: auto;
+    overflow: hidden;
+    margin-bottom:1px;
+    .moneyHistoryList {
+      height: auto;
+      padding: 0.41379rem;
+      display: flex;
+      -webkit-display:flex;
+      .moneyLeft {
+        width: rem(18);
+        height: rem(18);
+        margin-right: rem(10);
+        margin-top: rem(3);
+      }
+      .moneyYellow {
+        background: url('../../images/successful.png') center center no-repeat;
+        background-size: rem(18) auto;
+      }
+      .moneyRed {
+        background: url('../../images/failure.png') center center no-repeat;
+        background-size: rem(18) auto;
+      }
+      .moneyGray {
+        background: url('../../images/Toaudit.png') center center no-repeat;
+        background-size: rem(18) auto;
+      }
+      .moneyRight {
+        flex: 1;
+        -webkit-flex: 1;
+        position: relative;
+        p {
+          font-size: rem(14);
+          color: #FFDC99;
+          line-height: rem(24);
+          span {
+            font-family: arial;
+          }
+        }
+        p:last-of-type {
+          font-size: rem(10);
+          color: #FFDC99;
+          opacity: 0.8;
+        }
+        p:first-of-type {
+          flex: auto;
+        }
+        .moneyMarry {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: rem(18);
+          line-height: rem(46);
+          color: #FFDC99;
+        }
+      }
+    }
+  }
+
+}

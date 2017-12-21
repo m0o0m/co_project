@@ -1,36 +1,21 @@
 <template>
   <div id="moneyHisTemplate" class="moneyHisTemplate">
-    <div class="bgimg_title">
-      <p>
-        提现记录
-      </p>
-      <img src="../../assets/images/icon_back2x.png" @click="_Util.back($router)"/>
+    <div class="commonNavBar">
+      <div class="loginTitle"><p>提现记录</p></div>
+      <div class="loginIcon left" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div><!--@click="_Util.back($router)-->
     </div>
     <div v-infinite-scroll="loadMore"
          infinite-scroll-disabled="busy"
          infinite-scroll-distance="50"
          infinite-scroll-immediate-check="false"
-         class="betRecord_bd betRecord_bd_record">
+         class="moneyHistoryBody">
       <div class="noneDIV" v-if="isEmpty">
         <p><img src="../../assets/images/noneImg.png"/></p>
         <p>暂无提现记录哦～</p>
       </div>
       <ul v-else>
-        <!--<li v-for="(v, index) in resultList">-->
-        <!--<a href="javascript:void(0)">-->
-        <!--<section>-->
-        <!--<p>{{v.status_text}}</p>-->
-        <!--<p><span class="spanMarry">{{v.amount}}</span></p>-->
-        <!--</section>-->
-        <!--<section>-->
-        <!--<p><span>{{v.time}}</span></p>-->
-        <!--&lt;!&ndash;<p>{{v.status_text}}</p>&ndash;&gt;-->
-        <!--</section>-->
-        <!--</a>-->
-        <!--</li>-->
-        
-        <li v-for="(v, index) in resultList">
-          <div class="moneyMian moneyHistory">
+        <li v-for="(v, index) in resultList" class="moneyHistoryLI">
+          <div class="moneyMian moneyHistoryList">
             <div class="moneyLeft"
                  :class="{'moneyRed': v.status == '3','moneyYellow': v.status == '2', 'moneyGray': v.status == '1'}"></div>
             <div class="moneyRight ">
@@ -45,14 +30,14 @@
         </li>
       </ul>
     </div>
-    <div class="warm_reminder">
+    <div class="warmReminder">
       温馨提示：如有疑问，请联系 <a href="javascript:void(0)" @click="CustomerFunction">在线客服</a>
     </div>
   </div>
 </template>
 
 <script>
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/personal.scss';
   import LotterySelect from '../../components/lotterySelect.vue';
   
   export default {
@@ -88,6 +73,24 @@
           
           that.isEmpty = !that.resultList.length;
         });
+        that.resultList =
+	        [{amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -100, status: 3, note: "恶意提交，系统冻结", time: "2017-11-23 23:43", status_text: "提现失败"},
+
+		        {amount: -112, status: 2, note: "", time: "2017-12-05 11:05", status_text: "提现成功"},
+
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+            {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+            {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+            {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
+		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"}
+          ]
       },
       loadMore() {
         let that = this;
@@ -107,8 +110,4 @@
 </script>
 
 <style lang='scss'>
-  .moneyHisTemplate {
-    background: url('../../assets/images/index/bg.png') center center no-repeat;
-    background-size: cover;
-  }
 </style>
