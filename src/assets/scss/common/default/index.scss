@@ -43,6 +43,16 @@ img {
   padding-right: rem(12);
 }
 
+/*百分比*/
+.percentage {
+  height: 100%;
+}
+
+.boxSizing {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 /*顶部导航条样式*/
 .commonNavBar{
   position: fixed;
@@ -130,6 +140,24 @@ img {
   display: -webkit-flex;
   flex-direction: row;
   -webkit-flex-direction: row;
+}
+
+/*顶部title样式*/
+.backPassTitle {
+  width: 100%;
+  height: rem(50);
+  line-height: rem(50);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #E4D3AA;
+  font-size: rem(16);
+  font-weight: bold;
+  //background: linear-gradient(top, rgba(61,36,96,0.8),rgba(45,29,68,0));
+  //background: -webkit-linear-gradient(top, rgba(61,36,96,0.8),rgba(45,29,68,0));
+  background: -webkit-linear-gradient(top, rgba(26,19,42,0.8),rgba(45,29,68,0));
+  //background: #3E225D;
 }
 
 /*弹框样式*/

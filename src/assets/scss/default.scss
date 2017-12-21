@@ -1270,156 +1270,156 @@ body {
   }
 }
 
-.beimg_articleed {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  margin-top: rem(10);
-  section {
-    text-align: center;
-    font-size: rem(12);
-    color: #FFFFFF;
-    height: rem(26);
-    line-height: rem(26);
-    p {
-      width: 30%;
-      float: left;
-    }
-    p:first-of-type {
-      width: 70%;
-      position: relative;
-    }
-    p:first-of-type:after {
-      content: '';
-      width: 1px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.4);
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-  }
-  section:first-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  }
-  section:nth-child(2) {
-    p:first-of-type {
-      span {
-        width: 33.3%;
-        float: left;
-        position: relative;
-      }
-      span:after {
-        content: "";
-        width: 1px;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.4);
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      span:last-of-type:after {
-        content: "";
-        width: 0;
-      }
-    }
-    p.beimgSec {
-      span {
-        width: 25%;
-        float: left;
-        position: relative;
-      }
-    }
-  }
-}
+//.beimg_articleed {
+//  border: 1px solid rgba(255, 255, 255, 0.4);
+//  box-sizing: border-box;
+//  -webkit-box-sizing: border-box;
+//  margin-top: rem(10);
+//  section {
+//    text-align: center;
+//    font-size: rem(12);
+//    color: #FFFFFF;
+//    height: rem(26);
+//    line-height: rem(26);
+//    p {
+//      width: 30%;
+//      float: left;
+//    }
+//    p:first-of-type {
+//      width: 70%;
+//      position: relative;
+//    }
+//    p:first-of-type:after {
+//      content: '';
+//      width: 1px;
+//      height: 100%;
+//      background: rgba(255, 255, 255, 0.4);
+//      position: absolute;
+//      right: 0;
+//      top: 0;
+//    }
+//  }
+//  section:first-child {
+//    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+//  }
+//  section:nth-child(2) {
+//    p:first-of-type {
+//      span {
+//        width: 33.3%;
+//        float: left;
+//        position: relative;
+//      }
+//      span:after {
+//        content: "";
+//        width: 1px;
+//        height: 100%;
+//        background: rgba(255, 255, 255, 0.4);
+//        position: absolute;
+//        right: 0;
+//        top: 0;
+//      }
+//      span:last-of-type:after {
+//        content: "";
+//        width: 0;
+//      }
+//    }
+//    p.beimgSec {
+//      span {
+//        width: 25%;
+//        float: left;
+//        position: relative;
+//      }
+//    }
+//  }
+//}
 
-.beimg_articleed.beimg_articleed_blank {
-  background: rgba(0, 0, 0, .5);
-  margin-top: rem(10);
-}
+//.beimg_articleed.beimg_articleed_blank {
+//  background: rgba(0, 0, 0, .5);
+//  margin-top: rem(10);
+//}
 
-.beimg_articleed.beimg_articleed_xlhc {
-  section {
-    p {
-      width: 33.3%;
-      position: relative;
-    }
-    p:after {
-      content: "";
-      width: 1px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.4);
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    p:last-of-type:after {
-      content: "";
-      width: 0;
-    }
-  }
-}
+//.beimg_articleed.beimg_articleed_xlhc {
+//  section {
+//    p {
+//      width: 33.3%;
+//      position: relative;
+//    }
+//    p:after {
+//      content: "";
+//      width: 1px;
+//      height: 100%;
+//      background: rgba(255, 255, 255, 0.4);
+//      position: absolute;
+//      right: 0;
+//      top: 0;
+//    }
+//    p:last-of-type:after {
+//      content: "";
+//      width: 0;
+//    }
+//  }
+//}
 
-.beimg_articleed.beimg_articleed_jsk3 {
-  section {
-    p {
-      width: 50%;
-      position: relative;
-    }
-    p:after {
-      content: "";
-      width: 1px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.4);
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    p:last-of-type:after {
-      content: "";
-      width: 0;
-    }
-  }
-  section.beimgSpan {
-    p:first-of-type {
-      span:after {
-        content: "";
-        width: 0;
-      }
-    }
-  }
-}
+//.beimg_articleed.beimg_articleed_jsk3 {
+//  section {
+//    p {
+//      width: 50%;
+//      position: relative;
+//    }
+//    p:after {
+//      content: "";
+//      width: 1px;
+//      height: 100%;
+//      background: rgba(255, 255, 255, 0.4);
+//      position: absolute;
+//      right: 0;
+//      top: 0;
+//    }
+//    p:last-of-type:after {
+//      content: "";
+//      width: 0;
+//    }
+//  }
+//  section.beimgSpan {
+//    p:first-of-type {
+//      span:after {
+//        content: "";
+//        width: 0;
+//      }
+//    }
+//  }
+//}
 
 // 2017.10.19
-.beimg_articleed.beimg_articleed_jsk3.isjsk3a {
-  section {
-    p {
-      width: 50%;
-      position: relative;
-    }
-    p:after {
-      content: "";
-      width: 1px;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.4);
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    p:last-of-type:after {
-      content: "";
-      width: 0;
-    }
-  }
-  section.beimgSpan {
-    p:first-of-type {
-      span:after {
-        content: "";
-        width: 0;
-      }
-    }
-  }
-}
+//.beimg_articleed.beimg_articleed_jsk3.isjsk3a {
+//  section {
+//    p {
+//      width: 50%;
+//      position: relative;
+//    }
+//    p:after {
+//      content: "";
+//      width: 1px;
+//      height: 100%;
+//      background: rgba(255, 255, 255, 0.4);
+//      position: absolute;
+//      right: 0;
+//      top: 0;
+//    }
+//    p:last-of-type:after {
+//      content: "";
+//      width: 0;
+//    }
+//  }
+//  section.beimgSpan {
+//    p:first-of-type {
+//      span:after {
+//        content: "";
+//        width: 0;
+//      }
+//    }
+//  }
+//}
 
 /*全部彩种样式*/
 #imgs {

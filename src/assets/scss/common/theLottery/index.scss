@@ -56,6 +56,7 @@ $designWidth: 375;
     font-size: rem(12);
   }
 }
+
 .theLotteryDate span {
   font-family: Arial;
 }
@@ -94,7 +95,7 @@ $designWidth: 375;
         content: '=';
       }
       p:last-of-type {
-        background: #E83828;
+        //background: #E83828;
         border: rem(1) solid #FFDC99;
         color: #ffffff;
       }
@@ -290,7 +291,7 @@ $designWidth: 375;
 }
 
 /*色波*/
-.lotteryDate a {
+.lotteryDate a .theLotteryArticle {
   p.red {
     box-sizing: border-box;
     -webkit-box-sizeing: border-box;
@@ -412,4 +413,115 @@ $designWidth: 375;
       }
     }
   }
+}
+
+/*开奖彩种列表*/
+.theLotteryDetails {
+  padding-top: rem(60);
+}
+
+.theLotteryEnd {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-top: rem(10);
+  section {
+    text-align: center;
+    font-size: rem(12);
+    color: #FFFFFF;
+    height: rem(26);
+    line-height: rem(26);
+    p {
+      width: 30%;
+      float: left;
+    }
+    p:first-of-type {
+      width: 70%;
+      position: relative;
+    }
+    p:first-of-type:after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  section:first-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  section:nth-child(2) {
+    p:first-of-type {
+      span {
+        width: 33.3%;
+        float: left;
+        position: relative;
+      }
+      span:after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      span:last-of-type:after {
+        content: "";
+        width: 0;
+      }
+    }
+    p.beimgSec {
+      span {
+        width: 25%;
+        float: left;
+        position: relative;
+      }
+    }
+  }
+}
+
+.theLotteryPcdd {
+  background: rgba(0, 0, 0, .5);
+  margin-top: rem(10);
+}
+
+.theLotteryFast {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin-top: rem(10);
+  background: rgba(0, 0, 0, 0.32);
+  section {
+    font-size: rem(12);
+    color: #FFFFFF;
+    height: rem(26);
+    line-height: rem(26);
+    p {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    p:last-of-type {
+      border-right: none;
+    }
+  }
+  section:nth-child(2) {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
+
+.theLotterySpan {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/*隐藏边框*/
+.theLotterySpan.borderHiddenRight {
+  border-right: none;
 }

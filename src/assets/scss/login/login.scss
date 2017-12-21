@@ -120,24 +120,6 @@ $designWidth: 375;
   color: rgb(246, 0, 153);
 }
 
-
-.backPassTitle {
-  width: 100%;
-  height: rem(50);
-  line-height: rem(50);
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  color: #E4D3AA;
-  font-size: rem(16);
-  font-weight: bold;
-  //background: linear-gradient(top, rgba(61,36,96,0.8),rgba(45,29,68,0));
-  //background: -webkit-linear-gradient(top, rgba(61,36,96,0.8),rgba(45,29,68,0));
-  //background: -webkit-linear-gradient(top, rgba(26,19,42,0.8),rgba(45,29,68,0));
-  background: #3E225D;
-}
-
 .loginLi p.Mobile {
   background: transparent;
   font-size: rem(24);
