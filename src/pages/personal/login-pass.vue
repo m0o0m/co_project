@@ -1,36 +1,34 @@
 <template>
-  <div class="managMementCls">
-    <div class="per">
-      <ul class="per_leftd">
-        <li @click="$router.go(-1);"></li>
-        <li><p style="color:#FFDC99 ">登陆密码</p></li>
-      </ul>
+  <div class="loginPassManagement">
+    <div class="commonNavBar positionFixed">
+      <div class="backPassTitle"><p>登陆密码管理</p></div>
+      <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
-    <div class="per_pass2 bggs" id="bgg">
-      <div class="monum">
-        <p>&nbsp;&nbsp;&nbsp;原密码</p>
+    <div class="loginPassManageContent" id="bgg">
+      <div class="loginLi displayFlex">
+        <p>原密码</p>
         <p>
           <input type="password" v-model="old_password" placeholder="请输入6～12位数字或字母" maxlength="12">
         </p>
       </div>
-      <div class="monum">
+      <div class="loginLi displayFlex">
         <p>设置密码</p>
         <p>
           <input type="password" v-model="password" placeholder="请输入6～12位数字或字母" maxlength="12">
         </p>
       </div>
-      <div class="monum">
+      <div class="loginLi displayFlex">
         <p>确认密码</p>
         <p>
           <input type="password" v-model="password1" placeholder="请再次输入您的密码" maxlength="12">
         </p>
       </div>
-      <div @click="save()" class="loginBtn monum">完成</div>
+      <div @click="save()" class="loginHostBtn confirmBtn completeBtn"><a href="javascript:void(0);">完成</a></div>
     </div>
   </div>
 </template>
 <script>
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/personal.scss';
   
   export default {
     data() {

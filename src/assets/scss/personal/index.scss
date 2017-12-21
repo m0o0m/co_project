@@ -112,20 +112,16 @@ $designWidth: 375;
   font-size: 0.45rem;
   margin: 0 auto;
   line-height: 0.8rem;
-
   p:last-child {
     margin-bottom: 0.5rem;
   }
-
   p:first-of-type {
     font-size: 0.5rem;
     margin-bottom: 0.2rem;
   }
-
   span {
     font-family: arial;
   }
-
 }
 
 /*公告列表*/
@@ -143,7 +139,7 @@ $designWidth: 375;
   ul {
     li {
       box-sizing: border-box;
-      margin-bottom:rem(2);
+      margin-bottom: rem(2);
       a {
         background: transparent;
         display: block;
@@ -170,9 +166,9 @@ $designWidth: 375;
               line-height: rem(10);
             }
           }
-          i{
+          i {
             display: inline-block;
-            height:rem(10);
+            height: rem(10);
             position: absolute;
             right: rem(10);
             top: 50%;
@@ -217,20 +213,21 @@ $designWidth: 375;
     }
   }
 }
+
 /*提现*/
 .withdrawalsBody {
   padding-top: rem(80);
   padding-bottom: rem(20);
-  width:94%;
-  margin-left:3%;
+  width: 94%;
+  margin-left: 3%;
   max-height: 76%;
   overflow-y: scroll;
   .withdrawalsCar {
     padding: rem(15);
     margin: rem(15);
     display: flex;
-    background: radial-gradient(top,#DDC09C ,#D0A979 );
-    background: -webkit-radial-gradient(top ,#DDC09C,#D0A979 );
+    background: radial-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     section {
       padding: 0 rem(20);
@@ -255,37 +252,37 @@ $designWidth: 375;
     }
   }
   .withdrawList {
-     padding:0 rem(15);
-     margin: rem(10) 0;
-     p {
-       font-size: rem(14);
-       color: #FFFFFF;
-       line-height: rem(42);
-     }
-     p:first-of-type {
-       min-width: rem(60);
-       text-align: right;
-       padding-right: rem(10);
-     }
-     p:nth-of-type(2) {
-       background: rgba(0, 0, 0 ,0.5);
-       border: 1px solid #BEB284;
-       border-radius: rem(2);
-       height: rem(42);
-       flex: 1;
-     }
-     input {
-       font-size: rem(14);
-       color: #FFFFFF;
-       text-indent: rem(10);
-       width: 100%;
-       background: transparent;
-       border: none;
-     }
-   }
+    padding: 0 rem(15);
+    margin: rem(10) 0;
+    p {
+      font-size: rem(14);
+      color: #FFFFFF;
+      line-height: rem(42);
+    }
+    p:first-of-type {
+      min-width: rem(60);
+      text-align: right;
+      padding-right: rem(10);
+    }
+    p:nth-of-type(2) {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid #BEB284;
+      border-radius: rem(2);
+      height: rem(42);
+      flex: 1;
+    }
+    input {
+      font-size: rem(14);
+      color: #FFFFFF;
+      text-indent: rem(10);
+      width: 100%;
+      background: transparent;
+      border: none;
+    }
+  }
   .forgetPaw {
     text-align: right;
-    padding:0 rem(15);
+    padding: 0 rem(15);
     a {
       line-height: rem(24);
       font-size: rem(14);
@@ -294,14 +291,14 @@ $designWidth: 375;
     }
   }
   .trueBtn {
-    background: radial-gradient(top,#DDC09C ,#D0A979 );
-    background: -webkit-radial-gradient(top ,#DDC09C,#D0A979 );
+    background: radial-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     height: rem(44);
     line-height: rem(44);
     text-align: center;
     margin: rem(15) 10%;
-     width: 80%  ;
+    width: 80%;
     a {
       font-size: rem(14);
       color: #65431D;
@@ -320,10 +317,7 @@ $designWidth: 375;
   }
 }
 
-
-
 /*提现记录*/
-
 .noneDIV {
   width: rem(130);
   margin: 0 auto;
@@ -334,15 +328,14 @@ $designWidth: 375;
   padding-top: rem(110);
 }
 
-.warmReminder{
-
+.warmReminder {
   font-family: Arial;
   font-size: rem(12);
   color: #FFFFFF;
   letter-spacing: 0;
   text-align: center;
-  line-height:rem(40);
-  a{
+  line-height: rem(40);
+  a {
     color: #FFDC99;
     letter-spacing: 0;
   }
@@ -351,21 +344,21 @@ $designWidth: 375;
 .moneyHistoryBody {
   padding-top: rem(80);
   padding-bottom: rem(20);
-  width:94%;
-  margin-left:3%;
+  width: 94%;
+  margin-left: 3%;
   max-height: 76%;
   overflow-y: scroll;
   .moneyHistoryLI {
-    background-image: linear-gradient(-180deg, rgba(0,0,0,0.24) 0%,rgba(25,15,36,0.5) 97%);
-    background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.24) 0%, rgba(25,15,36,0.5) 97%);
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
+    background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
     height: auto;
     overflow: hidden;
-    margin-bottom:1px;
+    margin-bottom: 1px;
     .moneyHistoryList {
       height: auto;
       padding: 0.41379rem;
       display: flex;
-      -webkit-display:flex;
+      -webkit-display: flex;
       .moneyLeft {
         width: rem(18);
         height: rem(18);
@@ -419,82 +412,451 @@ $designWidth: 375;
 
 /*资金明细*/
 .assetsDeList {
-  padding-top:rem(55);
-  height:90%;
-  overflow: hidden;
-  width: 94%;
-  margin-left:3%;
-  .examineMianBody {
-    max-height: 90%;
-    overflow: auto;
-    .assetsDeListLI {
-      background-image: linear-gradient(-180deg, rgba(0,0,0,0.24) 0%,rgba(25,15,36,0.5) 97%);
-      background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.24) 0%, rgba(25,15,36,0.5) 97%);
-      height: auto;
-      overflow: hidden;
-      margin-bottom:1px;
-      padding: rem(15);
-      a {
-        display: block;
-        .examineArticle {
-          display: flex;
-          display: -webkit-flex;
-          flex-direction: row;
-          -webkit-flex-direction: row;
-          section:nth-child(1) {
-            width: rem(36);
-            height: rem(36);
-            background: linear-gradient(top, #CFCFCF, #8D8D8D);
-            background: -webkit-linear-gradient(top, #CFCFCF, #8D8D8D);
-            border-radius: 50%;
-            font-size: rem(10);
-            color: #1F0C22;
-            text-align: center;
-            line-height: rem(36);
-            margin-right: rem(10);
-          }
-          section:nth-child(2) {
-            font-size: rem(14);
-            color: #FFDC99;
-            flex: 1;
-            .assetsArticle {
-              p {
-                float: left;
-                line-height: rem(20);
-              }
-              p.opts {
-                opacity: 0.7;
-              }
-              span.opts {
-                opacity: 0.7;
-              }
-              p.optss {
-                opacity: 0.6;
-              }
-              p:last-of-type {
-                float: right;
-              }
-              p.totalMarry {
-                span {
-                  font-size: rem(18);
-                  color: #FFDC99;
+  .Updated upstream {
+    padding-top: rem(55);
+    overflow: hidden;
+    width: 94%;
+    margin-left: 3%;
+    .examineMianBody {
+      max-height: 90%;
+      overflow: auto;
+      .assetsDeListLI {
+        background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
+        background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 1px;
+        padding: rem(15);
+        a {
+          display: block;
+          .examineArticle {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-flex-direction: row;
+            section:nth-child(1) {
+              width: rem(36);
+              height: rem(36);
+              background: linear-gradient(top, #CFCFCF, #8D8D8D);
+              background: -webkit-linear-gradient(top, #CFCFCF, #8D8D8D);
+              border-radius: 50%;
+              font-size: rem(10);
+              color: #1F0C22;
+              text-align: center;
+              line-height: rem(36);
+              margin-right: rem(10);
+            }
+            section:nth-child(2) {
+              font-size: rem(14);
+              color: #FFDC99;
+              flex: 1;
+              .assetsArticle {
+                p {
+                  float: left;
+                  line-height: rem(20);
+                }
+                p.opts {
+                  opacity: 0.7;
+                }
+                span.opts {
+                  opacity: 0.7;
+                }
+                p.optss {
+                  opacity: 0.6;
+                }
+                p:last-of-type {
+                  float: right;
+                }
+                p.totalMarry {
+                  span {
+                    font-size: rem(18);
+                    color: #FFDC99;
+                  }
+                }
+                p.balankMarry {
+                  color: #ffffff;
                 }
               }
-              p.balankMarry {
-                color: #ffffff;
-              }
+            }
+            section.assetsColor {
+              background: linear-gradient(top, #F0DDAE, #DCB976);
+              background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
             }
           }
-          section.assetsColor {
-            background: linear-gradient(top, #F0DDAE, #DCB976);
-            background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+          span {
+            font-family: arial;
+            font-size: rem(10);
           }
         }
-        span {
-          font-family: arial;
-          font-size: rem(10);
+      }
+    }
+  }
+}
+/*开户返佣*/
+.perRebate {
+  width: 100%;
+  padding-top: rem(50);
+}
+
+#subnav {
+  padding: rem(4) rem(40);
+  background-image: linear-gradient(-180deg, transparent, #321B4A 0%);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  span {
+    float: left;
+    text-align: center;
+    font-family: Arial;
+    font-size: rem(12);
+    color: #FFDC99;
+    width: rem(118);
+    height: rem(26);
+    letter-spacing: 0;
+    line-height: rem(26);
+    border-radius: rem(4);
+  }
+  span:nth-child(2) {
+    float: right;
+  }
+  span.on {
+    background-image: linear-gradient(#F0DDAE 0%, #DCB976 100%);
+    -webkit-background-image: linear-gradient(#F0DDAE 0%, #DCB976 100%);
+    color: #180B0B;
+  }
+}
+
+.rebateUser {
+  padding: rem(30) rem(30) 0;
+  .monum {
+    margin-bottom: rem(20);
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    font-family: Arial;
+    p:first-child {
+      text-align: right;
+      flex: 1;
+      font-size: rem(14);
+      line-height: rem(42);
+      color: #FFFFFF;
+      margin-right: rem(10);
+    }
+    p:nth-child(2) {
+      flex: 4;
+    }
+    input {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.24);
+      height: rem(41);
+      line-height: rem(41);
+      text-indent: 1em;
+      font-family: Arial;
+      font-size: rem(14);
+      color: #FFFFFF;
+      border: rem(1) solid #BEB284;
+      border-radius: rem(2);
+    }
+  }
+  .explain {
+    padding: rem(20) 0 rem(20);
+    .mo-p1 {
+      font-family: Arial;
+      font-size: rem(14);
+      color: #FFFFFF;
+      letter-spacing: 0;
+      line-height: rem(20);
+      margin-bottom: rem(4);
+    }
+    .mo-p2,
+    .mo-p3 {
+      font-family: Arial;
+      font-size: rem(12);
+      line-height: rem(17);
+      color: #FFFFFF;
+      letter-spacing: 0;
+    }
+    .mo-p3 {
+      margin-bottom: rem(10);
+    }
+    .divs.svid {
+      margin-top: rem(10);
+    }
+    .divs {
+      width: 100%;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.50);
+      font-size: rem(12);
+      display: flex;
+      .clas1 {
+        flex: 2;
+      }
+      .clas2 {
+        flex: 5;
+      }
+      .clas3 {
+        flex: 3;
+      }
+      .jkl {
+        color: #fff;
+        text-align: center;
+        float: left;
+        line-height: rem(28);
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        background: rgba(0, 0, 0, 0.50);
+        ul {
+          li {
+            color: #fff;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            font-family: Arial;
+            font-size: rem(12);
+            color: #FFFFFF;
+            height: rem(28);
+            line-height: rem(28);
+            text-align: center;
+          }
+        }
+        &:last-child {
+          border-right: 1px solid rgba(255, 255, 255, 0.5);
         }
       }
+    }
+  }
+}
+
+.rebateOpenTab {
+  padding: rem(30) rem(30) 0;
+  .share {
+    border: 1px solid #DCB976;
+    background: rgba(40, 37, 38, 0.80);
+    box-shadow: inset 0 -2px 3px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 4px;
+    text-align: center;
+    width: rem(327);
+    height: rem(294);
+  }
+  .share li:nth-child(1) {
+    font-size: rem(20);
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: rem(21)
+  }
+  .share li.lis2 {
+    img {
+      width: rem(144);
+      height: rem(144);
+      margin: 0 auto;
+      margin-top: rem(10);
+    }
+  }
+  .share li:nth-child(2) {
+    img {
+      width: rem(144);
+      height: rem(144);
+      margin-top: rem(10);
+    }
+  }
+
+  .share li:nth-child(3) {
+    margin-top: rem(10)
+  }
+  .share li:nth-child(3) p:nth-child(1) {
+    font-size: rem(16);
+    color: #FFFFFF;
+    text-align: center;
+    line-height: rem(30)
+  }
+  .share li:nth-child(3) p:nth-child(2) {
+    font-size: rem(18);
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .copy {
+    background: rgba(40, 37, 38, 0.80);
+    margin-top: rem(20);
+    box-shadow: inset 0 -2px 3px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 4px;
+    width: rem(327);
+    height: rem(46);
+    border: 1px solid #DCB976;
+    span {
+      display: inline-block;
+      width: 60%;
+      height: rem(46);
+      overflow: hidden;
+      padding: 0 rem(14);
+      box-sizing: border-box;
+      font-size: rem(14);
+      background: no-repeat;
+      color: #FFFFFF;
+      line-height: rem(40);
+      font-family: Arial;
+    }
+    p {
+      color: #65431D;
+      overflow: hidden;
+      display: inline-block;
+      width: 40%;
+      height: rem(40);
+      font-size: rem(14);
+      text-align: center;
+      line-height: rem(40);
+      margin-top: rem(3);
+      border-radius: 4px;
+      background-image: linear-gradient(-147deg, #F0DDAE 0%, #DCB976 100%);
+    }
+  }
+  .adopt {
+    font-size: rem(16);
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: rem(10)
+  }
+}
+
+/*登陆密码管理*/
+.loginPassManageContent {
+  padding: rem(80) rem(30);
+  .completeBtn {
+    margin-top: rem(20);
+  }
+}
+/*个人中心*/
+.personalMian {
+  padding-top: rem(50);
+  box-sizing: border-box;
+  width: 94%;
+  height:auto;
+  margin-left: 3%;
+  .personalMianTit{
+    padding: rem(20) rem(15) 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.16) 0%, rgba(50,32,62,0.6) 97%);
+    background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.16) 0%, rgba(50,32,62,0.6)97%);
+    border-radius: rem(4);
+    .personalNews {
+      display: flex;
+      -webkit-display: flex;
+      flex-direction: row;
+      -webkit-flex-direction: row;
+      section {
+        font-size: rem(14);
+        color: #FFFFFF;
+        line-height: rem(22);
+      }
+      section span.cors {
+        font-size: rem(18);
+        color: #FFDC99;
+        letter-spacing: 0;
+        line-height: rem(16)
+      }
+      section:nth-child(2) {
+        padding-left: rem(10);
+        padding-top: rem(10);
+        p:nth-of-type(2) {
+          line-height: rem(28);
+          span {
+            color: #FFDC99;
+            font-size: rem(18);
+            font-family: arial;
+          }
+        }
+        p:nth-of-type(3) {
+          span {
+            color: #FFDC99;
+            font-family: arial;
+          }
+        }
+      }
+      section.one {
+        position: relative;
+        border-radius: 50%;
+        width: rem(66);
+        height: rem(66);
+        display: inline-block;
+        .inputFile{
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          outline:none;
+          position: absolute;
+          filter: alpha(opacity=0);
+          -moz-opacity: 0;
+          opacity: 0;
+          left: 0;
+          top: 0;
+        }
+
+      }
+    }
+    .personalList {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      -webkit-display: flex;
+      flex-direction: row;
+      -webkit-flex-direction: row;
+      padding-top: rem(20);
+      section {
+        flex: 1;
+        text-align: center;
+        margin-bottom: rem(10);
+        a.aisa {
+          font-family: PingFangSC-Medium;
+          margin: rem(0) rem(5);
+          display: block;
+          height: rem(40);
+          line-height: rem(40);
+          text-align: center;
+          font-size: rem(14);
+          color: #65431D;
+          background: linear-gradient(left, #E4D7B5, #B79F71);
+          background: -webkit-linear-gradient(left, #E4D7B5, #B79F71);
+          border-bottom: rem(3) solid #7F5018;
+          background-image: linear-gradient(left, #B79F71 0%, #B79F71 100%);
+          -webkit-background-image: linear-gradient(left, #B79F71 0%, #B79F71 100%);
+          border-radius: rem(4);
+          -webkit-border-radius: rem(4)
+        }
+        a {
+          p {
+            background: url('../../images/numberimg/ti-l.png') left center no-repeat;
+            background-size: rem(22) auto;
+            padding-left: rem(25);
+            display: inline-block;
+            font-family: PingFangSC-Medium;
+            font-size: rem(14);
+            color: #65431D;
+            letter-spacing: 0;
+          }
+        }
+      }
+      section:nth-child(2) {
+        a {
+          p {
+            background: url('../../images/numberimg/ti-r.png') left center no-repeat;
+            background-size: rem(22) auto;
+            padding-left: rem(25);
+            display: inline-block;
+            font-family: PingFangSC-Medium;
+            font-size: rem(14);
+            color: #65431D;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+  .personalListNavMGer {
+    margin-top:rem(8);
+    width: 100%;
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.16) 0%, rgba(83,57,74,0.6) 97%);
+    background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.16) 0%, rgba(83,57,74,0.6) 97%);
+    .personalListNavTC {
+      width: 96%;
+      margin-left:2%;
     }
   }
 }

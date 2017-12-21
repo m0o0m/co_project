@@ -36,7 +36,22 @@ img {
   left: 0;
   z-index: 5;
 }
-
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*右箭头*/
 .commonArrowsRight {
   background: url('../../../images/arrow.png') right center no-repeat;
   background-size: rem(10) auto;
@@ -132,23 +147,31 @@ img {
   right: 0;
   background: url('../../../images/login/Customer.png') center center no-repeat;
   background-size: rem(35) auto;
+  top: rem(3);
 }
 .loginIcon.right.time {
   right: 0;
   background: url('../../../images/login/time.png') center center no-repeat;
   background-size: rem(35) auto;
+  top: rem(3);
 }
 .loginIcon.right.smallBell {
   right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
   background-size: rem(35) auto;
+  top: rem(3);
 }
 .loginIcon.right.choose {
   right: 0;
   background: url('../../../images/login/choose.png') center center no-repeat;
+  background-size: rem(25) auto;
+  top: rem(3);
+}
+.loginIcon.left.individual {
+  right: 0;
+  background: url('../../../images/login/smallBell.png') center center no-repeat;
   background-size: rem(35) auto;
 }
-
 .loginIcon.left.flt {
   top: rem(3);
 }
@@ -180,7 +203,128 @@ img {
   //background: #3E225D;
   z-index: 2;
 }
+/*首页底部*/
+.FooterCls {
+  background: url('../../../images/index/foterBack.png') left bottom no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  height: rem(70);
+  nav {
+    display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -o-display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    padding-top: rem(28);
+    padding-bottom: rem(5);
+    position: relative;
+    overflow: visible;
+    li {
+      width: 20%;
+      text-align: center;
+      float: left;
+      a {
+        color: #3A86E5;
+        font-size: rem(10);
+        section {
+          margin-top: rem(-5);
+          p:first-of-type {
+            width: rem(26);
+            height: rem(26);
+            background: url('../../../images/index/footerColor.png') center center no-repeat;
+            background-size: rem(35) auto;
+            display: inline-block;
+            margin-bottom: rem(0);
+          }
+        }
+      }
+    }
+    li.on {
+      a {
+        color: #FFDC99;
+      }
+      section {
+        p:first-of-type {
+          background: url('../../../images/index/footer.png') center center no-repeat;
+          background-size: rem(35) auto;
+        }
+      }
+    }
+    li:nth-child(2) {
+      width: 20%;
+      margin-right: 10%;
+      section {
+        p:first-of-type {
+          background: url('../../../images/index/footerColor01.png') center center no-repeat;
+          background-size: rem(35) auto;
+        }
+      }
+    }
+    li:nth-child(3) {
+      width: 20%;
+      margin-left: 10%;
+      section {
+        p:first-of-type {
+          background: url('../../../images/index/footerColor02.png') center center no-repeat;
+          background-size: rem(35) auto;
+        }
+      }
+    }
 
+    li:nth-child(4) {
+      section {
+        p:first-of-type {
+          background: url('../../../images/index/footerColor03.png') center center no-repeat;
+          background-size: rem(35) auto;
+        }
+      }
+    }
+    li:nth-child(2).on {
+      width: 20%;
+      margin-right: 10%;
+      section {
+        p:first-of-type {
+          background: url('../../../images/index/footer01.png') center center no-repeat;
+          background-size: rem(35) auto;
+        }
+      }
+    }
+    li:nth-child(3).on {
+      width: 20%;
+      margin-left: 10%;
+      section {
+        p:first-of-type {
+          background: url('../../../images/index/footer02.png') center center no-repeat;
+          background-size: rem(35) auto;
+        }
+      }
+    }
+
+    li:nth-child(4).on {
+      section {
+        p:first-of-type {
+          background: url('../../../images/index/footer03.png') center center no-repeat;
+          background-size: rem(35) auto;
+        }
+      }
+    }
+    li:last-child {
+      width: rem(65);
+      position: absolute;
+      top: rem(0);
+      left: 50%;
+      margin-left: rem(-38.5);
+    }
+
+  }
+}
 /*弹框样式*/
 .Popup {position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   width:100%; height: 100%; display: none; z-index: 20;}
@@ -192,6 +336,7 @@ img {
 .Popup_text .Popup_text_wz {background: rgba(40,40,40,0.9); display: inline-block; min-width: 7.5rem; max-width: 10rem; padding: 0.5rem; font-size: 0.55rem; color: #ffffff; text-align: center; border-radius: 0.3rem;}
 .indexJust {
   display: box;
+  flex: 1;
   display: -webkit-box;
   box-pack: center;
   -webkit-box-pack: center;
@@ -202,9 +347,15 @@ img {
 .indexDisplay {
   display: -webkit-box;
   display: box;
+  display: flex;
 }
 .indexFiex {
   -webkit-box-flex: 1;
   box-flex: 1;
   flex: 1;
+}
+/*确认按钮*/
+.loginHostBtn.confirmBtn{
+  width: 90%;
+  margin: 0 auto;
 }
