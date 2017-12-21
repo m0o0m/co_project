@@ -7,10 +7,9 @@ $designWidth: 375;
   height: 100%;
 }
 
-.bettingTitle {
+.bettingCommonA {
   width: 100%;
-  height: rem(50);
-  line-height: rem(50);
+  height: rem(100);
   text-align: center;
   position: fixed;
   top: 0;
@@ -18,8 +17,20 @@ $designWidth: 375;
   color: #E4D3AA;
   font-size: rem(16);
   font-weight: bold;
-  background: -webkit-linear-gradient(top, rgba(26, 19, 42, 0.8), rgba(45, 29, 68, 0.5));
-  //background: #3D2460;
+  background: url("../../../images/backTop.png") top left no-repeat;
+  background-size: 100% auto;
+  z-index: 5;
+}
+
+.bettingTitle {
+  width: 100%;
+  height: rem(50);
+  line-height: rem(50);
+  text-align: center;
+  color: #E4D3AA;
+  font-size: rem(16);
+  font-weight: bold;
+  //background: -webkit-linear-gradient(top, rgba(26, 19, 42, 0.8), rgba(45, 29, 68, 0.5));
 }
 
 .bettingTitle p {
@@ -28,20 +39,20 @@ $designWidth: 375;
 }
 
 .bettingRecord {
-  height: 100%; overflow-y: scroll;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .betRecord_top {
-  top: rem(50);
   width: 100%;
-  ul {
-    //padding: 0 rem(15);
+  margin-top: rem(5);
 
+  ul {
+    margin: 0 rem(15);
+    border-bottom: 1px solid #FFDC99;
     li {
       flex: 1;
       text-align: center;
-      background: linear-gradient(top,#3E1F4C,#2D1C35);
-      background: -webkit-linear-gradient(top,#3E1F4C,#2D1C35);
       opacity: 0.8;
       a {
         font-size: rem(12);
@@ -57,7 +68,103 @@ $designWidth: 375;
         color: #180B0B;
         background: linear-gradient(top, #DDC09C, #D0A979);
         background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
+        border-top-left-radius: rem(5);
+        border-top-right-radius: rem(5);
+      }
+    }
+  }
+}
+
+.mint-loadmore {
+  padding-top: rem(100);
+}
+
+.noneDIV {
+  width: rem(130);
+  margin: 0 auto;
+  font-size: rem(12);
+  color: #ffffff;
+  text-align: center;
+  line-height: rem(30);
+  padding-top: rem(110);
+}
+
+.bettingVod {
+  padding: 0 rem(15);
+  ul {
+    li {
+      //background: linear-gradient(top, rgba(35, 23, 40, 0.5), rgba(18, 14, 21, 0.9));
+      //background: -webkit-linear-gradient(top, rgba(35, 23, 40, 0.2), rgba(18, 14, 21, 0.3));
+      background: rgba(0, 0, 0, .3);
+      height: auto;
+      overflow: hidden;
+      //filter: blur(rem(5));
+      //-webkit-filter: grayscale(50%);
+      //filter: grayscale(50%);
+      -webkit-filter: brightness(0.30);
+      filter: brightness(0.30);
+      a {
+        display: block;
+        padding: rem(5) rem(10);
+        span {
+          font-family: arial;
+        }
+      }
+    }
+    li:last-child {
+      padding-bottom: rem(0);
+    }
+  }
+  section:first-child {
+    p {
+      float: left;
+      font-size: rem(14);
+      color: #FFDC99;
+      line-height: rem(24);
+      .spanMarry {
+        float: right;
+        font-size: rem(18);
+        color: #FFDC99;
+        font-family: arial;
+      }
+    }
+    p:nth-of-type(2) {
+      font-size: rem(10);
+      color: #FFDC99;
+      line-height: rem(28);
+      margin-left: rem(10);
+    }
+    p:nth-of-type(3) {
+      float: right;
+    }
+  }
+  section:last-child {
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    font-size: rem(10);
+    color: #FFDC99;
+    p:first-of-type {
+      flex: 1;
+    }
+    p:nth-of-type(2) {
+      color: #ffffff;
+    }
+    p.winCls {
+
+      strong {
+        width: rem(20);
+        height: rem(20);
+        color: #000000;
+        background: #FFDC99;
+        padding: rem(1);
+        font-size: rem(10);
+        margin-right: rem(2);
         border-radius: rem(2);
+      }
+      span {
+        color: #FFDC99;
       }
     }
   }

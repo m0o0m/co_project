@@ -718,82 +718,7 @@ body {
   right: 0;
 }
 
-.betRecord_bd {
-  margin: 0 rem(12);
-  overflow-y: scroll;
-  ul {
-    li {
-      /*background: url('../images/Mask_Copy.png') center center no-repeat; background-size: 100% 100%;*/
-      background: linear-gradient(top, rgba(35, 23, 40, 0.5), rgba(18, 14, 21, 0.9));
-      background: -webkit-linear-gradient(top, rgba(35, 23, 40, 0.2), rgba(18, 14, 21, 0.3));
-      height: auto;
-      overflow: hidden;
-      a {
-        display: block;
-        padding: rem(5) rem(10);
-        span {
-          font-family: arial;
-        }
-      }
-    }
-    li:last-child {
-      padding-bottom: rem(0);
-    }
-  }
-  section:first-child {
-    p {
-      float: left;
-      font-size: rem(14);
-      color: #FFDC99;
-      line-height: rem(24);
-      .spanMarry {
-        float: right;
-        font-size: rem(18);
-        color: #FFDC99;
-        font-family: arial;
-      }
-    }
-    p:nth-of-type(2) {
-      font-size: rem(10);
-      color: #FFDC99;
-      line-height: rem(28);
-      margin-left: rem(10);
-    }
-    p:nth-of-type(3) {
-      float: right;
-    }
-  }
-  section:last-child {
-    display: flex;
-    -webkit-display: flex;
-    flex-direction: row;
-    -webkit-flex-direction: row;
-    font-size: rem(10);
-    color: #FFDC99;
-    p:first-of-type {
-      flex: 1;
-    }
-    p:nth-of-type(2) {
-      color: #ffffff;
-    }
-    p.winCls {
 
-      strong {
-        width: rem(20);
-        height: rem(20);
-        color: #000000;
-        background: #FFDC99;
-        padding: rem(1);
-        font-size: rem(10);
-        margin-right: rem(2);
-        border-radius: rem(2);
-      }
-      span {
-        color: #FFDC99;
-      }
-    }
-  }
-}
 
 .betRecord_bd.betRecord_bd_record {
   margin: 0 rem(12);
@@ -1542,15 +1467,7 @@ body {
 
 }
 
-.noneDIV {
-  width: rem(130);
-  margin: 0 auto;
-  font-size: rem(12);
-  color: #ffffff;
-  text-align: center;
-  line-height: rem(30);
-  padding-top: rem(110);
-}
+
 
 /*2017-10-31*/
 //.beimg_section.pcddBeimg.beImgSection_liu section {

@@ -1,26 +1,63 @@
 <template>
   <div class="bettingIndex">
-    <div class="bettingTitle"><p class="commonArrowsBottom">投注记录</p></div>
-    <div class="betRecord_top positionFixed">
-      <ul class="displayFlex">
-        <li v-for="(bet,index) in bettingNav" :class="{'on':index == navIndex}"
-            @click="bettingClick(index)"><a href="javascript:void(0)">{{bet}}</a></li>
-      </ul>
+    <div class="bettingCommonA">
+      <div class="bettingTitle"><p class="commonArrowsBottom">投注记录</p></div>
+      <div class="betRecord_top">
+        <ul class="displayFlex">
+          <li v-for="(bet,index) in bettingNav" :class="{'on':index == navIndex}"
+              @click="bettingClick(index)"><a href="javascript:void(0)">{{bet}}</a></li>
+        </ul>
+      </div>
     </div>
     <div class="bettingRecord">
       <mt-loadmore ref="loadMore" :top-method="loadTop" :bottom-all-loaded="busy">
         <div class="bettingVod">
+          <div class="noneDIV" v-if="betIndex === 0">
+            <p><img src="../../../assets/images/noneImg.png"/></p>
+            <p>暂无投注记录哦～</p>
+          </div>
+          <ul v-else
+              v-infinite-scroll="loadMore"
+              infinite-scroll-disabled="busy"
+              infinite-scroll-distance="50"
+              infinite-scroll-immediate-check="false">
+            <li v-for="betR in resultList" :betId="betR.id" @click="toDetail(betR)" class="needsclick">
+              <!--<router-link :to="{name:'betRecordDetail', query:{id:betR.id}}">-->
+              <a href="javascript:void(0)" class="betting_record_list">
+                <div class="record_list_right">
+                  <p ><span class="spanMarry">{{betR.amount}}</span></p>
+                  <p v-if="betR.status_text != '已派奖'">{{betR.status_text}}</p>
+                  <p class="winCls" v-if="betR.status_text == '已派奖'">
+                    <strong>赢</strong><span>{{betR.bonus.toFixed(2)}}</span></p>
+                </div>
+                <section>
+                  <p>{{betR.lottery_name}}</p>
+                  <p>第<span>{{betR.action_no}}</span>期</p>
+                </section>
+                <section>
+                  <p>{{betR.played_name}}</p>
+                  <p v-if="betR.action_data">-</p>
+                  <p>{{betR.action_data}}</p>
+                  <p>{{betR.odds}}</p>
+                </section>
+                <section>
+                  <p><span>{{betR.action_time}}</span></p>
+                </section>
 
+              </a>
+              <!--</router-link>-->
+            </li>
+          </ul>
         </div>
       </mt-loadmore>
+      <img src="../../../assets/images/icon_back.png" class="SecondaryNav" @click="changeSelect = !changeSelect"/>
+      <LotterySelect @bettingHidden="bettingHiddened" v-if="changeSelect"></LotterySelect>
     </div>
   </div>
 </template>
 <script type="text/babel">
-	// import '../../../assets/scss/default.scss'
 	import LotterySelect from '../../../components/lotterySelect';
 	//  import HomeFooter from '../../../components/HomeFooter'
-
 	export default {
 		data() {
 			return {
