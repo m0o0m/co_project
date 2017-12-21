@@ -36,7 +36,22 @@ img {
   left: 0;
   z-index: 5;
 }
-
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*右箭头*/
 .commonArrowsRight {
   background: url('../../../images/arrow.png') right center no-repeat;
   background-size: rem(10) auto;

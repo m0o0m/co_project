@@ -108,8 +108,8 @@
 
 </template>
 <script type="text/babel">
-  import '../../assets/scss/default.scss'
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/default.scss'
+//  import '../../assets/scss/personal.scss';
   import HomeFooter from '../../components/HomeFooter'
   
   export default {
