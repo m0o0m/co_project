@@ -20,7 +20,7 @@
       </div>
       <div class="forgetPaw"><a href="javascript:void(0)" @click="foregister()">忘记密码?</a></div>
       <div class="loginHostBtn" @click="login()"><a href="javascript:void(0)">登录</a></div>
-      <div class="loginText">还没有账号：<a href="javascript:void(0)" @click="register()">立即注册</a></div>
+      <div class="loginText">还没有账号，<a href="javascript:void(0)" @click="register()">立即注册</a></div>
     </div>
   </div>
 </template>

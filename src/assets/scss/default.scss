@@ -20,6 +20,7 @@ body {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
+  overflow: hidden;
   .indexlottery {
     position: relative;
     padding: 0 rem(10);
@@ -854,6 +855,7 @@ body {
 .betRecord_bd.betRecord_bd_record.betRecord_bd_record_box {
   height: 85%;
 }
+
 //
 //.betting_record_box .betting_record_details {
 //  height: 50%!important;
@@ -1648,28 +1650,68 @@ body {
 
 /*APP下载*/
 .advertisement {
-  position: fixed; width: 100%; height: rem(60); top: 0; left: 0; z-index: 100; background: #151515;
+  position: fixed;
+  width: 100%;
+  height: rem(60);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #151515;
 }
+
 .adverted {
-  display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row; padding: rem(10); padding-right: 0;
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  padding: rem(10);
+  padding-right: 0;
 }
+
 .adverted section {
-  font-size: rem(12); color: #fff;
+  font-size: rem(12);
+  color: #fff;
 }
+
 .adverted section:first-child {
   img {
-    width: rem(40); height: rem(40); border: 1px solid #D0A979; border-radius: rem(8);
+    width: rem(40);
+    height: rem(40);
+    border: 1px solid #D0A979;
+    border-radius: rem(8);
   }
 }
+
 .adverted section:nth-child(2) {
-  margin: 0 rem(10); line-height: rem(20); flex: 1;
+  margin: 0 rem(10);
+  line-height: rem(20);
+  flex: 1;
 }
+
 .adverted section:nth-child(2) p:first-of-type {
-  font-size: rem(16); font-weight: 800; padding-top: rem(2);
+  font-size: rem(16);
+  font-weight: 800;
+  padding-top: rem(2);
 }
+
 .adverted section:nth-child(3) a {
-  min-width: rem(67); height: rem(27); line-height: rem(28); text-align: center; font-size: rem(14); color: #191919; display: inline-block; background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%); background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%); border-radius: rem(32); margin-top: rem(6);
+  min-width: rem(67);
+  height: rem(27);
+  line-height: rem(28);
+  text-align: center;
+  font-size: rem(14);
+  color: #191919;
+  display: inline-block;
+  background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+  background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+  border-radius: rem(32);
+  margin-top: rem(6);
 }
+
 .adverted section:nth-child(4) {
-  width: rem(40); height: rem(40); background: url("../images/cancel2x.png") center center no-repeat; background-size: rem(15) auto; margin-left: rem(5);
+  width: rem(40);
+  height: rem(40);
+  background: url("../images/cancel2x.png") center center no-repeat;
+  background-size: rem(15) auto;
+  margin-left: rem(5);
 }
