@@ -1,24 +1,24 @@
 <template>
   <div class="moneyTemplateed">
-    <div class="assetsDetailCls">
-      <div class="rechargeLeft" @click="$router.go(-1);"></div>
-      <div class="assetsDeRight" @click="showType = !showType"><a href="javascript:void(0)"></a></div>
-      <div class="assetsTitle"><p>{{title}}</p></div>
+      <div class="commonNavBar">
+        <div class="loginTitle"><p>资金明细</p></div>
+        <div class="loginIcon left" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon right choose"  @click="showType = !showType"><a href="javascript:void(0)"></a></div>
+      </div>
       <div id="assetsDeList" class="assetsDeList">
-        <div class="examineMian"
+        <div class="examineMianBody"
              v-infinite-scroll="loadMore"
              infinite-scroll-disabled="busy"
              infinite-scroll-distance="50"
-             infinite-scroll-immediate-check="false"
-             style="height: 100%; overflow: auto;">
+             infinite-scroll-immediate-check="false">
           <div class="noneDIV" v-if="betIndex === 0">
             <p><img src="../../assets/images/noneImg.png"/></p>
             <p>暂无记录哦～</p>
           </div>
-          <ul>
-            <li v-for="(v, index) in resultList">
+          <ul v-else>
+            <li v-for="(v, index) in resultList" class="assetsDeListLI">
               <a href="javascript: void(0);">
-                <article class="examine_article">
+                <article class="examineArticle">
                   <section
                       :class="{'assetsColor':v.type_text=='返点' || v.type_text=='中奖' || v.type_text=='返款' ||　v.type_text=='佣金' || v.type_text=='提现' || v.type_text=='充值' || v.type_text=='彩金'}">
                     <p>{{v.type_text}}</p>
@@ -27,7 +27,6 @@
                     <article class="assetsArticle">
                       <p>{{(v.note.split(','))[0].split('：')[1] ? (v.note.split(','))[0].split('：')[1] : v.note}}
                         <span class="opts" v-if="(''+v.note.split('，')[1]).split('：')[1]">&nbsp;&nbsp;第{{(''+v.note.split('，')[1]).split('：')[1] ? (''+v.note.split('，')[1]).split('：')[1] : ''}}期</span>
-                        <!--<span class="opts">第{{(v.note.split('，'))[1].split('：')[1]}}期</span>-->
                       </p>
                       <p class="totalMarry"><span>{{v.cash}}</span></p>
                     </article>
@@ -43,10 +42,6 @@
           </ul>
         </div>
       </div>
-    </div>
-    
-    <!--<span v-html="moreMsg"></span>-->
-    <!--<span v-if="busy">正在加载更多的数据...</span>-->
     <div class="Popup_up indexJust" v-if="showType">
       <div class="popup_upMian">
         <div class="popup_ulTitle popup_ulTitle_center">分类</div>
@@ -65,7 +60,7 @@
 
 <script>
   //   import '../../assets/scss/adetails.scss';
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/personal.scss';
   
   export default {
     data() {

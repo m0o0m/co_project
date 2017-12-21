@@ -415,5 +415,87 @@ $designWidth: 375;
       }
     }
   }
-
 }
+
+/*资金明细*/
+.assetsDeList {
+  padding-top:rem(55);
+  height:90%;
+  overflow: hidden;
+  width: 94%;
+  margin-left:3%;
+  .examineMianBody {
+    max-height: 90%;
+    overflow: auto;
+    .assetsDeListLI {
+      background-image: linear-gradient(-180deg, rgba(0,0,0,0.24) 0%,rgba(25,15,36,0.5) 97%);
+      background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.24) 0%, rgba(25,15,36,0.5) 97%);
+      height: auto;
+      overflow: hidden;
+      margin-bottom:1px;
+      padding: rem(15);
+      a {
+        display: block;
+        .examineArticle {
+          display: flex;
+          display: -webkit-flex;
+          flex-direction: row;
+          -webkit-flex-direction: row;
+          section:nth-child(1) {
+            width: rem(36);
+            height: rem(36);
+            background: linear-gradient(top, #CFCFCF, #8D8D8D);
+            background: -webkit-linear-gradient(top, #CFCFCF, #8D8D8D);
+            border-radius: 50%;
+            font-size: rem(10);
+            color: #1F0C22;
+            text-align: center;
+            line-height: rem(36);
+            margin-right: rem(10);
+          }
+          section:nth-child(2) {
+            font-size: rem(14);
+            color: #FFDC99;
+            flex: 1;
+            .assetsArticle {
+              p {
+                float: left;
+                line-height: rem(20);
+              }
+              p.opts {
+                opacity: 0.7;
+              }
+              span.opts {
+                opacity: 0.7;
+              }
+              p.optss {
+                opacity: 0.6;
+              }
+              p:last-of-type {
+                float: right;
+              }
+              p.totalMarry {
+                span {
+                  font-size: rem(18);
+                  color: #FFDC99;
+                }
+              }
+              p.balankMarry {
+                color: #ffffff;
+              }
+            }
+          }
+          section.assetsColor {
+            background: linear-gradient(top, #F0DDAE, #DCB976);
+            background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+          }
+        }
+        span {
+          font-family: arial;
+          font-size: rem(10);
+        }
+      }
+    }
+  }
+}
+
