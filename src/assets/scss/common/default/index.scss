@@ -146,7 +146,8 @@ img {
 .loginIcon.right.choose {
   right: 0;
   background: url('../../../images/login/choose.png') center center no-repeat;
-  background-size: rem(35) auto;
+  background-size: rem(25) auto;
+  top: rem(3);
 }
 
 .loginIcon.left.flt {
@@ -192,6 +193,7 @@ img {
 .Popup_text .Popup_text_wz {background: rgba(40,40,40,0.9); display: inline-block; min-width: 7.5rem; max-width: 10rem; padding: 0.5rem; font-size: 0.55rem; color: #ffffff; text-align: center; border-radius: 0.3rem;}
 .indexJust {
   display: box;
+  flex: 1;
   display: -webkit-box;
   box-pack: center;
   -webkit-box-pack: center;
@@ -202,6 +204,7 @@ img {
 .indexDisplay {
   display: -webkit-box;
   display: box;
+  display: flex;
 }
 .indexFiex {
   -webkit-box-flex: 1;

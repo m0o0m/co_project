@@ -1,8 +1,8 @@
 <template>
   <div class="moneyTemplateed">
-      <div class="commonNavBar">
-        <div class="loginTitle"><p>资金明细</p></div>
-        <div class="loginIcon left" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+    <div class="commonNavBar positionFixed">
+        <div class="backPassTitle"><p>资金明细</p></div>
+        <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
         <div class="loginIcon right choose"  @click="showType = !showType"><a href="javascript:void(0)"></a></div>
       </div>
       <div id="assetsDeList" class="assetsDeList">
@@ -20,7 +20,7 @@
               <a href="javascript: void(0);">
                 <article class="examineArticle">
                   <section
-                      :class="{'assetsColor':v.type_text=='返点' || v.type_text=='中奖' || v.type_text=='返款' ||　v.type_text=='佣金' || v.type_text=='提现' || v.type_text=='充值' || v.type_text=='彩金'}">
+                      :class="{'assetsColor':v.type_text=='返点' || v.type_text=='中奖' || v.type_text=='返款' ||　v.type_text=='佣金' || v.type_text=='提现' || v.type_text=='派奖' || v.type_text=='彩金'|| v.type_text=='充值'}">
                     <p>{{v.type_text}}</p>
                   </section>
                   <section>
