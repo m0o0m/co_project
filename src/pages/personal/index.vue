@@ -1,45 +1,43 @@
 <template>
-  <div class="personal window_size">
-    <div class="personalTemp">
-      <div class="personalMians bgimgs">
-        <div class="personalAgs istttop">
-          <img class="imgs1" src="../../assets/images/numberimg/contop.png" alt="">
+  <div class="personal windowSize">
+        <div class="commonNavBar positionFixed">
+          <div class="backPassTitle"><p>个人中心</p></div>
+          <div class="loginIcon left flt individual" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon right "  @click="$router.push({name:'moneyHistory'});"><a href="javascript:void(0)"></a></div>
         </div>
-        <div @click="$router.push({name: 'annList'})" class="personal_left"><img
-            src="../../assets/images/numberimg/left.png" alt=""/></div>
-        <div class="personal_right" @click="loginService"><img src="../../assets/images/numberimg/kf.png"
-                                                               alt=""></div>
-        <div class="personal_mian topm">
-          <div class="personal_news">
-	          <section style="position: relative; border-radius: 50%;">
-		          <input v-if="!userInfo.is_test_player" id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
-		                 class="inputFile"
-		                 accept="image/jpeg,image/png,image/bmp,image/gif">
-		          <img :src="headImg" alt="">
-	          </section>
-            <section>
-              <!--| {{_Util.formatPhone(result.phone || '')}}-->
-              <p><span style="font-family: Arial;">{{result.username}}</span></p>
-              <p>余额: <span class="cors" v-html="'￥' + (result.amount || '')"></span></p>
-              <!--<p>积分: <span v-html="result.points || ''"></span></p>-->
-            </section>
+        <div class="personalMian">
+          <div class="personalMianTit">
+            <div class="personalNews">
+              <section class="one">
+                <input v-if="!userInfo.is_test_player" id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
+                       class="inputFile"
+                       accept="image/jpeg,image/png,image/bmp,image/gif">
+                <img :src="headImg" alt="">
+              </section>
+              <section>
+                <!--| {{_Util.formatPhone(result.phone || '')}}-->
+                <p><span style="font-family: Arial;">{{result.username}}</span></p>
+                <p>余额: <span class="cors" v-html="'￥' + (result.amount || '')"></span></p>
+                <!--<p>积分: <span v-html="result.points || ''"></span></p>-->
+              </section>
+            </div>
+            <div class="personalList">
+              <section @click="toCash()">
+                <a class="aisa" href="javascript:void(0)"><p>快捷提现</p></a>
+              </section>
+              <section>
+                <router-link :to="{name: 'assetsDetail'}" >
+                  <a class="aisa" href="javascript:void(0)"><p>资金明细</p></a>
+                </router-link>
+              </section>
+            </div>
           </div>
-          <div class="personal_list">
-            <section @click="toCash()">
-              <a class="aisa" href="javascript:void(0)"><p>快捷提现</p></a>
-            </section>
-            <section>
-              <router-link :to="{name: 'assetsDetail'}" style="background:none">
-                <a class="aisa" href="javascript:void(0)"><p>资金明细</p></a>
-              </router-link>
-            </section>
-          </div>
-          <div class="personal_listNav_mGer">
-            <div class="personal_listNav_tc">
-              <div class="personal_listNav ">
-                <mt-loadmore
-                    ref="loadmore"
-                    :top-method="loadTop">
+          <div class="personalListNavMGer">
+            <div class="personalListNavTC">
+              <div class="personalListNav ">
+                <!--<mt-loadmore-->
+                    <!--ref="loadmore"-->
+                    <!--:top-method="loadTop">-->
                   <ul>
                     <li v-if="!userInfo.is_test_player" class="islis" @click="toPhoneManager()">
                       <a href="javascript:void(0)">
@@ -95,20 +93,18 @@
                   <div @click="loginOut()" class="loadMoreTC">
                     <a class="isbgco" href="javascript:void(0)">退出登录</a>
                   </div>
-                </mt-loadmore>
+                <!--</mt-loadmore>-->
               </div>
-            
+
             </div>
           </div>
         </div>
-      </div>
       <HomeFoter></HomeFoter>
-    </div>
   </div>
 
 </template>
 <script type="text/babel">
-//  import '../../assets/scss/default.scss'
+  import '../../assets/scss/default.scss'
 //  import '../../assets/scss/personal.scss';
   import HomeFooter from '../../components/HomeFooter'
   
@@ -132,9 +128,9 @@
       if (that.$route.query.homeIndex == 3) {
         that.init();
       }
-      that._Util.setCss('.window_size',{"height": 1},"*");
+      that._Util.setCss('.windowSize',{"height": 1},"*");
       
-      document.getElementsByClassName('personal_listNav')[0].addEventListener('touchstart', function (event) {
+      document.getElementsByClassName('personalListNav')[0].addEventListener('touchstart', function (event) {
         event.target.classList.add('needsclick');
       })
     },
@@ -415,21 +411,21 @@
 </script>
 
 <style lang="scss">
-  .personalTemp {
-    height: 100%;
-    background: url('../../assets/images/numberimg/Mask.png') center center no-repeat;
-    background-size: cover;
-  }
-  
-  .personalMian {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: url('../../assets/images/numberimg/bancon.png') top center no-repeat;
-  }
-  
+  /*.personalTemp {*/
+    /*height: 100%;*/
+    /*background: url('../../assets/images/numberimg/Mask.png') center center no-repeat;*/
+    /*background-size: cover;*/
+  /*}*/
+  /**/
+  /*.personalMian {*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*background: url('../../assets/images/numberimg/bancon.png') top center no-repeat;*/
+  /*}*/
+  /**/
   .loadMoreTC {
     margin-bottom: 2.5rem;
   }
