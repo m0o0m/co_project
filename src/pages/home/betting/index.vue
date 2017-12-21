@@ -1,6 +1,19 @@
 <template>
   <div class="bettingIndex">
-    <div class="bettingTitle"><p>投注记录</p></div>
+    <div class="bettingTitle"><p class="commonArrowsBottom">投注记录</p></div>
+    <div class="betRecord_top positionFixed">
+      <ul class="displayFlex">
+        <li v-for="(bet,index) in bettingNav" :class="{'on':index == navIndex}"
+            @click="bettingClick(index)"><a href="javascript:void(0)">{{bet}}</a></li>
+      </ul>
+    </div>
+    <div class="bettingRecord">
+      <mt-loadmore ref="loadMore" :top-method="loadTop" :bottom-all-loaded="busy">
+        <div class="bettingVod">
+
+        </div>
+      </mt-loadmore>
+    </div>
   </div>
 </template>
 <script type="text/babel">

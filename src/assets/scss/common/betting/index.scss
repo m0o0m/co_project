@@ -2,7 +2,7 @@
 @import "../../rem";
 
 $designWidth: 375;
-/*开奖大厅*/
+/*投注记录*/
 .bettingIndex {
   height: 100%;
 }
@@ -18,5 +18,47 @@ $designWidth: 375;
   color: #E4D3AA;
   font-size: rem(16);
   font-weight: bold;
-  background: -webkit-linear-gradient(top, rgba(26,19,42,0.8),rgba(45,29,68,0));
+  background: -webkit-linear-gradient(top, rgba(26, 19, 42, 0.8), rgba(45, 29, 68, 0.5));
+  //background: #3D2460;
+}
+
+.bettingTitle p {
+  padding-right: rem(20);
+  display: inline-block;
+}
+
+.bettingRecord {
+  height: 100%; overflow-y: scroll;
+}
+
+.betRecord_top {
+  top: rem(50);
+  width: 100%;
+  ul {
+    //padding: 0 rem(15);
+
+    li {
+      flex: 1;
+      text-align: center;
+      background: linear-gradient(top,#3E1F4C,#2D1C35);
+      background: -webkit-linear-gradient(top,#3E1F4C,#2D1C35);
+      opacity: 0.8;
+      a {
+        font-size: rem(12);
+        color: #FFDC99;
+        width: rem(59);
+        height: rem(29);
+        line-height: rem(29);
+        display: inline-block;
+      }
+    }
+    li.on {
+      a {
+        color: #180B0B;
+        background: linear-gradient(top, #DDC09C, #D0A979);
+        background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
+        border-radius: rem(2);
+      }
+    }
+  }
 }
