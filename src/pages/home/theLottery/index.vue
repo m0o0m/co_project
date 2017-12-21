@@ -9,18 +9,57 @@
     <div class="lotteryDate">
       <mt-loadmore :top-method="loadTop" @top-status-change="handleTopChange" ref="loadmore">
         <ul>
-          <li v-for="(lotter,index) in lotteryData" class="theLotteryList">
-            <a href="javascript:void(0)" @click.stop="$router.push({name: 'theLotteryDetails', query: {id: lotter.id, name: lotter.name}})">
+          <li v-for="(lottery,index) in lotteryData" class="theLotteryList">
+            <a href="javascript:void(0)" @click.stop="$router.push({name: 'theLotteryDetails', query: {id: lottery.id, name: lottery.name}})">
               <section class="theLotteryDate displayFlex">
-                <p>{{lotter.name}}</p>
-                <p class="commonArrowsRight">第<span>{{lotter.number}}</span>期</p>
+                <p>{{lottery.name}}</p>
+                <p class="commonArrowsRight">第<span>{{lottery.number}}</span>期</p>
               </section>
-              <section class="lottery_color">
-
+              <section class="theLotteryColor">
+                <article class="theLotteryArticle"
+                         :class="{'nameArt':lottery.id === 14,'nameArt01':lottery.id === 13,'nameArt02':lottery.id === 21,'nameArt03':lottery.id === 6,'nameArt04':lottery.id === 1 || lottery.id === 2,'nameArt05':lottery.id === 3 || lottery.id === 12,'nameArt06':lottery.id === 4,'nameArt07':lottery.id === 5,'nameArt08':lottery.id === 22 || lottery.id === 23 || lottery.id === 24}">
+                  <p v-for="(dat,data_index) in lottery .data"
+                     v-if="lottery.id !== 4 && lottery.id !== 3 && lottery.id !== 12 && lottery.id !== 15 && lottery.id !== 16 && lottery.id !== 18 && lottery.id !== 17 && lottery.id!==19 && lottery.id!==20"
+                     :class="{'red':lottery.end_color=='red' && lottery.id <= 2 && data_index >= 3 || lottery.end_color=='red' && lottery.id == 3 && data_index == 0,'green':lottery.end_color=='green' && lottery.id <= 2 && data_index >= 3 ||lottery.end_color=='green' && lottery.id === 3 && data_index === 0,'blue':lottery.end_color=='blue' && lottery.id <= 2 && data_index >= 3 ||lottery.end_color=='blue' && lottery.id === 3 && data_index === 0,'gray':lottery.end_color=='gray' && lottery.id <= 2 && data_index >= 3 ||lottery.end_color=='gray' && lottery.id === 3 && data_index === 0}">
+                    <span>{{dat}}</span></p>
+                  <!--香港六合彩-->
+                  <p v-for="(dat,data_index) in lottery.data" v-if="lottery.id === 3 || lottery.id === 12"
+                     class="dataLoter"
+                     :class="{'red':lottery.colors[data_index]=='red' && (lottery.id === 3 || lottery.id === 12),'green':lottery.colors[data_index]=='green' && (lottery.id === 3 || lottery.id === 12),'blue':lottery.colors[data_index]=='blue' && (lottery.id === 3 || lottery.id === 12),'gray':lottery.colors[data_index]=='gray' && (lottery.id === 3 || lottery.id === 12)}">
+                    <span>{{dat}}</span><span
+                      class="Contact_cus">{{lottery.animals[data_index]}}</span></p>
+                  <!--<p v-if="lotter.id==3"><img :src="lotter.any"/></p>-->
+                  <p v-if="lottery.id === 4" v-for="dat in jsksData"><img :src="dat"/></p>
+                  <p v-if="lottery.id === 15" v-for="manila in manilaData" class="mnshImgCls"><img
+                      :src="manila"/></p>
+                  <p v-if="lottery.id === 16" v-for="ydzjhla in ydzjhData" class="mnshImgCls"><img
+                      :src="ydzjhla"/></p>
+                  <p v-if="lottery.id === 18" v-for="ydzjhla in pknnData" class="mnshImgCls"><img
+                      :src="ydzjhla"/></p>
+                  <p v-if="lottery.id === 17" class="sglncCls">
+                    <span><img :src="lottery.extfield1"/></span>
+                    <span>{{lottery.extfield}}</span>
+                  </p>
+                  <p v-if="lottery.id === 19" class="hxpjCls">
+                    <em><span v-for="gow in gowData"><img :src="gow"/></span></em>
+                    <em><span v-for="gows in gowtxtData">{{gows}}</span></em>
+                  </p>
+                  <p v-if="lottery.id === 20" class="hjrbgCls">
+                    <em><span v-for="fkags in flagstaffData"><img :src="fkags"/></span></em>
+                    <em><span v-for="gows in gowtxtData">{{gows}}</span></em>
+                  </p>
+                </article>
               </section>
             </a>
           </li>
         </ul>
+        <div slot="top" class="mint-loadmore-top">
+          <!--↓-->
+          <span v-show="topStatus !== 'loading'" :class="{ 'is-rotate': topStatus === 'drop' }"></span>
+          <span v-show="topStatus === 'loading'">
+              <mt-spinner type="snake"></mt-spinner>
+            </span>
+        </div>
       </mt-loadmore>
     </div>
   </div>
