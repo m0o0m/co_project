@@ -1,29 +1,25 @@
 <template>
-  <div class="moneyTemplateed">
-    <div class="lotteryMian">
-      <div class="bgimg_title">
-        公告详情
-        <img src="../../assets/images/icon_back2x.png" @click="$router.go(-1)"/>
+  <div class="annDetail">
+      <div class="commonNavBar positionFixed">
+        <div class="loginTitle"><p>公告详情</p></div>
+        <div class="loginIcon left" @click="$router.go(-1);"><a href="javascript:void(0)"></a></div>
       </div>
-      <div class="theDetails_mian">
-        <div class="lotteryDate lotteryDateed_detail">
-          <div class="lotteryData_titleed">
+      <div class="annDetailsMian">
+        <div class="annDetailDate annDetailDateDetail">
+          <div class="annDetailTitle">
             <p>{{result.title}}</p>
             <p><span>{{result.create_time}}</span></p>
           </div>
           <!--v-html="result.content"-->
-          <div v-html="result.content" class="lotteryData_content_text">
-          
-          </div>
+          <div v-html="result.content" class="annDetailContentText"></div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
 <script>
-  import '../../assets/scss/default.scss';
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/default.scss';
+//  import '../../assets/scss/personal.scss';
   
   
   export default {
@@ -33,7 +29,7 @@
       }
     },
     mounted() {
-      this._Util.setCss('.lotteryDateed_detail', {"height": (10 / 12)}, "*");
+//      this._Util.setCss('.annDetailDateDetail', {"height": (10 / 12)}, "*");
       this.init();
     },
     methods: {

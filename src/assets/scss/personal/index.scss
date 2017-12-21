@@ -186,12 +186,12 @@ $designWidth: 375;
 
 /*公告详情*/
 .annDetailsMian {
-  padding: rem(10);
-  .lotteryDateed_detail {
+  padding: rem(80) rem(10) 0;
+  .annDetailDateDetail {
     background: rgba(0, 0, 0, 0.2);
     padding: rem(20);
     overflow-y: scroll;
-    .lotteryData_titleed {
+    .annDetailTitle {
       font-size: rem(18);
       color: #FFDC99;
       line-height: rem(24);
@@ -204,7 +204,7 @@ $designWidth: 375;
         }
       }
     }
-    .lotteryData_content_text {
+    .annDetailContentText {
       color: #FFDC99;
       p {
         margin: rem(10) auto;
@@ -212,6 +212,7 @@ $designWidth: 375;
         line-height: rem(24);
         font-family: Arial;
         letter-spacing: 0;
+        text-align: justify;
       }
     }
   }
