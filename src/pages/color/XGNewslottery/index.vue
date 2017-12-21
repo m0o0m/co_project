@@ -17,7 +17,7 @@
         :personalRebate="personalRebate"
         :sliderValue="sliderValue"
         :marryNum="marryNum"
-        ref="colorLottery"
+        ref="pcddref"
         ></LotteryColor>
         <Footered
         :personalRebate="personalRebate"
@@ -124,7 +124,7 @@ export default {
         },
 
 	  makeOrder: function () {
-		let balls = this.$refs.colorLottery.getAllSelectedBalls()
+		let balls = this.$refs.pcddref.getAllSelectedBalls()
           if (!balls.length && (!this.$refs.confirmPageRef.orders.length || !this._Util.checkDup(this.$refs.confirmPageRef.orders, 'oneCredId', this.oneCredId))) {
               this._Util.showAlert(this, {
                   content: '请选择号码'
@@ -198,7 +198,7 @@ export default {
               if (this.$refs.confirmPageRef) {
                 this.$refs.confirmPageRef.timeEndClearData();
               }
-              this.$refs.colorLottery.HalfIndex = 0;
+              this.$refs.pcddref.HalfIndex = 0;
             }
             if (this.stopBetCountDownSecond > 0) {
                 this.stopBetCountDownSecond -= 1

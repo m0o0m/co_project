@@ -219,7 +219,7 @@
         this.oneCredId = value.navOneID;
       },
       makeOrder: function () {
-        var balls = this.$refs.WesternNumRef.getAllSelectedBalls()
+        var balls = this.$refs.pcddref.getAllSelectedBalls()
           if (!balls.length && (!this.$refs.confirmPageRef.orders.length || !this._Util.checkDup(this.$refs.confirmPageRef.orders, 'oneCredId', this.oneCredId))) {
               this._Util.showAlert(this, {
                   content: '请选择号码'

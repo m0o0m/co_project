@@ -188,7 +188,7 @@
 	      if (that._LotteryUtil.pauseSell(that, that.$parent.classAdata.status)) return;
         this.selectedAmount = parseInt($(".westernSectionNum p.on").attr("data-marry"));
         this.dynamicBalance = this.$parent.$refs.headerRef.balanceAmount;
-	      if (this._Util.isLogin() && parseInt(this.selectedAmount) > this.dynamicBalance) {
+	      if (!that._Util.getUserInfo().is_test_player && this._Util.isLogin() && parseInt(this.selectedAmount) > this.dynamicBalance) {
               this._LotteryUtil.creditLow(this);
 		      // this._Util.showAlert(this, {content: "余额不足，请充值"});
 		      // setTimeout(function () {

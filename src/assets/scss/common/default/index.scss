@@ -128,6 +128,21 @@ img {
   background: url('../../../images/login/Customer.png') center center no-repeat;
   background-size: rem(35) auto;
 }
+.loginIcon.right.time {
+  right: 0;
+  background: url('../../../images/login/time.png') center center no-repeat;
+  background-size: rem(35) auto;
+}
+.loginIcon.right.smallBell {
+  right: 0;
+  background: url('../../../images/login/smallBell.png') center center no-repeat;
+  background-size: rem(35) auto;
+}
+.loginIcon.right.choose {
+  right: 0;
+  background: url('../../../images/login/choose.png') center center no-repeat;
+  background-size: rem(35) auto;
+}
 
 .loginIcon.left.flt {
   top: rem(3);

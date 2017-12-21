@@ -198,7 +198,7 @@
 	  getHistoryBetMoney(money) {
         this.reservePrice = parseFloat(this.$parent.$refs.confirmPageRef.totalPrice);
 		this.totalMoney = (money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no);
-        this.balanceAmount = !money ? this.balanceAmount : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.WesternNumRef.selectedAmount)).toFixed(2);
+        this.balanceAmount = !money ? this.balanceAmount : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
 	  },
       getHistoryBet(){
         if(this._LotteryUtil.JudgeLogin() === false) return;

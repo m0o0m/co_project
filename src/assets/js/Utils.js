@@ -7,7 +7,8 @@ export default {
   },
 
 	getUserInfo() {
-  	return this.getStorage('userInfo', true) || {};
+  	let userInfo = this.getStorage('userInfo', true);
+		return userInfo ? userInfo.userInfo : {};
 	},
   
   init() {
@@ -234,9 +235,7 @@ export default {
     
     let startTime = new Date();
     if (that.isLocalHost) {
-      //登陆状态锁定
-
-      param.bind_account = 1;
+      param.bind_account = 2;
     }
     
     /*self.$http.post(url, param).then((response) => {
@@ -329,11 +328,8 @@ export default {
               }
               break;
             case 10002:
-              that.showConfirm(self, {content: '余额不足,是否前往充值'}, (action) => {
-                if (action) {
-                  self.$router.push({name: 'addMoney'});
-                }
-              });
+            	errorCallback && errorCallback(data);
+
               break;
             default:
               that.showAlert(self, {
