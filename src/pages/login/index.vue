@@ -22,7 +22,8 @@
       </div>
       <div class="forgetPaw"><a href="javascript:void(0)" @click="foregister()">忘记密码?</a></div>
       <div class="loginHostBtn" @click="login()"><a href="javascript:void(0)">登录</a></div>
-      <div class="loginText">还没有账号，<a href="javascript:void(0)" @click="register()">立即注册</a></div>
+      <div class="loginText" style="display: inline;">还没有账号，<a href="javascript:void(0)" @click="register()">立即注册</a></div>
+      <div class="loginText" style="display: inline; text-align: right;"><a href="javascript:void(0)" @click="testPlay()">免费试玩</a></div>
     </div>
   </div>
 </template>
@@ -120,7 +121,15 @@
         that._Util.post(that, that._Api.POST_CUSTOMER_SERVER, {name: 'kf'}, (data) => {
           window.location.href = data.value;
         })
-      }
+      },
+
+	    testPlay() {
+      	let that = this;
+      	that._Util.post(that, that._Api.POST_TEST_PLAY_LOGIN, {}, (data) => {
+		      that._Util.setStorage('userInfo', data, true);
+		      that.$router.replace({name: 'home'});
+	      });
+	    }
     }
   }
 </script>
