@@ -26,7 +26,7 @@
   /*登录*/
 	import './assets/scss/login/login.scss'
   /*投注记录*/
-  import './assets/scss/betting/index.scss'
+  import './assets/scss/common/betting/index.scss'
 //	import './assets/scss/index.scss'
 
 	require('./assets/js/jquery.fly.min');

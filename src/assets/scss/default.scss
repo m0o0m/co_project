@@ -705,43 +705,11 @@ body {
 }
 
 /*投注记录*/
-.bettingRecord {
-  padding-top: rem(63);
-}
+//.bettingRecord {
+//  padding-top: rem(63);
+//}
 
-.betRecord_top {
-  padding: 0 rem(12);
-  ul {
-    display: flex;
-    -webkit-display: flex;
-    flex-direction: row;
-    -webkit-flex-direction: row;
-    border-bottom: rem(1) solid #DCB976;
-    li {
-      flex: 1;
-      text-align: center;
-      a {
-        font-size: rem(12);
-        color: #FFDC99;
-        width: rem(59);
-        height: rem(29);
-        line-height: rem(29);
-        display: inline-block;
-      }
-    }
-    li.on {
-      a {
-        color: #180B0B;
-        background: linear-gradient(top, #F0DDAE, #DCB976);
-        background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
-        background: -moz-linear-gradient(top, #F0DDAE, #DCB976);
-        background: -ms-linear-gradient(top, #F0DDAE, #DCB976);
-        border-top-left-radius: rem(5);
-        border-top-right-radius: rem(5);
-      }
-    }
-  }
-}
+
 
 .SecondaryNav {
   width: rem(35);
@@ -1585,53 +1553,53 @@ body {
 }
 
 /*2017-10-31*/
-.beimg_section.pcddBeimg.beImgSection_liu section {
-  p {
-    position: relative;
-    line-height: rem(25);
-    font-size: rem(18);
-    width: rem(35);
-    height: rem(35);
-    span {
-      width: 100%;
-    }
-    span:last-child {
-      position: absolute;
-      bottom: rem(-5);
-      left: 0;
-      font-size: rem(10);
-    }
-  }
-  p:nth-of-type(3):after {
-    content: "";
-  }
-  p:last-of-type {
-    margin-left: rem(15);
-    position: relative;
-    overflow: visible;
-  }
-  p:last-of-type:after {
-    content: "+";
-    position: absolute;
-    left: rem(-75);
-    top: rem(5);
-  }
-}
+//.beimg_section.pcddBeimg.beImgSection_liu section {
+//  p {
+//    position: relative;
+//    line-height: rem(25);
+//    font-size: rem(18);
+//    width: rem(35);
+//    height: rem(35);
+//    span {
+//      width: 100%;
+//    }
+//    span:last-child {
+//      position: absolute;
+//      bottom: rem(-5);
+//      left: 0;
+//      font-size: rem(10);
+//    }
+//  }
+//  p:nth-of-type(3):after {
+//    content: "";
+//  }
+//  p:last-of-type {
+//    margin-left: rem(15);
+//    position: relative;
+//    overflow: visible;
+//  }
+//  p:last-of-type:after {
+//    content: "+";
+//    position: absolute;
+//    left: rem(-75);
+//    top: rem(5);
+//  }
+//}
 
 /*首页背景图更改*/
-.indexMian {
-  background: url('../images/index_tradition.png') bottom center no-repeat;
-  background-size: 100% auto;
-}
+//.indexMian {
+//  background: url('../images/index_tradition.png') bottom center no-repeat;
+//  background-size: 100% auto;
+//}
 
-.indexMian.indexBack {
-  background: url('../images/index_board.png') center center no-repeat;
-  background-size: 100% auto;
-}
-
-.bettingRecord .betRecord_bd {
-  padding-top: 0;
-}
+//.indexMian.indexBack {
+//  background: url('../images/index_board.png') center center no-repeat;
+//  background-size: 100% auto;
+//}
+//
+//.bettingRecord .betRecord_bd {
+//  padding-top: 0;
+//}
 
 /*APP下载*/
 .advertisement {
