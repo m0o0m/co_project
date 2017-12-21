@@ -27,7 +27,7 @@ export default {
 
     creditLow(self){
 	  let credFlag = false;
-      self._Util.showConfirm(self, {content: '余额不足，请充值?'}, action => {
+      self._Util.showConfirm(self, {content: '余额不足，请充值'}, action => {
           if (!action) return;
           self.$router.push({name: 'addMoney'});
       });

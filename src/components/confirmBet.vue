@@ -156,7 +156,9 @@
         this.comfirmPageId = gamid;
       },
       placeOrder: function () {
-        let url = location.href;
+	      let that = this;
+
+	      let url = location.href;
         sessionStorage.setItem('historyurl', JSON.stringify({'url': url, "status": 1}));
 
         if (this.$parent.stopBet) {
@@ -164,6 +166,20 @@
           return;
         }
         if (this._LotteryUtil.lotteryCheckCount(this, this.orders, true)) return;
+
+
+	      if (that._Util.getUserInfo().is_test_player && this._Util.isLogin() && parseInt(that.$parent.$refs.pcddref.selectedAmount) > that.$parent.$refs.pcddref.dynamicBalance) {
+	      	that._Util.showAlert(that, {content: '余额不足，请注册正式账号进行游戏'}, () => {
+	      		that.$router.push({name: 'register'});
+	      		return;
+
+			      that.$parent.$refs.headerRef.toUrl = that._Api.LOCAL_HOST + 'lottery/login/register';
+			      that.$parent.$refs.headerRef.showOpenFrame = true;
+			      that.$parent.$refs.headerRef.showFrmBack = false;
+		      });
+		      return;
+	      }
+
         var orderData = {
           id: this.creditId,
           no: this.nextNoisser,
@@ -171,7 +187,6 @@
           total_amount: this.totalPrice,
           item: this.orders
         };
-        let that = this;
         that._Util.post(that, that._Api.POST_COLOR_SUBMINT, orderData, (data) => {
           that._Util.showAlert(that, {content: '投注成功'});
           that.$parent.$refs.headerRef.balanceAmount = data.amount;
@@ -187,10 +202,16 @@
           }, 1500);
         }, (data) => {
         	console.log(data);
-        	if (data.code == -1) {
-
+        	if (parseInt(data.code) === 10002) {
+		        that._Util.showConfirm(that, {content: data.msg}, (action) => {
+			        if (action) {
+				         that.$router.push({name: 'addMoney'});
+			        }
+		        });
+	        } else if (parseInt(data.code) === -1) {
+		        that._Util.showAlert(that, {content: data.msg});
 	        } else {
-            that._Util.showAlert(that, {content: '请登录'});
+		        that._Util.showAlert(that, {content: '请登录'});
 		        that.$parent.$refs.headerRef.toUrl = that._Api.LOCAL_HOST + 'lottery/login?name=' + that.$route.fullPath;
 		        that.$parent.$refs.headerRef.showOpenFrame = true;
 		        that.$parent.$refs.headerRef.showFrmBack = false;
