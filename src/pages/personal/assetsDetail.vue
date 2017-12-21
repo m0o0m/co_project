@@ -57,11 +57,9 @@
     </div>
   </div>
 </template>
-
 <script>
   //   import '../../assets/scss/adetails.scss';
 //  import '../../assets/scss/personal.scss';
-  
   export default {
     data() {
       return {
