@@ -31,7 +31,7 @@
                 <!--确认密码右侧的小叉<span style="float:right; color:#666;position: absolute; right:0.5rem;"></span>-->
               </p>
             </div>
-            <div @click="save()" class="loginHostBtn"><a href="javascript:void(0);">确定添加</a></div>
+            <div @click="save()" class="loginHostBtn confirmBtn"><a href="javascript:void(0);">确定添加</a></div>
             <div v-if="result" class="explain">
               <p class="mo-p1">{{result.commision_info.title}}：</p>
               <p class="mo-p2">{{result.commision_info.content}}</p>
