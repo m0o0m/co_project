@@ -1,39 +1,33 @@
 <template>
   <div class="moneyTemplateed">
-    <div class="managMementClsTemplate">
-      <div class="per">
-        <ul class="per_leftd">
-          <li @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
-          <li><p>提现</p></li>
-          <li><a href="#"></a></li>
-        </ul>
+    <!--<div class="managMementClsTemplate">-->
+      <div class="commonNavBar">
+        <div class="loginTitle"><p>提现</p></div>
+        <div class="loginIcon left" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon right time"  @click="$router.push({name:'moneyHistory'});"><a href="javascript:void(0)"></a></div>
       </div>
-      <div class="rechargeRight" @click="$router.push({name:'moneyHistory'});" style="top:0.41379rem"><a
-          href="javascript:void(0)"></a></div>
-      <div class="per_top"></div>
-      <div class="Withdrawals">
-        <div class="bank_card bank_card_moneyCard">
+      <div class="withdrawalsBody">
+        <div class="withdrawalsCar">
           <section>
             <p>{{result.bank_name}}<span>(尾号**{{result.card_number}})</span></p>
             <p>单笔最小提现金额为¥<span>100</span></p>
           </section>
-        
         </div>
-        <ul class="On-line On_line_moneyCard">
-          <li>提现金额<p><input v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"></p></li>
-          <li>提现密码<p><input v-model="bank.pay_password" type="password" value="" placeholder="请输入您的提现密码"></p>
+        <ul>
+          <li class="displayFlex withdrawList"><p>提现金额</p><p><input v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"></p></li>
+          <li class="displayFlex withdrawList"><p>提现密码</p><p><input v-model="bank.pay_password" type="password" value="" placeholder="请输入您的提现密码"></p>
           </li>
-          <li><p><span @click="forgotPwd()">忘记提现密码?</span></p></li>
-          <li><a href="javascript: void(0);" @click="save()">确认提现</a></li>
+          <li class="forgetPaw"><p><a @click="forgotPwd()">忘记提现密码?</a></p></li>
+          <li class="trueBtn"><a href="javascript: void(0);" @click="save()">确认提现</a></li>
         </ul>
         <div class="security"><p>账户资金安全由棋牌彩票来保障</p></div>
       </div>
-    </div>
+    <!--</div>-->
   </div>
 </template>
 
 <script>
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/personal.scss';
   
   export default {
     data() {
