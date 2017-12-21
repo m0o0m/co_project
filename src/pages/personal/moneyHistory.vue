@@ -3,7 +3,6 @@
       <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>提现记录</p></div>
         <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
-      <div class="loginIcon left" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div><!--@click="_Util.back($router)-->
     </div>
     <div v-infinite-scroll="loadMore"
          infinite-scroll-disabled="busy"
