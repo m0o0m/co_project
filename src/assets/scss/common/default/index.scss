@@ -14,14 +14,6 @@ body {
 .view {
   height: 100%;
 }
-
-.displayFlex {
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: row;
-  -webkit-flex-direction: row;
-}
-
 input::-webkit-input-placeholder {
   color: #fff;
   opacity: 0.8;
@@ -94,4 +86,71 @@ input::-webkit-input-placeholder {
 
 .loginIcon.left.flt {
   top: rem(3);
+}
+
+
+/*输入框样式(左边文字，右边input)*/
+.displayFlex {
+  margin: rem(10) 0;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  p {
+    font-size: rem(14);
+    color: #FFFFFF;
+    line-height: rem(42);
+  }
+  p:first-of-type {
+    min-width: rem(60);
+    text-align: right;
+    padding-right: rem(10);
+  }
+  p:nth-of-type(2) {
+    background: rgba(0, 0, 0 ,0.5);
+    border: 1px solid #BEB284;
+    border-radius: rem(2);
+    height: rem(42);
+    flex: 1;
+  }
+  input {
+    font-size: rem(14);
+    color: #FFFFFF;
+    text-indent: rem(10);
+    width: 100%;
+    background: transparent;
+    border: none;
+  }
+}
+
+.displayFlex:last-child {
+  margin-bottom: rem(5);
+}
+
+/*弹框样式*/
+.Popup {position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  width:100%; height: 100%; display: none; z-index: 20;}
+
+.Popup2 {position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  width:100%; height: 100%; z-index: 20;}
+
+.Popup_text {height: 100%;}
+.Popup_text .Popup_text_wz {background: rgba(40,40,40,0.9); display: inline-block; min-width: 7.5rem; max-width: 10rem; padding: 0.5rem; font-size: 0.55rem; color: #ffffff; text-align: center; border-radius: 0.3rem;}
+.indexJust {
+  display: box;
+  display: -webkit-box;
+  box-pack: center;
+  -webkit-box-pack: center;
+  box-align: center;
+  -webkit-box-align: center;
+
+}
+.indexDisplay {
+  display: -webkit-box;
+  display: box;
+}
+.indexFiex {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  flex: 1;
 }

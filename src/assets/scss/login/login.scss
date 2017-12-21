@@ -21,39 +21,6 @@ $designWidth: 375;
   padding-top: rem(80);
 }
 
-.loginLi {
-  margin: rem(10) 0;
-  p {
-    font-size: rem(14);
-    color: #FFFFFF;
-    line-height: rem(42);
-  }
-  p:first-of-type {
-    min-width: rem(60);
-    text-align: right;
-    padding-right: rem(10);
-  }
-  p:nth-of-type(2) {
-    background: rgba(0, 0, 0 ,0.5);
-    border: 1px solid #BEB284;
-    border-radius: rem(2);
-    height: rem(42);
-    flex: 1;
-  }
-  input {
-    font-size: rem(14);
-    color: #FFFFFF;
-    text-indent: rem(10);
-    width: 100%;
-    background: transparent;
-    border: none;
-  }
-}
-
-.loginLi:last-child {
-  margin-bottom: rem(5);
-}
-
 .forgetPaw {
   text-align: right;
 }
