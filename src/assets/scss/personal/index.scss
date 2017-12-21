@@ -213,20 +213,21 @@ $designWidth: 375;
     }
   }
 }
+
 /*提现*/
 .withdrawalsBody {
   padding-top: rem(80);
   padding-bottom: rem(20);
-  width:94%;
-  margin-left:3%;
+  width: 94%;
+  margin-left: 3%;
   max-height: 76%;
   overflow-y: scroll;
   .withdrawalsCar {
     padding: rem(15);
     margin: rem(15);
     display: flex;
-    background: radial-gradient(top,#DDC09C ,#D0A979 );
-    background: -webkit-radial-gradient(top ,#DDC09C,#D0A979 );
+    background: radial-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     section {
       padding: 0 rem(20);
@@ -251,37 +252,37 @@ $designWidth: 375;
     }
   }
   .withdrawList {
-     padding:0 rem(15);
-     margin: rem(10) 0;
-     p {
-       font-size: rem(14);
-       color: #FFFFFF;
-       line-height: rem(42);
-     }
-     p:first-of-type {
-       min-width: rem(60);
-       text-align: right;
-       padding-right: rem(10);
-     }
-     p:nth-of-type(2) {
-       background: rgba(0, 0, 0 ,0.5);
-       border: 1px solid #BEB284;
-       border-radius: rem(2);
-       height: rem(42);
-       flex: 1;
-     }
-     input {
-       font-size: rem(14);
-       color: #FFFFFF;
-       text-indent: rem(10);
-       width: 100%;
-       background: transparent;
-       border: none;
-     }
-   }
+    padding: 0 rem(15);
+    margin: rem(10) 0;
+    p {
+      font-size: rem(14);
+      color: #FFFFFF;
+      line-height: rem(42);
+    }
+    p:first-of-type {
+      min-width: rem(60);
+      text-align: right;
+      padding-right: rem(10);
+    }
+    p:nth-of-type(2) {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid #BEB284;
+      border-radius: rem(2);
+      height: rem(42);
+      flex: 1;
+    }
+    input {
+      font-size: rem(14);
+      color: #FFFFFF;
+      text-indent: rem(10);
+      width: 100%;
+      background: transparent;
+      border: none;
+    }
+  }
   .forgetPaw {
     text-align: right;
-    padding:0 rem(15);
+    padding: 0 rem(15);
     a {
       line-height: rem(24);
       font-size: rem(14);
@@ -290,14 +291,14 @@ $designWidth: 375;
     }
   }
   .trueBtn {
-    background: radial-gradient(top,#DDC09C ,#D0A979 );
-    background: -webkit-radial-gradient(top ,#DDC09C,#D0A979 );
+    background: radial-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     height: rem(44);
     line-height: rem(44);
     text-align: center;
     margin: rem(15) 10%;
-     width: 80%  ;
+    width: 80%;
     a {
       font-size: rem(14);
       color: #65431D;
@@ -348,8 +349,8 @@ $designWidth: 375;
   max-height: 76%;
   overflow-y: scroll;
   .moneyHistoryLI {
-    background-image: linear-gradient(-180deg, rgba(0,0,0,0.24) 0%,rgba(25,15,36,0.5) 97%);
-    background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.24) 0%, rgba(25,15,36,0.5) 97%);
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
+    background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
     height: auto;
     overflow: hidden;
     margin-bottom: 1px;
@@ -411,20 +412,20 @@ $designWidth: 375;
 
 /*资金明细*/
 .assetsDeList {
-  padding-top:rem(55);
-  height:90%;
+  padding-top: rem(55);
+  height: 90%;
   overflow: hidden;
   width: 94%;
-  margin-left:3%;
+  margin-left: 3%;
   .examineMianBody {
     max-height: 90%;
     overflow: auto;
     .assetsDeListLI {
-      background-image: linear-gradient(-180deg, rgba(0,0,0,0.24) 0%,rgba(25,15,36,0.5) 97%);
-      background-image: -webkit-linear-gradient(-180deg, rgba(0,0,0,0.24) 0%, rgba(25,15,36,0.5) 97%);
+      background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
+      background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
       height: auto;
       overflow: hidden;
-      margin-bottom:1px;
+      margin-bottom: 1px;
       padding: rem(15);
       a {
         display: block;
@@ -491,7 +492,6 @@ $designWidth: 375;
   }
 }
 
-
 /*开户返佣*/
 .perRebate {
   width: 100%;
@@ -517,7 +517,6 @@ $designWidth: 375;
   }
   span:nth-child(2) {
     float: right;
-    margin-right: rem(20);
   }
   span.on {
     background-image: linear-gradient(#F0DDAE 0%, #DCB976 100%);
@@ -619,19 +618,16 @@ $designWidth: 375;
             text-align: center;
           }
         }
-        &:last-child{
+        &:last-child {
           border-right: 1px solid rgba(255, 255, 255, 0.5);
         }
       }
     }
   }
-  .confirmBtn{
-    width: 90%;
-    margin: 0 auto;
-  }
 }
+
 .rebateOpenTab {
-  padding: rem(30) rem(30) 0 ;
+  padding: rem(30) rem(30) 0;
   .share {
     border: 1px solid #DCB976;
     background: rgba(40, 37, 38, 0.80);
@@ -719,3 +715,12 @@ $designWidth: 375;
     margin-top: rem(10)
   }
 }
+
+/*登陆密码管理*/
+.loginPassManageContent {
+  padding: rem(80) rem(30);
+  .completeBtn {
+    margin-top: rem(20);
+  }
+}
+
