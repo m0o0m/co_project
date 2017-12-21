@@ -128,5 +128,93 @@ $designWidth: 375;
 
 }
 
+/*公告列表*/
+.perCenterAnlist {
+  padding: rem(20) rem(15);
+  .perContentCls {
+
+  }
+}
+
+.examineMianAnlist {
+  padding: rem(0) rem(1) 0;
+  overflow-y: scroll;
+  margin-top: rem(55);
+  ul {
+    li {
+      box-sizing: border-box;
+      margin-bottom:rem(2);
+      a {
+        background: transparent;
+        display: block;
+        .examine_article_anlist {
+          height: rem(40);
+          position: relative;
+          background: linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2));
+          background: -webkit-linear-gradient(top, rgba(0, 0, 0, .1), rgba(0, 0, 0, .2));
+          border: 1px solid transparent;
+          padding: rem(14);
+          font-size: rem(14);
+          color: #FFDC99;
+          font-family: arial;
+          letter-spacing: 0;
+          line-height: rem(14);
+          section {
+            p:first-child {
+              margin-bottom: rem(10);
+            }
+            p:last-of-type {
+              font-size: rem(10);
+              opacity: 0.8;
+              letter-spacing: 0;
+              line-height: rem(10);
+            }
+          }
+          i{
+            display: inline-block;
+            height:rem(10);
+            position: absolute;
+            right: rem(10);
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*公告详情*/
+.annDetailsMian {
+  padding: rem(10);
+  .lotteryDateed_detail {
+    background: rgba(0, 0, 0, 0.2);
+    padding: rem(20);
+    overflow-y: scroll;
+    .lotteryData_titleed {
+      font-size: rem(18);
+      color: #FFDC99;
+      line-height: rem(24);
+      p:last-of-type {
+        font-size: rem(12);
+        color: #FFDC99;
+        line-height: rem(24);
+        span {
+          font-family: Arial;
+        }
+      }
+    }
+    .lotteryData_content_text {
+      color: #FFDC99;
+      p {
+        margin: rem(10) auto;
+        font-size: rem(14);
+        line-height: rem(24);
+        font-family: Arial;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
 
 

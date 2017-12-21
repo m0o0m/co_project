@@ -1,14 +1,13 @@
 <template>
-  <div class="annWidth">
-    <div class="per">
-      <ul class="per_leftd isbug">
-        <li id="liso" class="isbug" @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
-        <li><p class="incors">公告列表</p></li>
-      </ul>
+  <div class="annList">
+    <div class="commonNavBar positionFixed">
+      <div class="loginTitle"><p>公告列表</p></div>
+      <div class="loginIcon left" @click="$router.go(-1);"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon right"  @click="loginService"><a href="javascript:void(0)"></a></div>
     </div>
-    <div class="per_center_anlist">
-      <div id="per_content_cls" class="per_content_cls">
-        <div class="examineMian_anlist"
+    <div class="perCenterAnlist">
+      <div id="per_content_cls" class="perContentCls">
+        <div class="examineMianAnlist"
              v-infinite-scroll="loadMore"
              infinite-scroll-disabled="busy"
              infinite-scroll-distance="50"
@@ -22,6 +21,7 @@
                     <p><span>{{v.title}}</span></p>
                     <p><span>{{v.create_time}}</span></p>
                   </section>
+                  <i class="commonArrowsRight"></i>
                 </article>
               </a>
             </li>
@@ -37,7 +37,7 @@
 
 <script>
   
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/personal.scss';
   
   export default {
     data() {
@@ -54,9 +54,9 @@
     mounted() {
       let that = this;
       that.init();
-      that._Util.setCss('.examineMian_anlist', {"height": (10 / 12)}, "*");
-      that._Util.setCss('.annWidth', {"height": 1}, "*");
-      that._Util.needClickFc('per_content_cls');
+      that._Util.setCss('.examineMianAnlist', {"height": (10 / 12)}, "*");
+      that._Util.setCss('.annList', {"height": 1}, "*");
+      that._Util.needClickFc('perContentCls');
     },
     
     methods: {
@@ -64,7 +64,6 @@
         let that = this;
         if (!that.busy) {
           that.busy = true;
-          
           that._Util.post(that, that._Api.POST_PERSONAL_ANN_LIST, that.params, (data) => {
             that.busy = false;
             that.resultList = that.resultList.concat(data.data || []);
@@ -78,24 +77,22 @@
           });
         }
       },
-      
       loadMore() {
         let that = this;
         that.init();
       },
-      
       toDetail(v) {
         this.$router.push({name: 'annDetail', query: {id: v.id}});
+      },
+      loginService() {
+        let that = this;
+        that._Util.post(that, that._Api.POST_CUSTOMER_SERVER, {name: 'kf'}, (data) => {
+          window.location.href = data.value;
+        })
       }
     }
   }
 </script>
 
 <style lang="scss">
-  /*body {*/
-  /*overflow: hidden;*/
-  /*}*/
-  /*.view {*/
-  /*height: 100%;*/
-  /*}*/
 </style>
