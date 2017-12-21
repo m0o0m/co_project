@@ -6,7 +6,7 @@
         <div class="loginIcon left" @click="back()"><a href="javascript:void(0)"></a></div>
         <div class="loginIcon right"  @click="loginService"><a href="javascript:void(0)"></a></div>
       </div>
-      <div class="loginName">
+      <div class="loginName" v-if=" showXy == '1'">
         <ul>
           <li class="loginLi displayFlex">
             <p>用户名</p>
