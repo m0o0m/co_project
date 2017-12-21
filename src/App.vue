@@ -19,10 +19,12 @@
 	import './assets/scss/rechargeCenter/index.scss'
 	import './assets/scss/betting/index.scss'
 	import './assets/scss/personal/index.scss'
-  import './assets/scss/login/login.scss'
+  /*规则*/
   import './assets/scss/rules/index.scss'
   /*开奖大厅*/
   import './assets/scss/common/theLottery/index.scss'
+  /*登录*/
+	import './assets/scss/login/login.scss'
 //	import './assets/scss/index.scss'
 
 	require('./assets/js/jquery.fly.min');
