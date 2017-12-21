@@ -20,6 +20,7 @@
 	import './assets/scss/betting/index.scss'
 	import './assets/scss/personal/index.scss'
   import './assets/scss/login/login.scss'
+  import './assets/scss/rules/index.scss'
   /*开奖大厅*/
   import './assets/scss/common/theLottery/index.scss'
 //	import './assets/scss/index.scss'

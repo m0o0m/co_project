@@ -231,7 +231,7 @@ export default {
     let startTime = new Date();
     if (that.isLocalHost) {
       //登陆状态锁定
-      //param.bind_account = 1;
+      param.bind_account = 1;
     }
     
     /*self.$http.post(url, param).then((response) => {

@@ -2,15 +2,15 @@
 @import '../rem';
 
 $designWidth: 375;
-body, html {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; /* ios5+ */
-}
+//body, html {
+//  overflow-y: scroll;
+//  -webkit-overflow-scrolling: touch; /* ios5+ */
+//}
 
-#app {
-  background-size: cover;
-  position: relative;
-}
+//#app {
+//  background-size: cover;
+//  position: relative;
+//}
 
 .lotteryRules {
   background-color: #272324;
@@ -25,7 +25,7 @@ body, html {
     .title {
       width: 100%;
       height: rem(56);
-      background: url("../../../assets/images/feedBackMessage/messagelist_top_bg.png") center bottom no-repeat;
+      background: url("../../images/feedBackMessage/messagelist_top_bg.png") center bottom no-repeat;
       background-size: cover;
       li:first-child {
         position: absolute;
@@ -33,7 +33,7 @@ body, html {
         top: rem(8);
         width: rem(35);
         height: rem(35);
-        background: url("../../../assets/images/feedBackMessage/left_arrow.png") center no-repeat;
+        background: url("../../images/feedBackMessage/left_arrow.png") center no-repeat;
         background-size: cover;
       }
       li {
@@ -50,12 +50,12 @@ body, html {
   .lotteryRulesContent {
     background-color: #272324;
     padding-top: rem(56);
-    .lottery_rules_content_box {
+    .lotteryRulesContentBox {
       padding: rem(15);
       height: 100%;
       background-color: #272324;
       overflow-y: scroll;
-      .lottery_rules_content {
+      .lotteryRulesContents {
         h3 {
           padding-left: rem(20);
           line-height: rem(46);
@@ -92,7 +92,7 @@ body, html {
                 transform: translateY(-50%) rotate(0deg);
                 width: rem(20);
                 height: rem(15);
-                background: url("../../../assets/images/rules/bTArrow.png") center no-repeat;
+                background: url("../../images/rules/bTArrow.png") center no-repeat;
                 background-size: cover;
               }
               .arrow.upArrow {
@@ -176,6 +176,6 @@ body, html {
   }
 }
 
-.lotteryRules .lotteryRulesContent .lottery_rules_content_box .lottery_rules_content ul li p .arrowRotate {
+.lotteryRules .lotteryRulesContent .lotteryRulesContentBox .lotteryRulesContents ul li p .arrowRotate {
   transform: translateY(-50%) rotate(180deg);
 }
