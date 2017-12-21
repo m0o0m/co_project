@@ -18,7 +18,10 @@ input::-webkit-input-placeholder {
   color: #fff;
   opacity: 0.8;
 }
-
+img {
+  width: 100%;
+  height: auto;
+}
 .relatively {
   position: relative;
 }
@@ -92,6 +95,8 @@ input::-webkit-input-placeholder {
 .loginTitle p {
   width: rem(109);
   display: inline-block;
+  font-size: rem(16);
+  color: #FFDC99;
 }
 
 .loginIcon {

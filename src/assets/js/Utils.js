@@ -5,6 +5,10 @@ export default {
   isLogin() {
     return (this.getStorage('isLogin', true) == 'true');
   },
+
+	getUserInfo() {
+  	return this.getStorage('userInfo', true) || {};
+	},
   
   init() {
     Number.prototype.toFixed = function (d) {
@@ -231,6 +235,7 @@ export default {
     let startTime = new Date();
     if (that.isLocalHost) {
       //登陆状态锁定
+
       param.bind_account = 1;
     }
     
