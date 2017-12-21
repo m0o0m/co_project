@@ -1,45 +1,132 @@
 @charset "utf-8";
 @import '../rem';
+
 $designWidth: 375;
-/*单行溢出*/
-.one-txt-cut {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+
+/*关于我们*/
+.aboutUs_img {
+  height: 100%;
+  padding-top: 20%;
 }
 
-.per_leftd {
+.aboutUs_images {
+  text-align: center;
+}
+
+.aboutUs_images img {
+  width: 80%;
+  display: inline-block;
+}
+
+.aboutUs_Version {
+  font-size: rem(18);
+  color: #ffffff;
+  text-align: center;
+  line-height: 1rem;
+  padding: 5% 0;
+  padding-top: rem(30);
+  font-family: Arial;
+  .aboutUs_version_bb {
+
+    p:last-child {
+      opacity: 0.8;
+      font-size: rem(14);
+      letter-spacing: 0;
+      margin-top: rem(8);
+    }
+  }
+
+}
+
+.aboutUs_version_list {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: rem(23);
+  ul {
+    li {
+      display: flex;
+      -webkit-display: flex;
+      flex-direction: row;
+      -webkit-flex-direction: row;
+      padding: rem(8);
+      background: rgba(0, 0, 0, 0.2);
+      margin: rem(2) 0;
+      box-sizing: border-box;
+      p:first-of-type {
+        flex: 1;
+        text-align: left;
+        font-size: rem(14);
+        color: #FFDC99;
+        background: url('../../../assets/images/aboutIcon01.png') left center no-repeat;
+        background-size: 0.9rem auto;
+        padding-left: 1.1rem;
+        span {
+          font-size: rem(10);
+          font-family: arial;
+          margin-left: 0.1rem;
+          color: #ffffff;
+        }
+
+      }
+      p:last-of-type {
+        border: 1px solid #FFDC99;
+        padding: 0 rem(8);
+        font-size: rem(12);
+        display: inline-block;
+        border-radius: rem(4);
+        color: #FFDC99;
+      }
+
+    }
+    li:nth-child(2) {
+      p:first-of-type {
+        background: url('../../../assets/images/aboutIcon02.png') left center no-repeat;
+        background-size: 0.9rem auto;
+      }
+
+    }
+    li:nth-child(3) {
+      p:first-of-type {
+        background: url('../../../assets/images/aboutIcon03.png') left center no-repeat;
+        background-size: 0.9rem auto;
+      }
+    }
+  }
+}
+
+.aboutUs_version_mun {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  bottom: 0;
   width: 100%;
-  padding-bottom: rem(10);
-  text-align: center;
-  z-index: 31;
 }
 
-.per_leftd li:nth-child(1) {
-  width: rem(32);
-  height: rem(32);
-  background: url('/src/assets/images/numberimg/fan.png') center no-repeat;
-  background-size: 100% 100%;
-  position: absolute;
-  left: 0px;
-  top: rem(10)
+.about_version_WXimg {
+  width: 3.2rem;
+  height: 3.2rem;
+  background: #f2f2f2;
+  margin: 0.65rem auto;
 }
 
-.per_leftd li:nth-child(2) {
-  margin-top: rem(15);
-  background: url('/src/assets/images/numberimg/toupe.png') center no-repeat;
-  background-size: rem(200);
+.about_version_texted {
+  width: 70%;
+  font-size: 0.45rem;
+  margin: 0 auto;
+  line-height: 0.8rem;
+
+  p:last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  p:first-of-type {
+    font-size: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+
+  span {
+    font-family: arial;
+  }
 
 }
 
-.per_leftd li:nth-child(2) p {
-  color: rgb(255, 220, 153);
-  line-height: rem(40);
-  font-size: rem(22);
-  text-align: center;
-  margin-top: rem(5);
-  height: rem(50)
-}
+
+
