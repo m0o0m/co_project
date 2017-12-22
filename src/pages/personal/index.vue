@@ -12,8 +12,9 @@
                 <input v-if="!userInfo.is_test_player" id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
                        class="inputFile"
                        accept="image/jpeg,image/png,image/bmp,image/gif">
-                <img :src="headImg" alt="">
-              </section>
+                <div><img :src="headImg" alt=""></div>
+
+              </section><div class="outerRing"></div>
               <section>
                 <!--| {{_Util.formatPhone(result.phone || '')}}-->
                 <p><span style="font-family: Arial;">{{result.username}}</span></p>

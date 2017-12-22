@@ -800,12 +800,24 @@ $designWidth: 375;
           }
         }
       }
+      .outerRing {
+        position: relative;
+        border-radius: 50%;
+        width: rem(50);
+        height: rem(50);
+        border: rem(2) solid #ffdc99;
+        border-radius:50%;
+        left: -2.1rem;
+        top: -0.15rem;
+
+      }
       section.one {
         position: relative;
         border-radius: 50%;
         width: rem(50);
         height: rem(50);
         display: inline-block;
+        z-index: 5;
         .inputFile {
           width: 100%;
           height: 100%;
@@ -818,6 +830,7 @@ $designWidth: 375;
           left: 0;
           top: 0;
         }
+        
       }
     }
     .personalList {
