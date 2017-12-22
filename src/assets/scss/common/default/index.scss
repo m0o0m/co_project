@@ -155,10 +155,16 @@ img {
   background-size: rem(35) auto;
   top: rem(3);
 }
+.loginIcon.right.xieyi {
+  right: 0;
+  background: url('../../../images/login/xieyi.png') center center no-repeat;
+  background-size: rem(25) auto;
+  top: rem(3);
+}
 .loginIcon.right.smallBell {
   right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
-  background-size: rem(35) auto;
+  background-size: rem(25) auto;
   top: rem(3);
 }
 .loginIcon.right.choose {
