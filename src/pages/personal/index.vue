@@ -2,8 +2,8 @@
   <div class="personal windowSize">
         <div class="commonNavBar positionFixed">
           <div class="backPassTitle"><p>个人中心</p></div>
-          <div class="loginIcon left flt individual" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
-          <div class="loginIcon right "  @click="$router.push({name:'moneyHistory'});"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon left flt individual" @click="$router.push({name:'announcement'});"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon right " @click="loginService"><a href="javascript:void(0)"></a></div>
         </div>
         <div class="personalMian">
           <div class="personalMianTit">
@@ -99,7 +99,7 @@
             </div>
           </div>
         </div>
-      <HomeFoter></HomeFoter>
+      <!--<HomeFoter></HomeFoter>-->
   </div>
 
 </template>

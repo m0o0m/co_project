@@ -1,9 +1,9 @@
 <template>
-    <div class="monum">
+    <div class="loginLi displayFlex" :class="{'withdrawPassword':$route.query.type == 3||$route.query.type == 5}">
         <p>验证码</p>
         <p>
             <input type="text" v-model="code" placeholder="请输入6位短信验证码">
-            <span @click="getCode()">{{newEntityText}}</span>
+            <span @click="getCode()" class="verificationCode" >{{newEntityText}}</span>
         </p>
     </div>
 </template>

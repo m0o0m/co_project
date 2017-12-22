@@ -21,22 +21,22 @@
                     <p>
                       平台官网 <span id="cardNo1">www.qpcp.com</span>
                     </p>
-                    <p @click="copyInfos('cardNo1')" id="copy_btns" data-clipboard-action="copy"
-                       data-clipboard-target="#cardNo1">复制</p>
+                    <p @click="copyUrl( 'cardNo1' )" class="copy_btns"  data-clipboard-action="copy"
+                       data-clipboard-target="#cardNo1" style="float: right;">复制</p>
                   </li>
                   <li>
                     <p>
                       客服QQ <span id="cardNo2">97966666</span>
                     </p>
-                    <p @click="copyInfos('cardNo2')" id="copy_btns" data-clipboard-action="copy"
-                       data-clipboard-target="#cardNo2">复制</p>
+                    <p @click="copyUrl( 'cardNo2' )" class="copy_btns" data-clipboard-action="copy"
+                       data-clipboard-target="#cardNo2" style="float: right;">复制</p>
                   </li>
                   <li>
                     <p>
                       客服微信 <span id="cardNo3">97966666</span>
                     </p>
-                    <p @click="copyInfos('cardNo3')" id="copy_btns" data-clipboard-action="copy"
-                       data-clipboard-target="#cardNo3">复制</p>
+                    <p @click="copyUrl( 'cardNo3' )" class="copy_btns" data-clipboard-action="copy"
+                       data-clipboard-target="#cardNo3" style="float: right;">复制</p>
                   </li>
                 </ul>
               </div>
@@ -71,17 +71,19 @@
       this._Util.setCss('#aboutUs',{"height": 1},"*");
     },
     methods: {
-      copyInfos(id) {
-        var targetText = $(id).text();
-        var clipboard = new Clipboard('#copy_btns');
-        clipboard.on('success', function (e) {
-          console.info('Action:', e.action);
-          console.info('Text:', e.text);
-          console.info('Trigger:', e.trigger);
-          e.clearSelection();
-        });
-        this._Util.showAlert(this, {content: '复制成功'});
-      },
+	    copyUrl(id) {
+		    let co = require('../../assets/js/clipboard.min')
+		    var targetText = $('#' + id + '').text();
+		    var clipboard = new co('.copy_btns');
+		    console.log(clipboard)
+		    clipboard.on('success', function (e) {
+			    console.info('Action:', e.action);
+			    console.info('Text:', e.text);
+			    console.info('Trigger:', e.trigger);
+			    e.clearSelection();
+		    });
+		    this._Util.showAlert(this, {content: '复制成功'});
+	    },
       loginService() {
         let that = this;
         that._Util.post(that, that._Api.POST_CUSTOMER_SERVER, {name: 'kf'}, (data) => {
