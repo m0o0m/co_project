@@ -43,7 +43,6 @@
                 <section>
                   <p><span>{{betR.action_time}}</span></p>
                 </section>
-
               </a>
               <!--</router-link>-->
             </li>
