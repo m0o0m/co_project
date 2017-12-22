@@ -233,7 +233,7 @@
         "title": "公告列表",
         "name": "announcement",
         "path": "/lottery/personal/announcement",
-        "filePath": "/color/personal/announcement",
+        "filePath": "/personal/announcement",
         "icon": ""
       },
       {
