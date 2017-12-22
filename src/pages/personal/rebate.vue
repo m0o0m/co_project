@@ -6,32 +6,35 @@
     </div>
     <div class="rebateContent">
       <div class="perRebate adds">
-        <div id="subnav" class="clearfix">
-          <span @click="type = 0" :class="{on: type == 0}">直接开户</span>
-          <span @click="type = 1" :class="{on: type == 1}">分享开户</span>
+        <div class="perRebateSubnav">
+          <div id="subnav" class="clearfix">
+            <span @click="type = 0" :class="{on: type == 0}">直接开户</span>
+            <span @click="type = 1" :class="{on: type == 1}">分享开户</span>
+          </div>
         </div>
+       
         <div v-if="!type" class="rebateUser">
           <div>
-            <div class="monum">
+            <div class="loginLi displayFlex">
               <p>用户名</p>
               <p>
                 <input type="text" v-model="user.username" placeholder="请输入6～12位数字或字母">
               </p>
             </div>
-            <div class="monum">
+            <div class="loginLi displayFlex">
               <p>密码</p>
               <p>
                 <input type="password" v-model="user.password" placeholder="请输入6～12位数字或字母">
               </p>
             </div>
-            <div class="monum">
+            <div class="loginLi displayFlex">
               <p>确认密码</p>
               <p style=" position: relative;">
                 <input type="password" v-model="passwordTemp" placeholder="请再次输入您的密码">
                 <!--确认密码右侧的小叉<span style="float:right; color:#666;position: absolute; right:0.5rem;"></span>-->
               </p>
             </div>
-            <div @click="save()" class="loginHostBtn confirmBtn"><a href="javascript:void(0);">确定添加</a></div>
+            <div @click="save()" class="loginHostBtn confirmBtn"><a href="javascript:void(0);">确定</a></div>
             <div v-if="result" class="explain">
               <p class="mo-p1">{{result.commision_info.title}}：</p>
               <p class="mo-p2">{{result.commision_info.content}}</p>
@@ -70,7 +73,7 @@
             <!-- <input id="codeUrl" type="text" v-model="shareResult.share_url"> -->
             <span id="codeUrls" class="one-txt-cut">{{shareResult.share_url}}</span>
             <p @click="copyUrl( 'codeUrls' )" class="copy_btns" id="copy_btns" data-clipboard-action="copy"
-               data-clipboard-target="#codeUrls" style="float: right;">复制</p>
+               data-clipboard-target="#codeUrls">复制</p>
           </div>
           <div class=" adopt">通过以上链接或扫二维码注册的用户</div>
         </div>
