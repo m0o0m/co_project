@@ -93,9 +93,9 @@ $designWidth: 375;
   padding: 0 rem(15);
   ul {
     li {
-      //background: linear-gradient(top, rgba(35, 23, 40, 0.5), rgba(18, 14, 21, 0.9));
-      //background: -webkit-linear-gradient(top, rgba(35, 23, 40, 0.2), rgba(18, 14, 21, 0.3));
-      background: rgba(0, 0, 0, .3);
+      background: linear-gradient(top, rgba(35, 23, 40, 0.5), rgba(18, 14, 21, 0.9));
+      background: -webkit-linear-gradient(top, rgba(35, 23, 40, 0.2), rgba(18, 14, 21, 0.3));
+      //background: rgba(0, 0, 0, .3);
       height: auto;
       overflow: hidden;
       //filter: blur(rem(5));
@@ -103,6 +103,7 @@ $designWidth: 375;
       //filter: grayscale(50%);
       //-webkit-filter: brightness(0.30);
       //filter: brightness(0.30);
+      border-bottom: 1px solid rgba(232, 207, 157, 0.05);
       a {
         display: block;
         padding: rem(5) rem(10);
@@ -174,7 +175,7 @@ $designWidth: 375;
 .lotterySelect {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.52) 0%, #000000 100%);
+  background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.72) 0%, #000000 100%);
   z-index: 20;
 }
 
@@ -182,7 +183,7 @@ $designWidth: 375;
   height: 100%;
   section {
     width: 90%;
-    height: 65%;
+    height: 90%;
     background: rgba(40, 37, 38, 0.80);
     border-radius: rem(4);
     border: 1px solid #FFDC99;
@@ -196,7 +197,7 @@ $designWidth: 375;
     }
     ul {
       padding: 5%;
-      height: 70%;
+      height: 80%;
       overflow-y: scroll;
       li {
         width: 47.5%;
@@ -275,6 +276,156 @@ $designWidth: 375;
 
 .bettingRecordList section:last-child p {
   font-size: rem(10);
+}
+
+/*投注详情*/
+.bettingDetails {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 rem(15);
+}
+
+.betDetailsTitle {
+  margin-top: rem(60);
+  background: rgba(0, 0, 0, .4);
+  color: #FFDC99;
+  padding: rem(10);
+  font-size: rem(14);
+  line-height: rem(24);
+  section:first-child {
+    width: rem(58);
+    display: inline-block;
+    margin-right: rem(10);
+  }
+  section:nth-child(2) {
+    flex: 1;
+    padding-top: rem(5);
+    p:first-of-type {
+      span {
+        float: right;
+        font-size: rem(10);
+      }
+    }
+    p:nth-of-type(2) {
+      font-size: rem(18);
+      font-weight: bold;
+    }
+  }
+}
+
+.bettingContList {
+  background: rgba(0, 0, 0, .4);
+  color: #ffffff;
+  padding: rem(10);
+  font-size: rem(12);
+  line-height: rem(24);
+  margin-top: rem(10);
+}
+
+.bettingContList {
+  aside {
+    font-size: rem(12);
+    color: #FFDC99;
+  }
+  section {
+    padding: rem(5) 0;
+    p:first-of-type {
+      width: rem(60);
+      text-align: right;
+      margin-right: rem(10);
+    }
+    p:nth-of-type(2) {
+      color: #FFDC99;
+    }
+  }
+}
+
+.bettingDraw {
+  background: rgba(0, 0, 0, .4);
+  padding: rem(10);
+  margin-top: rem(10);
+  height: auto;
+}
+
+.bettingDraw ul {
+  padding: 0;
+}
+
+.bettingResultTitle {
+  font-size: rem(12);
+  color: #FFDC99;
+}
+
+.theLotteryList.BackTransparent {
+  background: transparent;
+}
+
+.commonArrowsBottom.displayInline {
+  display: inline-block;
+  padding-right: rem(20);
+}
+
+.lotteryRecord {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.recordBetting {
+  padding: rem(60) rem(15) rem(20) rem(15);
+}
+
+.recordResult {
+  background: linear-gradient(top, rgba(35, 23, 40, 0.5), rgba(18, 14, 21, 0.9));
+  background: -webkit-linear-gradient(top, rgba(35, 23, 40, 0.2), rgba(18, 14, 21, 0.3));
+  height: auto;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(232, 207, 157, 0.05);
+  a {
+    display: block;
+    padding: rem(5) rem(10);
+    font-size: rem(14);
+    color: #FFDC99;
+    line-height: rem(20);
+    padding-right: rem(20);
+    margin-right: rem(10);
+    span {
+      font-family: arial;
+    }
+    section {
+      .flexRecord {
+        flex: 1;
+        font-size: rem(10);
+        color: #FFDC99;
+        line-height: rem(24);
+      }
+    }
+    section:first-child {
+      p:first-of-type {
+        margin-right: rem(10);
+      }
+    }
+    section:nth-child(2) {
+      p:nth-of-type(2) {
+        font-size: rem(10);
+        color: #fff;
+      }
+    }
+    span.spanMarry {
+      font-size: rem(18);
+      color: #FFDC99;
+      font-weight: bold;
+    }
+    p.winCls {
+      color: #FFDC99;
+      strong {
+        background: #FFDC99;
+        color: #000;
+        border-radius: rem(1);
+        padding: 0 rem(1);
+        margin-right: rem(2);
+      }
+    }
+  }
 }
 
 /*下拉刷新*/

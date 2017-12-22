@@ -50,17 +50,8 @@
           </ul>
         </div>
       </mt-loadmore>
-      <!--<img src="../../../assets/images/icon_back.png" class="SecondaryNav" @click="changeSelect = !changeSelect"/>-->
-      <LotterySelect @bettingHidden="bettingHiddened" v-if="changeSelect"></LotterySelect>
-
-      <!--<div slot="top" class="mint-loadmore-top">-->
-        <!--&lt;!&ndash;↓&ndash;&gt;-->
-        <!--<span v-show="topStatus !== 'loading'" :class="{ 'is-rotate': topStatus === 'drop' }"></span>-->
-        <!--<span v-show="topStatus === 'loading'">-->
-              <!--<mt-spinner type="snake"></mt-spinner>-->
-            <!--</span>-->
-      <!--</div>-->
     </div>
+    <LotterySelect @bettingHidden="bettingHiddened" v-if="changeSelect"></LotterySelect>
   </div>
 </template>
 <script type="text/babel">
