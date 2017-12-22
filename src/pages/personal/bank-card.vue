@@ -8,13 +8,13 @@
       <div v-if="result.card_number" class="perCards">
         <div class="bankAdmination" id="top">
           <section>
-            <p style="padding-left: 0.2rem; background: none;">
-            <span
-                style="background: #ffffff; border: 0.1rem solid #ffffff; width: 0.75rem; height: 0.75rem; display: inline-block; border-radius: 50%; position: relative; top: 0.2rem; left: -0.2rem;"><img
-                :src="bankLogo"/></span>{{result.bank_name}}
+            <p>
+            <span>
+              <img :src="bankLogo"/></span>{{result.bank_name}}
             </p>
-            <p><span>****</span><span>****</span><span>****</span><span
-                style="font-family: Arial;">{{result.card_number}}</span></p>
+            <p><span>****</span><span>****</span><span>****</span>
+              <span>{{result.card_number}}</span>
+            </p>
           </section>
         </div>
       </div>
