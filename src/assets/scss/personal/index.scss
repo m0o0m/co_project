@@ -230,14 +230,13 @@ $designWidth: 375;
     background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     section {
-      padding: 0 rem(20);
       line-height: rem(32);
       flex: 1;
       p:nth-child(1) {
         background: url('../../images/numberimg/zhaohang.png') no-repeat;
         line-height: rem(26);
         background-size: rem(28);
-        font-size: rem(16);
+        font-size: rem(18);
         color: #65431D;
         padding-left: rem(32);
         font-weight: bold;
@@ -295,7 +294,7 @@ $designWidth: 375;
     background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     height: rem(44);
-    line-height: rem(44);
+    line-height: rem(40);
     text-align: center;
     margin: rem(15) 10%;
     width: 80%;
@@ -1482,7 +1481,6 @@ $designWidth: 375;
     -webkit-box-sizing: border-box;
     margin-top: rem(40);
     section {
-      padding: 0 rem(20);
       line-height: rem(32);
       float: left;
       p:nth-child(1) {
