@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "../../rem";
+
 $designWidth: 375;
 
 body, html, form {
@@ -11,17 +12,24 @@ body {
   background-size: 100% auto;
 }
 
+.spanArial {
+  font-family: Arial;
+}
+
 .view {
   height: 100%;
 }
+
 input::-webkit-input-placeholder {
   color: #fff;
   opacity: 0.8;
 }
+
 img {
   width: 100%;
   height: auto;
 }
+
 .relatively {
   position: relative;
 }
@@ -36,27 +44,32 @@ img {
   left: 0;
   z-index: 5;
 }
+
 /*清除浮动*/
 .clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
 }
+
 .clearfix:after {
   clear: both;
 }
+
 /*单行溢出*/
 .one-txt-cut {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 /*右箭头*/
 .commonArrowsRight {
   background: url('../../../images/arrow.png') right center no-repeat;
   background-size: rem(10) auto;
   padding-right: rem(12);
 }
+
 .commonArrowsBottom {
   background: url('../../../images/arrowBottom.png') right center no-repeat;
   background-size: rem(15) auto;
@@ -74,7 +87,7 @@ img {
 }
 
 /*顶部导航条样式*/
-.commonNavBar{
+.commonNavBar {
   position: fixed;
   left: 0;
   top: 0;
@@ -106,7 +119,7 @@ img {
     padding-right: rem(10);
   }
   p:nth-of-type(2) {
-    background: rgba(0, 0, 0 ,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: 1px solid #BEB284;
     border-radius: rem(2);
     height: rem(42);
@@ -149,33 +162,37 @@ img {
   background-size: rem(35) auto;
   top: rem(3);
 }
+
 .loginIcon.right.time {
   right: 0;
   background: url('../../../images/login/time.png') center center no-repeat;
   background-size: rem(35) auto;
   top: rem(3);
 }
+
 .loginIcon.right.smallBell {
   right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
   background-size: rem(35) auto;
   top: rem(3);
 }
+
 .loginIcon.right.choose {
   right: 0;
   background: url('../../../images/login/choose.png') center center no-repeat;
   background-size: rem(25) auto;
   top: rem(3);
 }
+
 .loginIcon.left.individual {
   right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
   background-size: rem(35) auto;
 }
+
 .loginIcon.left.flt {
   top: rem(3);
 }
-
 
 /*输入框样式(左边文字，右边input)*/
 .displayFlex {
@@ -199,10 +216,11 @@ img {
   font-weight: bold;
   //background: linear-gradient(top, rgba(61,36,96,0.8),rgba(45,29,68,0));
   //background: -webkit-linear-gradient(top, rgba(61,36,96,0.8),rgba(45,29,68,0));
-  background: -webkit-linear-gradient(top, rgba(26,19,42,0.8),rgba(45,29,68,0));
+  background: -webkit-linear-gradient(top, rgba(26, 19, 42, 0.8), rgba(45, 29, 68, 0));
   //background: #3E225D;
   z-index: 2;
 }
+
 /*首页底部*/
 .FooterCls {
   background: url('../../../images/index/foterBack.png') left bottom no-repeat;
@@ -325,15 +343,47 @@ img {
 
   }
 }
+
 /*弹框样式*/
-.Popup {position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  width:100%; height: 100%; display: none; z-index: 20;}
+.Popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 20;
+}
 
-.Popup2 {position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  width:100%; height: 100%; z-index: 20;}
+.Popup2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
 
-.Popup_text {height: 100%;}
-.Popup_text .Popup_text_wz {background: rgba(40,40,40,0.9); display: inline-block; min-width: 7.5rem; max-width: 10rem; padding: 0.5rem; font-size: 0.55rem; color: #ffffff; text-align: center; border-radius: 0.3rem;}
+.Popup_text {
+  height: 100%;
+}
+
+.Popup_text .Popup_text_wz {
+  background: rgba(40, 40, 40, 0.9);
+  display: inline-block;
+  min-width: 7.5rem;
+  max-width: 10rem;
+  padding: 0.5rem;
+  font-size: 0.55rem;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
 .indexJust {
   display: box;
   flex: 1;
@@ -344,18 +394,25 @@ img {
   -webkit-box-align: center;
 
 }
+
 .indexDisplay {
   display: -webkit-box;
   display: box;
   display: flex;
 }
+
 .indexFiex {
   -webkit-box-flex: 1;
   box-flex: 1;
   flex: 1;
 }
+
 /*确认按钮*/
-.loginHostBtn.confirmBtn{
+.loginHostBtn.confirmBtn {
   width: 90%;
   margin: 0 auto;
 }
+
+//.mint-loadmore-text {
+//  position: absolute; top: 0; left: 0; font-size: 0;
+//}
