@@ -52,15 +52,15 @@ $designWidth: 375;
     flex: 1;
   }
   .verificationCode {
-    height: rem(36);
+    height: rem(42);
     display: inline-block;
-    line-height: rem(36);
+    line-height: rem(42);
     padding: 0 rem(10);
     float: right;
-    margin: rem(2) rem(2);
     background: radial-gradient(top, #DDC09C, #D0A979);
     background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
-    border-radius: rem(4);
+    border-bottom-right-radius: rem(2);
+    border-top-right-radius: rem(2);
   }
   .phoneNumber {
     display: inline-block;
@@ -80,7 +80,6 @@ $designWidth: 375;
       font-family: Arial;
       text-indent: 0px;
     }
-
   }
 }
 

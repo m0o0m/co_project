@@ -17,7 +17,7 @@
               <i>问</i>
               <p>{{item.content}}</p>
             </div>
-            <div class="item answer">
+            <div v-if="item.reply" class="item answer">
               <i>答</i>
               <p>{{item.reply}}</p>
             </div>
