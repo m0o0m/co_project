@@ -167,11 +167,6 @@
       
       copyUrl(id) {
         let co = require('../../assets/js/clipboard.min')
-        console.log(new co('.copy_btns'))
-        // let Url2 = document.getElementById("codeUrl");
-        // Url2.select(); // 选择对象
-        // document.execCommand('Copy'); // 执行浏览器复制命令
-        // this._Util.showAlert(this, {content: '复制成功'});
         var targetText = $('#' + id + '').text();
         var clipboard = new co('.copy_btns');
         console.log(clipboard)
