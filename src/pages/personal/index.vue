@@ -1,5 +1,5 @@
 <template>
-  <div class="personal windowSize">
+  <div class="personal ">
         <div class="commonNavBar positionFixed">
           <div class="backPassTitle"><p>个人中心</p></div>
           <div class="loginIcon left flt individual" @click="$router.push({name:'announcement'});"><a href="javascript:void(0)"></a></div>
@@ -39,53 +39,52 @@
                     <!--ref="loadmore"-->
                     <!--:top-method="loadTop">-->
                   <ul class="personalListUl">
-                    <li v-if="!userInfo.is_test_player" class="islis" @click="toPhoneManager()">
+                    <li v-if="!userInfo.is_test_player"  @click="toPhoneManager()">
                       <a href="javascript:void(0)">
-                        <p>手机号管理</p>
+                        <p>手机号管理<i class="commonArrowsRight"></i> </p>
                       </a>
                     </li>
-                    <li v-if="!userInfo.is_test_player" class="islis">
+                    <li v-if="!userInfo.is_test_player">
                       <router-link :to="{name: 'loginPass'}">
                         <a href="javascript:void(0)">
-                          <p>登录密码管理</p>
+                          <p>登录密码管理 <i class="commonArrowsRight"></i></p>
                         </a>
                       </router-link>
                     </li>
-                    <li v-if="!userInfo.is_test_player" class="islis" @click="toCashManager()">
+                    <li v-if="!userInfo.is_test_player"@click="toCashManager()">
                       <a href="javascript:void(0)">
-                        <p>提现密码管理</p>
+                        <p>提现密码管理<i class="commonArrowsRight"></i></p>
                       </a>
                     </li>
-                    <li v-if="!userInfo.is_test_player" class="islis" @click="cardManager()">
+                    <li v-if="!userInfo.is_test_player"  @click="cardManager()">
                       <a href="javascript:void(0)">
-                        <p>银行卡管理</p>
+                        <p>银行卡管理<i class="commonArrowsRight"></i></p>
                       </a>
                     </li>
-                    <li v-if="!userInfo.is_test_player" class="islis">
+                    <li v-if="!userInfo.is_test_player" >
                       <router-link :to="{name: 'rebate'}">
                         <a href="javascript:void(0)">
-                          <p>开户返佣</p>
+                          <p>开户返佣<i class="commonArrowsRight"></i></p>
                         </a>
                       </router-link>
                     </li>
-                    <li class="islis" v-if="!userInfo.is_test_player && showAgent === 1">
-                    <!--<li class="islis">-->
+                    <li  v-if="!userInfo.is_test_player && showAgent === 1">
                       <router-link :to="{name: 'master'}">
                         <a href="javascript:void(0)">
-                          <p>代理后台</p>
+                          <p>代理后台<i class="commonArrowsRight"></i></p>
                         </a>
                       </router-link>
                     </li>
-                    <li class="islis feedback_message" @click="saveTime">
+                    <li class=" feedbackMessage" @click="saveTime">
                       <router-link :to="{name: 'feedBack'}">
-                          <p>宝贵意见</p>
-                          <i v-if="isHasNews"></i>
+                          <p>宝贵意见<i class="commonArrowsRight"></i></p>
+                          <i class="isHasNews" v-if="isHasNews"></i>
                       </router-link>
                     </li>
-                    <li class="islis">
+                    <li>
                       <router-link :to="{name: 'aboutUs'}">
                         <a href="javascript:void(0)">
-                          <p>关于我们</p>
+                          <p>关于我们<i class="commonArrowsRight"></i></p>
                         </a>
                       </router-link>
                     </li>
@@ -99,7 +98,7 @@
             </div>
           </div>
         </div>
-      <HomeFoter></HomeFoter>
+      <!--<HomeFoter></HomeFoter>-->
   </div>
 
 </template>
@@ -128,7 +127,7 @@
       if (that.$route.query.homeIndex == 3) {
         that.init();
       }
-      that._Util.setCss('.windowSize',{"height": 1},"*");
+//      that._Util.setCss('.windowSize',{"height": 1},"*");
       
       document.getElementsByClassName('personalListNav')[0].addEventListener('touchstart', function (event) {
         event.target.classList.add('needsclick');
