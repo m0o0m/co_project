@@ -99,7 +99,7 @@
             </div>
           </div>
         </div>
-      <HomeFoter></HomeFoter>
+      <!--<HomeFoter></HomeFoter>-->
   </div>
 
 </template>
