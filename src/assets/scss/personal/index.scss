@@ -1459,7 +1459,6 @@ $designWidth: 375;
 }
 
 /*银行卡管理*/
-
 .perCards {
   height: 100%;
   padding-top:rem(50);
@@ -1541,6 +1540,56 @@ $designWidth: 375;
       background-size: rem(30) auto;
       display: inline-block;
       border-radius: 500%;
+    }
+  }
+}
+/*手机号管理*/
+.phoneManagMementContent{
+  padding: rem(80) rem(30) 0;
+  text-align: center;
+  .phoneNum{
+    font-family: Arial;
+    height: rem(24);
+    line-height: rem(26);
+    font-size: rem(14);
+    color: #FFFFFF;
+    letter-spacing: 0;
+    vertical-align: middle;
+    span{
+      display: inline-block;
+      margin-left: rem(20);
+      font-size: rem(24);
+      color: #FFDC99;
+      letter-spacing: 0;
+      line-height: rem(22);
+      vertical-align: middle;
+    }
+  }
+  .warmPromptCustom{
+    display: inline-block;
+    height: rem(22);
+    width: 90%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 rem(5);
+    margin:rem(30) auto;
+    background: #BBA075;
+    font-family: Arial;
+    font-size: rem(10);
+    line-height: rem(22);
+  }
+  .finishBtn{
+    width: 90%;
+    margin: rem(20) auto;
+  }
+  /*提现密码温馨提示*/
+  .warmPrompt{
+    font-size: rem(12);
+    color: #ffffff;
+    text-align: center;
+    line-height: rem(30);
+    a {
+      color: #FFDC99;
     }
   }
 }

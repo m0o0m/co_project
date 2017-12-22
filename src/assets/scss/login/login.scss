@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "../rem";
+
 $designWidth: 375;
 /*login*/
 #app {
@@ -20,6 +21,7 @@ $designWidth: 375;
 .loginName {
   padding-top: rem(80);
 }
+
 .loginLi {
   margin: rem(10) 0;
   p {
@@ -33,11 +35,12 @@ $designWidth: 375;
     padding-right: rem(10);
   }
   p:nth-of-type(2) {
-    background: rgba(0, 0, 0 ,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: 1px solid #BEB284;
     border-radius: rem(2);
     height: rem(42);
     flex: 1;
+    display: flex;
   }
   input {
     font-size: rem(14);
@@ -46,12 +49,45 @@ $designWidth: 375;
     width: 100%;
     background: transparent;
     border: none;
+    flex: 1;
+  }
+  .verificationCode {
+    height: rem(36);
+    display: inline-block;
+    line-height: rem(36);
+    padding: 0 rem(10);
+    float: right;
+    margin: rem(2) rem(2);
+    background: radial-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
+    border-radius: rem(4);
+  }
+  .phoneNumber {
+    display: inline-block;
+    margin-left: rem(20);
+    font-family: Arial;
+    font-size: rem(24);
+    color: #FFDC99;
+    letter-spacing: 0;
+    line-height: rem(42);
+  }
+  p.hasPhoneNumber {
+    border: none;
+    background: transparent;
+    input {
+      font-size: 0.85rem;
+      color: rgb(255, 220, 153);
+      font-family: Arial;
+      text-indent: 0px;
+    }
+
   }
 }
 
 .loginLi:last-child {
   margin-bottom: rem(5);
 }
+
 .forgetPaw {
   text-align: right;
 }
@@ -64,8 +100,8 @@ $designWidth: 375;
 }
 
 .loginHostBtn {
-  background: radial-gradient(top,#DDC09C ,#D0A979 );
-  background: -webkit-radial-gradient(top ,#DDC09C,#D0A979 );
+  background: radial-gradient(top, #DDC09C, #D0A979);
+  background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
   border-radius: rem(4);
   height: rem(44);
   line-height: rem(36);
@@ -162,7 +198,7 @@ $designWidth: 375;
   font-size: rem(16);
   font-weight: bold;
   text-align: center;
-  color: #FFDC99 ;
+  color: #FFDC99;
 }
 
 .agreementContent {
@@ -172,6 +208,7 @@ $designWidth: 375;
   background: url('../../images/personal/personalBack.jpg') center center no-repeat;
   background-size: 100% auto;
 }
+
 .agreementLogin {
   font-size: rem(14);
   color: #FFDC99;
@@ -179,16 +216,20 @@ $designWidth: 375;
   padding: rem(15);
   padding-top: rem(65);
 }
+
 .agreementLogin p {
   padding-bottom: rem(10);
 }
+
 .agrTitle {
   font-size: rem(18);
 }
+
 .agrtime {
   font-size: rem(12);
   font-family: Arial;
 }
+
 .agrArrow {
   position: fixed;
   top: 0;
