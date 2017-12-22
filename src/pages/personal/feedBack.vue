@@ -1,24 +1,21 @@
 <template>
-  <div class="moneyTemplateed">
-    <div class="per pers">
-      <ul class="per_number goleff">
-        <li @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
-        <li class="messageList"><a href="/lottery/personal/feedBack/feedBackMessageList"></a></li>
-      </ul>
+  <div class="feedBack">
+    <div class="commonNavBar positionFixed">
+      <div class="backPassTitle"><p>宝贵意见</p></div>
+      <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon right messageHistory"><a href="/lottery/personal/feedBack/feedBackMessageList"></a></div>
     </div>
-    <div class="Bank_top ides"><p>宝贵意见</p></div>
-    <div class="Bank_number istop managMementCls">
-      <div class="Opinion_feedback mart">
+    <div class="feedBackContent">
+      <div class="OpinionFeedback">
         <p><textarea name="a" v-model="feedStr" maxlength="1000"></textarea></p>
       </div>
-      
-      <div @click="save()" class="over"><a href="javascript: void(0);">提交</a></div>
+      <div @click="save()" class="loginHostBtn submitBtn"><a href="javascript: void(0);">提交</a></div>
     </div>
   </div>
 </template>
 <script type="text/babel">
-  import '../../assets/scss/personal.scss'
-  import '../../assets/css/Popup.css'
+//  import '../../assets/scss/personal.scss'
+//  import '../../assets/css/Popup.css'
   
   export default {
     data() {
@@ -29,7 +26,6 @@
     
     mounted() {
       let that = this;
-      that._Util.setCss('.managMementCls',{"height": 1},"*");
       that.init();
     },
     
@@ -65,11 +61,5 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  /*body {*/
-  /*overflow: hidden;*/
-  /*}*/
-  /*.view {*/
-  /*height: 100%;*/
-  /*}*/
+<style lang="scss">
 </style>

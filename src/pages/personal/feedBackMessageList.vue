@@ -1,10 +1,8 @@
 <template>
   <div class="feedBackMessageList">
-    <div class="messageListTitle">
-      <ul class="title">
-        <li @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
-        <li><h3>反馈消息</h3></li>
-      </ul>
+    <div class="commonNavBar positionFixed">
+      <div class="backPassTitle"><p>宝贵意见</p></div>
+      <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
     <div class="messageListContent">
       <div class="message_list_content_box"
@@ -39,7 +37,7 @@
 </template>
 
 <script>
-  import '../../assets/scss/personal.scss'
+//  import '../../assets/scss/personal.scss'
   
   export default {
     data() {
@@ -61,7 +59,6 @@
     methods: {
       init() {
         let that = this;
-        
         if (!that.busy) {
           that.busy = true;
           if (that.current_page == that.last_page) {
