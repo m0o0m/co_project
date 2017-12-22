@@ -136,7 +136,12 @@ img {
   top: rem(10);
   z-index: 3;
 }
-
+.loginIcon a{
+  display: inline-block;
+  width: rem(50);
+  height: rem(50);
+  cursor: pointer;
+}
 .loginIcon.left {
   left: 0;
   background: url('../../../images/login/arrow.png') center center no-repeat;
@@ -149,11 +154,15 @@ img {
   background-size: rem(35) auto;
   top: rem(3);
 }
+
+.loginIcon.right.custom{
+  background: url('../../../images/login/Customer.png') center center no-repeat;
+  background-size: rem(35) auto;
+}
+
 .loginIcon.right.time {
-  right: 0;
   background: url('../../../images/login/time.png') center center no-repeat;
   background-size: rem(35) auto;
-  top: rem(3);
 }
 .loginIcon.right.xieyi {
   right: 0;
@@ -162,16 +171,16 @@ img {
   top: rem(3);
 }
 .loginIcon.right.smallBell {
-  right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
-  background-size: rem(25) auto;
-  top: rem(3);
+  background-size: rem(35) auto;
 }
 .loginIcon.right.choose {
-  right: 0;
   background: url('../../../images/login/choose.png') center center no-repeat;
-  background-size: rem(25) auto;
-  top: rem(3);
+  background-size: rem(35) auto;
+}
+.loginIcon.right.messageHistory {
+  background: url('../../../images/feedBackMessage/messageHistory@2x.png') center center no-repeat;
+  background-size: rem(35) auto;
 }
 .loginIcon.left.individual {
   right: 0;
