@@ -3,7 +3,7 @@
     <div class="commonNavBar positionFixed">
       <div class="backPassTitle"><p>宝贵意见</p></div>
       <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
-      <div class="loginIcon right messageHistory"><a href="/lottery/personal/feedBack/feedBackMessageList"></a></div>
+      <div class="loginIcon right mes"><a href="/lottery/personal/feedBack/feedBackMessageList"></a></div>
     </div>
     <div class="feedBackContent">
       <div class="OpinionFeedback">
