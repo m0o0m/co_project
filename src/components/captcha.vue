@@ -1,9 +1,9 @@
 <template>
-    <div class="monum">
+    <div class="loginLi displayFlex">
         <p>验证码</p>
         <p>
             <input type="text" v-model="code" placeholder="请输入6位短信验证码">
-            <span @click="getCode()">{{newEntityText}}</span>
+            <span @click="getCode()" class="verificationCode">{{newEntityText}}</span>
         </p>
     </div>
 </template>

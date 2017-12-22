@@ -1,44 +1,38 @@
 <template>
-  <div class="managMementCls">
-    <div class="per lisbg">
-      <ul class="per_leftd ">
-        <li @click="$router.go(-1);"></li>
-        <li><p style="color:#FFDC99 ">{{$route.query.title || '手机号管理'}}</p></li>
-      </ul>
+  <div class="phoneManagMement">
+    <div class="commonNavBar positionFixed">
+      <div class="backPassTitle"><p>{{$route.query.title || '手机号管理'}}</p></div>
+      <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
-    <div v-if="!$route.query.phone" class="per_conter cons1">
-      <div class="monum">
+    <div v-if="!$route.query.phone" class="phoneManagMementContent">
+      <div class="loginLi displayFlex">
         <p>手机号</p>
         <p><input type="number" v-model="phone" placeholder="请输入11位手机号码" pattern="^[0-9]*$"></p>
       </div>
       <Captcha ref="captchaRef" :phone="phone"></Captcha>
-      <div @click="save()" class="loginBtns1">完成</div>
+      <div @click="save()" class="loginHostBtn finishBtn"><a href="javascript:void(0);">完成</a></div>
     </div>
     
-    <div v-if="$route.query.phone && ($route.query.type == 1 || $route.query.type == 5)" class="per_conter cons2"
-         strle="display:none">
-      <p class="per-p1 p11">手机号<span>{{_Util.formatPhone($route.query.phone || '')}}</span></p>
-      <p class="per-p2">您的手机号已经绑定，无需重复绑定，如需帮助，请联系客服</p>
-      <p class="per-p3"><a href="javascript:void(0)" @click="customerServer">联系客服</a></p>
+    <div v-if="$route.query.phone && ($route.query.type == 1 || $route.query.type == 5)" class="phoneManagMementContent">
+      <p class="phoneNum">手机号<span>{{_Util.formatPhone($route.query.phone || '18888888888')}}</span></p>
+      <p class="warmPromptCustom ">您的手机号已经绑定，无需重复绑定，如需帮助，请联系客服</p>
+      <p class="loginHostBtn finishBtn"><a href="javascript:void(0)" @click="customerServer">联系客服</a></p>
     </div>
-    <div v-if="$route.query.phone && ($route.query.type == 2 || $route.query.type == 3)"
-         class="per_conter per_conterstop cons3" strle="display:none;">
-      <div class="monum">
+    <div v-if="$route.query.phone && ($route.query.type == 2 || $route.query.type == 3)" class="phoneManagMementContent">
+      <div class="loginLi displayFlex">
         <p>手机号</p>
-        <p>
-          <input type="text" :value="_Util.formatPhone($route.query.phone || '')" readonly
-                 style="border: none; background: transparent; font-size: 0.85rem; color: #FFDC99; font-family: Arial; text-indent: 0;">
-        </p>
+        <p class="hasPhoneNumber">
+          <input type="text" :value="_Util.formatPhone($route.query.phone || '')" readonly></p>
       </div>
       <Captcha ref="captchaRef" :phone="$route.query.phone || ''"></Captcha>
-      <div @click="cashNext()" class="loginBtn">下一步</div>
-      <div class="management_line">温馨提示：如需帮助，请联系<a href="javascript:void(0)" @click="loginService()">在线客服</a></div>
+      <div @click="cashNext()" class="loginHostBtn finishBtn"><a href="javascript:void(0);">下一步</a></div>
+      <div class="warmPrompt">温馨提示：如需帮助，请联系<a href="javascript:void(0)" @click="loginService()">在线客服</a></div>
     </div>
   </div>
 </template>
 
 <script>
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/personal.scss';
   import Captcha from '../../components/captcha.vue'
   
   export default {
