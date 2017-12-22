@@ -4,83 +4,83 @@ $designWidth:375;
 //body,html {
 //    height: 100%;
 //  }
-.lotterySelect {
-    width: 100%;
-    height: 100%;
-    position: fixed; top: 0;
-    left: 0;
-    z-index: 15;
-}
-.imgs {
-    width:rem(353);
-    height:rem(647);
-    margin: rem(0) auto;
-    background: url('../images/betRecord/body-bg.png') center center no-repeat;
-    -webkit-background: url('../images/betRecord/body-bg.png') center center no-repeat;
-    background-size: cover; 
-    -webkit-background-size: cover; 
-    background: rgba(40,37,38,0.80);
-    -webkit-background: rgba(40,37,38,0.80);
-    box-shadow: inset 0 -2px 3px 0 rgba(0,0,0,0.50);
-    -webkit-box-shadow: inset 0 -2px 3px 0 rgba(0,0,0,0.50);
-    border-radius:rem(4); 
-    -webkit-border-radius: rem(4);
-    p {
-        // display: block;
-        margin-top:rem(23);
-        margin-bottom: rem(30);
-        font-family: SFNSDisplay;
-        font-size: rem(22);
-        -webkit-font-size: rem(22);
-        color: #FFDC99;
-        letter-spacing: 0;
-        line-height: rem(20);
-        text-align: center;
-        text-shadow: 0 rem(2)  rem(4) rgba(0,0,0,0.50);
-        -webkit-text-shadow: 0 rem(2)  rem(4)  rgba(0,0,0,0.50);
-    }
-    .close {
-        margin-top:rem(10);
-        margin-right:rem(10);
-        span {
-            font-family:"";
-            float: right;
-            width:rem(18);
-            height:rem(18);
-            color: #fff;
-        }
-    }
-    ul{
-        li {
-             float:left;
-             border: 1px solid #FFDC99;
-             -webkit-border: 1px solid #FFDC99;
-             margin-left: rem(7);
-             margin-bottom: rem(7);
-            a {
-                display: block;
-                // border: rem(1) solid #979797;
-                // font-family: PingFangSC-Regular;
-                font-size: rem(14);
-                -webkit-font-size: rem(14);
-                color: #E9D29B;
-                letter-spacing: 0;
-                line-height: rem(46); 
-                -webkit-line-height: rem(46); 
-                width:rem(163);
-                height: rem(46);
-                text-align: center; 
-              
-                // background: rgba(40,37,38,0.80);
-                // box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0,0,0,0.5);
-            }
-        }
-        li.on{
-           -webkit-background-image: linear-gradient( #F0DDAE 0%, #DCB976 100%); 
-           background-image: linear-gradient( #F0DDAE 0%, #DCB976 100%); 
-        }
-        li.on a {
-            color: #000;
-        }
-    }
-}   
+//.lotterySelect {
+//    width: 100%;
+//    height: 100%;
+//    position: fixed; top: 0;
+//    left: 0;
+//    z-index: 15;
+//}
+//.imgs {
+//    width:rem(353);
+//    height:rem(647);
+//    margin: rem(0) auto;
+//    background: url('../images/betRecord/body-bg.png') center center no-repeat;
+//    -webkit-background: url('../images/betRecord/body-bg.png') center center no-repeat;
+//    background-size: cover;
+//    -webkit-background-size: cover;
+//    background: rgba(40,37,38,0.80);
+//    -webkit-background: rgba(40,37,38,0.80);
+//    box-shadow: inset 0 -2px 3px 0 rgba(0,0,0,0.50);
+//    -webkit-box-shadow: inset 0 -2px 3px 0 rgba(0,0,0,0.50);
+//    border-radius:rem(4);
+//    -webkit-border-radius: rem(4);
+//    p {
+//        // display: block;
+//        margin-top:rem(23);
+//        margin-bottom: rem(30);
+//        font-family: SFNSDisplay;
+//        font-size: rem(22);
+//        -webkit-font-size: rem(22);
+//        color: #FFDC99;
+//        letter-spacing: 0;
+//        line-height: rem(20);
+//        text-align: center;
+//        text-shadow: 0 rem(2)  rem(4) rgba(0,0,0,0.50);
+//        -webkit-text-shadow: 0 rem(2)  rem(4)  rgba(0,0,0,0.50);
+//    }
+//    .close {
+//        margin-top:rem(10);
+//        margin-right:rem(10);
+//        span {
+//            font-family:"";
+//            float: right;
+//            width:rem(18);
+//            height:rem(18);
+//            color: #fff;
+//        }
+//    }
+//    ul{
+//        li {
+//             float:left;
+//             border: 1px solid #FFDC99;
+//             -webkit-border: 1px solid #FFDC99;
+//             margin-left: rem(7);
+//             margin-bottom: rem(7);
+//            a {
+//                display: block;
+//                // border: rem(1) solid #979797;
+//                // font-family: PingFangSC-Regular;
+//                font-size: rem(14);
+//                -webkit-font-size: rem(14);
+//                color: #E9D29B;
+//                letter-spacing: 0;
+//                line-height: rem(46);
+//                -webkit-line-height: rem(46);
+//                width:rem(163);
+//                height: rem(46);
+//                text-align: center;
+//
+//                // background: rgba(40,37,38,0.80);
+//                // box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0,0,0,0.5);
+//            }
+//        }
+//        li.on{
+//           -webkit-background-image: linear-gradient( #F0DDAE 0%, #DCB976 100%);
+//           background-image: linear-gradient( #F0DDAE 0%, #DCB976 100%);
+//        }
+//        li.on a {
+//            color: #000;
+//        }
+//    }
+//}

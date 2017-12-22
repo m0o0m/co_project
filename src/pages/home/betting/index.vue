@@ -1,7 +1,7 @@
 <template>
   <div class="bettingIndex">
     <div class="bettingCommonA">
-      <div class="bettingTitle"><p class="commonArrowsBottom">投注记录</p></div>
+      <div class="bettingTitle"><p class="commonArrowsBottom" @click="changeSelect = !changeSelect">投注记录</p></div>
       <div class="betRecord_top">
         <ul class="displayFlex">
           <li v-for="(bet,index) in bettingNav" :class="{'on':index == navIndex}"
@@ -10,6 +10,7 @@
       </div>
     </div>
     <div class="bettingRecord">
+      <!--@top-status-change="handleTopChange"-->
       <mt-loadmore ref="loadMore" :top-method="loadTop" :bottom-all-loaded="busy">
         <div class="bettingVod">
           <div class="noneDIV" v-if="betIndex === 0">
@@ -21,10 +22,10 @@
               infinite-scroll-disabled="busy"
               infinite-scroll-distance="50"
               infinite-scroll-immediate-check="false">
-            <li v-for="betR in resultList" :betId="betR.id" @click="toDetail(betR)" class="needsclick">
+            <li v-for="betR in resultList" :betId="betR.id" @click="toDetail(betR)" class="">
               <!--<router-link :to="{name:'betRecordDetail', query:{id:betR.id}}">-->
-              <a href="javascript:void(0)" class="betting_record_list">
-                <div class="record_list_right">
+              <a href="javascript:void(0)" class="bettingRecordList">
+                <div class="bettingRecordRight">
                   <p ><span class="spanMarry">{{betR.amount}}</span></p>
                   <p v-if="betR.status_text != '已派奖'">{{betR.status_text}}</p>
                   <p class="winCls" v-if="betR.status_text == '已派奖'">
@@ -36,9 +37,9 @@
                 </section>
                 <section>
                   <p>{{betR.played_name}}</p>
-                  <p v-if="betR.action_data">-</p>
-                  <p>{{betR.action_data}}</p>
-                  <p>{{betR.odds}}</p>
+                  <p v-if="betR.action_data" class="spanArial">-</p>
+                  <p class="spanArial">{{betR.action_data}}</p>
+                  <p class="spanArial">{{betR.odds}}</p>
                 </section>
                 <section>
                   <p><span>{{betR.action_time}}</span></p>
@@ -49,9 +50,8 @@
           </ul>
         </div>
       </mt-loadmore>
-      <img src="../../../assets/images/icon_back.png" class="SecondaryNav" @click="changeSelect = !changeSelect"/>
-      <LotterySelect @bettingHidden="bettingHiddened" v-if="changeSelect"></LotterySelect>
     </div>
+    <LotterySelect @bettingHidden="bettingHiddened" v-if="changeSelect"></LotterySelect>
   </div>
 </template>
 <script type="text/babel">
@@ -67,7 +67,8 @@
 				apiID: 0,
 				page: 1,
 				busy: false,
-				betIndex: ''
+				betIndex: '',
+				// topStatus: ''
 			}
 		},
 
@@ -149,6 +150,10 @@
 				this.changeSelect = false;
 			},
 
+			handleTopChange(status) {
+				this.topStatus = status;
+			},
+
 			loadMore() {
 				let that = this;
 				that.initData();
@@ -173,48 +178,5 @@
 </script>
 
 <style lang="scss">
-  @function rem($px,$designWidth:375){
-  @return $px*450/$designWidth/29 + rem;
-  }
-  #bettinged {
-    width: 100%;
-    height: 100%;
-    background: url('../../../assets/images/index/bg.png') top center no-repeat;
-    background-size: 100% auto;
-  }
 
-  .bettingMian {
-    /*max-width: rem(640);*/
-    height: 100%;
-    background: url('../../../assets/images/betRecord/bg.png') top center no-repeat;
-    background-size: 100% auto;
-  }
-  /*投注记录迭代样式*/
-  .betting_record_list .record_list_right{
-    float: right;
-    font-size: rem(14); color: #FFDC99; line-height: rem(24);
-    text-align: right;
-  }
-  .betting_record_list p{
-    color: #FFDC99;
-    font-size: rem(14);
-  }
-  .betting_record_list section:nth-child(2) p{
-    float: left; color: #FFDC99; line-height: rem(24);
-  }
-  .betting_record_list section:nth-child(2) p:nth-child(2){
-    font-size: rem(10);  line-height: rem(24); margin-left: rem(10);
-  }
-  .betting_record_list section:nth-child(3) p{
-    float: left;
-  }
-  .betting_record_list section:nth-child(3) p:nth-child(2){
-    margin: 0 rem(10);
-  }
-  .betting_record_list section:nth-child(3) p:nth-child(4){
-    margin-left:rem(30);
-  }
-  .betting_record_list section:last-child p{
-    font-size: rem(10);
-  }
 </style>

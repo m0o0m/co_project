@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "../../rem";
+
 $designWidth: 375;
 
 body, html, form {
@@ -11,17 +12,32 @@ body {
   background-size: 100% auto;
 }
 
+i {
+  font-style: normal;
+}
+
+.spanArial {
+  font-family: Arial;
+}
+
 .view {
   height: 100%;
 }
+
+.BackTransparent {
+  background: transparent;
+}
+
 input::-webkit-input-placeholder {
   color: #fff;
   opacity: 0.8;
 }
+
 img {
   width: 100%;
   height: auto;
 }
+
 .relatively {
   position: relative;
 }
@@ -36,27 +52,32 @@ img {
   left: 0;
   z-index: 5;
 }
+
 /*清除浮动*/
 .clearfix:before,
 .clearfix:after {
   content: "";
   display: table;
 }
+
 .clearfix:after {
   clear: both;
 }
+
 /*单行溢出*/
 .one-txt-cut {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 /*右箭头*/
 .commonArrowsRight {
   background: url('../../../images/arrow.png') right center no-repeat;
   background-size: rem(10) auto;
   padding-right: rem(12);
 }
+
 .commonArrowsBottom {
   background: url('../../../images/arrowBottom.png') right center no-repeat;
   background-size: rem(15) auto;
@@ -74,7 +95,7 @@ img {
 }
 
 /*顶部导航条样式*/
-.commonNavBar{
+.commonNavBar {
   position: fixed;
   left: 0;
   top: 0;
@@ -106,7 +127,7 @@ img {
     padding-right: rem(10);
   }
   p:nth-of-type(2) {
-    background: rgba(0, 0, 0 ,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: 1px solid #BEB284;
     border-radius: rem(2);
     height: rem(42);
@@ -164,6 +185,7 @@ img {
   background: url('../../../images/login/time.png') center center no-repeat;
   background-size: rem(25) auto;
 }
+
 .loginIcon.right.mes {
   background: url('../../../images/login/mes.png') center center no-repeat;
   background-size: rem(25) auto;
@@ -175,23 +197,26 @@ img {
   background-size: rem(25) auto;
   top: rem(3);
 }
+
 .loginIcon.right.smallBell {
   background: url('../../../images/login/smallBell.png') center center no-repeat;
   background-size: rem(25) auto
 }
+
 .loginIcon.right.choose {
   background: url('../../../images/login/choose.png') center center no-repeat;
   background-size: rem(25) auto;
 }
+
 .loginIcon.left.individual {
   right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
   background-size: rem(25) auto;
 }
+
 .loginIcon.left.flt {
   top: rem(3);
 }
-
 
 /*输入框样式(左边文字，右边input)*/
 .displayFlex {

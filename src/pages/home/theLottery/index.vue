@@ -68,7 +68,7 @@
 <script>
   import $ from 'jquery'
   //    import HomeFooter from '../../../components/HomeFooter'
-  import '../../../assets/scss/default.scss'
+  // import '../../../assets/scss/default.scss'
   
   export default {
     data() {
