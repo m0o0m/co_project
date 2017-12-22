@@ -1,20 +1,22 @@
 <template>
-  <div class="moneyTemplateed">
+  <div class="agencyBackstage">
     <div class="assetsDetailCls">
-      <div class="rechargeLeft" @click="$router.push({name:'personal'});"></div>
-      <div class="assetsDeRight assetsDeRightImg" @click="goContract"><a href="javascript:void(0)"></a></div>
-      <div class="assetsTitle"><p>{{title}}</p></div>
-      <div id="assetsDeList" class="assetsDeList">
-        <div class="" style="">
-          <div id="subnav" style="color:#FFDC99;margin-bottom: 0 !important">
+      <div class="commonNavBar positionFixed">
+        <div class="backPassTitle"><p>代理后台</p></div>
+        <div class="loginIcon left flt "   @click="$router.push({name:'personal'});"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon right xieyi"  @click="goContract"><a href="javascript:void(0)"></a></div>
+      </div>
+      <div id="assetsDeList" class="agencyAssetsDeList">
+        <div>
+          <div id="agencySubnav">
             <span @click="type = 0" :class="{on: type == 0}">佣金收益</span>
             <span @click="type = 1" :class="{on: type == 1}">下级列表</span>
           </div>
-          <div class="agentsTotal" v-if="type == 0">
+          <div class="agentsTotal clearfix" v-if="type == 0">
             <p>下级总数：<span>{{PeopleAlways}}</span>名</p>
             <p>今日新增下级：<span>{{newAdd}}</span>名</p>
           </div>
-          <div class="agentsTotal" v-if="type == 1">
+          <div class="agentsTotal clearfix" v-if="type == 1">
             <p style="border-right: none !important" size="large" @click="initDates(true)">选择年份
               <input type="text" :value="  value2 ? value2 : this.isYear" disabled>
             </p>
@@ -23,23 +25,22 @@
             </p>
           </div>
         </div>
-        <div style="height: 80%; overflow: hidden;margin-top: 0.6rem;">
-          <div v-if="type == 0" class="examineMian examineMian_master"
-               style="height: 100%; overflow: hidden;">
-            <ul class="master_ul">
-              <li class="list_tit">
+        <div class="agencyBodyList">
+          <div v-if="type == 0" class="agencyBodyListDiv">
+            <ul class="masterUl">
+              <li>
                 <p>结算时间段</p>
                 <p>会员数</p>
                 <p>盈亏额</p>
                 <p>佣金</p>
               </li>
             </ul>
-            <ul class="master_ul" style="max-height: 85%; overflow: auto;"
+            <ul class="masterUl"
                 v-infinite-scroll="loadMore"
                 infinite-scroll-disabled="busy"
                 infinite-scroll-distance="50"
                 infinite-scroll-immediate-check="false">
-              <li class="list_tit" v-for="(master,index) in resultList">
+              <li v-for="(master,index) in resultList">
                 <p><span>{{master.name}}</span></p>
                 <p><span>{{master.total_member_count}}</span></p>
                 <p><span>￥{{master.total_member_profit}}</span></p>
@@ -47,35 +48,33 @@
               </li>
             </ul>
           </div>
-          <div v-if="type == 1" class="examineMian examineMian_master"
-               style="height: 100%; overflow: hidden;">
-            <ul class="master_ul">
-              <li class="list_tit">
+          <div v-if="type == 1" class="agencyBodyListDiv agencyBodyJuniorList">
+            <ul class="masterUl">
+              <li>
                 <p style="width: 45%;">用户名</p>
                 <p>盈亏额</p>
               </li>
             </ul>
-            <ul class="master_ul" style="max-height: 85%; overflow: auto;"
+            <ul class="masterUl"
                 v-infinite-scroll="loadMore"
                 infinite-scroll-disabled="busy"
                 infinite-scroll-distance="50"
                 infinite-scroll-immediate-check="false">
-              <li class="list_tit" v-for="(master,index) in resultLists">
-                <p style="width: 45%;"><span>{{master.username}}</span></p>
+              <li class="listTit " v-for="(master,index) in resultLists">
+                <p><span>{{master.username}}</span></p>
                 <p><span>{{master.profit}}</span></p>
               </li>
             </ul>
           </div>
         </div>
       </div>
+      <BankChange :show=" years || month " :items="dateItems"></BankChange>
     </div>
-
-    <BankChange :show=" years || month " :items="dateItems"></BankChange>
   </div>
 </template>
 
 <script>
-	import '../../assets/scss/personal.scss';
+//	import '../../assets/scss/personal.scss';
 	import BankChange from '../../components/bankChange.vue';
 
 	export default {
@@ -119,7 +118,7 @@
 		mounted() {
 			let that = this;
 			that.init();
-			that._Util.needClickFc('assetsDeList');
+			that._Util.needClickFc('agencyAssetsDeList');
 			let date = new Date;
 			that.isYear = date.getFullYear();
 			that.$on('pickerCancel', () => {
