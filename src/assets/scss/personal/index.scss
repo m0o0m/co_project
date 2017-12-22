@@ -412,11 +412,13 @@ $designWidth: 375;
 
 /*资金明细*/
 .assetsDeList {
-  .Updated upstream {
     padding-top: rem(55);
     overflow: hidden;
     width: 94%;
     margin-left: 3%;
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     .examineMianBody {
       max-height: 90%;
       overflow: auto;
@@ -491,8 +493,43 @@ $designWidth: 375;
       }
     }
   }
+/*列表弹框*/
+.Popup_up {
+  width: 100%; height: 100%; background: rgba(0,0,0,0.7); position: fixed; top: 0; left: 0; z-index: 4;
 }
-
+.popup_upMian {
+  width: 70%; border: rem(1) solid #F0DDAE; padding: rem(15); background: rgba(40,37,38,0.80); box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0,0,0,0.50); border-radius: rem(6);  text-align: center; position: relative; box-sizing: border-box; -webkit-box-sizing: border-box;
+  ul {
+    width: 100%; height: auto; overflow: hidden;
+  }
+  ul li {
+    width: 48%;
+    height: rem(46);
+    line-height: rem(46);
+    border: rem(1) solid #F0DDAE;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: rem(14);
+    color: #E9D29B;
+    margin-bottom: rem(10);
+  }
+  ul li:nth-child(odd) {
+    margin-right:4%;
+  }
+  ul li.on {
+    background-image: linear-gradient(left, #F0DDAE 0%, #DCB976 100%); background-image: -webkit-linear-gradient(left, #F0DDAE 0%, #DCB976 100%); color: #2F2122;
+  }
+}
+.popup_ulTitle {
+  font-size: rem(16); color: #FFFFFF; text-align: left; padding-bottom: rem(15);
+}
+.delPopup {
+  width: rem(20); position: absolute; right: rem(12); top: rem(12);
+  img {
+    width: 100%; height: auto;
+  }
+}
 /*开户返佣*/
 .perRebate {
   width: 100%;
@@ -856,8 +893,6 @@ $designWidth: 375;
     background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.16) 0%, rgba(83, 57, 74, 0.6) 97%);
     background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.16) 0%, rgba(83, 57, 74, 0.6) 97%);
     .personalListNavTC {
-      width: 96%;
-      margin-left: 2%;
       width: 100%;
       padding:rem(10);
       box-sizing: border-box;
