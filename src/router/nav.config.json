@@ -232,15 +232,15 @@
       {
         "title": "公告列表",
         "name": "announcement",
-        "path": "/lottery/personal/announcement",
-        "filePath": "/personal/announcement",
+        "path": "/lottery/personal/annList",
+        "filePath": "/personal/annList",
         "icon": ""
       },
       {
         "title": "公告详情",
         "name": "announcementDa",
-        "path": "/lottery/personal/announcement-da",
-        "filePath": "/color/personal/announcement-da",
+        "path": "/lottery/personal/annDetail",
+        "filePath": "/personal/annDetail",
         "icon": ""
       },
       {
