@@ -51,6 +51,7 @@
         betIndex: 2,
       }
     },
+    
     mounted() {
       let that = this;
       that._Util.setCss('.messageListContent', {"height": 1}, "*");
