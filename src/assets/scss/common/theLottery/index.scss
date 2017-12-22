@@ -11,8 +11,10 @@ $designWidth: 375;
   width: 100%;
   height: rem(90);
   text-align: center;
-  background: linear-gradient(top, rgb(33, 21, 48), rgba(78, 42, 74, 0));
-  background: -webkit-linear-gradient(top, rgb(33, 21, 48), rgba(78, 42, 74, 0));
+  background: url("../../../images/backTop.png") top left no-repeat;
+  background-size: 100% auto;
+  //background: linear-gradient(top, rgb(33, 21, 48), rgba(78, 42, 74, 0));
+  //background: -webkit-linear-gradient(top, rgb(33, 21, 48), rgba(78, 42, 74, 0));
   p {
     font-size: rem(18);
     color: #FFDC99;
