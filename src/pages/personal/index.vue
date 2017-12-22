@@ -38,7 +38,7 @@
                 <!--<mt-loadmore-->
                     <!--ref="loadmore"-->
                     <!--:top-method="loadTop">-->
-                  <ul>
+                  <ul class="personalListUl">
                     <li v-if="!userInfo.is_test_player" class="islis" @click="toPhoneManager()">
                       <a href="javascript:void(0)">
                         <p>手机号管理</p>
