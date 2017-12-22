@@ -5,7 +5,7 @@
       <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
     <div v-if="!$route.query.phone" class="phoneManagMementContent">
-      <div class="loginLi displayFlex">
+      <div class="loginLi displayFlex withdrawPassword">
         <p>手机号</p>
         <p><input type="number" v-model="phone" placeholder="请输入11位手机号码" pattern="^[0-9]*$"></p>
       </div>
@@ -14,7 +14,7 @@
     </div>
     
     <div v-if="$route.query.phone && ($route.query.type == 1 || $route.query.type == 5)" class="phoneManagMementContent">
-      <p class="phoneNum">手机号<span>{{_Util.formatPhone($route.query.phone || '18888888888')}}</span></p>
+      <p class="phoneNum">手机号<span>{{_Util.formatPhone($route.query.phone || '')}}</span></p>
       <p class="warmPromptCustom ">您的手机号已经绑定，无需重复绑定，如需帮助，请联系客服</p>
       <p class="loginHostBtn finishBtn"><a href="javascript:void(0)" @click="customerServer">联系客服</a></p>
     </div>

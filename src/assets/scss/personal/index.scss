@@ -1572,7 +1572,8 @@ $designWidth: 375;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 rem(5);
-    margin:rem(30) auto;
+    margin-top:rem(30);
+    margin-bottom:rem(10);
     background: #BBA075;
     font-family: Arial;
     font-size: rem(10);
@@ -1591,5 +1592,8 @@ $designWidth: 375;
     a {
       color: #FFDC99;
     }
+  }
+  .withdrawPassword{
+    padding-right:rem(10);
   }
 }
