@@ -858,6 +858,102 @@ $designWidth: 375;
     .personalListNavTC {
       width: 96%;
       margin-left: 2%;
+      width: 100%;
+      padding:rem(10);
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      overflow-y: scroll;
+      ul {
+        li.islis {
+          height: rem(44);
+          line-height: rem(44);
+          background: rgba(0, 0, 0, 0.3);
+          position: relative;
+          margin-bottom: rem(1);
+          a {
+            display: block;
+            background: url('../../images/numberimg/yellow_right.png') 97% center no-repeat;
+            background-size: rem(5) auto;
+            line-height: rem(44);
+          }
+          p {
+            background: url('../../images/numberimg/phone.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+            font-size: rem(14);
+            color: #ffdc99;
+            padding-left: rem(30);
+
+          }
+        }
+        li:nth-child(2) {
+          p {
+            background: url('../../images/numberimg/liwu2.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+          }
+        }
+        li:nth-child(3) {
+          p {
+            background: url('../../images/numberimg/liwu3.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+          }
+        }
+        li:nth-child(4) {
+          p {
+            background: url('../../images/numberimg/liwu4.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+          }
+        }
+        li:nth-child(5) {
+          p {
+            background: url('../../images/numberimg/liwu5.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+          }
+        }
+        li:nth-child(6) {
+          p {
+            background: url('../../images/numberimg/liwu8.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+          }
+        }
+        li:nth-child(7) {
+          p {
+            background: url('../../images/numberimg/liwu6.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+          }
+        }
+        li:nth-child(8) {
+          p {
+            background: url('../../images/numberimg/liwu7.png') rem(8) center no-repeat;
+            background-size: rem(20) auto;
+          }
+        }
+        .feedback_message.islis a i {
+          display: inline-block;
+          width: rem(30);
+          height: rem(16);
+          position: absolute;
+          right: rem(26);
+          top: rem(14);
+          background: url("../../images/personal/news.png") center no-repeat;
+          background-size: cover;
+        }
+      }
+      .loadMoreTC {
+        width: rem(140);
+        height: rem(40);
+        line-height: rem(40);
+        text-align: center;
+        margin: rem(20) auto;
+        a {
+          display: block;
+          color: #FFDC99;
+          background: linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+          background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+          font-size: rem(14);
+          border-radius: rem(1);
+          line-height: rem(44);
+        }
+      }
     }
   }
 }
