@@ -772,6 +772,7 @@ $designWidth: 375;
       -webkit-display: flex;
       flex-direction: row;
       -webkit-flex-direction: row;
+      overflow: visible;
       section {
         font-size: rem(14);
         color: #FFFFFF;
