@@ -28,7 +28,7 @@
   /*投注记录*/
   import './assets/scss/common/betting/index.scss'
   /*棋牌彩种*/
-  import  './assets/scss/common/lottery/index.scss'
+  import  './assets/scss/common/lottery/common.scss'
 	/*农场*/
 	import './assets/scss/common/lottery/farm/index.scss'
 	require('./assets/js/jquery.fly.min');

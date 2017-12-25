@@ -1,0 +1,94 @@
+@charset "utf-8";
+@import "../../../rem";
+$designWidth: 375;
+/*pc蛋蛋*/
+.veryPc {
+  background: #f9e7a8;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.veryPcMargin {
+  padding: rem(118) 0 rem(105) 0;
+  .veryPcLine {
+    border: rem(5) solid #df1b24;
+    padding: rem(15);
+    background-color: #fff;
+  }
+}
+
+.veryPcTitle {
+  font-size: rem(14);
+  color: #333;
+  line-height: rem(24);
+  text-align: center;
+  padding-bottom: rem(15);
+}
+
+.veryPcLine, .veryPcMun, .veryPcList {
+  height: auto;
+  overflow: hidden;
+}
+
+.veryPcList ul {
+  li {
+    width: 25%;
+    float: left;
+    text-align: center;
+    margin-bottom: rem(10);
+  }
+}
+
+.veryPcArticle {
+  width: rem(74);
+  font-size: rem(12);
+  color: #4a4a4a;
+  height: rem(40);
+  border: 1px solid #df1a24;
+  display: inline-block;
+  line-height: rem(20);
+  text-align: left;
+  position: relative;
+  section {
+    .veryPcNameBack {
+      width: rem(20);
+      height: rem(20);
+      background: #df1b24;
+      color: #fff;
+      text-align: center;
+      margin-right: rem(5);
+    }
+    .veryPcNameBack.veryPcNameBack28 {
+      background: transparent;
+      color: #4a4a4a;
+    }
+    span {
+      font-family: Arial;
+    }
+  }
+  section:nth-child(2) {
+    text-indent: rem(2);
+    .everyPcAmount {
+      color: #fff;
+    }
+    .everyPcAmount.everyPcOnAmount {
+      color: #4a4a4a;
+    }
+  }
+  .playMarryImg {
+    width: rem(21);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/*重庆时时彩*/
+.veryPc.timeLotteryBack {
+  background: #23202E;
+  height: 100%;
+  overflow-y: scroll;
+}
+.timeLottery {
+  padding: rem(15);
+}
