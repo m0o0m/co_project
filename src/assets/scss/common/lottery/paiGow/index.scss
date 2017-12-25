@@ -8,6 +8,7 @@ $designWidth: 375;
 .paiGowBody {
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
   background: #95221d;
   padding: rem(120) rem(15) rem(106);
   box-sizing: border-box;
@@ -15,12 +16,10 @@ $designWidth: 375;
   .paiGowMianHxpj {
     width: 100%;
     height:100%;
-    overflow: hidden;
     background: url('../../../../images/paiGow/bck/bg04.png')  center no-repeat;
     .paiGowMianHxpjBody {
       padding-bottom: rem(10);
       height:100%;
-      overflow-y: scroll;
       .paiGowMunPaiGowList {
          .paiGowMun {
             li {
@@ -32,6 +31,7 @@ $designWidth: 375;
               }
               article.paiGowArticle {
                 width: 83%;
+                max-width: rem(164);
                 font-size: rem(14);
                 color: #FECB44;
                 padding: rem(10);
