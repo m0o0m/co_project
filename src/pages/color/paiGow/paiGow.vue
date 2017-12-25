@@ -1,43 +1,36 @@
 <template>
-  <div class='pcdd'>
-    <div class="paiGow hxpjGow hxpjGow_paiGow paiGow_sHGow">
-      <div class="paiGow_mian_top" style="left: 0;"><img src="../../../assets/images/paiGow/bck/bg01.png"/></div>
-      <div class="paiGow_mian paiGow_mian_hxpj">
-        <div>
-          <div class=" paiGow_mun_paiGows " v-for="(Colorful,item_index) in deafNum" v-if="lotteryOffsColorID != 137">
-            <!-- <div>{{Colorful.name}}</div> -->
-            <div class="paiGow_mun paiGow_mun_paiGow " :class="{'pknn_mun_LHeight': oneCredId != 4 }">
-              
+    <div class="paiGowBody" :class="{'paiGowBodyBZ':lotteryOffsColorID == 137}">
+      <div class="paiGowMianHxpj">
+        <div class="paiGowMianHxpjBody">
+          <div class=" paiGowMunPaiGowList " v-for="(Colorful,item_index) in deafNum" v-if="lotteryOffsColorID != 137">
+            <div class="paiGowMun paiGowMunPaiGow " :class="{'pknn_mun_LHeight': oneCredId != 4 }">
               <ul>
                 <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
                   <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)"
                            :class="{'on':play.active}"
-                           class="paiGow_article paiGow_article_play indexDisplay">
+                           class="paiGowArticle">
                     <section>
                       <p>
                         <img v-for="p in jsksImgList" v-if="p.k == play.name" :src="p.v"/>
                       </p>
-                      <!--../../../assets/images/Zodiac/zodiac01.png-->
-                      <!-- <p><img :src="zodiacData[index]"/></p> -->
                     </section>
-                    <section class="indexFiex" style="overflow: visible">
+                    <section class="indexFiex">
                       <p>{{play.name}}</p>
                       <p> / {{computeOdds(play)}}</p>
                       <p><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span></p>
                       <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
                           src="../../../assets/images/small01.png"/></p>
                     </section>
-                    <!--@click="triggerEvent($event)"-->
                   </article>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="paiGow_munFirst" v-if="lotteryOffsColorID == 137">
-            <section class="paiGow_munFirst_section"><img :src="thebankerFun[0]"/></section>
+          <div class="paiGowMunFirst" v-if="lotteryOffsColorID == 137">
+            <section class="paiGowMunFirstSection"><img :src="thebankerFun[0]"/></section>
             <section>
-              <article class="paiFirst_Figrue"><img :src="thebankerFun[3]"/></article>
-              <article class="paiFirst_article" v-for="(play,index) in deafNum[1].played"
+              <article class="paiFirstFigrue"><img :src="thebankerFun[3]"/></article>
+              <article class="paiFirstArticle" v-for="(play,index) in deafNum[1].played"
                        @click="playchecked($event,play,deafNum[1].id,play.name,index, deafNum[1], true)"
                        :class="{'on': play.active}">
                 <p>{{play.name}}</p>
@@ -49,9 +42,9 @@
                     src="../../../assets/images/small01.png"/></p>
               </article>
             </section>
-            <section :class="{'ispas': lotteryOffsColorID == '137'}" style="position: absolute; bottom: 1rem; padding: 0;">
-              <article class="paiFirst_Figrue"><img :src="thebankerFun[2]"/></article>
-              <article class="paiFirst_article" v-for="(play,index) in deafNum[2].played"
+            <section>
+              <article class="paiFirstFigrue"><img :src="thebankerFun[2]"/></article>
+              <article class="paiFirstArticle" v-for="(play,index) in deafNum[2].played"
                        @click="playchecked($event,play,deafNum[2].id,play.name,index, deafNum[2], true)"
                        :class="{'on': play.active}">
                 <p>{{play.name}}</p>
@@ -64,8 +57,8 @@
               </article>
             </section>
             <section>
-              <article class="paiFirst_Figrue"><img :src="thebankerFun[1]"/></article>
-              <article class="paiFirst_article" v-for="(play,index) in deafNum[0].played"
+              <article class="paiFirstFigrue"><img :src="thebankerFun[1]"/></article>
+              <article class="paiFirstArticle" v-for="(play,index) in deafNum[0].played"
                        @click="playchecked($event,play,deafNum[0].id,play.name,index, deafNum[0], true)"
                        :class="{'on': play.active}">
                 <p>{{play.name}}</p>
@@ -80,17 +73,14 @@
           </div>
         </div>
       </div>
-      <div class="paiGow_mian_top" style="left: 0;"><img src="../../../assets/images/paiGow/bck/bg03.png"/></div>
     </div>
-    <!--<div class="paiGow_padding"></div>-->
-  </div>
 
 </template>
 <script type="text/babel">
   import $ from 'jquery'
-  
+//  import '../../../assets/scss/common/lottery/paiGow/index.scss'
   export default {
-    name: 'paiGow',
+    name: 'paiGowBody',
     props: {
       classAdata: {default: ''},
       oneCredId: {default: ''},
@@ -139,12 +129,6 @@
               }
             }
           }
-          if (this.lotteryOffsColorID == '137') {
-            let that = this;
-            this.$nextTick(function () {
-              that._Util.setCss('.paiGow_munFirst',{"height": 0.47},"*");
-            })
-          }
           return this.classAdata.played[this.oneCredId].item;
         }
       }
@@ -155,8 +139,8 @@
       this.lotteryOffsColorID = this.$parent.$refs.headerRef.lotteryTypeId;
       console.log("this.lotteryOffsColorID:",this.lotteryOffsColorID);
       let that = this;
-      that._Util.setCss('.hxpjGow_paiGow',{"min-height": 0.78},"*");
-      that._Util.setCss('.pknn_mun_LHeight',{"height": 0.49},"*");
+//      that._Util.setCss('.hxpjGow_paiGow',{"min-height": 0.78},"*");
+//      that._Util.setCss('.pknn_mun_LHeight',{"height": 0.49},"*");
       that.Colorfulplay();
       
       that.$parent.$on('resetChildData', function () {
@@ -167,7 +151,7 @@
       });
     },
     updated(){
-      this._Util.setCss('.pknn_mun_LHeight',{"height": 0.50},"*");
+//      this._Util.setCss('.pknn_mun_LHeight',{"height": 0.50},"*");
     },
     methods: {
       //清空数据
@@ -232,49 +216,13 @@
             let tianmenId = playedSubtypeName == '比庄大' ? 0 : 1;
             let tianId = playedSubtypeId == '139' ? 1 : (playedSubtypeId == '138' ? 2 : 3);
             console.log(tianmenId)
-            _this._Util.chip(_this, e, $('.paiGow_munFirst section:eq(' + tianId + ') .paiFirst_article:eq(' + tianmenId + ')'));
+            _this._Util.chip(_this, e, $('.paiGowMunFirst section:eq(' + tianId + ') .paiFirstArticle:eq(' + tianmenId + ')'));
             
           } else {
-            _this._Util.chip(_this, e, $('.paiGow_mun_paiGows:eq(' + item_index + ') .paiGow_mun_paiGow ul li:eq(' + index + ')'));
+            _this._Util.chip(_this, e, $('.paiGowMunPaiGowList:eq(' + item_index + ') .paiGowMunPaiGow ul li:eq(' + index + ')'));
             
           }
         }, 10);
-
-//        setTimeout(function(){
-//          $(".pcdd_mun_list ul li").eq(index).removeClass("on");
-//          $('.westernFooter_bottom section').eq(1).find('p.on .maryCls').css({
-//            "top":"20px",
-//            "left":"20px"
-//          });
-//          let sectionVal = parseFloat($(".pcdd_mun_list ul li").eq(index).find('.smarrySpan').text());
-//          if (!('active' in play)) {
-//            // play['active'] = true
-//            play.active = true;
-//            play.amount = sectionVal;
-//            //_this.$set(play, 'active', true);
-////            _this.$set(play, 'amount', sectionVal);
-//          }else {
-//            //play.active = !play.active
-//          }
-//          // if($(".pcdd_mun_list ul li").eq(index).hasClass('on')) {
-//          //   $(".pcdd_mun_list ul li").eq(index).removeClass("on");
-//          // }else{
-//          //   $(".pcdd_mun_list ul li").eq(index).addClass("on");
-//          // }
-//          if (play.active) {
-//            play['cur_odds'] = that.computeOdds(play);
-//            play['play_sub_group_id'] = playedSubtypeId
-//            play['play_sub_group_name'] = playedSubtypeName;
-//            _this.selectedBalls.push(play)
-//          }else{
-//            _this.selectedBalls.remove(play);
-//          }
-//          _this   .notifySelectedCount();
-//          //$('.playMarryImg').eq(index).trigger('click');
-//        },550);
-        // let appendHref = require('../../../assets/images/marry_10.png');
-        // let appendiMG = '<img src= ' + appendHref + ' class="maryCls"/>';
-        // $('.westernFooter_bottom section').eq(1).find('p.on').append(appendiMG);
       },
       getAllSelectedBalls() {
         return this.selectedBalls
@@ -327,13 +275,6 @@
         this.selectedBalls = [];
         this.classAdata.played = JSON.parse(JSON.stringify(this.playedListCopy));
         this.lotteryOffsColorID = this.$parent.$refs.headerRef.lotteryTypeId;
-        if (this.lotteryOffsColorID == '137') {
-          let that = this;
-          this.$nextTick(function () {
-            that._Util.setCss('.paiGow_munFirst',{"height": 0.47},"*");
-          })
-        }
-        
       },
       
       'sliderValue'() {

@@ -31,6 +31,9 @@
   import  './assets/scss/common/lottery/index.scss'
 	/*农场*/
 	import './assets/scss/common/lottery/farm/index.scss'
+  /*牌九*/
+	import './assets/scss/common/lottery/paiGow/index.scss'
+
 	require('./assets/js/jquery.fly.min');
 
 	export default {
