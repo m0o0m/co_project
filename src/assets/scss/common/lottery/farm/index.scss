@@ -50,7 +50,9 @@ div, session, ul, li {
     }
   }
 }
-
+.slotMachineContainer {
+  overflow: visible;
+}
 .farmGameInfo {
   margin-top: rem(4);
   background-image: linear-gradient(-180deg, #970000 0%, #C70000 100%);

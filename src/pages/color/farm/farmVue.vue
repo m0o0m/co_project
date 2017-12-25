@@ -3,13 +3,13 @@
     <section class="farmGame">
       <div class="farmGameBox">
         <div class="farmGameAnimation clearfix">
-          <div id="machine1" class="slotMachine floatLeft">
+          <div id="machine1" class="slotMachine">
             <div v-for="gameImg in gameImgData1" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
           </div>
-          <div id="machine2" class="slotMachine floatLeft">
+          <div id="machine2" class="slotMachine">
             <div v-for="gameImg in gameImgData2" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
           </div>
-          <div id="machine3" class="slotMachine floatLeft">
+          <div id="machine3" class="slotMachine">
             <div v-for="gameImg in gameImgData3" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
           </div>
         </div>
@@ -413,20 +413,15 @@
 
 				that.$parent.$refs.headerRef.getHistoryBetMoney(that.totalMoney);
 			},
-
-
 			onComplete: function (first, two, three) {
+        $(".slotMachineContainer").css({'margin-top':-$("#machine1 div").eq(1).height()});
 				$("#machine1 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine2 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine3 div").eq(1).css({'margin-bottom': "0"});
-				$("#machine1 div").eq(3).css({'margin-bottom': "0.24241rem"});
-				$("#machine2 div").eq(3).css({'margin-bottom': "0.24241rem"});
-				$("#machine3 div").eq(3).css({'margin-bottom': "0.24241rem"});
-        
-        $("#machine1 div img").eq(2).css({'width': "1.7rem"});
-        $("#machine2 div img").eq(2).css({'width': "1.7rem"});
-        $("#machine3 div img").eq(2).css({'width': "1.7rem"});
-				
+				$("#machine1 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
+				$("#machine2 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
+				$("#machine3 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
+    
 				$("#machine1 div").eq(2).css({'margin-bottom': "0.24241rem"}).find("img").css({opacity: ".6"});
 				$("#machine1 div").eq(4).find("img").css({opacity: "0.6"});
 				$("#machine2 div").eq(2).css({'margin-bottom': "0.24241rem"}).find("img").css({opacity: "0.6"});
@@ -473,6 +468,7 @@
 
 			},
 			start: function () {
+        $(".slotMachineContainer").css({'margin-top':-$("#machine1 div").eq(1).height()});
 				$(".slotMachineContainer div").attr("style", "");
 				$(".slotMachineContainer img").attr("style", "");
 				let that = this;
