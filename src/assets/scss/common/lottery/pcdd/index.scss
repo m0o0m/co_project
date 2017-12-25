@@ -30,12 +30,19 @@ $designWidth: 375;
   overflow: hidden;
 }
 
-.veryPcList ul {
-  li {
-    width: 25%;
-    float: left;
-    text-align: center;
-    margin-bottom: rem(10);
+.veryPcList {
+  ul {
+    li {
+      width: 25%;
+      float: left;
+      text-align: center;
+      margin-bottom: rem(10);
+    }
+  }
+  ul.specialNum {
+    li {
+      width: 33.3%;
+    }
   }
 }
 
@@ -90,5 +97,55 @@ $designWidth: 375;
   overflow-y: scroll;
 }
 .timeLottery {
-  padding: rem(15);
+  padding: rem(5);
+}
+
+.timeLotteryPadding {
+  background: rgb(68,0,0);
+  border-radius: rem(5);
+  padding: rem(6);
+}
+.timeLotteryColor  {
+  background: radial-gradient(top,rgb(181,18,34),rgb(120,8,21));
+  background: -webkit-radial-gradient(top,rgb(181,18,34),rgb(120,8,21));
+  padding: rem(5);
+  border: 1px solid rgb(114,47,6);
+}
+.timeLotteryDiv {
+  border: 1px solid rgb(190,178,132);
+  border-radius: rem(3);
+  padding: rem(5);
+  margin-bottom: rem(10);
+}
+.veryPcTitle.timeLotteryTitle {
+  color: #FFDC99;
+}
+.timeLotteryArticle {
+  width: rem(74);
+  font-size: rem(12);
+  color: #FFDC99;
+  display: inline-block;
+  text-align: left;
+  border: 1px solid rgba(255,220,153,0.50);
+  border-radius: rem(2);
+  position: relative;
+  section {
+    padding: 0 rem(3);
+    line-height: rem(20);
+  }
+  .playMarryImg {
+    width: rem(21);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .everyPcAmount {
+    color: transparent;
+  }
+  .everyPcAmount.everyPcOnAmount {
+    color: #fff;
+  }
+}
+.timeLotteryArticle.timeLottery57 {
+  width: rem(100);
 }
