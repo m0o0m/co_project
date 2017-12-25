@@ -784,8 +784,10 @@ $designWidth: 375;
         letter-spacing: 0;
         line-height: rem(16)
       }
-      section:nth-child(2) {
+      section:nth-child(3) {
         padding-left: rem(10);
+        position: relative;
+        left: -1.6rem;
         p:nth-of-type(2) {
           line-height: rem(28);
           span {

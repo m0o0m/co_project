@@ -1,38 +1,32 @@
 <template>
   <div v-if="classAdata.lottery_id" class="farmVue">
-    <section class="gam-common">
-      <img src="../../../assets/images/farm/bg/bg_01.png" alt="" title="" class="gam-img-bg"/>
-      <div class="gam-box">
-        <img src="../../../assets/images/farm/bg/bg_02.png" alt="" title="" class="gam-img-a"/>
-        <img src="../../../assets/images/farm/bg/bg_03.png" alt="" title="" class="gam-img-b"/>
-        <div class="gam-box-com" style="">
+    <section class="farmGame">
+      <div class="farmGameBox">
+        <div class="farmGameAnimation clearfix">
           <div id="machine1" class="slotMachine">
-            <div v-for="gameImg in gameImgData1"><img :src="gameImg.url" :title="gameImg.name"/></div>
+            <div v-for="gameImg in gameImgData1" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
           </div>
           <div id="machine2" class="slotMachine">
-            <div v-for="gameImg in gameImgData2"><img :src="gameImg.url" :title="gameImg.name"/></div>
+            <div v-for="gameImg in gameImgData2" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
           </div>
           <div id="machine3" class="slotMachine">
-            <div v-for="gameImg in gameImgData3"><img :src="gameImg.url" :title="gameImg.name"/></div>
+            <div v-for="gameImg in gameImgData3" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
           </div>
         </div>
-        <div class="gam-box-info">
-          <ul class="gam-box-ul">
-            <li v-for="(nav, index) in deafNum" @click="selectNav(nav, index)" :class="{'on':index == nav_ndex}">
-              {{nav.name}}
-            </li>
+        <div class="farmGameInfo">
+          <ul class="farmGameInfoTitle clearfix">
+            <li v-for="(nav, index) in deafNum" @click="selectNav(nav, index)" :class="{'on':index == nav_ndex}" class="floatLeft">{{nav.name}}</li>
           </ul>
           <div class="gamCls">
-            <ul>
+            <ul class="clearfix">
               <li v-for="(v, index) in items"
-                  @click="playchecked($event, v, Colorful.id, v.name, index, Colorful)" :class="{'on':v.active}">
-                <article class="gameArticle">
-                  <section v-if="v.img" class="gameArt_section"><img :src="v.img"/>
+                  @click="playchecked($event, v, Colorful.id, v.name, index, Colorful)" :class="{'on':v.active,floatLeft:true}">
+                <article class="gameArticle clearfix">
+                  <section v-if="v.img" class="gameArtSection floatLeft"><img :src="v.img"/>
                   </section>
-                  <section >
-                    <p>{{v.name}}</p>
-                    <p>/{{computeOdds(v)}}</p>
-                    <p style="color: red" :class="{'wheres':v.name == '小型水果' || v.name == '大型水果' || v.name == '中型水果' || v.name == '蔬菜' || v.name == '动物'}" >{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.amount)}}</p>
+                  <section class="floatLeft gameArticleText">
+                    <p>{{v.name}}<span>/{{computeOdds(v)}}</span></p>
+                    <p :class="{'wheres':v.name == '小型水果' || v.name == '大型水果' || v.name == '中型水果' || v.name == '蔬菜' || v.name == '动物','colorRed':true}" >{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.amount)}}</p>
                     <p class="playMarryImg imggs " v-if="v.active && !$parent.stopBet">
                       <img v-if="!v.active" src="../../../assets/images/small01.png"/>
                       <img v-if="v.active" :src="require('../../../assets/images/marry_' + ((v.chip === 10 || v.chip === 5000) ? v.chip + '_f' : v.chip) + '.png')"/>
@@ -58,7 +52,6 @@
           </div>
         </div>-->
       </div>
-
     </section>
   </div>
 </template>
@@ -238,7 +231,7 @@
 			}, 2000);
 		},
 		updated(){
-			$("ul.gam-box-ul li").eq(this.nav_index).addClass("on");
+			$("ul.farmGameInfoTitle li").eq(this.nav_index).addClass("on");
 		},
 		methods: {
 			randomSortImg() {
@@ -256,8 +249,8 @@
 			selectNav(nav, index) {
 				this.Colorful = nav;
 				this.items = nav.played;
-				$("ul.gam-box-ul li").removeClass("on");
-				$("ul.gam-box-ul li").eq(index).addClass("on");
+				$("ul.farmGameInfoTitle li").removeClass("on");
+				$("ul.farmGameInfoTitle li").eq(index).addClass("on");
 				this.nav_index = index;
 				for (let v of this.items) {
 					console.log('this._Util.getValueByKey(this.imgJson.imgList, v.name, \'picName\') = ' + this._Util.getValueByKey(this.imgJson.imgList, v.name, 'picName'))
@@ -420,21 +413,20 @@
 
 				that.$parent.$refs.headerRef.getHistoryBetMoney(that.totalMoney);
 			},
-
-
 			onComplete: function (first, two, three) {
+        $(".slotMachineContainer").css({'margin-top':-$("#machine1 div").eq(1).height()});
 				$("#machine1 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine2 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine3 div").eq(1).css({'margin-bottom': "0"});
-				$("#machine1 div").eq(3).css({'margin-bottom': "0.37241rem", "width": "1.7rem", "height": "1.8rem"});
-				$("#machine2 div").eq(3).css({'margin-bottom': "0.37241rem", "width": "1.7rem", "height": "1.8rem"});
-				$("#machine3 div").eq(3).css({'margin-bottom': "0.37241rem", "width": "1.7rem", "height": "1.8rem"});
-
-				$("#machine1 div").eq(2).css({'margin-bottom': "0.37241rem"}).find("img").css({opacity: ".6"});
+				$("#machine1 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
+				$("#machine2 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
+				$("#machine3 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
+    
+				$("#machine1 div").eq(2).css({'margin-bottom': "0.24241rem"}).find("img").css({opacity: ".6"});
 				$("#machine1 div").eq(4).find("img").css({opacity: "0.6"});
-				$("#machine2 div").eq(2).css({'margin-bottom': "0.37241rem"}).find("img").css({opacity: "0.6"});
+				$("#machine2 div").eq(2).css({'margin-bottom': "0.24241rem"}).find("img").css({opacity: "0.6"});
 				$("#machine2 div").eq(4).find("img").css({opacity: "0.6"});
-				$("#machine3 div").eq(2).css({'margin-bottom': "0.37241rem"}).find("img").css({opacity: "0.6"});
+				$("#machine3 div").eq(2).css({'margin-bottom': "0.24241rem"}).find("img").css({opacity: "0.6"});
 				$("#machine3 div").eq(4).find("img").css({opacity: "0.6"});
 			},
 			//获取数据结果中对应的下标周围的一条数据
@@ -476,6 +468,7 @@
 
 			},
 			start: function () {
+        $(".slotMachineContainer").css({'margin-top':-$("#machine1 div").eq(1).height()});
 				$(".slotMachineContainer div").attr("style", "");
 				$(".slotMachineContainer img").attr("style", "");
 				let that = this;

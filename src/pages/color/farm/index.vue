@@ -60,8 +60,7 @@
           </div>
         </div>
     </div>
-
-
+    
     <div class="Popup_up indexJust" v-if="resultPop">
       <div class="popup_upMian">
         <div class="popup_ulTitle">选择玩法</div>
@@ -79,8 +78,8 @@
 <script type="text/babel">
   import imgJson from './img.json';
 
-  import '../../../assets/scss/paiGow.scss'
-  import '../../../assets/scss/farm.scss'
+//  import '../../../assets/scss/paiGow.scss'
+//  import '../../../assets/scss/farm.scss'
 
   import Headered from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'

@@ -46,6 +46,10 @@ img {
   float: right;
 }
 
+.floatLeft {
+  float: left;
+}
+
 .positionFixed {
    position: fixed;
    top: 0;
@@ -60,6 +64,9 @@ img {
   z-index: 5;
 }
 
+.colorRed{
+  color: #E83828;
+}
 /*清除浮动*/
 .clearfix:before,
 .clearfix:after {

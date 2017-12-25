@@ -1,0 +1,123 @@
+@charset "utf-8";
+@import "../../../rem";
+//@import "../common";
+
+$designWidth: 375;
+div, session, ul, li {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.farmVue {
+  height: 100%;
+  padding: rem(130) rem(10) rem(106);
+  background: linear-gradient(top, #20459E, #0B2668);
+  background: -webkit-linear-gradient(top, #20459E, #0B2668);
+  .farmGame {
+    //height: 80%;
+    border: rem(4) solid rgb(255, 214, 0);
+    background-image: linear-gradient(-180deg, #FFAD3E 0%, #BA0600 100%);
+    border-radius: rem(8);
+    padding: rem(5);
+  }
+}
+
+/*农场动画部分*/
+.farmGameAnimation {
+  background-image: linear-gradient(-139deg, rgba(255, 255, 255, 0.36) 0%, #FFD57E 100%);
+  background-image: -webkit-linear-gradient(-139deg, rgba(255, 255, 255, 0.36) 0%, #FFD57E 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 rem(2) rem(4) 0 rgba(0, 0, 0, 0.15);
+  border-radius: rem(4);
+  padding: rem(4);
+  display: flex;
+  .slotMachine {
+    flex: 1;
+    height: rem(112);
+    background-image: linear-gradient(90deg, #001681 0%, #00132F 97%);
+    background-image: -webkit-linear-gradient(90deg, #001681 0%, #00132F 97%);
+    overflow: hidden;
+    margin-right: rem(2);
+    &:last-child {
+      margin-right: rem(0);
+    }
+    .machineItem {
+      margin-bottom: rem(10);
+      img {
+        width: rem(30);
+        margin: 0 auto;
+      }
+    }
+  }
+}
+.slotMachineContainer {
+  overflow: visible;
+}
+.farmGameInfo {
+  margin-top: rem(4);
+  background-image: linear-gradient(-180deg, #970000 0%, #C70000 100%);
+  background-image: -webkit-linear-gradient(-180deg, #970000 0%, #C70000 100%);
+  box-shadow: inset 0 rem(2) rem(4) 0 #610000;
+  border-radius: rem(4);
+  border: rem(4) solid rgb(255, 214, 0);
+  padding: rem(10) rem(6) rem(4);
+  .farmGameInfoTitle {
+    opacity: 0.8;
+    background: #FFE656;
+    border-radius: rem(4);
+    padding: rem(5);
+    li {
+      padding: rem(2) rem(12);
+      font-family: Arial;
+      font-size: rem(12);
+      color: #990000;
+      letter-spacing: 0;
+      &.on {
+        color: #EAC700;
+        background: #990000;
+        border-radius: rem(2);
+      }
+    }
+  }
+  .gamCls {
+    margin-top: rem(10);
+    li {
+      background: #FFE656;
+      border-radius: rem(4);
+      width: 48%;
+      height: rem(40);
+      padding: rem(2) rem(4);
+      margin-left: rem(4);
+      margin-bottom: rem(8);
+      .gameArticle {
+        .gameArtSection {
+          width: rem(34);
+          height: rem(34);
+          background: #151723;
+          border: 1px solid #FFDC99;
+          border-radius: rem(4);
+        }
+        .gameArticleText {
+          width: 72%;
+          margin-left: rem(5);
+          font-family: Arial;
+          font-size: rem(12);
+          color: #4B3636;
+          letter-spacing: 0;
+          line-height: rem(12);
+          p {
+            margin-top: rem(4);
+            &:first-child {
+              font-size: rem(14);
+            }
+          }
+        }
+      }
+      &:last-child{
+        .gameArticleText{
+          width: 95.3%;
+        }
+      }
+    }
+  }
+}
