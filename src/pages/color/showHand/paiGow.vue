@@ -1,98 +1,73 @@
 <template>
-  <div>
-    <div class='pcdd'>
-      <div class="paiGow sHGow paiGow_sHGow">
-        <div class="paiGow_mian_top"><img src="../../../assets/images/showHand/bg/bg01.png"/></div>
-        <div class="paiGow_mian paiGow_mian_showHand">
-          <div class="paiGow_mian_showHand_back">
-            <!--v-if="oneCredId != 2"-->
-            <div class="paiGow_integrate_nav" v-if="lotteryOffsColorID == 321">
-              <ul>
-                <li v-for="(Colorful,item_index) in deafNum" :class="{'on':item_index == ColorfulID}"
-                    @click="ColorfulFunction(item_index)"><p>{{Colorful.name}}</p></li>
+  <div class="showHand">
+    <div class="showHandGow">
+      <div class="showHandMargin">
+        <div class="showHandNav" v-if="lotteryOffsColorID == 321">
+          <ul class="displayFlex">
+            <li v-for="(Colorful,item_index) in deafNum" :class="{'on':item_index == ColorfulID}"
+                @click="ColorfulFunction(item_index)"><p>{{Colorful.name}}</p></li>
+          </ul>
+        </div>
+        <div v-for="(Colorful,item_index) in deafNum" v-show="item_index == ColorfulID || lotteryOffsColorID == 125 || lotteryOffsColorID == 327" class="showHadPaiGow">
+          <!-- <div>{{Colorful.name}}</div> -->
+          <div class="showHandLottery">
+            <ul v-if="lotteryOffsColorID == 125 || lotteryOffsColorID == 327">
+              <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}" class="showHandLi">
+                <div @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)" :class="{'on':play.active}" class="showHandList">
+                  <article class="showHandArticle">
+                    <section>
+                      <p>
+                        <img v-for="p in jsksImgList" v-if="p.k == play.name" :src="p.v" class="showHandImg" :class="{'intShowHndThree': lotteryOffsColorID == 327 && index < 4 ,'intShowHndFour': lotteryOffsColorID == 327 && index >= 4}"/>
+                      </p>
+                      <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
+                          src="../../../assets/images/small01.png" alt=""></p>
+                    </section>
+                    <section class="displayFlex">
+                      <article class="shArticle shArticleFlex">
+                        <p><span>{{play.name}}</span></p>
+                        <p class="showHandOD"> / <span>{{computeOdds(play)}}</span></p>
+                      </article>
+                      <article class="shArticle shArticleColor">
+                        <p><span class="smarrySpan" :class="{'visibleAmount': $parent.stopBet || play.amount > 0 }">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
+                        </p>
+                      </article>
+                    </section>
+                  </article>
+                </div>
+              </li>
+            </ul>
+            <!--整合-->
+            <ul v-if="lotteryOffsColorID == 321" class="integrationShowHand">
+              <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
+                <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)"  :class="{'on':play.active}" class="intShowHandArticle">
+                  <p><span class="intShowHandSpan">{{play.name}}</span><span>{{computeOdds(play)}}</span></p>
+                  <p><span class="intShowHndCls" :class="{'visibleAmount': play.amount > 0 || $parent.stopBet}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
+                  </p>
+                  <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
+                      src="../../../assets/images/small01.png" alt=""></p>
+                </article>
+              </li>
+            </ul>
+            <!--龙虎斗-->
+            <div class="tigerShowHand" v-for="(Colorfuled,Colorfuled_index) in  ColorFUlillustrating" v-if="lotteryOffsColorID == 329">
+              <div class="tigerShowHandTitle">{{Colorfuled.name}}</div>
+              <ul class="tigerShowHandList">
+                <li v-for="(play,index) in Colorfuled.played"
+                    :class="{'on': play.active,'colorfuledLast':lotteryOffsColorID == 329}">
+                  <article
+                      @click="playchecked($event,play,Colorfuled.id,play.name,index, Colorfuled,'',Colorfuled_index)" :class="{'on':play.active}" class="tigerShowHandOdds">
+                    <p><span class="intShowHandSpan">{{play.name}}</span><span>{{computeOdds(play)}}</span></p>
+                    <p><span class="intShowHndCls" :class="{'visibleAmount': play.amount > 0 || $parent.stopBet}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
+                    </p>
+                    <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
+                        src="../../../assets/images/small01.png" alt=""></p>
+                  </article>
+                </li>
               </ul>
             </div>
-            <div v-for="(Colorful,item_index) in deafNum" class="mnshDiv"
-                 v-show="item_index == ColorfulID || lotteryOffsColorID == 125 || lotteryOffsColorID == 327">
-              <!-- <div>{{Colorful.name}}</div> -->
-              
-              <div class="paiGow_mun  paiGow_muns paiGow_mun_ltery"
-                   :class="{'paiGow_mun_LHeight': lotteryOffsColorID != 321 ,'paiGow_mun_RHeight': lotteryOffsColorID == 321}">
-                <ul v-if="lotteryOffsColorID == 125 || lotteryOffsColorID == 327">
-                  <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
-                    <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)"
-                             :class="{'on':play.active}" class="paiGow_article shGow_article">
-                      <section style="overflow: visible">
-                        <p :class="{'shGow_chs':lotteryOffsColorID == 327 && index < 4 ,'shGow_chs01':lotteryOffsColorID == 327 && index >= 4}">
-                          <img v-for="p in jsksImgList" v-if="p.k == play.name" :src="p.v"/>
-                        
-                        </p>
-                        <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
-                            src="../../../assets/images/small01.png" alt=""></p>
-                      </section>
-                      <section>
-                        <article class="shArticle">
-                          <p>{{play.name}}</p>
-                          <p> / {{computeOdds(play)}}</p>
-                        </article>
-                        <article class="shArticle">
-                          <p><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span>
-                          </p>
-                        </article>
-                      </section>
-                    </article>
-                  </li>
-                </ul>
-                <!--整合-->
-                <ul v-if="lotteryOffsColorID == 321" class="paiGow_integrateCred00">
-                  <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
-                    <article style="overflow: visible"
-                             @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)"
-                             :class="{'on':play.active}" class="paiGow_integrate">
-                      <p><span>{{play.name}}</span><span>/ {{computeOdds(play)}}</span></p>
-                      <p :class="{'amount': play.amount > 0 || $parent.stopBet}"><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
-                      </p>
-                      <p class="playMarryImg imggs" v-if="play.active && !$parent.stopBet"><img
-                          src="../../../assets/images/small01.png" alt=""></p>
-                    </article>
-                  </li>
-                </ul>
-                <!--龙虎斗-->
-                <div class="paiGow_integrateCred_mianed paiGow_muns"
-                     v-for="(Colorfuled,Colorfuled_index) in  ColorFUlillustrating" v-if="lotteryOffsColorID == 329">
-                  <div class="paiGow_integrateCred_title">{{Colorfuled.name}}</div>
-                  <ul class="paiGow_integrateCred00">
-                    <li v-for="(play,index) in Colorfuled.played"
-                        :class="{'on': play.active,'colorfuledLast':lotteryOffsColorID == 329}">
-                      <article
-                          @click="playchecked($event,play,Colorfuled.id,play.name,index, Colorfuled,'',Colorfuled_index)"
-                          :class="{'on':play.active}" class="paiGow_integrate">
-                        <p><span>{{play.name}}</span><span>/ {{computeOdds(play)}}</span></p>
-                        <p :class="{'amount': play.amount > 0 || $parent.stopBet}"><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
-                        </p>
-                        <p class="playMarryImg imggs" v-if="play.active && !$parent.stopBet"><img
-                            src="../../../assets/images/small01.png" alt=""></p>
-                      </article>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <!--<div class="paiGow_munFirst" v-if="oneCredId == 2">-->
-            <!--<section class="paiGow_munFirst_section"><img :src="thebankerFun[0]"/></section>-->
-            <!--<section v-for="(Colorful,item_index) in deafNum">-->
-            <!--<article class="paiFirst_Figrue"><img :src="thebankerFun[item_index+1]"/></article>-->
-            <!--<article class="paiFirst_article" v-for="(play,index) in Colorful.played" @click="playchecked($event,play,Colorful.id,play.name,index, Colorful, true)" :class="{'on': play.active}">-->
-            <!--<p>{{play.name}}</p><p> / {{computeOdds(play)}}</p>-->
-            <!--<p><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span></p>-->
-            <!--<p class="playMarryImg" v-if="play.active"><img src=""/></p>-->
-            <!--</article>-->
-            <!--</section>-->
-            <!--</div>-->
           </div>
         </div>
-        <div class="paiGow_mian_top paiGow_mian_BottomS"><img src="../../../assets/images/showHand/bg/bg03.png"/></div>
-        <div class="paiGow_padding"></div>
+
       </div>
     </div>
   </div>
@@ -181,7 +156,7 @@
         that.isOpenLottery = true;
         that.openLotteryResult = data;
       });
-      that._Util.setCss('.sHGow', {"min-height": 0.78}, "*");
+      // that._Util.setCss('.sHGow', {"min-height": 0.78}, "*");
     },
     methods: {
       //清空数据
@@ -193,16 +168,16 @@
         this.colorPlay();
       },
       colorPlay() {
-        var _NextHeight = $(window).height(),
-          _headerHeight = $(".headered").outerHeight(true),
-          _footerHeight = $(".westernFooter").outerHeight(true);
-        if (this.lotteryOffsColorID == 321) {
-          this.$nextTick(function () {
-            $(".paiGow_mun_RHeight").css({
-              "height": _NextHeight - (_headerHeight + _footerHeight + (_NextHeight * 0.2))
-            });
-          })
-        }
+        // var _NextHeight = $(window).height(),
+        //   _headerHeight = $(".headered").outerHeight(true),
+        //   _footerHeight = $(".westernFooter").outerHeight(true);
+        // if (this.lotteryOffsColorID == 321) {
+        //   this.$nextTick(function () {
+        //     $(".paiGow_mun_RHeight").css({
+		     //      "height": _NextHeight - (_headerHeight + _footerHeight + (_NextHeight * 0.2))
+	       //    });
+        //   })
+        // }
       },
       //数据解析
       Colorfulplay: function () {
@@ -267,15 +242,10 @@
         
         setTimeout(function () {
           if (_this.lotteryOffsColorID == 329) {
-//              alert(12)
-            _this._Util.chip(_this, e, $('.paiGow_integrateCred_mianed:eq(' + item_index + ') ul li:eq(' + index + ')'));
+            _this._Util.chip(_this, e, $('.tigerShowHand:eq(' + item_index + ') ul li:eq(' + index + ')'));
           } else {
-            console.log(item_index);
-            console.log(index);
-            _this._Util.chip(_this, e, $('.mnshDiv:eq(' + item_index + ') .paiGow_muns ul li:eq(' + index + ')'));
+            _this._Util.chip(_this, e, $('.showHadPaiGow:eq(' + item_index + ') .showHandLottery ul li:eq(' + index + ')'));
           }
-          
-          
         }, 10);
       },
       getAllSelectedBalls() {

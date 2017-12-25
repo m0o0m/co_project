@@ -81,7 +81,7 @@
 </template>
 
 <script type="text/babel">
-  import '../../../assets/scss/paiGow.scss';
+  // import '../../../assets/scss/paiGow.scss';
   import $ from 'jquery'
 
   import Headered from '../../../components/header.vue'

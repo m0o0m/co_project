@@ -3,7 +3,6 @@
 @import "./common";
 
 $designWidth: 375;
-
 /*俄罗斯轮盘*/
 .indexRoulette {
   height: 100%;
@@ -368,6 +367,7 @@ $designWidth: 375;
   flex: 1;
   margin-right: rem(1);
 }
+
 .theLotteryColorFul:last-child {
   margin-right: 0;
 }
@@ -385,9 +385,6 @@ $designWidth: 375;
       font-size: rem(14);
       font-family: arial;
       color: #fff;
-      span.smarrySpan {
-        color: #fff;
-      }
     }
     p:first-of-type {
       span:last-of-type {
@@ -407,6 +404,7 @@ $designWidth: 375;
     }
   }
 }
+
 .theLotterySwimUl.theLotterySwimUlColor {
   li {
     background: #E8C177;
@@ -415,6 +413,415 @@ $designWidth: 375;
       span.smarrySpan {
         color: #000000;
       }
+    }
+  }
+}
+
+/*马尼拉梭哈 PK牛牛 云顶炸金花*/
+.showHandGow > div ,.showHadPaiGow ,.showHandLottery {
+  height: auto;
+  overflow: hidden;
+}
+.showHand {
+  height: 100%;
+  overflow-y: scroll;
+  background: #36646F;
+}
+/*pk牛牛*/
+.pkCattle {
+  height: 100%;
+  overflow-y: scroll;
+  background: #153E6D;
+}
+/*云顶炸金花*/
+.cloudGold {
+  height: 100%;
+  overflow-y: scroll;
+  background: #162958;
+}
+
+.showHandMargin {
+  padding: rem(130) rem(15) rem(100) rem(15);
+}
+
+.showHandLottery {
+  ul {
+    li {
+      width: 50%;
+      float: left;
+      text-align: center;
+      margin-bottom: rem(10);
+    }
+  }
+  .integrationShowHand {
+    padding-top: rem(40);
+    li {
+      width: 33.3%;
+      margin-bottom: rem(5);
+    }
+  }
+}
+
+.showHandList {
+  width: rem(166);
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: rem(4);
+  font-size: rem(12);
+  color: #FECB44;
+  position: relative;
+  .showHandArticle {
+    padding: rem(5) rem(10);
+    position: relative;
+    .showHandOD {
+      position: relative;
+      top: rem(1);
+    }
+    .showHandImg {
+      width: rem(92);
+    }
+    .showHandImg.intShowHndThree {
+      width: rem(55);
+    }
+    .showHandImg.intShowHndFour {
+      width: rem(70);
+    }
+    .playMarryImg {
+      width: rem(24);
+      position: absolute;
+      top: 0;
+      right: rem(5);
+    }
+    p {
+      float: left;
+      margin-top: rem(3);
+    }
+  }
+  span {
+    font-family: Arial;
+  }
+  .shArticleFlex {
+    flex: 1;
+  }
+  .shArticleColor {
+    color: #fff;
+    font-family: Arial;
+    span.smarrySpan {
+      color: #36646F;
+    }
+    /*pk牛牛*/
+    span.pkCattleSpan {
+      color: #153E6D;
+    }
+    span.smarrySpan.visibleAmount ,span.pkCattleSpan.visibleAmount{
+      color: #fff;
+    }
+  }
+  .playMarryImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.showHandNav {
+  position: fixed;
+  width: 100%;
+  top: rem(118);
+  left: 0;
+  padding-top: rem(10);
+  background: #36646F;
+  ul {
+    margin: 0 rem(15);
+    height: rem(28);
+    background: #FFF8A8;
+    border-radius: rem(4);
+  }
+  li {
+    flex: 1;
+    font-size: rem(12);
+    color: #31606A;
+    padding-top: rem(4);
+    text-align: center;
+    p {
+      min-width: rem(58);
+      height: rem(20);
+      line-height: rem(20);
+      border-radius: rem(2);
+      display: inline-block;
+    }
+  }
+  li.on {
+    p {
+      background: #32616B;
+      color: #FFF4A2;
+    }
+  }
+}
+
+/*pk牛牛*/
+.pkCattleNav {
+  position: fixed;
+  width: 100%;
+  top: rem(118);
+  left: 0;
+  padding-top: rem(10);
+  background: #153E6D;
+  ul {
+    margin: 0 rem(15);
+    height: rem(28);
+    background: #5D94BC;
+    border-radius: rem(4);
+  }
+  li {
+    flex: 1;
+    font-size: rem(12);
+    color: #123559;
+    padding-top: rem(4);
+    text-align: center;
+    p {
+      min-width: rem(58);
+      height: rem(20);
+      line-height: rem(20);
+      border-radius: rem(2);
+      display: inline-block;
+    }
+  }
+  li.on {
+    p {
+      background: #123559;
+      color: #5D94BC;
+    }
+  }
+}
+
+.intShowHandArticle {
+  width: rem(110);
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.35);
+  position: relative;
+  span {
+    font-family: Arial;
+  }
+  p {
+    width: 100%;
+    float: left;
+  }
+  span {
+    font-size: rem(12);
+    color: #fff;
+    float: left;
+    display: inline-block;
+    height: rem(18);
+    line-height: rem(18);
+  }
+  .intShowHandSpan {
+    width: rem(18);
+    background: #fff;
+    color: #000;
+    margin-right: rem(5);
+  }
+  .intShowHndCls {
+    height: rem(24);
+    line-height: rem(24);
+    text-indent: rem(5);
+    color: #36646F;
+  }
+  /*pk牛牛*/
+  .pkCattleSpanCls {
+    height: rem(24);
+    line-height: rem(24);
+    text-indent: rem(5);
+    color: #153E6D;
+  }
+  /*云顶炸金花*/
+  .cloudGoldSpanCls {
+    height: rem(24);
+    line-height: rem(24);
+    text-indent: rem(5);
+    color: #162958;
+  }
+  .intShowHndCls.visibleAmount ,.pkCattleSpanCls.visibleAmount ,.cloudGoldSpanCls.visibleAmount {
+    color: #fff;
+  }
+  .playMarryImg {
+    width: rem(24);
+    position: absolute;
+    top: rem(1);
+    right: rem(2);
+  }
+}
+.tigerShowHand {
+  .tigerShowHandTitle {
+    text-align: center;
+    font-size: rem(12);
+    color: #fff;
+    padding: rem(10) 0;
+  }
+  .tigerShowHandList {
+    li {
+      width: 33.3%;
+      float: left;
+      span {
+        font-family: Arial;
+      }
+    }
+  }
+}
+.tigerShowHand:first-child {
+  .tigerShowHandTitle {
+    padding-top: 0;
+  }
+}
+.tigerShowHandOdds {
+  width: rem(110);
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.35);
+  position: relative;
+  p {
+    width: 100%;
+    float: left;
+  }
+  span {
+    font-size: rem(12);
+    color: #fff;
+    float: left;
+    display: inline-block;
+    height: rem(18);
+    line-height: rem(18);
+  }
+  .intShowHandSpan {
+    width: rem(18);
+    background: #fff;
+    color: #000;
+    margin-right: rem(5);
+  }
+  .intShowHndCls {
+    height: rem(24);
+    line-height: rem(24);
+    text-indent: rem(5);
+    color: #36646F;
+  }
+  .pkCattleSpanClsThree {
+    height: rem(24);
+    line-height: rem(24);
+    text-indent: rem(5);
+    color: #153E6D;
+  }
+  .cloudGoldSpanClsThree {
+    height: rem(24);
+    line-height: rem(24);
+    text-indent: rem(5);
+    color: #162958;
+  }
+  .intShowHndCls.visibleAmount ,.pkCattleSpanClsThree.visibleAmount ,.cloudGoldSpanClsThree.visibleAmount {
+    color: #fff;
+  }
+  .playMarryImg {
+    width: rem(24);
+    position: absolute;
+    top: rem(1);
+    right: rem(2);
+  }
+}
+
+.colorItemHid {
+  display: none;
+}
+
+.colorItemVis {
+  display: block;
+}
+
+/*云顶炸金花*/
+.cloudGoldList {
+  ul {
+    li {
+      width: 33.3%;
+      float: left;
+      text-align: center;
+      margin-bottom: rem(10);
+    }
+  }
+  .integrationShowHand {
+    padding-top: rem(30);
+  }
+  .integrationShowHand.clondTopIntegration {
+    padding-top: 0;
+  }
+}
+
+.cloudGoldDiv {
+  width: rem(106);
+  height: rem(126);
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.60);
+  border-radius: rem(4);
+  font-size: rem(12);
+  color: #FECB44;
+  position: relative;
+  .cloudGoldArticle {
+    padding: rem(10);
+    line-height: rem(20);
+    section:nth-child(2) {
+      margin-top: rem(15);
+    }
+  }
+  .shArticle {
+    p {
+      float: left;
+    }
+    .pkCattleSpan {
+      color: #162958;
+    }
+    .pkCattleSpan.visibleAmount {
+      color: #fff;
+    }
+  }
+  p.playMarryImg {
+    width: rem(22);
+    height: rem(22);
+    position: absolute;
+    bottom: rem(5);
+    right: rem(5);
+  }
+}
+.cloudGoldGow {
+  padding-top: rem(10);
+}
+
+/*云顶炸金花*/
+.cloudTopNav {
+  position: fixed;
+  width: 100%;
+  top: rem(128);
+  left: 0;
+  padding-top: rem(10);
+  background: #162958;
+  ul {
+    margin: 0 rem(15);
+    height: rem(28);
+    background: #94AEEC;
+    border-radius: rem(4);
+  }
+  li {
+    flex: 1;
+    font-size: rem(12);
+    color: #2A427C;
+    padding-top: rem(4);
+    text-align: center;
+    p {
+      min-width: rem(58);
+      height: rem(20);
+      line-height: rem(20);
+      border-radius: rem(2);
+      display: inline-block;
+    }
+  }
+  li.on {
+    p {
+      background: #2A427C;
+      color: #819BDB;
     }
   }
 }

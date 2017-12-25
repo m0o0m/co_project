@@ -1,73 +1,73 @@
 <template>
-  <div>
-    <div class='pcdd'>
-      <!---->
-      <div class="paiGow pknnGow paiGow_sHGow">
-        <div class="paiGow_mian_top"><img src="../../../assets/images/pknn/bg/bg01.png"/></div>
-        <div class="paiGow_mian paiGow_mian_backG">
-          <div class="paiGow_mian_showHand_back">
-            <div class="paiGow_integrate_nav" v-if="lotteryOffsColorID == '352'">
-              <ul class="paiGow_integrate_nav_pknn">
-                <li v-for="(Colorful,item_index) in deafNum" :class="{'on':item_index == ColorfulID}" @click="ColorfulFunction(item_index)"><p>{{Colorful.name}}</p></li>
-              </ul>
-            </div>
-            <div class="paiGow_mun_lterys" v-for="(Colorful,item_index) in deafNum" :class="{'colorItemHid': lotteryOffsColorID == '352', 'colorItemVis': ColorfulID == item_index}" v-if="lotteryOffsColorID != '360' || lotteryOffsColorID == '360' && item_index == 0">
-              <!-- <div>{{Colorful.name}}</div> -->
-              <div class="paiGow_mun paiGow_mun_ltery" :class="{'pknn_mun_LHeight': lotteryOffsColorID != '352' ,'pknn_mun_RHeight': lotteryOffsColorID == '352' }">
-                <ul v-if="lotteryOffsColorID == '131' || lotteryOffsColorID == '358'">
-                  <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
-                    <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)" :class="{'on':play.active}"
-                             class="paiGow_article pknnGow_article">
-                      <section style="overflow: visible;">
-                        <p :class="{'shGow_chs':lotteryOffsColorID == '358' && index < 4 ,'shGow_chs01':lotteryOffsColorID == '358' && index >= 4}">
-                          <img v-for="p in jsksImgList" v-if="p.k == play.name" :src="p.v"/>
-                        </p>
-                        <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
-                      </section>
-                      <section>
-                        <article class="shArticle">
-                          <p>{{play.name}}</p>
-                          <p> / {{computeOdds(play)}}</p>
-                        </article>
-                        <article class="shArticle">
-                          <p><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span></p>
-                        </article>
-
-                      </section>
-                      <!--@click="triggerEvent($event)"-->
-                      <!--<section ></section>-->
-                    </article>
-                  </li>
-                </ul>
-                <!--整合-->
-                <ul v-if="lotteryOffsColorID == '352'" class="paiGow_integrateCred00">
-                  <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
-                    <article  style="overflow: visible" @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)" :class="{'on':play.active}" class="paiGow_integrate">
-                      <p><span>{{play.name}}</span><span>/ {{computeOdds(play)}}</span></p>
-                      <p :class="{'amount':play.amount > 0 || $parent.stopBet}"><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || '0'}}</span></p>
-                      <p class="playMarryImg imggs" v-if="play.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
-                    </article>
-                  </li>
-                </ul>
-                <!--龙虎斗-->
-                <div class="paiGow_integrateCred_mianed" v-for="(Colorfuled,Colorfuled_index) in  ColorFUlillustrating" v-if="lotteryOffsColorID == '360'">
-                  <div class="paiGow_integrateCred_title" v-if="lotteryOffsColorID == '360'">{{Colorfuled.name}}</div>
-                  <ul v-if="lotteryOffsColorID == '360'" class="paiGow_integrateCred00">
-                    <li v-for="(play,index) in Colorfuled.played" :class="{'on': play.active,'colorfuledLast':lotteryOffsColorID == '360'}">
-                      <article style="overflow: visible" @click="playchecked($event,play,Colorfuled.id,play.name,index, Colorfuled,'',Colorfuled_index)" :class="{'on':play.active}" class="paiGow_integrate">
-                        <p><span>{{play.name}}</span><span>/ {{computeOdds(play)}}</span></p>
-                        <p :class="{'amount':play.amount > 0 || $parent.stopBet}"><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || '0'}}</span></p>
-                        <p class="playMarryImg imggs" v-if="play.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
+  <div class="pkCattle">
+    <div class="showHandGow">
+      <div class="showHandMargin">
+        <div class="pkCattleNav" v-if="lotteryOffsColorID == 352">
+          <ul class="displayFlex">
+            <li v-for="(Colorful,item_index) in deafNum" :class="{'on':item_index == ColorfulID}"
+                @click="ColorfulFunction(item_index)"><p>{{Colorful.name}}</p></li>
+          </ul>
+        </div>
+        <div v-for="(Colorful,item_index) in deafNum" :class="{'colorItemHid': lotteryOffsColorID == '352', 'colorItemVis': ColorfulID == item_index}" v-if="lotteryOffsColorID != '360' || lotteryOffsColorID == '360' && item_index == 0" class="showHadPaiGow">
+          <!-- <div>{{Colorful.name}}</div> -->
+          <div class="showHandLottery">
+            <ul v-if="lotteryOffsColorID == 131 || lotteryOffsColorID == 358">
+              <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}" class="showHandLi">
+                <div @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)" :class="{'on':play.active}" class="showHandList">
+                  <article class="showHandArticle">
+                    <section>
+                      <p>
+                        <img v-for="p in jsksImgList" v-if="p.k == play.name" :src="p.v" class="showHandImg" :class="{'intShowHndThree': lotteryOffsColorID == 358 && index < 4 ,'intShowHndFour': lotteryOffsColorID == 358 && index >= 4}"/>
+                      </p>
+                      <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
+                          src="../../../assets/images/small01.png" alt=""></p>
+                    </section>
+                    <section class="displayFlex">
+                      <article class="shArticle shArticleFlex">
+                        <p><span>{{play.name}}</span></p>
+                        <p class="showHandOD"> / <span>{{computeOdds(play)}}</span></p>
                       </article>
-                    </li>
-                  </ul>
+                      <article class="shArticle shArticleColor">
+                        <p><span class="pkCattleSpan" :class="{'visibleAmount': $parent.stopBet || play.amount > 0 }">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
+                        </p>
+                      </article>
+                    </section>
+                  </article>
                 </div>
-              </div>
+              </li>
+            </ul>
+            <!--整合-->
+            <ul v-if="lotteryOffsColorID == 352" class="integrationShowHand">
+              <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
+                <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)"  :class="{'on':play.active}" class="intShowHandArticle">
+                  <p><span class="intShowHandSpan">{{play.name}}</span><span>{{computeOdds(play)}}</span></p>
+                  <p><span class="pkCattleSpanCls" :class="{'visibleAmount': play.amount > 0 || $parent.stopBet}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
+                  </p>
+                  <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
+                      src="../../../assets/images/small01.png" alt=""></p>
+                </article>
+              </li>
+            </ul>
+            <!--龙虎斗-->
+            <div class="tigerShowHand" v-for="(Colorfuled,Colorfuled_index) in  ColorFUlillustrating" v-if="lotteryOffsColorID == 360">
+              <div class="tigerShowHandTitle">{{Colorfuled.name}}</div>
+              <ul class="tigerShowHandList">
+                <li v-for="(play,index) in Colorfuled.played"
+                    :class="{'on': play.active,'colorfuledLast':lotteryOffsColorID == 329}">
+                  <article
+                      @click="playchecked($event,play,Colorfuled.id,play.name,index, Colorfuled,'',Colorfuled_index)" :class="{'on':play.active}" class="tigerShowHandOdds">
+                    <p><span class="intShowHandSpan">{{play.name}}</span><span>{{computeOdds(play)}}</span></p>
+                    <p><span class="pkCattleSpanClsThree" :class="{'visibleAmount': play.amount > 0 || $parent.stopBet}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
+                    </p>
+                    <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
+                        src="../../../assets/images/small01.png" alt=""></p>
+                  </article>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="paiGow_mian_top"><img src="../../../assets/images/pknn/bg/bg03.png"/></div>
-        <div class="paiGow_padding"></div>
+
       </div>
     </div>
   </div>
@@ -226,9 +226,9 @@
           setTimeout(function () {
               if( _this.lotteryOffsColorID == '360') {
 //              alert(12)
-                  _this._Util.chip(_this, e, $('.paiGow_integrateCred_mianed:eq(' + item_index + ') ul li:eq(' + index + ')'));
+                  _this._Util.chip(_this, e, $('.tigerShowHand:eq(' + item_index + ') ul li:eq(' + index + ')'));
               }else {
-                  _this._Util.chip(_this, e, $('.paiGow_mun_lterys:eq(' + item_index + ') .paiGow_mun_ltery ul li:eq(' + index + ')'));
+                  _this._Util.chip(_this, e, $('.showHadPaiGow:eq(' + item_index + ') .showHandLottery ul li:eq(' + index + ')'));
               }
           }, 10);
 //        setTimeout(function(){

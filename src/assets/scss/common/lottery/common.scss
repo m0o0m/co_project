@@ -10,8 +10,9 @@ $designWidth: 375;
 
 .headerCom {
   width: 100%;
-  height: rem(100);
+  height: rem(118);
   background-image: linear-gradient(-180deg, #3E3B3B 0%, #27272D 100%);
+  overflow: visible;
 }
 
 .headerTop {
