@@ -1,0 +1,542 @@
+@charset "utf-8";
+@import "../../rem";
+
+$designWidth: 375;
+
+/*header*/
+.lotteryHeader {
+  width: 100%;
+}
+
+.headerCom {
+  width: 100%;
+  height: rem(100);
+  background-image: linear-gradient(-180deg, #3E3B3B 0%, #27272D 100%);
+}
+
+.headerTop {
+  position: relative;
+  span {
+    font-family: arial;
+  }
+  section {
+    height: rem(45);
+    line-height: rem(45);
+    text-align: center;
+    font-size: rem(18);
+    color: #ffffff;
+    letter-spacing: rem(1);
+    font-weight: bold;
+  }
+  section:first-child {
+    width: rem(45);
+    height: rem(45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+  section:nth-child(2) {
+    p {
+      display: inline-block;
+      padding-right: rem(20);
+    }
+    p.backTransparent {
+      background: transparent;
+    }
+  }
+  section:nth-child(3) {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    a {
+      padding: 0 rem(15);
+      font-size: rem(24);
+      color: #fff;
+    }
+  }
+}
+
+/*已投金额 余额*/
+.DeliveryPrice {
+  padding: rem(10) rem(10) 0 rem(10);
+  position: relative;
+  top: rem(-5);
+  .DeliveryHeaderPrice {
+    min-width: rem(110);
+    height: rem(40);
+    border-radius: rem(40);
+    line-height: rem(16);
+    border: rem(1) solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(top, #3E3B3B, #27272D), linear-gradient(top, #FFFBAD, #FFA531);
+    background-image: -webkit-linear-gradient(top, #3E3B3B, #27272D), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    box-shadow: inset rem(1) rem(-1) rem(10) rgba(0, 0, 0, 0.5);
+    font-size: rem(12);
+    color: #FFFF5E;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.30);
+    padding-left: rem(45);
+    padding-right: rem(5);
+    span {
+      font-size: rem(16);
+      display: inline-block;
+      font-family: arial;
+    }
+    section:first-child {
+      padding-top: rem(3);
+    }
+    section.balanceAmount {
+      font-size: rem(10);
+      color: #fff;
+      span {
+        font-size: rem(10);
+      }
+    }
+  }
+}
+
+.DeliveryLotteryImg {
+  width: rem(43);
+  height: rem(43);
+  border-radius: 50%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: rem(1) solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(top, #2D2721, #2D2721), linear-gradient(top, #FFFBAD, #FFA531);
+  background-image: -webkit-linear-gradient(top, #2D2721, #2D2721), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+  position: absolute;
+  top: rem(10);
+  left: rem(10);
+  box-shadow: rem(1) rem(0) rem(5) rgba(0, 0, 0, 0.5);
+  overflow: visible;
+  img {
+    width: rem(50);
+    margin-left: rem(-3);
+    margin-top: rem(-2);
+  }
+}
+
+/*开奖结果*/
+.DeliveryMun {
+  text-align: right;
+  flex: 1;
+  margin-top: rem(-7);
+  section {
+    font-size: rem(12);
+    color: #ffffff;
+    line-height: rem(24);
+    span {
+      color: #ffffff;
+      font-family: arial;
+    }
+  }
+}
+
+/*俄罗斯轮盘*/
+.theLotteryRoulette {
+  .lotteryNumRoulette {
+    padding-bottom: rem(2);
+    p {
+      width: rem(54);
+      height: rem(24);
+      line-height: rem(22);
+      border: rem(1) solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(top, #881111, #ED4132), linear-gradient(top, #FFFBAD, #FFA530);
+      background-image: -webkit-linear-gradient(top, #881111, #ED4132), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+      display: inline-block;
+      border-radius: rem(3);
+      text-align: center;
+      box-shadow: inset rem(1) rem(-1) rem(8) rgba(0, 0, 0, 0.5);
+      span {
+        font-size: rem(16);
+        color: #FFFF5E;
+        font-family: Arial;
+      }
+    }
+  }
+  /*济州岛赛马*/
+  .lotteryNumMa {
+    padding-bottom: rem(2);
+    p {
+      width: rem(24);
+      height: rem(24);
+      background: #2C55CA;
+      border: 0.04138rem solid #ffffff;
+      border-radius: 50%;
+      display: inline-block;
+      line-height: rem(24);
+      text-align: center;
+      margin-left: rem(5);
+    }
+    p:nth-of-type(2) {
+      background: #E83828;
+    }
+    p:nth-of-type(3) {
+      background: #4A90E2;
+    }
+  }
+}
+
+/*开奖 封盘 暂停销售*/
+.DeliveryTime {
+  height: rem(20);
+  line-height: rem(20);
+  text-align: center;
+  color: #100C08;
+  font-size: rem(12);
+  background: linear-gradient(top, #FDDA4B, #FFB238);
+  background: -webkit-linear-gradient(top, #FDDA4B, #FFB238);
+  box-shadow: inset 0 0 rem(4) #DE8100;
+  span, time {
+    color: #100C08;
+    font-family: arial;
+  }
+}
+
+/*footer*/
+.westernFooter {
+  height: rem(106);
+  background: url('../../../images/footerBack.png') left bottom no-repeat;
+  background-size: 100% auto;
+}
+
+.westernFooter {
+  bottom: 0;
+  width: 100%;
+  top: auto;
+}
+
+.westernFooterTop, .ternFooterBottom {
+  padding: 0 rem(10);
+}
+
+.westernSectionNum p {
+  flex: 1;
+  text-align: center;
+  img {
+    width: rem(45);
+    display: inline-block;
+    margin-top: rem(4);
+  }
+}
+
+.westernSectionNum p.on {
+  transition: All .4s ease-in-out;
+  -webkit-transition: All .4s ease-in-out;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  img {
+    background: url('../../../images/selectorBack.png') center center no-repeat;
+    background-size: 90% auto;
+  }
+}
+
+.ternFooterBottom {
+  section {
+    flex: 1;
+    padding-top: rem(8);
+  }
+  section:first-child {
+    text-align: left;
+    a {
+      width: rem(55);
+      height: rem(36);
+      line-height: rem(36);
+      background-image: linear-gradient(-180deg, #CECECE 0%, #A7A7A7 100%);
+      border-radius: rem(2);
+      text-align: center;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+      font-size: rem(14);
+      color: #27363B;
+      display: inline-block;
+    }
+  }
+  section:last-child {
+    text-align: right;
+    a {
+      width: rem(87);
+      height: rem(36);
+      line-height: rem(36);
+      background: #FFD148;
+      border-radius: rem(2);
+      text-align: center;
+      font-size: rem(14);
+      color: #27363B;
+      display: inline-block;
+    }
+  }
+}
+
+/*提交訂單*/
+.confirmPage {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(top, #123821, #164227);
+  background: -webkit-linear-gradient(top, #123821, #164227);
+}
+
+.confirmPageBack {
+  width: 100%;
+}
+
+.confirmTitle {
+  height: rem(40);
+  background-image: linear-gradient(-180deg, #3E3B3B 0%, #27272D 100%);
+  font-size: rem(16);
+  color: #FFFFFF;
+  text-align: center;
+  line-height: rem(40);
+  position: relative;
+  section:first-child {
+    width: rem(40);
+    height: rem(40);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.confirmFromDiv.positionFixed {
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: rem(48);
+  background: url('../../../images/footerBack.png') bottom center no-repeat;
+  background-size: 100% auto;
+}
+
+.confirmFormArt {
+  padding: 0 rem(10);
+  section:first-child {
+    text-align: left;
+    padding-top: rem(6);
+    a {
+      width: rem(55);
+      height: rem(36);
+      line-height: rem(36);
+      background-image: linear-gradient(-180deg, #CECECE 0%, #A7A7A7 100%);
+      border-radius: rem(2);
+      text-align: center;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+      font-size: rem(14);
+      color: #27363B;
+      display: inline-block;
+    }
+  }
+  section:nth-child(2) {
+    flex: 1;
+    font-size: rem(14);
+    color: #fff;
+    text-align: center;
+    p {
+      display: inline-block;
+      line-height: rem(48);
+      span {
+        font-family: Arial;
+        color: #FFD148;
+      }
+    }
+  }
+  section:last-child {
+    text-align: right;
+    padding-top: rem(6);
+    a {
+      width: rem(87);
+      height: rem(36);
+      line-height: rem(36);
+      background: #FFD148;
+      border-radius: rem(2);
+      text-align: center;
+      font-size: rem(14);
+      color: #27363B;
+      display: inline-block;
+    }
+  }
+}
+
+.confirmBetCls {
+  padding-top: rem(60);
+}
+
+.confirmBetClsMain {
+  padding: rem(10);
+}
+
+.confirmClsTop {
+  background: rgba(0, 0, 0, 0.51);
+  height: rem(12);
+  border-radius: rem(12);
+}
+
+.confirmBetClsBreak {
+  margin: rem(-6) rem(5) 0 rem(5);
+  padding: rem(15);
+  border-radius: rem(2);
+  background: #fff;
+  background-size: 100% auto;
+}
+
+.confirmsTitle {
+  opacity: 0.99;
+  background: #EEEEEE;
+  height: rem(26);
+  line-height: rem(26);
+  font-size: rem(12);
+  color: #4A4A4A;
+  border-radius: rem(26);
+  p:first-of-type {
+    text-indent: rem(20);
+    flex: 1;
+  }
+  p:nth-of-type(2), p:nth-of-type(3), p:nth-of-type(4) {
+    display: inline-block;
+    text-align: center;
+  }
+  p:nth-of-type(2) {
+    width: rem(60);
+  }
+  p:nth-of-type(3) {
+    width: rem(80);
+  }
+  p:nth-of-type(4) {
+    width: rem(40);
+  }
+}
+
+.confirmListed {
+  //height: 70%;
+  overflow-y: scroll;
+}
+
+.confirmListed ul li {
+  height: rem(44);
+  line-height: rem(44);
+  font-size: rem(12);
+  color: #4A4A4A;
+  border-bottom: 1px solid #dcdcdc;
+  p:first-of-type {
+    text-indent: rem(20);
+    flex: 1;
+  }
+  p:nth-of-type(2), p:nth-of-type(3), p:nth-of-type(4) {
+    display: inline-block;
+    text-align: center;
+  }
+  p:nth-of-type(2) {
+    width: rem(60);
+  }
+  p:nth-of-type(3) {
+    width: rem(80);
+    color: #E73928;
+  }
+  p:nth-of-type(4) {
+    width: rem(40);
+    img {
+      width: rem(18);
+      margin: rem(13) rem(10) 0 0;
+    }
+  }
+}
+
+/*header 彈出框*/
+.dropIncreaseIdBack {
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+}
+
+.dropIncreaseId {
+  position: fixed;
+  top: rem(45);
+  right: rem(5);
+  background: rgba(40, 37, 38, 0.99);
+  box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0, 0, 0, 0.50);
+  width: rem(140);
+  padding: rem(10);
+  border: rem(1) solid #FFDC99;
+  border-radius: rem(2);
+  overflow: visible;
+  z-index: 10;
+  ul {
+    li {
+      a {
+        font-size: rem(16);
+        color: #FFDC99;
+        display: block;
+        line-height: rem(35);
+        p {
+          background: url('../../../images/theColor/rightIcon01.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(2) {
+      a {
+        p {
+          background: url('../../../images/theColor/rightIcon02.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(3) {
+      a {
+        p {
+          background: url('../../../images/theColor/rightIcon03.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(4) {
+      a {
+        p {
+          background: url('../../../images/theColor/rightIcon04.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+  }
+}
+
+.dropIncreaseId:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: rem(-10);
+  right: rem(9);
+  border-left: rem(10) solid transparent;
+  border-right: rem(10) solid transparent;
+  border-bottom: rem(10) solid #FFDC99;
+  z-index: 10;
+}
+
+.dropIncreaseId:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: rem(-9);
+  right: rem(9);
+  border-left: rem(10) solid transparent;
+  border-right: rem(10) solid transparent;
+  border-bottom: rem(10) solid rgba(40, 37, 38, 0.99);
+  z-index: 11;
+}
+
+/*header nav*/
+//.choicePlay {
+//  width: 100%;
+//  height: 100%;
+//  background: rgba(0, 0, 0, 0.7);
+//  z-index: 8
+//}

@@ -162,9 +162,6 @@
 		mounted() {
 			this.initData();
 //      this._Util.showConfirm(this, {content: "瞧一瞧，看一看，新鲜出炉"});
-			$('.indexMian').css({
-				'height': $(window).height()
-			});
 			//首頁
 			let IndexName = this.$route.name;
 			this.indexNoticeIndex = sessionStorage.getItem('indexId');

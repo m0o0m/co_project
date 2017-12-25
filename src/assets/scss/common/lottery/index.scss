@@ -1,0 +1,420 @@
+@charset "utf-8";
+@import "../../rem";
+@import "./common";
+
+$designWidth: 375;
+
+/*俄罗斯轮盘*/
+.indexRoulette {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  background: linear-gradient(top, #123821, #164227);
+  background: -webkit-linear-gradient(top, #123821, #164227);
+}
+
+.lotteryTable {
+  padding: rem(132) rem(10) rem(110) rem(10);
+}
+
+.wheelBig {
+  .lotteryTableList {
+    border: 1px solid #FDD012;
+    font-size: rem(14);
+    color: #FFFF5E;
+    .lotteryTableTop {
+      position: relative;
+      text-align: center;
+      p {
+        line-height: rem(40);
+      }
+      p:first-of-type {
+        flex: 1;
+        span {
+          font-size: rem(12);
+          color: #FFFF5E;
+          font-family: arial;
+          margin-left: rem(5);
+        }
+      }
+      p:nth-of-type(2) {
+        position: absolute;
+        right: rem(35);
+        top: 0;
+        font-size: rem(12);
+        color: #ffffff;
+        font-family: arial;
+        margin-left: rem(5);
+      }
+      p.playMarryImg {
+        width: rem(22);
+        height: rem(22);
+        position: absolute;
+        top: rem(7);
+        right: rem(5);
+        img {
+          position: relative;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+    .lotteryTableColor {
+      height: auto;
+      overflow: hidden;
+      border-bottom: 1px solid #FDD012;
+      li {
+        width: 25%;
+        float: left;
+        border-top: 1px solid #FDD012;
+        border-right: 1px solid #FDD012;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        position: relative;
+        .desk-section {
+          font-size: rem(12);
+          font-family: arial;
+          color: #FFFFFF;
+          line-height: rem(20);
+          height: rem(40);
+          p {
+            font-size: rem(12);
+          }
+          p:first-of-type {
+            span:first-child {
+              width: rem(20);
+              height: rem(20);
+              background: #000000;
+              text-align: center;
+              display: inline-block;
+            }
+            span:nth-child(2) {
+              font-size: rem(10);
+              color: #FFFF5E;
+            }
+          }
+          p:last-of-type {
+            text-indent: rem(2);
+          }
+          p.playMarryImg {
+            width: rem(22);
+            height: rem(22);
+            position: absolute;
+            top: rem(5);
+            right: rem(5);
+            img {
+              position: relative;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+            }
+          }
+        }
+        .desk-section.desk-section-color {
+          p:first-of-type {
+            span:first-child {
+              background: #D0021B;
+            }
+            span:nth-child(2) {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*特殊*/
+.lotteryTableSp {
+  border: 1px solid #FDD012;
+  font-size: rem(14);
+  color: #FFFF5E;
+  height: rem(101);
+  position: relative;
+  .lotteryTableComputed {
+    width: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: rem(101);
+    font-size: rem(14);
+    color: #FFFFFF;
+    p {
+      font-weight: normal;
+      text-indent: rem(10);
+      font-family: arial;
+      span {
+        font-family: arial;
+        font-size: rem(10);
+      }
+    }
+    p:first-of-type {
+      padding-top: rem(50);
+    }
+    p:nth-of-type(2) {
+      font-size: rem(12);
+      text-indent: rem(8);
+    }
+    p.playMarryImg {
+      width: rem(22);
+      height: rem(22);
+      position: absolute;
+      right: rem(10);
+      bottom: rem(7);
+      img {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .lotteryTableComputed:first-child {
+    border-right: 1px solid #FDD012;
+    transform: skewX(15deg);
+    -webkit-transform: skewX(15deg);
+    -webkit-transform-origin: bottom right;
+    -moz-transform-origin: bottom right;
+    -ms-transform-origin: bottom right;
+    -o-transform-origin: bottom right;
+    transform-origin: bottom right;
+    p {
+      transform: skewX(-15deg);
+      -webkit-transform: skewX(-15deg);
+      text-indent: rem(30);
+    }
+    p:nth-of-type(2) {
+      text-indent: rem(15);
+    }
+  }
+  .lotteryTableComputed:nth-child(2) {
+    left: 25%;
+    border-right: 1px solid #FDD012;
+  }
+  .lotteryTableComputed:nth-child(3) {
+    left: 50%;
+  }
+  .lotteryTableComputed:nth-child(4) {
+    left: 75%;
+    transform: skewX(-15deg);
+    -webkit-transform: skewX(-15deg);
+    border-left: 1px solid #FDD012;
+    -webkit-transform-origin: bottom left;
+    -moz-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+    transform-origin: bottom left;
+    p {
+      transform: skewX(15deg);
+      -webkit-transform: skewX(15deg);
+      text-indent: rem(5);
+    }
+    p:nth-of-type(2) {
+      text-indent: rem(15);
+    }
+  }
+
+  .lotteryTableSpecial {
+    width: rem(264);
+    height: rem(46);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: rem(-132);
+    overflow: visible;
+    .lotterySpecialColor {
+      width: rem(97);
+      height: rem(46);
+      float: left;
+      position: relative;
+      p {
+        font-size: rem(14);
+        color: #FFFFFF;
+        font-family: arial;
+        strong {
+          font-style: normal;
+        }
+        span {
+          font-size: rem(10);
+        }
+      }
+      p:nth-of-type(2) {
+        font-size: rem(12);
+        text-indent: rem(0);
+      }
+      p.playMarryImg {
+        width: rem(22);
+        height: rem(22);
+        position: absolute;
+        top: rem(10);
+        right: rem(10);
+        img {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .lotterySpecialColor:first-child {
+      background: #e93933;
+      transform: skewX(15deg);
+      -webkit-transform: skewX(15deg);
+      overflow: visible;
+      -webkit-transform-origin: bottom right;
+      -moz-transform-origin: bottom right;
+      -ms-transform-origin: bottom right;
+      -o-transform-origin: bottom right;
+      transform-origin: bottom right;
+      p {
+        transform: skewX(-15deg);
+        -webkit-transform: skewX(-15deg);
+        text-indent: rem(15);
+      }
+      p:nth-of-type(2) {
+        text-indent: rem(10);
+      }
+    }
+    .lotterySpecialColor:first-child:after {
+      content: "";
+      width: rem(15);
+      height: rem(46);
+      background: #e93933;
+      transform: skewX(-15deg);
+      -webkit-transform: skewX(-15deg);
+      position: absolute;
+      top: 0;
+      right: rem(-6);
+    }
+    .lotterySpecialColor:nth-child(2) {
+      width: rem(70);
+      background: rgb(108, 175, 40);
+      p {
+        text-indent: rem(3);
+      }
+    }
+    .lotterySpecialColor:nth-child(3) {
+      background: #000000;
+      transform: skewX(-15deg);
+      -webkit-transform: skewX(-15deg);
+      overflow: visible;
+      -webkit-transform-origin: bottom right;
+      -moz-transform-origin: bottom right;
+      -ms-transform-origin: bottom right;
+      -o-transform-origin: bottom right;
+      transform-origin: bottom right;
+      p {
+        transform: skewX(15deg);
+        -webkit-transform: skewX(15deg);
+        text-indent: rem(10);
+      }
+    }
+    .lotterySpecialColor:nth-child(3):after {
+      content: "";
+      width: rem(15);
+      height: rem(46);
+      background: #000;
+      transform: skewX(15deg);
+      -webkit-transform: skewX(15deg);
+      position: absolute;
+      top: 0;
+      left: rem(-6);
+    }
+  }
+}
+
+/*济州岛赛马*/
+.theLotteryMa {
+  height: 100%;
+  background: #103574;
+  overflow-y: scroll;
+}
+
+.theLotteryBabel {
+  padding: rem(160) rem(10) rem(110) rem(10);
+}
+
+.theLotteryMaTitle {
+  top: rem(119);
+  width: 100%;
+  height: rem(40);
+  background: #103574;
+  ul {
+    margin: rem(12) rem(10) 0 rem(10);
+    background: #4BA913;
+    height: rem(28);
+    line-height: rem(28);
+    border-top-left-radius: rem(5);
+    border-top-right-radius: rem(5);
+    li {
+      flex: 1;
+      text-align: center;
+      font-size: rem(14);
+      color: #FFFFFF;
+    }
+  }
+  .theLotteryMaTitleSwim {
+    background: #E8C177;
+  }
+}
+
+.theLotteryColorFul {
+  flex: 1;
+  margin-right: rem(1);
+}
+.theLotteryColorFul:last-child {
+  margin-right: 0;
+}
+
+.theLotterySwimUl {
+  li.theLotterySwimArticle {
+    padding: rem(2) 0;
+    line-height: rem(16);
+    height: rem(35);
+    position: relative;
+    background: #4BA913;
+    margin-bottom: rem(1);
+    p {
+      padding: 0 rem(10);
+      font-size: rem(14);
+      font-family: arial;
+      color: #fff;
+      span.smarrySpan {
+        color: #fff;
+      }
+    }
+    p:first-of-type {
+      span:last-of-type {
+        font-size: rem(10);
+        line-height: rem(0);
+      }
+    }
+    p:nth-of-type(2) {
+      font-size: rem(10);
+    }
+    p.playMarryImg {
+      width: rem(22);
+      height: rem(22);
+      position: absolute;
+      bottom: rem(3);
+      right: rem(0);
+    }
+  }
+}
+.theLotterySwimUl.theLotterySwimUlColor {
+  li {
+    background: #E8C177;
+    p {
+      color: #000000;
+      span.smarrySpan {
+        color: #000000;
+      }
+    }
+  }
+}

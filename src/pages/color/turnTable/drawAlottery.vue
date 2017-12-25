@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import '../../../assets/scss/drawAlottery.scss'
+  // import '../../../assets/scss/drawAlottery.scss'
 
   export default {
     props: {

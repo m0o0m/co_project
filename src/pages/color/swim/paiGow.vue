@@ -1,28 +1,27 @@
 <template>
-    <div class='swim moneyTemplateed' style="background: rgb(13,55,114);">
-        <div class="swimMian">
-			<div class="swimTitle  ttls">
-				<p v-for="swimt in swimTitleData">{{swimt}}</p>
-			</div>
-			<div class="swimMun ttls swimMun_top_height" style="padding-bottom: 0;">
-				<div class="swimMdiv">
-					<div v-for="(Colorful,item_index) in deafNum" class="jkl">
-						<!-- <p class="swimjkl">{{!item_index ? '金牌' : item_index == 1 ? '银牌' : '铜牌'}}</p> -->
-						<ul class="swim_ul swim_uled">
-							<li v-for="(play,index) in Colorful.played"
-								@click="playchecked($event,play,Colorful.id,play.name,index, Colorful, '', item_index)"
-								:class="{'on':play.active}"
-								class="paiGow_article">
-								<p><span>{{play.name}}</span> / <span>{{computeOdds(play)}}</span></p>
-								<p><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span></p>
-								<p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+  <div class="theLotteryMa">
+    <div class="theLotteryBabel">
+      <div class="theLotteryMaTitle positionFixed">
+        <ul class="theLotteryMaTitleSwim displayFlex">
+          <li v-for="swim in swimTitleData">{{swim}}</li>
+        </ul>
+      </div>
+      <div class="theLotterySwim displayFlex">
+        <div class="theLotteryColorFul" v-for="(Colorful,item_index) in deafNum">
+          <ul class="theLotterySwimUl theLotterySwimUlColor">
+            <li v-for="(play,index) in Colorful.played"
+                @click="playchecked($event,play,Colorful.id,play.name,index, Colorful, 0, item_index)"
+                :class="{'on':play.active}"
+                class="theLotterySwimArticle">
+              <p><span>{{play.name}}</span> / <span>{{computeOdds(play)}}</span></p>
+              <p><span><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span></span></p>
+              <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 <script type="text/babel">
 	import $ from 'jquery'

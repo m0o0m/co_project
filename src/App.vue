@@ -27,7 +27,8 @@
 	import './assets/scss/login/login.scss'
   /*投注记录*/
   import './assets/scss/common/betting/index.scss'
-//	import './assets/scss/index.scss'
+  /*棋牌彩种*/
+  import  './assets/scss/common/lottery/index.scss'
 
 	require('./assets/js/jquery.fly.min');
 
@@ -51,19 +52,10 @@
 			})
 		},
 		methods:{
-		  lotteryInit(headerHeight,footerHeight){
 
-			}
 		}
 	}
 </script>
 
 <style>
-	/*.view {*/
-	/*height: 100% !important;*/
-	/*}*/
-	.lottery_Height {
-		background: url('assets/images/index/bg.png') center center no-repeat;
-		background-size: cover;
-	}
 </style>

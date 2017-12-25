@@ -1,10 +1,10 @@
 <template>
-    <div class="bodyser bodyser_wheelBig">
+    <div class="lotteryTable">
         <section v-if="classAdata.lottery_id" class="wheelBig">
             <div class="wheelBig_deskBox">
-                <div v-for="(v, vIndex) in deafNum" class="wheelBig_wheelBigFnum">
-                    <div class="wheelBig_deskList wheelBigFnums" v-if="vIndex < 3">
-                        <div @click="playchecked($event, v.play, v.id, v.name, vIndex, v, 'wheelBig_top', vIndex)" class="wheelBig_top">
+                <div v-for="(v, vIndex) in deafNum" class="lotteryTableList boxSizing">
+                    <div class="wheelBigTable" v-if="vIndex < 3">
+                        <div @click="playchecked($event, v.play, v.id, v.name, vIndex, v, 'lotteryTableTop', vIndex)" class="lotteryTableTop">
                             <p>
                                 {{v.play ? v.play.name + '' : ''}}<span>{{v.play ? computeOdds(v.play) : ''}}</span>
                             </p>
@@ -14,8 +14,8 @@
                             </p>
                             <p class="playMarryImg" v-if="v.play.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
                         </div>
-                        <ul class="wheelBig_ulFor">
-                            <li v-for="(o,index) in v.played" v-if="index" @click="playchecked($event, o, v.id, o.name, index, v, 'wheelBig_li',vIndex)" class="wheelBig_li">
+                        <ul class="lotteryTableColor">
+                            <li v-for="(o,index) in v.played" v-if="index" @click="playchecked($event, o, v.id, o.name, index, v, 'lotteryTableLi',vIndex)" class="lotteryTableLi">
                                 <section class="desk-section" :class="{'desk-section-color':vIndex == 0 && index == 1 || vIndex == 0 && index == 3 || vIndex == 0 && index == 5 || vIndex == 0 && index == 7 || vIndex == 0 && index == 9 || vIndex == 0 && index == 12 || vIndex == 1 && index == 0 || vIndex == 1 && index == 2 || vIndex == 1 && index == 4 || vIndex == 1 && index == 6 || vIndex == 1 && index == 7 || vIndex == 1 && index == 9 || vIndex == 1 && index == 11 || vIndex == 2 && index == 1 || vIndex == 2 && index == 3 || vIndex == 2 && index == 6 || vIndex == 2 && index == 8 || vIndex == 2 && index == 10 || vIndex == 2 && index == 12}">
                                     <p><span>{{o.name}}</span> <span>{{computeOdds(o)}}</span></p>
                                     <p>
@@ -26,70 +26,61 @@
                             </li>
                         </ul>
                     </div>
-                    <div v-if="vIndex == 3" class="wheelBig_turnTable ">
+                    <div v-if="vIndex == 3" class="lotteryTableSp displayFlex">
                         <!--大-->
-                        <div @click="playchecked($event, v.played[2], v.id, v.played[2].name, 2, v,'wheelBig_Computed')" class="wheelBig_Computed">
+                        <div @click="playchecked($event, v.played[2], v.id, v.played[2].name, 2, v,'lotteryTableComputed')" class="lotteryTableComputed">
                             <p><strong>{{v.played[2].name}} <span>{{computeOdds(v.played[2])}}</span></strong></p>
                             <p>
-                                <!--{{v.played[2] && v.played[2].amount ? _LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[2].amount) : '0'}}-->
                                 {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[2].amount) || ''}}
                             </p>
                             <p class="playMarryImg" v-if="v.played[2].active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
                         </div>
                         <!--小-->
-                        <div @click="playchecked($event, v.played[3], v.id, v.played[3].name, 3, v,'wheelBig_Computed')" class="wheelBig_Computed">
+                        <div @click="playchecked($event, v.played[3], v.id, v.played[3].name, 3, v,'lotteryTableComputed')" class="lotteryTableComputed">
                             <p><strong>{{v.played[3].name}} <span>{{computeOdds(v.played[3])}}</span></strong></p>
                             <p>
-                                <!--{{v.played[3] && v.played[3].amount ? _LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[3].amount) : '0'}}-->
                                 {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[3].amount) || ''}}
                             </p>
                             <p class="playMarryImg" v-if="v.played[3].active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
                         </div>
                         <!--单-->
-                        <div @click="playchecked($event, v.played[4], v.id, v.played[4].name, 4, v,'wheelBig_Computed')" class="wheelBig_Computed">
-                            <!-- <img src="../../../assets/images/turnTable/imgd_02.png" alt="" title=""/> -->
+                        <div @click="playchecked($event, v.played[4], v.id, v.played[4].name, 4, v,'lotteryTableComputed')" class="lotteryTableComputed">
                             <p><strong>{{v.played[4].name}} <span>{{computeOdds(v.played[4])}}</span></strong></p>
                             <p>
-                                <!--{{v.played[4] && v.played[4].amount ? _LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[4].amount) : '0'}}-->
                                 {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[4].amount) || ''}}
                             </p>
                             <p class="playMarryImg" v-if="v.played[4].active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
                         </div>
                         <!--双-->
-                        <div @click="playchecked($event, v.played[5], v.id, v.played[5].name, 5, v,'wheelBig_Computed')" class="wheelBig_Computed">
+                        <div @click="playchecked($event, v.played[5], v.id, v.played[5].name, 5, v,'lotteryTableComputed')" class="lotteryTableComputed">
                             <p><strong>{{v.played[5].name}} <span>{{computeOdds(v.played[5])}}</span></strong></p>
                             <p>
-                                <!--{{v.played[5] && v.played[5].amount ? _LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[5].amount) : '0'}}-->
                                 {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[5].amount) || ''}}
                             </p>
                             <p class="playMarryImg" v-if="v.played[5].active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
                         </div>
 
-                        <div class="wheelBig_turnTaMian">
+                        <div class="lotteryTableSpecial">
                             <!--紅-->
-                            <div @click="playchecked($event, v.played[1], v.id, v.played[1].name, 2, v,'wheelBig_Computed_zj')" class="wheelBig_Computed_zj">
+                            <div @click="playchecked($event, v.played[1], v.id, v.played[1].name, 2, v,'lotterySpecialColor')" class="lotterySpecialColor">
                                 <p><strong>{{v.played[1].name}} <span>{{computeOdds(v.played[1])}}</span></strong></p>
                                 <p>
-                                    <!--{{v.played[1] && v.played[1].amount ? _LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[1].amount) : '0'}}-->
                                     {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[1].amount) || ''}}
                                 </p>
                                 <p class="playMarryImg" v-if="v.played[1].active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
                             </div>
                             <!--0-->
-                            <div @click="playchecked($event, v.played[6], v.id, v.played[6].name, 6, v,'wheelBig_Computed_zj')" class="wheelBig_Computed_zj">
+                            <div @click="playchecked($event, v.played[6], v.id, v.played[6].name, 6, v,'lotterySpecialColor')" class="lotterySpecialColor">
                                 <p><strong>{{v.played[6].name}} <span>{{computeOdds(v.played[6])}}</span></strong></p>
                                 <p>
-                                    <!--{{v.played[6] && v.played[6].amount ? _LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[6].amount) : '0'}}-->
-
                                     {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[6].amount) || ''}}
                                 </p>
                                 <p class="playMarryImg" v-if="v.played[6].active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
                             </div>
                             <!--黑-->
-                            <div @click="playchecked($event, v.played[0], v.id, v.played[0].name, 2, v,'wheelBig_Computed_zj')" class="wheelBig_Computed_zj">
+                            <div @click="playchecked($event, v.played[0], v.id, v.played[0].name, 2, v,'lotterySpecialColor')" class="lotterySpecialColor">
                                 <p><strong>{{v.played[0].name}} <span>{{computeOdds(v.played[0])}}</span></strong></p>
                                 <p>
-                                <!--{{v.played[0] && v.played[0].amount ? _LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[0].amount) : '0'}}-->
                                     {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.played[0].amount) || ''}}
                                 </p>
                                 <p class="playMarryImg" v-if="v.played[0].active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
@@ -197,7 +188,6 @@
        if (this.$parent.stopBet) return;
           if (this._LotteryUtil.lotteryCheckCount(this,this.selectedBalls)) return;
 		var _this = this;
-		console.log(play.amount);
 		_this.$set(play, 'amount', (play.amount || 0) + (_this.marryNum || 10));
           _this.$set(play, 'oneCredId', _this.oneCredId);
 		if (!('active' in play)) {
@@ -221,10 +211,8 @@
 		_this.notifySelectedCount();
 
           setTimeout(function () {
-            console.log('vIndex = ' + vIndex);
-            console.log('index = ' + index);
             if((playedSubtypeName == "上区") || (playedSubtypeName == "中区") || (playedSubtypeName == "下区")){
-              _this._Util.chip(_this, e, $('.wheelBig_wheelBigFnum:eq(' + vIndex + ') .wheelBigFnums .wheelBig_top'), "", parseInt(_this.thisScrollTop));
+              _this._Util.chip(_this, e, $('.lotteryTableList:eq(' + vIndex + ') .wheelBigTable .lotteryTableTop'), "", parseInt(_this.thisScrollTop));
             }else if(playedSubtypeName == "大" || playedSubtypeName == "小" || playedSubtypeName == "单" || playedSubtypeName == "双") {
               let playName = "";
               switch (playedSubtypeName) {
@@ -241,8 +229,7 @@
                   playName = 3;
                   break;
               }
-              console.log($('.wheelBig_Computed:eq(' + playName + ')').html());
-              _this._Util.chip(_this, e, $('.wheelBig_Computed:eq(' + playName + ')'), "", parseInt(_this.thisScrollTop));
+              _this._Util.chip(_this, e, $('.lotteryTableComputed:eq(' + playName + ')'), "", parseInt(_this.thisScrollTop));
             }else if(playedSubtypeName == "红" || playedSubtypeName == "0" || playedSubtypeName == "黑"){
               let playName = "";
               switch (playedSubtypeName) {
@@ -256,10 +243,9 @@
                   playName = 2;
                   break;
               }
-              console.log($('.wheelBig_Computed_zj:eq(' + playName + ')').html());
-              _this._Util.chip(_this, e, $('.wheelBig_Computed_zj:eq(' + playName + ')'), "", parseInt(_this.thisScrollTop));
+              _this._Util.chip(_this, e, $('.lotterySpecialColor:eq(' + playName + ')'), "", parseInt(_this.thisScrollTop));
             }else{
-                _this._Util.chip(_this, e, $('.wheelBig_wheelBigFnum:eq(' + vIndex + ') .wheelBigFnums ul li:eq(' + (index-1) + ')') , "", parseInt(_this.thisScrollTop));
+                _this._Util.chip(_this, e, $('.lotteryTableList:eq(' + vIndex + ') .wheelBigTable ul li:eq(' + (index-1) + ')') , "", parseInt(_this.thisScrollTop));
               }
 
           }, 10);

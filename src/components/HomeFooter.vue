@@ -1,5 +1,5 @@
 <template>
-    <div class="FooterCls">
+    <div class="FooterCls positionFixed">
         <nav>
             <li v-for="(foter,index) in FoterData" :class="{'on':foterNum == index}" @click="navFunction(index)">
                 <!--<router-link :to="{name:foter.rel}">-->

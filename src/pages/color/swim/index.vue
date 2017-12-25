@@ -79,7 +79,6 @@
 </template>
 
 <script type="text/babel">
-  import '../../../assets/scss/paiGow.scss';
   import Headered from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'
   import ConfirmPage from '../../../components/confirmBet.vue'
