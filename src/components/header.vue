@@ -1,51 +1,85 @@
 <template>
   <div class="lotteryHeader positionFixed">
     <div class="headerCom">
-      <div class="headerTop">
-        <section @click="back()" class="lotteryArrowsLeft"></section>
-        <section @click="lottery_nameClick"><p :class="{'lotteryArrowsBottom': tokenId001 !== 0}">{{classAdata.lottery_name}}<span v-if="!exportId">{{deafNum.name}}</span></p></section>
-        <section>
-          <a href="javascript:void(0)" class="increaseEd"
-             @click="increaseId = !increaseId ? 1 : 0">+</a>
-        </section>
-      </div>
-      <div class="DeliveryPrice displayFlex">
-        <div>
-          <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-            <section><p>已投：￥<span v-html="totalMoney || 0"></span></p></section>
-            <section class="balanceAmount"><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
-            </p></section>
+      <div class="headerHidden">
+        <div class="headerTop">
+          <section @click="back()" class="lotteryArrowsLeft"></section>
+          <section @click="lottery_nameClick"><p :class="{'lotteryArrowsBottom': tokenId001 !== 0}">{{classAdata.lottery_name}}<span v-if="!exportId">{{deafNum.name}}</span></p></section>
+          <section>
+            <a href="javascript:void(0)" class="increaseEd"
+               @click="increaseId = !increaseId ? 1 : 0">+</a>
+          </section>
+        </div>
+        <div class="DeliveryPrice displayFlex">
+          <div>
+            <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
+              <section><p>已投：￥<span v-html="totalMoney || 0"></span></p></section>
+              <section class="balanceAmount"><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
+              </p></section>
+            </div>
+            <div class="DeliveryLotteryImg"><img :src="icon"/></div>
           </div>
-          <div class="DeliveryLotteryImg"><img :src="icon"/></div>
+          <!--开奖结果-->
+          <div @click.stop="openFrm(4)" class="DeliveryMun" :class="{'openLiveryMargin': creditId === 15 || creditId == 16 || creditId == 18}">
+            <section><p><span>{{actionNoCopy}}</span>期开奖结果</p></section>
+            <!--俄罗斯轮盘-->
+            <section class="theLotteryRoulette" v-if="creditId === 13">
+              <article class="lotteryNumRoulette">
+                <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
+              </article>
+            </section>
+            <!--济州岛赛马-->
+            <section class="theLotteryRoulette" v-if="creditId === 14 || creditId === 22">
+              <article class="lotteryNumMa">
+                <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
+              </article>
+            </section>
+            <!--马尼拉梭哈 云顶炸金花 pk牛牛-->
+            <section class="theLotteryRoulette" v-if="creditId === 15 || creditId == 16 || creditId == 18">
+              <article class="theLotteryArticle">
+                <p class="mnshImgCls" v-for="dirImg in dirceShowHand"><img :src="dirImg"></p></article>
+            </section>
+            <!--苏格兰农场-->
+            <section class="theLotteryRoulette" v-if="creditId === 17">
+              <article class="theLotteryArticle">
+                <p class="sglncCls">
+                  <span><img v-if="farmImg" :src="farmImg"/></span>
+                  <span>{{actionResultCopy.extfield}}</span>
+                </p>
+              </article>
+            </section>
+            <!--华夏牌九-->
+            <section class="theLotteryRoulette" v-if="creditId === 19">
+              <article class="PaiGowFlex displayFlex">
+                <section class="bankerLeft"><img src="../assets/images/zIcon.png"/></section>
+                <section class="bankerNum">
+                  <p v-for="dirImg in dircePJ"><img :src="dirImg"/></p>
+                </section>
+              </article>
+            </section>
+            <!--皇家二八杠-->
+            <section class="theLotteryRoulette" v-if="creditId === 20">
+              <div class="barTheLottery28 displayFlex">
+                <section class="bankerLeft"><img src="../assets/images/zrbIcon.png"/></section>
+                <section class="bankerNum">
+                  <p v-for="dirImg in dirceRBG"><img :src="dirImg"/></p>
+                </section>
+              </div>
+            </section>
+          </div>
         </div>
-        <!--开奖结果-->
-        <div @click.stop="openFrm(4)" class="DeliveryMun">
-          <section><p><span>{{actionNoCopy}}</span>期开奖结果</p></section>
-          <!--俄罗斯轮盘-->
-          <section class="theLotteryRoulette" v-if="creditId === 13">
-            <article class="lotteryNumRoulette">
-              <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
-            </article>
-          </section>
-          <!--济州岛赛马-->
-          <section class="theLotteryRoulette" v-if="creditId === 14 || creditId === 22">
-            <article class="lotteryNumMa">
-              <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
-            </article>
-          </section>
+        <div v-if="classAdata.status == '0' || classAdata.status == '-1'" class="DeliveryTime">
+          <p v-if="classAdata.status == '0'">{{classAdata.kj_cycle}}</p>
+          <p v-else>暂停销售</p>
         </div>
-      </div>
-      <div v-if="classAdata.status == '0' || classAdata.status == '-1'" class="DeliveryTime">
-        <p v-if="classAdata.status == '0'">{{classAdata.kj_cycle}}</p>
-        <p v-else>暂停销售</p>
-      </div>
-      <div v-else-if="!$parent.stopBet" class="DeliveryTime">
-        距第<span>{{classAdata.next_action_no}}</span>期投注截止：
-        <time>{{countDownStr}}</time>
-      </div>
-      <div v-else-if="$parent.stopBet" class="DeliveryTime">
-        封盘时间：
-        <time>{{countDownStr}}</time>
+        <div v-else-if="!$parent.stopBet" class="DeliveryTime">
+          距第<span>{{classAdata.next_action_no}}</span>期投注截止：
+          <time>{{countDownStr}}</time>
+        </div>
+        <div v-else-if="$parent.stopBet" class="DeliveryTime">
+          封盘时间：
+          <time>{{countDownStr}}</time>
+        </div>
       </div>
     </div>
 
@@ -81,9 +115,7 @@
 </template>
 
 <script type="text/babel">
-
 	import OpenFrame from './openFrame.vue'
-
 	export default {
 		name: 'headered',
 		props: {

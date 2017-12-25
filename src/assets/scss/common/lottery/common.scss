@@ -10,9 +10,13 @@ $designWidth: 375;
 
 .headerCom {
   width: 100%;
-  height: rem(118);
   background-image: linear-gradient(-180deg, #3E3B3B 0%, #27272D 100%);
   overflow: visible;
+}
+
+.headerHidden {
+  height: rem(118);
+  overflow: hidden;
 }
 
 .headerTop {
@@ -64,6 +68,7 @@ $designWidth: 375;
   padding: rem(10) rem(10) 0 rem(10);
   position: relative;
   top: rem(-5);
+  height: rem(53);
   .DeliveryHeaderPrice {
     min-width: rem(110);
     height: rem(40);
@@ -137,6 +142,10 @@ $designWidth: 375;
   }
 }
 
+.DeliveryMun.openLiveryMargin {
+  margin-top: rem(-10);
+}
+
 /*俄罗斯轮盘*/
 .theLotteryRoulette {
   .lotteryNumRoulette {
@@ -180,6 +189,85 @@ $designWidth: 375;
     }
     p:nth-of-type(3) {
       background: #4A90E2;
+    }
+  }
+  /*马尼拉梭哈*/
+  .theLotteryArticle {
+    .mnshImgCls {
+      width: rem(21);
+      height: rem(31);
+      display: inline-block;
+      margin-right: rem(-5);
+    }
+    .mnshImgCls:last-of-type {
+      margin-right: 0;
+    }
+  }
+  /*苏格兰农场*/
+  .sglncCls {
+    color: #fff;
+    display: inline-block;
+    span {
+      float: left;
+      line-height: rem(28);
+      img {
+        width: rem(28);
+      }
+    }
+    span:last-child {
+      margin-left: rem(10);
+    }
+  }
+  /*华夏牌九*/
+  .PaiGowFlex {
+    width: rem(75);
+    height: rem(28);
+    background-image: -webkit-linear-gradient(-180deg, #F3DE7D 0%, #BC8644 100%);
+    box-shadow: 0 rem(2) rem(4) 0 rgba(0, 0, 0, 0.50);
+    border-radius: rem(15) rem(15) 0 0;
+    float: right;
+    section:first-child {
+      width: rem(20);
+      padding: 0 rem(6) 0 rem(12);
+      margin-top: rem(5);
+    }
+    section:nth-child(2) {
+      flex: 1;
+      display: inline-block;
+      p {
+        width: rem(9);
+        background: transparent;
+        border-radius: 0;
+        float: left;
+        margin: 0 rem(1);
+        padding: 0;
+        padding-top: rem(4);
+        box-shadow: none;
+      }
+    }
+  }
+  /*皇家二八杠*/
+  .barTheLottery28 {
+    float: right; margin-top: rem(-3);
+    section:first-child {
+      width: rem(21);
+      padding: 0;
+      margin-top: rem(6);
+      margin-right: rem(3);
+    }
+    section:nth-child(2) {
+      min-width: rem(40);
+      p {
+        width: rem(19);
+        background: transparent;
+        border-radius: 0;
+        float: left;
+        margin: 0;
+        padding: 0;
+        margin: 0 rem(2);
+        padding-top: rem(4);
+        box-shadow: none;
+      }
     }
   }
 }
