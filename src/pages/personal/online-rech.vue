@@ -1,45 +1,31 @@
 <template>
-  <div class="online_rech_box managMementCls">
-    <div class="pers">
-      <ul class="per_leftd">
-        <li @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
-        <li><p style="color:#FFDC99">线&nbsp;下&nbsp;转&nbsp;帐</p></li>
-      </ul>
+  <div class="onlineRechBox">
+    <div class="commonNavBar positionFixed">
+      <div class="backPassTitle"><p>线下充值</p></div>
+      <div class="loginIcon left flt" @click="$router.push({name:'addMoney'});"><a href="javascript:void(0)"></a></div>
     </div>
-    <div class="per_top"></div>
-    <div class="per_conters">
-      <div class="on-line_bank_Admination">
+    <div class="onlineRechBody">
+      <div class="onlineRechBodyTop">
         <section>
-          <!-- <p><img :src="imgdata">{{result.name}} <span @click="copyInfo('cardUserName')">复制</span> -->
-          <!-- <p><img style="float:left;width:auto;":src="imgdata">{{result.name}} -->
-          <!-- <input  @click="copyInfo('cardUserName')" value="复制" type="text"> -->
-          <!-- <span @click="copyInfo('cardUserName')">复制</span> -->
-          <!-- <input id="cardUserName" v-model="result.user_name" readonly="readonly" type="text"> -->
-          <!-- </p> -->
-          <!-- {{result.user_name}}{{result.card_no}} -->
-          <!-- <p><input id="cardNo" v-model="result.card_no" type="text" readonly="readonly">
-          <span @click="copyInfo('cardNo')">复制</span></p> -->
-
           <p>
-            <img style="float:left;width:auto;" :src="imgdata">{{result.name}}
-            <span @click="copyInfo('target')" id="copy_btn" data-clipboard-action="copy"
-                  data-clipboard-target="#target">复制</span>
-            <span id="target">{{result.user_name}}</span>
+            <img :src="imgdata">{{result.name}}
+          <span @click="copyUrl( 'target' )" class="copy_btns" data-clipboard-action="copy" data-clipboard-target="#target">复制</span>
+
+          <span id="target">{{result.user_name}}</span>
           </p>
           <p>
-            <span @click="copyInfos('cardNo')" id="copy_btns" data-clipboard-action="copy"
-                  data-clipboard-target="#cardNo">复制</span>
+            <span @click="copyUrl( 'cardNo' )" class="copy_btns" data-clipboard-action="copy" data-clipboard-target="#cardNo">复制</span>
             <span id="cardNo">{{result.card_no}}</span>
           </p>
         </section>
       </div>
-      <div class="WeChat_Transfer">
-        <ul class="WeChat__accounts">
-          <li>订单编号<p><span>{{result.order_id}}</span></p></li>
-          <li>充值金额<p><span>{{result.amount}}元</span></p>
+      <div class="onlineRechBodyBottom">
+        <ul class="onlineRechUL">
+          <li><p>订单编号<span>{{result.order_id}}</span></p></li>
+          <li><p>充值金额<span>{{result.amount}}元</span></p>
             <p>最小金额：¥{{result.min_value || 0}} 最大金额：¥{{result.max_value || 0}}</p>
           </li>
-          <li><span>选择通道</span>
+          <li class="displayFlex loginLi commonArrowsRight onlineRechPadding"><p>选择通道</p>
             <p>
               <select v-model="channelId" @change="changeChannel()">
                 <option v-for="(v, index) in result.card_type_list"
@@ -48,15 +34,15 @@
               </select>
             </p>
           </li>
-          <li><span>开户姓名</span>
+          <li class="displayFlex loginLi"><p>开户姓名</p>
             <p>
               <input v-model="bank.card_name" type="text" name="" placeholder="请输入开户人姓名">
             </p></li>
-          <li v-if="!showBankAdd"><span>所属分行</span>
+          <li class="displayFlex loginLi" v-if="!showBankAdd"><p>所属分行</p>
             <p>
               <input v-model="bank.branch_name" type="text" name="" placeholder="请输入所属分行">
             </p></li>
-          <li @click="save()"><a href="javascript: void(0);">立即支付</a></li>
+          <li class="loginHostBtn confirmBtn" @click="save()"><a href="javascript: void(0);">立即支付</a></li>
         </ul>
         <!--<div class="security"><p>账户资金安全由棋牌彩票来保障</p></div>-->
       </div>
@@ -68,7 +54,6 @@
 </template>
 
 <script>
-	import '../../assets/scss/personal.scss';
 	import '../../assets/js/clipboard.min';
 	export default {
 		data() {
@@ -83,7 +68,6 @@
 
 		mounted() {
 			this.init();
-      this._Util.setCss('.managMementCls',{"height": 1},"*");
 		},
 
 		methods: {
@@ -137,44 +121,19 @@
 				});
 			},
 
-			copyInfo(id) {
-				// let Url2 = document.getElementById(id);
-				// Url2.select(); // 选择对象
-				// document.execCommand('Copy'); // 执行浏览器复制命令
-				// this._Util.showAlert(this, {content: '复制成功'});
-
-
-
-				var targetText = $(id).text();
-				var clipboard = new Clipboard('#copy_btn');
+			copyUrl(id) {
+				let co = require('../../assets/js/clipboard.min')
+				var targetText = $('#' + id + '').text();
+				var clipboard = new co('.copy_btns');
+				console.log(clipboard)
 				clipboard.on('success', function (e) {
 					console.info('Action:', e.action);
 					console.info('Text:', e.text);
 					console.info('Trigger:', e.trigger);
-
-					// alert("复制成功");
-
 					e.clearSelection();
-
 				});
 				this._Util.showAlert(this, {content: '复制成功'});
 			},
-
-
-			copyInfos(id) {
-				var targetText = $(id).text();
-				var clipboard = new Clipboard('#copy_btns');
-				clipboard.on('success', function (e) {
-					console.info('Action:', e.action);
-					console.info('Text:', e.text);
-					console.info('Trigger:', e.trigger);
-					// this._Util.showAlert(this, {content: '复制成功'});
-					// alert("复制成功");
-					e.clearSelection();
-				});
-				this._Util.showAlert(this, {content: '复制成功'});
-
-			}
 		}
 	}
 </script>
