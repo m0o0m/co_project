@@ -10,8 +10,8 @@
             <p>更多精彩尽在APP</p>
             <p>一键下载方便快捷易投注</p>
           </section>
-          <section @click="terminalMarv">
-            <a href="javascript:void(0)">下载</a>
+          <section>
+            <a :href="HomeDownUrl">下载</a>
           </section>
           <section @click="marvellousMarv"></section>
         </div>
@@ -153,7 +153,8 @@
 				showOpenFrame: false,
 				showFrmBack: false,
 				toUrl: '',
-				marvellous: 0
+				marvellous: 0,
+				HomeDownUrl: ''
 			}
 		},
 		components: {
@@ -192,6 +193,8 @@
 			} else {
 				localStorage.setItem("theRequestCode", theRequestCode);
 			}
+
+			this.terminalMarv();
 		},
 
 		methods: {
@@ -413,13 +416,21 @@
 				$(".mint-swipe").animate({marginTop: "0"}, 500);
 			},
 			terminalMarv: function() {
-				let that = this;
+				let that = this,
+					  params = {
+						  type: '',
+              code: that.$route.query.code || 0
+            };
         let terminal = that._Util.browser();
         if (terminal.versions.android) {
-        	console.log('android')
+	        params.type = 'android';
         } else if (terminal.versions.ios) {
-        	console.log('ios');
+	        params.type = 'ios';
         }
+				that._Util.post(that, that._Api.POST_APP_CLIENT, params, (data) => {
+					that.HomeDownUrl = data.url;
+          // window.location.href=data.url
+				});
       },
 			CustomerFunction: function () {
 				let that = this;
