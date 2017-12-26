@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="indexHeight">
     <Headered
     :classAdata="classAdata"
     :icon="icon"
