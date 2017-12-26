@@ -146,7 +146,7 @@
                  class="jsksLotteryContentItem pcdd_mun pcdd_munss">
               <!--<div class="pcdd_mun_title">{{Colorful.name}}</div>-->
               <div class="jsksLotteryContentList pcdd_mun_list">
-                <ul class="lotteryUls clearfix" :class="{'sizeDicePlay':lotteryOffsColorID == 20,'otherPlay':lotteryOffsColorID != 20}">
+                <ul class="lotteryUls clearfix" :class="{'sizeDicePlay':lotteryOffsColorID == 20,'lotteryUl':lotteryOffsColorID == 20,'otherPlay':lotteryOffsColorID != 20}">
                   <li v-for="(play,index) in Colorful.played" :class="{'on': play.active,'floatLeft':true}" id="cdpstyle">
                     <article
                         @click="playchecked($event,play,Colorful.id,play.name,index, Colorful, 'play_article_ks',item_index)"
@@ -400,7 +400,7 @@
 						if (_this.lotteryOffsColorID != 20) {
 							_this._Util.chip(_this, e, $('.pcdd_munss:eq(' + iteindex + ') ul.lotteryUls li:eq(' + index + ')'));
 						} else {
-							_this._Util.chip(_this, e, $('.pcdd_muns:eq(' + iteindex + ') ul.lotteryUl li:eq(' + index + ')'));
+							_this._Util.chip(_this, e, $('.pcdd_munss:eq(' + iteindex + ') ul.lotteryUl li:eq(' + index + ')'));
 						}
 					} else {
 						_this._Util.chip(_this, e, $('.veryPcMun:eq(' + iteindex + ') .veryPcList ul li:eq(' + index + ')'));
