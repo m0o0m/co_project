@@ -974,11 +974,16 @@ $designWidth: 375;
           display: inline-block;
           width: rem(30);
           height: rem(16);
+          padding-top:rem(2);
+          text-align: center;
+          line-height:rem(12);
           position: absolute;
+          background: #FFDC99;
           right: rem(26);
-          top: rem(14);
-          background: url("../../images/personal/news.png") center no-repeat;
-          background-size: cover;
+          top: rem(12);
+          color: #111111;
+          font-size: rem(12);
+          border-radius: rem(3);
         }
       }
       .loadMoreTC {
