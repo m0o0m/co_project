@@ -103,6 +103,82 @@
           </div>
         </div>
       </div>
+      <!--江苏快三-->
+      <div class="jsksLottery" v-if="creditId == 4">
+        <div class="jsksLotteryMian">
+          <!--<div v-if="lotteryOffsColorID == 20" class="pcdd_mian_lineHeight">
+            <div v-for="(Colorful,item_index) in deafNum"
+                 :class="{'pcdd_mun_dx': $parent.$refs.headerRef.lotteryTypeId == 20}"
+                 class="pcdd_mun pcdd_muns">
+              <div :class="jsksDivCss[item_index]">
+                <ul class="lotteryUl">
+                  <li v-if="$parent.$refs.headerRef.lotteryTypeId == 20" v-for="(play,index) in Colorful.played"
+                      :class="{'on': play.active}" id="dxgbstyle">
+                    <article
+                        @click="playchecked($event,play,Colorful.id,play.name,index, Colorful, 'play_article_ks',item_index)"
+                        class="play_article_ks" :class="{'on':play.active}">
+                      <div style="overflow: visible">
+                        <section class="tit-t" style="overflow: visible">
+                          <p v-if="play.name == '全骰' || play.name == '大' || play.name == '小'">
+                            {{play.name}}
+                          </p>
+                          <p class="tt-p1">
+                            <img v-for="p in jsksImgList" v-if="p.k == play.name" :src="p.v"/></p>
+                          <p v-if="lotteryOffsColorID != 20">{{play.name}}</p>
+                          <p class="tt-p3">/ {{computeOdds(play)}}</p>
+                          <p class="playMarryImg jsksImg" :class="{'bigs': index == 0 }" v-if="play.active && !$parent.stopBet"><img src="../../../assets/images/small01.png" alt=""></p>
+                        </section>
+                      </div>
+                      <div class="tit-t2" style=" margin-top: 0.45rem">
+                        <p class="playfeet"><span
+                            class="smarrySpan" style="font-size: 0.55rem;">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span>
+                        </p>
+                        &lt;!&ndash;<p class="playImg" v-if="play.active && !$parent.stopBet"><img src=""/></p>&ndash;&gt;
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>-->
+          <div class="jsksLotteryMianContent pcdd_mian_lineHeight">
+            <div v-for="(Colorful,item_index) in deafNum" :class="{'pcdd_mun_dx': $parent.$refs.headerRef.lotteryTypeId == 20}"
+                 class="jsksLotteryContentItem pcdd_mun pcdd_munss">
+              <!--<div class="pcdd_mun_title">{{Colorful.name}}</div>-->
+              <div class="jsksLotteryContentList pcdd_mun_list">
+                <ul class="lotteryUls clearfix" :class="{'sizeDicePlay':lotteryOffsColorID == 20,'otherPlay':lotteryOffsColorID != 20}">
+                  <li v-for="(play,index) in Colorful.played" :class="{'on': play.active,'floatLeft':true}" id="cdpstyle">
+                    <article
+                        @click="playchecked($event,play,Colorful.id,play.name,index, Colorful, 'play_article_ks',item_index)"
+                        class="jsksPlayArticle play_article_ks"
+                        :class="{'on':play.active}">
+                      <div>
+                        <section class="PlayArticleTitle">
+                          <p v-if="play.name == '全骰' || play.name == '大' || play.name == '小'" class="articleTitle">{{play.name}}</p>
+                          <p v-if="!(play.name == '全骰' || play.name == '大' || play.name == '小')" class="tt-p1">
+                            <img v-for="p in jsksImgList" v-if="p.k == ($parent.$refs.headerRef.lotteryTypeId == 22 ? 'ds' : '') + play.name" :class="{jsk_point:$parent.$refs.headerRef.lotteryTypeId != 22}"
+                                 :src="p.v"/>
+                          </p>
+                          <p class="tt-p2" v-if="creditId == 4 && $parent.$refs.headerRef.lotteryTypeId != 20">
+                            {{play.name}}</p>
+                          <p class="tt-p3"> / {{computeOdds(play)}}</p>
+                        </section>
+                      </div>
+                      <div class="tit-t2 clearfix">
+                        <p class="playfeet">
+                          <span>{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span>
+                        </p>
+                        <p class="playMarryImg common" v-if="play.active && !$parent.stopBet"><img
+                            src="../../../assets/images/small01.png" alt=""></p>
+                      </div>
+                    </article>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
