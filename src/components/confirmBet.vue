@@ -1,5 +1,5 @@
 <template>
-  <div class="confirmPage positionFixed" v-show="bankId" :class="{'veryConfirm': creditId == 1 || creditId == 2,'llcConfirmBack': creditId == 3 || creditId == 12,'jskConfirmBack': creditId == 4,'bJConfirmBack': creditId == 5, 'timeConfirmBack': creditId == 6}">
+  <div class="confirmPage positionFixed" v-show="bankId" :class="{'veryConfirm': creditId == 1 || creditId == 2,'llcConfirmBack': creditId == 3 || creditId == 12,'jskConfirmBack': creditId == 4,'bJConfirmBack': creditId == 5, 'timeConfirmBack': creditId == 6, 'showHandConfirmBack': creditId == 15, 'cloudTopConfirmBack': creditId == 16 || creditId == 17 || creditId == 18, 'racingConfirmBack': creditId == 14 || creditId == 22 ,'paiGowConfirm': creditId == 19 ,'royalConfirm': creditId == 20}">
     <div class="confirmPageBack positionFixed">
       <article class="confirmTitle">
         <section @click="sectionClick" class="lotteryArrowsLeft"></section>

@@ -526,16 +526,19 @@ $designWidth: 375;
   background: linear-gradient(top, #123821, #164227);
   background: -webkit-linear-gradient(top, #123821, #164227);
 }
+
 .confirmPage.bJConfirmBack {
   background: #000;
 }
+
 .confirmPage.timeConfirmBack {
-  background: linear-gradient(top, rgba(150,0,28,1), rgba(73,0,11,1));
-  background: -webkit-linear-gradient(top, rgba(150,0,28,1), rgba(73,0,11,1));
+  background: linear-gradient(top, rgba(150, 0, 28, 1), rgba(73, 0, 11, 1));
+  background: -webkit-linear-gradient(top, rgba(150, 0, 28, 1), rgba(73, 0, 11, 1));
 }
+
 .confirmPage.veryConfirm {
-  background: linear-gradient(top,#F03636,#C90606);
-  background: -webkit-linear-gradient(top,#F03636,#C90606);
+  background: linear-gradient(top, #F03636, #C90606);
+  background: -webkit-linear-gradient(top, #F03636, #C90606);
 }
 
 .confirmPageBack {
@@ -861,6 +864,25 @@ $designWidth: 375;
   }
 }
 
+/*广东11选5 东京1.5分彩*/
+.colArticle {
+  float: right;
+  p {
+    width: rem(25);
+    height: rem(25);
+    background: linear-gradient(top, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+    border-radius: 50%;
+    float: left;
+    line-height: rem(25);
+    text-align: center;
+    margin-left: rem(5);
+    position: relative;
+    color: #000;
+    font-family: arial;
+  }
+}
+
 .theLotteryMaTitle.positionFixed {
   z-index: 4;
 }
@@ -872,6 +894,28 @@ $designWidth: 375;
 .confirmPage.jskConfirmBack {
   background-image: radial-gradient(48% 100%, #312B3D 2%, #23202E 98%);
   background-image: -webkit-radial-gradient(48% 100%, #312B3D 2%, #23202E 98%);
+}
+
+.confirmPage.racingConfirmBack {
+  background: linear-gradient(top, #255e8b, #16406f);
+  background: -webkit-linear-gradient(top, #255e8b, #16406f);
+}
+
+.confirmPage.showHandConfirmBack {
+  background: #36646F;
+}
+
+.confirmPage.cloudTopConfirmBack {
+  background: #162958;
+}
+
+.confirmPage.paiGowConfirm {
+  background: #95221d;
+}
+
+.confirmPage.royalConfirm {
+  background: linear-gradient(top, #6E1F0E, #4C0F05);
+  background: -webkit-linear-gradient(top, #6E1F0E, #4C0F05);
 }
 
 .confirmPage.llcConfirmBack {

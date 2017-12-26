@@ -13,7 +13,7 @@ $designWidth: 375;
 }
 
 .theLotteryMaTitle {
-  top: rem(119);
+  top: rem(118);
   width: 100%;
   height: rem(40);
   background: #103574;
@@ -33,6 +33,9 @@ $designWidth: 375;
   }
   .theLotteryMaTitleSwim {
     background: #E8C177;
+    li {
+      color: #000;
+    }
   }
 }
 
