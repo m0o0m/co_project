@@ -1,5 +1,5 @@
 <template>
-  <div class="confirmPage positionFixed" v-show="bankId">
+  <div class="confirmPage positionFixed" v-show="bankId" :class="{'veryConfirm': creditId == 1 || creditId == 2,'bJConfirmBack': creditId == 5, 'timeConfirmBack': creditId == 6}">
     <div class="confirmPageBack positionFixed">
       <article class="confirmTitle">
         <section @click="sectionClick" class="lotteryArrowsLeft"></section>

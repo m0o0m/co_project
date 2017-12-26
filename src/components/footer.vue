@@ -1,7 +1,6 @@
 <template>
-  <div :class="{'westernBack_01':creditId == 5 ,'westernBacks_01':creditId == 5 , 'westernBack_nc':creditId == 17}"
-       class="westernFooter positionFixed">
-    <div class="westernFooterMain" v-if=" creditId != 5  ">
+  <div class="westernFooter positionFixed">
+    <div class="westernFooterMain">
       <div class="westernFooterTop">
         <section class="westernSectionNum displayFlex">
           <p v-for="(mary,marry_index) in marryImg" data-marry="data.num" :class="{'on':marryImgId == marry_index}"
