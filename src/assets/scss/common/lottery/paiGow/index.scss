@@ -116,7 +116,7 @@ $designWidth: 375;
           line-height: rem(15);
           position: relative;
           p {
-            display: inline-block; font-size: rem(14);
+            display: inline-block; font-size: rem(14);font-family: Arial;
           }
           P:nth-child(2) {
             font-size: rem(12);
@@ -165,7 +165,7 @@ $designWidth: 375;
           position: relative;
           p {
             display: inline-block;
-            font-size: rem(12);
+            font-size: rem(12);font-family: Arial;
           }
           p:nth-of-type(3) {
             width: 100% ;
@@ -213,7 +213,7 @@ $designWidth: 375;
           line-height: rem(15);
           position: relative;
           p {
-            display: inline-block; font-size: rem(12);
+            display: inline-block; font-size: rem(12);font-family: Arial;
           }
           p:nth-of-type(3) {
             width: 100% ;  font-size: rem(12); color: #FFFFFF;
