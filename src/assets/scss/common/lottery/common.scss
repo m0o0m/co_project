@@ -896,6 +896,28 @@ $designWidth: 375;
   background-image: -webkit-radial-gradient(48% 100%, #312B3D 2%, #23202E 98%);
 }
 
+.confirmPage.racingConfirmBack {
+  background: linear-gradient(top, #255e8b, #16406f);
+  background: -webkit-linear-gradient(top, #255e8b, #16406f);
+}
+
+.confirmPage.showHandConfirmBack {
+  background: #36646F;
+}
+
+.confirmPage.cloudTopConfirmBack {
+  background: #162958;
+}
+
+.confirmPage.paiGowConfirm {
+  background: #95221d;
+}
+
+.confirmPage.royalConfirm {
+  background: linear-gradient(top, #6E1F0E, #4C0F05);
+  background: -webkit-linear-gradient(top, #6E1F0E, #4C0F05);
+}
+
 .confirmPage.llcConfirmBack {
   background: #221709;
 }
