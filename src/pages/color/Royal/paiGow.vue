@@ -1,5 +1,5 @@
 <template>
-  <div class='royal'>
+  <div  :class="{royal:lotteryOffsColorID != '143',royalBanker:lotteryOffsColorID == '143'}">
     <div class="royalBody">
       <div class="desktopStyle"></div>
       <div class="desktopStyle"></div>
