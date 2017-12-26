@@ -199,22 +199,17 @@
 			},
 			placeOrder: function () {
 				let that = this;
-
 				let url = location.href;
 				sessionStorage.setItem('historyurl', JSON.stringify({'url': url, "status": 1}));
-
 				if (this.$parent.stopBet) {
 					this._Util.showAlert(this, {content: '已封盘'});
 					return;
 				}
 				if (this._LotteryUtil.lotteryCheckCount(this, this.orders, true)) return;
-
-
 				if (that._Util.getUserInfo().is_test_player && this._Util.isLogin() && parseInt(that.$parent.$refs.pcddref.selectedAmount) > that.$parent.$refs.pcddref.dynamicBalance) {
 					that._Util.showAlert(that, {content: '余额不足，请注册正式账号进行游戏'}, () => {
 						that.$router.push({name: 'register'});
 						return;
-
 						that.$parent.$refs.headerRef.toUrl = that._Api.LOCAL_HOST + 'lottery/login/register';
 						that.$parent.$refs.headerRef.showOpenFrame = true;
 						that.$parent.$refs.headerRef.showFrmBack = false;
@@ -235,7 +230,6 @@
 					that.$parent.$refs.headerRef.retainData = that.totalPrice;
 					let parentMarry = that.$parent.$refs.headerRef.headerMarry;
 					that.$parent.$refs.headerRef.headerMarry = (parentMarry - parseFloat(that.totalPrice)).toFixed(2);
-					console.log('that.$parent.$refs.headerRef.headerMarry', that.$parent.$refs.headerRef.headerMarry)
 					setTimeout(function () {
 						that._LotteryUtil.setHistoryBetMoney(that, that.creditId, that.nextNoisser, that.totalPrice);
 						that.init();

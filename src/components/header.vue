@@ -146,8 +146,11 @@
   </div>
 </template>
 
+
 <script type="text/babel">
+
 	import OpenFrame from './openFrame.vue'
+
 	export default {
 		name: 'headered',
 		props: {
@@ -216,8 +219,8 @@
 					if (this.creditId == 4) {
 						this.diceData = [];
 						var num = this.actionDataCopy,
-							  credlen = num.length,
-							  credStr = "";
+							credlen = num.length,
+							credStr = "";
 						for (var i = 0; i < credlen; i++) {
 							var numEq = num[i];
 							switch (parseInt(numEq)) {
@@ -280,7 +283,6 @@
 					}
 
 					this.exportId = this.classAdata.played.length === 1 ? true : false;
-					console.log('this.classAdata.played[this.navId]',this.classAdata.length)
 					return this.classAdata.played[this.navId]
 				}
 			}
@@ -354,9 +356,9 @@
 				this.actionNoCopy = JSON.parse(JSON.stringify(this.classAdata.action_no));
 				this.getLotteryData();
 				this.getHistoryBetMoney();
-				if (this.classAdata) {
+				if(this.classAdata){
 					this.lotteryTypeId = this.classAdata.played[0].id;
-				} else {
+				}else {
 					return;
 				}
 			},
@@ -384,21 +386,21 @@
 				clearInterval(this.$parent.interValObj);
 				next();
 			});
-			if (that.classAdata) {
+			if(that.classAdata){
 				that.lotteryTypeId = that.classAdata.played[0].id;
 			}
 		},
 		methods: {
-			countDownTimeout() {
+			countDownTimeout () {
 				let that = this,
 					tH = 1000;
-				let countTimeOut = setInterval(function () {
-					if (that.countDownStr == '00:00:00') {
+				let countTimeOut = setInterval(function(){
+					if(that.countDownStr == '00:00:00'){
 						that.$parent.requestLotteryDetail();
-					} else {
+					}else{
 						clearInterval(countTimeOut);
 					}
-				}, tH);
+				},tH);
 			},
 			balanceHods() {
 				// let that = this;
@@ -452,11 +454,14 @@
 
 			getHistoryBetMoney(money) {
 				this.reservePrice = parseFloat(this.$parent.$refs.confirmPageRef.totalPrice);
+				console.log('this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no)',this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no))
+				console.log('this.creditId',this.creditId);
+				console.log('this.classAdata.next_action_no',this.classAdata.next_action_no)
 				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice).toFixed(2);
 				this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
 			},
 
-			getHistoryBet() {
+			getHistoryBet(){
 				// if(this._LotteryUtil.JudgeLogin() === false) return;
 				this.balanceAmount = (this.headerMarry - parseFloat(this.$parent.$refs.confirmPageRef.totalPrice)).toFixed(2);
 			},
@@ -519,13 +524,16 @@
 					return;
 				} else {
 					this.PopupupID = 1;
+					$(".Popup_up").css({
+						"height": $(window).height()
+					});
 				}
 
 			},
 			delHidden: function () {
 				this.PopupupID = 0;
 			},
-			eventOpt: function (index, id) {
+			eventOpt: function (index,id) {
 				this.balanceAmount = parseFloat(this.balanceAmount) + parseFloat(this.totalMoney) - parseFloat(this.retainData);
 				this.numIndex = index;
 				this.navId = index;
@@ -544,9 +552,7 @@
 
 				that._Util.post(that, that._Api.POST_LOTTERY_RECTOR_DETAIL, {id: that.creditId}, (data) => {
 					this.$parent.$emit('openLottery', data);
-
 				});
-
 			},
 			ruleClick() {
 				var credRule = "";

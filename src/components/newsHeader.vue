@@ -4,7 +4,7 @@
       <div class="headerHidden">
         <div class="headerTop">
           <section @click="back()" class="lotteryArrowsLeft"></section>
-          <section @click="lottery_nameClick"><p>{{classAdata.lottery_name}}<span>{{deafNum.name}}</span></p></section>
+          <section @click="lottery_nameClick"><p class="componesArow">{{classAdata.lottery_name}} <span>{{deafNum.name}}</span></p></section>
           <section>
             <a href="javascript:void(0)" class="increaseEd"
                @click="increaseId = !increaseId ? 1 : 0">+</a>
@@ -137,7 +137,8 @@
         initializationPrice: 0,
         lotteryTypeId: 0,
         retainData: 0,
-        headerMarry: 0
+        headerMarry: 0,
+	      exportId: false
       }
     },
     computed: {

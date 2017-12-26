@@ -413,7 +413,7 @@
 				$(".mint-swipe").animate({marginTop: "0"}, 500);
 			},
 			terminalMarv: function() {
-				var that = this;
+				let that = this;
         let terminal = that._Util.browser();
         if (terminal.versions.android) {
         	console.log('android')
