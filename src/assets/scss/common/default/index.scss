@@ -2,7 +2,59 @@
 @import "../../rem";
 
 $designWidth: 375;
-
+.choicePlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  .choicePlayMain {
+    width: 70%;
+    border: rem(1) solid #F0DDAE;
+    padding: rem(15);
+    background: rgba(40, 37, 38, 0.80);
+    box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0, 0, 0, 0.50);
+    border-radius: rem(6);
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    .popup_ulTitle {
+      font-size: rem(16);
+      color: #FFFFFF;
+      text-align: left;
+      padding-bottom: rem(15);
+    }
+    .delPopup {
+      width: rem(20);
+      position: absolute;
+      right: rem(12);
+      top: rem(12);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    ul li {
+      width: 48%;
+      height: rem(46);
+      line-height: rem(46);
+      border: rem(1) solid #F0DDAE;
+      float: left;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      font-size: rem(14);
+      color: #E9D29B;
+      margin-bottom: rem(10);
+    }
+    ul li:nth-child(odd) {
+      margin-right: 4%;
+    }
+    ul li.on {
+      background-image: linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+      background-image: -webkit-linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+      color: #2F2122;
+    }
+  }
+}
 body, html, form {
   height: 100%;
 }
@@ -51,20 +103,20 @@ img {
 }
 
 .positionFixed {
-   position: fixed;
-   top: 0;
-   left: 0;
-   z-index: 5;
- }
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
 
-.positionAbsolute{
+.positionAbsolute {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 5;
 }
 
-.colorRed{
+.colorRed {
   color: #E83828;
 }
 
@@ -182,12 +234,14 @@ img {
   top: rem(10);
   z-index: 3;
 }
-.loginIcon a{
+
+.loginIcon a {
   display: inline-block;
   width: rem(50);
   height: rem(50);
   cursor: pointer;
 }
+
 .loginIcon.left {
   left: 0;
   background: url('../../../images/login/arrow.png') center center no-repeat;
@@ -201,7 +255,7 @@ img {
   top: rem(3);
 }
 
-.loginIcon.right.custom{
+.loginIcon.right.custom {
   background: url('../../../images/login/Customer.png') center center no-repeat;
   background-size: rem(35) auto;
 }
@@ -216,6 +270,7 @@ img {
   background-size: rem(25) auto;
   top: rem(3);
 }
+
 .loginIcon.right.xieyi {
   right: 0;
   background: url('../../../images/login/xieyi.png') center center no-repeat;
@@ -276,7 +331,8 @@ img {
   height: 100%;
   overflow: hidden;
 }
-  /*首页底部*/
+
+/*首页底部*/
 .FooterCls {
   background: url('../../../images/index/foterBack.png') left bottom no-repeat;
   background-size: 100% 100%;
@@ -398,15 +454,47 @@ img {
 
   }
 }
+
 /*弹框样式*/
-.Popup {position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  width:100%; height: 100%; display: none; z-index: 20;}
+.Popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 20;
+}
 
-.Popup2 {position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  width:100%; height: 100%; z-index: 20;}
+.Popup2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
 
-.Popup_text {height: 100%;}
-.Popup_text .Popup_text_wz {background: rgba(40,40,40,0.9); display: inline-block; min-width: 7.5rem; max-width: 10rem; padding: 0.5rem; font-size: 0.55rem; color: #ffffff; text-align: center; border-radius: 0.3rem;}
+.Popup_text {
+  height: 100%;
+}
+
+.Popup_text .Popup_text_wz {
+  background: rgba(40, 40, 40, 0.9);
+  display: inline-block;
+  min-width: 7.5rem;
+  max-width: 10rem;
+  padding: 0.5rem;
+  font-size: 0.55rem;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
 .indexJust {
   display: box;
   flex: 1;
@@ -417,18 +505,21 @@ img {
   -webkit-box-align: center;
 
 }
+
 .indexDisplay {
   display: -webkit-box;
   display: box;
   display: flex;
 }
+
 .indexFiex {
   -webkit-box-flex: 1;
   box-flex: 1;
   flex: 1;
 }
+
 /*确认按钮*/
-.loginHostBtn.confirmBtn{
+.loginHostBtn.confirmBtn {
   width: 90%;
   margin: 0 auto;
 }
