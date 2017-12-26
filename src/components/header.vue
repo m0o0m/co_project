@@ -78,6 +78,12 @@
                 </section>
               </div>
             </section>
+            <!--西部番摊-->
+            <section class="theLotteryRoulette" v-if="creditId === 21">
+              <div class="westernResult">
+                <p v-for="action in classAdata.action_data">{{action}}</p>
+              </div>
+            </section>
           </div>
         </div>
         <div v-if="classAdata.status == '0' || classAdata.status == '-1'" class="DeliveryTime">

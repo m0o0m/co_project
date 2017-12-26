@@ -9,7 +9,7 @@ div, session, ul, li {
 
 .westernPage {
   height: 100%;
-  padding: rem(160) rem(10) rem(106);
+  padding: rem(130) rem(10) rem(106);
   background-image: radial-gradient(50% 103%, #24814F 0%, #084018 100%);
   background-image: -webkit-radial-gradient(50% 103%, #24814F 0%, #084018 100%);
   overflow-y: scroll;
@@ -21,7 +21,7 @@ div, session, ul, li {
     -webkit-box-sizing: border-box;
     border-radius: rem(5);
     position: relative;
-    margin-bottom: rem(50);
+    margin-bottom: rem(30);
     .westernPageArticle {
       height: 100%;
       display: flex;

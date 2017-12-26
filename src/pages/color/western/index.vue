@@ -20,7 +20,7 @@
     :sliderValue="sliderValue"
     :marryNum="marryNum"
     :imgJson="{}"
-    ref="WesternNumRef"
+    ref="pcddref"
     ></WesternNum>
     <Footered
     :personalRebate="personalRebate"
@@ -66,10 +66,10 @@
 
 <script type="text/babel">
 //  import '../../../assets/scss/western.scss';
-  import '../../../assets/scss/pcddpage.scss';
+//  import '../../../assets/scss/pcddpage.scss';
 
   import $ from 'jquery'
-  import HeaderWestern from './headerWestern.vue'
+  import HeaderWestern from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'
   import WesternNum from './westernNum.vue'
   import ConfirmPage from '../../../components/confirmBet.vue'

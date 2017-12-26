@@ -12,7 +12,7 @@
               <p><span>
                 {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, num.amount)}}
               </span></p>
-              <p class="playMarryImg "  :class="{'on':index == 2 || index == 3}" v-if="num.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
+              <p class="playMarryImg"  :class="{'on':index == 2 || index == 3}" v-if="num.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
             </div>
           </section>
         </article>
@@ -230,7 +230,7 @@
              _this._Util.chip(_this, e, $(' .westernPage_div article section:eq(' + index + ')'), "", parseInt(_this.thisScrollTop));
 //
          }else {
-             _this._Util.chip(_this, e, $('.westernPage_mian article section:eq(' + index + ')'), "", parseInt(_this.thisScrollTop));
+             _this._Util.chip(_this, e, $('.westernPageMian article section:eq(' + index + ')'), "", parseInt(_this.thisScrollTop));
          }
 
           }, 10);
