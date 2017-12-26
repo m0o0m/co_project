@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "../../../rem";
+$designWidth: 375;
+/*济州岛赛马与泳神争霸*/
+.theLotteryMa {
+  height: 100%;
+  background: #103574;
+  overflow-y: scroll;
+}
+
+.theLotteryBabel {
+  padding: rem(160) rem(10) rem(110) rem(10);
+}
+
+.theLotteryMaTitle {
+  top: rem(119);
+  width: 100%;
+  height: rem(40);
+  background: #103574;
+  ul {
+    margin: rem(12) rem(10) 0 rem(10);
+    background: #4BA913;
+    height: rem(28);
+    line-height: rem(28);
+    border-top-left-radius: rem(5);
+    border-top-right-radius: rem(5);
+    li {
+      flex: 1;
+      text-align: center;
+      font-size: rem(14);
+      color: #FFFFFF;
+    }
+  }
+  .theLotteryMaTitleSwim {
+    background: #E8C177;
+  }
+}
+
+.theLotteryColorFul {
+  flex: 1;
+  margin-right: rem(1);
+}
+
+.theLotteryColorFul:last-child {
+  margin-right: 0;
+}
+
+.theLotterySwimUl {
+  li.theLotterySwimArticle {
+    padding: rem(2) 0;
+    line-height: rem(16);
+    height: rem(35);
+    position: relative;
+    background: #4BA913;
+    margin-bottom: rem(1);
+    p {
+      padding: 0 rem(10);
+      font-size: rem(14);
+      font-family: arial;
+      color: #fff;
+    }
+    p:first-of-type {
+      span:last-of-type {
+        font-size: rem(10);
+        line-height: rem(0);
+      }
+    }
+    p:nth-of-type(2) {
+      font-size: rem(10);
+    }
+    p.playMarryImg {
+      width: rem(22);
+      height: rem(22);
+      position: absolute;
+      bottom: rem(3);
+      right: rem(0);
+    }
+  }
+}
+
+.theLotterySwimUl.theLotterySwimUlColor {
+  li {
+    background: #E8C177;
+    p {
+      color: #000000;
+      span.smarrySpan {
+        color: #000000;
+      }
+    }
+  }
+}

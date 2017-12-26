@@ -79,6 +79,7 @@
 </template>
 
 <script type="text/babel">
+  import '../../../assets/scss/common/lottery/racing/index.scss';
   import Headered from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'
   import ConfirmPage from '../../../components/confirmBet.vue'

@@ -22,6 +22,32 @@
           <!--开奖结果-->
           <div @click.stop="openFrm(4)" class="DeliveryMun" :class="{'openLiveryMargin': creditId === 15 || creditId == 16 || creditId == 18}">
             <section><p><span>{{actionNoCopy}}</span>期开奖结果</p></section>
+            <!--pc蛋蛋 加拿大28-->
+            <section class="theLotteryRoulette" v-if="creditId === 1 || creditId === 2">
+              <div class="theLotteryColor">
+                <article class="theLotteryArticle nameArt04">
+                  <p class=""><span>2</span></p>
+                  <p class=""><span>6</span></p>
+                  <p class=""><span>2</span></p>
+                  <p class="green"><span>10</span></p>
+                </article>
+              </div>
+            </section>
+            <!--北京pk10-->
+            <section class="theLotteryRoulette" v-if="creditId === 5">
+              <article class="bJHArticle">
+                <p v-for="(action,index) in actionDataCopy" v-if="index < 3">{{action}}</p>
+                <p style="float: right"><img src="../assets/images/head_pk10_back01.png"/></p>
+              </article>
+            </section>
+            <!--重庆时时彩-->
+            <section class="theLotteryRoulette" v-if="creditId === 6">
+              <article class="timeHArticle">
+                <div class="timeHANum">
+                  <p v-for="action in actionDataCopy">{{action}}</p>
+                </div>
+              </article>
+            </section>
             <!--俄罗斯轮盘-->
             <section class="theLotteryRoulette" v-if="creditId === 13">
               <article class="lotteryNumRoulette">

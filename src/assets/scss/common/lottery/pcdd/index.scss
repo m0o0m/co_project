@@ -1,0 +1,315 @@
+@charset "utf-8";
+@import "../../../rem";
+$designWidth: 375;
+/*pc蛋蛋*/
+.veryPc {
+  background: #f9e7a8;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.veryPcMargin {
+  padding: rem(118) 0 rem(105) 0;
+  .veryPcLine {
+    border: rem(5) solid #df1b24;
+    padding: rem(15);
+    background-color: #fff;
+    min-height: rem(357);
+  }
+}
+
+.veryPcTitle {
+  font-size: rem(14);
+  color: #333;
+  line-height: rem(24);
+  text-align: center;
+  padding-bottom: rem(15);
+}
+
+.veryPcLine, .veryPcMun, .veryPcList {
+  height: auto;
+  overflow: hidden;
+}
+
+.veryPcList {
+  ul {
+    li {
+      width: 25%;
+      float: left;
+      text-align: center;
+      margin-bottom: rem(10);
+    }
+  }
+  ul.specialNum {
+    li {
+      width: 33.3%;
+    }
+  }
+}
+
+.veryPcArticle {
+  width: rem(74);
+  font-size: rem(12);
+  color: #4a4a4a;
+  height: rem(40);
+  border: 1px solid #df1a24;
+  display: inline-block;
+  line-height: rem(20);
+  text-align: left;
+  position: relative;
+  section {
+    .veryPcNameBack {
+      width: rem(20);
+      height: rem(20);
+      background: #df1b24;
+      color: #fff;
+      text-align: center;
+      margin-right: rem(5);
+    }
+    .veryPcOddsPlay {
+      font-size: rem(12);
+      position: relative;
+      top: rem(2);
+      color: #4a4a4a;
+    }
+    .veryPcNameBack.veryPcNameBack28 {
+      background: transparent;
+      color: #4a4a4a;
+    }
+    span {
+      font-family: Arial;
+    }
+  }
+  section:nth-child(2) {
+    text-indent: rem(2);
+    .everyPcAmount {
+      color: #fff;
+    }
+    .everyPcAmount.everyPcOnAmount {
+      color: #4a4a4a;
+    }
+  }
+  .playMarryImg {
+    width: rem(21);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/*北京pk10*/
+.veryPc.bJLotteryBack {
+  background: #000;
+}
+.bJLottery {
+  padding: rem(10) rem(5);
+}
+.bJLotteryLine {
+  border: 1px solid #39CFFF;
+  padding: rem(5);
+  position: relative;
+}
+.bJLotteryBack01 {
+  background: rgb(2,21,34);
+  .bJLotteryBack02 {
+    //background: -webkit-radial-gradient(top, green,red);
+    background: radial-gradient(top, rgba(10,141,229,0.15),rgba(8,28,40,0));
+    background: -webkit-radial-gradient(top, rgba(10,141,229,0.15),rgba(8,28,40,0));
+    //background: -webkit-repeating-linear-gradient(top, rgba(10,141,229,0.15),rgba(8,28,40,0));
+    //height: 100%;
+    position: relative;
+  }
+}
+.bJLotteryColor {
+  padding-top: rem(10);
+}
+.bJTitle {
+  text-align: center;
+  padding-bottom: rem(10);
+  p {
+    min-width: rem(80);
+    height: rem(26);
+    line-height: rem(26);
+    display: inline-block;
+    background: url('../../../../images/title_bg3x.png') center bottom no-repeat;
+    background-size: 90% auto;
+    font-size: rem(12);
+    color: #fff;
+  }
+}
+.veryPcList.bJList ul {
+  li {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+  }
+}
+.bJLotteryArticle {
+  font-size: rem(12);
+  color: #fff;
+  text-align: left;
+  width: rem(100);
+  height: rem(45);
+  display: inline-block;
+  box-sizing:border-box;
+  border:1px solid transparent;
+  background-clip:padding-box,border-box;
+  background-origin:padding-box,border-box;
+  background-image:linear-gradient(top,rgba(48,66,77,0.95),rgba(2,21,34,1)),linear-gradient(90deg,#00FFF6,#009EFE);
+  background-image:-webkit-linear-gradient(top,rgba(48,66,77,0.95),rgba(2,21,34,1)),linear-gradient(90deg,#00FFF6,#009EFE);
+  padding: rem(5);
+  margin: rem(2.5) 0;
+  position: relative;
+  p {
+    line-height: rem(18);
+  }
+  p.bJTextColor {
+    font-size: rem(14);
+  }
+  .playMarryImg {
+    width: rem(21);
+    position: absolute;
+    right: rem(3);
+    bottom: rem(3);
+  }
+  span {
+    font-family: Arial;
+  }
+  .everyPcAmount {
+    color: transparent;
+  }
+  .everyPcAmount.everyPcOnAmount {
+    color: #fff;
+  }
+}
+
+/*外框*/
+.outerFrame ,.outerFrameRight ,.outerFrameBottomLeft ,.outerFrameBottomRight {
+  width: rem(55);
+  height: rem(38);
+}
+.outerFrame {
+  border-left: rem(3) solid #39CFFF;
+  border-top: rem(3) solid #39CFFF;
+  position: absolute;
+  top: rem(-1.5);
+  left: rem(-1.5);
+}
+.outerFrameRight {
+  position: absolute;
+  top: rem(-1.5);
+  right: rem(-1.5);
+  border-right: rem(3) solid #39CFFF;
+  border-top: rem(3) solid #39CFFF;
+}
+.outerFrameBottomLeft {
+  position: absolute;
+  bottom: rem(-1.5);
+  left: rem(-1.5);
+  border-left: rem(3) solid #39CFFF;
+  border-bottom: rem(3) solid #39CFFF;
+}
+.outerFrameBottomRight {
+  position: absolute;
+  bottom: rem(-1.5);
+  right: rem(-1.5);
+  border-right: rem(3) solid #39CFFF;
+  border-bottom: rem(3) solid #39CFFF;
+}
+
+.smallFrame ,.smallFrameRight ,.smallFrameBottomLeft ,.smallFrameBottomRight {
+  width: rem(31);
+  height: rem(22);
+}
+.smallFrame {
+  border-left: rem(1) solid #0A8DE5;
+  border-top: rem(1) solid #0A8DE5;
+  position: absolute;
+  top: rem(-1);
+  left: rem(-1);
+}
+.smallFrameRight {
+  position: absolute;
+  top: rem(-1);
+  right: rem(-1);
+  border-right: rem(1) solid #0A8DE5;
+  border-top: rem(1) solid #0A8DE5;
+}
+.smallFrameBottomLeft {
+  position: absolute;
+  bottom: rem(-1);
+  left: rem(-1);
+  border-left: rem(1) solid #0A8DE5;
+  border-bottom: rem(1) solid #0A8DE5;
+}
+.smallFrameBottomRight {
+  position: absolute;
+  bottom: rem(-1);
+  right: rem(-1);
+  border-right: rem(1) solid #0A8DE5;
+  border-bottom: rem(1) solid #0A8DE5;
+}
+
+/*重庆时时彩*/
+.veryPc.timeLotteryBack {
+  background: #23202E;
+  height: 100%;
+  overflow-y: scroll;
+}
+.timeLottery {
+  padding: rem(5);
+}
+
+.timeLotteryPadding {
+  background: rgb(68,0,0);
+  border-radius: rem(5);
+  padding: rem(6);
+  box-shadow: rem(-5) rem(-5) rem(10) rgba(0,0,0,0.2);
+}
+.timeLotteryColor  {
+  background: radial-gradient(top,rgba(181,18,34,1),rgba(73,0,11,1));
+  background: -webkit-radial-gradient(top,rgba(181,18,34,1),rgba(73,0,11,1));
+  padding: rem(5);
+  border: 1px solid rgb(114,47,6);
+}
+.timeLotteryDiv {
+  border: 1px solid rgb(190,178,132);
+  border-radius: rem(3);
+  padding: rem(5);
+  margin-bottom: rem(10);
+}
+.veryPcTitle.timeLotteryTitle {
+  color: #FFDC99;
+}
+.timeLotteryArticle {
+  width: rem(74);
+  font-size: rem(12);
+  color: #FFDC99;
+  display: inline-block;
+  text-align: left;
+  border: 1px solid rgba(255,220,153,0.50);
+  border-radius: rem(2);
+  position: relative;
+  section {
+    padding: 0 rem(3);
+    line-height: rem(20);
+  }
+  .playMarryImg {
+    width: rem(21);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .everyPcAmount {
+    color: transparent;
+  }
+  .everyPcAmount.everyPcOnAmount {
+    color: #fff;
+  }
+  span {
+    font-family: Arial;
+  }
+}
+.timeLotteryArticle.timeLottery57 {
+  width: rem(100);
+}
