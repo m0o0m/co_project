@@ -1,12 +1,12 @@
 <template>
   <div class="westernPage">
-    <div v-if="itemWesternPageData.length" class="westernPage_mian">
-        <article class="westernPage_article">
+    <div v-if="itemWesternPageData.length" class="westernPageMian">
+        <article class="westernPageArticle">
           <section v-for="(num,index) in itemWesternPageData[0].played"
                    @click="playchecked($event,num,itemWesternPageData[0].id,num.name,index, itemWesternPageData[0])"
                    :class="{'on':num.active}"
                    class="wester_article" >
-            <div class="westernpage_num" style="overflow: visible;height:1.8rem;">
+            <div class="westernpage_num">
               <p><span>{{num.name}}</span></p>
               <p><span>/{{computeOdds(num)}}</span></p>
               <p><span>
@@ -18,10 +18,8 @@
         </article>
         <div class="westernPage_div">
           <article class="westernpage_divMun">
-            <section v-for="(wester, index) in itemWesternPageData[0].playedOne"
-                     @click="playchecked($event,wester,itemWesternPageData[0].id,wester.name,index, itemWesternPageData[0], true)"
-                     class="indexJust" >
-              <div class="westernpage_num " style="overflow: visible;height:1.8rem;">
+            <section v-for="(wester, index) in itemWesternPageData[0].playedOne" @click="playchecked($event,wester,itemWesternPageData[0].id,wester.name,index, itemWesternPageData[0], true)" class="indexJust" >
+              <div class="westernpage_num">
                 <p><span>{{wester.name}}</span></p>
                 <p><span>/{{computeOdds(wester)}}</span></p>
                 <p><span>

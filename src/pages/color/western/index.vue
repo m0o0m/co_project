@@ -65,7 +65,7 @@
 </template>
 
 <script type="text/babel">
-  import '../../../assets/scss/western.scss';
+//  import '../../../assets/scss/western.scss';
   import '../../../assets/scss/pcddpage.scss';
 
   import $ from 'jquery'
