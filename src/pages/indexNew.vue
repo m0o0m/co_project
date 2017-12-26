@@ -83,7 +83,7 @@
           <li v-for="(color,index) in lotteryMenu.list.chess_play">
             <a href="javascript:void(0)" @click="chessGame(index,color.id)">
               <section>
-                <figure><img :src="lotteryGame[0].chess[index]"/></figure>
+                <figure :class="{'cheColor': color.id === 14}"><img :src="lotteryGame[0].chess[index]"/></figure>
               </section>
               <section>{{color.name}}</section>
             </a>
