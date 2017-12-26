@@ -29,7 +29,7 @@
             </div>
             <div class="loginLi displayFlex">
               <p>确认密码</p>
-              <p style=" position: relative;">
+              <p>
                 <input type="password" v-model="passwordTemp" placeholder="请再次输入您的密码">
                 <!--确认密码右侧的小叉<span style="float:right; color:#666;position: absolute; right:0.5rem;"></span>-->
               </p>

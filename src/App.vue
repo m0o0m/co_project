@@ -16,12 +16,15 @@
 	import './assets/scss/common/default/index.scss'
 	import './assets/scss/rechargeCenter/index.scss'
 	import './assets/scss/personal/index.scss'
+  /*微信qq支付宝充值*/
+  import './assets/scss/rechargeCenter/weixinreach.scss'
   /*规则*/
   import './assets/scss/rules/index.scss'
   /*开奖大厅*/
   import './assets/scss/common/theLottery/index.scss'
   /*登录*/
-	import './assets/scss/login/login.scss'  /*投注记录*/
+	import './assets/scss/login/login.scss'
+	/*投注记录*/
   import './assets/scss/common/betting/index.scss'
   /*棋牌彩种*/
   import './assets/scss/common/lottery/index.scss'
@@ -31,7 +34,6 @@
 	import './assets/scss/common/lottery/western/index.scss'
   /*牌九*/
 	import './assets/scss/common/lottery/paiGow/index.scss'
-
  /*麻将*/
 	import './assets/scss/common/lottery/royal/index.scss'
 

@@ -226,3 +226,205 @@ $designWidth: 375;
     }
   }
 }
+/*微信、QQ、支付宝充值*/
+.weixinReach {
+  height: 100%;
+  padding-top: rem(60);
+}
+
+.weixinReachBox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 rem(20);
+  overflow-y: scroll;
+}
+
+.WeChatUp {
+  margin: 0 auto;
+  border-bottom: 1px solid #FFDC99;
+  width: 100%;
+  height: rem(35);
+  margin-top: rem(60);
+  li {
+    float: left;
+    font-size: rem(12);
+    line-height: rem(35);
+    width: 40%;
+    text-align: center;
+    color: #FFDC99;
+    margin-left: rem(25);
+    border-top-left-radius: rem(4);
+    border-top-right-radius: rem(4);
+  }
+}
+
+.rechUp {
+  margin-top: 0;
+  li.ons {
+    background-image: linear-gradient(-180deg, #F0DDAE 0%, #DCB976 100%);
+    background-image: -webkit-linear-gradient(-180deg, #F0DDAE 0%, #DCB976 100%);
+    color: #000;
+  }
+}
+
+.weixinReachContent {
+  height: 100%;
+  padding: rem(20) rem(10) 0;
+  .weChatAccounts {
+    .remark {
+      line-height: rem(12);
+      p {
+        opacity: 0.6;
+        line-height: rem(12);
+        height: rem(12);
+        font-size: rem(10);
+        font-family: Arial;
+      }
+    }
+    .selectChannel {
+      p:nth-child(2) {
+        background: transparent;
+        position: relative;
+        select {
+          width: 100%;
+          padding: 0 rem(30) 0 rem(10);
+          font-size: rem(14);
+          line-height: rem(42);
+          color: #fff;
+          background: transparent;
+          option {
+            width: 80%;
+            background-color: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+    .immediatePayBtn {
+      margin-top: rem(30);
+    }
+  }
+  .onlineSecurity {
+    text-align: center;
+    margin-top: rem(10);
+    i {
+      display: inline-block;
+      width: rem(20);
+      height: rem(20);
+      background: url('../../../assets/images/numberimg/dun.png') left no-repeat;
+      background-size: rem(20);
+      vertical-align: middle;
+    }
+    p {
+      display: inline-block;
+      color: #fff;
+      font-size: rem(14);
+      vertical-align: middle;
+    }
+  }
+  .weixinReachopenTab {
+    padding-bottom: rem(40);
+    .weixinReachShare {
+      border: 1px solid #DCB976;
+      background: rgba(40, 37, 38, 0.80);
+      box-shadow: inset 0 -2px 3px 0 rgba(0, 0, 0, 0.50);
+      border-radius: 4px;
+      text-align: center;
+      width: 96%;
+      height: rem(310);
+      margin: 0 auto;
+      li {
+        &:nth-child(1) {
+          font-size: rem(20);
+          color: #FFFFFF;
+          text-align: center;
+          margin-top: rem(21);
+        }
+        &:nth-child(2) {
+          img {
+            width: rem(144);
+            height: rem(144);
+            margin: 0 auto;
+            margin-top: rem(10);
+          }
+        }
+        &:nth-child(3) {
+          margin-top: rem(10);
+          p {
+            font-size: rem(16);
+            color: #FFFFFF;
+            text-align: center;
+            line-height: rem(30);
+          }
+        }
+        &.specialRemind {
+          margin-top: rem(10);
+          p {
+            font-family: Arial;
+            font-size: rem(12);
+            color: #FFFFFF;
+            padding: 0 rem(18);
+            text-align: left;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+    .warmPrompt {
+      width: 96%;
+      margin: 0 auto;
+      p {
+        line-height: rem(20);
+        font-size: rem(12);
+        color: #fff;
+        margin: 0 rem(20) rem(10);
+        font-family: Arial;
+        letter-spacing: 0;
+        a {
+          font-family: Arial;
+          font-size: rem(12);
+          color: #DCB976;
+          letter-spacing: 0;
+          line-height: rem(12);
+        }
+        &:first-child {
+          border-left: rem(2) solid #DCB976;
+          line-height: rem(40);
+          margin: rem(10) 0 rem(20);
+          font-size: rem(16);
+          text-indent: rem(20);
+          background: rgba(40, 37, 38, 0.48);
+          box-shadow: inset 0 10px 6px 0 rgba(0, 0, 0, 0.39);
+        }
+      }
+    }
+    .payResult {
+      width: 96%;
+      margin: 0 auto;
+      .transferInfo {
+        & > p {
+          border-left: rem(2) solid #DCB976;
+          line-height: rem(40);
+          margin: rem(10) 0 rem(20);
+          font-size: rem(16);
+          color: #fff;
+          text-indent: rem(20);
+          background: rgba(40, 37, 38, 0.48);
+          box-shadow: inset 0 10px 6px 0 rgba(0, 0, 0, 0.39);
+        }
+
+      }
+      .messages {
+        opacity: 0.7;
+        font-family: Arial;
+        font-size: rem(10);
+        color: #FFFFFF;
+        height: rem(30);
+        text-align: right;
+        letter-spacing: 0;
+        line-height: rem(30);
+      }
+    }
+  }
+}

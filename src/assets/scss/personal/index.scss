@@ -61,6 +61,8 @@ $designWidth: 375;
         display: inline-block;
         border-radius: rem(2);
         color: #FFDC99;
+        height:rem(22);
+        line-height:rem(22);
       }
       &:nth-child(2) {
         p:first-of-type {

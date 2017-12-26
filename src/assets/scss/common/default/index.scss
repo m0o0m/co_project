@@ -139,6 +139,13 @@ img {
 }
 
 /*右箭头*/
+.commonArrows{
+  position: absolute;
+  top: 50%;
+  right:rem(5);
+  height:rem(20);
+  transform: translateY(-50%);
+}
 .commonArrowsRight {
   background: url('../../../images/arrow.png') right center no-repeat;
   background-size: rem(10) auto;
@@ -304,6 +311,23 @@ img {
   display: -webkit-flex;
   flex-direction: row;
   -webkit-flex-direction: row;
+}
+
+.weChatLi{
+  p{
+    font-size: rem(14);
+    color: #FFFFFF;
+    line-height:rem(36);
+    &:first-child{
+      min-width:rem(60);
+      text-align: right;
+      padding-right: rem(10);
+    }
+    &:nth-of-type(2) {
+      height: rem(36);
+      flex: 1;
+    }
+  }
 }
 
 /*顶部title样式*/
