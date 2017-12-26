@@ -351,6 +351,7 @@
   .h5Download {
     font-family: Arial;
     background: rgb(9, 8, 51);
+    overflow-y: scroll;
   }
 
   img {

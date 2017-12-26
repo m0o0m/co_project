@@ -183,10 +183,9 @@
 //        this.orders = [];
 				this.$emit('saveOrderSuccess')
 				this.bankId = false;
-				//this.$parent.$refs.headerRef.totalMoney = this.totalPrice;
+				// this.$parent.$refs.headerRef.totalMoney = this.totalPrice;
 				let thisParentHeader = this.$parent.$refs.headerRef;
 				thisParentHeader.balanceAmount = (parseFloat(thisParentHeader.headerMarry) - parseFloat(this.$parent.$refs.confirmPageRef.totalPrice)).toFixed(2);
-				console.log('thisParentHeader.balanceAmount', thisParentHeader.balanceAmount)
 			},
 			onBackBtnClicked: function () {
 				this.$emit('backFromConfirmPage', '')
