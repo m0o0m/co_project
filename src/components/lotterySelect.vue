@@ -13,7 +13,6 @@
   </div>
 </template>
 <script type="text/babel">
-	import '../assets/scss/lotterySelect.scss';
 
 	export default {
 		data() {

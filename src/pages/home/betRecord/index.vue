@@ -90,8 +90,6 @@
   </div>
 </template>
 <script type="text/babel">
-  
-  import '../../../assets/scss/betRecord.scss';
   import LotterySelect from '../../../components/lotterySelect';
   
   export default {

@@ -86,9 +86,8 @@
   </div>
 </template>
 <script type="text/babel">
-  
-  import '../../../assets/scss/record.scss';
-  
+
+  // import '../../../assets/scss/record.scss';
   export default {
     data() {
       return {

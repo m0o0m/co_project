@@ -53,7 +53,7 @@
   </div>
 </template>
 <script type="text/babel">
-  import '../../../assets/scss/details.scss';
+  // import '../../../assets/scss/details.scss';
   
   export default {
     data() {

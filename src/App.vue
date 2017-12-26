@@ -14,18 +14,14 @@
 	// import './assets/font/iconfont.css';
 
 	import './assets/scss/common/default/index.scss'
-	import './assets/scss/home/index.scss'
-	import './assets/scss/hall/index.scss'
 	import './assets/scss/rechargeCenter/index.scss'
-	import './assets/scss/betting/index.scss'
 	import './assets/scss/personal/index.scss'
   /*规则*/
   import './assets/scss/rules/index.scss'
   /*开奖大厅*/
   import './assets/scss/common/theLottery/index.scss'
   /*登录*/
-	import './assets/scss/login/login.scss'
-  /*投注记录*/
+	import './assets/scss/login/login.scss'  /*投注记录*/
   import './assets/scss/common/betting/index.scss'
   /*棋牌彩种*/
   import './assets/scss/common/lottery/index.scss'
