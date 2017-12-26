@@ -1,5 +1,5 @@
 <template>
-  <div class="veryPc" :class="{'timeLotteryBack': creditId === 6}">
+  <div class="veryPc" :class="{'bJLotteryBack': creditId === 5, 'timeLotteryBack': creditId === 6}" v-if="deafNum">
     <div class="veryPcMargin">
       <!--pc蛋蛋 加拿大28-->
       <div class="veryPcLine" v-if="creditId === 1 || creditId === 2">
@@ -11,8 +11,8 @@
                 <article class="veryPcArticle"
                          @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)">
                   <section class="displayFlex">
-                    <p class="veryPcNameBack" :class="{'veryPcNameBack28': creditId === 2}">{{play.name}}</p>
-                    <p>/ <span>{{computeOdds(play)}}</span></p>
+                    <p class="veryPcNameBack" :class="{'veryPcNameBack28': creditId === 2}"><span>{{play.name}}</span></p>
+                    <p :class="{'veryPcOddsPlay': creditId === 1}">/<span>{{computeOdds(play)}}</span></p>
                   </section>
                   <section><span
                       class="everyPcAmount" :class="{'everyPcOnAmount': $parent.stopBet || play.amount > 0}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
@@ -25,6 +25,51 @@
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+      <!--北京pk10-->
+      <div class="bJLottery" v-if="creditId === 5">
+        <div class="bJLotteryLine">
+          <div class="bJLotteryBack01">
+            <div class="bJLotteryBack02">
+              <div class="bJLotteryColor">
+                  <div class="veryPcMun" v-for="(Colorful,item_index) in deafNum">
+                    <div class="bJLotteryDiv">
+                      <div class="bJTitle"><p>{{Colorful.name}}</p></div>
+                      <div class="veryPcList bJList">
+                        <ul>
+                          <li v-for="(play,index) in Colorful.played">
+                            <article class="bJLotteryArticle" @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)">
+                              <section class="displayFlex">
+                                <p class="bJTextColor">{{play.name}}</p>
+                                <p>/ <span>{{computeOdds(play)}}</span></p>
+                              </section>
+                              <section><span
+                                  class="everyPcAmount" :class="{'everyPcOnAmount': $parent.stopBet || play.amount > 0}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount) || 0}}</span>
+                              </section>
+                              <section class="playMarryImg"
+                                       v-if="play.active && !$parent.stopBet">
+                                <img src="../../../assets/images/small01.png" alt="">
+                              </section>
+                            </article>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <!--外框-->
+              <div class="smallFrame"></div>
+              <div class="smallFrameRight"></div>
+              <div class="smallFrameBottomLeft"></div>
+              <div class="smallFrameBottomRight"></div>
+            </div>
+          </div>
+          <!--外框-->
+          <div class="outerFrame"></div>
+          <div class="outerFrameRight"></div>
+          <div class="outerFrameBottomLeft"></div>
+          <div class="outerFrameBottomRight"></div>
         </div>
       </div>
       <!--重庆时时彩-->
