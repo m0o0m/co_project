@@ -1,81 +1,79 @@
 <template>
     <div class="ColorLotteryMuned ColorLotteryMuned12">
-        <div class="ColorLottery_mianTop ColorLottery_mianTop12" :class="{'ColorLottery_mianTop12_0':oneCredId == 1}">
-            <img :src="ColorImgTop"/>
-        </div>
-        <p class="lottery12" :class="{'lottery12_0':lotteryOffsColorID == '225'}"><img :src="ColorImgRight"/></p>
+      <div class="colorLotteryMargin">
         <div class="XGLottery_list" v-if="lotteryOffsColorID == '225'">
-            <ul>
-                <li v-for="(lotData,nav_index) in deafNum" :class="{'on':nav_index == navIndex}" @click="Navigation(lotData, nav_index)"><p>{{lotData.name}}</p></li>
-            </ul>
+          <ul>
+            <li v-for="(lotData,nav_index) in deafNum" :class="{'on':nav_index == navIndex}" @click="Navigation(lotData, nav_index)"><p>{{lotData.name}}</p></li>
+          </ul>
         </div>
         <div class="ColorLottery_mian ColorLottery_mian12" :class="{'ColorLot_mian12':lotteryOffsColorID == '225'}">
-            <div class="ColorLottery_mcontent ColorLottery_mcontent12" v-for="(lotData,index) in deafNum" :class="{'colorClsLottery': lotteryOffsColorID == '225' , 'colorClsOneLottery': navIndex == index}" v-if="lotteryOffsColorID != '249' || lotteryOffsColorID == '249' && index == 0">
-                <!--<div class="ColorLottery_mcTitle ColorLottery_mcTitle12"><p>{{lotData.name}}</p></div>-->
-                <div class="HalfwaveCls" v-if="lotteryOffsColorID == '243'">
-                    <ul>
-                        <li v-for="(Half,half_index) in Halfwave" :class="{'on':half_index == HalfIndex}" @click="HalfwaveFun(half_index)"><p>{{Half}}</p></li>
-                    </ul>
-                </div>
-                <div class="ColorLottery_mslist12 ColorLotterys">
-                    <ul :class="{'colorzodiac':lotteryOffsColorID == '239' || lotteryOffsColorID == '241' || lotteryOffsColorID == '243' || lotteryOffsColorID == '245','colorzodiac04': lotteryOffsColorID == '243'}" v-if="lotteryOffsColorID != '249'">
-
-                        <li v-for="(lData,lData_index) in (items.length ? items : lotData.played)" :class="{'liLotERY':lotteryOffsColorID == '243', 'liLotERY00':lData_index < 4 && HalfIndex == 0,'liLotERY00jia':lData_index < 8 && lData_index > 3 && HalfIndex == 0 && lotteryOffsColorID == '247','liLotERY01':lData_index >= 4 && lData_index < 8 && HalfIndex == 1, 'liLotERY02':lData_index >= 8 && HalfIndex == 2}" >
-                        <!--<li v-for="(lData,lData_index) in items">-->
-                            <article @click="playchecked($event, lData, items.length ? groupId : lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)" class="ColorLot_article">
-                                <section :class="{'ColorLot_Colorsection': lotteryOffsColorID == '243'}">
-                                    <p><span v-if="lotteryOffsColorID != '239' && lotteryOffsColorID != '241'">{{lData.name}}</span><span v-if="lotteryOffsColorID == '239' || lotteryOffsColorID == '241'" class="colorZodatr"><img :src="lData.zodiacImg"/></span> / {{computeOdds(lData)}}</p>
-                                    <p :class="{'amount':lData.amount > 0 || $parent.stopBet ,'Colorsection': lotteryOffsColorID == '243'}">
-                                        {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
-                                    </p>
-                                    <p class="playMarryImg imggs " :class="{'zodiaoClss':lotteryOffsColorID == '239' || lotteryOffsColorID == '241' || lotteryOffsColorID == '245','zodiaoCls05s':lotteryOffsColorID == '243' }" v-if="lData.active && !$parent.stopBet">
-                                        <!--<img src="../../../assets/images/small01.png"/>-->
-                                        <img v-if="!lData.active" src="../../../assets/images/small01.png"/>
-                                        <img v-if="lData.active" :src="require('../../../assets/images/marry_' + ((lData.chip === 10 || lData.chip === 5000) ? lData.chip + '_f' : lData.chip) + '.png')"/>
-
-                                    </p>
-
-                                    <!--半波-->
-                                    <div class="zodiaoCls05" v-if="lotteryOffsColorID == '243'">
-                                        <span v-for="data in lData.zodiacArr" :class="{'red':lData_index < 4,'green':lData_index >= 4 && lData_index <= 7, 'blue': lData_index >= 8 && lData_index <= 11}">{{data}}</span>
-                                    </div>
-                                </section>
-                                <!--生肖 一肖-->
-                                <div class="zodiaoCls" v-if="lotteryOffsColorID == '239' || lotteryOffsColorID == '241'">
-                                    <p v-for="data in lData.zodiacArr" :class="{'green':data=='22' || data=='21' || data=='33' || data=='32' || data=='44' || data=='43' || data=='06' || data=='05' || data=='17' || data=='16' || data=='28' || data=='27' || data=='39' || data=='38' || data=='49' || data=='11','blue': data=='10' || data=='09' || data=='20' || data=='31' || data=='42' || data=='41' || data=='04' || data=='03' || data=='15' || data=='14' || data=='26' || data=='25' || data=='37' || data=='36' || data=='48' || data=='47'}">{{data}}</p>
-                                </div>
-                                <!--尾数-->
-                                <div class="zodiaoCls" v-if="lotteryOffsColorID == '245'">
-                                    <p v-for="data in lData.zodiacArr" :class="{'green':data=='11' || data=='21' || data=='22' || data=='32' || data=='33' || data=='43' || data=='44' || data=='05' || data=='06' || data=='16' || data=='17' || data=='27' || data=='28' || data=='38' || data=='39' || data=='49','blue': data=='10' || data=='20' || data=='31' || data=='41' || data=='42' || data=='03' || data=='04' || data=='14' || data=='15' || data=='25' || data=='26' || data=='36' || data=='37' || data=='47' || data=='48' || data=='09'}">{{data}}</p>
-                                </div>
-
-                            </article>
-                        </li>
-                    </ul>
-                    <ul class="XGlI" v-else>
-                        <!--龙虎斗-->
-                        <li v-for="(lustrating,lus_indexs) in lotteryilustrating">
-                            <article class="ColorLot_article_illustrating">
-                                <section class="colorLot_title">{{lustrating.name}}</section>
-                                <section>
-                                    <article class="colorLot_articleP" v-for="(lus, lus_index) in lustrating.played"
-                                             @click="playchecked($event, lus, lustrating.id, lus.name, index, lustrating, 'colorLot_articleP', lus_indexs,lus_index)">
-                                        <p>{{lus.name}}/<span>{{computeOdds(lus)}}</span></p>
-                                        <p :class="{'amount': lus.amount > 0 || $parent.stopBet}">
-                                            {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lus.amount) || 0}}
-                                        </p>
-                                        <p class="playMarryImg imggs playMarryImg_lhd"  v-if="lus.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
-
-                                    </article>
-                                </section>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
+          <div class="ColorLottery_mcontent ColorLottery_mcontent12" v-for="(lotData,index) in deafNum" :class="{'colorClsLottery': lotteryOffsColorID == '225' , 'colorClsOneLottery': navIndex == index}" v-if="lotteryOffsColorID != '249' || lotteryOffsColorID == '249' && index == 0">
+            <!--<div class="ColorLottery_mcTitle ColorLottery_mcTitle12"><p>{{lotData.name}}</p></div>-->
+            <div class="HalfwaveCls" v-if="lotteryOffsColorID == '243'">
+              <ul>
+                <li v-for="(Half,half_index) in Halfwave" :class="{'on':half_index == HalfIndex}" @click="HalfwaveFun(half_index)"><p>{{Half}}</p></li>
+              </ul>
             </div>
+            <div class="ColorLottery_mslist12 ColorLotterys">
+              <ul :class="{'colorzodiac':lotteryOffsColorID == '239' || lotteryOffsColorID == '241' || lotteryOffsColorID == '243' || lotteryOffsColorID == '245','colorzodiac04': lotteryOffsColorID == '243'}" v-if="lotteryOffsColorID != '249'">
+
+                <li v-for="(lData,lData_index) in (items.length ? items : lotData.played)" :class="{'liLotERY':lotteryOffsColorID == '243', 'liLotERY00':lData_index < 4 && HalfIndex == 0,'liLotERY00jia':lData_index < 8 && lData_index > 3 && HalfIndex == 0 && lotteryOffsColorID == '247','liLotERY01':lData_index >= 4 && lData_index < 8 && HalfIndex == 1, 'liLotERY02':lData_index >= 8 && HalfIndex == 2}" >
+                  <!--<li v-for="(lData,lData_index) in items">-->
+                  <article @click="playchecked($event, lData, items.length ? groupId : lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)" class="ColorLot_article">
+                    <section :class="{'ColorLot_Colorsection': lotteryOffsColorID == '243'}">
+                      <p><span v-if="lotteryOffsColorID != '239' && lotteryOffsColorID != '241'">{{lData.name}}</span><span v-if="lotteryOffsColorID == '239' || lotteryOffsColorID == '241'" class="colorZodatr"><img :src="lData.zodiacImg"/></span> / {{computeOdds(lData)}}</p>
+                      <p :class="{'amount':lData.amount > 0 || $parent.stopBet ,'Colorsection': lotteryOffsColorID == '243'}">
+                        {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
+                      </p>
+                      <p class="playMarryImg imggs " :class="{'zodiaoClss':lotteryOffsColorID == '239' || lotteryOffsColorID == '241' || lotteryOffsColorID == '245','zodiaoCls05s':lotteryOffsColorID == '243' }" v-if="lData.active && !$parent.stopBet">
+                        <!--<img src="../../../assets/images/small01.png"/>-->
+                        <img v-if="!lData.active" src="../../../assets/images/small01.png"/>
+                        <img v-if="lData.active" :src="require('../../../assets/images/marry_' + ((lData.chip === 10 || lData.chip === 5000) ? lData.chip + '_f' : lData.chip) + '.png')"/>
+
+                      </p>
+
+                      <!--半波-->
+                      <div class="zodiaoCls05" v-if="lotteryOffsColorID == '243'">
+                        <span v-for="data in lData.zodiacArr" :class="{'red':lData_index < 4,'green':lData_index >= 4 && lData_index <= 7, 'blue': lData_index >= 8 && lData_index <= 11}">{{data}}</span>
+                      </div>
+                    </section>
+                    <!--生肖 一肖-->
+                    <div class="zodiaoCls" v-if="lotteryOffsColorID == '239' || lotteryOffsColorID == '241'">
+                      <p v-for="data in lData.zodiacArr" :class="{'green':data=='22' || data=='21' || data=='33' || data=='32' || data=='44' || data=='43' || data=='06' || data=='05' || data=='17' || data=='16' || data=='28' || data=='27' || data=='39' || data=='38' || data=='49' || data=='11','blue': data=='10' || data=='09' || data=='20' || data=='31' || data=='42' || data=='41' || data=='04' || data=='03' || data=='15' || data=='14' || data=='26' || data=='25' || data=='37' || data=='36' || data=='48' || data=='47'}">{{data}}</p>
+                    </div>
+                    <!--尾数-->
+                    <div class="zodiaoCls" v-if="lotteryOffsColorID == '245'">
+                      <p v-for="data in lData.zodiacArr" :class="{'green':data=='11' || data=='21' || data=='22' || data=='32' || data=='33' || data=='43' || data=='44' || data=='05' || data=='06' || data=='16' || data=='17' || data=='27' || data=='28' || data=='38' || data=='39' || data=='49','blue': data=='10' || data=='20' || data=='31' || data=='41' || data=='42' || data=='03' || data=='04' || data=='14' || data=='15' || data=='25' || data=='26' || data=='36' || data=='37' || data=='47' || data=='48' || data=='09'}">{{data}}</p>
+                    </div>
+
+                  </article>
+                </li>
+              </ul>
+              <ul class="XGlI" v-else>
+                <!--龙虎斗-->
+                <li v-for="(lustrating,lus_indexs) in lotteryilustrating">
+                  <article class="ColorLot_article_illustrating">
+                    <section class="colorLot_title">{{lustrating.name}}</section>
+                    <section>
+                      <article class="colorLot_articleP" v-for="(lus, lus_index) in lustrating.played"
+                               @click="playchecked($event, lus, lustrating.id, lus.name, index, lustrating, 'colorLot_articleP', lus_indexs,lus_index)">
+                        <p>{{lus.name}}/<span>{{computeOdds(lus)}}</span></p>
+                        <p :class="{'amount': lus.amount > 0 || $parent.stopBet}">
+                          {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lus.amount) || 0}}
+                        </p>
+                        <p class="playMarryImg imggs playMarryImg_lhd"  v-if="lus.active && !$parent.stopBet"><img src="../../../assets/images/small01.png"/></p>
+
+                      </article>
+                    </section>
+                  </article>
+                </li>
+              </ul>
+            </div>
+          </div>
 
         </div>
         <!--<div class="ColorLottery_mianBottom"><img :src="ColorImgBottom"/></div>-->
+      </div>
     </div>
 </template>
 

@@ -16,7 +16,7 @@
           <section @click="marvellousMarv"></section>
         </div>
       </div>
-      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; padding-top: 2.48276rem;">
+      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; margin-top: 2.48276rem;">
 	      <mt-swipe-item v-if="showSwipeDefault">
 		      <!--<a :href="item.hrefUrl"><img :src="item.picUrl"></a>-->
 		      <a href="javascript: void(0);"><img src="../../static/banner/homeBanner.jpg"></a>
