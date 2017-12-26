@@ -295,6 +295,9 @@ $designWidth: 375;
         margin: rem(25)auto 0 ;
         padding: 0 rem(5);
         color: #fff;
+        li:last-child {
+          margin-top:rem(30);
+        }
         li:nth-child(1) ,li:nth-child(2) {
           font-size: rem(14);
           margin: rem(15) rem(5) rem(15) 0;
