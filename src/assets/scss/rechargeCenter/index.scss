@@ -226,6 +226,115 @@ $designWidth: 375;
     }
   }
 }
+/*线下充值*/
+.onlineRechBox {
+  height:100%;
+  overflow: hidden;
+  padding-top: rem(60);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  .onlineRechBody {
+    width: 92%;
+    margin-left: 4%;
+    .onlineRechBodyTop {
+      width: 92%;
+      margin-left: 4%;
+      background: radial-gradient(top, #DDC09C, #D0A979);
+      background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
+      border-radius: rem(4);
+      padding: rem(15);
+      margin-top: rem(20);
+      section {
+        line-height: rem(32);
+        p:nth-child(1) {
+          img {
+            height: rem(28);
+            margin-right: rem(6);
+            float:left;
+            width:auto;
+          }
+          line-height: rem(20);
+          background-size: rem(28);
+          font-size: rem(16);
+          color: #65431D;
+          font-weight: bold;
+          margin-bottom: rem(10);
+          span {
+            font-size: rem(14);
+            font-weight: normal;
+            float: right;
+            width: rem(50);
+          }
+          span:nth-child(2) {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: rgb(145, 145, 41);
+          }
+        }
+        p:nth-child(2) {
+          font-size: rem(14);
+          color: #65431D;
+          padding-left: rem(34);
+          span:nth-child(1) {
+            margin-top: rem(6);
+            color: rgb(145, 145, 41);
+            float: right;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            width: rem(50);
+            line-height: rem(20);
+          }
+        }
+      }
+    }
+    .onlineRechBodyBottom {
+      width: 92%;
+      margin-left: 4%;
+      .onlineRechUL {
+        width: 100%;
+        margin: rem(25)auto 0 ;
+        padding: 0 rem(5);
+        color: #fff;
+        li:last-child {
+          margin-top:rem(30);
+        }
+        li:nth-child(1) ,li:nth-child(2) {
+          font-size: rem(14);
+          margin: rem(15) rem(5) rem(15) 0;
+          span {
+            margin-left:rem(16);
+          }
+        }
+        li:nth-child(2) p:nth-child(2) {
+          font-size: rem(10);
+          margin-left: rem(71);
+          margin-top:rem(5);
+          opacity: 0.7;
+          font-family: Arial;
+          letter-spacing: 0;
+          line-height: rem(10);
+        }
+        .commonArrowsRight.onlineRechPadding {
+          padding-right:0;
+        }
+        li:nth-child(3) {
+          p {
+            select {
+              height: rem(42);
+              background: none;
+              font-size: rem(14);;
+              color: #fff;
+              width: 100%;
+              padding-left: rem(10);
+              border: rem(1) solid transparent;
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 /*微信、QQ、支付宝充值*/
 .weixinReach {
   height: 100%;

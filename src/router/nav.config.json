@@ -265,7 +265,7 @@
         "icon": ""
       },
       {
-        "title": "线上充值",
+        "title": "线下充值",
         "name": "onlineRech",
         "path": "/lottery/personal/online-rech",
         "filePath": "/personal/online-rech",
