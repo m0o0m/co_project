@@ -106,9 +106,9 @@ $designWidth: 375;
               width: 50%;
               float: left;
               text-align: center;
-              article.on {
-                background: rgba(0,0,0,0.25);
-              }
+              //article.on {
+              //  background: rgba(0,0,0,0.25);
+              //}
               article {
                 max-width: rem(164);
                 height: rem(60);
@@ -139,7 +139,7 @@ $designWidth: 375;
                     color: #ffffff; font-size: rem(12); font-family: Arial;
                   }
                   p {
-                    font-size: rem(13);
+                    font-size: rem(13);font-family: Arial;
                   }
                   p:first-of-type,p:nth-of-type(2) {
                     display: inline-block;
@@ -200,7 +200,7 @@ $designWidth: 375;
               line-height: rem(15);
               position: relative;
               p {
-                display: inline-block; font-size: rem(14);
+                display: inline-block; font-size: rem(14);font-family: Arial;
               }
               P:nth-child(2) {
                 font-size: rem(12);
@@ -281,9 +281,9 @@ $designWidth: 375;
                 width: 100%; display: inline-block;
               }
             }
-            .paiFirstArticle.on {
-              background: rgba(0,0,0,0.25);
-            }
+            //.paiFirstArticle.on {
+            //  background: rgba(0,0,0,0.25);
+            //}
             .paiFirstArticle {
               width: rem(90);
               height: rem(30);
