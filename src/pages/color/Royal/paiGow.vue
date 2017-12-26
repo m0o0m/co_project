@@ -1,24 +1,29 @@
 <template>
-  <div class='pcdd'>
-    <div class="royal paiGow_sHGow">
+  <div class='royal'>
+    <div class="royalBody">
+      <div class="desktopStyle"></div>
+      <div class="desktopStyle"></div>
+      <div class="desktopStyle"></div>
+      <div class="desktopStyle"></div>
+      <div class="desktopStyleCorner"></div>
+      <div class="desktopStyleCorner"></div>
+      <div class="desktopStyleCorner"></div>
+      <div class="desktopStyleCorner"></div>
       <div class="royalMian">
         <div class="royalItem">
           <div v-for="(Colorful,item_index) in deafNum"
-               v-show="lotteryOffsColorID == '141' || lotteryOffsColorID == '373'" class="indexDisplays">
-            <!-- <div>{{Colorful.name}}</div> -->
-            <div class="royal_mun royal_mun_padder">
-              <div class="royal_mun_title">投奖区</div>
+               v-show="lotteryOffsColorID == '141' || lotteryOffsColorID == '373'" class="indexDisplay">
+            <div class="royalMun">
+              <!--<div class="royalMunTitle">投奖区</div>-->
               <ul>
                 <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
                   <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'', item_index)"
                            :class="{'on':play.active}"
-                           class="Royal_article indexDisplay">
+                           class="royalArticle">
                     <section :class="{'hjebgClsMao':lotteryOffsColorID == '373'}">
                       <p>
                         <img v-for="p in jsksImgList" v-if="p.k == play.name" :src="p.v"/>
                       </p>
-                      <!--../../../assets/images/Zodiac/zodiac01.png-->
-                      <!-- <p><img :src="zodiacData[index]"/></p> -->
                     </section>
                     <section class="indexFiex">
                       <p>{{play.name}}</p>
@@ -34,31 +39,16 @@
               </ul>
             </div>
           </div>
-          
-          <!--<div class="paiGow_munFirst" v-if="oneCredId == 1">
-            <section class="paiGow_munFirst_section" style="background: transparent;"><img :src="thebankerFun[0]"/></section>
-            <section v-for="(Colorful,item_index) in deafNum">
-              <article class="paiFirst_Figrue" :class="{'colorFirul':item_index != 1,'colorFirulOne':item_index == 1}">
-                <img :src="thebankerFun[item_index+1]" :class="{'colorBker':item_index == 0}"/>
-              </article>
-              <article class="paiFirst_article" v-for="(play,index) in Colorful.played" @click="playchecked($event,play,Colorful.id,play.name,index, Colorful, true)" :class="{'on': play.active}">
-                <p>{{play.name}}</p><p> / {{computeOdds(play)}}</p>
-                <p><span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span></p>
-                <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img src=""/></p>
-              </article>
-            </section>
-          </div>-->
-          
-          <div class="paiGow_munFirst indexDisplayss" v-if="lotteryOffsColorID == '143'" style="height: 12rem; ">
-            <section class="paiGow_munFirst_section" style="background: transparent;"><img
+          <div class="paiGowMunFirst royalFirst" v-if="lotteryOffsColorID == '143'">
+            <section class="paiGowMunFirstSection"><img
                 :src="thebankerFun[0]"/>
             </section>
             
             <section>
-              <article class="paiFirst_Figrue" :class="{'colorFirul': true}">
+              <article class="paiFirstFigrue" :class="{'colorFirul': true}">
                 <img :src="thebankerFun[2]" :class="{'colorBker':true}" class="colorImgTrue"/>
               </article>
-              <article class="paiFirst_article" v-for="(play,index) in deafNum[2].played"
+              <article class="paiFirstArticle" v-for="(play,index) in deafNum[2].played"
                        @click="playchecked($event,play,deafNum[2].id,play.name,index, deafNum[2], true,'')"
                        :class="{'on': play.active}">
                 <p>{{play.name}}</p>
@@ -67,17 +57,17 @@
                     class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span>
                 </p>
                 <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
-                    src="../../../assets/images/small01.png" style="width: 0.91034rem; height: 0.91034rem;"/></p>
+                    src="../../../assets/images/small01.png"/></p>
               </article>
             </section>
-            
+
             <section
-                :class="{paiGow_munFirst_position:lotteryOffsColorID == '143',paiGow_munFirst_positions:lotteryOffsColorID == '143'}"
-                style="padding-bottom: 0.5rem;">
-              <article class="paiFirst_Figrue" :class="{'colorFirulOne': true}">
+                :class="{paiGowMunFirstPosition:lotteryOffsColorID == '143',paiGowMunFirstPositions:lotteryOffsColorID == '143'}"
+              >
+              <article class="paiFirstFigrue" :class="{'colorFirulOne': true}">
                 <img :src="thebankerFun[3]"/>
               </article>
-              <article class="paiFirst_article" v-for="(play,index) in deafNum[1].played"
+              <article class="paiFirstArticle" v-for="(play,index) in deafNum[1].played"
                        @click="playchecked($event,play,deafNum[1].id,play.name,index, deafNum[1], true,'')"
                        :class="{'on': play.active}">
                 <p>{{play.name}}</p>
@@ -86,15 +76,15 @@
                     class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span>
                 </p>
                 <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
-                    src="../../../assets/images/small01.png" style="width: 0.91034rem; height: 0.91034rem;"/></p>
+                    src="../../../assets/images/small01.png"/></p>
               </article>
             </section>
             
             <section>
-              <article class="paiFirst_Figrue" :class="{'colorFirul': true}">
+              <article class="paiFirstFigrue" :class="{'colorFirul': true}">
                 <img :src="thebankerFun[1]"/>
               </article>
-              <article class="paiFirst_article" v-for="(play,index) in deafNum[0].played"
+              <article class="paiFirstArticle" v-for="(play,index) in deafNum[0].played"
                        @click="playchecked($event,play,deafNum[0].id,play.name,index, deafNum[0], true,'')"
                        :class="{'on': play.active}">
                 <p>{{play.name}}</p>
@@ -103,7 +93,7 @@
                   <span class="smarrySpan">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span>
                 </p>
                 <p class="playMarryImg" v-if="play.active && !$parent.stopBet"><img
-                    src="../../../assets/images/small01.png" style="width: 0.91034rem; height: 0.91034rem;"/></p>
+                    src="../../../assets/images/small01.png"/></p>
               </article>
             </section>
           </div>
@@ -180,8 +170,8 @@
         that.selectedBalls = [];
         that.computeOdds({odds: 0});
       });
-      that._Util.setCss('.royal',{"min-height": 0.78},"*");
-//      $('.royal_mun').css({
+//      that._Util.setCss('.royal',{"min-height": 0.78},"*");
+//      $('.royalMun').css({
 //        "height": $(window).height() * 0.5,
 //      });
     },
@@ -217,10 +207,10 @@
         //获取内容位置
         let height = $(window).height();
         let width = $(window).width();
-        let faterLfet = document.getElementsByClassName(!type ? "Royal_article" : 'paiFirst_article')[index].offsetLeft;
-        let faterTop = document.getElementsByClassName(!type ? "Royal_article" : 'paiFirst_article')[index].offsetTop;
-        let play_articleHeight = ($('.' + !type ? "Royal_article" : 'paiFirst_article').outerHeight(true)) + 32,
-          play_articleWidth = $('.' + !type ? "Royal_article" : 'paiFirst_article').outerWidth(true);
+        let faterLfet = document.getElementsByClassName(!type ? "royalArticle" : 'paiFirstArticle')[index].offsetLeft;
+        let faterTop = document.getElementsByClassName(!type ? "royalArticle" : 'paiFirstArticle')[index].offsetTop;
+        let play_articleHeight = ($('.' + !type ? "royalArticle" : 'paiFirstArticle').outerHeight(true)) + 32,
+          play_articleWidth = $('.' + !type ? "royalArticle" : 'paiFirstArticle').outerWidth(true);
         $('.westernFooter_bottom section').eq(1).find('p.on .maryCls').animate({
           top: 188 || -(height - faterTop - play_articleHeight),
           left: 30 || faterLfet - play_articleWidth
@@ -251,9 +241,9 @@
             let tianmenId = playedSubtypeName == '比庄大' ? 0 : 1;
             let tianId = playedSubtypeId == '144' ? 1 : (playedSubtypeId == '145' ? 2 : 3);
             console.log(tianmenId)
-            _this._Util.chip(_this, e, $('.paiGow_munFirst section:eq(' + tianId + ') .paiFirst_article:eq(' + tianmenId + ')'));
+            _this._Util.chip(_this, e, $('.paiGowMunFirst section:eq(' + tianId + ') .paiFirstArticle:eq(' + tianmenId + ')'));
           } else {
-            _this._Util.chip(_this, e, $('.indexDisplays:eq(' + item_index + ') .royal_mun ul li:eq(' + index + ')'));
+            _this._Util.chip(_this, e, $('.indexDisplay:eq(' + item_index + ') .royalMun ul li:eq(' + index + ')'));
           }
         }, 10);
         
@@ -301,7 +291,7 @@
         this.selectedBalls = [];
         this.classAdata.played = JSON.parse(JSON.stringify(this.playedListCopy));
         this.lotteryOffsColorID = this.$parent.$refs.headerRef.lotteryTypeId;
-        this._Util.setCss('.royal_mun',{"height": 0.5},"*");
+//        this._Util.setCss('.royalMun',{"height": 0.5},"*");
       },
       
       'sliderValue'() {

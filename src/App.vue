@@ -33,6 +33,8 @@
 	import './assets/scss/common/lottery/farm/index.scss'
   /*牌九*/
 	import './assets/scss/common/lottery/paiGow/index.scss'
+ /*麻将*/
+	import './assets/scss/common/lottery/royal/index.scss'
 
 	require('./assets/js/jquery.fly.min');
 

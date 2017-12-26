@@ -4,7 +4,6 @@
     </div>
 </template>
 <script type="text/babel">
-  //  import '../../../assets/scss/drawLotteryCqssc.scss'
   import poker from '../../../assets/js/openLottery/hj28/mahjong'
 
   export default {
