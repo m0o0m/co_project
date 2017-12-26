@@ -1,13 +1,15 @@
 <template>
     <!-- <div id="isapp"> -->
     <div class="RechargeCls abgtops">
-        <div class="rechargeTitle atttops"><p>{{title}}</p></div>
-        <div class="rechargeLeft" @click="$router.push({name:'home'});"></div>
-        <div class="rechargeRight" @click="$router.push({name:'moneyHis'});"><a href="javascript:void(0)"></a></div>
-        <div class="rechargeBalance"><p>账户余额<span>¥{{result.amount}}</span></p></div>
+        <div class="commonNavBar positionFixed">
+          <div class="backPassTitle"><p>充值中心</p></div>
+          <div class="loginIcon left flt" @click="$router.push({name:'home'});"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon right time" @click="$router.push({name:'moneyHis'});"><a href="javascript:void(0)"></a></div>
+        </div>
         <div class="rechargeList">
-            <div class="Recharge_br">
-                <ul class="Recharge_RMB">
+            <div class="RechargeBr">
+              <div class="rechargeBalance"><p>账户余额<span>¥{{result.amount}}</span></p></div>
+              <ul class="RechargeRMB">
                     <li @click="selectMoney(100)" :class="{'borders':this.money==100,}">
                         <section>
                             <p><img :src="addMoneyDate[0].img"/></p>
@@ -64,15 +66,15 @@
                         </section>
                     </li>
                 </ul>
-                <!-- </div> -->
             </div>
-            <div class="Recharge_opi">
-                <div class="Recharge_opi_title">支付方式</div>
-                <div class="Recharge_opi_mian">
-                    <ul>
-                        <li v-for="(v, index) in result.pay_type_list" @click="passgewayServer(v)">
-                            <p class="zhi"
-                               :class="{'qqpay': v.pic_name === 'qq.png','alipay': v.pic_name === 'alipay.png', 'weixin': v.pic_name === 'weixin.png','unionpay': v.pic_name === 'unionpay.png','bankcard': v.pic_name === 'bankcard.png'}">
+            <div class="RechargeOpi">
+                <div class="RechargeOpiMian">
+                  <div class="RechargeOpiTitle">支付方式</div>
+                  <ul>
+                        <li class="" v-for="(v, index) in result.pay_type_list" @click="passgewayServer(v)">
+                            <p class="zhi commonArrowsRight">
+                              <i :class="{'qqpay': v.pic_name === 'qq.png','alipay': v.pic_name === 'alipay.png', 'weixin': v.pic_name === 'weixin.png','unionpay': v.pic_name === 'unionpay.png','bankcard': v.pic_name === 'bankcard.png'}">
+                              </i>
                                 <span></span>{{v.name}}
                             </p>
                         </li>
@@ -84,9 +86,6 @@
 </template>
 
 <script>
-  import '../../assets/scss/personal.scss';
-  //   import '../../assets/scss/add-money.scss';
-
   export default {
     data() {
       return {
@@ -186,8 +185,4 @@
 </script>
 
 <style lang='scss'>
-    #app {
-        background: url('../../assets/images/gup.png')center no-repeat;
-        background-size: cover;
-    }
 </style>
