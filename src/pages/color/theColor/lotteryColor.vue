@@ -1,29 +1,31 @@
 <template>
     <div class="ColorLotteryMuned">
-        <div class="ColorLottery_mianTop"><img :src="ColorImgTop"/></div>
-        <div class="ColorLottery_mian">
+        <div class="colorLotteryMarginOne">
+          <div class="ColorLottery_mianTop"><img :src="ColorImgTop"/></div>
+          <div class="ColorLottery_mian">
             <div class="ColorLottery_mcontent" v-for="(lotData,index) in deafNum">
-                <div class="ColorLottery_mcTitle"><p>{{lotData.name}}</p></div>
-                <div class="ColorLottery_mslist">
-                    <ul :class="{'ColorLotCs': lotteryOffsColorID == '202' || lotteryOffsColorID == '213'}">
-                        <li v-for="(lData,lData_index) in lotData.played">
-                            <article @click="playchecked($event, lData, lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)"
-                                     class="ColorLot_article">
-                                <section>
-                                    <p><span>{{lData.name}}</span> / {{computeOdds(lData)}}</p>
-                                    <p style="color: #666;" :class="{'amount':lData.amount > 0 || $parent.stopBet}">
-                                        {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
-                                    </p>
-                                    <p class="playMarryImg" v-if="lData.active && !$parent.stopBet">  <img src="../../../assets/images/small01.png" alt=""></p>
+              <div class="ColorLottery_mcTitle"><p>{{lotData.name}}</p></div>
+              <div class="ColorLottery_mslist ColorLottery_mian15">
+                <ul :class="{'ColorLotCs': lotteryOffsColorID == '202' || lotteryOffsColorID == '213'}">
+                  <li v-for="(lData,lData_index) in lotData.played">
+                    <article @click="playchecked($event, lData, lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)"
+                             class="ColorLot_article">
+                      <section>
+                        <p><span>{{lData.name}}</span> / {{computeOdds(lData)}}</p>
+                        <p style="color: #666;" :class="{'amount':lData.amount > 0 || $parent.stopBet}">
+                          {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
+                        </p>
+                        <p class="playMarryImg" v-if="lData.active && !$parent.stopBet">  <img src="../../../assets/images/small01.png" alt=""></p>
 
-                                </section>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
+                      </section>
+                    </article>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
+          <div class="ColorLottery_mianBottom"><img :src="ColorImgBottom"/></div>
         </div>
-        <div class="ColorLottery_mianBottom"><img :src="ColorImgBottom"/></div>
     </div>
 </template>
 

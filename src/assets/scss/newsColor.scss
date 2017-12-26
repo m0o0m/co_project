@@ -18,10 +18,19 @@ $designWidth: 375;
   overflow: hidden;
   padding: rem(130) rem(10) rem(120) rem(10);
 }
+.colorLotteryMarginOne {
+  height: auto;
+  overflow: hidden;
+  padding: rem(125) rem(5) rem(110) rem(5);
+}
 
 .ColorLottery_mian, .ColorLottery_mcontent {
   height: auto;
   overflow: hidden;
+}
+
+.ColorLottery_mian {
+  margin: 0; background: url('../images/theColor/Group2xContent.png') top center repeat-y; background-size: 100% auto;
 }
 
 .DeliveryAmout {
@@ -974,4 +983,8 @@ $designWidth: 375;
     z-index: 3;
     background: rgb(34, 57, 91);
   }
+}
+
+.ColorLottery_mian15 {
+  padding: 0 rem(10);
 }

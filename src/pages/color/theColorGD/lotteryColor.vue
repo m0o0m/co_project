@@ -1,56 +1,58 @@
 <template>
     <div class="ColorLotteryMuned ColorLotteryMuned23">
+      <div class="colorLotteryMarginOne">
         <!--<div class="ColorLottery_mianTop"><img :src="ColorImgTop"/></div>-->
         <div class="ColorLottery_mian ColorLottery_mian23">
-            <div class="ColorLottery_mcontent pcdd_bjpk_mun" v-for="(lotData,index) in deafNum">
-                <div class="ColorLottery_mcTitle ColorLottery_mcTitle23" v-if="lotteryOffsColorID != '179'"><p>{{lotData.name}}</p></div>
-                <div class="ColorLottery_mslist ColorLottery_mslist23 pcdd_mun_list_bjpk10">
-                    <ul :class="{'ColorLotCs': lotteryOffsColorID == '190'}" v-if="lotteryOffsColorID != '179'">
-                        <li v-for="(lData,lData_index) in lotData.played">
-                            <article @click="playchecked($event, lData, lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)"
-                                    class="ColorLot_article ColorLot_article23">
-                                <section>
-                                    <p><span>{{lData.name}}</span> / {{computeOdds(lData)}}</p>
-                                    <p :class="{'amount':lData.amount > 0 || $parent.stopBet}">
-                                        {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
-                                    </p>
-                                    <p class="playMarryImg" v-if="lData.active && !$parent.stopBet">  <img src="../../../assets/images/small01.png" alt=""></p>
-                                </section>
-                            </article>
-                        </li>
-                    </ul>
-                    <ul v-if="lotteryOffsColorID == '179'" class="ColorLotCsFet">
-                        <!--龙虎斗-->
-                        <li v-for="(lustrating,lus_indexs) in lotteryilustrating" v-if="!index">
-                            <article class="ColorLot_article_illustrating">
-                                <section class="colorLot_title">{{lustrating.name}}</section>
-                                <section>
-                                    <article class="colorLot_articleP" v-for="(lus, lus_index) in lustrating.played"
-                                             @click="playchecked($event, lus, lustrating.id, lustrating.name, index, lustrating, 'colorLot_articleP',lus_indexs ,lus_index)">
-                                        <p>{{lus.name}}/<span>{{computeOdds(lus)}}</span></p>
-                                        <p :class="{'amount': lus.amount > 0 || $parent.stopBet}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lus.amount) || 0}}</p>
-                                        <p class="playMarryImg dragon" v-if="lus.active && !$parent.stopBet">  <img src="../../../assets/images/small01.png" alt=""></p>
-                                    </article>
-                                </section>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
+          <div class="ColorLottery_mcontent pcdd_bjpk_mun" v-for="(lotData,index) in deafNum">
+            <div class="ColorLottery_mcTitle ColorLottery_mcTitle23" v-if="lotteryOffsColorID != '179'"><p>{{lotData.name}}</p></div>
+            <div class="ColorLottery_mslist ColorLottery_mslist23 pcdd_mun_list_bjpk10">
+              <ul :class="{'ColorLotCs': lotteryOffsColorID == '190'}" v-if="lotteryOffsColorID != '179'">
+                <li v-for="(lData,lData_index) in lotData.played">
+                  <article @click="playchecked($event, lData, lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)"
+                           class="ColorLot_article ColorLot_article23">
+                    <section>
+                      <p><span>{{lData.name}}</span> / {{computeOdds(lData)}}</p>
+                      <p :class="{'amount':lData.amount > 0 || $parent.stopBet}">
+                        {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
+                      </p>
+                      <p class="playMarryImg" v-if="lData.active && !$parent.stopBet">  <img src="../../../assets/images/small01.png" alt=""></p>
+                    </section>
+                  </article>
+                </li>
+              </ul>
+              <ul v-if="lotteryOffsColorID == '179'" class="ColorLotCsFet">
+                <!--龙虎斗-->
+                <li v-for="(lustrating,lus_indexs) in lotteryilustrating" v-if="!index">
+                  <article class="ColorLot_article_illustrating">
+                    <section class="colorLot_title">{{lustrating.name}}</section>
+                    <section>
+                      <article class="colorLot_articleP" v-for="(lus, lus_index) in lustrating.played"
+                               @click="playchecked($event, lus, lustrating.id, lustrating.name, index, lustrating, 'colorLot_articleP',lus_indexs ,lus_index)">
+                        <p>{{lus.name}}/<span>{{computeOdds(lus)}}</span></p>
+                        <p :class="{'amount': lus.amount > 0 || $parent.stopBet}">{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lus.amount) || 0}}</p>
+                        <p class="playMarryImg dragon" v-if="lus.active && !$parent.stopBet">  <img src="../../../assets/images/small01.png" alt=""></p>
+                      </article>
+                    </section>
+                  </article>
+                </li>
+              </ul>
             </div>
-            <p class="theColorSection"><img :src="ColorImgIcon"/></p>
-            <p class="theColorSection01"><img :src="ColorImgIcon"/></p>
-            <p class="theColorSection02"><img :src="ColorImgIcon"/></p>
-            <p class="theColorSection03"><img :src="ColorImgIcon"/></p>
-            <p class="ColorImgLine"></p>
-            <p class="ColorImgLine01"></p>
-            <p class="ColorImgLine02"></p>
-            <p class="ColorImgLine03"></p>
-            <p class="ColorImgLine04"></p>
-            <p class="ColorImgLine05"></p>
-            <p class="ColorImgLine06"></p>
-            <p class="ColorImgLine07"></p>
+          </div>
+          <p class="theColorSection"><img :src="ColorImgIcon"/></p>
+          <p class="theColorSection01"><img :src="ColorImgIcon"/></p>
+          <p class="theColorSection02"><img :src="ColorImgIcon"/></p>
+          <p class="theColorSection03"><img :src="ColorImgIcon"/></p>
+          <p class="ColorImgLine"></p>
+          <p class="ColorImgLine01"></p>
+          <p class="ColorImgLine02"></p>
+          <p class="ColorImgLine03"></p>
+          <p class="ColorImgLine04"></p>
+          <p class="ColorImgLine05"></p>
+          <p class="ColorImgLine06"></p>
+          <p class="ColorImgLine07"></p>
         </div>
         <!--<div class="ColorLottery_mianBottom"><img :src="ColorImgBottom"/></div>-->
+      </div>
     </div>
 </template>
 
