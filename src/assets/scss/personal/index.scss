@@ -326,14 +326,16 @@ $designWidth: 375;
     letter-spacing: 0;
   }
 }
-
+.moneyHisTemplate {
+  height: 100%;
+  overflow-y:scroll ;
+}
 .moneyHistoryBody {
   padding-top: rem(80);
   padding-bottom: rem(20);
   width: 94%;
   margin-left: 3%;
-  max-height: 76%;
-  overflow-y: scroll;
+  height:100%;
   .moneyHistoryLI {
     background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
     background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
@@ -399,15 +401,13 @@ $designWidth: 375;
 /*资金明细*/
 .assetsDeList {
   padding-top: rem(55);
-  overflow: hidden;
+  overflow-y: scroll;
   width: 94%;
   margin-left: 3%;
   height: 100%;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   .examineMianBody {
-    max-height: 90%;
-    overflow: auto;
     .assetsDeListLI {
       background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
       background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
@@ -806,12 +806,12 @@ $designWidth: 375;
       .outerRing {
         position: relative;
         border-radius: 50%;
-        width: rem(50);
-        height: rem(50);
+        width: rem(53);
+        height: rem(53);
         border: rem(2) solid #ffdc99;
         border-radius:50%;
         left: -2.1rem;
-        top: -0.15rem;
+        top: -0.12rem;
 
       }
       section.one {
@@ -916,7 +916,7 @@ $designWidth: 375;
             background-size: rem(20) auto;
             font-size: rem(14);
             color: #ffdc99;
-            padding-left: rem(30);
+            padding-left: rem(35);
             position: relative;
             i {
               position: absolute;
@@ -972,13 +972,18 @@ $designWidth: 375;
         }
         .feedbackMessage a i.isHasNews {
           display: inline-block;
-          width: rem(30);
+          width: rem(36);
           height: rem(16);
+          padding-top:rem(2);
+          text-align: center;
+          line-height:rem(12);
           position: absolute;
+          background: #FFDC99;
           right: rem(26);
-          top: rem(14);
-          background: url("../../images/personal/news.png") center no-repeat;
-          background-size: cover;
+          top: rem(12);
+          color: #111111;
+          font-size: rem(12);
+          border-radius: rem(3);
         }
       }
       .loadMoreTC {
@@ -1002,6 +1007,8 @@ $designWidth: 375;
 }
 
 /*宝贵意见*/
+
+::-webkit-input-placeholder{color:#fff;opacity:0.8;}
 .feedBackContent {
   padding: rem(80) rem(30) 0;
   .OpinionFeedback {

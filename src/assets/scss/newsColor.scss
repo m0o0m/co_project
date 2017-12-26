@@ -1,453 +1,622 @@
 @charset "utf-8";
 @import 'rem';
-$designWidth:375;
-body {
-    height: auto;
+
+$designWidth: 375;
+
+.theColor {
+  height: 100%;
+  overflow-y: scroll;
 }
+
 /*header*/
-.headered ,.headered_mianed {
-    overflow: visible;
+.headered, .headered_mianed {
+  overflow: visible;
 }
+
+.colorLotteryMargin {
+  height: auto;
+  overflow: hidden;
+  padding: rem(130) rem(10) rem(120) rem(10);
+}
+.colorLotteryMarginOne {
+  height: auto;
+  overflow: hidden;
+  padding: rem(125) rem(5) rem(110) rem(5);
+}
+
+.ColorLottery_mian, .ColorLottery_mcontent {
+  height: auto;
+  overflow: hidden;
+}
+
+.ColorLottery_mian {
+  margin: 0; background: url('../images/theColor/Group2xContent.png') top center repeat-y; background-size: 100% auto;
+}
+
 .DeliveryAmout {
-    position: relative; top: rem(-5);
-    .DeliveryMian {
-        .theColorCls {
-            min-width: rem(128); height: rem(40); border-radius: rem(40); box-sizing: border-box; -webkit-box-sizing: border-box; border: rem(1) solid transparent; background-clip: padding-box,border-box; background-origin: padding-box,border-box; background-image: linear-gradient(top,#F03636,#C90606),linear-gradient(top,#FFFBAD,#FFA531); background-image: -webkit-linear-gradient(top,#F03636,#C90606),-webkit-linear-gradient(top,#FFFBAD,#FFA531);
-            box-shadow: inset rem(1) rem(-1) rem(10) rgba(0,0,0,0.5); font-size: rem(12); line-height: rem(38); color: #FFFF5E; text-shadow: 0 1px 2px rgba(0,0,0,0.30); margin-left: rem(25); padding-left: rem(25); padding-right: rem(10); /*text-align: center;*/
-            section {
-                line-height: rem(15);
-            }
-            section:first-child {
-                padding-top: rem(3);
-            }
-            section:nth-child(2) {
-                p {
-                    font-size: rem(10);
-                    span {
-                        font-size: rem(10);
-                    }
-                }
-            }
-            p {
-                display: inline-block;
-            }
-            span {
-              font-size: rem(21); display: inline-block; font-family: arial;
-            }
-        }
-        .theColorCls.theColorCls23 {
-            background-image: linear-gradient(top,#007445,#005F36),linear-gradient(top,#FFFBAD,#FFA531); background-image: -webkit-linear-gradient(top,#007445,#005F36),-webkit-linear-gradient(top,#FFFBAD,#FFA531);
-        }
-        .theColorCls.theColorCls12 {
-            background-image: linear-gradient(top,#70360a,#4b260a),linear-gradient(top,#FFFBAD,#FFA531); background-image: -webkit-linear-gradient(top,#70360a,#4b260a),-webkit-linear-gradient(top,#FFFBAD,#FFA531);
-        }
-        .Deliverycircular {
-            background: transparent; box-shadow: 0 0 0 rgba(0,0,0,0);
-            img {
-                width: rem(60); position: relative; top: rem(-4);
-            }
-        }
-    }
-    .DeliveryMun {
-        a .theColorSr {
-            p {
-                margin-left: 0; background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976); border: none; color: #63000C; margin-left: rem(5);
-            }
-            p:last-of-type {
-                margin-left: rem(10); position: relative;
-                overflow: visible;
-            }
-            p:last-of-type:after {
-                content: "+"; position: absolute; left: rem(-10); width: rem(10); height: rem(10);
-            }
-            p:after {
-                content: "";
-            }
-        }
-        a .GDtheColorLot {
-            p:last-of-type {
-                margin-left: rem(5);
-            }
-            p:last-of-type:after {
-                content: "";
-            }
-        }
-        a .theCorLot {
-            padding-bottom: rem(5);
-            p {
-                width: rem(23); height: rem(23); line-height: rem(23); font-size: rem(12); margin-left: rem(2); position: relative; background: url('../images/theColor/ball_red_bg.png') center center no-repeat; background-size: rem(25) auto; color: #ffffff; text-align: center;
-                .zodiacAnimal {
-                    position: absolute; bottom: rem(-3); right: rem(0); font-size: rem(7); width: rem(10); height: rem(10); line-height: rem(10); background: linear-gradient(top,#F0DDAE,#DCB976); background: -webkit-linear-gradient(top,#F0DDAE,#DCB976); border-radius: 50%; color: #3A2316;
-                }
-            }
-            p.green {
-                background: url('../images/theColor/ball_green_bg.png') center center no-repeat; background-size: rem(25) auto;
-            }
-            p.blue {
-                background: url('../images/theColor/ball_blue_bg.png') center center no-repeat; background-size: rem(25) auto;
-            }
-        }
-    }
-}
-.dropDowmCls {
-    position: fixed; top: rem(45); right: rem(5); background: rgba(40,37,38,0.99); box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0,0,0,0.50); width: rem(140); padding: rem(10); border: rem(1) solid #FFDC99; box-sizing: border-box; -webkit-box-sizing: border-box; border-radius: rem(2); overflow: visible; z-index: 10;
-    ul {
-        li {
-            a {
-                font-size: rem(16); color: #FFDC99; display: block; line-height: rem(35);
-                p {
-                    background: url('../images/theColor/rightIcon01.png') left rem(9) no-repeat; background-size: rem(20) auto; padding-left: rem(25);
-                }
-            }
-        }
-        li:nth-child(2) {
-            a {
-                p {
-                    background: url('../images/theColor/rightIcon02.png') left rem(9) no-repeat; background-size: rem(20) auto; padding-left: rem(25); 
-                }
-            }
-        }
-        li:nth-child(3) {
-            a {
-                p {
-                    background: url('../images/theColor/rightIcon03.png') left rem(9) no-repeat; background-size: rem(20) auto; padding-left: rem(25); 
-                }
-            }
-        }
-      li:nth-child(4) {
-        a {
-          p {
-            background: url('../images/theColor/rightIcon04.png') left rem(9) no-repeat; background-size: rem(20) auto; padding-left: rem(25);
+  position: relative;
+  top: rem(-5);
+  .DeliveryMian {
+    .theColorCls {
+      min-width: rem(128);
+      height: rem(40);
+      border-radius: rem(40);
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      border: rem(1) solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(top, #F03636, #C90606), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #F03636, #C90606), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+      box-shadow: inset rem(1) rem(-1) rem(10) rgba(0, 0, 0, 0.5);
+      font-size: rem(12);
+      line-height: rem(38);
+      color: #FFFF5E;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.30);
+      margin-left: rem(25);
+      padding-left: rem(25);
+      padding-right: rem(10); /*text-align: center;*/
+      section {
+        line-height: rem(15);
+      }
+      section:first-child {
+        padding-top: rem(3);
+      }
+      section:nth-child(2) {
+        p {
+          font-size: rem(10);
+          span {
+            font-size: rem(10);
           }
         }
       }
+      p {
+        display: inline-block;
+      }
+      span {
+        font-size: rem(21);
+        display: inline-block;
+        font-family: arial;
+      }
     }
+    .theColorCls.theColorCls23 {
+      background-image: linear-gradient(top, #007445, #005F36), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #007445, #005F36), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    }
+    .theColorCls.theColorCls12 {
+      background-image: linear-gradient(top, #70360a, #4b260a), linear-gradient(top, #FFFBAD, #FFA531);
+      background-image: -webkit-linear-gradient(top, #70360a, #4b260a), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+    }
+    .Deliverycircular {
+      background: transparent;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      img {
+        width: rem(60);
+        position: relative;
+        top: rem(-4);
+      }
+    }
+  }
+  .DeliveryMun {
+    a .theColorSr {
+      p {
+        margin-left: 0;
+        background: linear-gradient(top, #F0DDAE, #DCB976);
+        background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+        border: none;
+        color: #63000C;
+        margin-left: rem(5);
+      }
+      p:last-of-type {
+        margin-left: rem(10);
+        position: relative;
+        overflow: visible;
+      }
+      p:last-of-type:after {
+        content: "+";
+        position: absolute;
+        left: rem(-10);
+        width: rem(10);
+        height: rem(10);
+      }
+      p:after {
+        content: "";
+      }
+    }
+    a .GDtheColorLot {
+      p:last-of-type {
+        margin-left: rem(5);
+      }
+      p:last-of-type:after {
+        content: "";
+      }
+    }
+    a .theCorLot {
+      padding-bottom: rem(5);
+      p {
+        width: rem(23);
+        height: rem(23);
+        line-height: rem(23);
+        font-size: rem(12);
+        margin-left: rem(2);
+        position: relative;
+        background: url('../images/theColor/ball_red_bg.png') center center no-repeat;
+        background-size: rem(25) auto;
+        color: #ffffff;
+        text-align: center;
+        .zodiacAnimal {
+          position: absolute;
+          bottom: rem(-3);
+          right: rem(0);
+          font-size: rem(7);
+          width: rem(10);
+          height: rem(10);
+          line-height: rem(10);
+          background: linear-gradient(top, #F0DDAE, #DCB976);
+          background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+          border-radius: 50%;
+          color: #3A2316;
+        }
+      }
+      p.green {
+        background: url('../images/theColor/ball_green_bg.png') center center no-repeat;
+        background-size: rem(25) auto;
+      }
+      p.blue {
+        background: url('../images/theColor/ball_blue_bg.png') center center no-repeat;
+        background-size: rem(25) auto;
+      }
+    }
+  }
 }
+
+.dropDowmCls {
+  position: fixed;
+  top: rem(45);
+  right: rem(5);
+  background: rgba(40, 37, 38, 0.99);
+  box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0, 0, 0, 0.50);
+  width: rem(140);
+  padding: rem(10);
+  border: rem(1) solid #FFDC99;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: rem(2);
+  overflow: visible;
+  z-index: 10;
+  ul {
+    li {
+      a {
+        font-size: rem(16);
+        color: #FFDC99;
+        display: block;
+        line-height: rem(35);
+        p {
+          background: url('../images/theColor/rightIcon01.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(2) {
+      a {
+        p {
+          background: url('../images/theColor/rightIcon02.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(3) {
+      a {
+        p {
+          background: url('../images/theColor/rightIcon03.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+    li:nth-child(4) {
+      a {
+        p {
+          background: url('../images/theColor/rightIcon04.png') left rem(9) no-repeat;
+          background-size: rem(20) auto;
+          padding-left: rem(25);
+        }
+      }
+    }
+  }
+}
+
 .dropDowmCls:after {
-    content: ""; width: 0; height: 0; position: absolute; top: rem(-10); right: rem(9); border-left: rem(10) solid transparent;
-    border-right: rem(10) solid transparent;
-    border-bottom: rem(10) solid #FFDC99; z-index: 10;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: rem(-10);
+  right: rem(9);
+  border-left: rem(10) solid transparent;
+  border-right: rem(10) solid transparent;
+  border-bottom: rem(10) solid #FFDC99;
+  z-index: 10;
 }
+
 .dropDowmCls:before {
-    content: ""; width: 0; height: 0; position: absolute; top: rem(-9); right: rem(9); border-left: rem(10) solid transparent;
-    border-right: rem(10) solid transparent;
-    border-bottom: rem(10) solid rgba(40,37,38,0.99); z-index: 11;
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: rem(-9);
+  right: rem(9);
+  border-left: rem(10) solid transparent;
+  border-right: rem(10) solid transparent;
+  border-bottom: rem(10) solid rgba(40, 37, 38, 0.99);
+  z-index: 11;
 }
 
 /*footer*/
 .westernCir {
-    p {
-        border-radius: rem(5);
-    }
-    p.newsFooterWester:after {
-        content: ""; width: 0; height: 0;
-    }
-    p.newsFooterWester:before {
-        content: ""; width: 0; height: 0;
-    }
-    p.westernYellow {
-        background: linear-gradient(left,#F0DDAE,#DCB976); background: -webkit-linear-gradient(left,#F0DDAE,#DCB976); border-top-right-radius: 0; border-bottom-right-radius: 0;
-    }
-    p.westernYellow:after {
-        content: ""; width: 0; height: 0;
-    }
-}
-.westernCir .westernYeQiu {
-    background-image: radial-gradient(22% 100%, #F0DDAE 4%, #DCB976 100%);
-    box-shadow: 0 0 rem(2) 0 rgba(0,0,0,0.10);
+  p {
+    border-radius: rem(5);
+  }
+  p.newsFooterWester:after {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+  p.newsFooterWester:before {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+  p.westernYellow {
+    background: linear-gradient(left, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  p.westernYellow:after {
+    content: "";
+    width: 0;
+    height: 0;
+  }
 }
 
-.ColorLotteryMuned {
-    padding-top: rem(125); padding-bottom: rem(120); background: transparent; background: rgb(198,82,73);
-    .ColorLottery_mianTop {
-        margin: rem(5); margin-bottom: 0;
-    }
-    .ColorLottery_mianTop12 {
-        position: relative; z-index: 1;
-    }
-    .ColorLottery_mianTop12_0 {
-        margin-top: rem(35);
-    }
-    .ColorLottery_mian {
-        margin: 0 rem(5); background: url('../images/theColor/Group2xContent.png') top center repeat-y; background-size: 100% auto;
-        .ColorLottery_mcontent {
-            padding: rem(10); padding-top: 0;
-        }
-        .ColorLottery_mcontent12 {
-            padding: rem(15); padding-top: 0; margin-top: rem(-30);
-            position: relative; z-index: 2;
-        }
-        .colorClsLottery {
-            display: none;
-        }
-        .colorClsLottery.colorClsOneLottery {
-            display: block;
-        }
-    }
-    .ColorLottery_mian23 {
-        background: linear-gradient(top, rgb(23,112,69), rgb(19,95,58)); background: rgb(23,112,69); border: rem(1) solid #F0DDAE; box-sizing: border-box; -webkit-box-sizing: border-box; margin: rem(5); padding: rem(20) 0; box-shadow: inset rem(3) rem(3) rem(10) rgba(0,0,0,0.2); position: relative;
-        overflow: visible;
-        .theColorSection {
-            width: rem(15); position: absolute; top: rem(-1); left: rem(-1); z-index: 2;
-        }
-        .theColorSection01 {
-            width: rem(15); position: absolute; top: rem(-1); right: rem(-1); z-index: 2; transform: rotate(90deg); -webkit-transform: rotate(90deg);
-        }
-        .theColorSection02 {
-            width: rem(15); position: absolute; bottom: rem(-1); left: rem(-1); z-index: 2; transform: rotate(-90deg); -webkit-transform: rotate(-90deg);
-        }
-        .theColorSection03 {
-            width: rem(15); position: absolute; bottom: rem(-1); right: rem(-1); z-index: 2; transform: rotate(-180deg); -webkit-transform: rotate(-180deg);
-        }
-        .ColorImgLine {
-            width: rem(3); height: rem(4); background: rgb(34,57,91);  position: absolute; top: rem(-1); left: rem(5); z-index: 3;
-        }
-        .ColorImgLine01 {
-            width: rem(6); height: rem(3); position: absolute; top: rem(5); left: rem(-3); z-index: 3; background: rgb(34,57,91);
-        }
-        .ColorImgLine02 {
-            width: rem(3); height: rem(4); background: rgb(34,57,91);  position: absolute; top: rem(-1); right: rem(5); z-index: 3;
-        }
-        .ColorImgLine03 {
-            width: rem(6); height: rem(3); position: absolute; top: rem(5); right: rem(-3); z-index: 3; background: rgb(34,57,91);
-        }
-        .ColorImgLine04 {
-            width: rem(3); height: rem(4); background: rgb(34,57,91);  position: absolute; bottom: rem(-1); left: rem(5); z-index: 3;
-        }
-        .ColorImgLine05 {
-            width: rem(6); height: rem(3); position: absolute; bottom: rem(5); left: rem(-3); z-index: 3; background: rgb(34,57,91);
-        }
-        .ColorImgLine06 {
-            width: rem(3); height: rem(4); background: rgb(34,57,91);  position: absolute; bottom: rem(-1); right: rem(5); z-index: 3;
-        }
-        .ColorImgLine07 {
-            width: rem(6); height: rem(3); position: absolute; bottom: rem(5); right: rem(-3); z-index: 3; background: rgb(34,57,91);
-        }
-    }
-    .ColorLottery_mian12 {
-       min-height: rem(400); background: url('../images/theColor/bg_xglottery01.png') top center no-repeat; background-size: 100% 100%; overflow: visible;
-    }
-    .ColorLottery_mianBottom {
-        margin: rem(5); margin-top: 0;
-    }
+.westernCir .westernYeQiu {
+  background-image: radial-gradient(22% 100%, #F0DDAE 4%, #DCB976 100%);
+  box-shadow: 0 0 rem(2) 0 rgba(0, 0, 0, 0.10);
 }
+
 .ColorLotteryMuned23 {
-    background: rgb(34,57,91);
+  background: rgb(34, 57, 91);
 }
+
 .ColorLotteryMuned12 {
-    background: rgb(44,26,15);
+  height: 100%;
+  background: #221709;
 }
+
 .ColorLottery_mcTitle {
-    font-size: rem(12); color: #2F1E0F; text-align: center; margin-bottom: rem(10);
-    p {
-        display: inline-block; padding: 0 rem(25); position: relative;
-    }
-    p:after {
-        content: ""; width: rem(16); height: rem(8); background: url('../images/theColor/Fillright.png') right center no-repeat; position: absolute; right: 0; top: rem(5);
-    }
-    p:before {
-        content: ""; width: rem(16); height: rem(8); background: url('../images/theColor/Fillleft.png') left center no-repeat; position: absolute; left: 0; top: rem(5);
-    }
+  font-size: rem(12);
+  color: #2F1E0F;
+  text-align: center;
+  margin-bottom: rem(10);
+  p {
+    display: inline-block;
+    padding: 0 rem(25);
+    position: relative;
+  }
+  p:after {
+    content: "";
+    width: rem(16);
+    height: rem(8);
+    background: url('../images/theColor/Fillright.png') right center no-repeat;
+    position: absolute;
+    right: 0;
+    top: rem(5);
+  }
+  p:before {
+    content: "";
+    width: rem(16);
+    height: rem(8);
+    background: url('../images/theColor/Fillleft.png') left center no-repeat;
+    position: absolute;
+    left: 0;
+    top: rem(5);
+  }
 }
+
 .ColorLottery_mcTitle23 {
-    color: #ffffff;
+  color: #ffffff;
 }
+
 .ColorLottery_mcTitle12 {
-    color: #4C2F1E;
+  color: #4C2F1E;
 }
+
 .ColorLottery_mslist {
-    ul {
-        li {
-            width: 25%; float: left; text-align: center; margin-bottom: rem(5);
-            .ColorLot_article {
-                width: rem(80); height: rem(48); background: #E0D7C5; border: rem(1) solid #CBB9AA; border-radius: rem(2); display: inline-block; position: relative;
-                section {
-                    padding: rem(5); font-size: rem(12); color: #292622; font-family: arial; line-height: rem(18); text-align: left;
-                    p:first-of-type {
-                        span {
-                            font-size: rem(14);
-                        }
-                    }
-                    p:nth-of-type(2) {
-                        margin-top: rem(3); font-size: rem(0); color: rgb(206,200,177);
-                    }
-                    p.amount {
-                        color: #666666; font-size: rem(10);
-                    }
-                    p.playMarryImg {
-                        width: rem(22); height: rem(22); position: absolute; bottom: rem(3); right: rem(3);
-                    }
-                }
+  ul {
+    li {
+      width: 25%;
+      float: left;
+      text-align: center;
+      margin-bottom: rem(5);
+      .ColorLot_article {
+        width: rem(80);
+        height: rem(48);
+        background: #E0D7C5;
+        border: rem(1) solid #CBB9AA;
+        border-radius: rem(2);
+        display: inline-block;
+        position: relative;
+        section {
+          padding: rem(5);
+          font-size: rem(12);
+          color: #292622;
+          font-family: arial;
+          line-height: rem(18);
+          text-align: left;
+          p:first-of-type {
+            span {
+              font-size: rem(14);
             }
-            .ColorLot_article23 {
-                background: transparent; border: rem(1) solid rgba(255,255,255,0.5); border-radius: 0;
-                section {
-                    color: #ffffff;
-                    p:nth-of-type(2) {
-                        color: #177045; font-size: rem(0);
-                    }
-                    p.amount {
-                        color: #ffffff; font-size: rem(10);
-                    }
-                    p.playMarryImg {
-                        width: rem(22); height: rem(22); position: absolute; bottom: rem(3); right: rem(3);
-                    }
-                }
-            }
+          }
+          p:nth-of-type(2) {
+            margin-top: rem(3);
+            font-size: rem(0);
+            color: rgb(206, 200, 177);
+          }
+          p.amount {
+            color: #666666;
+            font-size: rem(10);
+          }
+          p.playMarryImg {
+            width: rem(22);
+            height: rem(22);
+            position: absolute;
+            bottom: rem(3);
+            right: rem(3);
+          }
         }
-    }
-    ul.ColorLotCs {
-        li {
-            width: 33.3%;
-            .ColorLot_article {
-                width: rem(109);
-                section {
-                    p:nth-of-type(2) {
-                        color: #177045;
-                    }
-                    p.amount {
-                        color: #fff;
-                    }
-                }
-            }
+      }
+      .ColorLot_article23 {
+        background: transparent;
+        border: rem(1) solid rgba(255, 255, 255, 0.5);
+        border-radius: 0;
+        section {
+          color: #ffffff;
+          p:nth-of-type(2) {
+            color: #177045;
+            font-size: rem(0);
+          }
+          p.amount {
+            color: #ffffff;
+            font-size: rem(10);
+          }
+          p.playMarryImg {
+            width: rem(22);
+            height: rem(22);
+            position: absolute;
+            bottom: rem(3);
+            right: rem(3);
+          }
         }
+      }
     }
+  }
+  ul.ColorLotCs {
+    li {
+      width: 33.3%;
+      .ColorLot_article {
+        width: rem(109);
+        section {
+          p:nth-of-type(2) {
+            color: #177045;
+          }
+          p.amount {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 }
+
 .dropDowmClsBack {
-    background: rgba(0,0,0,0.2); width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 1;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .ColorLottery_mslist12 {
-    padding-bottom: rem(15);
-    ul {
-        li {
-            width: 25%;
+  //padding-bottom: rem(15);
+  ul {
+    li {
+      width: 25%;
+      float: left;
+      text-align: center;
+      margin-bottom: rem(5);
+      .ColorLot_article {
+        width: rem(80);
+        height: rem(48);
+        background: transparent;
+        border: rem(1) solid #774D34;
+        //border-radius: rem(2);
+        display: inline-block;
+        position: relative;
+        section {
+          padding: rem(5);
+          font-size: rem(12);
+          color: #4C2F1E;
+          font-family: arial;
+          line-height: rem(18);
+          text-align: left;
+          p:first-of-type {
+            color: #F80808;
+            span {
+              font-size: rem(14);
+              color: #4C2F1E;
+            }
+            span.colorZodatr {
+              float: left;
+              img {
+                width: rem(35);
+                margin-right: rem(5);
+              }
+            }
+          }
+          p:nth-of-type(2) {
+            margin-top: rem(3);
+            font-size: rem(0);
+            color: rgb(206, 200, 177)
+          }
+          p.amount {
+            color: #4C2F1E;
+            font-size: rem(10);
+          }
+          p.playMarryImg {
+            width: rem(22);
+            height: rem(22);
+            position: absolute;
+            bottom: rem(3);
+            right: rem(3);
+            opacity: 0;
+          }
+          .playMarryImg.zodiaoClss {
+            width: rem(22);
+            height: rem(22);
+            position: absolute;
+            bottom: rem(3);
+            left: rem(103);
+          }
+          p.Colorsection {
+            display: inline-block;
+            position: absolute;
+            right: rem(30);
+            top: rem(4);
+          }
+          p.playMarryImg.zodiaoCls05s {
+            width: rem(22);
+            height: rem(22);
+            position: absolute;
+            top: rem(3);
+            right: rem(3);
+          }
+          p.playMarryImg.playMarryImgVisible {
+            opacity: 1;
+          }
+
+        }
+        .ColorLot_Colorsection {
+          p:first-of-type {
             float: left;
+          }
+          p:last-of-type {
+            float: right;
+            margin-top: rem(1);
+          }
+        }
+        .zodiaoCls {
+          position: absolute;
+          right: rem(5);
+          top: rem(4);
+          p {
+            width: rem(30);
+            height: rem(30);
+            line-height: rem(30);
+            border-radius: 50%;
+            background: url('../images/theColor/ball_red_bg.png') center center no-repeat;
+            background-size: rem(30) auto;
+            margin: rem(5) rem(2);
+            font-size: rem(14);
+            color: #ffffff;
+            float: left;
+            font-family: arial;
+          }
+          p.green {
+            background: url('../images/theColor/ball_green_bg.png') center center no-repeat;
+            background-size: rem(30) auto;
+          }
+          p.blue {
+            background: url('../images/theColor/ball_blue_bg.png') center center no-repeat;
+            background-size: rem(30) auto;
+          }
+        }
+        .zodiaoCls05 {
+          width: 100%;
+          span {
+            width: rem(30);
+            height: rem(30);
+            line-height: rem(30);
+            border-radius: 50%;
+            background: url('../images/theColor/ball_red_bg.png') center center no-repeat;
+            background-size: rem(30) auto;
+            margin: rem(5) 0;
+            margin-right: rem(0);
+            font-size: rem(14);
+            color: #ffffff;
+            float: left;
+            font-family: arial;
             text-align: center;
-            margin-bottom: rem(5);
-            .ColorLot_article {
-                width: rem(80);
-                height: rem(48);
-                background: transparent;
-                border: rem(1) solid #774D34;
-                //border-radius: rem(2);
-                display: inline-block;
-                position: relative;
-                section {
-                    padding: rem(5);
-                    font-size: rem(12);
-                    color: #4C2F1E;
-                    font-family: arial;
-                    line-height: rem(18);
-                    text-align: left;
-                    p:first-of-type {
-                        color: #F80808;
-                        span {
-                            font-size: rem(14);
-                            color: #4C2F1E;
-                        }
-                        span.colorZodatr {
-                          float: left;
-                          img {
-                            width: rem(35); margin-right: rem(5);
-                          }
-                        }
-                    }
-                    p:nth-of-type(2) {
-                        margin-top: rem(3);
-                        font-size: rem(0);
-                        color: rgb(206,200,177)
-                    }
-                    p.amount {
-                        color: #4C2F1E;
-                        font-size: rem(10);
-                    }
-                    p.playMarryImg {
-                        width: rem(22); height: rem(22); position: absolute; bottom: rem(3); right: rem(3); opacity: 0;
-                    }
-                    .playMarryImg.zodiaoClss {
-                        width: rem(22); height: rem(22); position: absolute; bottom: rem(3); left: rem(103);
-                    }
-                    p.Colorsection {
-                        display: inline-block; position: absolute; right: rem(30); top: rem(4);
-                    }
-                    p.playMarryImg.zodiaoCls05s {
-                        width: rem(22); height: rem(22); position: absolute; top: rem(3); right: rem(3);
-                    }
-                    p.playMarryImg.playMarryImgVisible {
-                        opacity: 1;
-                    }
-
-                }
-                .ColorLot_Colorsection {
-                    p:first-of-type {
-                       float: left;
-                    }
-                    p:last-of-type {
-                        float: right; margin-top: rem(1);
-                    }
-                }
-              .zodiaoCls {
-                position: absolute; right: rem(5); top: rem(4);
-                p {
-                  width: rem(30); height: rem(30); line-height: rem(30); border-radius: 50%; background: url('../images/theColor/ball_red_bg.png') center center no-repeat; background-size: rem(30) auto; margin: rem(5) rem(2);  font-size: rem(14); color: #ffffff; float: left; font-family: arial;
-                }
-                p.green {
-                  background: url('../images/theColor/ball_green_bg.png') center center no-repeat; background-size: rem(30) auto;
-                }
-                p.blue {
-                  background: url('../images/theColor/ball_blue_bg.png') center center no-repeat; background-size: rem(30) auto;
-                }
-              }
-              .zodiaoCls05 {
-                  width: 100%;
-                  span {
-                      width: rem(30); height: rem(30); line-height: rem(30); border-radius: 50%; background: url('../images/theColor/ball_red_bg.png') center center no-repeat; background-size: rem(30) auto; margin: rem(5) 0; margin-right: rem(0);  font-size: rem(14); color: #ffffff; float: left; font-family: arial; text-align: center;
-                  }
-                  span.red{
-                      background: url('../images/theColor/ball_red_bg.png') center center no-repeat; background-size: rem(30) auto;
-                  }
-                  span.green {
-                      background: url('../images/theColor/ball_green_bg.png') center center no-repeat; background-size: rem(30) auto;
-                  }
-                  span.blue {
-                      background: url('../images/theColor/ball_blue_bg.png') center center no-repeat; background-size: rem(30) auto;
-                  }
-                  span:last-of-type {
-                      float: left;
-                  }
-              }
-            }
-            ColorLot_article:after {
-                content: ""; width: rem(15); height: rem(48); background: url('../images/btn_click.png') top left no-repeat; background-size: rem(15) auto; position: absolute; top: 0; left: 0;
-            }
-            .ColorLot_article23 {
-                background: transparent;
-                border: rem(1) solid rgba(255, 255, 255, 0.5);
-                border-radius: 0;
-                section {
-                    color: #ffffff;
-                }
-            }
+          }
+          span.red {
+            background: url('../images/theColor/ball_red_bg.png') center center no-repeat;
+            background-size: rem(30) auto;
+          }
+          span.green {
+            background: url('../images/theColor/ball_green_bg.png') center center no-repeat;
+            background-size: rem(30) auto;
+          }
+          span.blue {
+            background: url('../images/theColor/ball_blue_bg.png') center center no-repeat;
+            background-size: rem(30) auto;
+          }
+          span:last-of-type {
+            float: left;
+          }
         }
-        li.liLotERY {
-            display: none;
+      }
+      ColorLot_article:after {
+        content: "";
+        width: rem(15);
+        height: rem(48);
+        background: url('../images/btn_click.png') top left no-repeat;
+        background-size: rem(15) auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .ColorLot_article23 {
+        background: transparent;
+        border: rem(1) solid rgba(255, 255, 255, 0.5);
+        border-radius: 0;
+        section {
+          color: #ffffff;
         }
-        li.liLotERY00 ,li.liLotERY01, li.liLotERY02 {
-            display: block;
-        }
-        li.liLotERY00{
-            .ColorLot_article {
-                section {
-                    p {
-                        span {
-
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
+    li.liLotERY {
+      display: none;
+    }
+    li.liLotERY00, li.liLotERY01, li.liLotERY02 {
+      display: block;
+    }
+    li.liLotERY00 {
+      .ColorLot_article {
+        section {
+          p {
+            span {
+
+            }
+          }
+        }
+      }
+    }
+  }
   ul.colorzodiac {
     li {
       width: 100%;
@@ -457,123 +626,369 @@ body {
     }
   }
   ul.colorzodiac04 {
-      li {
-          .ColorLot_article {
-              height: auto;
-          }
+    li {
+      .ColorLot_article {
+        height: auto;
       }
+    }
   }
   ul.XGlI {
     /*香港六合彩*/
     li {
-            width: 50%; float: left; text-align: center;
-            .ColorLot_article_illustrating {
-                width: rem(164); height: rem(70); font-size: 16px; color: #4C2F1E; text-align: left; display: inline-block; border: rem(1) solid #774D34; box-sizing: border-box; -webkit-box-sizing: border-box;
-                .colorLot_title {
-                    height: rem(22); background: #b8b49f; text-align: center; font-size: rem(14); color: #774D34;
-                }
-                section:last-child {
-                    .colorLot_articleP {
-                        width: rem(70); padding: rem(5); float: left; font-size: rem(14); color: #774D34; line-height: rem(20); position: relative;
-                        p:first-of-type {
-                            span {
-                                font-size: rem(10); font-family: Arial;
-                            }
-                        }
-                        p:last-of-type {
-                            font-size: rem(12); font-family: Arial; opacity: 0;
-                        }
-                        p.amount {
-                            opacity: 1;
-                        }
-                        p.playMarryImg.playMarryImg_lhd {
-                            width: rem(22); height: rem(22); position: absolute; bottom: rem(5); right: rem(3); opacity: 1;
-                        }
-                    }
-                    .colorLot_articleP:first-child {
-                        border-right: rem(1) solid #ada691;
-                    }
-                }
-             }
+      width: 50%;
+      float: left;
+      text-align: center;
+      .ColorLot_article_illustrating {
+        width: rem(164);
+        height: rem(70);
+        font-size: 16px;
+        color: #4C2F1E;
+        text-align: left;
+        display: inline-block;
+        border: rem(1) solid #774D34;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        .colorLot_title {
+          height: rem(22);
+          background: #b8b49f;
+          text-align: center;
+          font-size: rem(14);
+          color: #774D34;
         }
+        section:last-child {
+          .colorLot_articleP {
+            width: rem(70);
+            padding: rem(5);
+            float: left;
+            font-size: rem(14);
+            color: #774D34;
+            line-height: rem(20);
+            position: relative;
+            p:first-of-type {
+              span {
+                font-size: rem(10);
+                font-family: Arial;
+              }
+            }
+            p:last-of-type {
+              font-size: rem(12);
+              font-family: Arial;
+              opacity: 0;
+            }
+            p.amount {
+              opacity: 1;
+            }
+            p.playMarryImg.playMarryImg_lhd {
+              width: rem(22);
+              height: rem(22);
+              position: absolute;
+              bottom: rem(5);
+              right: rem(3);
+              opacity: 1;
+            }
+          }
+          .colorLot_articleP:first-child {
+            border-right: rem(1) solid #ada691;
+          }
+        }
+      }
     }
+  }
 }
 
 .ColorLottery_mslist23 {
-    ul.ColorLotCsFet {
-        /*GD*/
-        li {
-            width: 50%; height: rem(80); float: left; text-align: center;
-            .ColorLot_article_illustrating {
-                width: rem(164); height: rem(70); font-size: 16px; color: #ffffff; text-align: left; display: inline-block; border: rem(1) solid #ffffff; box-sizing: border-box; -webkit-box-sizing: border-box;
-                .colorLot_title {
-                    height: rem(22); line-height: rem(22); background: rgba(0,0,0,0.20); text-align: center; font-size: rem(14); color: #ffffff;
-                }
-                section:last-child {
-                    .colorLot_articleP {
-                        width: rem(70); padding: rem(5); float: left; font-size: rem(14); color: #ffffff; line-height: rem(20); position: relative;
-                        p:first-of-type {
-                            span {
-                                font-size: rem(10); font-family: Arial;
-                            }
-                        }
-                        p:last-of-type {
-                            font-size: rem(12); font-family: Arial; opacity: 0;
-                        }
-                        p.amount {
-                            opacity: 1;
-                        }
-                        p.playMarryImg.dragon {
-                            width: rem(22); height: rem(22); position: absolute; bottom: rem(5); right: rem(5); opacity: 1;
-                        }
-                    }
-                    .colorLot_articleP:first-child {
-                        border-right: rem(1) solid #ffffff;
-                    }
-                }
-            }
+  ul.ColorLotCsFet {
+    /*GD*/
+    li {
+      width: 50%;
+      height: rem(80);
+      float: left;
+      text-align: center;
+      .ColorLot_article_illustrating {
+        width: rem(164);
+        height: rem(70);
+        font-size: 16px;
+        color: #ffffff;
+        text-align: left;
+        display: inline-block;
+        border: rem(1) solid #ffffff;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        .colorLot_title {
+          height: rem(22);
+          line-height: rem(22);
+          background: rgba(0, 0, 0, 0.20);
+          text-align: center;
+          font-size: rem(14);
+          color: #ffffff;
         }
+        section:last-child {
+          .colorLot_articleP {
+            width: rem(70);
+            padding: rem(5);
+            float: left;
+            font-size: rem(14);
+            color: #ffffff;
+            line-height: rem(20);
+            position: relative;
+            p:first-of-type {
+              span {
+                font-size: rem(10);
+                font-family: Arial;
+              }
+            }
+            p:last-of-type {
+              font-size: rem(12);
+              font-family: Arial;
+              opacity: 0;
+            }
+            p.amount {
+              opacity: 1;
+            }
+            p.playMarryImg.dragon {
+              width: rem(22);
+              height: rem(22);
+              position: absolute;
+              bottom: rem(5);
+              right: rem(5);
+              opacity: 1;
+            }
+          }
+          .colorLot_articleP:first-child {
+            border-right: rem(1) solid #ffffff;
+          }
+        }
+      }
     }
+  }
 }
 
 .XGLottery_list {
-    height: rem(30); background: #4C2F1E; position: fixed; top: rem(124); left: 0; width: 100%; z-index: 3;
-    ul {margin-left:rem(20);
-        li {
-            font-size: rem(12); color: #BEB284; float: left; line-height: rem(30);
-            p {
-                padding: 0 rem(10); line-height: rem(24); margin-top: rem(3); color: #BEB284;
-            }
-        }
-        li.on {
-            p {
-                background: linear-gradient(left,#F0DDAE,#DCB976); background: -webkit-linear-gradient(left,#F0DDAE,#DCB976); border-radius: rem(24); color: #4C2F1E;
-            }
-        }
+  height: rem(30);
+  overflow: hidden;
+  background: #4C2F1E;
+  position: fixed;
+  top: rem(118);
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  ul {
+    margin-left: rem(20);
+    li {
+      font-size: rem(12);
+      color: #BEB284;
+      float: left;
+      line-height: rem(30);
+      p {
+        padding: 0 rem(10);
+        line-height: rem(24);
+        margin-top: rem(3);
+        color: #BEB284;
+      }
     }
+    li.on {
+      p {
+        background: linear-gradient(left, #F0DDAE, #DCB976);
+        background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+        border-radius: rem(24);
+        color: #4C2F1E;
+      }
+    }
+  }
 }
+
 .lottery12 {
-    width: rem(80);
-    position: absolute; right: rem(12); top: rem(130); z-index: 3;
+  width: rem(80);
+  position: absolute;
+  right: rem(12);
+  top: rem(130);
+  z-index: 3;
 }
+
 .lottery12_0 {
 
-    top: rem(170);
+  top: rem(170);
 }
 
 /*半波*/
 .HalfwaveCls {
-    text-align: center; width: rem(186); height: rem(30); line-height: rem(30); background: #4C2F1E; margin: 0 auto; margin-bottom: rem(15);  border-radius: rem(30);
-    ul {
-         color: #BEB284; font-size: rem(12); display: inline-block; display: flex; -webkit-display: flex; flex-direction: row; -webkit-flex-direction: row;
-        li {
-            flex: 1;
-        }
-        li.on {
-            padding: rem(2);
-            p {
-              height: rem(26); background: linear-gradient(left,#F0DDAE,#DCB976); background: -webkit-linear-gradient(left,#F0DDAE,#DCB976); border-radius: rem(30); color: #4C2F1E;
-            }
-        }
+  text-align: center;
+  width: rem(186);
+  height: rem(30);
+  line-height: rem(30);
+  background: #4C2F1E;
+  margin: 0 auto;
+  margin-bottom: rem(15);
+  border-radius: rem(30);
+  ul {
+    color: #BEB284;
+    font-size: rem(12);
+    display: inline-block;
+    display: flex;
+    -webkit-display: flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    li {
+      flex: 1;
     }
+    li.on {
+      padding: rem(2);
+      p {
+        height: rem(26);
+        background: linear-gradient(left, #F0DDAE, #DCB976);
+        background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+        border-radius: rem(30);
+        color: #4C2F1E;
+      }
+    }
+  }
+}
+
+.ColorLottery_mian12 {
+  background: #C4BCA6;
+  padding: rem(10) rem(8);
+}
+
+.ColorLot_mian12 {
+  padding-top: rem(30);
+}
+
+.colorClsLottery {
+  display: none;
+}
+
+.colorClsOneLottery {
+  display: block;
+}
+
+.ColorLot_article div {
+  height: auto;
+  overflow: hidden;
+}
+
+.ColorLottery_mian23 {
+  background: linear-gradient(top, rgb(23, 112, 69), rgb(19, 95, 58));
+  background: rgb(23, 112, 69);
+  border: rem(1) solid #F0DDAE;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: rem(5);
+  padding: rem(20) 0;
+  box-shadow: inset rem(3) rem(3) rem(10) rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: visible;
+  .theColorSection {
+    width: rem(15);
+    position: absolute;
+    top: rem(-1);
+    left: rem(-1);
+    z-index: 2;
+  }
+  .theColorSection01 {
+    width: rem(15);
+    position: absolute;
+    top: rem(-1);
+    right: rem(-1);
+    z-index: 2;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+  }
+  .theColorSection02 {
+    width: rem(15);
+    position: absolute;
+    bottom: rem(-1);
+    left: rem(-1);
+    z-index: 2;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+  }
+  .theColorSection03 {
+    width: rem(15);
+    position: absolute;
+    bottom: rem(-1);
+    right: rem(-1);
+    z-index: 2;
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+  }
+  .ColorImgLine {
+    width: rem(3);
+    height: rem(4);
+    background: rgb(34, 57, 91);
+    position: absolute;
+    top: rem(-1);
+    left: rem(5);
+    z-index: 3;
+  }
+  .ColorImgLine01 {
+    width: rem(6);
+    height: rem(3);
+    position: absolute;
+    top: rem(5);
+    left: rem(-3);
+    z-index: 3;
+    background: rgb(34, 57, 91);
+  }
+  .ColorImgLine02 {
+    width: rem(3);
+    height: rem(4);
+    background: rgb(34, 57, 91);
+    position: absolute;
+    top: rem(-1);
+    right: rem(5);
+    z-index: 3;
+  }
+  .ColorImgLine03 {
+    width: rem(6);
+    height: rem(3);
+    position: absolute;
+    top: rem(5);
+    right: rem(-3);
+    z-index: 3;
+    background: rgb(34, 57, 91);
+  }
+  .ColorImgLine04 {
+    width: rem(3);
+    height: rem(4);
+    background: rgb(34, 57, 91);
+    position: absolute;
+    bottom: rem(-1);
+    left: rem(5);
+    z-index: 3;
+  }
+  .ColorImgLine05 {
+    width: rem(6);
+    height: rem(3);
+    position: absolute;
+    bottom: rem(5);
+    left: rem(-3);
+    z-index: 3;
+    background: rgb(34, 57, 91);
+  }
+  .ColorImgLine06 {
+    width: rem(3);
+    height: rem(4);
+    background: rgb(34, 57, 91);
+    position: absolute;
+    bottom: rem(-1);
+    right: rem(5);
+    z-index: 3;
+  }
+  .ColorImgLine07 {
+    width: rem(6);
+    height: rem(3);
+    position: absolute;
+    bottom: rem(5);
+    right: rem(-3);
+    z-index: 3;
+    background: rgb(34, 57, 91);
+  }
+}
+
+.ColorLottery_mian15 {
+  padding: 0 rem(10);
+}
+
+.componesArow {
+  background: url('../images/bTArrow.png') right center no-repeat;
 }

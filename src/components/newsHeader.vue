@@ -1,46 +1,37 @@
 <template>
-  <div>
-    <div class="headered">
-      <div class="headered_mianed">
-        <div class="headered_muned">
-          <article class="headerTop">
-            <section @click="back()"></section>
-            <section>
-              <p @click="lottery_nameClick">{{Headertitle}} {{deafNum.name}}</p>
-            </section>
-            <section>
-              <a href="javascript:void(0)" class="increaseEd" @click="increaseId = !increaseId ? 1 : 0"
-                 style="font-size: 1.2rem;">+</a>
-            </section>
-          </article>
-          <div class="DeliveryAmout">
-            <div class="DeliveryMian">
-              <div @click="openFrm(2, true)" class="theColorCls"
-                   :class="{'theColorCls23':creditId == 23, 'theColorCls12':creditId == 12 || creditId == 3}">
-                <!--<p>已投￥<span v-html="totalMoney"></span></p>-->
-                <section><p>已投￥<span>{{totalMoney || 0}}</span></p></section>
-                <section><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span></p></section>
-              </div>
-              <div class="Deliverycircular">
-                <img :src="icon" style="width: 120%; height: auto;"/>
-              </div>
+  <div class="lotteryHeader positionFixed">
+    <div class="headerCom">
+      <div class="headerHidden">
+        <div class="headerTop">
+          <section @click="back()" class="lotteryArrowsLeft"></section>
+          <section @click="lottery_nameClick"><p class="componesArow">{{classAdata.lottery_name}} <span>{{deafNum.name}}</span></p></section>
+          <section>
+            <a href="javascript:void(0)" class="increaseEd"
+               @click="increaseId = !increaseId ? 1 : 0">+</a>
+          </section>
+        </div>
+        <div class="DeliveryPrice displayFlex">
+          <div>
+            <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
+              <section><p>已投：￥<span v-html="totalMoney || 0"></span></p></section>
+              <section class="balanceAmount"><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
+              </p></section>
             </div>
-            <div @click.stop="openFrm(4)" class="DeliveryMun">
-              <a href="javascript:void(0)">
-                <section><p><span>{{actionNoCopy}}</span>期开奖结果</p></section>
-                <section class="pcddHeaderlottery theColorSr" :class="{'theCorLot':creditId == '12' || creditId == '3','GDtheColorLot': creditId == '23' || creditId
-                            == '24'}">
-                  <p v-for="(lot,lot_index) in actionDataCopy"
-                     :class="{'green': zodiacAnimalColor[lot_index] == 'green','blue': zodiacAnimalColor[lot_index] == 'blue'}">
-                    {{lot}}
-                    <span class="zodiacAnimal">{{zodiacAnimal[lot_index]}}</span>
-                  </p>
-                </section>
-              </a>
-            </div>
+            <div class="DeliveryLotteryImg"><img :src="icon"/></div>
+          </div>
+          <!--开奖结果-->
+          <div @click.stop="openFrm(4)" class="DeliveryMun" :class="{'openLiveryMargin': creditId === 15 || creditId == 16 || creditId == 18}">
+            <section><p><span>{{actionNoCopy}}</span>期开奖结果</p></section>
+            <!--香港新六合彩 与 香港六合彩-->
+            <section class="theLotteryRoulette" v-if="creditId === 3 || creditId === 12">
+              <article class="theLotteryHArticle">
+                <p v-for="(lot,lot_index) in actionDataCopy" :class="{'red': zodiacAnimalColor[lot_index] == 'red','green': zodiacAnimalColor[lot_index] == 'green','blue': zodiacAnimalColor[lot_index] == 'blue'}">
+                  <span>{{lot}}</span><span class="zodiacAnimal">{{zodiacAnimal[lot_index]}}</span>
+                </p>
+              </article>
+            </section>
           </div>
         </div>
-
         <div v-if="classAdata.status == '0' || classAdata.status == '-1'" class="DeliveryTime">
           <p v-if="classAdata.status == '0'">{{classAdata.kj_cycle}}</p>
           <p v-else>暂停销售</p>
@@ -53,40 +44,43 @@
           封盘时间：
           <time>{{countDownStr}}</time>
         </div>
-        <div class="dropDowmClsBack" v-if="increaseId == 1" @click="increaseId = 0"></div>
-        <div class="dropDowmCls" v-if="increaseId == 1">
+      </div>
+    </div>
+
+    <!--選擇玩法-->
+    <div class="choicePlay positionFixed indexJust" v-if="PopupupID == 1">
+      <div class="choicePlayMain">
+        <div>
+          <div class="popup_ulTitle">选择玩法</div>
           <ul>
-            <li><a href="javascript:void(0)" @click="openFrm(3)"><p>玩法介绍</p></a></li>
-            <li><a href="javascript:void(0)" @click="openFrm(2)"><p>投注记录</p></a></li>
-            <li><a href="javascript:void(0)" @click="openFrm(1)"><p>客服</p></a></li>
-	        <li><a href="javascript:void(0)" v-if="creditId != 17 && creditId != 19 && creditId != 20" @click="openFrm(6)"><p>走势图</p></a></li>
+            <li v-for="(navd,index) in navData" :class="{'on':numIndex == index}" @click="eventOpt(index,navd.id)">
+              {{navd.name}}
+            </li>
           </ul>
-        </div>
-        
-        <div class="Popup_up indexJust" v-if="PopupupID == 1">
-          <div class="popup_upMian">
-            <div class="popup_ulTitle">选择玩法</div>
-            <ul>
-              <li v-for="(navd,index) in navData" :class="{'on':numIndex == index}" @click="eventOpt(index,navd.id)">
-                {{navd.name}}
-              </li>
-            </ul>
-            <div class="delPopup" @click="delHidden">
-              <img :src="delImg"/>
-            </div>
+          <div class="delPopup" @click="delHidden">
+            <img :src="delImg"/>
           </div>
         </div>
       </div>
     </div>
-    
+
     <OpenFrame :popupVisible="showOpenFrame" :showFrmBack="showFrmBack"
                @update:popupVisible="val => showOpenFrame = val" :toUrl="toUrl"></OpenFrame>
+    <div class="dropIncreaseIdBack positionFixed" v-if="increaseId == 1" @click="increaseId = 0"></div>
+    <div class="dropIncreaseId boxSizing" v-if="increaseId == 1">
+      <ul>
+        <li><a href="javascript:void(0)" @click="openFrm(3)"><p>玩法介绍</p></a></li>
+        <li><a href="javascript:void(0)" @click="openFrm(2)"><p>投注记录</p></a></li>
+        <li><a href="javascript:void(0)" @click="openFrm(1)"><p>客服</p></a></li>
+        <li><a href="javascript:void(0)" v-if="creditId != 17 && creditId != 19 && creditId != 20" @click="openFrm(6)"><p>走势图</p></a></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
   import OpenFrame from './openFrame.vue'
-  
+
   export default {
     name: 'headered',
     props: {
@@ -143,7 +137,8 @@
         initializationPrice: 0,
         lotteryTypeId: 0,
         retainData: 0,
-        headerMarry: 0
+        headerMarry: 0,
+	      exportId: false
       }
     },
     computed: {
@@ -179,7 +174,7 @@
           this.lotteryTypeId = this.classAdata.played[0].id;
       }
     },
-    
+
     methods: {
       countDownTimeout() {
         let that = this,
@@ -200,9 +195,9 @@
       },
       openFrm(type, isCheckMoney) {
         let that = this;
-        
+
         if (isCheckMoney && !that._LotteryUtil.getHistoryBetMoney(that, that.creditId, that.classAdata.next_action_no)) return;
-        
+
         if (type === 1) {
           that._Util.post(that, that._Api.POST_CUSTOMER_SERVER, {name: 'kf'}, (data) => {
 //            that.toUrl = data.value;
@@ -236,7 +231,7 @@
 		          that.toUrl = that._Api.LOCAL_HOST + 'lottery/trendChart/lineChart?lotteryId=' + that.classAdata.lottery_id + '&terminal=1';
 		          break;
             default:
-              
+
               break;
           }
 
@@ -246,8 +241,9 @@
         }
         that.increaseId = 0;
       },
-      
+
       getHistoryBetMoney(money) {
+      	console.log('money',money)
         this.reservePrice = parseFloat(this.$parent.$refs.confirmPageRef.totalPrice);
         this.totalMoney = (money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no);
         this.balanceAmount = !money ? this.balanceAmount : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
@@ -280,7 +276,7 @@
         });
         this.$emit('menuClicked', {navOneID: this.navId});
       },
-      
+
       getLotteryData() {
         let that = this;
         if (that.$parent.classAdata.status !== 0 && that.$parent.classAdata.status !== -1) {
@@ -299,7 +295,7 @@
 	        }, 1000 * 30);
         }
       },
-      
+
       back() {
         if (window.frames.length != parent.frames.length) {
           window.parent.document.getElementById('closeFrame').click();
@@ -315,7 +311,7 @@
         if (this.classAdata.colors) {
           this.zodiacAnimalColor = JSON.parse(JSON.stringify(this.classAdata.colors));
         }
-        
+
         if (this.classAdata.animals) {
           this.zodiacAnimal = JSON.parse(JSON.stringify(this.classAdata.animals));
         }
@@ -333,12 +329,12 @@
         this.headerMarry = JSON.parse(JSON.stringify(this.balanceMarry));
         this.retainData = this.totalMoney;
       },
-      
+
       '$parent.stopBet'(val) {
         this.totalMoney = val ? 0 : this.getHistoryBetMoney();
       }
     },
-    
+
     components: {
       OpenFrame
     }

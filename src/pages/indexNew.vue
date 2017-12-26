@@ -16,7 +16,7 @@
           <section @click="marvellousMarv"></section>
         </div>
       </div>
-      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; padding-top: 2.48276rem;">
+      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; margin-top: 2.48276rem;">
 	      <mt-swipe-item v-if="showSwipeDefault">
 		      <!--<a :href="item.hrefUrl"><img :src="item.picUrl"></a>-->
 		      <a href="javascript: void(0);"><img src="../../static/banner/homeBanner.jpg"></a>
@@ -410,10 +410,10 @@
 			marvellousMarv: function () {
 				let that = this;
 				that.marvellous = 1;
-				$(".mint-swipe").animate({paddingTop: "0"}, 500);
+				$(".mint-swipe").animate({marginTop: "0"}, 500);
 			},
 			terminalMarv: function() {
-				var that = this;
+				let that = this;
         let terminal = that._Util.browser();
         if (terminal.versions.android) {
         	console.log('android')
@@ -429,14 +429,15 @@
 			},
 			chessGame: function (index, id) {
 				var that = this;
-				that._Util.post(that, that._Api.POST_LOTTERY_RECTOR_DETAIL, {id: id}, (data) => {
-					var statusIndex = data.status;
-					if (statusIndex == '0') {
-						that._Util.showAlert(that, {content: data.kj_cycle});
-					} else {
-						this.$router.push({'name': this.lotteryGame[0].chessRef[index]});
-					}
-				});
+				this.$router.push({'name': this.lotteryGame[0].chessRef[index]});
+				// that._Util.post(that, that._Api.POST_LOTTERY_RECTOR_DETAIL, {id: id}, (data) => {
+				// 	var statusIndex = data.status;
+				// 	if (statusIndex == '0') {
+				// 		that._Util.showAlert(that, {content: data.kj_cycle});
+				// 	} else {
+				// 		this.$router.push({'name': this.lotteryGame[0].chessRef[index]});
+				// 	}
+				// });
 
 			},
 			navColorFunction: function (index) {

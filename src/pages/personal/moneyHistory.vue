@@ -3,7 +3,7 @@
       <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>提现记录</p></div>
         <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
-    </div>
+      </div>
     <div v-infinite-scroll="loadMore"
          infinite-scroll-disabled="busy"
          infinite-scroll-distance="50"
@@ -29,9 +29,9 @@
           </div>
         </li>
       </ul>
-    </div>
-    <div class="warmReminder">
-      温馨提示：如有疑问，请联系 <a href="javascript:void(0)" @click="CustomerFunction">在线客服</a>
+      <div class="warmReminder">
+        温馨提示：如有疑问，请联系 <a href="javascript:void(0)" @click="CustomerFunction">在线客服</a>
+      </div>
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@
     mounted() {
       let that = this;
       that.init();
-      that._Util.setCss('.moneyHisTemplate',{"height": 1},"*");
+//      that._Util.setCss('.moneyHisTemplate',{"height": 1},"*");
       that._Util.needClickFc('moneyHisTemplate');
     },
     
@@ -70,27 +70,11 @@
             that.resultList = that.resultList.concat(data.data || []);
             that.params.page++;
           }
-          
+	        if (data.data=='' ) {
+		        that._Util.showAlert(that, {content: '已经没有更多数据了'});
+	        }
           that.isEmpty = !that.resultList.length;
         });
-        that.resultList =
-	        [{amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -100, status: 3, note: "恶意提交，系统冻结", time: "2017-11-23 23:43", status_text: "提现失败"},
-
-		        {amount: -112, status: 2, note: "", time: "2017-12-05 11:05", status_text: "提现成功"},
-
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-            {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-            {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-            {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"},
-		        {amount: -1, status: 1, note: "", time: "2017-12-05 13:36", status_text: "提现中"}
-          ]
       },
       loadMore() {
         let that = this;

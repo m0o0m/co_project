@@ -788,3 +788,70 @@ $designWidth: 375;
 //  background: rgba(0, 0, 0, 0.7);
 //  z-index: 8
 //}
+
+/*香港新六合彩*/
+.theLotteryHArticle {
+  float: right;
+  padding-bottom: rem(5);
+  p {
+    width: rem(20);
+    height: rem(20);
+    border-radius: 50%;
+    float: left;
+    line-height: rem(20);
+    text-align: center;
+    margin-right: 0.2069rem;
+    position: relative;
+    border: 0.04138rem solid #FFDC99;
+    color: #fff;
+    span {
+      display: block;
+      font-family: Arial;
+    }
+    span.zodiacAnimal {
+      position: absolute;
+      bottom: 0;
+      width: rem(12);
+      height: rem(12);
+      background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+      position: absolute;
+      bottom: rem(-5);
+      right: rem(-3);
+      font-size: rem(9);
+      line-height: rem(12);
+      color: #3A2316;
+      border-radius: 50%;
+    }
+  }
+  p.red {
+    box-sizing: border-box;
+    -webkit-box-sizeing: border-box;
+    border: rem(1) solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(top, #c1212a, #c20007), linear-gradient(top, #FFFBAD, #FFA531);
+    background-image: -webkit-linear-gradient(top, #c1212a, #c20007), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+  }
+  p.blue {
+    box-sizing: border-box;
+    -webkit-box-sizeing: border-box;
+    border: rem(1) solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(top, #0979b6, #02177c), linear-gradient(top, #FFFBAD, #FFA531);
+    background-image: -webkit-linear-gradient(top, #0979b6, #02177c), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+  }
+  p.green {
+    box-sizing: border-box;
+    -webkit-box-sizeing: border-box;
+    border: rem(1) solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(top, #50C36D, #27853B), linear-gradient(top, #FFFBAD, #FFA531);
+    background-image: -webkit-linear-gradient(top, #50C36D, #27853B), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+  }
+}
+
+.theLotteryMaTitle.positionFixed {
+  z-index: 4;
+}
