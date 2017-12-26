@@ -42,14 +42,14 @@
           <p class="theColorSection01"><img :src="ColorImgIcon"/></p>
           <p class="theColorSection02"><img :src="ColorImgIcon"/></p>
           <p class="theColorSection03"><img :src="ColorImgIcon"/></p>
-          <p class="ColorImgLine"></p>
-          <p class="ColorImgLine01"></p>
-          <p class="ColorImgLine02"></p>
-          <p class="ColorImgLine03"></p>
-          <p class="ColorImgLine04"></p>
-          <p class="ColorImgLine05"></p>
-          <p class="ColorImgLine06"></p>
-          <p class="ColorImgLine07"></p>
+          <!--<p class="ColorImgLine"></p>-->
+          <!--<p class="ColorImgLine01"></p>-->
+          <!--<p class="ColorImgLine02"></p>-->
+          <!--<p class="ColorImgLine03"></p>-->
+          <!--<p class="ColorImgLine04"></p>-->
+          <!--<p class="ColorImgLine05"></p>-->
+          <!--<p class="ColorImgLine06"></p>-->
+          <!--<p class="ColorImgLine07"></p>-->
         </div>
         <!--<div class="ColorLottery_mianBottom"><img :src="ColorImgBottom"/></div>-->
       </div>

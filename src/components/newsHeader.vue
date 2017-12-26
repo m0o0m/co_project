@@ -30,6 +30,12 @@
                 </p>
               </article>
             </section>
+            <!--广东11选5 东京1.5分彩-->
+            <section class="theLotteryRoulette" v-if="creditId === 23 || creditId === 24">
+              <article class="colArticle">
+                <p v-for="(lot,lot_index) in actionDataCopy">{{lot}}</p>
+              </article>
+            </section>
           </div>
         </div>
         <div v-if="classAdata.status == '0' || classAdata.status == '-1'" class="DeliveryTime">

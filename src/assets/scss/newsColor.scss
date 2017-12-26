@@ -19,9 +19,9 @@ $designWidth: 375;
   padding: rem(130) rem(10) rem(120) rem(10);
 }
 .colorLotteryMarginOne {
-  height: auto;
+  height: 100%;
   overflow: hidden;
-  padding: rem(125) rem(5) rem(110) rem(5);
+  padding: rem(123) rem(5) rem(120) rem(5);
 }
 
 .ColorLottery_mian, .ColorLottery_mcontent {
@@ -29,8 +29,14 @@ $designWidth: 375;
   overflow: hidden;
 }
 
+.ColorLottery_mianTop ,.ColorLottery_mian ,.ColorLottery_mianBottom {
+  float: left;
+  width: 100%;
+}
 .ColorLottery_mian {
   margin: 0; background: url('../images/theColor/Group2xContent.png') top center repeat-y; background-size: 100% auto;
+  height: 85%;
+  overflow-y: scroll;
 }
 
 .DeliveryAmout {
@@ -287,8 +293,13 @@ $designWidth: 375;
   box-shadow: 0 0 rem(2) 0 rgba(0, 0, 0, 0.10);
 }
 
+.ColorLotteryMuned {
+  height: 100%;
+}
+
 .ColorLotteryMuned23 {
   background: rgb(34, 57, 91);
+  height: 100%;
 }
 
 .ColorLotteryMuned12 {
@@ -876,37 +887,38 @@ $designWidth: 375;
   padding: rem(20) 0;
   box-shadow: inset rem(3) rem(3) rem(10) rgba(0, 0, 0, 0.2);
   position: relative;
-  overflow: visible;
+  overflow-y: scroll;
+  height: 100%;
   .theColorSection {
     width: rem(15);
-    position: absolute;
-    top: rem(-1);
-    left: rem(-1);
+    position: fixed;
+    top: rem(128);
+    left: rem(11);
     z-index: 2;
   }
   .theColorSection01 {
     width: rem(15);
-    position: absolute;
-    top: rem(-1);
-    right: rem(-1);
+    position: fixed;
+    top: rem(128);
+    right: rem(10);
     z-index: 2;
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
   }
   .theColorSection02 {
     width: rem(15);
-    position: absolute;
-    bottom: rem(-1);
-    left: rem(-1);
+    position: fixed;
+    bottom: rem(116);
+    left: rem(11);
     z-index: 2;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
   }
   .theColorSection03 {
     width: rem(15);
-    position: absolute;
-    bottom: rem(-1);
-    right: rem(-1);
+    position: fixed;
+    bottom: rem(116);
+    right: rem(10);
     z-index: 2;
     transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
