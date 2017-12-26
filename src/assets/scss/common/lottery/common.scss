@@ -270,6 +270,93 @@ $designWidth: 375;
       }
     }
   }
+  /*pc蛋蛋 加拿大28*/
+  .theLotteryColor {
+    font-size: rem(14);
+    float: right;
+    /*加拿大28 pc蛋蛋*/
+    .nameArt04 {
+      p {
+        width: rem(28);
+        height: rem(28);
+        background: linear-gradient(top, #F0DDAE, #DCB976);
+        background: -webkit-linear-gradient(top, #F0DDAE, #DCB976);
+        border-radius: 50%;
+        float: left;
+        line-height: rem(28);
+        text-align: center;
+        margin-left: rem(20);
+        position: relative;
+        font-family: Arial;
+        color: #63000C;
+        span {
+          color: #63000C;
+        }
+      }
+      p:after {
+        content: '+';
+        font-size: rem(14);
+        color: #FFDC99;
+        position: absolute;
+        right: rem(-15);
+        top: 0;
+      }
+      p:nth-of-type(3):after {
+        content: '=';
+      }
+      p:last-of-type {
+        //background: #E83828;
+        border: rem(1) solid #FFDC99;
+        color: #ffffff;
+      }
+      p:last-of-type:after {
+        content: '';
+      }
+      p.red {
+        box-sizing: border-box;
+        -webkit-box-sizeing: border-box;
+        border: rem(1) solid transparent;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image: linear-gradient(top, #c1212a, #c20007), linear-gradient(top, #FFFBAD, #FFA531);
+        background-image: -webkit-linear-gradient(top, #c1212a, #c20007), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+        span {
+          color: #fff;
+        }
+      }
+      p.blue {
+        box-sizing: border-box;
+        -webkit-box-sizeing: border-box;
+        border: rem(1) solid transparent;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image: linear-gradient(top, #0979b6, #02177c), linear-gradient(top, #FFFBAD, #FFA531);
+        background-image: -webkit-linear-gradient(top, #0979b6, #02177c), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+        span {
+          color: #fff;
+        }
+      }
+      p.green {
+        box-sizing: border-box;
+        -webkit-box-sizeing: border-box;
+        border: rem(1) solid transparent;
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+        background-image: linear-gradient(top, #50C36D, #27853B), linear-gradient(top, #FFFBAD, #FFA531);
+        background-image: -webkit-linear-gradient(top, #50C36D, #27853B), -webkit-linear-gradient(top, #FFFBAD, #FFA531);
+        span {
+          color: #fff;
+        }
+      }
+      p.gray {
+        background: #cccccc;
+        color: #333333;
+        span {
+          color: #333;
+        }
+      }
+    }
+  }
 }
 
 /*开奖 封盘 暂停销售*/

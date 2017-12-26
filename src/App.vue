@@ -28,12 +28,15 @@
   /*投注记录*/
   import './assets/scss/common/betting/index.scss'
   /*棋牌彩种*/
-  import  './assets/scss/common/lottery/index.scss'
+  import './assets/scss/common/lottery/index.scss'
 	/*农场*/
 	import './assets/scss/common/lottery/farm/index.scss'
 	/*西部番摊*/
 	import './assets/scss/common/lottery/western/index.scss'
 	
+  /*牌九*/
+	import './assets/scss/common/lottery/paiGow/index.scss'
+
 	require('./assets/js/jquery.fly.min');
 
 	export default {
