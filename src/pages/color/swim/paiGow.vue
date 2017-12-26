@@ -165,7 +165,7 @@
 				}
 				_this.notifySelectedCount();
               setTimeout(function () {
-                _this._Util.chip(_this, e, $('.jkl:eq(' + itemIndex + ') ul li:eq(' + index + ')'));
+                _this._Util.chip(_this, e, $('.theLotteryColorFul:eq(' + itemIndex + ') ul li:eq(' + index + ')'));
               }, 10);
 			},
 			getAllSelectedBalls() {
