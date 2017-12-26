@@ -401,15 +401,13 @@ $designWidth: 375;
 /*资金明细*/
 .assetsDeList {
   padding-top: rem(55);
-  overflow: hidden;
+  overflow-y: scroll;
   width: 94%;
   margin-left: 3%;
   height: 100%;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   .examineMianBody {
-    max-height: 90%;
-    overflow: auto;
     .assetsDeListLI {
       background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
       background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(25, 15, 36, 0.5) 97%);
