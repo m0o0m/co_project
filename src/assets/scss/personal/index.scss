@@ -1002,6 +1002,8 @@ $designWidth: 375;
 }
 
 /*宝贵意见*/
+
+::-webkit-input-placeholder{color:#fff;opacity:0.8;}
 .feedBackContent {
   padding: rem(80) rem(30) 0;
   .OpinionFeedback {
