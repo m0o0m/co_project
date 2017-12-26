@@ -1,5 +1,5 @@
 <template>
-  <div class="confirmPage positionFixed" v-show="bankId" :class="{'veryConfirm': creditId == 1 || creditId == 2,'bJConfirmBack': creditId == 5, 'timeConfirmBack': creditId == 6}">
+  <div class="confirmPage positionFixed" v-show="bankId" :class="{'veryConfirm': creditId == 1 || creditId == 2,'llcConfirmBack': creditId == 3 || creditId == 12,'jskConfirmBack': creditId == 4,'bJConfirmBack': creditId == 5, 'timeConfirmBack': creditId == 6}">
     <div class="confirmPageBack positionFixed">
       <article class="confirmTitle">
         <section @click="sectionClick" class="lotteryArrowsLeft"></section>
@@ -167,7 +167,7 @@
 			}
 		},
 		mounted() {
-			// this._Util.setCss('.confirmListed',{"height": 0.78},"*");
+			 this._Util.setCss('.confirmListed',{"height": 0.68},"*");
 		},
 		methods: {
 			init() {

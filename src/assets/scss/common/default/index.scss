@@ -523,3 +523,41 @@ img {
   width: 90%;
   margin: 0 auto;
 }
+
+/*是否删除投注记录*/
+.emptyBack {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10; /*display: none;*/
+  .emptyMun {
+    width: 100%;
+    height: 100%;
+    .emptyData {
+      width: rem(280);
+      background: rgba(40, 37, 38, 0.80);
+      box-shadow: inset 0 rem(-2) rem(3) 0 rgba(0, 0, 0, 0.80);
+      border-radius: rem(6);
+      border-radius: rem(2);
+      border: rem(1) solid #FDDA4B;
+      section {
+        padding: rem(18) 0;
+        p {
+          padding: 0 rem(20);
+          text-align: center;
+          font-size: rem(14);
+          color: #ffffff;
+          line-height: rem(30);
+        }
+        p:first-of-type {
+          font-size: rem(20);
+        }
+      }
+    }
+  }
+}

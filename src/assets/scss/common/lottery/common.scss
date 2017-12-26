@@ -271,6 +271,15 @@ $designWidth: 375;
       }
     }
   }
+  /*江苏快三*/
+  .jskArticle {
+    float: right;
+    p {
+      width: rem(22);
+      display: inline-block;
+      margin-left: rem(5);
+    }
+  }
   /*pc蛋蛋 加拿大28*/
   .theLotteryColor {
     font-size: rem(14);
@@ -658,7 +667,7 @@ $designWidth: 375;
 }
 
 .confirmListed {
-  //height: 70%;
+  height: 70%;
   overflow-y: scroll;
 }
 
@@ -794,11 +803,11 @@ $designWidth: 375;
   float: right;
   padding-bottom: rem(5);
   p {
-    width: rem(20);
-    height: rem(20);
+    width: rem(23);
+    height: rem(23);
     border-radius: 50%;
     float: left;
-    line-height: rem(20);
+    line-height: rem(23);
     text-align: center;
     margin-right: 0.2069rem;
     position: relative;
@@ -854,4 +863,17 @@ $designWidth: 375;
 
 .theLotteryMaTitle.positionFixed {
   z-index: 4;
+}
+
+.westernFooter.positionFixed {
+  z-index: 4;
+}
+
+.confirmPage.jskConfirmBack {
+  background-image: radial-gradient(48% 100%, #312B3D 2%, #23202E 98%);
+  background-image: -webkit-radial-gradient(48% 100%, #312B3D 2%, #23202E 98%);
+}
+
+.confirmPage.llcConfirmBack {
+  background: #221709;
 }

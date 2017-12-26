@@ -4,7 +4,7 @@
       <div class="headerHidden">
         <div class="headerTop">
           <section @click="back()" class="lotteryArrowsLeft"></section>
-          <section @click="lottery_nameClick"><p :class="{'lotteryArrowsBottom': tokenId001 !== 0}">{{classAdata.lottery_name}}<span v-if="!exportId">{{deafNum.name}}</span></p></section>
+          <section @click="lottery_nameClick"><p :class="{'lotteryArrowsBottom': tokenId001 !== 0}">{{classAdata.lottery_name}} <span v-if="!exportId">{{deafNum.name}}</span></p></section>
           <section>
             <a href="javascript:void(0)" class="increaseEd"
                @click="increaseId = !increaseId ? 1 : 0">+</a>
@@ -32,6 +32,12 @@
                   <p class="green"><span>10</span></p>
                 </article>
               </div>
+            </section>
+            <!--江苏快三-->
+            <section class="theLotteryRoulette" v-if="creditId === 4">
+              <article class="jskArticle">
+                <p v-for="dice in diceData"><img :src="dice"/></p>
+              </article>
             </section>
             <!--北京pk10-->
             <section class="theLotteryRoulette" v-if="creditId === 5">

@@ -16,8 +16,14 @@ $designWidth: 375;
     border: rem(5) solid #df1b24;
     padding: rem(15);
     background-color: #fff;
-    min-height: rem(357);
+    height: 100%;
+    overflow-y: scroll;
   }
+}
+
+.veryPcMargin div {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .veryPcTitle {
@@ -106,16 +112,19 @@ $designWidth: 375;
 
 .bJLottery {
   padding: rem(10) rem(5);
+  height: 100%;
 }
 
 .bJLotteryLine {
   border: 1px solid #39CFFF;
   padding: rem(5);
   position: relative;
+  height: 100%;
 }
 
 .bJLotteryBack01 {
   background: rgb(2, 21, 34);
+  height: 100%;
   .bJLotteryBack02 {
     //background: -webkit-radial-gradient(top, green,red);
     background: radial-gradient(top, rgba(10, 141, 229, 0.15), rgba(8, 28, 40, 0));
@@ -123,11 +132,15 @@ $designWidth: 375;
     //background: -webkit-repeating-linear-gradient(top, rgba(10,141,229,0.15),rgba(8,28,40,0));
     //height: 100%;
     position: relative;
+    height: 100%;
   }
 }
 
 .bJLotteryColor {
   padding-top: rem(10);
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .bJTitle {
@@ -276,6 +289,7 @@ $designWidth: 375;
 
 .timeLottery {
   padding: rem(5);
+  height: 100%;
 }
 
 .timeLotteryPadding {
@@ -283,6 +297,7 @@ $designWidth: 375;
   border-radius: rem(5);
   padding: rem(6);
   box-shadow: rem(-5) rem(-5) rem(10) rgba(0, 0, 0, 0.2);
+  height: 100%;
 }
 
 .timeLotteryColor {
@@ -290,6 +305,8 @@ $designWidth: 375;
   background: -webkit-radial-gradient(top, rgba(181, 18, 34, 1), rgba(73, 0, 11, 1));
   padding: rem(5);
   border: 1px solid rgb(114, 47, 6);
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .timeLotteryDiv {
