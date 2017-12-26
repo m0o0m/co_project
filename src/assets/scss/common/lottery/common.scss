@@ -248,7 +248,8 @@ $designWidth: 375;
   }
   /*皇家二八杠*/
   .barTheLottery28 {
-    float: right; margin-top: rem(-3);
+    float: right;
+    margin-top: rem(-3);
     section:first-child {
       width: rem(21);
       padding: 0;
@@ -355,6 +356,25 @@ $designWidth: 375;
           color: #333;
         }
       }
+    }
+  }
+  /*西部番摊*/
+  .westernResult {
+    p {
+      width: rem(54);
+      height: rem(24);
+      line-height: rem(20);
+      box-sizing: border-box;
+      -webkit-box-sizeing: border-box;
+      border: rem(1) solid transparent;
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      background-image: linear-gradient(top, #50c36d, #27853b), linear-gradient(top, #fffbad, #ffa531);
+      background-image: -webkit-linear-gradient(top, #50c36d, #27853b), -webkit-linear-gradient(top, #fffbad, #ffa531);
+      display: inline-block;
+      border-radius: rem(3);
+      text-align: center;
+      box-shadow: inset rem(1) rem(-1) rem(8) rgba(0, 0, 0, 0.5);
     }
   }
 }
