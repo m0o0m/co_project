@@ -586,8 +586,8 @@ $designWidth: 375;
     }
     span.on {
       color: #180B0B;
-      background-image: linear-gradient(left, #DDC09C, #D0A979);
-      background-image: -webkit-linear-gradient(left, #DDC09C , #D0A979 );
+      background-image: linear-gradient(top, #DDC09C, #D0A979);
+      background-image: -webkit-linear-gradient(top, #DDC09C , #D0A979 );
     }
   }
 }
@@ -1216,6 +1216,12 @@ i.isHasNews {
           height: 100%;
           overflow: hidden;
           padding: 0 rem(15);
+          ul.masterUl.agencyBackstageOne {
+            li {
+              background: rgba(0,0,0,0.2);
+            }
+          }
+
           ul.masterUl {
             border: 1px solid #BEB284;
             max-height: 85%;
@@ -1653,6 +1659,7 @@ i.isHasNews {
     line-height: rem(30);
     a {
       color: #FFDC99;
+      text-decoration: underline;
     }
   }
   .withdrawPassword {

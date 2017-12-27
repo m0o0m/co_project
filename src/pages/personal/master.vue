@@ -27,7 +27,7 @@
         </div>
         <div class="agencyBodyList">
           <div v-if="type == 0" class="agencyBodyListDiv">
-            <ul class="masterUl">
+            <ul class="masterUl agencyBackstageOne">
               <li>
                 <p>结算时间段</p>
                 <p>会员数</p>
@@ -49,7 +49,7 @@
             </ul>
           </div>
           <div v-if="type == 1" class="agencyBodyListDiv agencyBodyJuniorList">
-            <ul class="masterUl">
+            <ul class="masterUl agencyBackstageOne">
               <li>
                 <p style="width: 45%;">用户名</p>
                 <p>盈亏额</p>
