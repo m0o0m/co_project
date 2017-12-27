@@ -84,6 +84,9 @@ $designWidth: 375;
          }
       }
     }
+    .paiGowMunFirst.royalFirst {
+      height: 100%;
+    }
     .paiGowMunFirst {
       position: relative;
       text-align: center;
@@ -136,7 +139,7 @@ $designWidth: 375;
         width: rem(100);
         position: absolute;
         left: 50%;
-        bottom: -9.6rem;
+        bottom: 0rem;
         margin-left: rem(-50);
         .paiFirstFigrue {
           width: rem(100);

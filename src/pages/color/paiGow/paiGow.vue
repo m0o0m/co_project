@@ -26,7 +26,7 @@
               </ul>
             </div>
           </div>
-          <div class="paiGowMunFirst" v-if="lotteryOffsColorID == 137">
+          <div class="paiGowMunFirst royalFirst" v-if="lotteryOffsColorID == 137">
             <section class="paiGowMunFirstSection"><img :src="thebankerFun[0]"/></section>
             <section>
               <article class="paiFirstFigrue"><img :src="thebankerFun[3]"/></article>
