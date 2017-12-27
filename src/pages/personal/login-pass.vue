@@ -1,7 +1,7 @@
 <template>
   <div class="loginPassManagement">
     <div class="commonNavBar positionFixed">
-      <div class="backPassTitle"><p>登陆密码管理</p></div>
+      <div class="backPassTitle"><p>登录密码管理</p></div>
       <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
     <div class="loginPassManageContent" id="bgg">

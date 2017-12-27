@@ -13,7 +13,7 @@
             <a href="javascript:void(0)" @click.stop="$router.push({name: 'theLotteryDetails', query: {id: lottery.id, name: lottery.name}})">
               <section class="theLotteryDate displayFlex">
                 <p>{{lottery.name}}</p>
-                <p class="commonArrowsRight">第<span>{{lottery.number}}</span>期</p>
+                <p class="commonArrowsRight"><span>第<span>{{lottery.number}}</span>期</span></p>
               </section>
               <section class="theLotteryColor">
                 <article class="theLotteryArticle"

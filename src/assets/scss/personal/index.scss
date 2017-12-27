@@ -587,7 +587,7 @@ $designWidth: 375;
     span.on {
       color: #180B0B;
       background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
-      -webkit-background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+      background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
     }
   }
 }

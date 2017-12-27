@@ -66,8 +66,8 @@ $designWidth: 375;
     li.on {
       a {
         color: #180B0B;
-        background: linear-gradient(top, #DDC09C, #D0A979);
-        background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
+        background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+        background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
         border-top-left-radius: rem(5);
         border-top-right-radius: rem(5);
       }

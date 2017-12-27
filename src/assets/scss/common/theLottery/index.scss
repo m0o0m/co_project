@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import "../../rem";
+
 $designWidth: 375;
 /*开奖大厅*/
 .lotteryMian {
@@ -59,6 +60,10 @@ $designWidth: 375;
     flex: 1;
     text-align: right;
     font-size: rem(12);
+    span {
+      opacity: 0.8;
+
+    }
   }
 }
 
