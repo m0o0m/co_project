@@ -203,7 +203,7 @@ $designWidth: 375;
               line-height: rem(15);
               position: relative;
               p {
-                display: inline-block; font-size: rem(14);font-family: Arial;
+                display: inline-block; font-size: rem(12);font-family: Arial;
               }
               P:nth-child(2) {
                 font-size: rem(12);
@@ -289,7 +289,7 @@ $designWidth: 375;
             //}
             .paiFirstArticle {
               width: rem(90);
-              height: rem(30);
+              height: rem(35);
               background: rgba(0,0,0,0.10);
               border: 0 solid rgba(255,255,255,0.35);
               border-radius: rem(4);
