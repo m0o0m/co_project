@@ -2,6 +2,9 @@
 @import "../../rem";
 
 $designWidth: 375;
+#app {
+  height: 100%;
+}
 .choicePlay {
   width: 100%;
   height: 100%;
