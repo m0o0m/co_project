@@ -925,10 +925,10 @@ $designWidth: 375;
           margin-bottom: rem(1);
           p {
             background: url('../../images/numberimg/phone.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
             font-size: rem(14);
             color: #ffdc99;
-            padding-left: rem(35);
+            padding-left: rem(40);
             position: relative;
             i {
               position: absolute;
@@ -943,59 +943,59 @@ $designWidth: 375;
         li:nth-child(2) {
           p {
             background: url('../../images/numberimg/liwu2.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
           }
         }
         li:nth-child(3) {
           p {
             background: url('../../images/numberimg/liwu3.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
           }
         }
         li:nth-child(4) {
           p {
             background: url('../../images/numberimg/liwu4.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
           }
         }
         li:nth-child(5) {
           p {
             background: url('../../images/numberimg/liwu5.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
           }
         }
         li:nth-child(6) {
           p {
             background: url('../../images/numberimg/liwu8.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
           }
         }
         li:nth-child(7) {
           p {
             background: url('../../images/numberimg/liwu6.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
           }
         }
         li:nth-child(8) {
           p {
             background: url('../../images/numberimg/liwu7.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(26) auto;
           }
         }
         .feedbackMessage a i.isHasNews {
           display: inline-block;
-          width: rem(36);
-          height: rem(16);
-          padding-top: rem(2);
-          text-align: center;
-          line-height: rem(12);
+          width: rem(8);
+          height: rem(8);
+          //padding-top: rem(2);
+          //text-align: center;
+          //line-height: rem(12);
           position: absolute;
-          background: #FFDC99;
-          right: rem(26);
-          top: rem(12);
-          color: #111111;
-          font-size: rem(12);
-          border-radius: rem(3);
+          background: red;
+          left: rem(26);
+          top: rem(11);
+          //color: #111111;
+          //font-size: rem(12);
+          border-radius: 50%;
         }
       }
       .loadMoreTC {

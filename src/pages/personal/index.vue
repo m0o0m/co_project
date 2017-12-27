@@ -79,7 +79,7 @@
                     <li class=" feedbackMessage" @click="saveTime">
                       <router-link :to="{name: 'feedBack'}">
                           <p>宝贵意见<i class="commonArrowsRight"></i></p>
-                          <i class="isHasNews" v-if="isHasNews">new</i>
+                          <i class="isHasNews" v-if="isHasNews"></i>
                       </router-link>
                     </li>
                     <li>
