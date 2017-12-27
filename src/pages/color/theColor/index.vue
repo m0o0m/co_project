@@ -16,7 +16,7 @@
         :personalRebate="personalRebate"
         :sliderValue="sliderValue"
         :marryNum="marryNum"
-        ref="colorLottery"
+        ref="pcddref"
     ></LotteryColor>
     <Footered
         :personalRebate="personalRebate"
