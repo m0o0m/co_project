@@ -150,7 +150,7 @@
         let isLogin = that._Util.getStorage('isLogin', true);
 
         if (isLogin === 'true') {
-	        if (that._Util.getStorage('userInfo').is_test_player) {
+	        if (that._Util.getUserInfo().is_test_player) {
 		        that._Util.showAlert(that, {content: '试玩账号无法使用此功能'});
 		        return;
 	        }
