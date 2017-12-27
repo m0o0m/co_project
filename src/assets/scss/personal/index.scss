@@ -1449,7 +1449,7 @@ i.isHasNews {
         box-sizing: border-box;
         border: 1px solid rgba(255, 255, 255, 0.5);
         ul {
-          background: #272324;
+          //background: #272324;
           border: none;
         }
       }
@@ -1457,7 +1457,7 @@ i.isHasNews {
         width: 50%;
         box-sizing: border-box;
         ul {
-          background: #272324;
+          //background: #272324;
           border: none;
         }
       }
@@ -1480,7 +1480,7 @@ i.isHasNews {
   .divs {
     width: 100%;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.50);
+
     font-size: rem(12);
     display: flex;
     .clas2 {
@@ -1497,8 +1497,12 @@ i.isHasNews {
       border-top: 1px solid rgba(255, 255, 255, 0.5);
       border-left: 1px solid rgba(255, 255, 255, 0.5);
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      background: rgba(0, 0, 0, 0.50);
+      //background: rgba(0, 0, 0, 0.30);
       ul {
+        //background: transparent;
+        li:nth-child(1){
+          background: rgba(0,0,0,.3);
+        }
         li {
           color: #fff;
           border-top: 1px solid rgba(255, 255, 255, 0.5);
@@ -1525,7 +1529,7 @@ i.isHasNews {
   }
   .pSmallX {
     margin: rem(10) 0;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .3);
     padding: rem(10) 0;
   }
 }

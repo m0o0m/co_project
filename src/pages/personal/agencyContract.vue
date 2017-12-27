@@ -17,13 +17,15 @@
         </div>
         <div v-if="result" class="explain pSmallIf">
             <div class="divs lines">
-                <span class="jkl clas2">当月盈亏
+                <span class="jkl clas2">
                       <ul class="uis uls">
+                          <li>当月盈亏</li>
                           <li v-for="v in result.commision_level_list">{{v.min_bet_money}}-{{v.max_bet_money}}</li>
                       </ul>
                         </span>
-                <span class="jkl clas3">返佣比例
+                <span class="jkl clas3">
                       <ul class="uis uls">
+                        <li>返佣比例</li>
                          <li v-for="v in result.commision_level_list">{{v.rebate_money}}%</li>
                       </ul>
                 </span>
