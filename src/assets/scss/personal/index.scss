@@ -1637,7 +1637,7 @@ $designWidth: 375;
   }
 }
 
-/*银行卡管理*/
+/*添加银行卡*/
 .addCardContent {
   height: 100%;
   padding: rem(60) rem(30) rem(10);
@@ -1661,6 +1661,19 @@ $designWidth: 375;
     padding-top: rem(15);
     .selectBank {
       position: relative;
+    }
+  }
+}
+
+/*提现密码*/
+.withgrawalsContentBox {
+  height: 100%;
+  padding: rem(60) rem(30) rem(10);
+  .withgrawalsContent {
+    padding-top: rem(20);
+    .finshBtn{
+      width: 90%;
+      margin: rem(24) auto;
     }
   }
 }
