@@ -124,9 +124,10 @@
     
     mounted() {
       let that = this;
-      
-      if (that.$route.query.homeIndex == 3) {
-        that.init();
+//    || == '/lottery/personal/index'
+      console.log('that.$route.fullPath :',that.$route.fullPath );
+      if (that.$route.query.homeIndex == 3 || that.$route.fullPath == '/lottery/personal/index' ) {
+           that.init();
       }
 //      that._Util.setCss('.windowSize',{"height": 1},"*");
       
@@ -402,7 +403,7 @@
     
     watch: {
       '$route'() {
-        if (this.$route.query.homeIndex == 3) {
+        if (this.$route.query.homeIndex == 3 || this.$route.fullPath == '/lottery/personal/index'  ) {
           this.init();
         }
       }
