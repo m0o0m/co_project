@@ -50,7 +50,7 @@
     computed: {},
     mounted() {
       this.rechargeRecord();
-      this._Util.setCss('.moneyHisTemplate',{"height": 1},"*");
+//      this._Util.setCss('.moneyHisTemplate',{"height": 1},"*");
       this._Util.needClickFc('moneyHisTemplate');
     },
     methods: {
@@ -79,8 +79,8 @@
 </script>
 
 <style lang='scss'>
-  .moneyHisTemplate {
-    background: url('../../assets/images/index/bg.png') center center no-repeat;
-    background-size: cover;
-  }
+  /*.moneyHisTemplate {*/
+    /*background: url('../../assets/images/index/bg.png') center center no-repeat;*/
+    /*background-size: cover;*/
+  /*}*/
 </style>
