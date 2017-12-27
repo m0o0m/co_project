@@ -236,15 +236,17 @@ img {
     flex: 1;
   }
   .verificationCode {
-    height: rem(42);
+    height: rem(40);
     display: inline-block;
-    line-height: rem(42);
+    line-height: rem(40);
     padding: 0 rem(10);
+    margin: rem(1) rem(1) 0 0;
     float: right;
     background: radial-gradient(top, #DDC09C, #D0A979);
     background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-bottom-right-radius: rem(2);
     border-top-right-radius: rem(2);
+    color: #000;
   }
   .phoneNumber {
     display: inline-block;
