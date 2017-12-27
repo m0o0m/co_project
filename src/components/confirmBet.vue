@@ -251,6 +251,7 @@
 						that.$parent.$refs.headerRef.toUrl = that._Api.LOCAL_HOST + 'lottery/login?name=' + that.$route.fullPath;
 						that.$parent.$refs.headerRef.showOpenFrame = true;
 						that.$parent.$refs.headerRef.showFrmBack = false;
+						// $(".confirmPage").hide();
 					}
 				});
 			},

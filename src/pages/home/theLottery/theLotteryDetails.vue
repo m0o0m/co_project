@@ -1,7 +1,7 @@
 <template>
   <div class="lotteryMian">
     <div class="backPassTitle"><p>{{title}}</p></div>
-    <div class="loginIcon flt arrowLeft" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+    <div class="loginIcon flt arrowLeft" @click="_Util.back($router)"><a href="javascript:void(0)"></a></div>
     <div class="lotteryDate percentage">
       <div class="theLotteryDetails">
         <div v-infinite-scroll="loadMore"
@@ -11,7 +11,7 @@
           <ul>
             <li v-for="init in resultList" v-if="resultList.length > 0" class="theLotteryList">
               <!--pcdd蛋蛋 加拿大幸运28-->
-              <a href="javascript:void(0)" v-if="colorId === 1 || colorId === 2">
+              <a href="javascript:void(0)" v-if="colorId == 1 || colorId == 2">
                 <section class="theLotteryDate displayFlex">
                   <p>第<span>{{init.number}}</span>期</p>
                   <p><span>{{init.create_time}}</span></p>
@@ -65,7 +65,7 @@
                 </article>
               </a>
               <!--江苏快三-->
-              <a href="javascript:void(0)" v-if="parseInt(colorId) === 4">
+              <a href="javascript:void(0)" v-if="parseInt(colorId) == 4">
                 <section class="theLotteryDate displayFlex">
                   <p>第<span>{{init.number}}</span>期</p>
                   <p><span>{{init.create_time}}</span></p>
@@ -329,7 +329,7 @@
           
           } finally {
             that.resultList = that.resultList.concat(that.initData || []);
-            
+            console.log('that.resultList',that.resultList);
             if (that.initData.length) {
               that.params.page++;
             }
