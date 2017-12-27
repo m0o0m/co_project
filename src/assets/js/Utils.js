@@ -8,7 +8,7 @@ export default {
 
 	getUserInfo() {
   	let userInfo = this.getStorage('userInfo', true);
-		return userInfo ? userInfo.userInfo : {};
+		return userInfo ? (userInfo.userInfo || {}) : {};
 	},
   
   init() {
@@ -236,7 +236,7 @@ export default {
     let startTime = new Date();
     if (that.isLocalHost) {
       /*默认登陆用户锁定*/
-      param.bind_account = 1;
+      // param.bind_account = 1;
     }
     
     /*self.$http.post(url, param).then((response) => {
