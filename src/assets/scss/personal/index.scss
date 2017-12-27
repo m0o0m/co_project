@@ -1070,7 +1070,8 @@ i.isHasNews {
 
 /*迭代反馈意见列表*/
 .messageListContent {
-  padding: rem(56) rem(10) 0;
+  width: 100%;
+  padding: rem(60) 5% 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   .message_list_content_box {
@@ -1079,15 +1080,16 @@ i.isHasNews {
     ul {
       //padding-bottom: rem(30);
       li {
-        padding: rem(22);
+        padding: rem(12);
         background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0.3) 97%);
-        border: rem(1) solid #BEB284;
+        //border: rem(1) solid #BEB284;
         margin-bottom: rem(10);
         .item {
-          padding: 0 0 0 rem(32);
+          padding: 0 0 0 rem(25);
           position: relative;
           font-family: Arial;
           font-size: rem(16);
+          line-height:rem(22);
           color: #FFFFFF;
           margin-bottom: rem(14);
           p {
@@ -1104,6 +1106,7 @@ i.isHasNews {
         }
         .ask i,
         .answer i {
+          font-size:rem(12) ;
           display: inline-block;
           width: rem(18);
           height: rem(18);
