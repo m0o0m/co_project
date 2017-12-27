@@ -219,7 +219,7 @@
         </ul>
       </div>
     </div>
-    <div class="beimgPushBtn">
+    <div class="bettingScss">
       <!--<p class="nextPushBtn" v-if="resultList.status_text == '未开奖'" @click="cancellationsCls"><a href="javascript:void(0)">撤单</a></p>-->
       <p class="nextPushBtn"><a href="javascript:void(0)" @click="noteToClick">再来一注</a></p>
     </div>

@@ -124,9 +124,10 @@
     
     mounted() {
       let that = this;
-      
-      if (that.$route.query.homeIndex == 3) {
-        that.init();
+//    || == '/lottery/personal/index'
+      console.log('that.$route.fullPath :',that.$route.fullPath );
+      if (that.$route.query.homeIndex == 3 || that.$route.fullPath == '/lottery/personal/index' ) {
+           that.init();
       }
 //      that._Util.setCss('.windowSize',{"height": 1},"*");
       
@@ -291,7 +292,7 @@
 		    function upload(photo) {
 			    let frmData = new FormData();
 			    frmData.append('photo', photo);
-			      frmData.append('bind_account', 1);
+			      // frmData.append('bind_account', 1);
 			    console.log(photo.size / 1024);
 			    that._Util.openLoading(that);
 			    $.ajax({
@@ -402,7 +403,7 @@
     
     watch: {
       '$route'() {
-        if (this.$route.query.homeIndex == 3) {
+        if (this.$route.query.homeIndex == 3 || this.$route.fullPath == '/lottery/personal/index'  ) {
           this.init();
         }
       }
