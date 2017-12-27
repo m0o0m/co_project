@@ -1,154 +1,155 @@
 <template>
-  <div class="lotteryHeader positionFixed">
-    <div class="headerCom">
-      <div class="headerHidden">
-        <div class="headerTop">
-          <section @click="back()" class="lotteryArrowsLeft"></section>
-          <section @click="lottery_nameClick"><p :class="{'lotteryArrowsBottom': tokenId001 !== 0}">{{classAdata.lottery_name}} <span v-if="!exportId">{{deafNum.name}}</span></p></section>
-          <section>
-            <a href="javascript:void(0)" class="increaseEd"
-               @click="increaseId = !increaseId ? 1 : 0">+</a>
-          </section>
-        </div>
-        <div class="DeliveryPrice displayFlex">
-          <div>
-            <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-              <section><p>已投：￥<span v-html="totalMoney || 0"></span></p></section>
-              <section class="balanceAmount"><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
-              </p></section>
+  <div>
+    <div class="lotteryHeader positionFixed">
+      <div class="headerCom">
+        <div class="headerHidden">
+          <div class="headerTop">
+            <section @click="back()" class="lotteryArrowsLeft"></section>
+            <section @click="lottery_nameClick"><p :class="{'lotteryArrowsBottom': tokenId001 !== 0}">{{classAdata.lottery_name}} <span v-if="!exportId">{{deafNum.name}}</span></p></section>
+            <section>
+              <a href="javascript:void(0)" class="increaseEd"
+                 @click="increaseId = !increaseId ? 1 : 0">+</a>
+            </section>
+          </div>
+          <div class="DeliveryPrice displayFlex">
+            <div>
+              <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
+                <section><p>已投：￥<span v-html="totalMoney || 0"></span></p></section>
+                <section class="balanceAmount"><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
+                </p></section>
+              </div>
+              <div class="DeliveryLotteryImg"><img :src="icon"/></div>
             </div>
-            <div class="DeliveryLotteryImg"><img :src="icon"/></div>
-          </div>
-          <!--开奖结果-->
-          <div @click.stop="openFrm(4)" class="DeliveryMun" :class="{'openLiveryMargin': creditId === 15 || creditId == 16 || creditId == 18}">
-            <section><p><span>{{actionNoCopy}}</span>期开奖结果</p></section>
-            <!--pc蛋蛋 加拿大28-->
-            <section class="theLotteryRoulette" v-if="creditId === 1 || creditId === 2">
-              <div class="theLotteryColor">
-                <article class="theLotteryArticle nameArt04">
-                  <p class=""><span>2</span></p>
-                  <p class=""><span>6</span></p>
-                  <p class=""><span>2</span></p>
-                  <p class="green"><span>10</span></p>
-                </article>
-              </div>
-            </section>
-            <!--江苏快三-->
-            <section class="theLotteryRoulette" v-if="creditId === 4">
-              <article class="jskArticle">
-                <p v-for="dice in diceData"><img :src="dice"/></p>
-              </article>
-            </section>
-            <!--北京pk10-->
-            <section class="theLotteryRoulette" v-if="creditId === 5">
-              <article class="bJHArticle">
-                <p v-for="(action,index) in actionDataCopy" v-if="index < 3">{{action}}</p>
-                <p style="float: right"><img src="../assets/images/head_pk10_back01.png"/></p>
-              </article>
-            </section>
-            <!--重庆时时彩-->
-            <section class="theLotteryRoulette" v-if="creditId === 6">
-              <article class="timeHArticle">
-                <div class="timeHANum">
-                  <p v-for="action in actionDataCopy">{{action}}</p>
+            <!--开奖结果-->
+            <div @click.stop="openFrm(4)" class="DeliveryMun" :class="{'openLiveryMargin': creditId === 15 || creditId == 16 || creditId == 18}">
+              <section><p><span>{{actionNoCopy}}</span>期开奖结果</p></section>
+              <!--pc蛋蛋 加拿大28-->
+              <section class="theLotteryRoulette" v-if="creditId === 1 || creditId === 2">
+                <div class="theLotteryColor">
+                  <article class="theLotteryArticle nameArt04">
+                    <p class=""><span>2</span></p>
+                    <p class=""><span>6</span></p>
+                    <p class=""><span>2</span></p>
+                    <p class="green"><span>10</span></p>
+                  </article>
                 </div>
-              </article>
-            </section>
-            <!--俄罗斯轮盘-->
-            <section class="theLotteryRoulette" v-if="creditId === 13">
-              <article class="lotteryNumRoulette">
-                <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
-              </article>
-            </section>
-            <!--济州岛赛马-->
-            <section class="theLotteryRoulette" v-if="creditId === 14 || creditId === 22">
-              <article class="lotteryNumMa">
-                <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
-              </article>
-            </section>
-            <!--马尼拉梭哈 云顶炸金花 pk牛牛-->
-            <section class="theLotteryRoulette" v-if="creditId === 15 || creditId == 16 || creditId == 18">
-              <article class="theLotteryArticle">
-                <p class="mnshImgCls" v-for="dirImg in dirceShowHand"><img :src="dirImg"></p></article>
-            </section>
-            <!--苏格兰农场-->
-            <section class="theLotteryRoulette" v-if="creditId === 17">
-              <article class="theLotteryArticle">
-                <p class="sglncCls">
-                  <span><img v-if="farmImg" :src="farmImg"/></span>
-                  <span>{{actionResultCopy.extfield}}</span>
-                </p>
-              </article>
-            </section>
-            <!--华夏牌九-->
-            <section class="theLotteryRoulette" v-if="creditId === 19">
-              <article class="PaiGowFlex displayFlex">
-                <section class="bankerLeft"><img src="../assets/images/zIcon.png"/></section>
-                <section class="bankerNum">
-                  <p v-for="dirImg in dircePJ"><img :src="dirImg"/></p>
-                </section>
-              </article>
-            </section>
-            <!--皇家二八杠-->
-            <section class="theLotteryRoulette" v-if="creditId === 20">
-              <div class="barTheLottery28 displayFlex">
-                <section class="bankerLeft"><img src="../assets/images/zrbIcon.png"/></section>
-                <section class="bankerNum">
-                  <p v-for="dirImg in dirceRBG"><img :src="dirImg"/></p>
-                </section>
-              </div>
-            </section>
-            <!--西部番摊-->
-            <section class="theLotteryRoulette" v-if="creditId === 21">
-              <div class="westernResult">
-                <p v-for="action in classAdata.action_data">{{action}}</p>
-              </div>
-            </section>
+              </section>
+              <!--江苏快三-->
+              <section class="theLotteryRoulette" v-if="creditId === 4">
+                <article class="jskArticle">
+                  <p v-for="dice in diceData"><img :src="dice"/></p>
+                </article>
+              </section>
+              <!--北京pk10-->
+              <section class="theLotteryRoulette" v-if="creditId === 5">
+                <article class="bJHArticle">
+                  <p v-for="(action,index) in actionDataCopy" v-if="index < 3">{{action}}</p>
+                  <p style="float: right"><img src="../assets/images/head_pk10_back01.png"/></p>
+                </article>
+              </section>
+              <!--重庆时时彩-->
+              <section class="theLotteryRoulette" v-if="creditId === 6">
+                <article class="timeHArticle">
+                  <div class="timeHANum">
+                    <p v-for="action in actionDataCopy">{{action}}</p>
+                  </div>
+                </article>
+              </section>
+              <!--俄罗斯轮盘-->
+              <section class="theLotteryRoulette" v-if="creditId === 13">
+                <article class="lotteryNumRoulette">
+                  <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
+                </article>
+              </section>
+              <!--济州岛赛马-->
+              <section class="theLotteryRoulette" v-if="creditId === 14 || creditId === 22">
+                <article class="lotteryNumMa">
+                  <p v-for="action in actionDataCopy" class="boxSizing"><span>{{action}}</span></p>
+                </article>
+              </section>
+              <!--马尼拉梭哈 云顶炸金花 pk牛牛-->
+              <section class="theLotteryRoulette" v-if="creditId === 15 || creditId == 16 || creditId == 18">
+                <article class="theLotteryArticle">
+                  <p class="mnshImgCls" v-for="dirImg in dirceShowHand"><img :src="dirImg"></p></article>
+              </section>
+              <!--苏格兰农场-->
+              <section class="theLotteryRoulette" v-if="creditId === 17">
+                <article class="theLotteryArticle">
+                  <p class="sglncCls">
+                    <span><img v-if="farmImg" :src="farmImg"/></span>
+                    <span>{{actionResultCopy.extfield}}</span>
+                  </p>
+                </article>
+              </section>
+              <!--华夏牌九-->
+              <section class="theLotteryRoulette" v-if="creditId === 19">
+                <article class="PaiGowFlex displayFlex">
+                  <section class="bankerLeft"><img src="../assets/images/zIcon.png"/></section>
+                  <section class="bankerNum">
+                    <p v-for="dirImg in dircePJ"><img :src="dirImg"/></p>
+                  </section>
+                </article>
+              </section>
+              <!--皇家二八杠-->
+              <section class="theLotteryRoulette" v-if="creditId === 20">
+                <div class="barTheLottery28 displayFlex">
+                  <section class="bankerLeft"><img src="../assets/images/zrbIcon.png"/></section>
+                  <section class="bankerNum">
+                    <p v-for="dirImg in dirceRBG"><img :src="dirImg"/></p>
+                  </section>
+                </div>
+              </section>
+              <!--西部番摊-->
+              <section class="theLotteryRoulette" v-if="creditId === 21">
+                <div class="westernResult">
+                  <p v-for="action in classAdata.action_data">{{action}}</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div v-if="classAdata.status == '0' || classAdata.status == '-1'" class="DeliveryTime">
+            <p v-if="classAdata.status == '0'">{{classAdata.kj_cycle}}</p>
+            <p v-else>暂停销售</p>
+          </div>
+          <div v-else-if="!$parent.stopBet" class="DeliveryTime">
+            距第<span>{{classAdata.next_action_no}}</span>期投注截止：
+            <time>{{countDownStr}}</time>
+          </div>
+          <div v-else-if="$parent.stopBet" class="DeliveryTime">
+            封盘时间：
+            <time>{{countDownStr}}</time>
           </div>
         </div>
-        <div v-if="classAdata.status == '0' || classAdata.status == '-1'" class="DeliveryTime">
-          <p v-if="classAdata.status == '0'">{{classAdata.kj_cycle}}</p>
-          <p v-else>暂停销售</p>
-        </div>
-        <div v-else-if="!$parent.stopBet" class="DeliveryTime">
-          距第<span>{{classAdata.next_action_no}}</span>期投注截止：
-          <time>{{countDownStr}}</time>
-        </div>
-        <div v-else-if="$parent.stopBet" class="DeliveryTime">
-          封盘时间：
-          <time>{{countDownStr}}</time>
-        </div>
       </div>
-    </div>
 
-    <!--選擇玩法-->
-    <div class="choicePlay positionFixed indexJust" v-if="PopupupID == 1">
-      <div class="choicePlayMain">
-        <div>
-          <div class="popup_ulTitle">选择玩法</div>
-          <ul>
-            <li v-for="(navd,index) in navData" :class="{'on':numIndex == index}" @click="eventOpt(index,navd.id)">
-              {{navd.name}}
-            </li>
-          </ul>
-          <div class="delPopup" @click="delHidden">
-            <img :src="delImg"/>
+      <!--選擇玩法-->
+      <div class="choicePlay positionFixed indexJust" v-if="PopupupID == 1">
+        <div class="choicePlayMain">
+          <div>
+            <div class="popup_ulTitle">选择玩法</div>
+            <ul>
+              <li v-for="(navd,index) in navData" :class="{'on':numIndex == index}" @click="eventOpt(index,navd.id)">
+                {{navd.name}}
+              </li>
+            </ul>
+            <div class="delPopup" @click="delHidden">
+              <img :src="delImg"/>
+            </div>
           </div>
         </div>
       </div>
+      <div class="dropIncreaseIdBack positionFixed" v-if="increaseId == 1" @click="increaseId = 0"></div>
+      <div class="dropIncreaseId boxSizing" v-if="increaseId == 1">
+        <ul>
+          <li><a href="javascript:void(0)" @click="openFrm(3)"><p>玩法介绍</p></a></li>
+          <li><a href="javascript:void(0)" @click="openFrm(2)"><p>投注记录</p></a></li>
+          <li><a href="javascript:void(0)" @click="openFrm(1)"><p>客服</p></a></li>
+          <li><a href="javascript:void(0)" v-if="creditId != 17 && creditId != 19 && creditId != 20" @click="openFrm(6)"><p>走势图</p></a></li>
+        </ul>
+      </div>
     </div>
-
     <OpenFrame :popupVisible="showOpenFrame" :showFrmBack="showFrmBack"
                @update:popupVisible="val => showOpenFrame = val" :toUrl="toUrl"></OpenFrame>
-    <div class="dropIncreaseIdBack positionFixed" v-if="increaseId == 1" @click="increaseId = 0"></div>
-    <div class="dropIncreaseId boxSizing" v-if="increaseId == 1">
-      <ul>
-        <li><a href="javascript:void(0)" @click="openFrm(3)"><p>玩法介绍</p></a></li>
-        <li><a href="javascript:void(0)" @click="openFrm(2)"><p>投注记录</p></a></li>
-        <li><a href="javascript:void(0)" @click="openFrm(1)"><p>客服</p></a></li>
-        <li><a href="javascript:void(0)" v-if="creditId != 17 && creditId != 19 && creditId != 20" @click="openFrm(6)"><p>走势图</p></a></li>
-      </ul>
-    </div>
   </div>
 </template>
 
