@@ -212,8 +212,9 @@ $designWidth: 375;
   padding-bottom: rem(20);
   width: 94%;
   margin-left: 3%;
-  max-height: 76%;
-  overflow-y: scroll;
+  height:100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   .withdrawalsCar {
     padding: rem(15);
     margin: rem(15);
