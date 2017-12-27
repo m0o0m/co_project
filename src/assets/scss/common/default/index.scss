@@ -191,6 +191,7 @@ img {
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 10;
   .loginTitle {
     padding: rem(15) 0;
     background: linear-gradient(top, #3D2460, rgba(0, 0, 0, 0));
