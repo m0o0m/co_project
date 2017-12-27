@@ -28,6 +28,10 @@ $designWidth: 375;
   }
 }
 
+.lotteryMun.positionFixed {
+  z-index: 8;
+}
+
 .lotteryDate {
   height: 100%;
   overflow-y: scroll;
