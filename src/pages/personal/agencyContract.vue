@@ -2,7 +2,7 @@
   <div class="feedBackMessageLists">
     <div class="commonNavBar positionFixed">
       <div class="backPassTitle"><p>代理协议</p></div>
-      <div class="loginIcon left flt "   @click="$router.push({name:'master'});"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon arrowLeft flt "   @click="$router.push({name:'master'});"><a href="javascript:void(0)"></a></div>
     </div>
     <div class="agentContract">
         <p class="agentContract_tit">棋牌彩票代理协议：</p>

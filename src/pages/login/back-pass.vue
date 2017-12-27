@@ -3,7 +3,7 @@
     <div class="loginPad">
       <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>找回密码</p></div>
-        <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
       </div>
       <div class="loginPassHidden" v-if=" showXy == '1'">
         <div class="loginName">

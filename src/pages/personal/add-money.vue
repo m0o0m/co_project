@@ -3,8 +3,8 @@
     <div class="RechargeCls abgtops">
         <div class="commonNavBar positionFixed">
           <div class="backPassTitle"><p>充值中心</p></div>
-          <div class="loginIcon left flt" @click="$router.push({name:'home'});"><a href="javascript:void(0)"></a></div>
-          <div class="loginIcon right time" @click="$router.push({name:'moneyHis'});"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon arrowLeft flt" @click="$router.push({name:'home'});"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon arrowRight time" @click="$router.push({name:'moneyHis'});"><a href="javascript:void(0)"></a></div>
         </div>
         <div class="rechargeList">
             <div class="RechargeBr">

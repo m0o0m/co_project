@@ -2,7 +2,7 @@
   <div class="onlineRechBox">
     <div class="commonNavBar positionFixed">
       <div class="backPassTitle"><p>线下充值</p></div>
-      <div class="loginIcon left flt" @click="$router.push({name:'addMoney'});"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon arrowLeft flt" @click="$router.push({name:'addMoney'});"><a href="javascript:void(0)"></a></div>
     </div>
     <div class="onlineRechBody">
       <div class="onlineRechBodyTop">

@@ -2,7 +2,7 @@
   <div class="annDetail">
     <div class="commonNavBar positionFixed">
       <div class="backPassTitle"><p>公告详情</p></div>
-      <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
     <div class="annDetailsMian">
       <div class="annDetailDate annDetailDateDetail">
