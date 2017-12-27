@@ -34,7 +34,7 @@
   </div>
 </template>
 <script>
-	import '../../assets/scss/personal.scss';
+	// import '../../assets/scss/personal.scss';
 	import BankChange from '../../components/bankChange.vue';
 
 	export default {

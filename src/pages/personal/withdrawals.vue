@@ -24,7 +24,6 @@
     </div>
 </template>
 <script>
-  import '../../assets/scss/personal.scss';
 
   export default {
     data() {

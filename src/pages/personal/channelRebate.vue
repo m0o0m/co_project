@@ -78,7 +78,7 @@
   </div>
 </template>
 <script>
-  import '../../assets/scss/personal.scss';
+  // import '../../assets/scss/personal.scss';
   import '../../assets/js/clipboard.min';
   
   export default {
