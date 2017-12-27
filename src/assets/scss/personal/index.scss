@@ -219,8 +219,8 @@ $designWidth: 375;
     padding: rem(15);
     margin: rem(15);
     display: flex;
-    background: radial-gradient(top, #DDC09C, #D0A979);
-    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
+    background: linear-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     section {
       line-height: rem(32);
@@ -283,8 +283,8 @@ $designWidth: 375;
     }
   }
   .trueBtn {
-    background: radial-gradient(top, #DDC09C, #D0A979);
-    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
+    background: linear-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     height: rem(44);
     line-height: rem(40);
