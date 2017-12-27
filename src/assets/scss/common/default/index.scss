@@ -106,7 +106,7 @@ img {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  //z-index: 5;
 }
 
 .positionAbsolute {
@@ -239,7 +239,7 @@ img {
   height: rem(50);
   position: fixed;
   top: rem(10);
-  z-index: 3;
+  z-index: 10;
 }
 
 .loginIcon a {
@@ -259,7 +259,7 @@ img {
   right: 0;
   background: url('../../../images/login/Customer.png') center center no-repeat;
   background-size: rem(35) auto;
-  top: rem(3);
+  top: rem(9);
 }
 
 .loginIcon.right.custom {
@@ -348,7 +348,7 @@ img {
   background: url("../../../images/backTop.png") top left no-repeat;
   background-size: 100% auto;
   //background: #3E225D;
-  z-index: 2;
+  z-index: 5;
 }
 
 .indexMian {
@@ -585,3 +585,4 @@ img {
     }
   }
 }
+
