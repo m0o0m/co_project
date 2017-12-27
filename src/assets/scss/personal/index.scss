@@ -1106,8 +1106,10 @@ $designWidth: 375;
     .agencyAssetsDeList {
       padding-top: rem(50);
       height: 100%;
-      max-height: 75%;
-      overflow-y: scroll;
+      //max-height: 75%;
+
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
       #agencySubnav {
         margin-bottom: 0px;
         width: 100%;
@@ -1179,7 +1181,7 @@ $designWidth: 375;
       }
       .agencyBodyList {
         height: 80%;
-        overflow: hidden;
+        overflow-y: scroll;
         margin-top: 0.6rem;
         .agencyBodyListDiv {
           height: 100%;
