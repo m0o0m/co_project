@@ -3,7 +3,8 @@
     <div class="loginPad">
       <div class="commonNavBar">
         <div class="loginTitle"><p><img :src='loginTitle'/></p></div>
-        <div class="loginIcon arrowLeft" @click="back()"><a href="javascript:void(0)"></a></div>
+        <!--@click="back()"-->
+        <div class="loginIcon arrowLeft" @click="$router.push({name:'home'});" ><a href="javascript:void(0)"></a></div>
         <div class="loginIcon arrowRight"  @click="loginService"><a href="javascript:void(0)"></a></div>
       </div>
       <div class="loginName">
