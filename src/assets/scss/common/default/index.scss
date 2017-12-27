@@ -313,37 +313,37 @@ img {
 .loginIcon.arrowLeft {
   left: 0;
   background: url('../../../images/login/arrow.png') center center no-repeat;
-  background-size: rem(25) auto;
+  background-size: rem(26) auto;
 }
 
 .loginIcon.arrowRight {
   right: 0;
   background: url('../../../images/login/Customer.png') center center no-repeat;
-  background-size: rem(35) auto;
-  top: rem(4);
+  background-size: rem(26) auto;
+  //top: rem(4);
 }
 
 .loginIcon.arrowRight.custom {
   background: url('../../../images/login/Customer.png') center center no-repeat;
-  background-size: rem(35) auto;
+  background-size: rem(26) auto;
 }
 
 .loginIcon.arrowRight.time {
   background: url('../../../images/login/time.png') center center no-repeat;
-  background-size: rem(25) auto;
+  background-size: rem(26) auto;
 }
 
 .loginIcon.arrowRight.mes {
   background: url('../../../images/login/mes.png') center center no-repeat;
-  background-size: rem(20) auto;
-  top: rem(-2);
+  background-size: rem(26) auto;
+  //top: rem(-2);
 }
 
 .loginIcon.arrowRight.xieyi {
   right: 0;
   background: url('../../../images/login/xieyi.png') center center no-repeat;
-  background-size: rem(25) auto;
-  top: rem(-1);
+  background-size: rem(26) auto;
+  //top: rem(-1);
 }
 
 .loginIcon.arrowRight.smallBell {
@@ -363,10 +363,12 @@ img {
 }
 
 .loginIcon.arrowLeft.flt {
-  top: rem(3);
+  top: rem(0);
 }
-
-/*输入框样式(左边文字，右边input)*/
+.loginIcon.arrowRight {
+  top: rem(0);
+}
+  /*输入框样式(左边文字，右边input)*/
 .displayFlex {
   display: flex;
   display: -webkit-flex;
