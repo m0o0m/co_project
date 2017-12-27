@@ -1,7 +1,7 @@
 <template>
   <div class="bettingIndex">
     <div class="bettingCommonA">
-      <div class="bettingTitle"><p class="commonArrowsBottom" @click="changeSelect = !changeSelect">投注记录</p></div>
+      <div class="bettingTitle"><p class="commonArrowsBottom jltz" @click="changeSelect = !changeSelect">投注记录</p></div>
       <div class="betRecord_top">
         <ul class="displayFlex">
           <li v-for="(bet,index) in bettingNav" :class="{'on':index == navIndex}"

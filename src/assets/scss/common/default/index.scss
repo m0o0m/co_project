@@ -6,9 +6,6 @@ div,select,li,ul,section,article {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.showHandList.on {
-  background: rgba(0,0,0,.15);
-}
 #app {
   height: 100%;
 }
@@ -167,7 +164,11 @@ img {
   background-size: rem(15) auto;
   padding-right: rem(12);
 }
-
+.jltz.commonArrowsBottom {
+  background: url('../../../images/arrowBottom.png') right center no-repeat;
+  background-size: rem(30) auto;
+  padding-right: rem(30);
+}
 .lotteryArrowsBottom {
   background: url('../../../images/lotteryHeaderTop.png') right center no-repeat;
   background-size: rem(20) auto;
@@ -338,7 +339,7 @@ img {
 
 .loginIcon.arrowRight.mes {
   background: url('../../../images/login/mes.png') center center no-repeat;
-  background-size: rem(26) auto;
+  background-size: rem(36) auto;
   //top: rem(-2);
 }
 
@@ -351,18 +352,18 @@ img {
 
 .loginIcon.arrowRight.smallBell {
   background: url('../../../images/login/smallBell.png') center center no-repeat;
-  background-size: rem(25) auto
+  background-size: rem(26) auto
 }
 
 .loginIcon.arrowRight.choose {
   background: url('../../../images/login/choose.png') center center no-repeat;
-  background-size: rem(25) auto;
+  background-size: rem(26) auto;
 }
 
 .loginIcon.arrowLeft.individual {
   right: 0;
   background: url('../../../images/login/smallBell.png') center center no-repeat;
-  background-size: rem(25) auto;
+  background-size: rem(30) auto;
 }
 
 .loginIcon.arrowLeft.flt {

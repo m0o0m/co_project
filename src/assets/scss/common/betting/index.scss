@@ -27,7 +27,7 @@ $designWidth: 375;
   height: rem(50);
   line-height: rem(50);
   text-align: center;
-  color: #E4D3AA;
+  color: #FFDC99;
   font-size: rem(16);
   font-weight: bold;
   //background: -webkit-linear-gradient(top, rgba(26, 19, 42, 0.8), rgba(45, 29, 68, 0.5));
@@ -66,8 +66,8 @@ $designWidth: 375;
     li.on {
       a {
         color: #180B0B;
-        background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
-        background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+        background-image: linear-gradient(top, #DDC09C , #D0A979 );
+        background-image: -webkit-linear-gradient(top, #DDC09C , #D0A979 );
         border-top-left-radius: rem(5);
         border-top-right-radius: rem(5);
       }

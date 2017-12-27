@@ -4,7 +4,7 @@
 $designWidth: 375;
 /*pc蛋蛋*/
 .veryPc {
-  background: #f9e7a8;
+  background: #df1b24;
   height: 100%;
   overflow-y: scroll;
 }
@@ -212,35 +212,35 @@ $designWidth: 375;
 }
 
 .outerFrame {
-  border-left: rem(3) solid #39CFFF;
-  border-top: rem(3) solid #39CFFF;
+  border-left: rem(4) solid #39CFFF;
+  border-top: rem(4) solid #39CFFF;
   position: absolute;
-  top: rem(-1.5);
-  left: rem(-1.5);
+  top: rem(-2);
+  left: rem(-2);
 }
 
 .outerFrameRight {
   position: absolute;
-  top: rem(-1.5);
-  right: rem(-1.5);
-  border-right: rem(3) solid #39CFFF;
-  border-top: rem(3) solid #39CFFF;
+  top: rem(-2);
+  right: rem(-2);
+  border-right: rem(4) solid #39CFFF;
+  border-top: rem(4) solid #39CFFF;
 }
 
 .outerFrameBottomLeft {
   position: absolute;
-  bottom: rem(-1.5);
-  left: rem(-1.5);
-  border-left: rem(3) solid #39CFFF;
-  border-bottom: rem(3) solid #39CFFF;
+  bottom: rem(-2);
+  left: rem(-2);
+  border-left: rem(4) solid #39CFFF;
+  border-bottom: rem(4) solid #39CFFF;
 }
 
 .outerFrameBottomRight {
   position: absolute;
-  bottom: rem(-1.5);
-  right: rem(-1.5);
-  border-right: rem(3) solid #39CFFF;
-  border-bottom: rem(3) solid #39CFFF;
+  bottom: rem(-2);
+  right: rem(-2);
+  border-right: rem(4) solid #39CFFF;
+  border-bottom: rem(4) solid #39CFFF;
 }
 
 .smallFrame, .smallFrameRight, .smallFrameBottomLeft, .smallFrameBottomRight {
