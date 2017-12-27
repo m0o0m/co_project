@@ -20,7 +20,7 @@
           <div class="gamCls">
             <ul class="clearfix">
               <li v-for="(v, index) in items"
-                  @click="playchecked($event, v, Colorful.id, v.name, index, Colorful)" :class="{'on':v.active,floatLeft:true}">
+                  @click="playchecked($event, v, Colorful.id, v.name, index, Colorful)" :class="{'on':v.active,floatLeft:true,gamClsLastItem:index==(items.length-1)}">
                 <article class="gameArticle clearfix">
                   <section v-if="v.img" class="gameArtSection floatLeft"><img :src="v.img"/>
                   </section>
