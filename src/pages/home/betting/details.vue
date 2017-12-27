@@ -1,7 +1,7 @@
 <template>
   <div class="lotteryMian">
     <div class="backPassTitle"><p>{{title}}</p></div>
-    <div class="loginIcon flt left" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+    <div class="loginIcon flt arrowLeft" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     <div class="bettingDetails">
       <article class="betDetailsTitle displayFlex">
         <section>

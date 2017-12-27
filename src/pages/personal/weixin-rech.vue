@@ -3,7 +3,7 @@
     <div class="weixinReach">
       <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>{{$route.query.title}}充值</p></div>
-        <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
       </div>
       <div v-if="result.order_id" class="per_conter weixinReachBox">
         <ul class="WeChatUp rechUp">

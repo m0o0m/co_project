@@ -2,7 +2,7 @@
   <div class="templateCardBank">
       <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>银行卡管理</p></div>
-        <div class="loginIcon left flt "   @click="$router.push({name:'personal'});"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowLeft flt "   @click="$router.push({name:'personal'});"><a href="javascript:void(0)"></a></div>
       </div>
       
       <div v-if="result.card_number" class="perCards">

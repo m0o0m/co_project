@@ -2,7 +2,7 @@
   <div class="phoneManagMement">
     <div class="commonNavBar positionFixed">
       <div class="backPassTitle"><p>{{$route.query.title || '手机号管理'}}</p></div>
-      <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
     <div v-if="!$route.query.phone" class="phoneManagMementContent">
       <div class="loginLi displayFlex withdrawPassword">

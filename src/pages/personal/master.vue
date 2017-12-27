@@ -3,8 +3,8 @@
     <div class="assetsDetailCls">
       <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>代理后台</p></div>
-        <div class="loginIcon left flt "   @click="$router.push({name:'personal'});"><a href="javascript:void(0)"></a></div>
-        <div class="loginIcon right xieyi"  @click="goContract"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowLeft flt "   @click="$router.push({name:'personal'});"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowRight xieyi"  @click="goContract"><a href="javascript:void(0)"></a></div>
       </div>
       <div id="assetsDeList" class="agencyAssetsDeList">
         <div>

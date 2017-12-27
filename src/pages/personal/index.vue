@@ -2,8 +2,8 @@
   <div class="personal ">
         <div class="commonNavBar positionFixed">
           <div class="backPassTitle"><p>个人中心</p></div>
-          <div class="loginIcon left flt individual" @click="$router.push({name:'announcement'});"><a href="javascript:void(0)"></a></div>
-          <div class="loginIcon right " @click="loginService"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon arrowLeft flt individual" @click="$router.push({name:'announcement'});"><a href="javascript:void(0)"></a></div>
+          <div class="loginIcon arrowRight " @click="loginService"><a href="javascript:void(0)"></a></div>
         </div>
         <div class="personalMian">
           <div class="personalMianTit">

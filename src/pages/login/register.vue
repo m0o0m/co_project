@@ -3,8 +3,8 @@
     <div class="loginPad">
       <div class="commonNavBar positionFixed">
         <div class="loginTitle"><p><img :src='loginTitle'/></p></div>
-        <div class="loginIcon left" @click="_Util.back($router)"><a href="javascript:void(0)"></a></div>
-        <div class="loginIcon right"  @click="loginService"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowLeft" @click="_Util.back($router)"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowRight"  @click="loginService"><a href="javascript:void(0)"></a></div>
       </div>
       <div class="loginName">
         <ul>

@@ -5,7 +5,7 @@
                    @changeLottery="initData(true)"></LotterySelect>
     <div class="backPassTitle"><p class="commonArrowsBottom displayInline" @click="selectLottery()">{{$route.query.nam
       || ''}}</p></div>
-    <div class="loginIcon flt left" @click="_Util.back($router)"><a href="javascript:void(0)"></a></div>
+    <div class="loginIcon flt arrowLeft" @click="_Util.back($router)"><a href="javascript:void(0)"></a></div>
     <div class="recordBetting">
       <div v-infinite-scroll="loadMore"
            infinite-scroll-disabled="busy"

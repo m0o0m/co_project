@@ -3,8 +3,8 @@
     <!--<div class="managMementClsTemplate">-->
       <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>提现</p></div>
-        <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
-        <div class="loginIcon right time"  @click="$router.push({name:'moneyHistory'});"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
+        <div class="loginIcon arrowRight time"  @click="$router.push({name:'moneyHistory'});"><a href="javascript:void(0)"></a></div>
       </div>
       <div class="withdrawalsBody">
         <div class="withdrawalsCar">
