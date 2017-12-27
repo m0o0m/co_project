@@ -66,6 +66,7 @@
 
 <script type="text/babel">
   import '../../../assets/scss/common/lottery/western/index.scss';
+
   import $ from 'jquery'
   import HeaderWestern from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'
