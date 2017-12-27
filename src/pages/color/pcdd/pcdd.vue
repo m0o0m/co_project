@@ -161,11 +161,11 @@
                           </p>
                           <p class="tt-p2" v-if="creditId == 4 && $parent.$refs.headerRef.lotteryTypeId != 20">
                             {{play.name}}</p>
-                          <p class="tt-p3"> / {{computeOdds(play)}}</p>
+                          <p class="tt-p3" :class="{'tt-p33': play.id == 171 || play.id == 172}"> / {{computeOdds(play)}}</p>
                         </section>
                       </div>
                       <div class="tit-t2 clearfix">
-                        <p class="playfeet">
+                        <p class="playfeet" :class="{'playfeetJSK': play.id == 173}">
                           <span>{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, play.amount)}}</span>
                         </p>
                         <p class="playMarryImg common" v-if="play.active && !$parent.stopBet"><img
