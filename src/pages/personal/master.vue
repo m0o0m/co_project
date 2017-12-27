@@ -1,12 +1,12 @@
 <template>
   <div class="agencyBackstage">
     <div class="assetsDetailCls">
-      <div class="commonNavBar positionFixed">
+      <div v-if="isBrowser" class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>代理后台</p></div>
         <div class="loginIcon arrowLeft flt "   @click="$router.push({name:'personal'});"><a href="javascript:void(0)"></a></div>
         <div class="loginIcon arrowRight xieyi"  @click="goContract"><a href="javascript:void(0)"></a></div>
       </div>
-      <div id="assetsDeList" class="agencyAssetsDeList">
+      <div id="assetsDeList" class="agencyAssetsDeList" :class="{agencyAssetsNotBrowser:!isBrowser}">
         <div>
           <div id="agencySubnav">
             <span @click="type = 0" :class="{on: type == 0}">佣金收益</span>
@@ -115,8 +115,12 @@
 				newAdd: 0,
 			}
 		},
+    created(){
+      let that = this;
+      that.isBrowser = that.$route.query.terminal ? 1 : 0;
+    },
 		mounted() {
-			let that = this;
+      let that = this;
 			that.init();
 			that._Util.needClickFc('agencyAssetsDeList');
 			let date = new Date;
@@ -152,7 +156,6 @@
 		methods: {
 			initDates(type) {
 				let that = this;
-
 				if (type) {
 					for (let i = that.isYear - 10; i < that.isYear + 2; i++) {
 						that.dateItems.push({id: i, name: i});
@@ -170,6 +173,7 @@
 			},
 			init() {
 				let that = this;
+        that.isBrowser = that.$route.query.terminal ? 1 : 0;
 				if (!that.busy) {
 					that.params.year = this.value2;
 					that.params.month = this.value3;

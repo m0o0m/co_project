@@ -1115,10 +1115,8 @@ $designWidth: 375;
     height: 100%;
     overflow: visible;
     .agencyAssetsDeList {
-      padding-top: rem(50);
+      padding: rem(70) rem(20) 0;
       height: 100%;
-      //max-height: 75%;
-
       box-sizing: border-box;
       -webkit-box-sizing: border-box;
       #agencySubnav {
@@ -1263,7 +1261,11 @@ $designWidth: 375;
           }
         }
       }
+      &.agencyAssetsNotBrowser{
+        padding: rem(20) rem(20) 0;
+      }
     }
+
   }
 
 }

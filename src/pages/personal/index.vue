@@ -70,7 +70,7 @@
                       </router-link>
                     </li>
                     <li  v-if="!userInfo.is_test_player && showAgent === 1">
-                      <router-link :to="{name: 'master'}">
+                      <router-link :to="{name: 'master',query: {terminal: 1}}">
                         <a href="javascript:void(0)">
                           <p>代理后台<i class="commonArrowsRight"></i></p>
                         </a>
