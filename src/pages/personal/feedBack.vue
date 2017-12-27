@@ -3,7 +3,7 @@
     <div class="commonNavBar positionFixed">
       <div class="backPassTitle"><p>宝贵意见</p></div>
       <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
-      <div class="loginIcon arrowRight mes"><a href="/lottery/personal/feedBack/feedBackMessageList"></a></div>
+      <div class="loginIcon arrowRight mes"><a href="/lottery/personal/feedBack/feedBackMessageList"></a><i class="isHasNews" v-if="isHasNews"></i></div>
     </div>
     <div class="feedBackContent">
       <div class="OpinionFeedback">
@@ -20,7 +20,8 @@
   export default {
     data() {
       return {
-        feedStr: ''
+        feedStr: '',
+	      isHasNews:false,
       }
     },
     
@@ -31,7 +32,14 @@
     
     methods: {
       init() {
-      
+	      let that = this;
+	      that._Util.post(that, that._Api.POST_USER_INFO, {
+	      }, (data) => {
+		      that.busy = false;
+		      if (data.userInfo) {
+			      that.isHasNews = data.userInfo.is_show_feedback_icon;
+		      }
+	      }, '', true);
       },
       
       save() {
@@ -40,11 +48,8 @@
           that._Util.showAlert(that, {content: '请填写反馈'});
           return;
         }
-        
-//        if (that.feedStr.length < 20) {
-//          that._Util.showAlert(that, {content: '至少输入20个字'});
-//          return;
-//        }
+
+
         that._Util.post(that, that._Api.POST_FEED_BACK, {
           content: that.feedStr
         }, (data) => {
