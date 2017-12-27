@@ -927,6 +927,10 @@ $designWidth: 375;
   background: #221709;
 }
 
+.confirmPage.positionFixed {
+  z-index: 10;
+}
+
 .indexHeight {
   overflow: visible;
 }
