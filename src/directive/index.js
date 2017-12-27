@@ -8,3 +8,12 @@ export let focus = {
     el.focus();
   }
 };
+
+export let back = {
+	name: 'back',
+	bind: function (el, binding, vnode) {
+		el.addEventListener('click', function () {
+			vnode.context.$router.go(-1);
+		});
+	},
+};
