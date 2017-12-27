@@ -115,17 +115,22 @@ $designWidth: 375;
   color: #65431D;
 }
 
-.loginText {
+.loginText ,.loginTextMargin {
   font-size: rem(14);
   text-align: center;
   color: #fff;
   margin-top: rem(25);
 }
 
-.loginText a {
+.loginText a ,.loginTextMargin a {
   display: inline-block;
   color: #E4D3AA;
   text-decoration: underline;
+}
+
+.loginTextMargin p:first-of-type {
+  flex: 1;
+  text-align: left;
 }
 
 /*register*/
