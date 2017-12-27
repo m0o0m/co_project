@@ -68,6 +68,7 @@ $designWidth: 375;
 .DeliveryPrice {
   padding: rem(10) rem(10) 0 rem(10);
   position: relative;
+  top: rem(-7);
   height: rem(53);
   .DeliveryHeaderPrice {
     min-width: rem(110);

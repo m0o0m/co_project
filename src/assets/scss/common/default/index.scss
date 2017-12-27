@@ -2,6 +2,10 @@
 @import "../../rem";
 
 $designWidth: 375;
+div {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 #app {
   height: 100%;
 }
