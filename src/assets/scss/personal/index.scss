@@ -1164,8 +1164,8 @@ i.isHasNews {
           margin-right: rem(20);
         }
         span.on {
-          background-image: linear-gradient(#F0DDAE 0%, #DCB976 100%);
-          -webkit-background-image: linear-gradient(#F0DDAE 0%, #DCB976 100%);
+          background: radial-gradient(top, #DDC09C, #D0A979);
+          background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
           color: #180B0B;
         }
       }
@@ -1530,8 +1530,8 @@ i.isHasNews {
     width: 90%;
     height: rem(90);
     margin-left: 5%;
-    background: linear-gradient(left, rgba(229, 213, 179, 1), rgba(229, 213, 179, 0.6));
-    background: -webkit-linear-gradient(left, rgba(229, 213, 179, 1), rgba(229, 213, 179, 0.6));
+    background: radial-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
     border-radius: rem(4);
     padding: rem(10);
     box-sizing: border-box;
