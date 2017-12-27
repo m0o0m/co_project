@@ -984,18 +984,18 @@ $designWidth: 375;
         }
         .feedbackMessage a i.isHasNews {
           display: inline-block;
-          width: rem(36);
-          height: rem(16);
-          padding-top: rem(2);
-          text-align: center;
-          line-height: rem(12);
+          width: rem(10);
+          height: rem(10);
+          //padding-top: rem(2);
+          //text-align: center;
+          //line-height: rem(12);
           position: absolute;
-          background: #FFDC99;
-          right: rem(26);
-          top: rem(12);
-          color: #111111;
-          font-size: rem(12);
-          border-radius: rem(3);
+          background: red;
+          left: rem(26);
+          top: rem(10);
+          //color: #111111;
+          //font-size: rem(12);
+          border-radius: 50%;
         }
       }
       .loadMoreTC {
