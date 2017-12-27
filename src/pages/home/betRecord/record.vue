@@ -2,6 +2,7 @@
   
   <div id="bgimg">
     <!-- <button @click="changeSelect = !changeSelect">采种选择</button> -->
+    
     <LotterySelect v-if="changeSelect"></LotterySelect>
     <div class="tit">
       <span class="rig"></span>
