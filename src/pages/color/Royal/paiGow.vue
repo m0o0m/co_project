@@ -205,16 +205,16 @@
        if (this.$parent.stopBet) return;
         if (this._LotteryUtil.lotteryCheckCount(this, this.selectedBalls)) return;
         //获取内容位置
-        let height = $(window).height();
-        let width = $(window).width();
-        let faterLfet = document.getElementsByClassName(!type ? "royalArticle" : 'paiFirstArticle')[index].offsetLeft;
-        let faterTop = document.getElementsByClassName(!type ? "royalArticle" : 'paiFirstArticle')[index].offsetTop;
-        let play_articleHeight = ($('.' + !type ? "royalArticle" : 'paiFirstArticle').outerHeight(true)) + 32,
-          play_articleWidth = $('.' + !type ? "royalArticle" : 'paiFirstArticle').outerWidth(true);
-        $('.westernFooter_bottom section').eq(1).find('p.on .maryCls').animate({
-          top: 188 || -(height - faterTop - play_articleHeight),
-          left: 30 || faterLfet - play_articleWidth
-        }, 500);
+//        let height = $(window).height();
+//        let width = $(window).width();
+//        let faterLfet = document.getElementsByClassName(!type ? "royalArticle" : 'paiFirstArticle')[index].offsetLeft;
+//        let faterTop = document.getElementsByClassName(!type ? "royalArticle" : 'paiFirstArticle')[index].offsetTop;
+//        let play_articleHeight = ($('.' + !type ? "royalArticle" : 'paiFirstArticle').outerHeight(true)) + 32,
+//          play_articleWidth = $('.' + !type ? "royalArticle" : 'paiFirstArticle').outerWidth(true);
+//        $('.westernFooter_bottom section').eq(1).find('p.on .maryCls').animate({
+//          top: 188 || -(height - faterTop - play_articleHeight),
+//          left: 30 || faterLfet - play_articleWidth
+//        }, 500);
         let _this = this;
         _this.$set(play, 'amount', (play.amount || 0) + (_this.marryNum || 10));
         _this.$set(play, 'oneCredId', _this.oneCredId);

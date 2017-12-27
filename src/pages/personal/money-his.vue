@@ -1,36 +1,21 @@
 <template>
   <div id="moneyHisTemplate" class="moneyHisTemplate">
-    <div class="bgimg_title">
-      <p>
-        充值记录
-      </p>
-      <img src="../../assets/images/icon_back2x.png" @click="_Util.back($router)"/>
+    <div class="commonNavBar positionFixed">
+      <div class="backPassTitle"><p>充值记录</p></div>
+      <div class="loginIcon left flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
     <div v-infinite-scroll="loadMore"
          infinite-scroll-disabled="busy"
          infinite-scroll-distance="50"
          infinite-scroll-immediate-check="false"
-         class="betRecord_bd betRecord_bd_record">
+         class="moneyHistoryBody">
       <div class="noneDIV" v-if="betIndex === 0">
         <p><img src="../../assets/images/noneImg.png"/></p>
         <p>暂无投注记录哦～</p>
       </div>
       <ul v-else>
-        <!--<li v-for="(money,index) in moneyExport">-->
-        <!--<a href="javascript:void(0)">-->
-        <!--<section>-->
-        <!--<p>{{money.payment_name}}</p>-->
-        <!--<p><span class="spanMarry">{{money.amount}}</span></p>-->
-        <!--</section>-->
-        <!--<section>-->
-        <!--<p><span>{{money.time}}</span></p>-->
-        <!--<p>{{money.status_text}}</p>-->
-        <!--</section>-->
-        <!--</a>-->
-        <!--</li>-->
-        
-        <li v-for="(money,index) in moneyExport">
-          <div class="moneyMian">
+        <li v-for="(money,index) in moneyExport" class="moneyHistoryLI">
+          <div class="moneyMian moneyHistoryList">
             <div class="moneyLeft"
                  :class="{'moneyRed': money.status == '2','moneyYellow': money.status == '1', 'moneyGray': money.status == '0' || money.status == '3'}"></div>
             <div class="moneyRight">
@@ -48,7 +33,7 @@
 </template>
 
 <script>
-  import '../../assets/scss/personal.scss';
+//  import '../../assets/scss/personal.scss';
   import LotterySelect from '../../components/lotterySelect.vue';
   
   export default {
