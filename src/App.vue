@@ -13,8 +13,6 @@
   /*充值中心*/
 	import './assets/scss/rechargeCenter/index.scss'
 	import './assets/scss/personal/index.scss'
-  /*规则*/
-  import './assets/scss/rules/index.scss'
   /*开奖大厅*/
   import './assets/scss/common/theLottery/index.scss'
 	/*投注记录*/

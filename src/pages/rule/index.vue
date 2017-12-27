@@ -42,6 +42,7 @@
 
 <script>
 	import {rulesDate} from './rulesData';
+  import '../../assets/scss/rules/index.scss'
 	import $ from "jquery"
 
 	export default {
