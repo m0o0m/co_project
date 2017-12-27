@@ -6,6 +6,9 @@ div,select,li,ul,section,article {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+.showHandList.on {
+  background: rgba(0,0,0,.15);
+}
 #app {
   height: 100%;
 }
