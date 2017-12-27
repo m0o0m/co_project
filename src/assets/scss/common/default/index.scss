@@ -223,6 +223,7 @@ img {
     border-radius: rem(2);
     height: rem(42);
     flex: 1;
+    display: flex;
   }
   input {
     font-size: rem(14);
@@ -231,7 +232,42 @@ img {
     width: 100%;
     background: transparent;
     border: none;
+    flex: 1;
   }
+  .verificationCode {
+    height: rem(42);
+    display: inline-block;
+    line-height: rem(42);
+    padding: 0 rem(10);
+    float: right;
+    background: radial-gradient(top, #DDC09C, #D0A979);
+    background: -webkit-radial-gradient(top, #DDC09C, #D0A979);
+    border-bottom-right-radius: rem(2);
+    border-top-right-radius: rem(2);
+  }
+  .phoneNumber {
+    display: inline-block;
+    margin-left: rem(20);
+    font-family: Arial;
+    font-size: rem(24);
+    color: #FFDC99;
+    letter-spacing: 0;
+    line-height: rem(42);
+  }
+  p.hasPhoneNumber {
+    border: none;
+    background: transparent;
+    input {
+      font-size: 0.85rem;
+      color: rgb(255, 220, 153);
+      font-family: Arial;
+      text-indent: 0px;
+    }
+  }
+}
+
+.loginLi:last-child {
+  margin-bottom: rem(5);
 }
 
 .loginTitle p {

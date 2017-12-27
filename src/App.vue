@@ -9,6 +9,7 @@
 <script type="text/babel">
 	import './assets/css/style.css'
 	import './assets/scss/common/default/index.scss'
+  import './assets/scss/common/lottery/common.scss'
   /*充值中心*/
 	import './assets/scss/rechargeCenter/index.scss'
 	import './assets/scss/personal/index.scss'
@@ -18,7 +19,6 @@
   import './assets/scss/common/theLottery/index.scss'
 	/*投注记录*/
   import './assets/scss/common/betting/index.scss'
-	import './assets/scss/common/lottery/common.scss'
 	require('./assets/js/jquery.fly.min');
 
 	export default {
