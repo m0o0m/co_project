@@ -14,7 +14,7 @@ $designWidth: 375;
 }
 
 .colorLotteryMargin {
-  height: auto;
+  height: 100%;
   overflow: hidden;
   padding: rem(130) rem(10) rem(120) rem(10);
 }
@@ -35,7 +35,7 @@ $designWidth: 375;
 }
 .ColorLottery_mian {
   margin: 0; background: url('../images/theColor/Group2xContent.png') top center repeat-y; background-size: 100% auto;
-  height: 85%;
+  height: 100%;
   overflow-y: scroll;
 }
 
