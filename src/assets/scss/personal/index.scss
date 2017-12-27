@@ -585,9 +585,9 @@ $designWidth: 375;
       float: right;
     }
     span.on {
-      background-image: linear-gradient(#F0DDAE 0%, #DCB976 100%);
-      -webkit-background-image: linear-gradient(#F0DDAE 0%, #DCB976 100%);
       color: #180B0B;
+      background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+      -webkit-background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
     }
   }
 }
@@ -641,7 +641,6 @@ $designWidth: 375;
         border-top: 1px solid rgba(255, 255, 255, 0.5);
         border-left: 1px solid rgba(255, 255, 255, 0.5);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-        background: rgba(0, 0, 0, 0.50);
         ul {
           li {
             color: #fff;
