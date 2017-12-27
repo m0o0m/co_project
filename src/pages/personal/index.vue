@@ -405,6 +405,7 @@
       '$route'() {
         if (this.$route.query.homeIndex == 3 || this.$route.fullPath == '/lottery/personal/index'  ) {
           this.init();
+	        this.userInfo = this._Util.getUserInfo();
         }
       }
     }

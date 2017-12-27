@@ -423,8 +423,9 @@ $designWidth: 375;
 /*footer*/
 .westernFooter {
   height: rem(106);
-  background: url('../../../images/footerBack.png') left bottom no-repeat;
+  background: url('../../../images/footerBack.jpg') left bottom no-repeat;
   background-size: 100% auto;
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .westernFooter {
@@ -568,7 +569,7 @@ $designWidth: 375;
   bottom: 0;
   width: 100%;
   height: rem(48);
-  background: url('../../../images/footerBack.png') bottom center no-repeat;
+  background: url('../../../images/footerBack.jpg') bottom center no-repeat;
   background-size: 100% auto;
 }
 

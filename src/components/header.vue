@@ -76,8 +76,8 @@
               <section class="theLotteryRoulette" v-if="creditId === 17">
                 <article class="theLotteryArticle">
                   <p class="sglncCls">
-                    <span><img v-if="farmImg" :src="farmImg"/></span>
                     <span>{{actionResultCopy.extfield}}</span>
+                    <span><img v-if="farmImg" :src="farmImg"/></span>
                   </p>
                 </article>
               </section>
