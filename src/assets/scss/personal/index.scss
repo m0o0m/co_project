@@ -815,13 +815,13 @@ $designWidth: 375;
       .outerRing {
         position: relative;
         border-radius: 50%;
-        width: rem(53);
-        height: rem(53);
-        border: rem(2) solid #ffdc99;
+        width: rem(55);
+        height: rem(55);
+        border: rem(3) solid #ffdc99;
         border-radius: 50%;
-        left: -2.1rem;
-        top: -0.12rem;
-
+        left: rem(-52.5);
+        top: -0.1rem;
+        z-index: 2;
       }
       section.one {
         position: relative;
@@ -866,8 +866,9 @@ $designWidth: 375;
           text-align: center;
           font-size: rem(14);
           color: #65431D;
-          background: #E4D7B5;
-          //background: -webkit-linear-gradient(left, #E4D7B5, #B79F71);
+          //background: #E4D7B5;
+          background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
+          background: linear-gradient(top, #DDC09C, #D0A979);
           border-radius: rem(4);
           -webkit-border-radius: rem(4)
         }
@@ -922,7 +923,7 @@ $designWidth: 375;
           margin-bottom: rem(1);
           p {
             background: url('../../images/numberimg/phone.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(18) auto;
             font-size: rem(14);
             color: #ffdc99;
             padding-left: rem(35);
@@ -940,37 +941,37 @@ $designWidth: 375;
         li:nth-child(2) {
           p {
             background: url('../../images/numberimg/liwu2.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(18) auto;
           }
         }
         li:nth-child(3) {
           p {
             background: url('../../images/numberimg/liwu3.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(18) auto;
           }
         }
         li:nth-child(4) {
           p {
             background: url('../../images/numberimg/liwu4.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(18) auto;
           }
         }
         li:nth-child(5) {
           p {
             background: url('../../images/numberimg/liwu5.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(18) auto;
           }
         }
         li:nth-child(6) {
           p {
             background: url('../../images/numberimg/liwu8.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(18) auto;
           }
         }
         li:nth-child(7) {
           p {
             background: url('../../images/numberimg/liwu6.png') rem(8) center no-repeat;
-            background-size: rem(20) auto;
+            background-size: rem(18) auto;
           }
         }
         li:nth-child(8) {
