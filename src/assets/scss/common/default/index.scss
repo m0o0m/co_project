@@ -2,7 +2,7 @@
 @import "../../rem";
 
 $designWidth: 375;
-div {
+div,select,li,ul,section,article {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
