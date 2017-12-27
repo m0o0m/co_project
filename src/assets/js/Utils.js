@@ -250,7 +250,6 @@ export default {
      console.groupEnd();
 
      that.closeLoading(self);
-
      console.log(JSON.parse(JSON.stringify(response.data.data)));
      switch (response.data.code) {
      case 0:

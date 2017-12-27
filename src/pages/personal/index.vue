@@ -26,10 +26,10 @@
               <section @click="toCash()">
                 <a class="aisa" href="javascript:void(0)"><p>快捷提现</p></a>
               </section>
-              <section>
-                <router-link :to="{name: 'assetsDetail'}" >
+              <section @click="detailedCash()">
+                <!--<router-link :to="{name: 'assetsDetail'}" >-->
                   <a class="aisa" href="javascript:void(0)"><p>资金明细</p></a>
-                </router-link>
+                <!--</router-link>-->
               </section>
             </div>
           </div>
@@ -170,6 +170,15 @@
           name: 'phoneManagement',
           query: {phone: this.result.phone, fullPath: this.$route.fullPath, type: 5}
         });
+      },
+
+	    detailedCash(){
+		    let that = this;
+		    if (that.userInfo.is_test_player) {
+			    that._Util.showAlert(that, {content: '试玩账号无法使用此功能'});
+			    return;
+		    }
+		    that.$router.push({name: 'assetsDetail'});
       },
       
       toCash() {
@@ -396,7 +405,7 @@
 		    return ndata;
 	    }
     },
-    
+
     components: {
       HomeFoter: HomeFooter
     },

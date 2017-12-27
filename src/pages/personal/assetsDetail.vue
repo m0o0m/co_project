@@ -69,7 +69,7 @@
         numIndex: 0,
         showTypeItems: [
           {type: 0, name: '全部'},
-          {type: 5, name: '返点'},
+          {type: 5, name: '返水'},
           {type: 4, name: '中奖'},
           {type: 34, name: '返款'},
           {type: 3, name: '投注'},
