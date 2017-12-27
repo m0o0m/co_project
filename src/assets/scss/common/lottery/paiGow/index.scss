@@ -8,7 +8,6 @@ $designWidth: 375;
 .paiGowBody {
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
   background: #95221d;
   padding: rem(125) rem(15) rem(116);
   box-sizing: border-box;
@@ -16,10 +15,11 @@ $designWidth: 375;
   .paiGowMianHxpj {
     width: 100%;
     height:100%;
+    overflow-y: scroll;
     background: url('../../../../images/paiGow/bck/bg04.png')  center no-repeat;
     .paiGowMianHxpjBody {
       padding-bottom: rem(10);
-      height:100%;
+      //height:100%;
       .paiGowMunPaiGowList {
          .paiGowMun {
             li {

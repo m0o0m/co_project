@@ -4,7 +4,7 @@
         <div class="paiGowMianHxpjBody">
           <div class=" paiGowMunPaiGowList " v-for="(Colorful,item_index) in deafNum" v-if="lotteryOffsColorID != 137">
             <div class="paiGowMun paiGowMunPaiGow " >
-              <ul>
+              <ul class="clearfix">
                 <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
                   <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)"
                            :class="{'on':play.active}"
