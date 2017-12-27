@@ -19,7 +19,8 @@ $designWidth: 375;
     background: url('../../../../images/paiGow/bck/bg04.png')  center no-repeat;
     .paiGowMianHxpjBody {
       padding-bottom: rem(10);
-      //height:100%;
+      height:100%;
+      overflow: visible;
       .paiGowMunPaiGowList {
          .paiGowMun {
             li {
@@ -91,7 +92,7 @@ $designWidth: 375;
       position: relative;
       text-align: center;
       section.paiGowMunFirstSection {
-        width: rem(84); height: rem(100); background: rgba(0,0,0,0.5); display: inline-block;
+        width: rem(84); height: rem(100); background: none; display: inline-block;
         margin-top:rem(15);
       }
       section:nth-child(2) {
