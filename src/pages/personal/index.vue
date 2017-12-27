@@ -117,7 +117,7 @@
         isHasNews:false,
         feedback_time:0,
 	      headImg: require('../../assets/images/numberimg/tou.png'),
-	      userInfo: this._Util.getStorage('userInfo', true),
+	      userInfo: this._Util.getUserInfo(),
 	      showAgent:0
       }
     },
