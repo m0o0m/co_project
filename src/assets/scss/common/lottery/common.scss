@@ -425,9 +425,10 @@ $designWidth: 375;
 /*footer*/
 .westernFooter {
   height: rem(106);
-  background: url('../../../images/footerBack.jpg') left bottom no-repeat;
+  background: #000 url('../../../images/footerBack.jpg') left bottom no-repeat;
   background-size: 100% auto;
   border: 1px solid rgba(255,255,255,0.3);
+
 }
 
 .westernFooter {
@@ -897,6 +898,7 @@ $designWidth: 375;
 
 .westernFooter.positionFixed {
   z-index: 4;
+  bottom: rem(-1);
 }
 
 .confirmPage.jskConfirmBack {
