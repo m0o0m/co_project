@@ -65,9 +65,7 @@
 </template>
 
 <script type="text/babel">
-//  import '../../../assets/scss/western.scss';
-//  import '../../../assets/scss/pcddpage.scss';
-
+  import '../../../assets/scss/common/lottery/western/index.scss';
   import $ from 'jquery'
   import HeaderWestern from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'

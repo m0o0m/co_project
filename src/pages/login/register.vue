@@ -57,8 +57,7 @@
   </div>
 </template>
 <script>
-  // import '../../assets/scss/register.scss';
-  
+	import '../../assets/scss/login/login.scss';
   export default {
     data() {
       return {

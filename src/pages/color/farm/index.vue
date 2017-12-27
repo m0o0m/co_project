@@ -77,9 +77,7 @@
 
 <script type="text/babel">
   import imgJson from './img.json';
-
-//  import '../../../assets/scss/paiGow.scss'
-//  import '../../../assets/scss/farm.scss'
+ import '../../../assets/scss/common/lottery/farm/index.scss'
 
   import Headered from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'

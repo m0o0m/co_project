@@ -8,34 +8,17 @@
 
 <script type="text/babel">
 	import './assets/css/style.css'
-	// import './assets/css/main.css'
-	// import './assets/scss/pcddpage.scss'
-	// import './assets/css/Popup.css'
-	// import './assets/font/iconfont.css';
-
 	import './assets/scss/common/default/index.scss'
+  /*充值中心*/
 	import './assets/scss/rechargeCenter/index.scss'
 	import './assets/scss/personal/index.scss'
-  
   /*规则*/
   import './assets/scss/rules/index.scss'
   /*开奖大厅*/
   import './assets/scss/common/theLottery/index.scss'
-  /*登录*/
-	import './assets/scss/login/login.scss'
 	/*投注记录*/
   import './assets/scss/common/betting/index.scss'
-  /*棋牌彩种*/
-  import './assets/scss/common/lottery/index.scss'
-	/*农场*/
-	import './assets/scss/common/lottery/farm/index.scss'
-	/*西部番摊*/
-	import './assets/scss/common/lottery/western/index.scss'
-  /*牌九*/
-	import './assets/scss/common/lottery/paiGow/index.scss'
- /*麻将*/
-	import './assets/scss/common/lottery/royal/index.scss'
-
+	import './assets/scss/common/lottery/common.scss'
 	require('./assets/js/jquery.fly.min');
 
 	export default {

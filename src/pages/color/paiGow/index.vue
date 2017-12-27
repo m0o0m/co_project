@@ -68,7 +68,7 @@
 </template>
 
 <script type="text/babel">
-//  import '../../../assets/scss/paiGow.scss';
+ import '../../../assets/scss/common/lottery/paiGow/index.scss';
 
   import Headered from '../../../components/header.vue'
   import Footered from '../../../components/footer.vue'

@@ -64,7 +64,7 @@
   </div>
 </template>
 <script>
-	// import '../../assets/scss/personal.scss';
+	import '../../assets/scss/login/login.scss';
 	import MD5 from '../../assets/js/ciphertext'
 	//  import captcha from '../../components/captcha';
 	export default {
