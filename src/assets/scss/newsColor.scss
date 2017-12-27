@@ -29,14 +29,18 @@ $designWidth: 375;
   overflow: hidden;
 }
 
-.ColorLottery_mianTop ,.ColorLottery_mian ,.ColorLottery_mianBottom {
-  float: left;
-  width: 100%;
-}
+//.ColorLottery_mianTop ,.ColorLottery_mian ,.ColorLottery_mianBottom {
+//  float: left;
+//  width: 100%;
+//}
 .ColorLottery_mian {
   margin: 0; background: url('../images/theColor/Group2xContent.png') top center repeat-y; background-size: 100% auto;
   height: 100%;
   overflow-y: scroll;
+}
+
+.ColorLottery_mian.ColorLottery_mian24 {
+  height: 85%;
 }
 
 .DeliveryAmout {
