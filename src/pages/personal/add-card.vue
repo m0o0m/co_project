@@ -1,33 +1,32 @@
 <template>
-  <div class="managMementCls">
-    <div class="per">
-      <ul class="per_leftd">
-        <li @click="$router.go(-1);"><a href="javascript: void(0);"></a></li>
-        <li><p style="color:#FFDC99 ">银行卡管理</p></li>
-      </ul>
+  <div class="addCard">
+    <div class="commonNavBar positionFixed">
+      <div class="backPassTitle"><p>银行卡管理</p></div>
+      <div class="loginIcon arrowLeft flt" @click="$router.go(-1)"><a href="javascript:void(0)"></a></div>
     </div>
-    <div class="per_pass2 add">
-      <div class="monum">
-        <p>真实姓名</p>
-        <p><input type="text" v-model="real_name" placeholder="请输入您的真实姓名"></p>
+    <div class="addCardContent">
+      <div class="addCardContentBox">
+        <div class="loginLi displayFlex">
+          <p>真实姓名</p>
+          <p><input type="text" v-model="real_name" placeholder="请输入您的真实姓名"></p>
+        </div>
+        <div class="weChatLi displayFlex remind" id="monum">
+          <p></p>
+          <p id="remind">为了您的提现资产安全，请填写真实姓名</p>
+        </div>
+        <div class="loginLi displayFlex">
+          <p>银行卡号</p>
+          <p><input type="number" v-model="card_number" placeholder="请输入银行卡号" pattern="^[0-9]*$"></p>
+        </div>
+        <div class="loginLi displayFlex">
+          <p>选择银行</p>
+          <p @click="show = true" class="selectBank">
+            <input type="text" v-model="bank.name" disabled>
+            <i class="commonArrows commonArrowsRight"></i>
+          </p>
+        </div>
+        <div @click="save()" class="loginHostBtn finshBtn"><a href="javascript:void(0);">确定添加</a></div>
       </div>
-      <div class="monum " id="monum">
-        <p class="blank"></p>
-        <p id="remind">为了您的提现资产安全，请填写真实姓名</p>
-      </div>
-      <div class="monum">
-        <p>银行卡号</p>
-        <p><input type="number" v-model="card_number" placeholder="请输入银行卡号" pattern="^[0-9]*$"></p>
-      </div>
-      <div class="monum">
-        <p>选择银行</p>
-        <p @click="show = true" style=" position: relative;">
-          <input type="text" v-model="bank.name" disabled>
-          <span id="istoright"></span>
-        </p>
-      </div>
-      <div @click="save()" class="loginBtn">确定添加</div>
-
     </div>
 
     <BankChange v-if="result.length" :show="show" :items="result"></BankChange>
