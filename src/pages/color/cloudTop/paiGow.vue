@@ -1,6 +1,6 @@
 <template>
   <div class="cloudGold">
-    <div class="cloudGoldGow">
+    <div class="cloudGoldGowTwo">
       <div class="showHandMargin">
         <!---->
         <div class="cloudTopNav" v-if="lotteryOffsColorID == 342">
@@ -221,10 +221,11 @@
         _this.notifySelectedCount();
         
         setTimeout(function () {
-          
           if (_this.lotteryOffsColorID == 348) {
             _this._Util.chip(_this, e, $('.tigerShowHand:eq(' + item_index + ')  ul li:eq(' + index + ')'));
           } else {
+          	console.log('item_index',item_index);
+          	console.log('index',index)
             _this._Util.chip(_this, e, $('.cloudGoldGow:eq(' + item_index + ') .cloudGoldList  ul li:eq(' + index + ')'));
           }
         }, 10);

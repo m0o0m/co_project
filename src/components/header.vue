@@ -27,10 +27,7 @@
               <section class="theLotteryRoulette" v-if="creditId === 1 || creditId === 2">
                 <div class="theLotteryColor">
                   <article class="theLotteryArticle nameArt04">
-                    <p class=""><span>2</span></p>
-                    <p class=""><span>6</span></p>
-                    <p class=""><span>2</span></p>
-                    <p class="green"><span>10</span></p>
+                    <p v-for="(action,action_index) in actionDataCopy" :class="{'red':actionResultCopy.end_color=='red' && action_index >= 3,'green':actionResultCopy.end_color=='green' && action_index >= 3,'blue':actionResultCopy.end_color=='blue' && action_index >= 3,'gray':actionResultCopy.end_color=='gray' && action_index >= 3}"><span>{{action}}</span></p>
                   </article>
                 </div>
               </section>
