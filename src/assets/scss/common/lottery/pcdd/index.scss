@@ -4,7 +4,7 @@
 $designWidth: 375;
 /*pc蛋蛋*/
 .veryPc {
-  background: #f9e7a8;
+  background: #df1b24;
   height: 100%;
   overflow-y: scroll;
 }
@@ -212,35 +212,35 @@ $designWidth: 375;
 }
 
 .outerFrame {
-  border-left: rem(3) solid #39CFFF;
-  border-top: rem(3) solid #39CFFF;
+  border-left: rem(4) solid #39CFFF;
+  border-top: rem(4) solid #39CFFF;
   position: absolute;
-  top: rem(-1.5);
-  left: rem(-1.5);
+  top: rem(-2);
+  left: rem(-2);
 }
 
 .outerFrameRight {
   position: absolute;
-  top: rem(-1.5);
-  right: rem(-1.5);
-  border-right: rem(3) solid #39CFFF;
-  border-top: rem(3) solid #39CFFF;
+  top: rem(-2);
+  right: rem(-2);
+  border-right: rem(4) solid #39CFFF;
+  border-top: rem(4) solid #39CFFF;
 }
 
 .outerFrameBottomLeft {
   position: absolute;
-  bottom: rem(-1.5);
-  left: rem(-1.5);
-  border-left: rem(3) solid #39CFFF;
-  border-bottom: rem(3) solid #39CFFF;
+  bottom: rem(-2);
+  left: rem(-2);
+  border-left: rem(4) solid #39CFFF;
+  border-bottom: rem(4) solid #39CFFF;
 }
 
 .outerFrameBottomRight {
   position: absolute;
-  bottom: rem(-1.5);
-  right: rem(-1.5);
-  border-right: rem(3) solid #39CFFF;
-  border-bottom: rem(3) solid #39CFFF;
+  bottom: rem(-2);
+  right: rem(-2);
+  border-right: rem(4) solid #39CFFF;
+  border-bottom: rem(4) solid #39CFFF;
 }
 
 .smallFrame, .smallFrameRight, .smallFrameBottomLeft, .smallFrameBottomRight {
@@ -451,8 +451,8 @@ $designWidth: 375;
           line-height: rem(22);
           margin-right: rem(8);
         }
-        .playArticleTitle{
-          margin-bottom:rem(4);
+        .playArticleTitle {
+          margin-bottom: rem(4);
         }
       }
     }
@@ -485,38 +485,46 @@ $designWidth: 375;
         width: 33.3%;
         height: rem(76);
         padding: rem(10);
-        .playArticleTitle{
+        .playArticleTitle {
           height: rem(36);
         }
         &:first-child {
           width: 100%;
-          height: 100%;
+          height: rem(65);
+          position: relative;
           p {
             float: left;
             &:last-child {
               line-height: rem(48);
             }
           }
+          .tit-t2 {
+            position: absolute;
+            top: 50%;
+            right: rem(20);
+            width: 60%;
+            transform: translateY(-50%);
+          }
         }
       }
     }
   }
-  &:nth-child(2){
-     .tt-p1, .tt-p3 {
-       float: left;
-     }
-   }
+  &:nth-child(2) {
+    .tt-p1, .tt-p3 {
+      float: left;
+    }
+  }
   &:nth-child(3),
-  &:nth-child(4){
+  &:nth-child(4) {
     float: left;
     width: 49%;
-    height:rem(76);
-    .sizeDicePlay{
-      li{
+    height: rem(76);
+    .sizeDicePlay {
+      li {
         width: 100%;
         height: 100%;
         border: none;
-        .playArticleTitle{
+        .playArticleTitle {
           height: rem(36);
         }
         &:first-child {
@@ -532,7 +540,7 @@ $designWidth: 375;
       }
     }
   }
-  &:nth-last-child(2){
-    margin-right:rem(6);
+  &:nth-last-child(2) {
+    margin-right: rem(6);
   }
 }
