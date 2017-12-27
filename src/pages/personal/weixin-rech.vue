@@ -188,6 +188,10 @@
         }
         
         that._Util.post(that, that._Api.POST_PAY_QRCODE, params, (data) => {
+          if(data.pay_url){
+            location.href = data.pay_url;
+            return false;
+          }
           that.showCode = true;
           data.code_img_url = data.qrcode ? data.qrcode : data.code_img_url;
           that.channelPayResult = data;
