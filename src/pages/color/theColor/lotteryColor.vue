@@ -2,7 +2,7 @@
     <div class="ColorLotteryMuned">
         <div class="colorLotteryMarginOne">
           <div class="ColorLottery_mianTop"><img :src="ColorImgTop"/></div>
-          <div class="ColorLottery_mian">
+          <div class="ColorLottery_mian ColorLottery_mian24">
             <div class="ColorLottery_mcontent" v-for="(lotData,index) in deafNum">
               <div class="ColorLottery_mcTitle"><p>{{lotData.name}}</p></div>
               <div class="ColorLottery_mslist ColorLottery_mian15">
