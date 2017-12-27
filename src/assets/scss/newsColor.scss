@@ -21,7 +21,7 @@ $designWidth: 375;
 .colorLotteryMarginOne {
   height: 100%;
   overflow: hidden;
-  padding: rem(123) rem(5) rem(120) rem(5);
+  padding: rem(122) rem(5) rem(120) rem(5);
 }
 
 .ColorLottery_mian, .ColorLottery_mcontent {
@@ -33,6 +33,9 @@ $designWidth: 375;
 //  float: left;
 //  width: 100%;
 //}
+.ColorLottery_mianBottom {
+  margin-top: rem(-1);
+}
 .ColorLottery_mian {
   margin: 0; background: url('../images/theColor/Group2xContent.png') top center repeat-y; background-size: 100% auto;
   height: 100%;
@@ -40,6 +43,7 @@ $designWidth: 375;
 }
 
 .ColorLottery_mian.ColorLottery_mian24 {
+  margin-top: rem(-1);
   height: 85%;
 }
 
@@ -500,7 +504,7 @@ $designWidth: 375;
             position: absolute;
             bottom: rem(3);
             right: rem(3);
-            //opacity: 0;
+            opacity: 0;
           }
           .playMarryImg.zodiaoClss {
             width: rem(22);
