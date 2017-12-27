@@ -81,7 +81,7 @@ $designWidth: 375;
     .playMarryImg {
       width: rem(24);
       position: absolute;
-      top: 0;
+      top: 0.1rem;
       right: rem(5);
     }
     p {
@@ -107,6 +107,7 @@ $designWidth: 375;
     }
     span.smarrySpan.visibleAmount, span.pkCattleSpan.visibleAmount {
       color: #fff;
+      padding-top:rem(10);
     }
   }
   .playMarryImg {
@@ -365,19 +366,21 @@ $designWidth: 375;
   .shArticle {
     p {
       float: left;
+      padding-bottom: rem(2);
     }
     .pkCattleSpan {
       color: #162958;
     }
     .pkCattleSpan.visibleAmount {
       color: #fff;
+
     }
   }
   p.playMarryImg {
     width: rem(22);
     height: rem(22);
     position: absolute;
-    bottom: rem(5);
+    bottom: rem(15);
     right: rem(5);
   }
 }
