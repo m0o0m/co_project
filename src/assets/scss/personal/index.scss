@@ -856,22 +856,25 @@ $designWidth: 375;
         flex: 1;
         text-align: center;
         margin-bottom: rem(10);
-        a.aisa {
-          font-family: PingFangSC-Medium;
-          margin: rem(0) rem(5);
-          display: block;
-          height: rem(44);
-          line-height: rem(44);
-          text-align: center;
-          font-size: rem(14);
-          color: #65431D;
-          //background: #E4D7B5;
-          background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
-          background: linear-gradient(top, #DDC09C, #D0A979);
-          border-radius: rem(4);
-          -webkit-border-radius: rem(4)
-        }
+        //a.aisa {
+        //  font-family: PingFangSC-Medium;
+        //  margin: rem(0) rem(5);
+        //  display: block;
+        //  height: rem(44);
+        //  line-height: rem(44);
+        //  text-align: center;
+        //  font-size: rem(14);
+        //  color: #65431D;
+        //  //background: #E4D7B5;
+        //  background: -webkit-linear-gradient(top, #DDC09C, #D0A979);
+        //  background: linear-gradient(top, #DDC09C, #D0A979);
+        //  border-radius: rem(4);
+        //  -webkit-border-radius: rem(4)
+        //}
         a {
+          display: inline-block;
+          width: 90%;
+          margin: 0;
           p {
             background: url('../../images/numberimg/ti-l.png') left center no-repeat;
             background-size: rem(22) auto;

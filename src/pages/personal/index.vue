@@ -24,11 +24,11 @@
             </div>
             <div class="personalList">
               <section @click="toCash()">
-                <a class="aisa" href="javascript:void(0)"><p>快捷提现</p></a>
+                <a  class="loginHostBtn" href="javascript:void(0)"><p>快捷提现</p></a>
               </section>
               <section @click="detailedCash()">
                 <!--<router-link :to="{name: 'assetsDetail'}" >-->
-                  <a class="aisa" href="javascript:void(0)"><p>资金明细</p></a>
+                  <a  class="loginHostBtn" href="javascript:void(0)"><p>资金明细</p></a>
                 <!--</router-link>-->
               </section>
             </div>
