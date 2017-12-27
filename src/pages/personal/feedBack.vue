@@ -7,7 +7,7 @@
     </div>
     <div class="feedBackContent">
       <div class="OpinionFeedback">
-        <p><textarea  name="a" v-model="feedStr" maxlength="1000" placeholder="最少输入20个字符"></textarea></p>
+        <p><textarea  name="a" v-model="feedStr" maxlength="1000" ></textarea></p>
       </div>
       <div @click="save()" class="loginHostBtn submitBtn"><a href="javascript: void(0);">提交</a></div>
     </div>
