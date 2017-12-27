@@ -167,7 +167,11 @@ img {
   background-size: rem(15) auto;
   padding-right: rem(12);
 }
-
+.jltz.commonArrowsBottom {
+  background: url('../../../images/arrowBottom.png') right center no-repeat;
+  background-size: rem(30) auto;
+  padding-right: rem(30);
+}
 .lotteryArrowsBottom {
   background: url('../../../images/lotteryHeaderTop.png') right center no-repeat;
   background-size: rem(20) auto;
