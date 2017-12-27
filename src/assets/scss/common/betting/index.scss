@@ -358,6 +358,7 @@ $designWidth: 375;
 
 .theLotteryList.BackTransparent {
   background: transparent;
+  padding-bottom: rem(60);
 }
 
 .commonArrowsBottom.displayInline {
@@ -433,4 +434,25 @@ $designWidth: 375;
   position: absolute;
   top: 0;
   display: none;
+}
+
+/*撤单*/
+.bettingScss {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  p {
+    width: 100%;
+    height: rem(46);
+    line-height: rem(46);
+    background-image: linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+    background-image: -webkit-linear-gradient(left, #F0DDAE 0%, #DCB976 100%);
+    text-align: center;
+    font-size: rem(14);
+    a {
+      color: #2F2122;
+      display: block;
+    }
+  }
 }

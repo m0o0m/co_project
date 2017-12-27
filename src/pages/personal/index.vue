@@ -291,7 +291,7 @@
 		    function upload(photo) {
 			    let frmData = new FormData();
 			    frmData.append('photo', photo);
-			      frmData.append('bind_account', 1);
+			      // frmData.append('bind_account', 1);
 			    console.log(photo.size / 1024);
 			    that._Util.openLoading(that);
 			    $.ajax({
