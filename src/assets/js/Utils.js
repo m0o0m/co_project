@@ -8,7 +8,7 @@ export default {
 
 	getUserInfo() {
   	let userInfo = this.getStorage('userInfo', true);
-		return userInfo ? userInfo.userInfo : {};
+		return userInfo ? (userInfo.userInfo || {}) : {};
 	},
   
   init() {
