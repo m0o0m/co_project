@@ -93,6 +93,7 @@ $designWidth: 375;
   padding: 0 rem(15);
   ul {
     li {
+      margin-bottom: rem(2);
       background: linear-gradient(top, rgba(35, 23, 40, 0.5), rgba(18, 14, 21, 0.9));
       background: -webkit-linear-gradient(top, rgba(35, 23, 40, 0.2), rgba(18, 14, 21, 0.3));
       //background: rgba(0, 0, 0, .3);
@@ -106,7 +107,7 @@ $designWidth: 375;
       border-bottom: 1px solid rgba(232, 207, 157, 0.05);
       a {
         display: block;
-        padding: rem(5) rem(10);
+        padding: rem(5) rem(15);
         span {
           font-family: arial;
         }
@@ -243,6 +244,22 @@ $designWidth: 375;
   color: #FFDC99;
   line-height: rem(24);
   text-align: right;
+  p:first-child {
+    font-size: rem(16);
+    font-weight: 500;
+  }
+  P:nth-child(2) {
+    font-size: rem(12);
+    color: #fff;
+    &.winCls strong {
+      background: #FFDC99;
+      color: #000;
+      border-radius: rem(2);
+      padding: 0 rem(2);
+      margin-right: rem(4);
+      font-weight: 500;
+    }
+  }
 }
 
 .bettingRecordList p {
@@ -253,17 +270,40 @@ $designWidth: 375;
 .bettingRecordList section:nth-child(2) p {
   float: left;
   color: #FFDC99;
+  height: rem(24);
   line-height: rem(24);
 }
 
 .bettingRecordList section:nth-child(2) p:nth-child(2) {
   font-size: rem(10);
-  line-height: rem(24);
+  line-height: rem(26);
   margin-left: rem(10);
 }
 
-.bettingRecordList section:nth-child(3) p {
+.bettingRecordList section:nth-child(3) {
+  padding-bottom: rem(10);
+}
+
+.bettingVod .bettingRecordList section:nth-child(3) p {
   float: left;
+  font-size: rem(12);
+  .spanArial {
+    &:first-child {
+      margin: 0 rem(5);
+    }
+    &:nth-child(3) {
+      margin-left: rem(10);
+    }
+    &:nth-child(4) {
+      font-size: rem(10);
+      margin-left:rem(10);
+      opacity:0.8;
+    }
+  }
+}
+
+.bettingRecordList section:nth-child(3) p:nth-child(3) {
+  line-height: rem(16);
 }
 
 .bettingRecordList section:nth-child(3) p:nth-child(2) {
@@ -276,6 +316,7 @@ $designWidth: 375;
 
 .bettingRecordList section:last-child p {
   font-size: rem(10);
+  margin-top: rem(4);
 }
 
 /*投注详情*/

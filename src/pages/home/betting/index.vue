@@ -36,13 +36,7 @@
                   <p>第<span>{{betR.action_no}}</span>期</p>
                 </section>
                 <section>
-                  <p>{{betR.played_name}}</p>
-                  <p v-if="betR.action_data" class="spanArial">-</p>
-                  <p class="spanArial">{{betR.action_data}}</p>
-                  <p class="spanArial">{{betR.odds}}</p>
-                </section>
-                <section>
-                  <p><span>{{betR.action_time}}</span></p>
+                  <p>{{betR.played_name}}<span v-if="betR.action_data" class="spanArial">-</span><span class="spanArial">{{betR.action_data}}</span><span class="spanArial">赔率：{{betR.odds}}</span><span class="spanArial">{{betR.action_time}}</span></p>
                 </section>
               </a>
               <!--</router-link>-->
