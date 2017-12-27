@@ -499,7 +499,7 @@ $designWidth: 375;
             position: absolute;
             bottom: rem(3);
             right: rem(3);
-            opacity: 0;
+            //opacity: 0;
           }
           .playMarryImg.zodiaoClss {
             width: rem(22);
@@ -507,6 +507,9 @@ $designWidth: 375;
             position: absolute;
             bottom: rem(3);
             left: rem(103);
+          }
+          p.playMarryImg.playMarryImgVisible {
+            opacity: 1;
           }
           p.Colorsection {
             display: inline-block;
@@ -521,9 +524,7 @@ $designWidth: 375;
             top: rem(3);
             right: rem(3);
           }
-          p.playMarryImg.playMarryImgVisible {
-            opacity: 1;
-          }
+
 
         }
         .ColorLot_Colorsection {
