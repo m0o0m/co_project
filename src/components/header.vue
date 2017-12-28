@@ -14,8 +14,8 @@
           <div class="DeliveryPrice displayFlex">
             <div>
               <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-                <section><p>已投：￥<span v-html="totalMoney || 0"></span></p></section>
-                <section class="balanceAmount"><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
+                <section><p>已投：<span v-html="totalMoney || 0"></span></p></section>
+                <section class="balanceAmount"><p>余额:￥<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
                 </p></section>
               </div>
               <div class="DeliveryLotteryImg"><img :src="icon"/></div>
