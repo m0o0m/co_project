@@ -44,7 +44,8 @@
             <p>是否中奖</p>
             <p>
               <span v-if="resultList.is_win == 1">是</span>
-              <span v-if="resultList.is_win == 0">否</span>
+              <span v-if="resultList.is_win == 0 && resultList.status_text != '未开奖' ">否</span>
+              <span v-if="resultList.is_win == 0 && resultList.status_text == '未开奖' ">未开奖</span>
             </p>
           </section>
           <section class="displayFlex">
