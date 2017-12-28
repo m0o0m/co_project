@@ -14,8 +14,8 @@
           <div class="DeliveryPrice displayFlex">
             <div>
               <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-                <section><p>已投：￥<span v-html="totalMoney || 0"></span></p></section>
-                <section class="balanceAmount"><p>余额:<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
+                <section><p>已投：<span v-html="totalMoney || 0"></span></p></section>
+                <section class="balanceAmount"><p>余:￥<span>{{balanceAmount < 0 ? 0 : balanceAmount == '' ? 0 : balanceAmount}}</span>
                 </p></section>
               </div>
               <div class="DeliveryLotteryImg"><img :src="icon"/></div>
@@ -461,7 +461,7 @@
 				console.log('this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no)',this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no))
 				console.log('this.creditId',this.creditId);
 				console.log('this.classAdata.next_action_no',this.classAdata.next_action_no)
-				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice).toFixed(2);
+				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice);
 				this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
 			},
 
