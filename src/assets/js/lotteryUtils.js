@@ -51,7 +51,7 @@ export default {
 	  // }else{
 		 //  return !stopBet ? (amount ? '￥' + amount : '') : '封盘';
 	  // }
-	  return !stopBet && (status === -1 || status === 0 || status === 1) ? (amount ? '￥' + amount : '') : '封盘';
+	  return !stopBet && (status == -1 || status == 0 || status == 1) ? (amount ? '￥' + amount : '') : '封盘';
   },
 
   getHistoryBetMoney(self, id, actionNo) {
