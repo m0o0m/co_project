@@ -59,6 +59,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: #fff;
+		z-index: 99999 !important;
 	}
 
 	.mint-popup-3 .mint-button {
