@@ -6,7 +6,7 @@
           <div class="ColorLottery_mcontent pcdd_bjpk_mun" v-for="(lotData,index) in deafNum">
             <div class="ColorLottery_mcTitle ColorLottery_mcTitle23" v-if="lotteryOffsColorID != '179'"><p>{{lotData.name}}</p></div>
             <div class="ColorLottery_mslist ColorLottery_mslist23 pcdd_mun_list_bjpk10">
-              <ul :class="{'ColorLotCs': lotteryOffsColorID == '190'}" v-if="lotteryOffsColorID != '179'">
+              <ul :class="{'ColorLotCs': lotteryOffsColorID == '190'}" v-if="lotteryOffsColorID == '167' || lotteryOffsColorID == '173' || lotteryOffsColorID == '190' || lotteryOffsColorID == '192' ">
                 <li v-for="(lData,lData_index) in lotData.played">
                   <article @click="playchecked($event, lData, lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)"
                            class="ColorLot_article ColorLot_article23">
