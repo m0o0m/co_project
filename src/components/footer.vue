@@ -13,8 +13,7 @@
         <section>
           <a href="javascript:void(0)" @click="resetData(true)">清桌</a>
         </section>
-        <section><a href="javascript:void(0)" @click="onConfirmBtnClicked">{{$parent.classAdata.status === 0 ||
-          $parent.classAdata.status === -1 ? '暂停销售' : '立即投注'}}</a></section>
+        <section><a href="javascript:void(0)" @click="onConfirmBtnClicked">{{immediateBetting}}</a></section>
       </article>
     </div>
   </div>
@@ -85,7 +84,8 @@
 		},
 		mounted() {
 			//this.initSlider();
-			this.immediateBetting = parseInt(this.$parent.whetherNumber) === 0 || parseInt(this.$parent.whetherNumber) === -1 ? '暂停销售' : '立即投注';
+      console.log("whetherNumber:------",parseInt(this.$parent.whetherNumber));
+      this.immediateBetting = parseInt(this.$parent.whetherNumber) === 0 || parseInt(this.$parent.whetherNumber) === -1 ? '暂停销售' : '立即投注';
 			console.log("this.$parent.whetherNumber:", this.$parent.whetherNumber);
 			console.log("this.immediateBetting:", parseInt(this.$parent.whetherNumber) === 0 || parseInt(this.$parent.whetherNumber) === -1);
 			this.whetherNumberfooter = this.whetherNumber;
