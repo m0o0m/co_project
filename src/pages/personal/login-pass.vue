@@ -51,7 +51,7 @@
         let that = this;
         let reg = /^[0-9a-zA-z]{6,12}$/;
         if (!reg.test(that.old_password) || !reg.test(that.old_password)) {
-          that._Util.showAlert(that, {content: '[密码]请输入6～12位数字及字母'});
+          that._Util.showAlert(that, {content: '原密码不能为空'});
           return;
         }
         if (!that.old_password) {
