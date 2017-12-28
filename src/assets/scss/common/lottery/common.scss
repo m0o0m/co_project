@@ -811,7 +811,7 @@ $designWidth: 375;
   float: right;
   padding-bottom: rem(5);
   p:last-child {
-    margin-left:rem(15);
+    margin-left: rem(15);
     span.zodiacAnimal:before {
       content: '';
       width: rem(0);
@@ -822,7 +822,7 @@ $designWidth: 375;
       font-size: 1.2rem;
     }
   }
-  p:last-child :before{
+  p:last-child :before {
     content: '+';
     width: rem(23);
     height: rem(23);
@@ -989,6 +989,7 @@ $designWidth: 375;
         flex: 1;
         position: relative;
         width: 60%;
+        padding-right: rem(10);
       }
     }
   }
@@ -1000,7 +1001,7 @@ $designWidth: 375;
   overflow: visible;
   position: relative;
   p {
-    width: 98%;
+    width: 100%;
     height: rem(8);
     background: #ffffff;
     position: relative;

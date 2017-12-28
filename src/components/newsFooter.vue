@@ -141,12 +141,12 @@
       }
     },
     mounted() {
-      //this.initSlider();
+      this.initSlider();
       this.immediateBetting = parseInt(this.$parent.whetherNumber) === 0 || parseInt(this.$parent.whetherNumber) === -1 ? '暂停销售' : '立即投注';
         if(parseInt(this.creditId) === 3 || parseInt(this.creditId) === 12) {
             var _this = this;
             setTimeout(function () {
-                //_this.initSlider();
+                _this.initSlider();
             }, 200);
         }
       this.whetherNumberfooter = this.whetherNumber;
@@ -157,22 +157,22 @@
         let that = this;
         let fun = () => {
           this.sliderValue = 0;
-       // this.dragMan_maxline = null;
-       //  if(this.creditId === 3 || this.creditId === 12){
-       //      this.dragMan_minline.style.left = '0px';
-       //      this.dragMan_redLine.style.width = '0px';
-       //  }
-       // this.dragMan_redLine = null;
-       // this.liu_codeMun_lodds = null;
-       // this.liu_codeMun_lodds_span = null;
-       // this.draging = false;
-       // this.dragMan_minline_width = 20;
-       // this.dragminLeft = 0;
-       // this.offsetWidth = 0;
+        this.dragMan_maxline = null;
+         if(this.creditId === 3 || this.creditId === 12){
+             this.dragMan_minline.style.left = '0px';
+             this.dragMan_redLine.style.width = '0px';
+         }
+        /*this.dragMan_redLine = null;
+        this.liu_codeMun_lodds = null;
+        this.liu_codeMun_lodds_span = null;
+        this.draging = false;
+        this.dragMan_minline_width = 20;
+        this.dragminLeft = 0;
+        this.offsetWidth = 0;*/
 
           this.bonus = 0;
           this.multiple = ''; // 官方玩法：倍数   信用玩法：金额
-          //this.resetSlider();
+//          this.resetSlider();
           this.marryImgId = 2;
           this.$parent.$emit('resetData', true);
           that.$parent.$refs.headerRef.getHistoryBet();
