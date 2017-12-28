@@ -281,6 +281,7 @@
             that.totalMoney += (o.amount || 0);
           }
         }
+
         
         that.$parent.$refs.headerRef.getHistoryBetMoney(that.totalMoney);
       }
