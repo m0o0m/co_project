@@ -36,8 +36,8 @@
                     <p :class="{'amount':lData.amount > 0 || $parent.stopBet ,'Colorsection': lotteryOffsColorID == '293' }">
                       {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
                     </p>
-                    <p class="playMarryImg imggs "
-                       :class="{'zodiaoClss':lotteryOffsColorID == '289' || lotteryOffsColorID == '291' || lotteryOffsColorID == '295','zodiaoCls05s':lotteryOffsColorID == '293'}"
+                    <p class="playMarryImg imggs lists "
+                       :class="{ 'zodiaoClss':lotteryOffsColorID == '289' || lotteryOffsColorID == '291' || lotteryOffsColorID == '295','playMarryImgVisible':lData.amount,'zodiaoCls05s':lotteryOffsColorID == '293'}"
                        v-if="lData.active && !$parent.stopBet">
                       <img v-if="!lData.active" src="../../../assets/images/small01.png"/>
                       <img v-if="lData.active"
@@ -417,7 +417,7 @@
 				for (let i = 0, v; v = this.selectedBalls[i++];) {
 					v.cur_odds = this.computeOdds(v);
 				}
-			}
+			},
 		}
 	}
 </script>
