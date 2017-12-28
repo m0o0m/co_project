@@ -103,7 +103,7 @@
     mounted() {
       this.init();
       window.addEventListener('resize', this.handleResize);
-      this._Util.setCss('.rebateContent',{"height": 1},"*");
+//      this._Util.setCss('.rebateContent',{"height": 1},"*");
 //      this._Util.setCss('.perRebate',{"height": 1},"*");
     },
     beforeDestroy() {

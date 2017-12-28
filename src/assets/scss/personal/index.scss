@@ -565,9 +565,12 @@ $designWidth: 375;
 /*开户返佣*/
 .perRebate {
   width: 100%;
-  padding-top: rem(50);
 }
-
+.rebateContent{
+  height: 100%;
+  padding-top: rem(50);
+  overflow-y: scroll;
+}
 .perRebateSubnav {
   padding: 0 rem(20);
   #subnav {
