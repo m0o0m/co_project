@@ -9,7 +9,7 @@
       <div class="withdrawalsBody">
         <div class="withdrawalsCar">
           <section>
-            <p>{{result.bank_name}}<span>(尾号**{{result.card_number}})</span></p>
+            <p><img :src="bankLogo" alt="">{{result.bank_name}}<span>(尾号**{{result.card_number}})</span></p>
             <p>单笔最小提现金额为¥<span>100</span></p>
           </section>
         </div>
@@ -36,7 +36,8 @@
         bank: {
           amount: '',
           pay_password: ''
-        }
+        },
+	      bankLogo:''
       }
     },
     
@@ -53,6 +54,9 @@
           if (data) {
             that.result = data;
           }
+	        if (data.bank_id) {
+		        that.bankLogo = require('../../assets/images/bankLogo/' + data.bank_id + '.png');
+	        }
         });
       },
       save() {

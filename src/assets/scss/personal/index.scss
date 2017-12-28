@@ -227,15 +227,21 @@ $designWidth: 375;
       line-height: rem(32);
       flex: 1;
       p:nth-child(1) {
-        background: url('../../images/numberimg/zhaohang.png') no-repeat;
-        line-height: rem(26);
-        background-size: rem(28);
+        //background: url('../../images/numberimg/zhaohang.png') no-repeat;
+        line-height: rem(28);
+        //background-size: rem(28);
         font-size: rem(18);
         color: #65431D;
-        padding-left: rem(32);
+        padding-left: rem(28);
         font-weight: bold;
         font-family: Arial;
         letter-spacing: 0;
+        vertical-align: middle;
+        img {
+          width:rem(28);
+          display: inline-block;
+          vertical-align: middle;
+        }
       }
       p:nth-child(2) {
         font-size: rem(14);
