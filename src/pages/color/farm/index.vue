@@ -121,9 +121,7 @@
 	  ConfirmPage
     },
     mounted () {
-
       this.requestLotteryDetail();
-
       this.$on('marryNum', function (data) {
         this.marryNum = data || 0;
       });
@@ -246,7 +244,6 @@
             // 快速模式下的每注金额为multipleValue, 自主模式下的每注金额为ball[i].amount
             // amount: balls[i].amount == 0? parseFloat(this.multipleValue).toFixed(2) : balls[i].amount
           }
-          console.log(order);
           this.$refs.confirmPageRef.addOrder(order)
           this.$refs.confirmPageRef.gameIdEmit(this.creditId);
         }
@@ -270,7 +267,7 @@
           this.stopBet = false;
           if (this.$refs.confirmPageRef) {
             this.$refs.confirmPageRef.timeEndClearData();
-            this.$refs.pcddref.farminDt();
+            // this.$refs.pcddref.farminDt();
           }
           // this.orderWhether()
         }
