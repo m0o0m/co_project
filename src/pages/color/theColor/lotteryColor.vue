@@ -144,7 +144,6 @@ export default {
 
 		setTimeout( function(){
               _this._Util.chip(_this, e, $('.ColorLottery_mcontent:eq(' + index + ') .ColorLottery_mslist ul li:eq(' + lData_index + ')'),"",parseInt(_this.thisScrollTop));
-
           }, 10 );
 
 	  },
