@@ -1,12 +1,12 @@
 <template>
   <div class="agencyBackstage">
     <div class="assetsDetailCls">
-      <div v-if="isBrowser" class="commonNavBar positionFixed">
+      <div class="commonNavBar positionFixed">
         <div class="backPassTitle"><p>代理后台</p></div>
         <div class="loginIcon arrowLeft flt "   @click="$router.push({name:'personal'});"><a href="javascript:void(0)"></a></div>
         <div class="loginIcon arrowRight xieyi"  @click="goContract"><a href="javascript:void(0)"></a></div>
       </div>
-      <div id="assetsDeList" class="agencyAssetsDeList" :class="{agencyAssetsNotBrowser:!isBrowser}">
+      <div id="assetsDeList" class="agencyAssetsDeList">
         <div>
           <div id="agencySubnav">
             <span @click="type = 0" :class="{on: type == 0}">佣金收益</span>
@@ -115,10 +115,6 @@
 				newAdd: 0,
 			}
 		},
-    created(){
-      let that = this;
-      that.isBrowser = that.$route.query.terminal ? 1 : 0;
-    },
 		mounted() {
       let that = this;
 			that.init();
@@ -173,7 +169,6 @@
 			},
 			init() {
 				let that = this;
-        that.isBrowser = that.$route.query.terminal ? 1 : 0;
 				if (!that.busy) {
 					that.params.year = this.value2;
 					that.params.month = this.value3;
@@ -218,7 +213,7 @@
 			},
 			goContract() {
 				let that = this;
-				that.$router.replace({name: 'agencyContract'});
+				that.$router.push({name: 'agencyContract',query: {terminal: 1}});
 			},
 			changeType(v, index) {
 				let that = this;

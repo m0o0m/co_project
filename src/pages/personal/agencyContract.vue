@@ -1,10 +1,10 @@
 <template>
   <div class="feedBackMessageLists">
-    <div class="commonNavBar positionFixed">
+    <div v-if="isBrowser" class="commonNavBar positionFixed">
       <div class="backPassTitle"><p>代理协议</p></div>
-      <div class="loginIcon arrowLeft flt "   @click="$router.push({name:'master'});"><a href="javascript:void(0)"></a></div>
+      <div class="loginIcon arrowLeft flt "   @click="$router.go(-1);"><a href="javascript:void(0)"></a></div>
     </div>
-    <div class="agentContract">
+    <div class="agentContract" :class="{agencyAssetsNotBrowser:!isBrowser}">
         <p class="agentContract_tit">棋牌彩票代理协议：</p>
         <p>1、会员可点击开户返佣选择直接开户或分享开户成为棋牌彩票官方代理；</p>
         <p>2、代理享有下级用户消费带来的分红权利；</p>
@@ -53,7 +53,12 @@
     data() {
       return {
 	      result: '',
+        isBrowser:false,
       }
+    },
+    created(){
+      let that = this;
+      that.isBrowser = that.$route.query.terminal ? 1 : 0;
     },
     mounted() {
     	let that = this;
@@ -62,6 +67,7 @@
     methods: {
       init() {
 	      let that = this;
+        that.isBrowser = that.$route.query.terminal ? 1 : 0;
 	      that._Util.post(that, that._Api.POST_PERSONAL_REBATE_LIST, {}, (data) => {
 		      that.result = data;
 	      });

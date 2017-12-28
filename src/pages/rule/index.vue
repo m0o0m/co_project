@@ -72,7 +72,7 @@
 				console.log("lotteryId:", lotteryId);
 				console.log("data:", rulesDate[lotteryId].data);
 				that.questionAnswerList = rulesDate[lotteryId].data;
-				that.lotteryRulesTitle = rulesDate[lotteryId].title;
+				that.lotteryRulesTitle = rulesDate[lotteryId].lotteryname;
 				that.footerContent = rulesDate[lotteryId].footerdata.content;
 				document.title = that.lotteryRulesTitle;
 			},

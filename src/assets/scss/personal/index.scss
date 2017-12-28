@@ -589,7 +589,7 @@ $designWidth: 375;
     span.on {
       color: #180B0B;
       background-image: linear-gradient(top, #DDC09C, #D0A979);
-      background-image: -webkit-linear-gradient(top, #DDC09C , #D0A979 );
+      background-image: -webkit-linear-gradient(top, #DDC09C, #D0A979);
     }
   }
 }
@@ -1222,7 +1222,7 @@ i.isHasNews {
           padding: 0 rem(15);
           ul.masterUl.agencyBackstageOne {
             li {
-              background: rgba(0,0,0,0.2);
+              background: rgba(0, 0, 0, 0.2);
             }
           }
 
@@ -1500,8 +1500,8 @@ i.isHasNews {
       //background: rgba(0, 0, 0, 0.30);
       ul {
         //background: transparent;
-        li:nth-child(1){
-          background: rgba(0,0,0,.3);
+        li:nth-child(1) {
+          background: rgba(0, 0, 0, .3);
         }
         li {
           color: #fff;
@@ -1531,6 +1531,10 @@ i.isHasNews {
     margin: rem(10) 0;
     background: rgba(0, 0, 0, .3);
     padding: rem(10) 0;
+  }
+  &.agencyAssetsNotBrowser {
+    margin-top: 0;
+    height: 96%;
   }
 }
 
