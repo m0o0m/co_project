@@ -116,7 +116,7 @@
         busy: false,
         isHasNews:false,
         feedback_time:0,
-	      headImg: require('../../assets/images/numberimg/tou.png'),
+	      headImg: '',
 	      userInfo: this._Util.getUserInfo(),
 	      showAgent:0
       }
@@ -140,7 +140,7 @@
       init() {
         let that = this;
         let nowtime = parseInt(localStorage.getItem("feedback_time")||0);
-        console.log("sssss:",nowtime);
+//        console.log("sssss:",nowtime);
         if (that.busy) return;
         that.busy = true;
         that._Util.post(that, that._Api.POST_USER_INFO, {
@@ -149,11 +149,20 @@
           that.busy = false;
           if (data.userInfo) {
 //		    data.userInfo.is_bind_bank_card = 0;
+
+
             that.result = data.userInfo;
             that.isHasNews = data.userInfo.is_show_feedback_icon;
             that.showAgent = data.userInfo.is_show_agent;
-//			that.result.phone = '';
-            that.headImg = data.userInfo.photo;
+//	          data.userInfo.photo = '';
+            if (data.userInfo.photo !== '') {
+	            that.headImg = data.userInfo.photo;
+//                alert(1);
+            }else  {
+	            that.headImg = require('../../assets/images/numberimg/tou.png');
+//	            alert(2);
+            }
+
           }
         }, '', true);
       },
@@ -301,7 +310,7 @@
 		    function upload(photo) {
 			    let frmData = new FormData();
 			    frmData.append('photo', photo);
-			      // frmData.append('bind_account', 1);
+			       frmData.append('bind_account', 1);
 			    console.log(photo.size / 1024);
 			    that._Util.openLoading(that);
 			    $.ajax({
