@@ -810,6 +810,28 @@ $designWidth: 375;
 .theLotteryHArticle {
   float: right;
   padding-bottom: rem(5);
+  p:last-child {
+    margin-left:rem(15);
+    span.zodiacAnimal:before {
+      content: '';
+      width: rem(0);
+      height: rem(0);
+      position: absolute;
+      top: -0.1rem;
+      left: -0.9rem;
+      font-size: 1.2rem;
+    }
+  }
+  p:last-child :before{
+    content: '+';
+    width: rem(23);
+    height: rem(23);
+    position: absolute;
+    top: -0.1rem;
+    left: -0.9rem;
+    font-size: 1.2rem;
+  }
+
   p {
     width: rem(23);
     height: rem(23);
