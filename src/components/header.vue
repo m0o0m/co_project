@@ -361,7 +361,13 @@
 				this.getLotteryData();
 				this.getHistoryBetMoney();
 				if(this.classAdata){
-					this.lotteryTypeId = this.classAdata.played[0].id;
+					for (let i = 0; i < this.navData.length; i++) {
+						if (this.navData[i].id === this.lotteryTypeId) {
+							this.eventOpt(i, this.navData[i].id);
+							break;
+						}
+					}
+//					this.lotteryTypeId = this.classAdata.played[0].id;
 				}else {
 					return;
 				}
