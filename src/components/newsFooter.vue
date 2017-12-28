@@ -121,7 +121,7 @@
         var _this = this;
         if(parseInt(_this.creditId) === 3 || parseInt(_this.creditId) === 12) {
             setTimeout(function () {
-               // _this.initSlider();
+                _this.initSlider();
             }, 200);
         }
 
@@ -141,7 +141,9 @@
       }
     },
     mounted() {
-      this.initSlider();
+	    if(parseInt(this.creditId) === 3 || parseInt(this.creditId) === 12) {
+		    this.initSlider();
+	    }
       this.immediateBetting = parseInt(this.$parent.whetherNumber) === 0 || parseInt(this.$parent.whetherNumber) === -1 ? '暂停销售' : '立即投注';
         if(parseInt(this.creditId) === 3 || parseInt(this.creditId) === 12) {
             var _this = this;
