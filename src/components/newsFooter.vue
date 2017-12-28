@@ -13,48 +13,68 @@
         <section>
           <a href="javascript:void(0)" @click="resetData(true)">清桌</a>
         </section>
+        <section class="westernFooter_top" v-if="creditId == 3||creditId == 12">
+          <ul>
+            <!--<li @click="increaseClick">-</li>-->
+            <i></i>
+            <li>
+              <div class="westernCirText">
+                <p><span>0</span>%</p>
+                <p class="liu_codeMun_lodds">返点:<span class="RebateValue">{{sliderValue}}</span>%</p>
+                <p><span>8</span>%</p>
+              </div>
+              <div class="westernCir dragMan_maxline">
+                <p class="westernWhite newsFooterWester"></p>
+                <p class="westernYellow dragMan_redLine"></p>
+                <strong class="westernYeQiu dragMan_minline"></strong>
+              </div>
+            </li>
+            <i></i>
+            <!--<li @click="reduceClick">+</li>-->
+          </ul>
+        </section>
         <section><a href="javascript:void(0)" @click="onConfirmBtnClicked">{{immediateBetting}}</a></section>
       </article>
     </div>
   </div>
-  <!--<div :class="{'westernBack_01':creditId == 5}" class="westernFooter">-->
-    <!--<div class="westernFooter_mian" v-if="creditId != 5">-->
-      <!---->
-      <!--<div class="westernFooter_top">-->
-        <!--<section class="westernSectionNum">-->
-          <!--<p v-for="(mary,marry_index) in marryImg" data-marry="data.num" :class="{'on':marryImgId == marry_index}"-->
-             <!--@click="marryClick(marry_index, mary.num)" :data-Marry="mary.num"><img :src="mary.img"/></p>-->
-          <!--&lt;!&ndash;<img :src="mary.img" class="maryCls"/>&ndash;&gt;-->
-        <!--</section>-->
-      <!--</div>-->
-      <!--<article class="westernFooter_bottom">-->
-        <!--<section>-->
-          <!--<a href="javascript:void(0)" @click="resetData(true)">清桌</a>-->
-        <!--</section>-->
-        <!--<div class="westernFooter_top" v-if="creditId == 3||creditId == 12">-->
-          <!--<ul>-->
-            <!--&lt;!&ndash;<li @click="increaseClick">-</li>&ndash;&gt;-->
-            <!--<i></i>-->
-            <!--<li>-->
-              <!--<div class="westernCirText">-->
-                <!--<p><span>0</span>%</p>-->
-                <!--<p class="liu_codeMun_lodds">返点:<span class="RebateValue">{{sliderValue}}</span>%</p>-->
-                <!--<p><span>8</span>%</p>-->
-              <!--</div>-->
-              <!--<div class="westernCir dragMan_maxline">-->
-                <!--<p class="westernWhite newsFooterWester"></p>-->
-                <!--<p class="westernYellow dragMan_redLine"></p>-->
-                <!--<strong class="westernYeQiu dragMan_minline"></strong>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<i></i>-->
-            <!--&lt;!&ndash;<li @click="reduceClick">+</li>&ndash;&gt;-->
-          <!--</ul>-->
-        <!--</div>-->
-        <!--<section @click="onConfirmBtnClicked"><a href="javascript:void(0)">{{$parent.classAdata.status === 0 || $parent.classAdata.status === -1 ? '暂停销售' : '立即投注'}}</a></section>-->
-      <!--</article>-->
-    <!--</div>-->
-  <!--</div>-->
+  <!--<div :class="{'westernBack_01':creditId == 5}" class="westernFooter">
+    <div class="westernFooter_mian" v-if="creditId != 5">
+      
+      <div class="westernFooter_top">
+        <section class="westernSectionNum">
+          <p v-for="(mary,marry_index) in marryImg" data-marry="data.num" :class="{'on':marryImgId == marry_index}"
+             @click="marryClick(marry_index, mary.num)" :data-Marry="mary.num"><img :src="mary.img"/></p>
+          &lt;!&ndash;<img :src="mary.img" class="maryCls"/>&ndash;&gt;
+        </section>
+      </div>
+      <article class="westernFooter_bottom">
+        <section>
+          <a href="javascript:void(0)" @click="resetData(true)">清桌</a>
+        </section>
+        <div class="westernFooter_top" v-if="creditId == 3||creditId == 12">
+          <ul>
+            &lt;!&ndash;<li @click="increaseClick">-</li>&ndash;&gt;
+            <i></i>
+            <li>
+              <div class="westernCirText">
+                <p><span>0</span>%</p>
+                <p class="liu_codeMun_lodds">返点:<span class="RebateValue">{{sliderValue}}</span>%</p>
+                <p><span>8</span>%</p>
+              </div>
+              <div class="westernCir dragMan_maxline">
+                <p class="westernWhite newsFooterWester"></p>
+                <p class="westernYellow dragMan_redLine"></p>
+                <strong class="westernYeQiu dragMan_minline"></strong>
+              </div>
+            </li>
+            <i></i>
+            &lt;!&ndash;<li @click="reduceClick">+</li>&ndash;&gt;
+          </ul>
+        </div>
+        <section @click="onConfirmBtnClicked"><a href="javascript:void(0)">{{$parent.classAdata.status === 0 || $parent.classAdata.status === -1 ? '暂停销售' : '立即投注'}}</a></section>
+      </article>
+    </div>
+  </div>-->
 </template>
 
 <script>
