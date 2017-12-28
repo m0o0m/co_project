@@ -155,7 +155,6 @@
     },
     methods: {
       resetData: function (isBack) {
-
         let that = this;
         let fun = () => {
           this.sliderValue = 0;

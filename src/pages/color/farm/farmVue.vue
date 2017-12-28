@@ -188,7 +188,7 @@
 				that.classAdata.played = JSON.parse(JSON.stringify(that.playedListCopy));
 				that.selectNav(that.classAdata.played[that.oneCredId].item[0]);
 //		that.playedListCopy = [];
-//		that.selectedBalls = [];
+		that.selectedBalls = [];
 //		that.computeOdds({odds: 0});
 			});
             $(window).scroll(function(){

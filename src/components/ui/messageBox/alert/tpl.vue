@@ -33,7 +33,7 @@
 	      setTimeout(function() {
 			that.show = false;
 			that.callback && that.callback();
-          }, 1000 * 2);
+          }, 1000);
         }
       }
     },
