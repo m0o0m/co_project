@@ -385,7 +385,7 @@ $designWidth: 375;
       text-align: center;
       box-shadow: inset rem(1) rem(-1) rem(8) rgba(0, 0, 0, 0.5);
       box-sizing: border-box;
-      -webkit-box-sizing:  border-box;
+      -webkit-box-sizing: border-box;
     }
   }
 }
@@ -427,7 +427,7 @@ $designWidth: 375;
   height: rem(106);
   background: #000 url('../../../images/footerBack.jpg') left bottom no-repeat;
   background-size: 100% auto;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 
 }
 
@@ -960,4 +960,84 @@ $designWidth: 375;
 
 .indexHeight {
   overflow: visible;
+}
+
+/*香港六合彩、香港新六合彩样式*/
+.ternFooterBottom {
+  section:last-child {
+    flex: 1.5;
+  }
+  .westernFooter_top {
+    flex: 3;
+    margin-left: rem(5);
+    ul {
+      display: flex;
+      -webkit-display: flex;
+      flex-direction: row;
+      -webkit-flex-direction: row;
+      li:first-child, li:last-child {
+        width: rem(35);
+        height: rem(35);
+        line-height: rem(35);
+        border: rem(1) solid #ffffff;
+        border-radius: rem(5);
+        text-align: center;
+        font-size: rem(20);
+        color: #ffffff;
+      }
+      li:nth-child(2) {
+        flex: 1;
+        position: relative;
+        width: 60%;
+      }
+    }
+  }
+}
+
+.westernCir.dragMan_maxline {
+  width: 100%;
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+  p {
+    width: 98%;
+    height: rem(8);
+    background: #ffffff;
+    position: relative;
+    border-radius: rem(8);
+  }
+  p.westernYellow {
+    width: 0;
+    height: rem(8);
+    background: linear-gradient(left, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+    top: rem(-8);
+  }
+  .westernYeQiu {
+    width: rem(15);
+    height: rem(15);
+    background: linear-gradient(left, #F0DDAE, #DCB976);
+    background: -webkit-linear-gradient(left, #F0DDAE, #DCB976);
+    position: absolute;
+    top: rem(-4);
+    left: rem(0);
+    right: rem(5);
+    border-radius: 50%;
+  }
+}
+
+.westernCirText {
+  display: flex;
+  -webkit-display: flex;
+  font-size: rem(12);
+  color: #ffffff;
+  margin: 0 auto;
+  margin-bottom: rem(8);
+  p:nth-of-type(2) {
+    flex: 1;
+    text-align: center;
+  }
+  span {
+    font-family: arial;
+  }
 }
