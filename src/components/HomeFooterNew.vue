@@ -157,13 +157,11 @@
 
           that.$router.push({name:"addMoney"})
         } else {
-          that._Util.showAlert(that, {content: '请登录'}, () => {
-	          let url = '/home?homeIndex=' + that.foterNum;
-	          if (this.$route.query.code) {
-		          url += '&code=' + this.$route.query.code;
-	          }
-	          that.$router.push({name: 'login', query: {fullPath: url}});
-          });
+	        let url = '/home?homeIndex=' + that.foterNum;
+	        if (this.$route.query.code) {
+		        url += '&code=' + this.$route.query.code;
+	        }
+	        that.$router.push({name: 'login', query: {fullPath: url}});
         }
       }
 	}

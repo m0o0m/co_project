@@ -85,7 +85,7 @@ export default {
     lotteryHistoryRecord[id] = {
       actionNo: actionNo,
       totalMoney: parseInt(totalMoney) + parseInt(lotteryHistoryRecord[self.creditId].totalMoney || 0),
-      userId: localStorage.getItem('sectionLogin')
+      userId: self._Util.getUserInfo().id
     };
     self._Util.setLocalStorage('lotteryHistoryRecord', lotteryHistoryRecord);
   },

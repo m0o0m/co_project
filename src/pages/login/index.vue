@@ -82,7 +82,7 @@
               that.$router.replace({path: that.$route.query.fullPath});
             } else {
 //                        this.$router.go(-1);
-              that.$router.replace({name: 'personal'});
+              that.$router.replace({name: 'home'});
             }
           }
         });

@@ -483,7 +483,7 @@
 				let that = this;
 				if (that.$parent.classAdata.status !== 0 && that.$parent.classAdata.status !== -1) {
 					that.timeInterval = setInterval(function () {
-						if (parseInt(that.classAdata.next_action_no) - parseInt(that.actionNoCopy) > 1) {
+//						if (parseInt(that.classAdata.next_action_no) - parseInt(that.actionNoCopy) > 1) {
 							that._Util.post(that, that._Api.POST_LOTTERY_RECTOR_DETAIL, {id: that.creditId}, (data) => {
 								that.actionResultCopy = JSON.parse(JSON.stringify(data));
 								that.actionDataCopy = data.data;
@@ -496,10 +496,10 @@
 								}
 							}, () => {
 							}, true);
-						} else {
-							clearInterval(that.timeInterval);
-						}
-					}, 1000 * 30);
+//						} else {
+//							clearInterval(that.timeInterval);
+//						}
+					}, 1000 * 7);
 				}
 			},
 
