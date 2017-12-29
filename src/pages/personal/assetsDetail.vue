@@ -25,7 +25,7 @@
                   </section>
                   <section>
                     <article class="assetsArticle">
-                      <p>{{(v.note.split(','))[0].split('：')[1] ? (v.note.split(','))[0].split('：')[1] : v.note}}
+                      <p>{{(v.note.split(','))[0].split('：')[1] ? (v.note.split(','))[0].split('：')[1].split('，')[0] : v.note}}
                         <span class="opts" v-if="(''+v.note.split('，')[1]).split('：')[1]">&nbsp;&nbsp;第{{(''+v.note.split('，')[1]).split('：')[1] ? (''+v.note.split('，')[1]).split('：')[1] : ''}}期</span>
                       </p>
                       <p class="totalMarry"><span>{{v.cash}}</span></p>
