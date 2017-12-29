@@ -172,8 +172,8 @@
 
       let that = this;
 
-	  that.$on('closeDraw', () => {
-		that.isOpenLottery = false;
+	    that.$on('closeDraw', () => {
+		    that.isOpenLottery = false;
       });
 
 	  //that.effectTime();

@@ -1,6 +1,6 @@
 <template>
   <div class="lineChart" style="position: relative;">
-    
+
     <div class="chartMun">
       <div class="lineChart_title" v-if="$route.query.terminal">
         <p>{{title}}</p>
@@ -64,7 +64,7 @@
             </p>
           </article>
         </div>
-        
+
         <!--香港六合彩-->
         <div class="chartColor" v-if="chartData">
           <!--号码-->
@@ -72,7 +72,7 @@
                    v-if="(cid === 12 || cid === 3) && chartId === 0 ">
             <section><a href="#" style="color: #fff">{{colorNum.number}}</a></section>
             <section class="combination chartFix">
-              
+
               <p v-for="(v,v_index) in colorNum.data"
                  :class="{'red': colorNum.colors[v_index] == 'red', 'blue': colorNum.colors[v_index] == 'blue' , 'green': colorNum.colors[v_index] == 'green', 'gray': colorNum.colors[v_index] == 'gray',}">
                 <span>{{v}}</span><span>{{colorNum.animals[v_index]}}</span></p>
@@ -94,7 +94,8 @@
                   <p v-for="n in chartDataNav"><a href="#" style="color: #fff">{{n.number}}</a></p>
                 </section>
               </div>
-              <div class="chartDragonRight" style="overflow-x: scroll;">
+              <!--style="overflow-x: scroll;"-->
+              <div class="chartDragonRight">
                 <article class="chartDrgArticle">
                   <section class="chartDrgNav">
                     <p v-for="c in chartSmallNav">{{c}}</p>
@@ -115,7 +116,7 @@
                   <p v-for="n in chartDataNav"><a href="#" style="color: #fff">{{n.number}}</a></p>
                 </section>
               </div>
-              <div class="chartDragonRights" style="overflow-x: scroll;">
+              <div class="chartDragonRights">
                 <article class="chartDrgArticle chartDrgArticles">
                   <section class="chartDrgNavs"
                            :class="{'chartDrgNav_mn':cid === 15 && chartId === 1 || cid === 18 && chartId === 1}">

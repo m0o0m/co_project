@@ -297,7 +297,6 @@
 			playchecked: function (e, play, playedSubtypeId, playedSubtypeName, index, colorful, type) {
 				e.stopPropagation();
 				let that = this;
-
 				if (that._LotteryUtil.pauseSell(that, that.$parent.classAdata.status)) return;
                 this.selectedAmount = parseInt($(".westernSectionNum p.on").attr("data-marry"));
                 this.dynamicBalance = this.$parent.$refs.headerRef.balanceAmount;
