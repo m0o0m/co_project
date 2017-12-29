@@ -306,9 +306,9 @@ var poker = (function (document, window) {
     var _this = this,
       status = '';
     this.ves.addEventListener('webkitTransitionEnd', function () {
-      if (status) {
-        return;
-      }
+      // if (status) {
+      //   return;
+      // }
       _this.content1.contentItem1.style.transform = 'rotateY( 90deg )';
       _this.content1.contentItem1.style.webkitTransform = 'rotateY( 90deg )';
       _this.content1.contentItem2.style.transform = 'rotateY( 90deg )';
