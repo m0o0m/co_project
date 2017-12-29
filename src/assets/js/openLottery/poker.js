@@ -110,6 +110,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+      webkitTransition: 'all ease 0.2s',
       marginLeft: '0.05rem',
       boxShadow: '2px 2px 5px #000'
     };
