@@ -10,7 +10,7 @@
         <div class="aboutUsVersion">
           <div class="aboutUsVersionTitle">
             <p>棋牌彩票</p>
-            <p>版本号: v1.0.3</p>
+            <p>版本号: v1.0.4</p>
           </div>
           <div class="aboutUsVersionList">
             <ul>
