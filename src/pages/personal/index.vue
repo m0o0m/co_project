@@ -155,12 +155,12 @@
             that.isHasNews = data.userInfo.is_show_feedback_icon;
             that.showAgent = data.userInfo.is_show_agent;
 //	          data.userInfo.photo = '';
-            if (data.userInfo.photo !== '') {
+            if (data.userInfo.photo != '' && data.userInfo.photo != undefined) {
 	            that.headImg = data.userInfo.photo;
-                alert('返回地址：'+data.userInfo.photo);
+//                alert('返回地址：'+data.userInfo.photo);
             }else  {
 	            that.headImg = require('../../assets/images/numberimg/tou.png');
-	            alert('默认地址：'+ that.headImg );
+//	            alert('默认地址：'+ that.headImg );
             }
 
           }
