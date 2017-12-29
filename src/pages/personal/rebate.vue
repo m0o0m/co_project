@@ -157,7 +157,7 @@
           username: that.user.username,
           password: that._Util.hexMd5(that.user.password)
         }, (data) => {
-          that._Util.showAlert(that, {content: '添加成功'});
+          that._Util.showAlert(that, {content: '开户成功'});
           
           that.passwordTemp = '';
           that.user.username = '';

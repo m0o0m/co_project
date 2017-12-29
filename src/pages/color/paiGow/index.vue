@@ -305,7 +305,7 @@
         $('.Popup_text_wz').text(val);
         setTimeout(function(){
           $('.Popup').fadeOut('fast');
-        },3000)
+        },1000)
       },
         stopBetVund () {
             return this.stopBet
