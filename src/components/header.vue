@@ -500,7 +500,7 @@
 						} else {
 							clearInterval(that.timeInterval);
 						}
-					}, 1000 * 7);
+					}, 1000 * 30);
 				}
 			},
 
