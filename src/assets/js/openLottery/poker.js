@@ -1,6 +1,6 @@
 var poker = (function (document, window) {
   // _run函数只执行一次
-  var bool_status = false;
+  // var bool_status = false;
 
   // 设置样式 { obj: 元素, style: 样式 }
   function setStyle(argv) {
@@ -289,11 +289,11 @@ var poker = (function (document, window) {
   };
   // 动画执行函数
   fn_main.prototype._run = function (argv, resultNum, callback) {
-    if (bool_status) {
-      return;
-    }
+    // if (bool_status) {
+    //   return;
+    // }
     this.ves.style.top = '25%';
-    bool_status = false;
+    // bool_status = false;
     var _this = this,
       status = '';
     this.ves.addEventListener('webkitTransitionEnd', function () {
@@ -364,20 +364,20 @@ var poker = (function (document, window) {
       }, 10);
 
       setTimeout(function () {
-        // _this._close();
+        _this._close();
         callback && callback();
       }, 1000 * 4);
     }, false);
   };
   // 动画关闭函数，可以手动调用
-  // fn_main.prototype._close = function () {
-  //   this.ves.style.top = '-25%';
-  //   this.ves.style.right = '-45%';
-  //   this.ves.style.transition = 'all ease-out 0.3s';
-  //   this.ves.style.transform = 'perspective( 600px ) rotateX( 50deg ) rotateY( 20deg ) scale( 0 )';
-  //   this.ves.transformOrigin = '50% 50%';
-  //   this.ves.style.opacity = '0.3';
-  // }
+  fn_main.prototype._close = function () {
+    this.ves.style.top = '-25%';
+    this.ves.style.right = '-45%';
+    this.ves.style.transition = 'all ease-out 0.3s';
+    this.ves.style.transform = 'perspective( 600px ) rotateX( 50deg ) rotateY( 20deg ) scale( 0 )';
+    this.ves.transformOrigin = '50% 50%';
+    this.ves.style.opacity = '0.3';
+  }
   return fn_main;
 })(document, window);
 
