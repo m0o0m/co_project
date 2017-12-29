@@ -83,11 +83,7 @@
 			}
 		},
 		mounted() {
-			//this.initSlider();
-      console.log("whetherNumber:------",parseInt(this.$parent.whetherNumber));
       this.immediateBetting = parseInt(this.$parent.whetherNumber) === 0 || parseInt(this.$parent.whetherNumber) === -1 ? '暂停销售' : '立即投注';
-			console.log("this.$parent.whetherNumber:", this.$parent.whetherNumber);
-			console.log("this.immediateBetting:", parseInt(this.$parent.whetherNumber) === 0 || parseInt(this.$parent.whetherNumber) === -1);
 			this.whetherNumberfooter = this.whetherNumber;
 		},
 		methods: {

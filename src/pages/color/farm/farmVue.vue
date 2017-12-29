@@ -253,7 +253,6 @@
 				$("ul.farmGameInfoTitle li").eq(index).addClass("on");
 				this.nav_index = index;
 				for (let v of this.items) {
-					console.log('this._Util.getValueByKey(this.imgJson.imgList, v.name, \'picName\') = ' + this._Util.getValueByKey(this.imgJson.imgList, v.name, 'picName'))
 					if (v.name !== '大型水果' && v.name !== '中型水果' && v.name !== '小型水果' && v.name !== '蔬菜' && v.name !== '动物') {
 						v.img = require('../../../assets/images/farm/' + this._Util.getValueByKey(this.imgJson.imgList, v.name, 'picName') + '.png');
 					}
@@ -430,10 +429,8 @@
 			},
 			//获取数据结果中对应的下标周围的一条数据
 			match(list){
-				console.log(1111111, this.$parent.$refs.headerRef.actionResultCopy);
 				let result = [];
 				for (let i = 0, v; v = list[i++];) {
-					console.log(this.$parent.$refs.headerRef.actionResultCopy.extfield1);
 					if (this.$parent.$refs.headerRef.actionResultCopy.extfield1 === v.name) {
 						this.resultIndex = i - 1;
 						break;
@@ -442,7 +439,6 @@
 				if (this.resultIndex == list.length - 1) {
 					result = result.concat(list.slice(this.resultIndex - 1))
 					result.push(list[0]);
-					console.log('match-result:', result);
 				} else if (this.resultIndex == 0) {
 					result = result.concat(list.slice(0, 2))
 					result.unshift(list[list.length - 1]);
@@ -450,7 +446,6 @@
 				} else {
 					result = list.slice(this.resultIndex - 1, this.resultIndex + 2);
 				}
-				console.log("resultIndex:", this.resultIndex);
 				return result;
 			},
 			farm_animate_init(){
@@ -472,9 +467,6 @@
 				$(".slotMachineContainer img").attr("style", "");
 				let that = this;
 				that.farm_animate_init();
-//				console.log("result1:", that.match(that.gameImgData1));
-//				console.log("result2:", that.match(that.gameImgData2));
-//				console.log("result3:", that.match(that.gameImgData3));
 				that.machine1 = $("#machine1").slotMachine({
 					active: 0, //默认第一个
 					delay: 200,

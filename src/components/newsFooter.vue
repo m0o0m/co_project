@@ -228,11 +228,9 @@
       start: function (e) {
         e.stopPropagation();
         this.draging = true;
-        // console.log("鼠标按下")
       },
       move: function (e) {
         e.stopPropagation();
-        //console.log("鼠标拖动")
         if (this.draging) {
           if (!e.touches) {
             //兼容移动端

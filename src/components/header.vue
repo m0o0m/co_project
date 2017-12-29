@@ -293,6 +293,7 @@
 		},
 		data() {
 			return {
+				totalMoneyCopy: 0,
 				showFrmBack: false,
 				toUrl: '',
 				showOpenFrame: false,
@@ -359,7 +360,9 @@
 				this.actionDataCopy = JSON.parse(JSON.stringify(this.classAdata.action_data));
 				this.actionNoCopy = JSON.parse(JSON.stringify(this.classAdata.action_no));
 				this.getLotteryData();
-				this.getHistoryBetMoney();
+//				this.getHistoryBetMoney();
+				this.totalMoney = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
+				this.totalMoneyCopy = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
 				if(this.classAdata){
 					this.lotteryTypeId = this.lotteryTypeId || this.classAdata.played[0].id;
 				}else {
@@ -458,10 +461,8 @@
 
 			getHistoryBetMoney(money) {
 				this.reservePrice = parseFloat(this.$parent.$refs.confirmPageRef.totalPrice);
-				console.log('this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no)',this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no))
-				console.log('this.creditId',this.creditId);
-				console.log('this.classAdata.next_action_no',this.classAdata.next_action_no)
-				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice);
+//				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice);
+				this.totalMoney = (money || 0) + this.totalMoneyCopy + this.reservePrice;
 				this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
 			},
 

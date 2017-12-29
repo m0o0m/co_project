@@ -100,6 +100,7 @@
     data() {
       return {
         toUrl: '',
+	      totalMoneyCopy: 0,
         showOpenFrame: false,
         showFrmBack: false,
         increaseId: 0,
@@ -249,9 +250,9 @@
       },
 
       getHistoryBetMoney(money) {
-      	console.log('money',money)
         this.reservePrice = parseFloat(this.$parent.$refs.confirmPageRef.totalPrice);
-        this.totalMoney = (money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice;
+//        this.totalMoney = (money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice;
+        this.totalMoney = (money || 0) + this.totalMoneyCopy + this.reservePrice;
         this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
       },
       getHistoryBet(){
@@ -322,7 +323,9 @@
           this.zodiacAnimal = JSON.parse(JSON.stringify(this.classAdata.animals));
         }
         this.getLotteryData();
-        this.getHistoryBetMoney();
+//        this.getHistoryBetMoney();
+	      this.totalMoney = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
+	      this.totalMoneyCopy = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
         if(this.classAdata){
             this.lotteryTypeId = this.lotteryTypeId || this.classAdata.played[0].id;
         }else{

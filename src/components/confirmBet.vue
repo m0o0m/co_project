@@ -231,13 +231,13 @@
 					let parentMarry = that.$parent.$refs.headerRef.headerMarry;
 					that.$parent.$refs.headerRef.headerMarry = (parentMarry - parseFloat(that.totalPrice)).toFixed(2);
 					setTimeout(function () {
-						that._LotteryUtil.setHistoryBetMoney(that, that.creditId, that.nextNoisser, that.totalPrice);
+						that.$parent.$refs.headerRef.totalMoneyCopy = JSON.parse(JSON.stringify(that.$parent.$refs.headerRef.totalMoneyCopy + parseInt(that.totalPrice)));
+//						that._LotteryUtil.setHistoryBetMoney(that, that.creditId, that.nextNoisser, that.totalPrice);
 						that.init();
 						that.$parent.$refs.headerRef.balanceHods();
 						that.$emit('saveOrderSuccess');
 					}, 1500);
 				}, (data) => {
-					console.log(data);
 					if (parseInt(data.code) === 10002) {
 						that._Util.showConfirm(that, {content: data.msg}, (action) => {
 							if (action) {
@@ -267,9 +267,6 @@
 			},
 			// 删除订单
 			deleteOrder: function (index) {
-				// console.log('index = ' + index);
-				// console.log('this.orders = ' + this.orders);
-				console.log(this.orders[index].multiple);
 				this.$parent.$refs.headerRef.balanceAmount = parseFloat(this.$parent.$refs.headerRef.balanceAmount) + parseFloat(this.orders[index].multiple);
 				this.orders.splice(index, 1);
 				this.emptyOrderLength()
@@ -300,7 +297,6 @@
 
 			timeEndClearData() {
 				if (this.bankId && !this.$parent.stopBet) {
-					console.log('本期投注已经结束,是否要清空投注记录？')
 					this._Util.showConfirm(this, {content: '本期投注已经结束,是否要清空投注记录?'}, action => {
 						if (!action) return;
 						this.$parent.emptyNull();
@@ -311,7 +307,6 @@
 		},
 		watch: {
 			'creditId'(val) {
-				console.log('this.creditId = ' + this.creditId)
 			}
 		},
 		components: {
