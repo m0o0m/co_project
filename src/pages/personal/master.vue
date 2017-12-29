@@ -128,7 +128,7 @@
 			});
 			that.$on('pickerOk', (data) => {
 				var numS = parseInt(data.province.name);
-				if (numS < 12) {
+				if (numS <= 12) {
 					that.value3 = numS
 				} else {
 					that.value2 = numS
