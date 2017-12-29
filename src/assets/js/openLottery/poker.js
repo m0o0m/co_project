@@ -30,6 +30,7 @@ var poker = (function (document, window) {
       position: 'fixed',
       right: '5%',
       transition: 'all ease-out 0.3s',
+	    webkitTransition: 'all ease-out 0.3s',
       background: 'url(' + require('../../images/openLottery/paiGow/bg.png') + ') no-repeat',
       backgroundSize: '100% 100%',
       top: '100%',
@@ -62,6 +63,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+	    webkitTransition: 'all ease 0.2s',
       marginLeft: '0.1rem',
       boxShadow: '2px 2px 5px #000'
     };
@@ -72,6 +74,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+	    webkitTransition: 'all ease 0.2s',
       marginLeft: '0.1rem',
       boxShadow: '2px 2px 5px #000'
     };
@@ -117,6 +120,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+	    webkitTransition: 'all ease 0.2s',
       marginLeft: '0.1rem',
       boxShadow: '2px 2px 5px #000'
     };
@@ -127,6 +131,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+	    webkitTransition: 'all ease 0.2s',
       marginLeft: '0.05rem',
       boxShadow: '2px 2px 5px #000'
     };
@@ -137,6 +142,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+	    webkitTransition: 'all ease 0.2s',
       marginLeft: '0.1rem',
       boxShadow: '2px 2px 5px #000'
     };
@@ -147,6 +153,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+	    webkitTransition: 'all ease 0.2s',
       marginLeft: '0.05rem',
       boxShadow: '2px 2px 5px #000'
     };
@@ -157,6 +164,7 @@ var poker = (function (document, window) {
       backgroundSize: '100% 100%',
       float: 'left',
       transition: 'all ease 0.2s',
+	    webkitTransition: 'all ease 0.2s',
       marginLeft: '0.1rem',
       boxShadow: '2px 2px 5px #000'
     };
@@ -301,7 +309,9 @@ var poker = (function (document, window) {
         return;
       }
       _this.content1.contentItem1.style.transform = 'rotateY( 90deg )';
+      _this.content1.contentItem1.style.webkitTransform = 'rotateY( 90deg )';
       _this.content1.contentItem2.style.transform = 'rotateY( 90deg )';
+      _this.content1.contentItem2.style.webkitTransform = 'rotateY( 90deg )';
       status = 'first';
     }, false);
     this.content1.contentItem1.addEventListener('webkitTransitionEnd', function () {
@@ -315,10 +325,14 @@ var poker = (function (document, window) {
         _this.content1.contentItem2.style.background = 'url( ' + argv.list1[1] + ' ) no-repeat';
         _this.content1.contentItem2.style.backgroundSize = '100% 100%';
         _this.content1.contentItem1.style.transform = 'rotateY( 0deg )';
+        _this.content1.contentItem1.style.webkitTransform = 'rotateY( 0deg )';
         _this.content1.contentItem2.style.transform = 'rotateY( 0deg )';
+        _this.content1.contentItem2.style.webkitTransform = 'rotateY( 0deg )';
       }, 10);
+      _this.content2.contentItem1.style.webkitTransform = 'rotateY( 90deg )';
       _this.content2.contentItem1.style.transform = 'rotateY( 90deg )';
       _this.content2.contentItem2.style.transform = 'rotateY( 90deg )';
+      _this.content2.contentItem2.style.webkitTransform = 'rotateY( 90deg )';
     }, false);
     this.content2.contentItem1.addEventListener('webkitTransitionEnd', function () {
       if (status != 'second') {
@@ -331,10 +345,14 @@ var poker = (function (document, window) {
         _this.content2.contentItem2.style.background = 'url( ' + argv.list2[1] + ' ) no-repeat';
         _this.content2.contentItem2.style.backgroundSize = '100% 100%';
         _this.content2.contentItem1.style.transform = 'rotateY( 0deg )';
+        _this.content2.contentItem1.style.webkitTransform = 'rotateY( 0deg )';
         _this.content2.contentItem2.style.transform = 'rotateY( 0deg )';
+        _this.content2.contentItem2.style.webkitTransform = 'rotateY( 0deg )';
       }, 10);
       _this.content3.contentItem1.style.transform = 'rotateY( 90deg )';
+      _this.content3.contentItem1.style.webkitTransform = 'rotateY( 90deg )';
       _this.content3.contentItem2.style.transform = 'rotateY( 90deg )';
+      _this.content3.contentItem2.style.webkitTransform = 'rotateY( 90deg )';
     }, false);
     this.content3.contentItem1.addEventListener('webkitTransitionEnd', function () {
       if (status != 'third') {
@@ -347,10 +365,14 @@ var poker = (function (document, window) {
         _this.content3.contentItem2.style.background = 'url( ' + argv.list3[1] + ' ) no-repeat';
         _this.content3.contentItem2.style.backgroundSize = '100% 100%';
         _this.content3.contentItem1.style.transform = 'rotateY( 0deg )';
+        _this.content3.contentItem1.style.webkitTransform = 'rotateY( 0deg )';
         _this.content3.contentItem2.style.transform = 'rotateY( 0deg )';
+        _this.content3.contentItem2.style.webkitTransform = 'rotateY( 0deg )';
       }, 10);
       _this.result_item1.style.transform = 'rotateY( 90deg )';
+      _this.result_item1.style.webkitTransform = 'rotateY( 90deg )';
       _this.result_item2.style.transform = 'rotateY( 90deg )';
+      _this.result_item2.style.webkitTransform = 'rotateY( 90deg )';
     }, false);
     this.result_item1.addEventListener('webkitTransitionEnd', function () {
       setTimeout(function () {
@@ -359,7 +381,9 @@ var poker = (function (document, window) {
         _this.result_item2.style.background = 'url( ' + argv.result[1] + ' ) no-repeat';
         _this.result_item2.style.backgroundSize = '100% 100%';
         _this.result_item1.style.transform = 'rotateY( 0deg )';
+        _this.result_item1.style.webkitTransform = 'rotateY( 0deg )';
         _this.result_item2.style.transform = 'rotateY( 0deg )';
+        _this.result_item2.style.webkitTransform = 'rotateY( 0deg )';
         $('#paiGowTitle').html('庄开奖结果:' + resultNum);
       }, 10);
 
@@ -374,7 +398,10 @@ var poker = (function (document, window) {
     this.ves.style.top = '-25%';
     this.ves.style.right = '-45%';
     this.ves.style.transition = 'all ease-out 0.3s';
+    this.ves.style.webkitTransition = 'all ease-out 0.3s';
     this.ves.style.transform = 'perspective( 600px ) rotateX( 50deg ) rotateY( 20deg ) scale( 0 )';
+    this.ves.style.webkitTransform = 'perspective( 600px ) rotateX( 50deg ) rotateY( 20deg ) scale( 0 )';
+    this.ves.webkitTransformOrigin = '50% 50%';
     this.ves.transformOrigin = '50% 50%';
     this.ves.style.opacity = '0.3';
   }

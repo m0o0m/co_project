@@ -85,6 +85,7 @@ var anim_mahjong = (function () {
       height: '100%',
       position: 'relative',
       transform: 'translate( -1.04rem )',
+      webkitTransform: 'translate( -1.04rem )',
       top: '0rem',
         display:"inline"
     };
@@ -254,15 +255,18 @@ var anim_mahjong = (function () {
     this.cont.style.top = '0';
     this.cont.style.left = '55%';
     this.cont.style.transition = 'all ease-out 0.3s';
-    // this.cont.style.transition = 'all ease-out 5s';
+    this.cont.style.webkitTransition = 'all ease-out 0.3s';
     this.cont.style.transform = 'perspective( 600px ) rotateX( 50deg ) rotateY( 20deg ) scale( 0 )';
+    this.cont.style.webkitTransform = 'perspective( 600px ) rotateX( 50deg ) rotateY( 20deg ) scale( 0 )';
     this.cont.transformOrigin = '50% 50%';
+    this.cont.webkitTransformOrigin = '50% 50%';
     this.cont.style.opacity = '0.3';
   };
   // 执行动画
   fn_main.prototype._run = function (argv, resultNum, callback) {
     this.ves.style.top = '0';
     this.ves.style.transition = 'all ease 0.3s';
+    this.ves.style.webkitTransition = 'all ease 0.3s';
     var ves_status = 0,
       list_status1 = 0,
       list_status2 = 0,
@@ -281,6 +285,7 @@ var anim_mahjong = (function () {
     this.ves.addEventListener('webkitTransitionEnd', function () {
       if (ves_status == 0) {
         _this.content_list1_img2.style.transition = 'all ease 0.3s';
+        _this.content_list1_img2.style.webkitTransition = 'all ease 0.3s';
         _this.content_list1_img2.style.left = '50%';
         _this.content_list1_img2.style.marginLeft = '0.3rem';
         ves_status = 1;
@@ -289,9 +294,11 @@ var anim_mahjong = (function () {
     this.content_list1_img2.addEventListener('webkitTransitionEnd', function () {
       if (list_status1 == 0) {
         _this.content_list1_img2.style.transition = 'all ease 0.09s';
+        _this.content_list1_img2.style.webkitTransition = 'all ease 0.09s';
         _this.content_list1_img2.style.top = '1.1rem';
         setTimeout(function () {
           _this.content_list1_img2.style.transform = 'rotateY( 90deg )';
+          _this.content_list1_img2.style.webkitTransform = 'rotateY( 90deg )';
           list_status1 = 1;
         }, 50);
         // } else if ( list_status1 == 1 ){
@@ -300,11 +307,14 @@ var anim_mahjong = (function () {
         // 	list_status1 = 2;
       } else if (list_status1 == 1) {
         _this.content_list1_img2.style.transition = 'all ease 0.09s';
+        _this.content_list1_img2.style.webkitTransition = 'all ease 0.09s';
         _this.content_list1_img2.style.transform = 'rotateY( 0deg )';
+        _this.content_list1_img2.style.webkitTransform = 'rotateY( 0deg )';
         _this.content_list1_img2.setAttribute('src', argv.list1[1]);
         list_status1 = 2;
       } else if (list_status1 == 2) {
         _this.content_list2_img2.style.transition = 'all ease 0.3s';
+        _this.content_list2_img2.style.webkitTransition = 'all ease 0.3s';
         _this.content_list2_img2.style.left = '50%';
         _this.content_list2_img2.style.marginLeft = '0.3rem';
         list_status1 = 3;
@@ -313,9 +323,11 @@ var anim_mahjong = (function () {
     this.content_list2_img2.addEventListener('webkitTransitionEnd', function () {
       if (list_status2 == 0) {
         _this.content_list2_img2.style.transition = 'all ease 0.09s';
+        _this.content_list2_img2.style.webkitTransition = 'all ease 0.09s';
         _this.content_list2_img2.style.top = '1.1rem';
         setTimeout(function () {
           _this.content_list2_img2.style.transform = 'rotateY( 90deg )';
+          _this.content_list2_img2.style.webkitTransform = 'rotateY( 90deg )';
           list_status2 = 1;
         }, 50);
         // } else if ( list_status2 == 1 ){
@@ -324,11 +336,14 @@ var anim_mahjong = (function () {
         // 	list_status2 = 2;
       } else if (list_status2 == 1) {
         _this.content_list2_img2.style.transition = 'all ease 0.09s';
+        _this.content_list2_img2.style.webkitTransition = 'all ease 0.09s';
         _this.content_list2_img2.style.transform = 'rotateY( 0deg )';
+        _this.content_list2_img2.style.webkitTransform = 'rotateY( 0deg )';
         _this.content_list2_img2.setAttribute('src', argv.list2[1]);
         list_status2 = 2;
       } else if (list_status2 == 2) {
         _this.content_list3_img2.style.transition = 'all ease 0.3s';
+        _this.content_list3_img2.style.webkitTransition = 'all ease 0.3s';
         _this.content_list3_img2.style.left = '50%';
         _this.content_list3_img2.style.marginLeft = '0.3rem';
         list_status2 = 3;
@@ -337,9 +352,11 @@ var anim_mahjong = (function () {
     this.content_list3_img2.addEventListener('webkitTransitionEnd', function () {
       if (list_status3 == 0) {
         _this.content_list3_img2.style.transition = 'all ease 0.09s';
+        _this.content_list3_img2.style.webkitTransition = 'all ease 0.09s';
         _this.content_list3_img2.style.top = '1.1rem';
         setTimeout(function () {
           _this.content_list3_img2.style.transform = 'rotateY( 90deg )';
+          _this.content_list3_img2.style.webkitTransform = 'rotateY( 90deg )';
           list_status3 = 1;
         }, 50);
         // } else if ( list_status3 == 1 ){
@@ -348,21 +365,27 @@ var anim_mahjong = (function () {
         // 	list_status3 = 2;
       } else if (list_status3 == 1) {
         _this.content_list3_img2.style.transition = 'all ease 0.09s';
+        _this.content_list3_img2.style.webkitTransition = 'all ease 0.09s';
         _this.content_list3_img2.style.transform = 'rotateY( 0deg )';
+        _this.content_list3_img2.style.webkitTransform = 'rotateY( 0deg )';
         _this.content_list3_img2.setAttribute('src', argv.list3[1]);
         list_status3 = 2;
       } else if (list_status3 == 2) {
         _this.result_cont_img2.style.transition = 'all ease 0.3s';
+        _this.result_cont_img2.style.webkitTransition = 'all ease 0.3s';
         _this.result_cont_img2.style.transform = 'translate( 0.1rem )';
+        _this.result_cont_img2.style.webkitTransform = 'translate( 0.1rem )';
         list_status3 = 3;
       }
     }, false);
     this.result_cont_img2.addEventListener('webkitTransitionEnd', function () {
       if (result_status == 0) {
         _this.result_cont_img2.style.transition = 'all ease 0.09s';
+        _this.result_cont_img2.style.webkitTransition = 'all ease 0.09s';
         _this.result_cont_img2.style.top = '0';
         setTimeout(function () {
           _this.result_cont_img2.style.transform = 'translate( 0.1rem ) rotateY( 90deg )';
+          _this.result_cont_img2.style.webkitTransform = 'translate( 0.1rem ) rotateY( 90deg )';
           result_status = 1;
         }, 50);
         // } else if ( result_status == 1 ){
@@ -371,7 +394,9 @@ var anim_mahjong = (function () {
         // 	result_status = 2;
       } else if (result_status == 1) {
         _this.result_cont_img2.style.transition = 'all ease 0.09s';
+        _this.result_cont_img2.style.webkitTransition = 'all ease 0.09s';
         _this.result_cont_img2.style.transform = 'translate( 0.1rem ) rotateY( 0deg )';
+        _this.result_cont_img2.style.webkitTransform = 'translate( 0.1rem ) rotateY( 0deg )';
         _this.result_cont_img2.setAttribute('src', argv.result[1]);
         result_status = 2;
       } else if (result_status == 2) {
