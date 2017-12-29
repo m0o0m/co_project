@@ -339,14 +339,15 @@ $designWidth: 375;
 .weixinReach {
   height: 100%;
   padding-top: rem(60);
+  overflow-y: scroll;
 }
 
 .weixinReachBox {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  //height: 100%;
   padding: 0 rem(20);
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 
 .WeChatUp {
