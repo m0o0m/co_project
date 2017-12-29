@@ -568,6 +568,8 @@ $designWidth: 375;
 }
 
 .rebateContent{
+  position: relative;
+  z-index: 99999;
   height: 100%;
   padding-top: rem(50);
   overflow-y: scroll;
