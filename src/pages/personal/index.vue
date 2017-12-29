@@ -157,10 +157,10 @@
 //	          data.userInfo.photo = '';
             if (data.userInfo.photo !== '') {
 	            that.headImg = data.userInfo.photo;
-//                alert(1);
+                alert('返回地址：'+data.userInfo.photo);
             }else  {
 	            that.headImg = require('../../assets/images/numberimg/tou.png');
-//	            alert(2);
+	            alert('默认地址：'+ that.headImg );
             }
 
           }
@@ -310,7 +310,7 @@
 		    function upload(photo) {
 			    let frmData = new FormData();
 			    frmData.append('photo', photo);
-			       // frmData.append('bind_account', 1);
+//			        frmData.append('bind_account', 1);
 			    console.log(photo.size / 1024);
 			    that._Util.openLoading(that);
 			    $.ajax({
