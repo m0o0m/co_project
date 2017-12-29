@@ -38,7 +38,7 @@
               </li>
             </ul>
             <!--整合-->
-            <ul v-if="lotteryOffsColorID == 342 || lotteryOffsColorID == 346" class="integrationShowHand" :class="{'clondTopIntegration': lotteryOffsColorID == 346}">
+            <ul v-if="lotteryOffsColorID == 342 || lotteryOffsColorID == 346" class="integrationShowHand clearfix" :class="{'clondTopIntegration': lotteryOffsColorID == 346}">
               <li v-for="(play,index) in Colorful.played" :class="{'on': play.active}">
                 <article @click="playchecked($event,play,Colorful.id,play.name,index, Colorful,'',item_index)"  :class="{'on':play.active}" class="intShowHandArticle">
                   <p><span class="intShowHandSpan">{{play.name}}</span><span>{{computeOdds(play)}}</span></p>
