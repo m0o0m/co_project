@@ -149,6 +149,10 @@
           that._Util.showAlert(that, {content: '请输入正确格式的密码'});
           return;
         }
+	      if ( !that.passwordTemp) {
+		      that._Util.showAlert(that, {content: '确认密码不能为空'});
+		      return;
+	      }
         
         if (that.user.password !== that.passwordTemp) {
           that._Util.showAlert(that, {content: '输入的密码不一致'});
