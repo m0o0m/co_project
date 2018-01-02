@@ -37,7 +37,7 @@
              v-if="!$route.query.terminal && (((cid === 15 || cid === 16 || cid === 18) && chartId === 1))"></div>
         <div class="chartColor"
              :class="{'chartColors': (cid === 15 && chartId === 1)  || (cid === 16 && chartId === 1) || (cid === 18&&chartId === 1)  }"
-             v-if="cid !== 12 && cid !== 3 && chartData ">
+             v-if="cid !== 12 && cid !== 3 && chartData && (cid === 15 && chartId === 0) ">
           <!--线图-->
           <article class="chartArticle chartFix" v-for="(data,data_index) in chartData"
                    v-if="cid === 4 || cid === 5 || cid === 6 || cid === 14 || cid === 21 || cid === 22 || cid === 23 || cid === 24">
@@ -66,7 +66,7 @@
         </div>
 
         <!--香港六合彩-->
-        <div class="chartColor" v-if="chartData">
+        <div class="chartColor" v-if="chartData" :class="{'longhu': (cid === 15 && chartId === 1)}">
           <!--号码-->
           <article class="chartArticle chartCombination chartFix" v-for="(colorNum,data_index) in chartData"
                    v-if="(cid === 12 || cid === 3) && chartId === 0 ">
@@ -87,7 +87,7 @@
           </article>
           <div class="chartDragon"
                v-if="(cid === 12 || cid === 3) && chartId === 2 || cid === 15 && chartId === 1|| cid === 16 && chartId === 1|| cid === 18 && chartId === 1">
-            <div class="chartDragonMan chartFix" v-if="(cid === 12 || cid === 3) && chartId === 2 ">
+            <div class="chartDragonMan chartFix" v-if="(cid === 12 || cid === 3) && chartId === 2 " :class="{'longhu': (cid === 15 && chartId === 1)}">
               <div class="chartDragonLeft">
                 <section class="chartDrgTop">期数</section>
                 <section class="chartDrgNum">
@@ -115,7 +115,7 @@
                   <p v-for="n in chartDataNav"><a href="#" style="color: #fff">{{n.number}}</a></p>
                 </section>
               </div>
-              <div class="chartDragonRights" style="overflow-x: scroll;overflow-y: scroll;">
+              <div class="chartDragonRights" style="overflow-x: scroll;">
                 <article class="chartDrgArticle chartDrgArticles">
                   <section class="chartDrgNavs"
                            :class="{'chartDrgNav_mn':cid === 15 && chartId === 1 || cid === 18 && chartId === 1}">
