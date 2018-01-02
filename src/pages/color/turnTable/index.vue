@@ -272,7 +272,9 @@
 						});
 					}
 					let thatBalance = this.$refs.headerRef;
-					thatBalance.balanceAmount = (thatBalance.headerMarry - parseFloat(this.$refs.confirmPageRef.totalPrice)).toFixed(2);
+					if (thatBalance) {
+						thatBalance.balanceAmount = (thatBalance.headerMarry - parseFloat(this.$refs.confirmPageRef.totalPrice)).toFixed(2);
+					}
 					this.stopBetCountDownSecond = -1
 					this.stopBet = true
 					if (this.$refs.confirmPageRef) {
