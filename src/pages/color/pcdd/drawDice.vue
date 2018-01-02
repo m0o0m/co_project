@@ -7,8 +7,8 @@
                 <div class="icon_bg"></div>
             </div>
             <div class="Period">
-                第{{$parent.$refs.headerRef.actionResultCopy.number}}期
-                开奖结果{{result}}
+                <!--第{{$parent.$refs.headerRef.actionResultCopy.number}}期-->
+                <!--开奖结果{{result}}-->
             </div>
             <div class="game isplays">
                 <div class="wrap">
