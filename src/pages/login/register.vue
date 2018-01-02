@@ -88,7 +88,11 @@
           that._Util.showAlert(that, {content: '密码不能为空'});
           return;
         }
-        
+           if ( that.user.password2 == "") {
+          that._Util.showAlert(that, {content: '确认密码不能为空'});
+          return;
+        }
+
         if (!reg.test(that.user.username)) {
           that._Util.showAlert(that, {content: '用户名不能包含中文'});
           return;
