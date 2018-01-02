@@ -115,7 +115,7 @@
                   <p v-for="n in chartDataNav"><a href="#" style="color: #fff">{{n.number}}</a></p>
                 </section>
               </div>
-              <div class="chartDragonRights" style="overflow-x: scroll;">
+              <div class="chartDragonRights" style="overflow-x: scroll;overflow-y: scroll;">
                 <article class="chartDrgArticle chartDrgArticles">
                   <section class="chartDrgNavs"
                            :class="{'chartDrgNav_mn':cid === 15 && chartId === 1 || cid === 18 && chartId === 1}">
