@@ -94,8 +94,8 @@
               <section class="theLotteryColor">
                 <article class="theLotteryArticle nameArt05">
                   <p v-for="(lotNo,index) in resultList.lottery_no"
-                     :class="{'red':resultList.colors[data_index]=='red','green':resultList.colors[data_index]=='green','blue':resultList.colors[data_index]=='blue','gray':resultList.colors[data_index]=='gray'}">
-                    <span>{{lotNo}}</span><span class="Contact_cus">{{resultList.animals[data_index]}}</span></p>
+                     :class="{'red':resultList.colors[index]=='red','green':resultList.colors[index]=='green','blue':resultList.colors[index]=='blue','gray':resultList.colors[index]=='gray'}">
+                    <span>{{lotNo}}</span><span class="Contact_cus">{{resultList.animals[index]}}</span></p>
                 </article>
               </section>
               <article class="theLotteryFast">
