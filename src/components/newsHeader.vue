@@ -334,7 +334,7 @@
       'balanceMarry'() {
         // this.balanceAmount = this.balanceMarry;
         this.balanceAmount = this.balanceMarry - parseFloat(this.retainData);
-	      if ( this.balanceAmount == '') {
+	      if ( this.balanceAmount == ''  || this.balanceAmount <= 0) {
 		      this.balanceAmount = 0 ;
 	      }
 	      if( this.balanceAmount == 0) {
