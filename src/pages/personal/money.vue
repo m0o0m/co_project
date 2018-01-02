@@ -17,7 +17,11 @@
           <li class="displayFlex withdrawList"><p>提现金额</p>
             <!--maxlength="5"-->
             <p><input
-              onkeyup="if(this.value.indexOf('0')==0 && this.value!='0')this.value='';var myval=this.value.match(/^[0-9]+$/);if(myval==null)this.value='';if(isNaN(value))execCommand('undo');" onkeydown='if(event.keyCode==13)event.keyCode=9'
+              onkeyup="if(this.value.indexOf('0')==0)  {this.value=''};
+              var myval=this.value.match(/^[0-9]+$/);
+              if(myval==null){this.value=''};
+              if(isNaN(value))execCommand('undo');"
+              onkeydown='if(event.keyCode==13)event.keyCode=9'
               onafterpaste= "clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d.]/g,''))"
               v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"></p>
           </li>
