@@ -259,11 +259,16 @@
         //this.showConfirmPage()
       },
       startCountDown: function () {
-		this.stopBet = this.stopBetCountDownSecond < 0;
-        if (this.countDownSecond > 0) {
-          this.interValObj = window.setInterval(
-            function () { this.countDown() }.bind(this), 1000)
-        }
+	      let that = this;
+	      that.stopBet = that.stopBetCountDownSecond < 0;
+	      if (that.countDownSecond > 0) {
+//					this.interValObj = window.setInterval(
+//						function () {
+//							this.countDown()
+//						}.bind(this), 1000)
+
+		      that.interValObj = setInterval(that.countDown, 1000);
+	      }
       },
       countDown: function () {
         if (this.countDownSecond > 0) {
