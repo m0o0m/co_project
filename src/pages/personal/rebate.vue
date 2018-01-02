@@ -129,25 +129,26 @@
         let that = this;
         let reg = /^[0-9a-zA-z]{6,12}$/;
         
-        if (!that.user.username || !that.user.password) {
+        if (!that.user.username) {
           that._Util.showAlert(that, {content: '用户名不能为空'});
           return;
         }
-        
-        if (!reg.test(that.user.username) || !reg.test(that.user.password)) {
-          that._Util.showAlert(that, {content: '请输入6～12位数字及字母'});
+
+	      if (!reg.test(that.user.username)) {
+		      that._Util.showAlert(that, {content: '请输入6～12位数字及字母的用户名'});
+		      return;
+	      }
+
+	      if (!that.user.password) {
+		      that._Util.showAlert(that, {content: '密码不能为空'});
+		      return;
+	      }
+
+
+        if (!reg.test(that.user.password)) {
+          that._Util.showAlert(that, {content: '请输入6～12位数字及字母的密码'});
           return;
         }
-//
-//        if (!that.user.password) {
-//          that._Util.showAlert(that, {content: '密码不能为空'});
-//          return;
-//        }
-        
-//        if (!reg.test(that.user.password)) {
-//          that._Util.showAlert(that, {content: '请输入6～12位数字及字母'});
-//          return;
-//        }
         
         if (that.user.password !== that.passwordTemp) {
           that._Util.showAlert(that, {content: '输入的密码不一致'});
