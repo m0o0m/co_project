@@ -547,7 +547,7 @@
 				this.PopupupID = 0;
 			},
 			eventOpt: function (index,id) {
-				this.balanceAmount = parseFloat(this.balanceAmount) + parseFloat(this.totalMoney) - parseFloat(this.retainData);
+				this.balanceAmount = parseFloat(this.balanceAmount) + parseFloat(this.totalMoney) - parseFloat(this.retainData || 0);
 				this.numIndex = index;
 				this.navId = index;
 				this.lotteryTypeId = id;
