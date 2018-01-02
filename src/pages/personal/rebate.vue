@@ -133,19 +133,20 @@
           that._Util.showAlert(that, {content: '用户名不能为空'});
           return;
         }
-        
-        if (!reg.test(that.user.username)) {
-          that._Util.showAlert(that, {content: '[用户名]请输入6～12位数字及字母'});
-          return;
-        }
-        
-        if (!that.user.password) {
-          that._Util.showAlert(that, {content: '密码不能为空'});
-          return;
-        }
-        
+
+	      if (!reg.test(that.user.username)) {
+		      that._Util.showAlert(that, {content: '请输入正确格式的用户名'});
+		      return;
+	      }
+
+	      if (!that.user.password) {
+		      that._Util.showAlert(that, {content: '密码不能为空'});
+		      return;
+	      }
+
+
         if (!reg.test(that.user.password)) {
-          that._Util.showAlert(that, {content: '[密码]请输入6～12位数字及字母'});
+          that._Util.showAlert(that, {content: '请输入正确格式的密码'});
           return;
         }
         

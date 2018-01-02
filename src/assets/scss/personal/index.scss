@@ -569,7 +569,6 @@ $designWidth: 375;
 
 .rebateContent{
   position: relative;
-  z-index: 99999;
   height: 100%;
   padding-top: rem(50);
   overflow-y: scroll;
@@ -607,6 +606,8 @@ $designWidth: 375;
 
 .rebateUser {
   padding: rem(30) rem(30) 0;
+  position: relative;
+  z-index: 999999;
   .explain {
     padding: rem(20) 0 rem(20);
     .mo-p1 {
