@@ -1,65 +1,75 @@
 <template>
-  <div v-if="classAdata.lottery_id" class="farmVue">
-    <section class="farmGame">
-      <div class="farmGameBox">
-        <div class="farmGameAnimation clearfix">
-          <div id="machine1" class="slotMachine">
-            <div v-for="gameImg in gameImgData1" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
-          </div>
-          <div id="machine2" class="slotMachine">
-            <div v-for="gameImg in gameImgData2" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
-          </div>
-          <div id="machine3" class="slotMachine">
-            <div v-for="gameImg in gameImgData3" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/></div>
-          </div>
-        </div>
-        <div class="farmGameInfo">
-          <ul class="farmGameInfoTitle clearfix">
-            <li v-for="(nav, index) in deafNum" @click="selectNav(nav, index)" :class="{'on':index == nav_ndex}" class="floatLeft">{{nav.name}}</li>
-          </ul>
-          <div class="gamCls">
-            <ul class="clearfix">
-              <li v-for="(v, index) in items"
-                  @click="playchecked($event, v, Colorful.id, v.name, index, Colorful)" :class="{'on':v.active,floatLeft:true,gamClsLastItem:index==(items.length-1)}">
-                <article class="gameArticle clearfix">
-                  <section v-if="v.img" class="gameArtSection floatLeft"><img :src="v.img"/>
-                  </section>
-                  <section class="floatLeft gameArticleText">
-                    <p>{{v.name}}<span>/{{computeOdds(v)}}</span></p>
-                    <p :class="{'wheres':v.name == '小型水果' || v.name == '大型水果' || v.name == '中型水果' || v.name == '蔬菜' || v.name == '动物','colorRed':true}" >{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.amount)}}</p>
-                    <p class="playMarryImg imggs " v-if="v.active && !$parent.stopBet">
-                      <img v-if="!v.active" src="../../../assets/images/small01.png"/>
-                      <img v-if="v.active" :src="require('../../../assets/images/marry_' + ((v.chip === 10 || v.chip === 5000) ? v.chip + '_f' : v.chip) + '.png')"/>
-                    </p>
-                  </section>
-                </article>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!--<div class="gam-box-change">
-          &lt;!&ndash; <div class="gam-progressbar" value="0"><em style="width:0%;"><span class="isbackimg"><b>0%</b></span></em></div> &ndash;&gt;
-          &lt;!&ndash;<a href="javascript:;" class="gam-progressbar-cut"><img src="../../../assets/images/farm/bg/btn-cut.png" alt="" title="" /></a>&ndash;&gt;
-          &lt;!&ndash;<a href="javascript:;" class="gam-progressbar-add"><img src="../../../assets/images/farm/bg/btn-add.png" alt="" title="" /></a>&ndash;&gt;
+	<div v-if="classAdata.lottery_id" class="farmVue">
+		<section class="farmGame">
+			<div class="farmGameBox">
+				<div class="farmGameAnimation clearfix">
+					<div id="machine1" class="slotMachine">
+						<div v-for="gameImg in gameImgData1" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/>
+						</div>
+					</div>
+					<div id="machine2" class="slotMachine">
+						<div v-for="gameImg in gameImgData2" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/>
+						</div>
+					</div>
+					<div id="machine3" class="slotMachine">
+						<div v-for="gameImg in gameImgData3" class="machineItem"><img :src="gameImg.url" :title="gameImg.name"/>
+						</div>
+					</div>
+				</div>
+				<div class="farmGameInfo">
+					<ul class="farmGameInfoTitle clearfix">
+						<li v-for="(nav, index) in deafNum" @click="selectNav(nav, index)" :class="{'on':index == nav_ndex}"
+						    class="floatLeft">{{nav.name}}
+						</li>
+					</ul>
+					<div class="gamCls">
+						<ul class="clearfix">
+							<li v-for="(v, index) in items"
+							    @click="playchecked($event, v, Colorful.id, v.name, index, Colorful)"
+							    :class="{'on':v.active,floatLeft:true,gamClsLastItem:index==(items.length-1)}">
+								<article class="gameArticle clearfix">
+									<section v-if="v.img" class="gameArtSection floatLeft"><img :src="v.img"/>
+									</section>
+									<section class="floatLeft gameArticleText">
+										<p>{{v.name}}<span>/{{computeOdds(v)}}</span></p>
+										<p
+											:class="{'wheres':v.name == '小型水果' || v.name == '大型水果' || v.name == '中型水果' || v.name == '蔬菜' || v.name == '动物','colorRed':true}">
+											{{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, v.amount)}}</p>
+										<p class="playMarryImg imggs " v-if="v.active && !$parent.stopBet">
+											<img v-if="!v.active" src="../../../assets/images/small01.png"/>
+											<img v-if="v.active"
+											     :src="require('../../../assets/images/marry_' + ((v.chip === 10 || v.chip === 5000) ? v.chip + '_f' : v.chip) + '.png')"/>
+										</p>
+									</section>
+								</article>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--<div class="gam-box-change">
+					&lt;!&ndash; <div class="gam-progressbar" value="0"><em style="width:0%;"><span class="isbackimg"><b>0%</b></span></em></div> &ndash;&gt;
+					&lt;!&ndash;<a href="javascript:;" class="gam-progressbar-cut"><img src="../../../assets/images/farm/bg/btn-cut.png" alt="" title="" /></a>&ndash;&gt;
+					&lt;!&ndash;<a href="javascript:;" class="gam-progressbar-add"><img src="../../../assets/images/farm/bg/btn-add.png" alt="" title="" /></a>&ndash;&gt;
 
-          <div class="gambox-fdiv">
-            <span class="gam-box-name">返点</span>
-            <div class="gam-progressbar-cut" @click="iscut"></div>
-            <div class="gam-progressbar-line">
-              <p><span class="isbackimg">{{sliderValue}}%</span></p>
-            </div>
-            <div class="gam-progressbar-add" @click="isadd"></div>
-          </div>
-        </div>-->
-      </div>
-    </section>
-  </div>
+					<div class="gambox-fdiv">
+						<span class="gam-box-name">返点</span>
+						<div class="gam-progressbar-cut" @click="iscut"></div>
+						<div class="gam-progressbar-line">
+							<p><span class="isbackimg">{{sliderValue}}%</span></p>
+						</div>
+						<div class="gam-progressbar-add" @click="isadd"></div>
+					</div>
+				</div>-->
+			</div>
+		</section>
+	</div>
 </template>
 
 <script type="text/babel">
 	//	import '../../../assets/js/rem.js';
 	import '../../../assets/js/openLottery/farm/slotmachine.js';
 	import $ from "jquery";
+
 	export default {
 		props: {
 			classAdata: {default: ''},
@@ -160,9 +170,9 @@
 				machine1: null,
 				machine2: null,
 				machine3: null,
-                thisScrollTop: 0,
-                dynamicBalance: '',
-                selectedAmount: 0
+				thisScrollTop: 0,
+				dynamicBalance: '',
+				selectedAmount: 0
 			}
 		},
 
@@ -173,9 +183,9 @@
 				} else {
 					if (!this.playedListCopy.length) {
 						this.playedListCopy = JSON.parse(JSON.stringify(this.classAdata.played));
-						this.selectNav(this.classAdata.played[this.oneCredId].item[0]);
 					}
 
+					this.selectNav(this.classAdata.played[this.oneCredId].item[0]);
 					return this.classAdata.played[this.oneCredId].item;
 				}
 			}
@@ -186,14 +196,15 @@
 
 			that.$parent.$on('resetChildData', function () {
 				that.classAdata.played = JSON.parse(JSON.stringify(that.playedListCopy));
-				that.selectNav(that.classAdata.played[that.oneCredId].item[0]);
-//		that.playedListCopy = [];
-		that.selectedBalls = [];
+				that.items = [];
+//				that.selectNav(that.classAdata.played[that.oneCredId].item[0]);
+				that.playedListCopy = [];
+				that.selectedBalls = [];
 //		that.computeOdds({odds: 0});
 			});
-            $(window).scroll(function(){
-                that.thisScrollTop = $(document).scrollTop();
-            });
+			$(window).scroll(function () {
+				that.thisScrollTop = $(document).scrollTop();
+			});
 			setTimeout(function () {
 				$('.gam-progressbar-add').click(function () {
 					if ($('.gam-progressbar').attr('value') < 10) {
@@ -230,7 +241,7 @@
 				//that.start();
 			}, 2000);
 		},
-		updated(){
+		updated() {
 			$("ul.farmGameInfoTitle li").eq(this.nav_index).addClass("on");
 		},
 		methods: {
@@ -259,7 +270,7 @@
 				}
 			},
 			//增加返点
-			isadd () {
+			isadd() {
 				if ((this.sliderValue ) < 8) {
 					let that = this;
 					that.sliderValue = that.sliderValue + 1;
@@ -272,7 +283,7 @@
 				}
 			},
 			//减少返点
-			iscut () {
+			iscut() {
 				if ((this.sliderValue ) > 0) {
 					let that = this;
 					that.sliderValue = that.sliderValue - 1;
@@ -297,10 +308,10 @@
 				e.stopPropagation();
 				let that = this;
 				if (that._LotteryUtil.pauseSell(that, that.$parent.classAdata.status)) return;
-                this.selectedAmount = parseInt($(".westernSectionNum p.on").attr("data-marry"));
-                this.dynamicBalance = this.$parent.$refs.headerRef.balanceAmount;
+				this.selectedAmount = parseInt($(".westernSectionNum p.on").attr("data-marry"));
+				this.dynamicBalance = this.$parent.$refs.headerRef.balanceAmount;
 				if (!that._Util.getUserInfo().is_test_player && this._Util.isLogin() && parseInt(this.selectedAmount) > this.dynamicBalance) {
-                    this._LotteryUtil.creditLow(this);
+					this._LotteryUtil.creditLow(this);
 					// this._Util.showAlert(this, {content: "余额不足，请充值"});
 					// setTimeout(function () {
 					// 	that.$router.replace({name: 'addMoney'});
@@ -344,7 +355,7 @@
 					play['play_sub_group_id'] = playedSubtypeId
 					play['play_sub_group_name'] = playedSubtypeName;
 					play['colorfulName'] = colorful.name;
-                  play['chip'] =_this.$parent.marryNum;
+					play['chip'] = _this.$parent.marryNum;
 					if (!_this._Util.checkDup(_this.selectedBalls, 'id', play.id)) {
 						_this.selectedBalls.push(play);
 					}
@@ -356,15 +367,15 @@
 				}
 				_this.notifySelectedCount();
 
-                setTimeout(function () {
+				setTimeout(function () {
 //                      if( _this.nav_ndex == 0  ){
 
 //                    console.log( playedSubtypeName )
-                          _this._Util.chip(_this, e, $('.gamCls ul li:eq(' + index + ')'),"",parseInt(_this.thisScrollTop));
+					_this._Util.chip(_this, e, $('.gamCls ul li:eq(' + index + ')'), "", parseInt(_this.thisScrollTop));
 
 //                      }
 
-                }, 10);
+				}, 10);
 			},
 			getAllSelectedBalls() {
 				return this.selectedBalls
@@ -412,14 +423,14 @@
 				that.$parent.$refs.headerRef.getHistoryBetMoney(that.totalMoney);
 			},
 			onComplete: function (first, two, three) {
-        $(".slotMachineContainer").css({'margin-top':-$("#machine1 div").eq(1).height()});
+				$(".slotMachineContainer").css({'margin-top': -$("#machine1 div").eq(1).height()});
 				$("#machine1 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine2 div").eq(1).css({'margin-bottom': "0"});
 				$("#machine3 div").eq(1).css({'margin-bottom': "0"});
-				$("#machine1 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
-				$("#machine2 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
-				$("#machine3 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width':"1.7rem"});
-    
+				$("#machine1 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width': "1.7rem"});
+				$("#machine2 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width': "1.7rem"});
+				$("#machine3 div").eq(3).css({'margin-bottom': "0.24241rem"}).find("img").css({'width': "1.7rem"});
+
 				$("#machine1 div").eq(2).css({'margin-bottom': "0.24241rem"}).find("img").css({opacity: ".6"});
 				$("#machine1 div").eq(4).find("img").css({opacity: "0.6"});
 				$("#machine2 div").eq(2).css({'margin-bottom': "0.24241rem"}).find("img").css({opacity: "0.6"});
@@ -428,7 +439,7 @@
 				$("#machine3 div").eq(4).find("img").css({opacity: "0.6"});
 			},
 			//获取数据结果中对应的下标周围的一条数据
-			match(list){
+			match(list) {
 				let result = [];
 				for (let i = 0, v; v = list[i++];) {
 					if (this.$parent.$refs.headerRef.actionResultCopy.extfield1 === v.name) {
@@ -448,7 +459,7 @@
 				}
 				return result;
 			},
-			farm_animate_init(){
+			farm_animate_init() {
 				let that = this;
 
 				let resultData1 = that.match(that.gameImgData1);
@@ -462,7 +473,7 @@
 
 			},
 			start: function () {
-        $(".slotMachineContainer").css({'margin-top':-$("#machine1 div").eq(1).height()});
+				$(".slotMachineContainer").css({'margin-top': -$("#machine1 div").eq(1).height()});
 				$(".slotMachineContainer div").attr("style", "");
 				$(".slotMachineContainer img").attr("style", "");
 				let that = this;
@@ -496,7 +507,7 @@
 				that._Util.audioPlay(that, {fileName: 'nongchang.mp3', audioPlay: true});
 				setTimeout(function () {
 					that._Util.audioClose(that);
-				},5000);
+				}, 5000);
 
 			}
 		},
@@ -514,25 +525,26 @@
 					that.start();
 				}, 1000);
 			}
-
 		}
 	}
 </script>
 
 <style>
-  .playMarryImg {
-    position: relative;
-    opacity:1 !important;
-  }
-  .playMarryImg.imggs img{
-    display: inline-block;
-    position: absolute;
-    right:0.2rem;
-    bottom: 0rem;
-    width: 0.8rem;
-    height:0.8rem;
-  }
-  p.wheres {
-    width: 100% ;
-  }
+	.playMarryImg {
+		position: relative;
+		opacity: 1 !important;
+	}
+
+	.playMarryImg.imggs img {
+		display: inline-block;
+		position: absolute;
+		right: 0.2rem;
+		bottom: 0rem;
+		width: 0.8rem;
+		height: 0.8rem;
+	}
+
+	p.wheres {
+		width: 100%;
+	}
 </style>
