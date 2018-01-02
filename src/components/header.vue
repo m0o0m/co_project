@@ -15,7 +15,7 @@
             <div>
               <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
                 <section><p>已投：<span v-html="totalMoney || 0"></span></p></section>
-                <section class="balanceAmount"><p>余:￥<span>{{balanceAmount <= 0 ? 0.00 : balanceAmount == '' ? 0.00 : balanceAmount}}</span>
+                <section class="balanceAmount"><p>余:￥<span>{{balanceAmount}}</span>
                 </p></section>
               </div>
               <div class="DeliveryLotteryImg"><img :src="icon"/></div>
@@ -345,7 +345,7 @@
 				},
 //                balanceMarry: '',
 				exportId: false,
-				balanceAmount: '',
+				balanceAmount: 0.00,
 				reservePrice: 0,
 				initializationPrice: 0,
 				lotteryTypeId: 0,
@@ -370,9 +370,17 @@
 				}
 			},
 			'balanceMarry'() {
+
 				this.balanceAmount = this.balanceMarry - parseFloat(this.retainData);
-				this.headerMarry = JSON.parse(JSON.stringify(this.balanceMarry));
-				this.retainData = this.totalMoney;
+          if ( this.balanceAmount == '') {
+            this.balanceAmount = 0 ;
+          }
+         if( this.balanceAmount == 0) {
+	         this.balanceAmount = this.balanceAmount.toFixed(2) ;
+         }else {
+	         this.headerMarry = JSON.parse(JSON.stringify(this.balanceMarry));
+         }
+				this.retainData = this.totalMone;
 
 			},
 
@@ -386,7 +394,7 @@
 			that.deafNumFirst();
 			that.balanceHods();
 			that.balanceAmount = that.balanceMarry;
-			that.headerMarry = JSON.parse(JSON.stringify(that.balanceMarry || 0));
+			that.headerMarry = JSON.parse(JSON.stringify(that.balanceMarry || 0.00));
 			that.initData();
 			that.$router.beforeEach((route, redirect, next) => {
 				clearInterval(this.timeInterval);
