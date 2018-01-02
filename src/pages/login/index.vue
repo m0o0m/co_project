@@ -55,10 +55,14 @@
         // alert(12)
         let that = this;
         
-        if (that.user.username == "" || that.user.password == "") {
-          that._Util.showAlert(that, {content: '账号密码不能为空'});
-          return;
-        }
+        if (that.user.username == "") {
+		      that._Util.showAlert(that, {content: '账号不能为空'});
+		      return;
+	      }
+	      if ( that.user.password == "") {
+		      that._Util.showAlert(that, {content: '密码不能为空'});
+		      return;
+	      }
         that._Util.post(that, that._Api.POST_LOGIN, {
           username: that.user.username,
           password: that._Util.hexMd5(that.user.password)

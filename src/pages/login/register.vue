@@ -80,8 +80,12 @@
       immediateRegistration() {
         let that = this;
         let reg = /^[^\u4e00-\u9fa5]{0,}$/;
-        if (that.user.username == "" || that.user.password == "" || that.user.password2 == "") {
-          that._Util.showAlert(that, {content: '账号密码不能为空'});
+        if (that.user.username == "" ) {
+          that._Util.showAlert(that, {content: '账号不能为空'});
+          return;
+        }
+        if ( that.user.password == "" || that.user.password2 == "") {
+          that._Util.showAlert(that, {content: '密码不能为空'});
           return;
         }
         
