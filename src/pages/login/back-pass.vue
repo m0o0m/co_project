@@ -141,8 +141,10 @@
 				that.user.password = MD5.hex_md5(that.user.password);
 				that.user.password2 = MD5.hex_md5(that.user.password2);
 				that._Util.post(that, that._Api.POST_FORGIT, that.user, (data) => {
-					that._Util.showAlert(that, {content: '设置密码成功'});
-					that.$router.replace({name: 'home'});
+					that._Util.showAlert(that, {content: '设置密码成功'}, () => {
+						that.$router.go(-1);
+					});
+//					that.$router.replace({name: 'home'});
 				});
 			},
 
