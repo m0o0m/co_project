@@ -14,7 +14,13 @@
           </section>
         </div>
         <ul>
-          <li class="displayFlex withdrawList"><p>提现金额</p><p><input v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"></p></li>
+          <li class="displayFlex withdrawList"><p>提现金额</p>
+            <!--maxlength="5"-->
+            <p><input
+              onkeyup="if(this.value.indexOf('0')==0 && this.value!='0')this.value='';var myval=this.value.match(/^[0-9]+$/);if(myval==null)this.value='';if(isNaN(value))execCommand('undo');" onkeydown='if(event.keyCode==13)event.keyCode=9'
+              onafterpaste= "clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d.]/g,''))"
+              v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"></p>
+          </li>
           <li class="displayFlex withdrawList"><p>提现密码</p><p><input v-model="bank.pay_password" type="password" value="" placeholder="请输入您的提现密码"></p>
           </li>
           <li class="forgetPaw"><p><a @click="forgotPwd()">忘记提现密码?</a></p></li>
