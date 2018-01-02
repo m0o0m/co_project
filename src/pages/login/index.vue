@@ -97,7 +97,7 @@
       },
       
       foregister() {
-        this.$router.replace({name: 'back-pass'});
+        this.$router.push({name: 'back-pass'});
       },
       
       wxLogin() {
