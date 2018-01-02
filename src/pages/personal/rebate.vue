@@ -135,7 +135,7 @@
         }
 
 	      if (!reg.test(that.user.username)) {
-		      that._Util.showAlert(that, {content: '请输入6～12位数字及字母的用户名'});
+		      that._Util.showAlert(that, {content: '请输入正确格式的用户名'});
 		      return;
 	      }
 
@@ -146,7 +146,7 @@
 
 
         if (!reg.test(that.user.password)) {
-          that._Util.showAlert(that, {content: '请输入6～12位数字及字母的密码'});
+          that._Util.showAlert(that, {content: '请输入正确格式的密码'});
           return;
         }
         
