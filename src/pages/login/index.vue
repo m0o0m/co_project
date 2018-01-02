@@ -89,11 +89,11 @@
               that.$router.replace({name: 'home'});
             }
           }
-        });
+        })
       },
       
       register() {
-        this.$router.replace({name: 'register'});
+        this.$router.push({name: 'register'});
       },
       
       foregister() {
