@@ -40,7 +40,7 @@
               <p>长按保存二维码</p>
             </div>
             <div class="aboutUsVersionText">
-              <p><span>2011-2017</span> ©棋牌彩票</p>
+              <p><span>2011-2018</span> ©棋牌彩票</p>
               <p>提醒：购买彩票有风险，在线投注需谨慎，不向未满<span>18</span>周岁的少年出售彩票!</p>
             </div>
           </div>
