@@ -1,21 +1,21 @@
 <template>
   <div class="indexMian" :class="{'indexBack' :resouseIndex == '1'}">
-    <div slot="content">
-      <div class="advertisement" v-if="marvellous === 0">
-        <div class="adverted">
-          <section>
-            <img :src="downloadImg" alt="">
-          </section>
-          <section>
-            <p>更多精彩尽在APP</p>
-            <p>一键下载方便快捷易投注</p>
-          </section>
-          <section>
-            <a :href="HomeDownUrl">下载</a>
-          </section>
-          <section @click="marvellousMarv"></section>
-        </div>
+    <div class="advertisement" v-if="marvellous === 0">
+      <div class="adverted">
+        <section>
+          <img :src="downloadImg" alt="">
+        </section>
+        <section>
+          <p>更多精彩尽在APP</p>
+          <p>一键下载方便快捷易投注</p>
+        </section>
+        <section>
+          <a :href="HomeDownUrl">下载</a>
+        </section>
+        <section @click="marvellousMarv"></section>
       </div>
+    </div>
+    <div slot="content">
       <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; margin-top: 2.48276rem;">
 	      <mt-swipe-item v-if="showSwipeDefault">
 		      <!--<a :href="item.hrefUrl"><img :src="item.picUrl"></a>-->
@@ -99,7 +99,7 @@
 
             </article>
             <a href="javascript:void(0)" @click="indexNoticeIndex = 1"><img
-                src="../assets/images/noticeDel.png"/></a>
+              src="../assets/images/noticeDel.png"/></a>
           </section>
         </article>
       </div>
@@ -161,6 +161,7 @@
 			OpenFrame
 		},
 		mounted() {
+			      this._Util.setCss('body',{"height": 1},"*");
 			this.initData();
 //      this._Util.showConfirm(this, {content: "瞧一瞧，看一看，新鲜出炉"});
 			//首頁
@@ -500,9 +501,9 @@
 </script>
 
 <style lang="scss">
-  /*#app {*/
-    /*background: transparent;*/
-  /*}*/
+  body {
+    height: auto;
+  }
 
   /*.slide-wrapper {*/
     /*position: relative;*/
