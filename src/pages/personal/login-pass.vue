@@ -50,22 +50,35 @@
       save() {
         let that = this;
         let reg = /^[0-9a-zA-z]{6,12}$/;
+	      if (!that.old_password) {
+		      that._Util.showAlert(that, {content: '原密码不能为空'});
+		      return;
+	      }
         if (!reg.test(that.old_password) || !reg.test(that.old_password)) {
-          that._Util.showAlert(that, {content: '原密码不能为空'});
+          that._Util.showAlert(that, {content: '原密码为6~12位数'});
           return;
         }
-        if (!that.old_password) {
-          that._Util.showAlert(that, {content: '原密码不能为空'});
-          return;
-        }
-        if (!that.password || !that.password1) {
+        if (!that.password ) {
           that._Util.showAlert(that, {content: '新密码不能为空'});
           return;
         }
+	      if (!reg.test(that.password) ) {
+		      that._Util.showAlert(that, {content: '新密码为6~12位数'});
+		      return;
+	      }
+	      if (!that.password1) {
+		      that._Util.showAlert(that, {content: '确认密码不能为空'});
+		      return;
+	      }
+//	      if (!reg.test(that.password1)) {
+//		      that._Util.showAlert(that, {content: '新密码为6~12位数'});
+//		      return;
+//	      }
         if (that.password !== that.password1) {
           that._Util.showAlert(that, {content: '两次输入的密码不一致'});
           return;
         }
+
         that._Util.post(that, that._Api.POST_USER_UPD_PWD, {
           old_password: that._Util.hexMd5(that.old_password),
           password: that._Util.hexMd5(that.password)
