@@ -193,7 +193,7 @@
 					that.title = "北京pk10";
 					break;
 				case 6:
-					that.chartNav = ["万位", "千位", "百位", "个位", "十位"];
+					that.chartNav = ["万位", "千位", "百位", "十位", "个位"];
 					that.chartNum = 10;
 					that.chartIndex = 0;
 					that.title = "重庆时时彩";
