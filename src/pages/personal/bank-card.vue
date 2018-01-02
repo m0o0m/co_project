@@ -18,7 +18,7 @@
           </section>
         </div>
       </div>
-      <div v-else class="addBankCardBox">
+      <div v-if = "flag" class="addBankCardBox">
         <div class="bankAdminCard" @click="addCard()">
           <section>
             <p></p>
@@ -35,7 +35,8 @@
     data() {
       return {
         result: {},
-        bankLogo: ''
+        bankLogo: '',
+        flag :false
       }
     },
     
@@ -49,6 +50,9 @@
         let that = this;
         that._Util.post(that, that._Api.POST_PERSONAL_MEMBER_BANK, {}, (data) => {
 //          data.card_number = '';
+          if ( !data.card_number ) {
+          	 that.flag = true ;
+          }
           that.result = data;
           if (data.bank_id) {
             that.bankLogo = require('../../assets/images/bankLogo/' + data.bank_id + '.png');
