@@ -52,7 +52,6 @@
         </div>
       </div>
     </div>
-
     <!--選擇玩法-->
     <div class="choicePlay positionFixed indexJust" v-if="PopupupID == 1">
       <div class="choicePlayMain">
