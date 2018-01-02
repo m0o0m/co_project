@@ -271,7 +271,7 @@
         this.increaseId = 0;
       },
       eventOpt(index,id) {
-        this.balanceAmount = parseFloat(this.balanceAmount) + parseFloat(this.totalMoney) - parseFloat(this.retainData);
+	      this.balanceAmount = parseFloat(this.balanceAmount) + parseFloat(this.totalMoney - this.totalMoneyCopy);
         this.numIndex = index;
         this.navId = index;
         this.lotteryTypeId = id;

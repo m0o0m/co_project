@@ -380,7 +380,7 @@
          }else {
 	         this.headerMarry = JSON.parse(JSON.stringify(this.balanceMarry));
          }
-				this.retainData = this.totalMone;
+				this.retainData = this.totalMoney;
 
 			},
 
@@ -547,7 +547,7 @@
 				this.PopupupID = 0;
 			},
 			eventOpt: function (index,id) {
-				this.balanceAmount = parseFloat(this.balanceAmount) + parseFloat(this.totalMoney) - parseFloat(this.retainData || 0);
+				this.balanceAmount = parseFloat(this.balanceAmount) + parseFloat(this.totalMoney - this.totalMoneyCopy);
 				this.numIndex = index;
 				this.navId = index;
 				this.lotteryTypeId = id;
