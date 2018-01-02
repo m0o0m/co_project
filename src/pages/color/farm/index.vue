@@ -133,7 +133,7 @@
       this.$on('resetData', function (data) {
         if (data) {
           this.$emit('resetChildData');
-		  this.$refs.headerRef.getHistoryBetMoney();
+		      this.$refs.headerRef.getHistoryBetMoney();
           this.marryNum = 100;
           this.sliderValue = 0;
         }
@@ -150,7 +150,7 @@
       requestLotteryDetail: function(isLottery) {
         let that = this;
         that._Util.post(that, that._Api.POST_LOTTERY_DETAIL, {id: that.gameId}, (data) => {
-          that.classAdata = data;
+	        that.classAdata = data;
           that.$refs.headerRef.retainData = 0;
           that.creditId = that.classAdata.lottery_id;
 
@@ -195,8 +195,8 @@
           //倒计时
           that.stopBetCountDownSecond = data.stop_count_down;
           that.countDownSecond = data.count_down;
-//          that.stopBetCountDownSecond = 35;
-//          that.countDownSecond = 5;
+//          that.stopBetCountDownSecond = 3;
+//          that.countDownSecond = 33;
           that.whetherNumber = that.classAdata.status;
           if(that.classAdata.kj_cycle){
             that.cycleStop = that.classAdata.kj_cycle;
@@ -263,6 +263,7 @@
         } else {
           this.countDownStr = this._Util.formatTime(-1, 0, this.stopBet);
           window.clearInterval(this.interValObj)
+//	        this.$refs.footerRef.resetData(true);
           this.requestLotteryDetail(true)
           this.stopBet = false;
           if (this.$refs.confirmPageRef) {

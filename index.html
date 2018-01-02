@@ -36,7 +36,7 @@
 				+ '【colNo】' + (colNo || '')
 				+ '【errStack】' + (error && error.stack ? error.stack.toString() : '');
 			//alert(message);
-			if (localHost.indexOf('git.qpcp4.com') !== -1) {
+			if (localHost.indexOf('git.') !== -1) {
 				alert(message + '【error】' + content.toString());
 			}
 		};
