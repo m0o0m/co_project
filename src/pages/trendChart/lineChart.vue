@@ -37,7 +37,7 @@
              v-if="!$route.query.terminal && (((cid === 15 || cid === 16 || cid === 18) && chartId === 1))"></div>
         <div class="chartColor"
              :class="{'chartColors': (cid === 15 && chartId === 1)  || (cid === 16 && chartId === 1) || (cid === 18&&chartId === 1)  }"
-             v-if="cid !== 12 && cid !== 3 && chartData && (cid === 15 && chartId === 0) ">
+             v-if="cid !== 12 && cid !== 3 && chartData || (cid === 15 && chartId === 0) ">
           <!--线图-->
           <article class="chartArticle chartFix" v-for="(data,data_index) in chartData"
                    v-if="cid === 4 || cid === 5 || cid === 6 || cid === 14 || cid === 21 || cid === 22 || cid === 23 || cid === 24">
