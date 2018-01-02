@@ -77,12 +77,12 @@ $designWidth: 375;
 }
 
 .colorListMian {
-  height: rem(335);
-  overflow-y: scroll;
+  //height: rem(335);
+  //overflow-y: scroll;
   ul {
     height: auto;
     overflow: hidden;
-    padding-bottom: rem(100);
+    //padding-bottom: rem(100);
     li {
       width: 33%;
       float: left;
