@@ -313,7 +313,7 @@
         this.jsksImgList = [];
         this.jsksNewData = [];
         this.selectedBalls = [];
-		this.classAdata.played = JSON.parse(JSON.stringify(this.playedListCopy));
+				this.classAdata.played = JSON.parse(JSON.stringify(this.playedListCopy));
         var  _NextHeight = $(window).height(),
           _headerHeight = $(".headered").outerHeight(true),
           _footerHeight = $(".westernFooter").outerHeight(true);
