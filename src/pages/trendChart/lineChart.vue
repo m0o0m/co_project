@@ -87,7 +87,7 @@
           </article>
           <div class="chartDragon"
                v-if="(cid === 12 || cid === 3) && chartId === 2 || cid === 15 && chartId === 1|| cid === 16 && chartId === 1|| cid === 18 && chartId === 1">
-            <div class="chartDragonMan chartFix" v-if="(cid === 12 || cid === 3) && chartId === 2 " :class="{'longhu': (cid === 15 && chartId === 1)}">
+            <div class="chartDragonMan chartFix" v-if="(cid === 12 || cid === 3) && chartId === 2 " >
               <div class="chartDragonLeft">
                 <section class="chartDrgTop">期数</section>
                 <section class="chartDrgNum">
@@ -107,7 +107,7 @@
                 </article>
               </div>
             </div>
-            <div class="chartDragonMan chartFix"
+            <div class="chartDragonMan chartFix" :class="{'longhu': (cid === 15 && chartId === 1)}"
                  v-if="cid === 16 && chartId === 1 || cid === 15 && chartId === 1|| cid === 18 && chartId === 1 ">
               <div class="chartDragonLefts">
                 <section class="chartDrgTop">期数</section>
