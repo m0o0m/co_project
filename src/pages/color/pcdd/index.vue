@@ -200,7 +200,7 @@
         var that = this;
         var startTime = new Date();
         that._Util.post(that, that._Api.POST_LOTTERY_DETAIL, {id: that.gameId}, (data) => {
-          that.classAdata = data;
+        	that.classAdata = data;
           that.$refs.headerRef.retainData = 0;
           //是否暂停销售
           that.creditId = that.classAdata.lottery_id;
