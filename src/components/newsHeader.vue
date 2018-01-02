@@ -169,7 +169,7 @@
 //	  this.getHistoryRecord();
       this.balanceHods();
       this.balanceAmount = this.balanceMarry;
-      this.headerMarry = JSON.parse(JSON.stringify(this.balanceMarry || 0.00));
+      this.headerMarry = JSON.parse(JSON.stringify(this.balanceMarry || 0));
       this.$router.beforeEach((route, redirect, next) => {
         clearInterval(this.timeInterval);
         clearInterval(this.$parent.interValObj);

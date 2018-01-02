@@ -394,7 +394,7 @@
 			that.deafNumFirst();
 			that.balanceHods();
 			that.balanceAmount = that.balanceMarry;
-			that.headerMarry = JSON.parse(JSON.stringify(that.balanceMarry || 0.00));
+			that.headerMarry = JSON.parse(JSON.stringify(that.balanceMarry || 0));
 			that.initData();
 			that.$router.beforeEach((route, redirect, next) => {
 				clearInterval(this.timeInterval);
