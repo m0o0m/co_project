@@ -15,14 +15,8 @@
         </div>
         <ul>
           <li class="displayFlex withdrawList"><p>提现金额</p>
-            <!--maxlength="5"-->
             <p><input
-              onkeyup="if(this.value.indexOf('0')==0)  {this.value=''};
-              var myval=this.value.match(/^[0-9]+$/);
-              if(myval==null){this.value=''};
-              if(isNaN(value))execCommand('undo');"
-              onkeydown='if(event.keyCode==13)event.keyCode=9'
-              onafterpaste= "clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d.]/g,''))"
+              onkeyup= "value=value.replace(/^[0][0-9]*$/g,'') "
               v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"></p>
           </li>
           <li class="displayFlex withdrawList"><p>提现密码</p><p><input v-model="bank.pay_password" type="password" value="" placeholder="请输入您的提现密码"></p>
@@ -38,7 +32,7 @@
 
 <script>
 //  import '../../assets/scss/personal.scss';
-  
+
   export default {
     data() {
       return {
