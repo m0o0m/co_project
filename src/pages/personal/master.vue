@@ -82,7 +82,7 @@
 			return {
 				result: [],
 				dateItems: [],
-				value2: 2017,
+				value2: 2018,
 				value3: '全部',
 				pickerValue: true,
 				title: "代理后台",
@@ -110,7 +110,7 @@
 				last_page: 1,
 				years: false,
 				month: false,
-				isYear: 2017,
+				isYear: 2018,
 				PeopleAlways: 0,
 				newAdd: 0,
 			}
@@ -121,6 +121,7 @@
 			that._Util.needClickFc('agencyAssetsDeList');
 			let date = new Date;
 			that.isYear = date.getFullYear();
+			that.value2 =  that.isYear;
 			that.$on('pickerCancel', () => {
 				that.years = false;
 				that.month = false;
@@ -237,6 +238,7 @@
 				that.params.page = 1;
 				that.busy = false;
 				that.resultLists = [];
+				that.resultList = [];
 				this.init();
 			}
 		},
