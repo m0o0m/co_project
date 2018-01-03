@@ -158,7 +158,7 @@
         let that = this;
         let fun = () => {
           this.sliderValue = 0;
-        this.dragMan_maxline = null;
+//        this.dragMan_maxline = null;
          if(this.creditId === 3 || this.creditId === 12){
              this.dragMan_minline.style.left = '0px';
              this.dragMan_redLine.style.width = '0px';
@@ -240,7 +240,12 @@
             var x = e.touches[0].pageX;
           }
           var lineDiv_left = this.getPosition(this.dragMan_maxline).left;
-          this.dragminLeft = x - lineDiv_left;
+
+//	        console.log(this.dragMan_maxline);
+//	        console.log(this.dragMan_maxline);
+//	        console.log('12',this.dragMan_maxline);
+
+	        this.dragminLeft = x - lineDiv_left;
           this.offsetWidth = this.dragMan_maxline.offsetWidth - this.dragMan_minline_width;
           if (this.dragminLeft >= this.offsetWidth) {
             this.dragminLeft = this.offsetWidth;
@@ -258,6 +263,10 @@
       },
       //获取元素的绝对位置
       getPosition: function (node) {
+//
+//      	console.log( none )
+//      	console.log( none )
+//      	console.log( none )
         var left = node.offsetLeft; //获取元素相对于其父元素的left值var left
         var top = node.offsetTop;
         var current = node.offsetParent; // 取得元素的offsetParent
