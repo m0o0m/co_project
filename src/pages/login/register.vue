@@ -122,6 +122,8 @@
         if (that.user.proxy_code) {
           params.proxy_code = that.user.proxy_code;
         }
+
+	      params.use_gift_result = that.$route.query.gift || 0;
         
         that._Util.post(that, that._Api.POST_REGISTER, params, (data) => {
           sessionStorage.setItem('openAccountCode', '');
