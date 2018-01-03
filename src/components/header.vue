@@ -476,12 +476,12 @@
 //				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice);
 				this.totalMoney = (money || 0) + this.totalMoneyCopy + this.reservePrice;
 				this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
-				console.log(1)
-				console.log(this.reservePrice);//待确认投注金额
-				console.log(this.totalMoney);//现投
-				console.log(this.balanceAmount); //余 额
-				console.log(this.totalMoneyCopy);//已投金额
-				console.log(1)
+//				console.log(1)
+//				console.log(this.reservePrice);//待确认投注金额
+//				console.log(this.totalMoney);//现投
+//				console.log(this.balanceAmount); //余 额
+//				console.log(this.totalMoneyCopy);//已投金额
+//				console.log(1)
         this.reservePriceCopy = this.reservePrice;
 				this.reservePriceTol = parseInt(this.totalMoney);
 			if (this.$parent.stopBet) {
