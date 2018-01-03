@@ -61,13 +61,18 @@
       <article class="tempB_mun">
         <figure><img src="../../assets/images/jiantou2x.png"/></figure>
         <aside>点击右上角分享按钮，然后选择在"浏览器中打开"</aside>
-        <section>
+        <section v-if="!_Util.browser().versions.android" >
           <p><img src="../../assets/images/1.png" class="assetsCls"/>点击右上角···图标</p>
-          <p><img src="../../assets/images/2.png" class="assetsCls"/>选择<img src="../../assets/images/s2x.png"
-                                                                            class="sxCls"/>在浏览器中打开</p>
+          <p><img src="../../assets/images/2.png" class="assetsCls"/>选择<img src="../../assets/images/s2x.png" class="sxCls"/>在浏览器中打开</p>
           <p><img src="../../assets/images/3.png" class="assetsCls"/>在打开的页面中下载</p>
         </section>
-        <div class="tempB_img"><img src="../../assets/images/Bitmap2x.png" class="bitmaps"/></div>
+        <section v-if="_Util.browser().versions.android" >
+          <p style="vertical-align:middle;"><img src="../../assets/images/1.png" class="assetsCls"/>点击右上角 <img style="width: 0.2rem ;height: 0.8rem;margin: 0 0.1rem;display: inline-block;position: relative;top:0.2rem;" src="../../assets/images/s4x.png" alt=""> 图标</p>
+          <p><img src="../../assets/images/2.png" class="assetsCls"/>选择
+            <img  src="../../assets/images/s3x.png"class="sxCls"/>在浏览器中打开</p>
+          <p><img src="../../assets/images/3.png" class="assetsCls"/>在打开的页面中下载</p>
+        </section>
+        <div v-if="!_Util.browser().versions.android" class="tempB_img"><img src="../../assets/images/Bitmap2x.png" class="bitmaps"/></div>
       </article>
     </div>
     <!--360-->

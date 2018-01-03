@@ -280,58 +280,23 @@
 						that.trues = true;
 						return;
 					}
-//					alert("is android");
-					//跳转Android的下载地址
-//          location.href = "https://download.qpcp10.com/android/qpcp.apk";
-//           let codeText = "";
-//           if (!codeVal) {
-//             false;
-//           } else {
-//             codeText = codeVal.code;
-//           }
-// 	        var codeText = this.$route.query.code ? this.$route.query.code : '';
-					// var that = this,
-					//   params = {
-					//     type: "android",
-					//     code: codeText
-					//
-					//   };
-					// that._Util.post(that, that._Api.POST_APP_CLIENT, params, (data) => {
-					//   location.href = data.url;
-					// });
 					if (!this.$route.query.code) {
 						location.href = 'https://m.qpcp9.com/down';
-//                location.href = 'http://192.168.1.116:8088/lottery/iosDownload';
 					} else {
-//              location.href = 'http://192.168.1.116:8088/lottery/iosDownload?code='+codeVal.code+'';
 						location.href = 'https://m.qpcp9.com/down?code=' + this.$route.query.code + '';
 					}
-					//location.href = "https://res.yfunion.com/android/qpcp_v1.0.0.apk";
-//          location.href = "https://yfunion.com/android/qpcp_v1.0.0.apk";
 				}
 				//判断是否ios端
 				if (browser.versions.ios) {
-//					alert("is ios");
-
-//          this.$router.push({name: 'iosH5Download'});
-					//跳转iOS的下载地址
-
 					if (browser.versions.weixin || browser.versions.qq) {
 						let that = this;
 						that.trues = true;
 						return;
 					}
 
-//	        if () {
-//		        let that = this;alert(23);
-//		        that.trues = true;
-//		        return;
-//	        }
 					if (!this.$route.query.code) {
 						location.href = 'https://m.qpcp9.com/down';
-//                location.href = 'http://192.168.1.116:8088/lottery/iosDownload';
 					} else {
-//              location.href = 'http://192.168.1.116:8088/lottery/iosDownload?code='+codeVal.code+'';
 						location.href = 'https://m.qpcp9.com/down?code=' + this.$route.query.code + '';
 					}
 				}
