@@ -23,8 +23,8 @@
             <div class="message">
               <div class="container">
                 <h3>棋牌彩票</h3>
-                <p>正式版-1.1（Build 1.1）-30115.25KB<br>
-                  更新于：2017-11-02 22:00</p>
+                <p>正式版-1.04（Build 1.04）-30115.25KB<br>
+                  更新于：2018-1-03 22:00</p>
                 <a href="itms-services://?action=download-manifest&url=https://download.qpcp10.com/ios/qpcp.plist"
                    class="download indexJust">下载安装</a>
                 <a id="install_step" @click="show_steps">安装步骤</a>
