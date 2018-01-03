@@ -84,7 +84,7 @@
           that._Util.showAlert(that, {content: '账号不能为空'});
           return;
         }
-        if ( that.user.password == "" || that.user.password2 == "") {
+        if ( that.user.password == "" ) {
           that._Util.showAlert(that, {content: '密码不能为空'});
           return;
         }
