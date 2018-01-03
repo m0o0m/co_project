@@ -14,7 +14,7 @@
           <div class="DeliveryPrice displayFlex">
             <div>
               <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-                <section><p>已投：<span v-html=" totalMoneyCopy ? reservePriceTol : ( reservePrice ? totalMoney : ( reservePriceTol2 ? totalMoney : 0) )"></span></p></section>
+                <section><p>已投：<span v-html=" totalMoneyCopy ? reservePriceTol : ( reservePrice ? totalMoney : ( reservePriceTol2 ? totalMoney : (reservePriceCopy ? reservePriceCopy : 0)) )"></span></p></section>
                 <section class="balanceAmount"><p>余:￥<span>{{balanceAmount < 0 ? '0.00' : balanceAmount}}</span>
                 </p></section>
               </div>
@@ -293,7 +293,7 @@
 		},
 		data() {
 			return {
-				totalMoneyCopy: 0,
+				totalMoneyCopy: this.reservePriceCopy,
 				showFrmBack: false,
 				toUrl: '',
 				showOpenFrame: false,
@@ -366,6 +366,7 @@
 //				this.getHistoryBetMoney();
 				this.totalMoney = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
 				this.totalMoneyCopy = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
+				this.getHistoryBetMoney()
 				if(this.classAdata){
 					this.lotteryTypeId = this.lotteryTypeId || this.classAdata.played[0].id;
 				}else {
@@ -470,9 +471,6 @@
 
 			getHistoryBetMoney(money) {
 				this.reservePrice = parseFloat(this.$parent.$refs.confirmPageRef.totalPrice);
-
-
-
 //				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice);
 				this.totalMoney = (money || 0) + this.totalMoneyCopy + this.reservePrice;
 				this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
