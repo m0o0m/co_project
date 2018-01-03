@@ -14,7 +14,7 @@
           <div class="DeliveryPrice displayFlex">
             <div>
               <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-                <section><p>已投：<span v-html="totalMoney || 0"></span></p></section>
+                <section><p>已投：<span v-html=" totalMoneyCopy ? reservePriceTol : ( reservePrice ? totalMoney : ( reservePriceTol2 ? totalMoney : 0) )"></span></p></section>
                 <section class="balanceAmount"><p>余:￥<span>{{balanceAmount < 0 ? '0.00' : balanceAmount}}</span>
                 </p></section>
               </div>
@@ -350,7 +350,10 @@
 				initializationPrice: 0,
 				lotteryTypeId: 0,
 				retainData: 0,
-				headerMarry: 0
+				headerMarry: 0,
+				reservePriceCopy:0,
+				reservePriceTol:0,
+				reservePriceTol2:0,
 			}
 		},
 		watch: {
@@ -370,7 +373,6 @@
 				}
 			},
 			'balanceMarry'() {
-
 				this.balanceAmount = this.balanceMarry - parseFloat(this.retainData);
           if ( this.balanceAmount == '' || this.balanceAmount <= 0 ) {
             this.balanceAmount = 0 ;
@@ -386,7 +388,6 @@
 
 			'$parent.stopBet'(val) {
 				this.totalMoney = val ? 0 : this.getHistoryBetMoney();
-				// this.retainData = val ? 0 : this.retainData;
 			}
 		},
 		mounted() {
@@ -469,9 +470,29 @@
 
 			getHistoryBetMoney(money) {
 				this.reservePrice = parseFloat(this.$parent.$refs.confirmPageRef.totalPrice);
+
+
+
 //				this.totalMoney = ((money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice);
 				this.totalMoney = (money || 0) + this.totalMoneyCopy + this.reservePrice;
 				this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
+				console.log(1)
+				console.log(this.reservePrice);//待确认投注金额
+				console.log(this.totalMoney);//现投
+				console.log(this.balanceAmount); //余 额
+				console.log(this.totalMoneyCopy);//已投金额
+				console.log(1)
+        this.reservePriceCopy = this.reservePrice;
+				this.reservePriceTol = parseInt(this.totalMoney);
+			if (this.$parent.stopBet) {
+				this.reservePriceTol2 =parseInt( this.reservePrice )
+
+			}else {
+				this.reservePriceTol2 = (parseInt(this.totalMoney) + parseInt( this.reservePrice ))
+
+			}
+
+
 			},
 
 			getHistoryBet(){

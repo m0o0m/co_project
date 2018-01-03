@@ -92,42 +92,6 @@
 				emptyIcon: require('../assets/images/emptyIcon.png'),
 				bankId: false,
 				orders: [
-          // {
-	         //  colorfulName: '俄羅斯輪盤',
-	         //  data: 1,
-           //  odds: 0.2568,
-	         //  multiple: 1000
-          // },
-					// {
-					// 	colorfulName: '俄羅斯輪盤',
-					// 	data: 1,
-					// 	odds: 0.2568,
-					// 	multiple: 1000
-					// },
-					// {
-					// 	colorfulName: '俄羅斯輪盤',
-					// 	data: 1,
-					// 	odds: 0.2568,
-					// 	multiple: 1000
-					// },
-					// {
-					// 	colorfulName: '俄羅斯輪盤',
-					// 	data: 1,
-					// 	odds: 0.2568,
-					// 	multiple: 1000
-					// },
-					// {
-					// 	colorfulName: '俄羅斯輪盤',
-					// 	data: 1,
-					// 	odds: 0.2568,
-					// 	multiple: 1000
-					// },
-					// {
-					// 	colorfulName: '俄羅斯輪盤',
-					// 	data: 1,
-					// 	odds: 0.2568,
-					// 	multiple: 1000
-					// }
         ],
 				comfirmPageId: 0,
 				dataComID: 0,
@@ -186,7 +150,9 @@
 				// this.$parent.$refs.headerRef.totalMoney = this.totalPrice;
 				let thisParentHeader = this.$parent.$refs.headerRef;
 				thisParentHeader.balanceAmount = (parseFloat(thisParentHeader.headerMarry) - parseFloat(this.$parent.$refs.confirmPageRef.totalPrice)).toFixed(2);
-			},
+//				this.$parent.$refs.headerRef.totalMoney = 0
+//        alert(this.$parent.$refs.headerRef.totalMoney)
+				},
 			onBackBtnClicked: function () {
 				this.$emit('backFromConfirmPage', '')
 			},
