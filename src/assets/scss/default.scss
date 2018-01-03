@@ -74,8 +74,8 @@ $designWidth: 375;
 .colorList {
   padding: rem(15);
   padding-bottom: rem(80);
-  background:linear-gradient(to bottom, rgba(0,0,0,.0) 60%, rgba(55,36,70,0.99) 40%);
-  background:-webkit-linear-gradient(to bottom, rgba(0,0,0,.0) 60%, rgba(55,36,70,0.99) 40%);
+  background:linear-gradient(to bottom, rgba(63,42,83,.0) 60%, rgba(63,42,83,1)40%);
+  background:-webkit-linear-gradient(to bottom,  rgba(63,42,83,.0) 60%,  rgba(63,42,83,1) 40%);
 }
 
 .colorListMian {
