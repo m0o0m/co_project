@@ -166,7 +166,12 @@
 					this.resultList = [];
 					this.initData();
 				}
-			}
+			},
+			'navIndex' () {
+				this.page = 1;
+				this.resultList = [];
+				this.initData();
+      }
 		}
 	}
 </script>
