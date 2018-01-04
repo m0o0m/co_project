@@ -62,7 +62,7 @@
 				page: 1,
 				busy: false,
 				betIndex: '',
-				// topStatus: ''
+				 topNavFlg: true
 			}
 		},
 
@@ -94,6 +94,7 @@
 
 			bettingClick: function (index) {
 				if (this.navIndex === index) return;
+				if (!this.topNavFlg)  return;
 				this.navIndex = index;
 				switch (index) {
 					case 0:
@@ -110,33 +111,34 @@
 						break;
 				}
 				this.busy = false;
-				this.page = 1;
+				this.page = 0;
 				this.resultList = [];
-				this.initData();
 			},
 			initData() {
 				let that = this;
 
 				if (that.busy) return;
-
+        if (!this.topNavFlg) return;
 				that.busy = true;
+				this.topNavFlg = false;
 				that._Util.post(that, that._Api.POST_BETTING, {
 					status: that.apiID,
 					page: that.page
 				}, (data) => {
 					that.resultList = that.resultList.concat(data.data || []);
 					that.busy = false;
+					this.topNavFlg = true;
 					if (that.resultList.length === 0) {
 						that.betIndex = 0;
 					} else {
 						that.betIndex = 1;
 					}
-					if (data.data.length) {
-						that.page++;
-					}
-
-					if (that.page === data.last_page && !data.data.length) {
+					if (that.page === data.last_page ) {
+						that.busy = true;
 						that._Util.showAlert(that, {content: '已经没有更多数据了'});
+					}
+					if (that.page !== data.last_page && data.data.length) {
+						that.page++;
 					}
 				}, '', true);
 			},
@@ -168,7 +170,7 @@
 				}
 			},
 			'navIndex' () {
-				this.page = 1;
+				this.page = 0;
 				this.resultList = [];
 				this.initData();
       }
