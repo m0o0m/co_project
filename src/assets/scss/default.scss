@@ -72,16 +72,22 @@ $designWidth: 375;
 }
 .colorList {
   padding: rem(15);
+  padding-bottom: rem(80);
+  box-sizing:	content-box ;
+  -webkit-box-sizing: 	content-box;
   //background:linear-gradient(to bottom, rgba(63,42,83,.0) 60%, rgba(63,42,83,1)40%);
   //background:-webkit-linear-gradient(to bottom,  rgba(63,42,83,.0) 60%,  rgba(63,42,83,1) 40%);
 }
 .colorListMian {
   height: rem(335);
   overflow-y: scroll;
+
   ul {
-    height: auto;
+    height: 100%;
     overflow: hidden;
-    padding-bottom: rem(100);
+    padding-bottom: rem(200);
+    box-sizing:	content-box ;
+    -webkit-box-sizing: 	content-box;
     li {
       width: 33%;
       float: left;
