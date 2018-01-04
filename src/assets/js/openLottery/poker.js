@@ -298,28 +298,33 @@ var poker = (function (document, window) {
   };
   // 动画执行函数
   fn_main.prototype._run = function (argv, resultNum, callback) {
-    // if (bool_status) {
-    //   return;
-    // }
-    this.ves.style.top = '25%';
-    // bool_status = false;
-    var _this = this,
-      status = '';
-    this.ves.addEventListener('webkitTransitionEnd', function () {
-      // if (status) {
-      //   return;
-      // }
+    if (!argv || argv.list1.length != 2 || argv.list2.length != 2 || argv.result.length != 2 || argv.list3.length != 2 ){
+    	alert(1);
+      return;
+    }
+    this.ves.style.top = '25%' ;
+    var _this = this;
+    var status = '';
+
+	  this.ves.addEventListener('webkitTransitionEnd', function () {
+      if (status) {
+        return;
+      }
       _this.content1.contentItem1.style.transform = 'rotateY( 90deg )';
       _this.content1.contentItem1.style.webkitTransform = 'rotateY( 90deg )';
       _this.content1.contentItem2.style.transform = 'rotateY( 90deg )';
       _this.content1.contentItem2.style.webkitTransform = 'rotateY( 90deg )';
-      status = 'first';
+      if ( !status ) {
+	      status = 'first';
+      }
+
     }, false);
     this.content1.contentItem1.addEventListener('webkitTransitionEnd', function () {
       if (status != 'first') {
         return;
+      }else {
+	      status = 'second';
       }
-      status = 'second';
       setTimeout(function () {
         _this.content1.contentItem1.style.background = 'url( ' + argv.list1[0] + ' ) no-repeat';
         _this.content1.contentItem1.style.backgroundSize = '100% 100%';
@@ -338,8 +343,9 @@ var poker = (function (document, window) {
     this.content2.contentItem1.addEventListener('webkitTransitionEnd', function () {
       if (status != 'second') {
         return;
+      }else {
+	      status = 'third';
       }
-      status = 'third';
       setTimeout(function () {
         _this.content2.contentItem1.style.background = 'url( ' + argv.list2[0] + ' ) no-repeat';
         _this.content2.contentItem1.style.backgroundSize = '100% 100%';
@@ -358,8 +364,9 @@ var poker = (function (document, window) {
     this.content3.contentItem1.addEventListener('webkitTransitionEnd', function () {
       if (status != 'third') {
         return;
+      }else {
+	      status = 'result';
       }
-      status = 'result';
       setTimeout(function () {
         _this.content3.contentItem1.style.background = 'url( ' + argv.list3[0] + ' ) no-repeat';
         _this.content3.contentItem1.style.backgroundSize = '100% 100%';
@@ -387,12 +394,15 @@ var poker = (function (document, window) {
         _this.result_item2.style.webkitTransform = 'rotateY( 0deg )';
         $('#paiGowTitle').html('庄开奖结果:' + resultNum);
       }, 10);
-
-      setTimeout(function () {
-        _this._close();
-        callback && callback();
-      }, 1000 * 4);
+	    // setTimeout(function () {
+	    //   _this._close();
+	    //   callback && callback();
+	    // }, 1000 * 2);
     }, false);
+	    setTimeout(function () {
+	      _this._close();
+	      callback && callback();
+	    }, 1000 * 2);
   };
   // 动画关闭函数，可以手动调用
   fn_main.prototype._close = function () {
