@@ -15,9 +15,14 @@
         </div>
         <ul>
           <li class="displayFlex withdrawList"><p>提现金额</p>
-            <p><input
-              onkeyup= "value=value.replace(/^[0][0-9]*$/g,'') "
-              v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"></p>
+            <p>
+              <input onkeyup= "value=value.replace(/[^\d]/g,'')"
+              v-model="bank.amount" type="text" value="" placeholder="请输入您要提现的金额"
+              @keyup="KeyUpVal(bank.amount)">
+              <!--<input type="tel" placeholder="其它金额" v-model="inpNum" class="placeMarry"-->
+                     <!--@keyup="KeyUpVal(inpNum)" id="" onkeyup="this.value=this.value.replace(/\D/g,'')"-->
+                     <!--onafterpaste="this.value=this.value.replace(/\D/g,'')" maxlength="7"/>-->
+            </p>
           </li>
           <li class="displayFlex withdrawList"><p>提现密码</p><p><input v-model="bank.pay_password" type="password" value="" placeholder="请输入您的提现密码"></p>
           </li>
@@ -41,7 +46,8 @@
           amount: '',
           pay_password: ''
         },
-	      bankLogo:''
+	      bankLogo:'',
+//	      moneyVals:''
       }
     },
     
@@ -63,7 +69,11 @@
 	        }
         });
       },
-      save() {
+	    KeyUpVal(v) {
+		    v = parseInt(v) === 0 ? '' : v;
+		    this.bank.amount = v;
+	    },
+	      save() {
         let that = this;
         if (!that.bank.amount) {
           that._Util.showAlert(that, {content: '请输入提现金额'});
@@ -98,7 +108,7 @@
           }
         });
       }
-    }
+    },
   }
 </script>
 
