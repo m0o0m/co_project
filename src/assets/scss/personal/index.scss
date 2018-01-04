@@ -4,9 +4,14 @@
 $designWidth: 375;
 
 /*关于我们*/
+.aboutUsImgBack {
+  height:100%;
+}
 .aboutUsContent {
   height: 100%;
   padding-top: 20%;
+  overflow-y: scroll;
+  //position: relative;
   .aboutUsVersion {
     font-size: rem(18);
     color: #ffffff;
@@ -85,8 +90,8 @@ $designWidth: 375;
 }
 
 .aboutUsVersionFooter {
-  position: absolute;
-  bottom: rem(26);
+  //position: absolute;
+  //bottom: rem(26);
   width: 100%;
   .aboutVersionWXimg {
     width: rem(110);

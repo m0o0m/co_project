@@ -81,11 +81,10 @@ $designWidth: 375;
 .colorListMian {
   height: rem(335);
   overflow-y: scroll;
-
   ul {
     height: 100%;
     overflow: hidden;
-    padding-bottom: rem(200);
+    padding-bottom: rem(180);
     box-sizing:	content-box ;
     -webkit-box-sizing: 	content-box;
     li {
