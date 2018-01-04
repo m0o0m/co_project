@@ -20,7 +20,7 @@
                 <li v-for="(lData,lData_index) in (items.length ? items : lotData.played)" :class="{'liLotERY':lotteryOffsColorID == '243', 'liLotERY00':lData_index < 4 && HalfIndex == 0,'liLotERY00jia':lData_index < 8 && lData_index > 3 && HalfIndex == 0 && lotteryOffsColorID == '247','liLotERY01':lData_index >= 4 && lData_index < 8 && HalfIndex == 1, 'liLotERY02':lData_index >= 8 && HalfIndex == 2}" >
                   <!--<li v-for="(lData,lData_index) in items">-->
                   <article @click="playchecked($event, lData, items.length ? groupId : lotData.id, lData.name, index, lotData, 'ColorLot_article', lData_index)" class="ColorLot_article">
-                    <section :class="{'ColorLot_Colorsection': lotteryOffsColorID == '243'}">
+                    <section :class="{'ColorLot_Colorsection': lotteryOffsColorID == '243','ColorLotColorsections': lotteryOffsColorID == '247'}">
                       <p><span v-if="lotteryOffsColorID != '239' && lotteryOffsColorID != '241'">{{lData.name}}</span><span v-if="lotteryOffsColorID == '239' || lotteryOffsColorID == '241'" class="colorZodatr"><img :src="lData.zodiacImg"/></span> / {{computeOdds(lData)}}</p>
                       <p :class="{'amount':lData.amount > 0 || $parent.stopBet ,'Colorsection': lotteryOffsColorID == '243'}">
                         {{_LotteryUtil.showAmount($parent.classAdata.status, $parent.stopBet, lData.amount) || '0'}}
