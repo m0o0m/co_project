@@ -100,7 +100,7 @@
 		isOpenLottery: false,
 		openLotteryResult: '',
           balanceMarry: 0,
-        whetherNumber: 0,
+        whetherNumber: 1,
         cycleStop: ''
       }
     },
@@ -197,7 +197,8 @@
 		  that.stopBetCountDownSecond = data.stop_count_down;
 		  that.countDownSecond = data.count_down;
           that.whetherNumber = that.classAdata.status;
-            that.whetherNumber = 2;
+//          console.log(12,that.classAdata.status)
+//            that.whetherNumber = 2;
           if(that.classAdata.kj_cycle){
             that.cycleStop = that.classAdata.kj_cycle;
           }
