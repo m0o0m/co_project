@@ -13,7 +13,7 @@
         <div class="DeliveryPrice displayFlex">
           <div>
             <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-              <section><p>已投：<span v-html="totalMoney || 0"></span></p></section>
+              <section><p>已投：<span v-html=" totalMoneyCopy ? reservePriceTol : ( reservePrice ? totalMoney : ( reservePriceTol2 ? totalMoney : (reservePriceCopy ? reservePriceCopy : 0)) )"></span></p></section>
               <section class="balanceAmount"><p>余:￥<span>{{balanceAmount < 0 ? '0.00' : balanceAmount}}</span>
               </p></section>
             </div>
@@ -144,7 +144,10 @@
         lotteryTypeId: 0,
         retainData: 0,
         headerMarry: 0,
-	      exportId: false
+	      exportId: false,
+	      reservePriceCopy:0,
+	      reservePriceTol:0,
+	      reservePriceTol2:0,
       }
     },
     computed: {
@@ -253,7 +256,16 @@
 //        this.totalMoney = (money || 0) + this._LotteryUtil.getHistoryBetMoney(this, this.creditId, this.classAdata.next_action_no) + this.reservePrice;
         this.totalMoney = (money || 0) + this.totalMoneyCopy + this.reservePrice;
         this.balanceAmount = !money ? parseFloat(this.balanceAmount) : (parseFloat(this.balanceAmount) - parseFloat(this.$parent.$refs.pcddref.selectedAmount)).toFixed(2);
-      },
+	      this.reservePriceCopy = this.reservePrice;
+	      this.reservePriceTol = parseInt(this.totalMoney);
+	      if (this.$parent.stopBet) {
+		      this.reservePriceTol2 =parseInt( this.reservePrice )
+
+	      }else {
+		      this.reservePriceTol2 = (parseInt(this.totalMoney) + parseInt( this.reservePrice ))
+
+	      }
+        },
       getHistoryBet(){
         //if(this._LotteryUtil.JudgeLogin() === false) return;
         this.balanceAmount = (this.headerMarry - parseFloat(this.$parent.$refs.confirmPageRef.totalPrice)).toFixed(2);
@@ -325,6 +337,7 @@
 //        this.getHistoryBetMoney();
 	      this.totalMoney = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
 	      this.totalMoneyCopy = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
+	      this.getHistoryBetMoney();
         if(this.classAdata){
             this.lotteryTypeId = this.lotteryTypeId || this.classAdata.played[0].id;
         }else{
