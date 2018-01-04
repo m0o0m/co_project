@@ -157,6 +157,7 @@
           this.deafNumFirst();
 		this.actionDataCopy = JSON.parse(JSON.stringify(this.classAdata.action_data));
 		this.actionNoCopy = JSON.parse(JSON.stringify(this.classAdata.action_no));
+		clearInterval(this.timeInterval);
 		this.getLotteryData();
 		this.getHistoryBetMoney();
       },

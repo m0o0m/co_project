@@ -1,4 +1,5 @@
 export default {
+	pageTimer: {},
   localHost: window.location.host,
   isLocalHost: localHost.indexOf('localhost') !== -1 || localHost.indexOf('192') !== -1,
   
@@ -434,6 +435,16 @@ export default {
       document.body.appendChild(iframe)
     }
   },
+
+	clearPageTimer(noClear) {
+		for (let t in window.pageTimers) {
+			console.log(window.pageTimers[t]);
+			if (t.indexOf(noClear || '') === -1) {
+				console.log(t);
+				window.clearInterval(window.pageTimers[t]);
+			}
+		}
+	},
   
   /**
    *

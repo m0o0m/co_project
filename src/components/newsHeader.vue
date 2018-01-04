@@ -333,6 +333,7 @@
         if (this.classAdata.animals) {
           this.zodiacAnimal = JSON.parse(JSON.stringify(this.classAdata.animals));
         }
+	      clearInterval(this.timeInterval);
         this.getLotteryData();
 //        this.getHistoryBetMoney();
 	      this.totalMoney = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));

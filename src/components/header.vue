@@ -362,6 +362,7 @@
 				this.actionResultCopy = JSON.parse(JSON.stringify(this.classAdata));
 				this.actionDataCopy = JSON.parse(JSON.stringify(this.classAdata.action_data));
 				this.actionNoCopy = JSON.parse(JSON.stringify(this.classAdata.action_no));
+				clearInterval(this.timeInterval);
 				this.getLotteryData();
 //				this.getHistoryBetMoney();
 				this.totalMoney = JSON.parse(JSON.stringify(this.classAdata.number_sum_amount));
@@ -399,8 +400,8 @@
 			that.headerMarry = JSON.parse(JSON.stringify(that.balanceMarry || 0));
 			that.initData();
 			that.$router.beforeEach((route, redirect, next) => {
-				clearInterval(this.timeInterval);
-				clearInterval(this.$parent.interValObj);
+				clearInterval(that.timeInterval);
+				clearInterval(that.$parent.interValObj);
 				next();
 			});
 			if(that.classAdata){
@@ -511,7 +512,7 @@
 				let that = this;
 				if (that.$parent.classAdata.status !== 0 && that.$parent.classAdata.status !== -1) {
 					that.timeInterval = setInterval(function () {
-						if (parseInt(that.classAdata.next_action_no) - parseInt(that.actionNoCopy) > 1) {
+//						if (parseInt(that.classAdata.next_action_no) - parseInt(that.actionNoCopy) > 1) {
 							that._Util.post(that, that._Api.POST_LOTTERY_RECTOR_DETAIL, {id: that.creditId}, (data) => {
 								that.actionResultCopy = JSON.parse(JSON.stringify(data));
 								that.actionDataCopy = data.data;
@@ -524,10 +525,10 @@
 								}
 							}, () => {
 							}, true);
-						} else {
-							clearInterval(that.timeInterval);
-						}
-					}, 1000 * 30);
+//						} else {
+//							clearInterval(that.timeInterval);
+//						}
+					}, 1000 * 5);
 				}
 			},
 

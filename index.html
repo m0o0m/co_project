@@ -27,6 +27,7 @@
 	<!--<script src="https://kefu.easemob.com/webim/im.html?configId=0833236b-c04b-4b6c-946c-345cd2903587"></script>-->
 	<!--<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>-->
 	<script type="text/javascript">
+
 		var cnima = GetQueryString('cnima');
 		var localHost = window.location.host;
 		window.onerror = function (message, errUrl, lineNo, colNo, error) {
@@ -38,7 +39,7 @@
 				+ '【errStack】' + (error && error.stack ? error.stack.toString() : '');
 			//alert(message);
 			if (localHost.indexOf('git.') !== -1) {
-				alert(message + '【error】' + content.toString());
+//				alert(message + '【error】' + content.toString());
 			}
 		};
 
