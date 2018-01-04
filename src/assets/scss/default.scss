@@ -76,13 +76,12 @@ $designWidth: 375;
   //background:-webkit-linear-gradient(to bottom,  rgba(63,42,83,.0) 60%,  rgba(63,42,83,1) 40%);
 }
 .colorListMian {
-  height:100%;
+  height: rem(335);
   overflow-y: scroll;
-  //margin-bottom: rem(80);
   ul {
     height: auto;
     overflow: hidden;
-    //padding-bottom: rem(100);
+    padding-bottom: rem(100);
     li {
       width: 33%;
       float: left;
