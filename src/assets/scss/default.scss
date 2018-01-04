@@ -78,6 +78,11 @@ $designWidth: 375;
   //background:linear-gradient(to bottom, rgba(63,42,83,.0) 60%, rgba(63,42,83,1)40%);
   //background:-webkit-linear-gradient(to bottom,  rgba(63,42,83,.0) 60%,  rgba(63,42,83,1) 40%);
 }
+.colorListMian.qipaiPlay ul {
+  padding-bottom: rem(260);
+  box-sizing:	content-box ;
+  -webkit-box-sizing: 	content-box;
+}
 .colorListMian {
   height: rem(335);
   overflow-y: scroll;

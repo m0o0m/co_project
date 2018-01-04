@@ -79,7 +79,7 @@
         </ul>
       </div>
       <!--棋牌玩法-->
-      <div class="colorListMian" v-show="resouseIndex == '1'">
+      <div class="colorListMian qipaiPlay" v-show="resouseIndex == '1'">
         <ul>
           <li v-for="(color,index) in lotteryMenu.list.chess_play">
             <a href="javascript:void(0)" @click="chessGame(index,color.id)">
