@@ -6,10 +6,10 @@
           <div class="headerTop">
             <section @click="back()" class="lotteryArrowsLeft"></section>
             <section @click="lottery_nameClick"><p :class="{'lotteryArrowsBottom': tokenId001 !== 0}">{{classAdata.lottery_name}} <span v-if="!exportId">{{deafNum.name}}</span></p></section>
-            <section>
-              <a href="javascript:void(0)" class="increaseEd"
-                 @click="increaseId = !increaseId ? 1 : 0">+</a>
-            </section>
+            <section  @click="increaseId = !increaseId ? 1 : 0">
+            <a href="javascript:void(0)" class="increaseEd"
+              >+</a>
+          </section>
           </div>
           <div class="DeliveryPrice displayFlex">
             <div>
