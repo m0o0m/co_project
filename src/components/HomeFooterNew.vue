@@ -87,13 +87,20 @@
             that.$emit('update:homeIndex', index);
             that.$router.replace({query: {homeIndex: index, code: this.$route.query.code}});
           } else {
-	        that._Util.showAlert(that, {content: '请登录'}, () => {
-	        	let url = '/home?homeIndex=' + that.foterNum;
-	        	if (this.$route.query.code) {
-			        url += '&code=' + this.$route.query.code;
-		        }
-              that.$router.push({name: 'login', query: {fullPath: url}});
-            });
+
+		      let url = '/home?homeIndex=' + that.foterNum;
+		      if (this.$route.query.code) {
+			      url += '&code=' + this.$route.query.code;
+		      }
+		      that.$router.push({name: 'login', query: {fullPath: url}});
+
+//	        that._Util.showAlert(that, {content: '请登录'}, () => {
+//	        	let url = '/home?homeIndex=' + that.foterNum;
+//	        	if (this.$route.query.code) {
+//			        url += '&code=' + this.$route.query.code;
+//		        }
+//              that.$router.push({name: 'login', query: {fullPath: url}});
+//            });
           }
         } else {
           this.foterNum = index;

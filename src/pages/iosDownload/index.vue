@@ -53,7 +53,7 @@
       <!--<div class="title">棋牌彩票下载</div>-->
       <!--</div>-->
       <!--<div class="content"></div>-->
-      <div class="close" @click="close_guidance"></div>
+      <!--<div class="close" @click="close_guidance"></div>-->
     </div>
 
     <!--微信-->
@@ -61,7 +61,7 @@
       <article class="tempB_mun">
         <figure><img src="../../assets/images/jiantou2x.png"/></figure>
         <aside>点击右上角分享按钮，然后选择在"浏览器中打开"</aside>
-        <section v-if="!_Util.browser().versions.android" >
+        <section v-if="_Util.browser().versions.ios" >
           <p><img src="../../assets/images/1.png" class="assetsCls"/>点击右上角···图标</p>
           <p><img src="../../assets/images/2.png" class="assetsCls"/>选择<img src="../../assets/images/s2x.png" class="sxCls"/>在浏览器中打开</p>
           <p><img src="../../assets/images/3.png" class="assetsCls"/>在打开的页面中下载</p>
@@ -142,7 +142,7 @@
 			isWeiXin() {
 				var ua = window.navigator.userAgent.toLowerCase();
 				//ua.match(/QQ/i) == " qq"
-				if (ua.match(/MicroMessenger/i) == 'micromessenger' || (ua.match(/QQ/i) == "qq" && navigator.userAgent.indexOf('QQBrowser') == -1)) {
+				if (ua.match(/MicroMessenger/i) == 'micromessenger' || (ua.match(/QQ/i) == "qq" && ((ua.indexOf(' qq') > -1)))) {
 					return true;
 				} else {
 					return false;
