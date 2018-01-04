@@ -396,8 +396,9 @@ $designWidth: 375;
           line-height: rem(18);
           text-align: left;
           p:first-of-type {
+            font-size: rem(12);
             span {
-              font-size: rem(14);
+              font-size: rem(12);
             }
           }
           p:nth-of-type(2) {
@@ -487,6 +488,9 @@ $designWidth: 375;
         //border-radius: rem(2);
         display: inline-block;
         position: relative;
+        section.ColorLotColorsections {
+          padding-right:0;
+        }
         section {
           padding: rem(5);
           font-size: rem(12);
