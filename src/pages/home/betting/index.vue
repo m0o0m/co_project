@@ -133,6 +133,7 @@
 					} else {
 						that.betIndex = 1;
 					}
+
 					if (that.page === data.last_page ) {
 						that.busy = true;
 						that._Util.showAlert(that, {content: '已经没有更多数据了'});
