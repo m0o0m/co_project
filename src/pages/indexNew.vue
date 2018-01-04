@@ -1,6 +1,6 @@
 <template>
   <div class="indexMian" :class="{'indexBack' :resouseIndex == '1'}">
-    <div class="salesCampaignBox">
+    <div class="salesCampaignBox" v-if="!123">
         <div class="salesCampaign"></div>
         <div class="salesCampaignImg"><img src="../assets/images/award.png" alt=""></div>
         <div class="salesCampaignClose" ></div>
