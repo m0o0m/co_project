@@ -1,6 +1,11 @@
 <template>
   <div class="indexMian" :class="{'indexBack' :resouseIndex == '1'}">
-
+    <div class="salesCampaignBox">
+        <div class="salesCampaign"></div>
+        <div class="salesCampaignImg"><img src="../assets/images/award.png" alt=""></div>
+        <div class="salesCampaignClose" ></div>
+        <div class="salesCampaignBtn"><img src="../assets/images/awardLeft.png" alt=""><img src="../assets/images/awardRight.png" alt=""></div>
+    </div>
     <div slot="content">
       <div class="advertisement" v-if="marvellous === 0">
         <div class="adverted">

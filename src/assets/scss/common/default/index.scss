@@ -420,7 +420,52 @@ img {
   //background: #3E225D;
   z-index: 5;
 }
-
+.salesCampaignBox {
+  width: 100%;
+  .salesCampaignImg {
+    position: absolute;
+    z-index: 999999;
+    width: 100%;
+    height:10rem;
+    margin: rem(120) auto rem(15);
+  }
+  .salesCampaignClose {
+    position: absolute;
+    right: rem(70);
+    top:4.3rem;
+    width:rem(30);
+    height:rem(30);
+    z-index: 9999990;
+    background: url("../../../images/awardClose.png") no-repeat;
+    background-size: 100%;
+  }
+  .salesCampaignBtn {
+    position: absolute;
+    left:0;
+    top:14.5rem;
+    width: 100%;
+    z-index: 999999;
+    img {
+      display: inline-block;
+      width:30%;
+    }
+    img:nth-child(1) {
+      margin-left:rem(65);
+      margin-right:rem(15);
+    }
+  }
+}
+.salesCampaign {
+  width: 100%;
+  height:100%;
+  position: fixed;
+  left: 0;
+  top:0;
+  z-index: 99;
+  background:rgba(0,0,0,0.7) ;
+  -webkit-filter: blur(98%);
+  filter: blur(98%);
+}
 .indexMian {
   height: 100%;
   overflow: hidden;
