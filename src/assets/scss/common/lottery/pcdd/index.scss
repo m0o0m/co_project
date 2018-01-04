@@ -378,7 +378,9 @@ $designWidth: 375;
     }
   }
 }
-
+.jsksLotteryContentItem:first-child .sizeDicePlay li:first-child  p.playfeet:last-child {
+  line-height: rem(22);
+}
 .jsksLotteryContentList {
   .lotteryUls {
     li {
@@ -411,6 +413,12 @@ $designWidth: 375;
           }
           p.playfeet.playfeetJSK {
             text-align: right;
+
+          }
+          p.playfeet.playfeetJSK span{
+            text-align: right;
+
+            margin-top:rem(-20);
           }
           .playMarryImg {
             float: right;
