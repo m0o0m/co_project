@@ -528,7 +528,7 @@
 						} else {
 							clearInterval(that.timeInterval);
 						}
-					}, 1000 * 30);
+					}, 1000 * 5);
 				}
 			},
 
