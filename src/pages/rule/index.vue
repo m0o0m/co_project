@@ -59,7 +59,7 @@
 		},
 		mounted() {
 			let that = this;
-			that._Util.setCss('.lotteryRulesContent', {"height": 1}, "*");
+//			that._Util.setCss('.lotteryRulesContent', {"height": 1}, "*");
 			that.init();
 		},
 		methods: {
@@ -69,8 +69,8 @@
 				console.log("terminal:", that.$route.query.terminal);
 				that.isBrowser = that.$route.query.terminal ? 1 : 0;
 				that.lotteryId = lotteryId;
-				console.log("lotteryId:", lotteryId);
-				console.log("data:", rulesDate[lotteryId].data);
+//				console.log("lotteryId:", lotteryId);
+//				console.log("data:", rulesDate[lotteryId].data);
 				that.questionAnswerList = rulesDate[lotteryId].data;
 				that.lotteryRulesTitle = rulesDate[lotteryId].lotteryname;
 				that.footerContent = rulesDate[lotteryId].footerdata.content;

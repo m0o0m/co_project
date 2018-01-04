@@ -14,8 +14,10 @@ $designWidth: 375;
 
 .lotteryRules {
   background-color: #272324;
-  font-size: rem(16);
+  font-size: rem(14);
   color: #fff;
+  width: 100%;
+  height: 100%;
   .messageListTitle {
     position: fixed;
     left: 0;
@@ -48,6 +50,8 @@ $designWidth: 375;
     }
   }
   .lotteryRulesContent {
+    width: 100%;
+    height: 100%;
     background-color: #272324;
     padding-top: rem(56);
     .lotteryRulesContentBox {
