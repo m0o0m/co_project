@@ -8,7 +8,7 @@
         <div class="personalMian">
           <div class="personalMianTit">
             <div class="personalNews">
-              <section class="one">
+              <section class="pone">
                 <input v-if="!userInfo.is_test_player" id="fileInp" ref="picInpRef"  type="file" @change="picChange()"
                        class="inputFile"
                        accept="image/jpeg,image/png,image/bmp,image/gif">
