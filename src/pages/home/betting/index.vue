@@ -133,8 +133,7 @@
 					} else {
 						that.betIndex = 1;
 					}
-
-					if (that.page === data.last_page ) {
+					if ((that.page === data.last_page) && that.betIndex != 0 && data.last_page != 1 ) {
 						that.busy = true;
 						that._Util.showAlert(that, {content: '已经没有更多数据了'});
 					}
@@ -160,7 +159,6 @@
 			LotterySelect,
 //	  HomeFoter: HomeFooter
 		},
-
 		watch: {
 			'$route'() {
 				if (this.$route.query.homeIndex == 2) {
