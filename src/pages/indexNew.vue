@@ -472,9 +472,10 @@
 			openFrm(v) {
 				let that = this;
 				console.log(JSON.parse(JSON.stringify(v)));
-				that.toUrl = v.hrefUrl;
-				that.showFrmBack = false;
-				that.showOpenFrame = true;
+//				that.toUrl = v.hrefUrl;
+//				that.showFrmBack = false;
+//				that.showOpenFrame = true;
+				window.location.href = v.hrefUrl;
 			},
 
 			scroll: function (obj) {

@@ -53,7 +53,7 @@
       <!--<div class="title">棋牌彩票下载</div>-->
       <!--</div>-->
       <!--<div class="content"></div>-->
-      <div class="close" @click="close_guidance"></div>
+      <!--<div class="close" @click="close_guidance"></div>-->
     </div>
 
     <!--微信-->
