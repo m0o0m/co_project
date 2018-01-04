@@ -162,7 +162,7 @@
 			OpenFrame
 		},
 		mounted() {
-//			      this._Util.setCss('#app',{"height": 1},"*");
+//			      this._Util.setCss('body',{"height": 0.1},"*");
 			this.initData();
 //      this._Util.showConfirm(this, {content: "瞧一瞧，看一看，新鲜出炉"});
 			//首頁
