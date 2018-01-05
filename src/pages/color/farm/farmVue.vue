@@ -18,7 +18,7 @@
 				</div>
 				<div class="farmGameInfo">
 					<ul class="farmGameInfoTitle clearfix">
-						<li v-for="(nav, index) in deafNum" @click="selectNav(nav, index)" :class="{'on':index == nav_ndex}"
+						<li v-for="(nav, index) in deafNum" @click="selectNav(nav, index)" :class="{'on': index == nav_ndex }"
 						    class="floatLeft">{{nav.name}}
 						</li>
 					</ul>
@@ -242,7 +242,7 @@
 			}, 2000);
 		},
 		updated() {
-			$("ul.farmGameInfoTitle li").eq(this.nav_index).addClass("on");
+			$("ul.farmGameInfoTitle li").eq(this.nav_ndex).addClass("on");
 		},
 		methods: {
 			randomSortImg() {
@@ -255,8 +255,6 @@
 				that.gameImgData2 = JSON.parse(JSON.stringify(that.gameImgData)).sort(randomSort);
 				that.gameImgData3 = JSON.parse(JSON.stringify(that.gameImgData)).sort(randomSort);
 			},
-
-
 			selectNav(nav, index) {
 				this.Colorful = nav;
 				this.items = nav.played;
@@ -264,6 +262,7 @@
 				$("ul.farmGameInfoTitle li").removeClass("on");
 				$("ul.farmGameInfoTitle li").eq(index).addClass("on");
 				this.nav_index = index;
+				this.nav_ndex = index || 0;
 				for (let v of this.items) {
 					if (v.name !== '大型水果' && v.name !== '中型水果' && v.name !== '小型水果' && v.name !== '蔬菜' && v.name !== '动物') {
 						v.img = require('../../../assets/images/farm/' + this._Util.getValueByKey(this.imgJson.imgList, v.name, 'picName') + '.png');
