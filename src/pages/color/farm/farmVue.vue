@@ -183,9 +183,9 @@
 				} else {
 					if (!this.playedListCopy.length) {
 						this.playedListCopy = JSON.parse(JSON.stringify(this.classAdata.played));
+						this.selectNav(this.classAdata.played[this.oneCredId].item[0]);
 					}
 
-					this.selectNav(this.classAdata.played[this.oneCredId].item[0]);
 					return this.classAdata.played[this.oneCredId].item;
 				}
 			}
@@ -260,6 +260,7 @@
 			selectNav(nav, index) {
 				this.Colorful = nav;
 				this.items = nav.played;
+				console.log(index)
 				$("ul.farmGameInfoTitle li").removeClass("on");
 				$("ul.farmGameInfoTitle li").eq(index).addClass("on");
 				this.nav_index = index;
