@@ -109,8 +109,9 @@
           that.stopBetCountDownSecond = data.stop_count_down;
           that.countDownSecond = data.count_down;
           that.whetherNumber = that.classAdata.status;
-//		  that.stopBetCountDownSecond = 5;
-//		  that.countDownSecond = 35;
+//          that.stopBetCountDownSecond = 5;
+//          that.countDownSecond = 15;
+
           if (parseInt(that.classAdata.status) !== 0 && parseInt(that.classAdata.status) !== -1) {
             that.startCountDown();
           }
@@ -208,6 +209,7 @@
           }
           let thatBalance = this.$refs.headerRef;
           thatBalance.balanceAmount = (thatBalance.headerMarry - parseFloat(this.$refs.confirmPageRef.totalPrice)).toFixed(2);
+//          thatBalance.balanceAmount =  thatBalance.newHeardMoney;
           this.stopBetCountDownSecond = -1
           this.stopBet = true
 //                if (this.$refs.confirmPageRef) {

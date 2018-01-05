@@ -273,7 +273,8 @@
 					this.countDownSecond -= 1
 					this.countDownStr = this._Util.formatTime(this.stopBetCountDownSecond, this.countDownSecond + 1, this.stopBet);
 				} else {
-					this.countDownStr = this._Util.formatTime(-1, 0, this.stopBet);
+
+					this.countDownStr = this._Util.formatTime(0, 0, this.stopBet);
 					window.clearInterval(this.interValObj)
 //	        this.$refs.footerRef.resetData(true);
 					this.requestLotteryDetail(true)

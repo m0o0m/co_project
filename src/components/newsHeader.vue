@@ -13,7 +13,7 @@
         <div class="DeliveryPrice displayFlex">
           <div>
             <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
-              <section><p>已投：<span v-html=" totalMoneyCopy ? reservePriceTol : ( reservePrice ? totalMoney : ( reservePriceTol2 ? totalMoney : (reservePriceCopy ? reservePriceCopy : 0)) )"></span></p></section>
+              <section><p>已投：<span v-html="newHeardMoney "></span></p></section>
               <section class="balanceAmount"><p>余:￥<span>{{balanceAmount < 0 ? '0.00' : balanceAmount}}</span>
               </p></section>
             </div>
@@ -99,7 +99,7 @@
     data() {
       return {
         toUrl: '',
-	      totalMoneyCopy: 0,
+	      totalMoneyCopy: this.reservePriceCopy,
         showOpenFrame: false,
         showFrmBack: false,
         increaseId: 0,
@@ -148,6 +148,7 @@
 	      reservePriceCopy:0,
 	      reservePriceTol:0,
 	      reservePriceTol2:0,
+	      newHeardMoney:0
       }
     },
     computed: {
@@ -263,8 +264,8 @@
 
 	      }else {
 		      this.reservePriceTol2 = (parseInt(this.totalMoney) + parseInt( this.reservePrice ))
-
 	      }
+	      this.newHeardMoney = this.totalMoneyCopy ? this.reservePriceTol : ( this.reservePrice ? this.totalMoney : ( this.reservePriceTol2 ? this.totalMoney : (this.reservePriceCopy ? this.reservePriceCopy : 0)) )
         },
       getHistoryBet(){
         //if(this._LotteryUtil.JudgeLogin() === false) return;

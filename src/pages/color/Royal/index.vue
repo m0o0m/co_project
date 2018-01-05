@@ -181,12 +181,14 @@
           that.officialRebate = data.officialRabate;
           that.personalRebate = data.rabate;
           //倒计时
-          that.stopBetCountDownSecond = data.stop_count_down;
-          that.countDownSecond = data.count_down;
+          that.stopBetCountDownSecond = data.stop_count_down - 1;
+          that.countDownSecond = data.count_down - 1;
           that.whetherNumber = that.classAdata.status;
           if(that.classAdata.kj_cycle){
             that.cycleStop = that.classAdata.kj_cycle;
           }
+//	        that.countDownSecond = 20;
+//	         that.stopBetCountDownSecond = 5;
           if(parseInt(that.classAdata.status) !== 0 && parseInt(that.classAdata.status) !== -1){
               that.startCountDown();
           }
@@ -258,7 +260,7 @@
           this.countDownSecond -= 1
           this.countDownStr = this._Util.formatTime(this.stopBetCountDownSecond,this.countDownSecond + 1,this.stopBet);
         } else {
-          this.countDownStr = this._Util.formatTime(-1, 0, this.stopBet);
+          this.countDownStr = this._Util.formatTime(0, 0, this.stopBet);
           window.clearInterval(this.interValObj)
           this.requestLotteryDetail()
           this.stopBet = false;
