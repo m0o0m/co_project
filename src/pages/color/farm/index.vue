@@ -202,8 +202,8 @@
 					//倒计时
 					that.stopBetCountDownSecond = data.stop_count_down;
 					that.countDownSecond = data.count_down;
-					that.stopBetCountDownSecond = 3;
-					that.countDownSecond = 33;
+//					that.stopBetCountDownSecond = 3;
+//					that.countDownSecond = 33;
 					that.whetherNumber = that.classAdata.status;
 					if (that.classAdata.kj_cycle) {
 						that.cycleStop = that.classAdata.kj_cycle;
