@@ -202,8 +202,8 @@
 					//倒计时
 					that.stopBetCountDownSecond = data.stop_count_down;
 					that.countDownSecond = data.count_down;
-//					that.stopBetCountDownSecond = 3;
-//					that.countDownSecond = 33;
+					that.stopBetCountDownSecond = 3;
+					that.countDownSecond = 33;
 					that.whetherNumber = that.classAdata.status;
 					if (that.classAdata.kj_cycle) {
 						that.cycleStop = that.classAdata.kj_cycle;
@@ -273,7 +273,8 @@
 					this.countDownSecond -= 1
 					this.countDownStr = this._Util.formatTime(this.stopBetCountDownSecond, this.countDownSecond + 1, this.stopBet);
 				} else {
-					this.countDownStr = this._Util.formatTime(-1, 0, this.stopBet);
+
+					this.countDownStr = this._Util.formatTime(0, 0, this.stopBet);
 					window.clearInterval(this.interValObj)
 //	        this.$refs.footerRef.resetData(true);
 					this.requestLotteryDetail(true)
