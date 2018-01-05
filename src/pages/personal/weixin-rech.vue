@@ -26,7 +26,7 @@
                 <p>
                   <select v-model="channelId" @change="selectChannel(channelId)">
                     <!---->
-                    <option v-for="(v, index) in result.pay_list[selectTabIndex].pay_type_list" :class="'channel'+v.id" :value="v.id" :data-max-value="v.max_value" :data-min-value="v.min_value">{{v.name}}</option>
+                    <option v-for="(v, index) in result.pay_list[selectTabIndex].pay_type_list" :class="'channel'+v.id" :value="v.id" :data-show-type="v.showType" :data-max-value="v.max_value" :data-min-value="v.min_value">{{v.name}}</option>
                   </select>
                   <i class="commonArrows commonArrowsRight"></i>
                 </p>
@@ -175,6 +175,7 @@
         let that = this;
         that.channel.min_value = $(".selectChannel select").find('.channel'+channelId).data("minValue");
         that.channel.max_value = $(".selectChannel select").find('.channel'+channelId).data("maxValue");
+	      that.channel.showType = $(".select_channel select").find('.channel'+channelId).data("showType");
       },
       toPay() {
         let that = this;
@@ -188,14 +189,14 @@
         }
         
         that._Util.post(that, that._Api.POST_PAY_QRCODE, params, (data) => {
-          if(data.pay_url){
-            location.href = data.pay_url;
-            return false;
-          }
-          that.showCode = true;
-          data.code_img_url = data.qrcode ? data.qrcode : data.code_img_url;
-          that.channelPayResult = data;
-          $(".WeChatUp").hide();
+	        if (that.channel.showType === 'url') {
+		        window.location.href = data.pay_url;
+	        } else if (that.channel.showType === 'qrcode') {
+		        that.showCode = true;
+		        data.code_img_url = data.qrcode ? data.qrcode : data.code_img_url;
+		        that.channelPayResult = data;
+		        $(".WeChat_up").hide();
+	        }
         });
         
       },
