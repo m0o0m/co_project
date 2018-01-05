@@ -208,7 +208,7 @@ export default {
             } else if (this.stopBetCountDownSecond == 0) {
 	            if (this.classAdata.status !== 0 && this.classAdata.status !== -1) {
 		            this._Util.showAlert(this, {
-			            content: '当期投注时间结束'
+			            content: '已封盘'
 		            });
 
 	            }
