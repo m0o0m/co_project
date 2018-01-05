@@ -210,11 +210,14 @@
     components: {
 //            HomeFoter : HomeFooter
     },
-    '$route'() {
-//        if (this.$route.query.homeIndex == 1) {
-//          this.analysisData();
-//        }
-    }
+	  watch: {
+		  '$route'() {
+			  if (this.$route.query.homeIndex == 1) {
+				  console.log('...');
+				  this.analysisData();
+			  }
+		  }
+	  }
   }
 </script>
 

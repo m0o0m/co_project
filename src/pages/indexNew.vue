@@ -1,10 +1,15 @@
 <template>
   <div class="indexMian" :class="{'indexBack' :resouseIndex == '1'}">
-    <div class="salesCampaignBox" v-if="!123">
+    <div class="salesCampaignBox" v-if="showActivity">
         <div class="salesCampaign"></div>
-        <div class="salesCampaignImg"><img src="../assets/images/award.png" alt=""></div>
-        <div class="salesCampaignClose" ></div>
-        <div class="salesCampaignBtn"><img src="../assets/images/awardLeft.png" alt=""><img src="../assets/images/awardRight.png" alt=""></div>
+        <div class="salesCampaignImg">
+	        <img src="../assets/images/award.png" alt="">
+        </div>
+        <div class="salesCampaignClose" @click="closeActivity()"></div>
+        <div class="salesCampaignBtn">
+	        <img src="../assets/images/awardLeft.png" alt="" @click="closeActivity()">
+	        <img src="../assets/images/awardRight.png" alt="" @click="toActivity()">
+        </div>
     </div>
     <div slot="content">
       <div class="advertisement" v-if="marvellous === 0">
@@ -160,7 +165,8 @@
 				showFrmBack: false,
 				toUrl: '',
 				marvellous: 0,
-				HomeDownUrl: ''
+				HomeDownUrl: '',
+				showActivity: false
 			}
 		},
 		components: {
@@ -170,6 +176,7 @@
 //			      this._Util.setCss('body',{"height": 0.1},"*");
 			this.initData();
 //      this._Util.showConfirm(this, {content: "瞧一瞧，看一看，新鲜出炉"});
+//			this.showActivity = this._Util.getStorage('showActivity', true);
 			//首頁
 			let IndexName = this.$route.name;
 			this.indexNoticeIndex = sessionStorage.getItem('indexId');
@@ -223,6 +230,12 @@
 //      alert(that._Api.POST_HOME);
 				that._Util.post(that, that._Api.POST_HOME, {}, (data) => {
 					that.resoutData = data;
+
+					if (that._Util.getStorage('showActivity', true) !== data.prizes_active_url) {
+						that._Util.setStorage('showActivity', data.prizes_active_url, true);
+						that.showActivity = data.prizes_num;
+					}
+
 					// if ( typeof(that.resoutData.lotteryList.unofficial) == "undefined" || that.resoutData.lotteryList.unofficial == "" )//   return;
 					// }
 					//彩票数据
@@ -501,6 +514,26 @@
 			swipeChange(index) {
 				if (index === 1) {
 					this.showSwipeDefault = false;
+				}
+			},
+
+			toActivity() {
+				window.location.href = this.resoutData.prizes_active_url;
+				this._Util.setStorage('showActivity', this.resoutData.prizes_active_url, true);
+			},
+
+			closeActivity() {
+				this.showActivity = false;
+				this._Util.setStorage('showActivity', this.resoutData.prizes_active_url, true);
+			}
+		},
+
+		watch: {
+			'resoutData.prizes_num'() {
+				let that = this;
+				if (that._Util.getStorage('showActivity', true) !== this.resoutData.prizes_active_url) {
+					that._Util.setStorage('showActivity', this.resoutData.prizes_active_url, true);
+					that.showActivity = this.resoutData.prizes_num;
 				}
 			}
 		}

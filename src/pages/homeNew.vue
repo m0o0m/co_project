@@ -1,15 +1,16 @@
 <template>
     <div>
-        <Index v-show="!footerIndex"></Index>
+	    <keep-alive>
+        <Index v-if="!footerIndex"></Index>
 
-        <Lottery-record v-show="footerIndex === 1"></Lottery-record>
+        <Lottery-record v-if="footerIndex === 1"></Lottery-record>
 
-        <Bet-record v-show="footerIndex === 2"></Bet-record>
+        <Bet-record v-if="footerIndex === 2"></Bet-record>
 
-        <Member-center v-show="footerIndex === 3"></Member-center>
+        <Member-center v-if="footerIndex === 3"></Member-center>
+	    </keep-alive>
 
-        <Home-footer :homeIndex.sync="footerIndex"></Home-footer>
-
+	    <Home-footer :homeIndex.sync="footerIndex"></Home-footer>
     </div>
 </template>
 <script type="text/babel">
