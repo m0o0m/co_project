@@ -33,7 +33,9 @@ $designWidth: 375;
 }
 
 .showHandMargin {
+  height:100%;
   padding: rem(130) rem(15) rem(100) rem(15);
+  overflow-y: scroll;
 }
 
 .showHandLottery {
@@ -124,6 +126,7 @@ $designWidth: 375;
   left: 0;
   padding-top: rem(10);
   background: #36646F;
+  z-index: 4;
   ul {
     margin: 0 rem(15);
     height: rem(28);
@@ -393,11 +396,11 @@ $designWidth: 375;
 .cloudTopNav {
   position: fixed;
   width: 100%;
-  top: rem(128);
+  top: rem(118);
   left: 0;
-  //padding-top: rem(10);
+  padding-top: rem(10);
   background: #162958;
-  height: rem(28);
+  //height: rem(28);
   z-index: 3;
   ul {
     margin: 0 rem(15);
