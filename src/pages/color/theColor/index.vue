@@ -185,7 +185,6 @@
 		      that.interValObj = setInterval(that.countDown, 1000);
 	      }
       },
-      
       countDown: function () {
         if (this.countDownSecond > 0) {
           this.countDownSecond -= 1;
