@@ -120,7 +120,6 @@
             this.jsksImgList = [];
             for (let i = 0, v; v = this.classAdata.played[this.oneCredId].item[i++];) {
               for (let j = 0, o; o = v.played[j++];) {
-                console.log('o.name = ' + o.name);
                 this.jsksImgList.push({
                   k: o.name,
                   v: require('../../../assets/images/showHand/' + o.id + '.png')

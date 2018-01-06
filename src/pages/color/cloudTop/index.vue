@@ -165,7 +165,7 @@
         that._Util.post(that, that._Api.POST_LOTTERY_DETAIL, {id: that.gameId}, (data) => {
             // data.status = 0;
           that.classAdata = data;
-          that.$refs.headerRef.retainData = 0;
+	        if (that.$refs.headerRef) that.$refs.headerRef.retainData = 0;
           that.creditId = that.classAdata.lottery_id;
 
 //		  that.resultPop = isLottery;
@@ -213,13 +213,13 @@
           if(that.classAdata.kj_cycle){
             that.cycleStop = that.classAdata.kj_cycle;
           }
-         // that.countDownSecond = 25;
-         //    that.stopBetCountDownSecond = -1;
+//          that.countDownSecond = 3;
+//          that.stopBetCountDownSecond = -1;
             if(parseInt(that.classAdata.status)
                 !== 0 && parseInt(that.classAdata.status) !== -1){
                 that.startCountDown();
             }
-		  that._LotteryUtil.isBetEnd(that, that.stopBetCountDownSecond);
+//		  that._LotteryUtil.isBetEnd(that, that.stopBetCountDownSecond);
         });
       },
       onSliderChanged: function (value) {
@@ -272,6 +272,7 @@
       },
       startCountDown: function () {
 	      let that = this;
+	      window.clearInterval(that.interValObj);
 	      that.stopBet = that.stopBetCountDownSecond < 0;
 	      if (that.countDownSecond > 0) {
 //					this.interValObj = window.setInterval(

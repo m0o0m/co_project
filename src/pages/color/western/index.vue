@@ -154,8 +154,7 @@
 
 		that._Util.post(that, that._Api.POST_LOTTERY_DETAIL, {id: that.creditId}, (data) => {
 		  that.classAdata = data;
-		  data.status = 1;
-          that.$refs.headerRef.retainData = 0;
+			if (that.$refs.headerRef) that.$refs.headerRef.retainData = 0;
 		  that.creditId = that.classAdata.lottery_id;
 		  switch(data.lottery_id){
 			case 1:
@@ -209,7 +208,7 @@
               that.startCountDown();
           }
 
-		  that._LotteryUtil.isBetEnd(that, that.stopBetCountDownSecond);
+//		  that._LotteryUtil.isBetEnd(that, that.stopBetCountDownSecond);
         });
       },
       onSliderChanged: function (value) {
@@ -261,6 +260,7 @@
       },
       startCountDown: function () {
 	      let that = this;
+	      window.clearInterval(that.interValObj);
 	      that.stopBet = that.stopBetCountDownSecond < 0;
 	      if (that.countDownSecond > 0) {
 //					this.interValObj = window.setInterval(

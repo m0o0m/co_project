@@ -92,7 +92,7 @@
         let that = this;
         that._Util.post(that, that._Api.POST_LOTTERY_DETAIL, {id: 24}, (data) => {
           that.classAdata = data;
-          that.$refs.headerRef.retainData = 0;
+	        if (that.$refs.headerRef) that.$refs.headerRef.retainData = 0;
           //获取彩种id
           that.creditId = that.classAdata.lottery_id;
           //获取下一期和这期期号
@@ -174,6 +174,7 @@
       },
       startCountDown: function () {
 	      let that = this;
+	      window.clearInterval(that.interValObj);
 	      that.stopBet = that.stopBetCountDownSecond < 0;
 	      if (that.countDownSecond > 0) {
 //					this.interValObj = window.setInterval(

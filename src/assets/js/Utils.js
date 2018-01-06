@@ -445,6 +445,12 @@ export default {
 			}
 		}
 	},
+
+	setScopeInterval(func, millis, scope) {
+		return setInterval(function () {
+			func();
+		}, millis);
+	},
   
   /**
    *
@@ -646,22 +652,31 @@ export default {
   },
   
   visibilityChange(self, id) {
+    let func = () =>{
+		  self._Util.post(self, self._Api.POST_LOTTERY_RECTOR_DETAIL, {id: id}, (data) => {
+			  self.stopBetCountDownSecond = data.stop_count_down;
+			  self.countDownSecond = data.count_down;
+			  // self.stopBetCountDownSecond = -1;
+			  // self.countDownSecond = 3;
+			  // console.log(self.interValObj);
+			  clearInterval(self.interValObj);
+			  self.startCountDown();
+
+			  // self.startCountDown();
+		  }, '', true);
+    };
+    document.removeEventListener('visibilitychange', func);
+
     // return;
     document.addEventListener('visibilitychange', function (event) {
       if (!document.hidden) {
-        self._Util.post(self, self._Api.POST_LOTTERY_RECTOR_DETAIL, {id: id}, (data) => {
-          self.stopBetCountDownSecond = data.stop_count_down;
-          self.countDownSecond = data.count_down;
-          window.clearInterval(self.interValObj);
-          self.startCountDown();
-          
-          // self.startCountDown();
-        }, '', true);
+	      func();
       }
     });
   },
   browser() {
     //判断访问终端
+
     let browser = {
       versions: function () {
         let u = navigator.userAgent, app = navigator.appVersion;

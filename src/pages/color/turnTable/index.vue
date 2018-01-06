@@ -145,7 +145,7 @@
 				let that = this;
 				that._Util.post(that, that._Api.POST_LOTTERY_DETAIL, {id: 13}, (data) => {
 					that.classAdata = data;
-					that.$refs.headerRef.retainData = 0;
+					if (that.$refs.headerRef) that.$refs.headerRef.retainData = 0;
 					that.creditId = data.lottery_id;
 					//下一期和这期期号
 					that.nextNoisser = that.classAdata.next_action_no;
@@ -160,6 +160,10 @@
 					//倒计时
 					that.stopBetCountDownSecond = data.stop_count_down;
 					that.countDownSecond = data.count_down;
+
+//					that.countDownSecond = 3;
+//					that.stopBetCountDownSecond = -1;
+
 					that.whetherNumber = that.classAdata.status;
 					if (that.classAdata.kj_cycle) {
 						that.cycleStop = that.classAdata.kj_cycle;
@@ -224,7 +228,7 @@
 					this.$refs.confirmPageRef.addOrder(order)
 					this.$refs.confirmPageRef.gameIdEmit(this.creditId);
 
-					this._LotteryUtil.isBetEnd(this, this.stopBetCountDownSecond);
+//					this._LotteryUtil.isBetEnd(this, this.stopBetCountDownSecond);
 				}
 				//this.showConfirmPage()
 			},
@@ -239,6 +243,7 @@
 
 			startCountDown: function () {
 				let that = this;
+				window.clearInterval(that.interValObj);
 				that.stopBet = that.stopBetCountDownSecond < 0;
 				if (that.countDownSecond > 0) {
 //					this.interValObj = window.setInterval(

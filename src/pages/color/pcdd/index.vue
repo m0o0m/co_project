@@ -201,7 +201,7 @@
         var startTime = new Date();
         that._Util.post(that, that._Api.POST_LOTTERY_DETAIL, {id: that.gameId}, (data) => {
         	that.classAdata = data;
-          that.$refs.headerRef.retainData = 0;
+	        if (that.$refs.headerRef) that.$refs.headerRef.retainData = 0;
           //是否暂停销售
           that.creditId = that.classAdata.lottery_id;
           that.whetherNumber = that.classAdata.status;
@@ -256,7 +256,7 @@
             if(parseInt(that.classAdata.status) !== 0 && parseInt(that.classAdata.status) !== -1){
                 that.startCountDown();
             }
-		      that._LotteryUtil.isBetEnd(that, that.stopBetCountDownSecond);
+//		      that._LotteryUtil.isBetEnd(that, that.stopBetCountDownSecond);
 
           if (that.firstLoad && (that.gameId == 1 || that.gameId == 2)) {
 			that.firstLoad = false;
@@ -318,6 +318,7 @@
       },
       startCountDown: function () {
 	      let that = this;
+	      window.clearInterval(that.interValObj);
 	      that.stopBet = that.stopBetCountDownSecond < 0;
 	      if (that.countDownSecond > 0) {
 //					this.interValObj = window.setInterval(

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="996b2941-470d-4219-a077-15d7e4d28b6b" name="Revert: 1/6" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-    </list>
     <list default="true" id="5bde1801-f593-483c-a484-436ed6f680dd" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/project.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/Utils.js" afterPath="$PROJECT_DIR$/src/assets/js/Utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/lotteryUtils.js" afterPath="$PROJECT_DIR$/src/assets/js/lotteryUtils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/color/Royal/index.vue" afterPath="$PROJECT_DIR$/src/pages/color/Royal/index.vue" />
@@ -178,18 +175,26 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5bde1801-f593-483c-a484-436ed6f680dd" name="Default" comment="" />
-      <changelist id="996b2941-470d-4219-a077-15d7e4d28b6b" name="Revert: 1/6" comment="" />
+      <changelist id="" name="Revert: 1/6" comment="" />
       <created>1515209973140</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1515209973140</updated>
       <workItem from="1515209977677" duration="377000" />
-      <workItem from="1515210377530" duration="244000" />
+      <workItem from="1515210377530" duration="265000" />
     </task>
+    <task id="LOCAL-00001" summary="Revert: 1/6">
+      <created>1515210624802</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1515210624802</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="742000" />
+    <option name="totallyTimeSpent" value="763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -273,7 +278,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Revert: 1/6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert: 1/6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
