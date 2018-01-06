@@ -46,7 +46,7 @@
       <div class="chessBack_text"><img src="../../../assets/images/download/h5Download/qpcpTsTest.png"/></div>
     </div>
     <div v-if="isImgRead" class="indexLine"></div>
-    <div v-show="isImgRead" class="introductionText">
+    <div v-if="isTextShow" class="introductionText">
       <div class="introductionTextMi">
         <aside>棋牌彩票简介</aside>
         <section>
@@ -78,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="introductionFooterIp">
+    <div v-show="isTextShow" class="introductionFooterIp">
       <div class="introductionFooterIpMi">
         <div v-if="!isBrowserShow" class="introductionFooterIp_logo"><img
             src="../../../assets/images/download/h5Download/Group.png"/>
@@ -201,19 +201,29 @@
 		},
 		mounted() {
 			let that = this;
-			$(window).resize(function () {
-//        that.areaSize();
-				console.log("sdad:");
-				that.init();
-
-			});
+//			$(window).resize(function () {
+////        that.areaSize();
+//        alert('进来了')
+//				console.log("sdad:");
+//
+//
+//			});
+//			that.init();
 			$("img").on("load", () => {
 				that.isImgRead = true;
 				that.$nextTick(function () {
 					require ('../../../assets/js/qrcode/jquery.qrcode.min.js');
 					this._qrcode();
+					setTimeout(function () {
+					that.isTextShow = true;
+				}, 500);
 				});
 			});
+//			if (that.isImgRead) {
+//				setTimeout(function () {
+//					that.isTextShow = true;
+//				}, 500);
+//			}
       that.width=($("#qrcode").width());
       that.height=($("#qrcode").height());
 
@@ -225,7 +235,6 @@
 		methods: {
 			init() {
 				let that = this;
-
 				let browser = that._Util.browser();
 				if (browser.versions.mobile) {
 					import("../../../assets/scss/download/h5Download/index.scss");
@@ -233,14 +242,7 @@
 				} else {
 					import("../../../assets/scss/download/h5Download/index_pc.scss");
 					that.isBrowserShow = true;
-
 				}
-				if (that.isImgRead) {
-					setTimeout(function () {
-						that.isTextShow = true;
-					}, 500);
-				}
-
 				/*     console.log("qrcode:",$('.qrcode'));
              var getQrcode = 'https://m.qpcp9.com/lottery/invite';
              $('.qrcode').qrcode(getQrcode);
