@@ -13,7 +13,7 @@
           </div>
           <div class="DeliveryPrice displayFlex">
             <div>
-              <div @click="openFrm(2, true)" class="DeliveryHeaderPrice">
+              <div @click="openFrm(2)" class="DeliveryHeaderPrice">
                 <section><p>已投：<span v-html=" totalMoneyCopy ? reservePriceTol : ( reservePrice ? totalMoney : ( reservePriceTol2 ? totalMoney : (reservePriceCopy ? reservePriceCopy : 0)) )"></span></p></section>
                 <section class="balanceAmount"><p>余:￥<span>{{balanceAmount < 0 ? '0.00' : balanceAmount}}</span>
                 </p></section>
