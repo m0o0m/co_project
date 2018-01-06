@@ -643,10 +643,20 @@
 			},
 
 			back() {
+				let oldPath = this.$route.fullPath;
+//				console.log(window.frames.length);
+//				console.log(parent.frames.length);
+//
+//
 				if (window.frames.length != parent.frames.length) {
+//					console.log(666)
 					window.parent.document.getElementById('closeFrame').click();
-				} else {
+				}else if ( oldPath == this.$route.fullPath) {
+					this.$router.replace({name: 'home'});
+//					console.log(888);
+        } else {
 					this.$router.go(-1);
+//					console.log(777);
 				}
 			}
 		},
