@@ -15,7 +15,7 @@
       <div class="advertisement" v-if="marvellous === 0">
         <div class="adverted">
           <section>
-            <p>下载APP，体验更多购彩乐趣</p></section>
+            <p>下载APP，体验更多购彩乐趣！</p></section>
           <section>
             <a :href="HomeDownUrl">下载</a>
           </section>
