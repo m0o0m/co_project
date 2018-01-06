@@ -41,7 +41,7 @@
     </div>
     <div v-if="isImgRead" class="indexLine"></div>
     <div v-if="isImgRead" class="ChessBack">
-      <div v-if="isImgRead" class="chessBack_title">棋牌彩票特色</div>
+      <div v-if="isTextShow" class="chessBack_title">棋牌彩票特色</div>
       <div class="chessBack_img"><img src="../../../assets/images/download/h5Download/qpcpTs2.png"/></div>
       <div class="chessBack_text"><img src="../../../assets/images/download/h5Download/qpcpTsTest.png"/></div>
     </div>
