@@ -45,7 +45,7 @@ $designWidth: 375;
       width: 25%;
       float: left;
       text-align: center;
-      margin-bottom: rem(10);
+      //margin-bottom: rem(10);
     }
   }
   ul.specialNum {
@@ -191,13 +191,14 @@ $designWidth: 375;
     font-size: rem(14);
   }
   .playMarryImg {
-    width: rem(21);
+    width: rem(18);
     position: absolute;
     right: rem(3);
     bottom: rem(3);
   }
   span {
     font-family: Arial;
+    line-height: rem(18);
   }
   .everyPcAmount {
     color: transparent;
