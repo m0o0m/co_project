@@ -126,7 +126,7 @@ $designWidth: 375;
 .advertisement {
   position: fixed;
   width: 100%;
-  height: rem(60);
+  height: rem(40);
   top: 0;
   left: 0;
   z-index: 100;
@@ -147,31 +147,34 @@ $designWidth: 375;
   color: #fff;
 }
 
-.adverted section:first-child {
-  img {
-    width: rem(40);
-    height: rem(40);
-    border: 1px solid #D0A979;
-    border-radius: rem(8);
-  }
-}
+//.adverted section:first-child {
+//  img {
+//    width: rem(40);
+//    height: rem(40);
+//    border: 1px solid #D0A979;
+//    border-radius: rem(8);
+//  }
+//}
 
-.adverted section:nth-child(2) {
-  margin: 0 rem(10);
-  line-height: rem(20);
+.adverted section:nth-child(1) {
+  margin-left:rem(20);
+  line-height: rem(14);
   flex: 1;
 }
 
-.adverted section:nth-child(2) p:first-of-type {
-  font-size: rem(16);
+.adverted section:nth-child(1) p:first-of-type {
+  font-size: rem(14);
+  line-height:rem(14);
   font-weight: 800;
-  padding-top: rem(2);
+  padding-top: rem(3);
 }
-
-.adverted section:nth-child(3) a {
+.adverted section:nth-child(2) {
+  overflow: visible;
+}
+.adverted section:nth-child(2) a {
   min-width: rem(67);
-  height: rem(27);
-  line-height: rem(28);
+  height: rem(24);
+  line-height: rem(24);
   text-align: center;
   font-size: rem(14);
   color: #191919;
@@ -179,12 +182,12 @@ $designWidth: 375;
   background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
   background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
   border-radius: rem(32);
-  margin-top: rem(6);
+  margin-top: rem(-2);
 }
 
-.adverted section:nth-child(4) {
+.adverted section:nth-child(3) {
   width: rem(40);
-  height: rem(40);
+  height: rem(20);
   background: url("../images/cancel2x.png") center center no-repeat;
   background-size: rem(15) auto;
   margin-left: rem(5);

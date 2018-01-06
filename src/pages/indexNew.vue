@@ -15,19 +15,14 @@
       <div class="advertisement" v-if="marvellous === 0">
         <div class="adverted">
           <section>
-            <img :src="downloadImg" alt="">
-          </section>
-          <section>
-            <p>更多精彩尽在APP</p>
-            <p>一键下载方便快捷易投注</p>
-          </section>
+            <p>下载APP，体验更多购彩乐趣</p></section>
           <section>
             <a :href="HomeDownUrl">下载</a>
           </section>
           <section @click="marvellousMarv"></section>
         </div>
       </div>
-      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; margin-top: 2.48276rem;">
+      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; margin-top: 1.65517rem;">
 	      <mt-swipe-item v-if="showSwipeDefault">
 		      <!--<a :href="item.hrefUrl"><img :src="item.picUrl"></a>-->
 		      <a href="javascript: void(0);"><img src="../../static/banner/homeBanner.jpg"></a>
