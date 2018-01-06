@@ -12,17 +12,17 @@
         </div>
     </div>
     <div slot="content">
-      <div class="advertisement" v-if="marvellous === 0">
-        <div class="adverted">
-          <section>
-            <p>下载APP，体验更多购彩乐趣！</p></section>
-          <section>
-            <a :href="HomeDownUrl">下载</a>
-          </section>
-          <section @click="marvellousMarv"></section>
+        <div class="advertisement"  v-if="marvellous === 0" >
+          <div class="adverted">
+            <section @click="marvellousMarv"></section>
+            <section>
+              <p>下载APP，体验更多购彩乐趣！</p></section>
+            <section>
+              <a :href="HomeDownUrl">下载</a>
+            </section>
+          </div>
         </div>
-      </div>
-      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; margin-top: 1.65517rem;">
+      <mt-swipe :auto="4000" @change="swipeChange" style="height: 6.8rem; ">
 	      <mt-swipe-item v-if="showSwipeDefault">
 		      <!--<a :href="item.hrefUrl"><img :src="item.picUrl"></a>-->
 		      <a href="javascript: void(0);"><img src="../../static/banner/homeBanner.jpg"></a>

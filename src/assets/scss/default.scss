@@ -123,6 +123,16 @@ $designWidth: 375;
 }
 
 /*APP下载*/
+//.advertisementBox{
+//  position: fixed;
+//  width: 100%;
+//  height: rem(40);
+//  top: 0;
+//  left: 0;
+//  z-index: 100;
+//  //background-image: -webkit-linear-gradient(-180deg, rgba(0, 0, 0, 0.16) 0%, rgba(83, 57, 74, 0.6) 97%);
+//  background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 97%);
+//}
 .advertisement {
   position: fixed;
   width: 100%;
@@ -130,9 +140,8 @@ $designWidth: 375;
   top: 0;
   left: 0;
   z-index: 100;
-  background: #151515;
+  background: rgba(0,0,0,0.8);
 }
-
 .adverted {
   display: flex;
   -webkit-display: flex;
@@ -147,49 +156,46 @@ $designWidth: 375;
   color: #fff;
 }
 
-//.adverted section:first-child {
-//  img {
-//    width: rem(40);
-//    height: rem(40);
-//    border: 1px solid #D0A979;
-//    border-radius: rem(8);
-//  }
-//}
-
-.adverted section:nth-child(1) {
-  margin-left:rem(20);
+.adverted section:nth-child(2) {
+  //margin-left:rem(20);
   line-height: rem(14);
   flex: 1;
 }
-
-.adverted section:nth-child(1) p:first-of-type {
+.adverted section:nth-child(2) p:first-of-type {
   font-size: rem(14);
   line-height:rem(14);
   font-weight: 800;
   padding-top: rem(3);
+  color: #fff;
+  //opacity: 0.8;
 }
-.adverted section:nth-child(2) {
+.adverted section:nth-child(3) {
   overflow: visible;
 }
-.adverted section:nth-child(2) a {
+.adverted section:nth-child(3) a {
   min-width: rem(67);
   height: rem(24);
   line-height: rem(24);
   text-align: center;
   font-size: rem(14);
-  color: #191919;
+  //color: #191919;
+  color: #fff;
   display: inline-block;
-  background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
-  background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+  //background-image: linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+  //background-image: -webkit-linear-gradient(-1deg, #D0A979 0%, #DDC09C 100%);
+  background: #ec0909;
   border-radius: rem(32);
   margin-top: rem(-2);
+  margin-right:rem(20);
+
 }
 
-.adverted section:nth-child(3) {
+.adverted section:nth-child(1) {
   width: rem(40);
   height: rem(20);
-  margin-right:rem(10);
   background: url("../images/cancel2x.png") center center no-repeat;
   background-size: rem(15) auto;
   margin-left: rem(5);
 }
+
+
