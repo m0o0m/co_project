@@ -246,8 +246,8 @@
       {
         "title": "个人充值",
         "name": "addMoney",
-        "path": "/lottery/personal/add-money",
-        "filePath": "/personal/add-money",
+        "path": "/lottery/personal/newAddMoney",
+        "filePath": "/personal/newAdd-money",
         "icon": ""
       },
       {

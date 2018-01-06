@@ -68,7 +68,8 @@ export default {
    * 支付
    */
   //获取支付通道接口
-  POST_PAY_TYPE: HOST + '/index.php/api/Payment/allPaymentType',
+  // POST_PAY_TYPE: HOST + '/index.php/api/Payment/allPaymentType',
+  POST_PAY_TYPE: HOST + '/index.php/api/Payment',
   //通道明细
   POST_PAY_TYPE_DETAIL: HOST + '/index.php/api/Payment/paymentList',
   //第三方支付【二维码】
