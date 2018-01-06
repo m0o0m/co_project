@@ -200,6 +200,7 @@
             this.$refs.confirmPageRef.timeEndClearData();
           }
         }
+
         if (this.stopBetCountDownSecond > 0) {
           this.stopBetCountDownSecond -= 1
         } else if (this.stopBetCountDownSecond == 0) {
