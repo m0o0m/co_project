@@ -71,7 +71,7 @@ $designWidth: 375;
           width: 31%;
           max-width: rem(104);
           float: left;
-          text-align: center;
+          text-align: center !important;
           border: rem(1) solid transparent;
           box-sizing: border-box;
           -webkit-box-sizing: border-box;
@@ -87,10 +87,15 @@ $designWidth: 375;
           }
           section {
             p {
-              width: rem(50);
+
+              text-align:center;
+              margin:0 auto;
+              width: 100%;
               height: rem(55);
               display: inline-block;
               img {
+               
+                margin:0 auto;           
                 width: rem(45);
                 height: auto;
                 display: inline-block;

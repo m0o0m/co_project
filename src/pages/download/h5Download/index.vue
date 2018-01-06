@@ -189,11 +189,15 @@
 			return {
 				isBrowserShow: false,
 				isImgRead: false,
-				isTextShow: false,
+        isTextShow: false,
+        getQrcode:"",
+        width:0,
+        height:0
 			}
 		},
 		created() {
-			this.init();
+      this.init();
+      this.getQrcode=this.$route.query.code?'http://m.qpcp.me/lottery/invite?code='+this.$route.query.code:'http://m.qpcp.me/lottery/invite'
 		},
 		mounted() {
 			let that = this;
@@ -210,10 +214,14 @@
 					this._qrcode();
 				});
 			});
-
+      that.width=($("#qrcode").width());
+      that.height=($("#qrcode").height());
 
 //      that.areaSize();
-		},
+    },
+    beforeUpdate(){
+      
+    },
 		methods: {
 			init() {
 				let that = this;
@@ -239,11 +247,14 @@
              console.log('qrcode', $('.qrcode').qrcode(getQrcode));*/
 			},
 			_qrcode () {
-				let getQrcode = this.$route.query.code?'http://m.qpcp.me/lottery/invite?code='+this.$route.query.code:'http://m.qpcp.me/lottery/invite';
+        var that=this;
+        // let getQrcode = this.$route.query.code?'http://m.qpcp.me/lottery/invite?code='+this.$route.query.code:'http://m.qpcp.me/lottery/invite';
+        console.log(that.getQrcode);
+        
 				$("#qrcode").qrcode({
-					text: getQrcode,
-					width:$("#qrcode").width(),
-					height:$("#qrcode").height()
+					text: that.getQrcode,
+					width:that.width,
+					height:that.height
 				});
 			},
 			toHome() {

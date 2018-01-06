@@ -45,6 +45,10 @@ $designWidth: 375;
       //background-color: #40fff3;
       //left:rem(10);
       //top:rem(10);
+      canvas{
+        width: rem(72);
+        height: rem(72);
+      }
     }
   }
 

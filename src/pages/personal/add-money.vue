@@ -18,7 +18,7 @@
                     </li>
                     <li @click="selectMoney(300)" :class="{'borders':this.money==300,}">
                         <section>
-                            <p><img :src="addMoneyDate[1].img"/></p>
+                            <p><img :src="addMoneyDate[1].img" /></p>
                             <p><span>¥300</span></p>
                         </section>
                     </li>
