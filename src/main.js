@@ -4,7 +4,7 @@ import axios from 'axios'
 import App from './App'
 import VueRouter from 'vue-router'
 import routes from './router/index'
-// import VueWorker from 'vue-worker'
+import VueWorker from 'vue-worker'
 import * as filters from './filter/index'
 import Utils from './assets/js/Utils'
 import LotteryUtils from './assets/js/lotteryUtils'
@@ -26,7 +26,7 @@ Vue.use(Confirm);
 Vue.use(Loading);
 Vue.use(MyAudio);
 Vue.use(Lazyload);
-// Vue.use(VueWorker);
+Vue.use(VueWorker);
 
 Vue.component(Popup.name, Popup);
 Vue.component(Button.name, Button);

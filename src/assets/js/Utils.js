@@ -460,195 +460,67 @@ export default {
    * @param imgClassName chip class name
    */
   chip(self, clickEvent, currentTarget, imgClassName, scrollDistance, currentId) {
-    //return;
-    let that = this;
-    // currentId = !currentId && currentId == 0 ? 0 : currentId;
-    currentId = 1
-    let playMarryImg = currentTarget.find(imgClassName || '.playMarryImg');
-    let imgOffset = playMarryImg.find('img').offset();
-    let chipImg = $('.westernSectionNum p.on').find('img');
-    let chipImgOffset = chipImg.offset();
-    let flyer = chipImg.clone();
-    
-    flyer.attr({"class": "cloneImg"}).offset({
-      top: chipImgOffset.top,
-      left: chipImgOffset.left
-    }).css({
-      "position": "absolute",
-      "width": "1.2rem",
-      "height": "1.2rem",
-      "margin-left": "0.5rem",
-      "z-index": "1000"
-    });
-    flyer.fly({
-      speed: 2.2,
-      start: {
-        left: chipImgOffset.left,
-        top: chipImgOffset.top
-      },
-      end: {
-        left: imgOffset.left,
-        top: imgOffset.top - (scrollDistance || 0),
-        width: 40,
-        height: 40
-      },
-      onEnd: function () {
-        // that._Util.audioClose(that);
-        // playMarryImg.html('');
-        playMarryImg.find('img').attr('src', flyer.attr('src'));
-        // playMarryImg.append('<img src="' + flyer.attr('src') + '" alt="" title="">');
-        var flyThat = this;
-        setTimeout(function () {
-          flyThat.destroy();
-          $(imgClassName || '.playMarryImg').addClass("playMarryImgVisible");
-        }, 40);
-      }
-    });
-    that.audioPlay(self, {fileName: 'chip.wav', audioPlay: true});
-    
-    
-    /*self.$worker.run(args => {
-    	console.log('worker run');
-    	console.log(args);
+  	let that = this;
+  	let worker = new Worker('../../../static/worker/worker.js');
+  	worker.postMessage('');
+  	worker.onmessage = function (evt) {
+		  currentId = 1;
+		  var playMarryImg = currentTarget.find(imgClassName || '.playMarryImg');
+		  var imgOffset = playMarryImg.find('img').offset();
+		  var chipImg = $('.westernSectionNum p.on').find('img');
+		  var chipImgOffset = chipImg.offset();
+		  var flyer = chipImg.clone();
 
-      // args[0].audioPlay(args[1], {fileName: 'chip.wav', audioPlay: true});
-    }).then(() => {
-      let that = JSON.parse(sessionStorage.getItem('workerThat'));
-      let self = JSON.parse(sessionStorage.getItem('workerSelf'));
-      that.audioPlay(self, {fileName: 'chip.wav', audioPlay: true});
+		  flyer.attr({"class": "cloneImg"}).offset({
+			  top: chipImgOffset.top,
+			  left: chipImgOffset.left
+		  }).css({
+			  "position": "absolute",
+			  "width": "1.2rem",
+			  "height": "1.2rem",
+			  "margin-left": "0.5rem",
+			  "z-index": "1000"
+		  });
+		  flyer.fly({
+			  speed: 3.3,
+			  start: {
+				  left: chipImgOffset.left,
+				  top: chipImgOffset.top
+			  },
+			  end: {
+				  left: imgOffset.left,
+				  top: imgOffset.top - (scrollDistance || 0),
+				  width: 40,
+				  height: 40
+			  },
+			  onEnd: function () {
+				  playMarryImg.find('img').attr('src', flyer.attr('src'));
+				  var flyThat = this;
+				  setTimeout(function () {
+					  flyThat.destroy();
+					  $(imgClassName || '.playMarryImg').addClass("playMarryImgVisible");
+				  }, 40);
+			  }
+		  });
 
-
-
-      console.log('run then');
-    }).catch(() => {
-
-    });*/
-    
-    return;
-    self.$worker.run((args) => {
-      require('./jquery.fly');
-      console.log();
-      let playMarryImg = args[1].find(args[2] || '.playMarryImg');
-      let imgOffset = playMarryImg.find('img').offset();
-      let chipImg = $('.westernSectionNum p.on').find('img');
-      let chipImgOffset = chipImg.offset();
-      let flyer = chipImg.clone();
-      
-      flyer.attr({"class": "cloneImg"}).offset({
-        top: chipImgOffset.top,
-        left: chipImgOffset.left
-      }).css({
-        "position": "absolute",
-        "width": "1.2rem",
-        "height": "1.2rem",
-        "margin-left": "0.5rem",
-        "z-index": "1000"
-      });
-      flyer.fly({
-        start: {
-          left: chipImgOffset.left,
-          top: chipImgOffset.top
-        },
-        end: {
-          left: imgOffset.left,
-          top: imgOffset.top,
-          width: 40,
-          height: 40
-        },
-        onEnd: function () {
-          // that._Util.audioClose(that);
-          playMarryImg.html('');
-          playMarryImg.append('<img src="' + flyer.attr('src') + '" alt="" title="">');
-          var flyThat = this;
-          setTimeout(function () {
-            flyThat.destroy();
-          }, 500);
-          
-        }
-      });
-      args[0].audioPlay(args[0], {fileName: 'chip.wav', audioPlay: true});
-      
-    }, [[self, currentTarget, imgClassName]]).then(() => {
-      console.log('run then');
-    }).catch(() => {
-    
-    });
-    
-    
-    return;
-    
-    self.$worker.run((args) => {
-      console.log(123);
-      return args;
-    }, [self, currentTarget, imgClassName]).then(result => {
-      let playMarryImg = currentTarget.find(imgClassName || '.playMarryImg');
-      let imgOffset = playMarryImg.find('img').offset();
-      let chipImg = $('.westernSectionNum p.on').find('img');
-      let chipImgOffset = chipImg.offset();
-      let flyer = chipImg.clone();
-      
-      flyer.attr({"class": "cloneImg"}).offset({
-        top: chipImgOffset.top,
-        left: chipImgOffset.left
-      }).css({
-        "position": "absolute",
-        "width": "1.2rem",
-        "height": "1.2rem",
-        "margin-left": "0.5rem",
-        "z-index": "1000"
-      });
-      flyer.fly({
-        start: {
-          left: chipImgOffset.left,
-          top: chipImgOffset.top
-        },
-        end: {
-          left: imgOffset.left,
-          top: imgOffset.top,
-          width: 40,
-          height: 40
-        },
-        onEnd: function () {
-          // that._Util.audioClose(that);
-          playMarryImg.html('');
-          playMarryImg.append('<img src="' + flyer.attr('src') + '" alt="" title="">');
-          var flyThat = this;
-          setTimeout(function () {
-            flyThat.destroy();
-          }, 500);
-          
-        }
-      });
-      that.audioPlay(self, {fileName: 'chip.wav', audioPlay: true});
-    });
-    
-    
-    // let thisDiv = $('.pcdd_bjpk_mun:eq(' + iteindex + ') .pcdd_mun_list_bjpk10 ul li:eq(' + index + ')');
-    // let rect = e.target.getBoundingClientRect(),
-    //   offsetX = rect.left,
-    //   offsetY = rect.top;
-    // let offset = $('.westernSectionNum p.on').offset();
-    // let footerImg = $('.westernSectionNum p.on').find("img").attr("src"),
-    //   footerImgPosition = $('.westernSectionNum p.on').find("img");
-    // let footerPlace = footerImgPosition.clone().attr({"class": "cloneImg"}).offset({
-    //   top: footerImgPosition.offset().top,
-    //   left: footerImgPosition.offset().left
-    // }).css({
-    //   "position": "absolute",
-    //   "width": "1.2rem",
-    //   "height": "1.2rem",
-    //   "margin-left": "0.5rem",
-    //   "z-index": "1000"
-    // }).appendTo($('body')).animate({
-    //   top: offsetY - 200,
-    //   left: offsetX - 30,
-    //   width: "2rem",
-    //   height: "2rem"
-    // }, 500, function () {
-    //   thisDiv.find(".playMarryImg").html('');
-    //   thisDiv.find(".playMarryImg").append('<img src="' + footerImg + '" alt="" title="">');
-    //   $(this).detach();
-    // });
+		  var u = navigator.userAgent;
+		  var audio = null;
+		  if (u.indexOf('Android') > -1 || u.indexOf('Adr') > -1) {
+			  audio = new Audio(require('../lotteryAudio/chip.wav'));
+			  audio.play();
+		  } else {
+			  // that.audioPlay(self, {fileName: 'chip.wav', audioPlay: true});
+			  // audio = require('./audio');
+			  // console.log(audio);
+			  // var bgAudio = audio({
+				 //  src: require('../lotteryAudio/chip.wav'),
+				 //  autoPlay: true,
+				 //  loop: false,
+				 //  duration: 1.5
+			  // });
+		  }
+		  worker.terminate();
+	  };
   },
   
   visibilityChange(self, id) {
@@ -658,22 +530,17 @@ export default {
 			  self.countDownSecond = data.count_down;
 			  // self.stopBetCountDownSecond = -1;
 			  // self.countDownSecond = 3;
-			  // console.log(self.interValObj);
-			  clearInterval(self.interValObj);
+			  window.clearInterval(self.interValObj);
 			  self.startCountDown();
-
-			  // self.startCountDown();
 		  }, '', true);
     };
     document.removeEventListener('visibilitychange', func);
 
-    // return;
     document.addEventListener('visibilitychange', function (event) {
-      if (!document.hidden) {
-	      func();
-      }
+      if (!document.hidden) func();
     });
   },
+
   browser() {
     //判断访问终端
 
