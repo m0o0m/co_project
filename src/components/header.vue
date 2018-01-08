@@ -316,7 +316,7 @@
 				dircePJ: [],
 				dirceRBG: [],
 				dirceShowHand: [],
-				timeInterval: '',
+				timeInterval: null,
 				actionDataCopy: '',
 				actionNoCopy: '',
 				actionResultCopy: {},
@@ -643,6 +643,8 @@
 			},
 
 			back() {
+				window.location.href = '/home';
+				return;
 				let oldPath = this.$route.fullPath;
 //				console.log(window.frames.length);
 //				console.log(parent.frames.length);

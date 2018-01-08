@@ -316,6 +316,8 @@
       },
 
       back() {
+	      window.location.href = '/home';
+	      return;
         if (window.frames.length != parent.frames.length) {
           window.parent.document.getElementById('closeFrame').click();
         } else {
