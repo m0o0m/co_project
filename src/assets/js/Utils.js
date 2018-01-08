@@ -1,17 +1,17 @@
 export default {
-	pageTimer: {},
+  pageTimer: {},
   localHost: window.location.host,
   isLocalHost: localHost.indexOf('localhost') !== -1 || localHost.indexOf('192') !== -1,
-  
+
   isLogin() {
     return (this.getStorage('isLogin', true) == 'true');
   },
 
-	getUserInfo() {
-  	let userInfo = this.getStorage('userInfo', true);
-		return userInfo ? (userInfo.userInfo || {}) : {};
-	},
-  
+  getUserInfo() {
+    let userInfo = this.getStorage('userInfo', true);
+    return userInfo ? (userInfo.userInfo || {}) : {};
+  },
+
   init() {
     Number.prototype.toFixed = function (d) {
       var s = this + "";
@@ -19,7 +19,10 @@ export default {
       if (s.indexOf(".") == -1) s += ".";
       s += new Array(d + 1).join("0");
       if (new RegExp("^(-|\\+)?(\\d+(\\.\\d{0," + (d + 1) + "})?)\\d*$").test(s)) {
-        var s = "0" + RegExp.$2, pm = RegExp.$1, a = RegExp.$3.length, b = true;
+        var s = "0" + RegExp.$2,
+          pm = RegExp.$1,
+          a = RegExp.$3.length,
+          b = true;
         if (a == d + 2) {
           a = s.match(/\d/g);
           if (parseInt(a[a.length - 1]) > 4) {
@@ -32,24 +35,24 @@ export default {
             }
           }
           s = a.join("").replace(new RegExp("(\\d+)(\\d{" + d + "})\\d$"), "$1.$2");
-          
+
         }
         if (b) s = s.substr(1);
         return (pm + s).replace(/\.$/, "");
       }
       return this + "";
-      
+
     };
-    
-    
+
+
   },
-  
+
   needClickFc(domId) {
     document.getElementsByClassName(domId)[0].addEventListener('touchstart', function (event) {
       event.target.classList.add('needsclick');
     })
   },
-  
+
   checkDup(arr, key, value) {
     let flag = false;
     for (let i = 0, v; v = arr[i++];) {
@@ -60,12 +63,12 @@ export default {
     }
     return flag;
   },
-  
+
   back(router) {
     if (window.frames.length !== parent.frames.length) {
       let myFrm = window.parent.document.getElementById('frameId');
       myFrm.src = 'auto:blank;';
-      
+
       try {
         myFrm.contentWindow.document.write('');
         myFrm.contentWindow.document.clear();
@@ -73,7 +76,7 @@ export default {
       } catch (e) {
         myFrm.parentNode.removeChild(myFrm);
       }
-      
+
       window.parent.document.getElementById('closeFrame').click();
     } else {
       router.go(-1);
@@ -93,13 +96,13 @@ export default {
     if (type == "yyyy-MM-dd hh:mm:ss") {
       return year + "-" + month + "-" + date + " " + Hours + ":" + minutes + ":" + seconds;
     }
-    
+
   },
   formatPhone(str) {
     if (!str) return '';
     return str.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
   },
-  
+
   getValueByKey(list, key, attr, requireImg) {
     if (!list || !key || !attr) return;
     let value = '';
@@ -109,22 +112,22 @@ export default {
         break;
       }
     }
-    
+
     return requireImg ? require(requireImg + value + '.png') : value;
   },
-  
+
   log(data) {
     if (!data) return '';
     return JSON.parse(JSON.stringify(data));
   },
-  
+
   hexMd5(str) {
     if (!str) return '';
-    
+
     let obj = require('./ciphertext');
     return obj.default.hex_md5(str);
   },
-  
+
   formatTime(seconds, secondsTop, stopBet) {
     let _seconds = !stopBet ? seconds : secondsTop;
     let hour = Math.floor((_seconds / 3600));
@@ -136,7 +139,7 @@ export default {
     second = second < 10 ? '0' + second : second;
     return (hour + ':' + minite + ':' + second);
   },
-  
+
   setLocalStorage(key, obj) {
     let v = obj;
     if (typeof obj === 'object') {
@@ -146,18 +149,18 @@ export default {
     }
     localStorage.setItem(key, v);
   },
-  
+
   getLocalStorage(key) {
     let v = localStorage.getItem(key);
     if (!v) return '';
-    
+
     if (v.indexOf('obj-') === 0) {
       return JSON.parse(v.slice(4))
     } else {
       return v.slice(4);
     }
   },
-  
+
   setStorage(key, obj, storageType) {
     let v = obj;
     if (typeof obj === 'object') {
@@ -165,14 +168,14 @@ export default {
     } else {
       v = 'str-' + v;
     }
-    
+
     if (!storageType) {
       localStorage.setItem(key, v);
     } else {
       sessionStorage.setItem(key, v);
     }
   },
-  
+
   getStorage(key, storageType) {
     let v = '';
     if (!storageType) {
@@ -180,30 +183,30 @@ export default {
     } else {
       v = sessionStorage.getItem(key);
     }
-    
+
     if (!v) return '';
-    
+
     if (v.indexOf('obj-') === 0) {
       return JSON.parse(v.slice(4))
     } else {
       return v.slice(4);
     }
   },
-  
+
   openLoading(self, options, callback) {
     self.$loading.open();
   },
-  
+
   closeLoading(self, options, callback) {
     self.$loading.close();
   },
-  
+
   showAlert(self, options, callback) {
     self.$alert({
       content: options.content
     }, callback);
   },
-  
+
   showConfirm(self, options, callback) {
     self.$confirm({
       title: options.title,
@@ -212,9 +215,9 @@ export default {
       showText: options.showText,
       placeholder: options.placeholder
     }, callback);
-    
+
   },
-  
+
   audioPlay(self, options, callback) {
     if (options.play) {
       self.$myAudio.play();
@@ -225,21 +228,21 @@ export default {
       });
     }
   },
-  
+
   audioClose(self, options, callback) {
     self.$myAudio.close();
   },
-  
+
   post(self, url, param, successCallback, errorCallback, isShowIndicator, noToLogin) {
     let that = this;
     if (!isShowIndicator) that.openLoading(self);
-    
+
     let startTime = new Date();
     if (that.isLocalHost) {
       /*默认登陆用户锁定*/
       param.bind_account = 1;
     }
-    
+
     /*self.$http.post(url, param).then((response) => {
      console.group(url);
      console.debug("%c参数", "font-weight:bold;color:black;");
@@ -293,11 +296,11 @@ export default {
         console.debug("%c耗时", "font-weight:bold;color:black;");
         console.debug((new Date().getTime() - startTime) + ' 毫秒');
         console.groupEnd();
-        
+
         console.log(JSON.parse(JSON.stringify(data)));
         console.log(JSON.parse(JSON.stringify(data.data)));
         // data.code = 10002
-        
+
         if (parseInt(data.code) === 0) {
           successCallback && successCallback(data.data, data);
           sessionStorage.setItem('beforeLoginRouteName', '' + self.$route.name);
@@ -310,26 +313,31 @@ export default {
               } else {
                 that.setStorage('isLogin', false, true);
                 if (self.$route.name === 'home' && noToLogin) {
-                  
+
                   successCallback && successCallback();
                 } else {
-                  if (url.indexOf('index.php/api/Member/profile') === -1
-                    || ((url.indexOf('index.php/api/Member/profile') !== -1
-                      || url.indexOf('index.php/api/Member/appProfile') !== -1) && (self.$route.name === 'index' || self.$route.name === 'theLottery'
-                      || self.$route.name === 'betting' || self.$route.name === 'personal' || self.$route.name === 'home'))) {
+                  if (url.indexOf('index.php/api/Member/profile') === -1 ||
+                    ((url.indexOf('index.php/api/Member/profile') !== -1 ||
+                      url.indexOf('index.php/api/Member/appProfile') !== -1) && (self.$route.name === 'index' || self.$route.name === 'theLottery' ||
+                      self.$route.name === 'betting' || self.$route.name === 'personal' || self.$route.name === 'home'))) {
                     that.showAlert(self, {
                       content: data.msg
                     }, () => {
-                      
+
                       sessionStorage.setItem('beforeLoginRouteName', self.$route.name);
-                      self.$router.replace({name: 'login', query: {fullPath: self.$route.fullPath}});
+                      self.$router.replace({
+                        name: 'login',
+                        query: {
+                          fullPath: self.$route.fullPath
+                        }
+                      });
                     });
                   }
                 }
               }
               break;
             case 10002:
-            	errorCallback && errorCallback(data);
+              errorCallback && errorCallback(data);
 
               break;
             default:
@@ -348,7 +356,7 @@ export default {
       }
     });
   },
-  
+
   ajaxError(response, _this, self) {
     switch (response.status) {
       case 0: // 网络不通
@@ -381,12 +389,13 @@ export default {
         break
     }
   },
-  
+
   remScript() {
     let browser = {
       versions: function () {
-        let u = navigator.userAgent, app = navigator.appVersion;
-        return {//移动终端浏览器版本信息
+        let u = navigator.userAgent,
+          app = navigator.appVersion;
+        return { //移动终端浏览器版本信息
           trident: u.indexOf('Trident') > -1, //IE内核
           presto: u.indexOf('Presto') > -1, //opera内核
           webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
@@ -405,9 +414,9 @@ export default {
       browser.versions.iPhone || browser.versions.iPad || !!1) {
       let myHTML = document.querySelector("html"),
         myWidth = window.innerWidth > 414 ? 414 : window.innerWidth;
-      
+
       let size = 100 * myWidth / 414;
-      
+
       myHTML.style.fontSize = size + 'px';
       window.onresize = function () {
         let myHTML = document.querySelector("html"),
@@ -416,7 +425,7 @@ export default {
       }
     }
   },
-  
+
   setTitle(title) {
     document.title = title
     let mobile = navigator.userAgent.toLowerCase()
@@ -436,22 +445,22 @@ export default {
     }
   },
 
-	clearPageTimer(noClear) {
-		for (let t in window.pageTimers) {
-			console.log(window.pageTimers[t]);
-			if (t.indexOf(noClear || '') === -1) {
-				console.log(t);
-				window.clearInterval(window.pageTimers[t]);
-			}
-		}
-	},
+  clearPageTimer(noClear) {
+    for (let t in window.pageTimers) {
+      console.log(window.pageTimers[t]);
+      if (t.indexOf(noClear || '') === -1) {
+        console.log(t);
+        window.clearInterval(window.pageTimers[t]);
+      }
+    }
+  },
 
-	setScopeInterval(func, millis, scope) {
-		return setInterval(function () {
-			func();
-		}, millis);
-	},
-  
+  setScopeInterval(func, millis, scope) {
+    return setInterval(function () {
+      func();
+    }, millis);
+  },
+
   /**
    *
    * @param self vue
@@ -460,79 +469,121 @@ export default {
    * @param imgClassName chip class name
    */
   chip(self, clickEvent, currentTarget, imgClassName, scrollDistance, currentId) {
-  	let that = this;
-  	let worker = new Worker('../../../static/worker/worker.js');
-  	worker.postMessage('');
-  	worker.onmessage = function (evt) {
-		  currentId = 1;
-		  var playMarryImg = currentTarget.find(imgClassName || '.playMarryImg');
-		  var imgOffset = playMarryImg.find('img').offset();
-		  var chipImg = $('.westernSectionNum p.on').find('img');
-		  var chipImgOffset = chipImg.offset();
-		  var flyer = chipImg.clone();
+    let that = this;
+    let worker = new Worker('../../../static/worker/worker.js');
+    worker.postMessage('');
+    worker.onmessage = function (evt) {
+      currentId = 1;
+      var playMarryImg = currentTarget.find(imgClassName || '.playMarryImg');
+      var imgOffset = playMarryImg.find('img').offset();
+      var chipImg = $('.westernSectionNum p.on').find('img');
+      var chipImgOffset = chipImg.offset();
+      var flyer = chipImg.clone();
 
-		  flyer.attr({"class": "cloneImg"}).offset({
-			  top: chipImgOffset.top,
-			  left: chipImgOffset.left
-		  }).css({
-			  "position": "absolute",
-			  "width": "1.2rem",
-			  "height": "1.2rem",
-			  "margin-left": "0.5rem",
-			  "z-index": "1000"
-		  });
-		  flyer.fly({
-			  speed: 3.3,
-			  start: {
-				  left: chipImgOffset.left,
-				  top: chipImgOffset.top
-			  },
-			  end: {
-				  left: imgOffset.left,
-				  top: imgOffset.top - (scrollDistance || 0),
-				  width: 40,
-				  height: 40
-			  },
-			  onEnd: function () {
-				  playMarryImg.find('img').attr('src', flyer.attr('src'));
-				  var flyThat = this;
-				  setTimeout(function () {
-					  flyThat.destroy();
-					  $(imgClassName || '.playMarryImg').addClass("playMarryImgVisible");
-				  }, 40);
-			  }
-		  });
+      flyer.attr({
+        "class": "cloneImg"
+      }).offset({
+        top: chipImgOffset.top,
+        left: chipImgOffset.left
+      }).css({
+        "position": "absolute",
+        "width": "1.2rem",
+        "height": "1.2rem",
+        "margin-left": "0.5rem",
+        "z-index": "1000"
+      });
+      flyer.fly({
+        speed: 3.3,
+        start: {
+          left: chipImgOffset.left,
+          top: chipImgOffset.top
+        },
+        end: {
+          left: imgOffset.left,
+          top: imgOffset.top - (scrollDistance || 0),
+          width: 40,
+          height: 40
+        },
+        onEnd: function () {
+          playMarryImg.find('img').attr('src', flyer.attr('src'));
+          var flyThat = this;
+          setTimeout(function () {
+            flyThat.destroy();
+            $(imgClassName || '.playMarryImg').addClass("playMarryImgVisible");
+          }, 40);
+        }
+      });
 
-		  var u = navigator.userAgent;
-		  var audio = null;
-		  if (u.indexOf('Android') > -1 || u.indexOf('Adr') > -1) {
-			  audio = new Audio(require('../lotteryAudio/chip.wav'));
-			  audio.play();
-		  } else {
-			  // that.audioPlay(self, {fileName: 'chip.wav', audioPlay: true});
-			  // audio = require('./audio');
-			  // console.log(audio);
-			  // var bgAudio = audio({
-				 //  src: require('../lotteryAudio/chip.wav'),
-				 //  autoPlay: true,
-				 //  loop: false,
-				 //  duration: 1.5
-			  // });
-		  }
-		  worker.terminate();
-	  };
+      var u = navigator.userAgent;
+      var audio = null;
+      if (u.indexOf('Android') > -1 || u.indexOf('Adr') > -1) {
+        audio = new Audio(require('../lotteryAudio/chip.wav'));
+        audio.play();
+      } else {
+        
+        audio = new Audio(require('../lotteryAudio/chip.wav'));
+        document.addEventListener("touchstart",function(){
+
+          
+          audio.play();
+          console.log(22222)
+        })
+
+        document.removeEventListener("touchstart",function(){
+        
+          audio.play();
+          console.log(33333)
+        });
+        // audio.load();
+        
+      //   audio.addEventListener('canplay', function() {
+      //   // audio.play();
+      // }, false);
+        
+        // that.audioPlay(self, {fileName: 'chip.wav', audioPlay: true});
+
+        // //创建audio对象
+        // var Xut = {};
+        // var isAudio = false;
+        // var audioOnce = null;
+        // var chatid = '';
+        // var fixaudio = function () {
+        //   if (!isAudio) {
+        //     isAudio = true;
+        //     Xut.newaudio = new Audio();
+        //     document.removeEventListener('touchstart', fixaudio, false);
+        //   }
+        // };
+        // document.addEventListener('touchstart', fixaudio, false);
+        // //判断页面中是否已经存在audio标签
+        // if (Xut.newaudio) {
+        //   audio = Xut.newaudio;
+        //   audio.src = '../lotteryAudio/chip.wav';
+        //   audio.play();
+        // } else {
+        //   Xut.newaudio = new Audio();
+        //   audio = Xut.newaudio;
+        //   audio.src = '../lotteryAudio/chip.wav';
+        //   audio.play();
+        // }
+
+      }
+      worker.terminate();
+    };
   },
-  
+
   visibilityChange(self, id) {
-    let func = () =>{
-		  self._Util.post(self, self._Api.POST_LOTTERY_RECTOR_DETAIL, {id: id}, (data) => {
-			  self.stopBetCountDownSecond = data.stop_count_down;
-			  self.countDownSecond = data.count_down;
-			  // self.stopBetCountDownSecond = -1;
-			  // self.countDownSecond = 3;
-			  window.clearInterval(self.interValObj);
-			  self.startCountDown();
-		  }, '', true);
+    let func = () => {
+      self._Util.post(self, self._Api.POST_LOTTERY_RECTOR_DETAIL, {
+        id: id
+      }, (data) => {
+        self.stopBetCountDownSecond = data.stop_count_down;
+        self.countDownSecond = data.count_down;
+        // self.stopBetCountDownSecond = -1;
+        // self.countDownSecond = 3;
+        window.clearInterval(self.interValObj);
+        self.startCountDown();
+      }, '', true);
     };
     document.removeEventListener('visibilitychange', func);
 
@@ -546,12 +597,13 @@ export default {
 
     let browser = {
       versions: function () {
-        let u = navigator.userAgent, app = navigator.appVersion;
+        let u = navigator.userAgent,
+          app = navigator.appVersion;
         return {
           trident: u.indexOf('Trident') > -1, //IE内核
           presto: u.indexOf('Presto') > -1, //opera内核
           webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-          gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+          gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
           mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
           ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
           android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
@@ -574,30 +626,30 @@ export default {
    * @param brotherSelecterValue 上面元素需要加上或减去高度
    * @param bro_operator  运算字符
    */
-  
+
   setCss(selecter, option, operator, brotherSelecterValue, bro_operator) {
     let brother_height = brotherSelecterValue || 0;
-    let win_height = $(window).height()||0;
+    let win_height = $(window).height() || 0;
     for (var key in option) {
-      option[key] = this.operation(option[key],win_height,operator);
-      if(brother_height) option[key] = this.operation(option[key],brother_height,bro_operator);
+      option[key] = this.operation(option[key], win_height, operator);
+      if (brother_height) option[key] = this.operation(option[key], brother_height, bro_operator);
     }
-    console.log("option:",option);
+    console.log("option:", option);
     $(selecter).css(option);
   },
   operation(result, num, operator) {
     switch (operator) {
       case '+':
-        result+=num;
+        result += num;
         break;
       case '-':
-        result-=num;
+        result -= num;
         break;
       case '*':
-        result*=num;
+        result *= num;
         break;
       case '/':
-        result=num/result;
+        result = num / result;
         break;
       default:
     }

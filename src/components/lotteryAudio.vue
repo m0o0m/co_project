@@ -1,6 +1,6 @@
 <template>
     <div>
-        <audio controls="controls">
+        <audio controls="controls" id="music" style="display:none" preload autoplay> 
             <source src="song.mp3" type="audio/mpeg">
         </audio>
     </div>
