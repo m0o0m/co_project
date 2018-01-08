@@ -110,14 +110,35 @@ $designWidth: 375;
   font-size: rem(14);
   color: #65431D;
 }
-
+.loginTextMargin {
+  margin: 0 auto;
+}
 .loginText ,.loginTextMargin {
-  font-size: rem(14);
+  width: 100%;
   text-align: center;
+  font-size: rem(14);
   color: #fff;
   margin-top: rem(25);
-}
+  p:nth-child(1) {
+    margin-left:30%;
+    //-webkit-transform:translate(-50%);
+    //-moz-transition: prop time;
+    //-ms-transition: prop time;
+    //-o-transition: prop time;
+    //transition: prop time;
+  }
+  p {
+    display: inline-block;
+  }
+  p:nth-child(2) {
+    margin: 0 rem(5);
+  }
 
+}
+.loginHostBtn.SettingWidth {
+  width: 96%;
+  margin-left:4%;
+}
 .loginText a ,.loginTextMargin a {
   display: inline-block;
   color: #E4D3AA;
@@ -125,8 +146,8 @@ $designWidth: 375;
 }
 
 .loginTextMargin p:first-of-type {
-  flex: 1;
-  text-align: left;
+  //flex: 1;
+  //text-align: left;
 }
 
 /*register*/
